@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-porcelain: #F4F0E8;
+    --color-chalk: #FBF9F5;
+    --color-oat: #D8CBB8;
+    --color-umber: #49372F;
+    --color-olive-ink: #596451;
+    --color-clay-rose: #B77F70;
+    --color-dusk-blue: #71818A;
+    --color-soft-graphite: #282725;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F4F0E8;
+    color: #282725;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F4F0E8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8CBB8;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #49372F;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #596451;
+    outline-offset: 2px;
+  }
+
+  /* Prevent text size adjustment on mobile orientation change */
+  body {
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
