@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CartItem } from '../types';
-import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Tag, Sparkles } from 'lucide-react';
+import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { formatPKR, FREE_SHIPPING_THRESHOLD_PKR } from '../utils/format';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -27,17 +28,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const [promoDiscount, setPromoDiscount] = useState(0);
   const [promoApplied, setPromoApplied] = useState(false);
   const [promoError, setPromoError] = useState('');
-  const [giftNote, setGiftNote] = useState('');
-  const [showGiftNote, setShowGiftNote] = useState(false);
 
   // Subtotal calculation
   const subtotal = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
 
-  // Free shipping threshold is $150
-  const freeShippingThreshold = 150;
-  const isFreeShipping = subtotal >= freeShippingThreshold;
-  const amountToFreeShipping = Math.max(0, freeShippingThreshold - subtotal);
-  const shippingProgress = Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100));
+  // Free shipping threshold is Rs. 15,000
+  const isFreeShipping = subtotal >= FREE_SHIPPING_THRESHOLD_PKR;
+  const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD_PKR - subtotal);
+  const shippingProgress = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD_PKR) * 100));
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +49,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   const discountAmount = Math.round(subtotal * promoDiscount);
-  const finalTotal = subtotal - discountAmount;
+  const standardShippingFee = isFreeShipping ? 0 : 800;
+  const finalTotal = subtotal - discountAmount + standardShippingFee;
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
@@ -88,19 +87,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
 
             {/* Free Shipping Progress Meter */}
-            <div className="mt-4 p-3 bg-porcelain border border-sand-border text-xs font-sans space-y-1.5">
+            <div className="mt-4 p-3.5 bg-porcelain border border-sand-border text-xs font-sans space-y-2">
               <div className="flex justify-between items-center text-umber">
                 {isFreeShipping ? (
-                  <span className="font-medium text-olive-ink flex items-center space-x-1">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Complimentary Express Shipping Unlocked!</span>
+                  <span className="font-medium text-olive-ink flex items-center space-x-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-terracotta" />
+                    <span>Complimentary Express Delivery Unlocked!</span>
                   </span>
                 ) : (
                   <span>
-                    Add <strong className="text-umber font-semibold">${amountToFreeShipping}</strong> more for complimentary shipping
+                    Add <strong className="text-umber font-semibold">{formatPKR(amountToFreeShipping)}</strong> more for free delivery
                   </span>
                 )}
-                <span className="text-[11px] text-umber/50">{shippingProgress}%</span>
+                <span className="text-[11px] text-umber/50 font-medium">{shippingProgress}%</span>
               </div>
               <div className="w-full bg-sand-border h-1.5 rounded-full overflow-hidden">
                 <div 
@@ -142,7 +141,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <img
                     src={item.selectedColor.image || item.product.images[0]}
                     alt={item.product.name}
-                    className="w-20 h-24 object-cover bg-oat/20 border border-sand-border flex-shrink-0"
+                    className="w-20 h-24 object-cover bg-oat-stone/30 border border-sand-border flex-shrink-0"
                   />
 
                   {/* Item Details */}
@@ -170,7 +169,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       </span>
                     </div>
 
-                    {/* Quantity Controls & Price */}
+                    {/* Quantity Controls & Price in PKR */}
                     <div className="flex items-center justify-between pt-2">
                       <div className="flex items-center border border-sand-border bg-porcelain">
                         <button
@@ -193,7 +192,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       </div>
 
                       <span className="font-serif text-base text-umber font-normal">
-                        ${item.product.price * item.quantity}
+                        {formatPKR(item.product.price * item.quantity)}
                       </span>
                     </div>
                   </div>
@@ -222,46 +221,46 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   </div>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-umber text-porcelain text-xs font-sans uppercase tracking-wider hover:bg-soft-graphite transition-colors"
+                    className="px-4 py-2 bg-umber text-porcelain text-xs font-sans uppercase tracking-wider hover:bg-soft-graphite transition-colors font-medium"
                   >
                     Apply
                   </button>
                 </form>
               ) : (
-                <div className="flex items-center justify-between text-xs text-olive-ink font-sans bg-olive-ink/10 p-2 border border-olive-ink/20">
+                <div className="flex items-center justify-between text-xs text-olive-ink font-sans bg-olive-ink/10 p-2.5 border border-olive-ink/20">
                   <span>Privilege Code ATELIER10 Applied (10% Off)</span>
                   <button onClick={() => { setPromoApplied(false); setPromoDiscount(0); }} className="text-umber/60 hover:text-umber text-[11px] underline">
                     Remove
                   </button>
                 </div>
               )}
-              {promoError && <p className="text-[11px] text-clay-rose">{promoError}</p>}
+              {promoError && <p className="text-[11px] text-terracotta">{promoError}</p>}
 
-              {/* Subtotals & Calculations */}
+              {/* Subtotals & Calculations in PKR */}
               <div className="space-y-1.5 text-xs font-sans text-soft-graphite">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="text-umber font-medium">${subtotal}</span>
+                  <span className="text-umber font-medium">{formatPKR(subtotal)}</span>
                 </div>
 
                 {promoApplied && (
-                  <div className="flex justify-between text-clay-rose">
-                    <span>Privilege Discount</span>
-                    <span>-${discountAmount}</span>
+                  <div className="flex justify-between text-terracotta">
+                    <span>Privilege Discount (10%)</span>
+                    <span>-{formatPKR(discountAmount)}</span>
                   </div>
                 )}
 
                 <div className="flex justify-between">
-                  <span>Shipping</span>
+                  <span>Shipping Across Pakistan</span>
                   <span className="text-umber font-medium">
-                    {isFreeShipping ? 'Complimentary Express' : '$15 Standard'}
+                    {isFreeShipping ? 'Complimentary Express' : formatPKR(standardShippingFee)}
                   </span>
                 </div>
 
-                <div className="flex justify-between text-sm font-semibold text-umber pt-2 border-t border-sand-border">
-                  <span>Estimated Total</span>
-                  <span className="font-serif text-lg font-normal">
-                    ${finalTotal + (isFreeShipping ? 0 : 15)}
+                <div className="flex justify-between text-sm font-semibold text-umber pt-2.5 border-t border-sand-border">
+                  <span>Estimated Total (PKR)</span>
+                  <span className="font-serif text-xl font-normal">
+                    {formatPKR(finalTotal)}
                   </span>
                 </div>
               </div>
@@ -278,7 +277,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
               <div className="text-center text-[11px] text-umber/60 font-sans flex items-center justify-center space-x-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-olive-ink" />
-                <span>100-Night Guarantee · Carbon-Neutral Shipping</span>
+                <span>100-Night Guarantee · Direct Atelier Fulfillment</span>
               </div>
 
             </div>

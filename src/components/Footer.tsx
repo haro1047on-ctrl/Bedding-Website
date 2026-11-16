@@ -31,21 +31,21 @@ export const Footer: React.FC<FooterProps> = ({
               onClick={onNavigateHome}
               className="text-left focus:outline-none"
             >
-              <span className="font-serif text-3xl tracking-[0.2em] text-porcelain block">
+              <span className="font-serif text-3xl tracking-[0.22em] text-porcelain block">
                 SEREIN
               </span>
               <span className="text-[10px] tracking-[0.28em] uppercase text-oat/70 -mt-0.5 block font-sans">
-                The Quiet Atelier · Guimarães & Normandy
+                The Quiet Atelier · All Prices in PKR
               </span>
             </button>
 
             <p className="text-xs text-oat/80 leading-relaxed max-w-sm">
-              Textiles woven from certified coastal Normandy flax and long-staple organic cotton. Stone-washed in northern Portugal for lived-in comfort from the very first evening.
+              Textiles woven from certified coastal Normandy flax and long-staple organic cotton. Finished in northern Portugal with natural volcanic stones for lived-in comfort from the very first evening.
             </p>
 
             <div className="pt-2 text-xs text-oat/60 space-y-1">
               <p>Atelier Inquiries: atelier@serein-home.com</p>
-              <p>Customer Concierge: +1 (800) 412-9820</p>
+              <p>Client Concierge: +92 (300) 412-9820</p>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({
             </p>
             <ul className="space-y-2 text-oat/80">
               <li>
-                <button onClick={onOpenBuildBed} className="hover:text-white transition-colors text-clay-rose font-medium">
+                <button onClick={onOpenBuildBed} className="hover:text-white transition-colors text-terracotta-muted font-medium">
                   Build Your Bed Studio
                 </button>
               </li>
@@ -133,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="hover:text-white cursor-pointer">Complimentary Returns</span>
               </li>
               <li>
-                <span className="hover:text-white cursor-pointer">Sustainable Shipping</span>
+                <span className="hover:text-white cursor-pointer">Express Delivery Across Pakistan</span>
               </li>
               <li>
                 <span className="hover:text-white cursor-pointer">Atelier FAQs</span>
@@ -163,20 +163,20 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Bar: Copyright, Payment Icons & Legal */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-oat/60 space-y-4 md:space-y-0">
           <div>
-            <p>© 2026 SEREIN THE QUIET ATELIER. All rights reserved.</p>
+            <p>© 2026 SEREIN THE QUIET ATELIER. All prices in PKR (Rs.).</p>
           </div>
 
-          {/* Subtle Payment Badges */}
+          {/* Payment Badges */}
           <div className="flex items-center space-x-3 text-[11px] text-oat/70">
             <span>Visa</span>
             <span>·</span>
             <span>Mastercard</span>
             <span>·</span>
-            <span>American Express</span>
+            <span>Bank Transfer</span>
             <span>·</span>
-            <span>Apple Pay</span>
+            <span>Cash on Delivery</span>
             <span>·</span>
-            <span>Shop Pay</span>
+            <span>PayPak</span>
           </div>
 
           <div className="flex items-center space-x-4 text-[11px]">

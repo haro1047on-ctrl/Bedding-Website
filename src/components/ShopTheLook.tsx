@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BEDROOM_LOOKS } from '../data/mockData';
 import { Product, ColorVariant } from '../types';
-import { Sparkles, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { formatPKR } from '../utils/format';
 
 interface ShopTheLookProps {
   products: Product[];
@@ -26,14 +27,14 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-sand-border">
           <div>
-            <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-widest text-olive-ink font-sans font-medium mb-1.5">
+            <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-widest text-terracotta font-sans font-medium mb-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Interior Styling Inspiration</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-umber font-normal">
               Shop the Bedroom Suites
             </h2>
-            <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-1 max-w-lg">
+            <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-1 max-w-lg leading-relaxed">
               Explore art-directed bedroom palettes. Tap any hotspot pin to discover the coordinated elements that complete the look.
             </p>
           </div>
@@ -61,7 +62,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Main Visual with Interactive Hotspots (7 cols) */}
-          <div className="lg:col-span-7 relative aspect-[4/3] w-full overflow-hidden bg-oat/20 border border-sand-border shadow-elevated">
+          <div className="lg:col-span-7 relative aspect-[4/3] w-full overflow-hidden bg-oat-stone/30 border border-sand-border shadow-elevated">
             <img
               src={currentLook.image}
               alt={currentLook.title}
@@ -88,21 +89,21 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                     }`}
                     aria-label={`Inspect ${hotspot.label}`}
                   >
-                    <span className="w-2.5 h-2.5 rounded-full bg-olive-ink animate-ping absolute opacity-50" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-terracotta animate-ping absolute opacity-50" />
                     <span className="w-2.5 h-2.5 rounded-full bg-umber" />
                   </button>
 
                   {/* Tooltip on active */}
                   {isHotspotActive && (
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-chalk p-3 border border-sand-border shadow-elevated z-30 animate-fadeIn">
-                      <p className="font-serif text-xs text-umber font-normal">{hotspot.label}</p>
-                      <p className="text-xs font-semibold text-umber mt-0.5">${hotspot.price}</p>
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-52 bg-chalk p-3.5 border border-sand-border shadow-elevated z-30 animate-fadeIn">
+                      <p className="font-serif text-sm text-umber font-normal">{hotspot.label}</p>
+                      <p className="text-xs font-semibold text-umber mt-1">{formatPKR(hotspot.price)}</p>
                       <button
                         onClick={() => {
                           const targetProduct = products.find(p => p.id === hotspot.productId);
                           if (targetProduct) onSelectProduct(targetProduct);
                         }}
-                        className="mt-2 w-full py-1 bg-umber text-porcelain text-[10px] uppercase tracking-wider font-sans"
+                        className="mt-2.5 w-full py-1.5 bg-umber text-porcelain text-[10px] uppercase tracking-wider font-sans hover:bg-soft-graphite transition-colors"
                       >
                         View Product
                       </button>
@@ -113,7 +114,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
             })}
 
             {/* Room Identifier */}
-            <div className="absolute bottom-4 left-4 bg-chalk/90 backdrop-blur-md px-3 py-1.5 border border-sand-border text-xs font-sans text-umber">
+            <div className="absolute bottom-4 left-4 bg-chalk/90 backdrop-blur-md px-3.5 py-1.5 border border-sand-border text-xs font-sans text-umber">
               {currentLook.roomName}
             </div>
 
@@ -122,23 +123,23 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
           {/* Coordinated Products Sidebar (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-olive-ink font-sans font-medium">
+              <span className="text-[10px] uppercase tracking-widest text-terracotta font-sans font-medium">
                 Stylist Notes
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-umber font-normal mt-1">
                 {currentLook.title}
               </h3>
-              <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-soft-graphite/75 font-sans mt-2 leading-relaxed">
                 {currentLook.description}
               </p>
 
               {/* Palette dots */}
-              <div className="flex items-center space-x-2 mt-3">
+              <div className="flex items-center space-x-2 mt-3.5">
                 <span className="text-[11px] text-umber/50 font-sans">Palette:</span>
                 {currentLook.palette.map((colorHex, idx) => (
                   <span
                     key={idx}
-                    className="w-4 h-4 rounded-full border border-sand-border"
+                    className="w-4 h-4 rounded-full border border-sand-border shadow-sm"
                     style={{ backgroundColor: colorHex }}
                   />
                 ))}
@@ -160,7 +161,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                   <div
                     key={product.id}
                     onMouseEnter={() => setActiveHotspotId(product.id)}
-                    className={`p-3 border transition-all flex items-center justify-between ${
+                    className={`p-3.5 border transition-all flex items-center justify-between ${
                       isItemActive
                         ? 'bg-porcelain border-umber shadow-sm'
                         : 'bg-chalk border-sand-border hover:border-umber/30'
@@ -180,7 +181,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                           {product.name}
                         </h4>
                         <span className="text-xs font-sans text-soft-graphite/60">
-                          ${product.price} · {product.material}
+                          {formatPKR(product.price)} · {product.material}
                         </span>
                       </div>
                     </div>

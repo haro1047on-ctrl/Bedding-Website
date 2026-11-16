@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Product, BedSize, ColorVariant, CartItem } from '../types';
-import { Sparkles, Check, ShoppingBag, RotateCcw, Info, ArrowRight } from 'lucide-react';
+import { Product, BedSize, ColorVariant } from '../types';
+import { Sparkles, Check, ShoppingBag } from 'lucide-react';
+import { formatPKR } from '../utils/format';
 
 interface BuildYourBedStudioProps {
   products: Product[];
@@ -13,7 +14,6 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
   onAddBundleToCart,
 }) => {
   const [selectedSize, setSelectedSize] = useState<BedSize>('Queen');
-  const [activeStep, setActiveStep] = useState<number>(1);
   const [isSuccessFeedback, setIsSuccessFeedback] = useState(false);
 
   // Retrieve products for each step
@@ -24,7 +24,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
 
   // State for selections
   const [selectedSheetColor, setSelectedSheetColor] = useState<ColorVariant>(fittedSheetProduct.colors[0]); // Oatmeal
-  const [selectedDuvetColor, setSelectedDuvetColor] = useState<ColorVariant>(duvetProduct.colors[2] || duvetProduct.colors[0]); // Olive Leaf
+  const [selectedDuvetColor, setSelectedDuvetColor] = useState<ColorVariant>(duvetProduct.colors[3] || duvetProduct.colors[0]); // Terracotta Rust
   const [selectedPillowsColor, setSelectedPillowsColor] = useState<ColorVariant>(pillowcasesProduct.colors[3] || pillowcasesProduct.colors[0]); // Chalk White
   const [selectedThrowColor, setSelectedThrowColor] = useState<ColorVariant>(throwProduct.colors[0]); // Earthy Umber
   const [includeThrow, setIncludeThrow] = useState<boolean>(true);
@@ -64,17 +64,17 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
   const resetToDefaultPreset = (preset: 'warm' | 'cool' | 'botanical') => {
     if (preset === 'warm') {
       setSelectedSheetColor(fittedSheetProduct.colors.find(c => c.name.includes('Chalk')) || fittedSheetProduct.colors[1]);
-      setSelectedDuvetColor(duvetProduct.colors.find(c => c.name.includes('Terracotta')) || duvetProduct.colors[0]);
+      setSelectedDuvetColor(duvetProduct.colors.find(c => c.name.includes('Terracotta')) || duvetProduct.colors[3]);
       setSelectedPillowsColor(pillowcasesProduct.colors.find(c => c.name.includes('Oatmeal')) || pillowcasesProduct.colors[0]);
       setSelectedThrowColor(throwProduct.colors.find(c => c.name.includes('Umber')) || throwProduct.colors[0]);
     } else if (preset === 'cool') {
       setSelectedSheetColor(fittedSheetProduct.colors.find(c => c.name.includes('Oatmeal')) || fittedSheetProduct.colors[0]);
-      setSelectedDuvetColor(duvetProduct.colors.find(c => c.name.includes('Slate')) || duvetProduct.colors[0]);
+      setSelectedDuvetColor(duvetProduct.colors.find(c => c.name.includes('Slate')) || duvetProduct.colors[4]);
       setSelectedPillowsColor(pillowcasesProduct.colors.find(c => c.name.includes('Chalk')) || pillowcasesProduct.colors[1]);
       setSelectedThrowColor(throwProduct.colors.find(c => c.name.includes('Oatmeal')) || throwProduct.colors[1]);
     } else {
       setSelectedSheetColor(fittedSheetProduct.colors.find(c => c.name.includes('Oatmeal')) || fittedSheetProduct.colors[0]);
-      setSelectedDuvetColor(duvetProduct.colors.find(c => c.name.includes('Olive')) || duvetProduct.colors[0]);
+      setSelectedDuvetColor(duvetProduct.colors.find(c => c.name.includes('Olive')) || duvetProduct.colors[2]);
       setSelectedPillowsColor(pillowcasesProduct.colors.find(c => c.name.includes('Terracotta')) || pillowcasesProduct.colors[2]);
       setSelectedThrowColor(throwProduct.colors.find(c => c.name.includes('Umber')) || throwProduct.colors[0]);
     }
@@ -87,21 +87,21 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-sand-border">
           <div>
-            <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-widest text-olive-ink font-sans font-medium mb-1.5">
+            <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-widest text-terracotta font-sans font-medium mb-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Interactive Bed Styling Studio</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-umber font-normal">
               Build Your Bed
             </h2>
-            <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-2 max-w-xl">
-              Mix and match pure French flax and organic cotton weaves. Preview your personalized layered bedroom in real-time and save 15% on complete suites.
+            <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-2 max-w-xl leading-relaxed">
+              Mix and match pure French flax and organic cotton weaves. Preview your personalized layered bedroom in real-time and enjoy a 15% Atelier Privilege on complete suites.
             </p>
           </div>
 
           {/* Quick Presets */}
           <div className="mt-4 md:mt-0 flex items-center space-x-2">
-            <span className="text-xs text-umber/60 font-sans">Curated Presets:</span>
+            <span className="text-xs text-umber/60 font-sans">Curated Palettes:</span>
             <button
               onClick={() => resetToDefaultPreset('warm')}
               className="px-2.5 py-1 text-xs border border-sand-border bg-chalk hover:bg-oat/20 text-umber font-sans"
@@ -132,7 +132,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
             <div className="relative aspect-[4/3] w-full bg-chalk border border-sand-border p-6 shadow-subtle flex flex-col justify-end overflow-hidden">
               
               {/* Headboard / Room Backdrop */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#EAE3D6] to-[#F4F0E8] opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#EAE3D6] to-[#F4F0E8] opacity-70" />
 
               {/* Architectural Bed Representation */}
               <div className="relative w-full h-full flex flex-col justify-end pb-2">
@@ -141,7 +141,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                 <div className="w-[88%] mx-auto h-20 sm:h-28 bg-[#8B7355] border-t-2 border-r-2 border-l-2 border-[#5C4835] rounded-t-sm shadow-md relative overflow-hidden">
                   <div className="absolute inset-0 bg-black/10" />
                   <div className="text-[10px] text-white/50 text-center pt-2 uppercase tracking-widest font-sans">
-                    Guimarães Solid Oak Bedstead
+                    Natural Solid Oak Bedstead
                   </div>
                 </div>
 
@@ -191,8 +191,8 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                       className="w-full h-12 sm:h-16 rounded-b-sm border-t border-black/20 shadow-md transition-colors duration-500 flex items-center justify-center mt-auto"
                       style={{ backgroundColor: selectedThrowColor.hex }}
                     >
-                      <span className="text-[10px] text-white/80 uppercase tracking-widest font-sans font-medium">
-                        Waffle Throw: {selectedThrowColor.name}
+                      <span className="text-[10px] text-white/90 uppercase tracking-widest font-sans font-medium">
+                        Waffle Accent: {selectedThrowColor.name}
                       </span>
                     </div>
                   )}
@@ -271,10 +271,10 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     Fitted Base Sheet
                   </h3>
                 </div>
-                <span className="font-serif text-base text-umber">${sheetPrice}</span>
+                <span className="font-serif text-base text-umber">{formatPKR(sheetPrice)}</span>
               </div>
               <p className="text-xs text-soft-graphite/70 font-sans">
-                170 GSM Normandy linen with 17" deep mattress pocket and 360° elastic.
+                170 GSM Normandy linen with 17" deep mattress pocket and 360° continuous elastic.
               </p>
               <div className="flex items-center space-x-2 pt-1">
                 {fittedSheetProduct.colors.map((color) => (
@@ -310,7 +310,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     Normandy Flax Duvet Cover
                   </h3>
                 </div>
-                <span className="font-serif text-base text-umber">${duvetPrice}</span>
+                <span className="font-serif text-base text-umber">{formatPKR(duvetPrice)}</span>
               </div>
               <p className="text-xs text-soft-graphite/70 font-sans">
                 Pre-washed stone finish, natural corozo-nut buttons, and internal corner ties.
@@ -349,7 +349,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     French Flax Pillowcase Pair
                   </h3>
                 </div>
-                <span className="font-serif text-base text-umber">${pillowsPrice}</span>
+                <span className="font-serif text-base text-umber">{formatPKR(pillowsPrice)}</span>
               </div>
               <p className="text-xs text-soft-graphite/70 font-sans">
                 Set of 2 pillowcases with 8" interior envelope closures and tailored French seams.
@@ -399,7 +399,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     </label>
                   </div>
                 </div>
-                <span className="font-serif text-base text-umber">${throwProduct.price}</span>
+                <span className="font-serif text-base text-umber">{formatPKR(throwProduct.price)}</span>
               </div>
 
               {includeThrow && (
@@ -431,15 +431,15 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
             <div className="bg-umber text-porcelain p-6 shadow-elevated space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-oat/20 text-xs font-sans">
                 <span className="text-oat">Individual Items Total:</span>
-                <span className="line-through text-oat/70">${rawTotal}</span>
+                <span className="line-through text-oat/70">{formatPKR(rawTotal)}</span>
               </div>
 
-              <div className="flex items-center justify-between text-xs font-sans text-clay-rose">
+              <div className="flex items-center justify-between text-xs font-sans text-terracotta-muted">
                 <span className="flex items-center space-x-1 font-medium">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Atelier Complete Suite Discount (15% Off):</span>
                 </span>
-                <span>-${discountAmount}</span>
+                <span>-{formatPKR(discountAmount)}</span>
               </div>
 
               <div className="flex items-baseline justify-between pt-1">
@@ -453,7 +453,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                 </div>
                 <div className="text-right">
                   <span className="font-serif text-3xl text-porcelain font-normal">
-                    ${finalBundlePrice}
+                    {formatPKR(finalBundlePrice)}
                   </span>
                 </div>
               </div>
@@ -482,7 +482,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
               </button>
 
               <p className="text-[11px] text-center text-oat/70 font-sans">
-                Includes complimentary express shipping & 100-Night Sleep Trial.
+                Includes complimentary nationwide express delivery & 100-Night Sleep Trial.
               </p>
             </div>
 

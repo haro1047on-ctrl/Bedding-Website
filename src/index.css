@@ -9,8 +9,10 @@
     --color-oat: #D8CBB8;
     --color-umber: #49372F;
     --color-olive-ink: #596451;
+    --color-terracotta: #B74121;
     --color-clay-rose: #B77F70;
     --color-dusk-blue: #71818A;
+    --color-charcoal: #222222;
     --color-soft-graphite: #282725;
   }
 
@@ -18,9 +20,11 @@
     scroll-behavior: smooth;
     background-color: #F4F0E8;
     color: #282725;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Custom scrollbar */
+  /* Custom tactile scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -30,19 +34,18 @@
   }
   ::-webkit-scrollbar-thumb {
     background: #D8CBB8;
-    border-radius: 3px;
+    border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #49372F;
   }
 
-  /* Accessible focus indicators */
+  /* Focus indicator */
   :focus-visible {
     outline: 2px solid #596451;
     outline-offset: 2px;
   }
 
-  /* Prevent text size adjustment on mobile orientation change */
   body {
     -webkit-text-size-adjust: 100%;
     margin: 0;
@@ -57,6 +60,29 @@
   .text-pretty {
     text-wrap: pretty;
   }
+
+  /* Editorial image reveals */
+  .image-reveal {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease-out;
+  }
+  .image-reveal:hover {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Reduced motion preference */

@@ -4,26 +4,26 @@ export const PRODUCTS: Product[] = [
   {
     id: 'normandy-linen-duvet',
     name: 'Normandy Washed Linen Duvet Cover',
-    subtitle: '170 GSM 100% French flax, garment stone-washed for lived-in drape',
+    subtitle: '170 GSM pure Normandy flax, pumice-washed for immediate lived-in drape',
     category: 'Duvet Covers',
     material: 'French Flax Linen',
-    price: 245,
+    price: 28500,
     colors: [
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Terracotta Rose', hex: '#B77F70', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Earthy Umber', hex: '#49372F', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Earthy Umber', hex: '#49372F', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Full', 'Queen', 'King', 'Cal King'],
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=85'
     ],
-    description: 'Woven exclusively from certified long-strand French flax grown in the coastal valleys of Normandy. Each cover undergoes a gentle volcanic pumice wash in Portugal, yielding an irresistibly soft, relaxed texture that breathes effortlessly in summer and insulates through winter nights.',
+    description: 'Woven exclusively from certified long-strand French flax grown along the coastal valleys of Normandy. Each cover undergoes a gentle volcanic stone wash in northern Portugal, yielding a soft, relaxed texture that breathes effortlessly in hot climates and insulates through winter nights.',
     weaveDetails: 'Plain weave, 170 GSM medium-weight linen with interior corner ties and hidden natural corozo-nut button closure.',
     threadCountOrWeight: '170 GSM French Flax',
     includes: ['1 Duvet cover with hidden button closure & 4 interior corner ties', 'Matching reusable linen storage pouch'],
@@ -51,24 +51,24 @@ export const PRODUCTS: Product[] = [
     subtitle: '300-thread count matte finish long-staple cotton for cool sleepers',
     category: 'Sheets & Sets',
     material: 'Organic Cotton Percale',
-    price: 185,
+    price: 21500,
     colors: [
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Twin', 'Full', 'Queen', 'King', 'Cal King'],
     images: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85'
     ],
     description: 'The definitive cool, lightweight sheet with the crisp handfeel of high-end boutique hotel linen. Woven in a classic one-over, one-under percale weave using 100% GOTS-certified organic long-staple cotton. Naturally breathable and matte, designed for those who sleep warm.',
-    weaveDetails: 'Traditional 1-over-1 percale weave, 300 single-ply thread count. Deep 16" mattress pocket with continuous 360-degree elastic.',
+    weaveDetails: 'Traditional 1-over-1 percale weave, 300 single-ply thread count. Deep 17" mattress pocket with continuous 360-degree elastic.',
     threadCountOrWeight: '300 TC Single-Ply Organic Cotton',
     includes: [
-      '1 Fitted Sheet (with 16" deep pocket & directional labels)',
+      '1 Fitted Sheet (with 17" deep pocket & directional labels)',
       '1 Flat Sheet with 4" tailored hem',
       '2 Pillowcases with deep envelope enclosure'
     ],
@@ -78,11 +78,11 @@ export const PRODUCTS: Product[] = [
       'Cool iron if desired for that crisp hotel aesthetic'
     ],
     dimensions: {
-      Twin: 'Fitted: 39" x 75" x 16" | Flat: 66" x 96"',
-      Full: 'Fitted: 54" x 75" x 16" | Flat: 81" x 96"',
-      Queen: 'Fitted: 60" x 80" x 16" | Flat: 92" x 104"',
-      King: 'Fitted: 76" x 80" x 16" | Flat: 108" x 104"',
-      'Cal King': 'Fitted: 72" x 84" x 16" | Flat: 108" x 108"'
+      Twin: 'Fitted: 39" x 75" x 17" | Flat: 66" x 96"',
+      Full: 'Fitted: 54" x 75" x 17" | Flat: 81" x 96"',
+      Queen: 'Fitted: 60" x 80" x 17" | Flat: 92" x 104"',
+      King: 'Fitted: 76" x 80" x 17" | Flat: 108" x 104"',
+      'Cal King': 'Fitted: 72" x 84" x 17" | Flat: 108" x 108"'
     },
     rating: 4.8,
     reviewsCount: 98,
@@ -95,20 +95,20 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Air-spun four-layer muslin with pillowy loft and relaxed crinkle',
     category: 'Quilts & Comforters',
     material: 'Cloud Cotton Gauze',
-    price: 220,
+    price: 24000,
     colors: [
-      { name: 'Terracotta Rose', hex: '#B77F70', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Full', 'Queen', 'King'],
     images: [
-      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85'
     ],
-    description: 'Four delicate layers of breathable Turkish organic cotton woven together on specialized jacquard looms. Traps soft pockets of air for warmth without weight. Draped at the foot of your bed or pulled up on warm summer evenings as an effortless standalone layer.',
+    description: 'Four delicate layers of breathable organic cotton woven together on specialized jacquard looms. Traps soft pockets of air for warmth without weight. Draped at the foot of your bed or pulled up on warm summer evenings as an effortless standalone layer.',
     weaveDetails: '4-layer woven gauze muslin with bound edges and textured waffle puckering.',
     threadCountOrWeight: '320 GSM 4-Ply Gauze',
     includes: ['1 Layered Gauze Bedspread / Coverlet'],
@@ -135,17 +135,17 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Extra-deep 17" pocket with reinforced corners and French seams',
     category: 'Sheets & Sets',
     material: 'French Flax Linen',
-    price: 140,
+    price: 14500,
     colors: [
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Terracotta Rose', hex: '#B77F70', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Twin', 'Full', 'Queen', 'King', 'Cal King'],
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85'
     ],
     description: 'The foundation of restful sleep. Tailored with generous 17" mattress depth and reinforced elastic around the entire perimeter to stay taut and secure throughout the night without slipping or bunching.',
     weaveDetails: '170 GSM pure European flax with heavy-duty enclosed 360-degree elastic band.',
@@ -174,18 +174,18 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Set of two with deep inside envelope closures and tailored borders',
     category: 'Pillowcases',
     material: 'French Flax Linen',
-    price: 68,
+    price: 7200,
     colors: [
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Terracotta Rose', hex: '#B77F70', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Queen', 'King'],
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=85'
     ],
     description: 'Rest your head against natural, hypoallergenic flax fibers that maintain a soothing, temperature-regulated microclimate. Designed with an interior back envelope closure that prevents the pillow insert from ever peeking out.',
     weaveDetails: 'French seam construction with 8" deep envelope back flap.',
@@ -210,16 +210,16 @@ export const PRODUCTS: Product[] = [
     subtitle: '70% European linen, 30% soft merino wool with fringed eyelash ends',
     category: 'Blankets & Throws',
     material: 'Waffle Wool-Linen',
-    price: 165,
+    price: 18500,
     colors: [
-      { name: 'Earthy Umber', hex: '#49372F', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Earthy Umber', hex: '#49372F', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Queen', 'King'],
     images: [
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85'
     ],
     description: 'An architectural textural layer that balances the cooling structure of heavy flax with the buttery softness of non-mulesed merino wool. Woven on heritage looms in Guimarães, Portugal with delicate eyelash fringe hems.',
     weaveDetails: 'Deep 3D honeycomb waffle weave with 1.5" raw-feathered eyelash fringe.',
@@ -244,18 +244,18 @@ export const PRODUCTS: Product[] = [
     subtitle: '400-thread count lustrous long-staple Egyptian cotton with subtle sheen',
     category: 'Duvet Covers',
     material: 'Sateen Luxe',
-    price: 230,
+    price: 26000,
     colors: [
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Full', 'Queen', 'King', 'Cal King'],
     images: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85'
     ],
-    description: 'For those who prefer a silky glide against their skin. Sateen weaves three threads over and one thread under, exposing more yarn surface to create a luminous, whisper-soft drape that feels like warm silk on winter nights.',
+    description: 'For those who prefer a silky glide against their skin. Sateen weaves three threads over and one thread under, exposing more yarn surface to create a luminous, whisper-soft drape that feels like warm silk on cooler evenings.',
     weaveDetails: '4-over-1 satin weave, 400 single-ply yarn count with internal corner ties.',
     threadCountOrWeight: '400 TC Egyptian Cotton',
     includes: ['1 Sateen Duvet Cover with French button placket'],
@@ -277,16 +277,16 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Hand-guided box stitch with 100% recycled cotton fill',
     category: 'Quilts & Comforters',
     material: 'French Flax Linen',
-    price: 275,
+    price: 31500,
     colors: [
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85' }
+      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
+      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' }
     ],
     sizes: ['Queen', 'King'],
     images: [
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85'
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85'
     ],
     description: 'A substantial, heritage-inspired heirloom quilt. Pure washed linen on both faces encasing a breathable recycled cotton batting. The 4-inch box quilting prevents cold spots while giving the bed a grounded, architectural profile.',
     weaveDetails: 'Box-stitched linen with 1" self-fabric binding on all four sides.',
@@ -311,27 +311,27 @@ export const BEDROOM_LOOKS: BedroomLook[] = [
   {
     id: 'look-morning-terracotta',
     title: 'The Sunkissed Atelier Look',
-    roomName: 'Suite No. 04 — Warm Light & Earthy Drapes',
-    description: 'An evocative dialogue between washed terracotta linen, chalk white percale underpinnings, and deep umber accents. Designed to capture early morning sunbeams.',
+    roomName: 'Suite No. 04 — Mediterranean Arches & Warm Drapes',
+    description: 'An evocative dialogue between washed terracotta linen, chalk white percale underpinnings, and deep umber accents. Styled in an arched sunlit courtyard bedroom.',
     image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1600&q=85',
-    palette: ['#B77F70', '#FBF9F5', '#49372F', '#D8CBB8'],
+    palette: ['#B74121', '#FBF9F5', '#49372F', '#D8CBB8'],
     hotspots: [
-      { productId: 'normandy-linen-duvet', label: 'Linen Duvet in Terracotta Rose', price: 245, x: 52, y: 65 },
-      { productId: 'percale-core-sheet-set', label: 'Crisp Percale Sheets in Chalk', price: 185, x: 38, y: 48 },
-      { productId: 'waffle-wool-linen-throw', label: 'Waffle Throw in Earthy Umber', price: 165, x: 68, y: 78 }
+      { productId: 'normandy-linen-duvet', label: 'Linen Duvet in Terracotta Rust', price: 28500, x: 52, y: 65 },
+      { productId: 'percale-core-sheet-set', label: 'Crisp Percale Sheets in Chalk', price: 21500, x: 38, y: 48 },
+      { productId: 'waffle-wool-linen-throw', label: 'Waffle Throw in Earthy Umber', price: 18500, x: 68, y: 78 }
     ]
   },
   {
     id: 'look-coastal-slate',
     title: 'The High-Tide Slate Bedroom',
-    roomName: 'Suite No. 02 — Fog, Cedar & Stone',
+    roomName: 'Suite No. 02 — Fog, Cedar & Stone Weaves',
     description: 'Grounded slate blue paired with pure raw oatmeal flax and natural oak textures. Crisp, quiet, and deeply restorative for deep sleepers.',
     image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=85',
     palette: ['#71818A', '#D8CBB8', '#FBF9F5', '#596451'],
     hotspots: [
-      { productId: 'normandy-linen-duvet', label: 'Normandy Duvet in Dusk Slate', price: 245, x: 50, y: 62 },
-      { productId: 'normandy-linen-fitted-sheet', label: 'Fitted Linen in Oatmeal', price: 140, x: 34, y: 55 },
-      { productId: 'heritage-linen-pillowcases', label: 'Flax Pillowcases in Olive Leaf', price: 68, x: 62, y: 42 }
+      { productId: 'normandy-linen-duvet', label: 'Normandy Duvet in Dusk Slate', price: 28500, x: 50, y: 62 },
+      { productId: 'normandy-linen-fitted-sheet', label: 'Fitted Linen in Oatmeal', price: 14500, x: 34, y: 55 },
+      { productId: 'heritage-linen-pillowcases', label: 'Flax Pillowcases in Olive Leaf', price: 7200, x: 62, y: 42 }
     ]
   },
   {
@@ -342,9 +342,9 @@ export const BEDROOM_LOOKS: BedroomLook[] = [
     image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1600&q=85',
     palette: ['#596451', '#FBF9F5', '#D8CBB8', '#49372F'],
     hotspots: [
-      { productId: 'normandy-linen-duvet', label: 'Linen Duvet in Olive Leaf', price: 245, x: 45, y: 64 },
-      { productId: 'cloud-gauze-coverlet', label: 'Cloud Gauze in Oatmeal', price: 220, x: 60, y: 76 },
-      { productId: 'heritage-linen-pillowcases', label: 'Pillowcase Pair in Chalk', price: 68, x: 30, y: 44 }
+      { productId: 'normandy-linen-duvet', label: 'Linen Duvet in Olive Leaf', price: 28500, x: 45, y: 64 },
+      { productId: 'cloud-gauze-coverlet', label: 'Cloud Gauze in Oatmeal', price: 24000, x: 60, y: 76 },
+      { productId: 'heritage-linen-pillowcases', label: 'Pillowcase Pair in Chalk', price: 7200, x: 30, y: 44 }
     ]
   }
 ];
@@ -352,25 +352,25 @@ export const BEDROOM_LOOKS: BedroomLook[] = [
 export const REVIEWS: Review[] = [
   {
     id: 'rev-1',
-    author: 'Clara Vance',
-    location: 'Copenhagen, Denmark',
+    author: 'Ayesha Raza',
+    location: 'Lahore, Pakistan',
     verified: true,
     rating: 5,
-    title: 'Linen that truly ruined all other bedding for me',
-    text: 'I was hesitant to spend this much on bedding, but after one wash and sleep, the difference is startling. It has that substantial, heavy drape yet feels cool against bare skin. The Oatmeal shade has such depth—not flat beige, but woven with subtle warm flecks.',
+    title: 'Linen that truly transformed our master bedroom',
+    text: 'I was hesitant to invest in pure imported linen, but after one wash and sleep, the difference is remarkable. It has that substantial, heavy drape yet remains cool during humid nights. The Oatmeal shade has such depth—woven with subtle warm flecks.',
     productName: 'Normandy Washed Linen Duvet Cover',
     colorPurchased: 'Oatmeal Natural',
-    date: '3 weeks ago',
+    date: '2 weeks ago',
     image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 'rev-2',
-    author: 'Julian Thorne',
-    location: 'Melbourne, Australia',
+    author: 'Zainab Qasim',
+    location: 'Islamabad, Pakistan',
     verified: true,
     rating: 5,
     title: 'Like staying in an understated boutique hotel every single night',
-    text: 'The crispness of the organic percale is extraordinary. If you sleep hot like I do, you will never go back to synthetic blends or limp sateen. It stays crisp, cool, and structured throughout the night without making loud crinkly noises.',
+    text: 'The crispness of the organic percale is extraordinary. If you sleep warm, you will never go back to synthetic blends or limp microfiber. It stays crisp, cool, and structured throughout the night without making loud crinkly noises.',
     productName: 'Crisp Organic Cotton Percale Sheet Set',
     colorPurchased: 'Chalk White',
     date: '1 month ago',
@@ -378,14 +378,14 @@ export const REVIEWS: Review[] = [
   },
   {
     id: 'rev-3',
-    author: 'Eleni Rostova',
-    location: 'Paris, France',
+    author: 'Hamza Farooq',
+    location: 'Karachi, Pakistan',
     verified: true,
     rating: 5,
     title: 'Terracotta tone is breathtaking in evening lamp light',
-    text: 'The color is subtle and earthy, like Tuscan stucco or dried roses. The 4-ply gauze coverlet adds the most wonderful tactile ripple at the end of the bed. Beautiful craftsmanship with very neat seam bindings.',
+    text: 'The color is subtle and earthy, like Mediterranean terracotta or dried roses. The 4-ply gauze coverlet adds the most wonderful tactile ripple at the end of the bed. Beautiful craftsmanship with very neat seam bindings.',
     productName: '4-Ply Cloud Cotton Gauze Coverlet',
-    colorPurchased: 'Terracotta Rose',
+    colorPurchased: 'Terracotta Rust',
     date: '2 months ago',
     image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=400&q=80'
   }
@@ -445,7 +445,7 @@ export const MATERIAL_SPECS = [
     name: 'French Flax Linen',
     provenance: 'Normandy, France',
     weight: '170 GSM',
-    weave: 'Plain Weave, Garment Stone-washed',
+    weave: 'Plain Weave, Volcanic Stone-washed',
     feel: 'Supple, textured, lived-in, breathable',
     tempControl: 'Thermal regulating (cool in summer, insulating in winter)',
     durability: 'Extreme (gets softer with every wash for decades)',

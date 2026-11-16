@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Product, ColorVariant } from '../types';
-import { Search, X, ArrowRight, Tag } from 'lucide-react';
+import { Search, X, ArrowRight } from 'lucide-react';
+import { formatPKR } from '../utils/format';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -32,7 +33,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   const quickSearches = [
     'Normandy Linen',
     'Percale Sheets',
-    'Terracotta Rose',
+    'Terracotta Rust',
     'Olive Leaf',
     '4-Ply Cloud Gauze',
     'Waffle Throw',
@@ -157,7 +158,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
                       <div className="flex items-center space-x-3">
                         <span className="font-serif text-sm text-umber font-normal">
-                          ${product.price}
+                          {formatPKR(product.price)}
                         </span>
                         <ArrowRight className="w-4 h-4 text-oat group-hover:text-olive-ink group-hover:translate-x-1 transition-all" />
                       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Search, Menu, X, ArrowRight, Heart } from 'lucide-react';
+import { ShoppingBag, Search, Menu, X, ArrowRight } from 'lucide-react';
 import { BeddingCategory } from '../types';
 
 interface HeaderProps {
@@ -28,7 +28,6 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
-  const [currency, setCurrency] = useState<'USD' | 'EUR' | 'GBP'>('USD');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,28 +50,18 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Announcement Bar */}
       <div className="bg-umber text-porcelain text-xs py-2 px-4 text-center tracking-wider font-sans border-b border-umber-dark/20 flex items-center justify-between">
         <div className="hidden md:flex items-center space-x-3 text-[11px] text-oat">
-          <span>Guimarães Atelier Crafted</span>
+          <span>Portuguese Loomed</span>
           <span className="inline-block w-1 h-1 rounded-full bg-oat/50"></span>
           <span>100-Night Sleep Trial</span>
         </div>
         
         <div className="mx-auto flex items-center space-x-2 text-[11px] sm:text-xs">
-          <span className="font-medium tracking-wide">Complimentary express shipping on orders over $150</span>
-          <span className="hidden sm:inline text-oat/70">· Worldwide sustainable dispatch</span>
+          <span className="font-medium tracking-wide">Complimentary express delivery on orders over Rs. 15,000</span>
+          <span className="hidden sm:inline text-oat/70">· All orders in PKR</span>
         </div>
 
-        <div className="hidden md:flex items-center space-x-2 text-[11px]">
-          <label htmlFor="currency-select" className="sr-only">Currency</label>
-          <select 
-            id="currency-select"
-            value={currency} 
-            onChange={(e) => setCurrency(e.target.value as any)}
-            className="bg-transparent text-oat text-[11px] border-none focus:outline-none cursor-pointer hover:text-white"
-          >
-            <option value="USD" className="bg-umber text-porcelain">USD ($)</option>
-            <option value="EUR" className="bg-umber text-porcelain">EUR (€)</option>
-            <option value="GBP" className="bg-umber text-porcelain">GBP (£)</option>
-          </select>
+        <div className="hidden md:flex items-center space-x-2 text-[11px] text-oat">
+          <span className="font-medium">PKR (Rs.)</span>
         </div>
       </div>
 
@@ -80,8 +69,8 @@ export const Header: React.FC<HeaderProps> = ({
       <nav 
         className={`w-full transition-all duration-300 border-b ${
           isScrolled 
-            ? 'bg-porcelain/95 backdrop-blur-md border-sand-border py-3 shadow-subtle' 
-            : 'bg-porcelain/90 backdrop-blur-sm border-sand-border/60 py-4 sm:py-5'
+            ? 'bg-porcelain/95 backdrop-blur-md border-sand-border py-3.5 shadow-subtle' 
+            : 'bg-porcelain/90 backdrop-blur-sm border-sand-border/70 py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <Menu className="w-5 h-5 stroke-[1.5]" />
               </button>
 
-              <div className="hidden lg:flex items-center space-x-8 text-[13px] tracking-wide uppercase text-umber/90 font-medium">
+              <div className="hidden lg:flex items-center space-x-8 text-[12px] tracking-widest uppercase text-umber/90 font-medium">
                 {/* Shop Bedding Dropdown */}
                 <div 
                   className="relative group py-2"
@@ -118,18 +107,18 @@ export const Header: React.FC<HeaderProps> = ({
 
                   {/* Mega Menu Dropdown */}
                   {megaMenuOpen && (
-                    <div className="absolute top-full left-0 w-[580px] bg-chalk border border-sand-border shadow-elevated p-6 grid grid-cols-2 gap-6 animate-fadeIn transition-all">
+                    <div className="absolute top-full left-0 w-[560px] bg-chalk border border-sand-border shadow-elevated p-6 grid grid-cols-2 gap-6 animate-fadeIn transition-all">
                       <div>
-                        <p className="text-[11px] font-sans text-umber/50 uppercase tracking-widest pb-2 mb-3 border-b border-sand-border">
+                        <p className="text-[10px] font-sans text-umber/50 uppercase tracking-widest pb-2 mb-3 border-b border-sand-border">
                           Shop by Category
                         </p>
                         <ul className="space-y-2.5">
                           <li>
                             <button
                               onClick={() => { onSelectCategory('all'); setMegaMenuOpen(false); }}
-                              className="text-sm font-sans text-umber hover:text-olive-ink flex items-center justify-between w-full group/item text-left"
+                              className="text-xs font-sans text-umber hover:text-olive-ink flex items-center justify-between w-full group/item text-left uppercase tracking-wider font-semibold"
                             >
-                              <span>View All Bedding</span>
+                              <span>View All Collection</span>
                               <ArrowRight className="w-3.5 h-3.5 text-oat opacity-0 group-hover/item:opacity-100 group-hover/item:text-olive-ink transition-all" />
                             </button>
                           </li>
@@ -150,20 +139,20 @@ export const Header: React.FC<HeaderProps> = ({
                       {/* Featured Atelier Editorial Card */}
                       <div className="bg-porcelain p-4 border border-sand-border flex flex-col justify-between">
                         <div>
-                          <span className="text-[10px] tracking-widest uppercase font-medium text-olive-ink">
-                            Signature Collection
+                          <span className="text-[10px] tracking-widest uppercase font-medium text-terracotta">
+                            Featured Suite
                           </span>
                           <h4 className="font-serif text-lg text-umber mt-1 font-normal">
                             Washed Normandy Flax
                           </h4>
                           <p className="text-xs text-umber/70 mt-1 leading-relaxed">
-                            Pure 170 GSM French flax loomed for weightless warmth and tactile drape.
+                            170 GSM French flax loomed for weightless warmth, tactile drape, and natural breathability.
                           </p>
                         </div>
                         <img 
                           src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=400&q=80" 
                           alt="Normandy Flax Bedding"
-                          className="w-full h-24 object-cover mt-3 rounded-none"
+                          className="w-full h-24 object-cover mt-3 border border-sand-border"
                         />
                       </div>
                     </div>
@@ -178,7 +167,7 @@ export const Header: React.FC<HeaderProps> = ({
                   }`}
                 >
                   <span>Build Your Bed</span>
-                  <span className="ml-1.5 px-1.5 py-0.5 text-[9px] bg-clay-rose/15 text-clay-rose tracking-wider uppercase font-sans">
+                  <span className="ml-1.5 px-1.5 py-0.5 text-[9px] bg-terracotta/10 text-terracotta tracking-wider uppercase font-sans font-medium">
                     Studio
                   </span>
                 </button>
@@ -208,16 +197,16 @@ export const Header: React.FC<HeaderProps> = ({
                 className="group inline-flex flex-col items-center focus:outline-none"
                 aria-label="SEREIN Homepage"
               >
-                <span className="font-serif text-2xl sm:text-3xl tracking-[0.22em] text-umber font-normal group-hover:text-soft-graphite transition-colors">
+                <span className="font-serif text-2xl sm:text-3xl tracking-[0.24em] text-umber font-normal group-hover:text-soft-graphite transition-colors">
                   SEREIN
                 </span>
-                <span className="text-[9px] tracking-[0.28em] uppercase text-umber/60 -mt-0.5 font-sans">
+                <span className="text-[9px] tracking-[0.3em] uppercase text-umber/60 -mt-0.5 font-sans font-medium">
                   The Quiet Atelier
                 </span>
               </button>
             </div>
 
-            {/* Right: Search, Account, Cart */}
+            {/* Right: Search & Cart */}
             <div className="flex items-center space-x-4 sm:space-x-5">
               <button
                 type="button"
@@ -254,13 +243,11 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          {/* Backdrop */}
           <div 
             className="fixed inset-0 bg-umber/40 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          {/* Drawer content */}
           <div className="fixed inset-y-0 left-0 w-full max-w-sm bg-porcelain p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-sand-border">
@@ -284,7 +271,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                     onOpenSearch();
                   }}
-                  className="w-full flex items-center justify-between px-3 py-2.5 bg-chalk border border-sand-border text-xs text-umber/70"
+                  className="w-full flex items-center justify-between px-3.5 py-2.5 bg-chalk border border-sand-border text-xs text-umber/70"
                 >
                   <span>Search linen, duvet covers, sizes...</span>
                   <Search className="w-4 h-4 text-umber/50" />
@@ -332,7 +319,7 @@ export const Header: React.FC<HeaderProps> = ({
                   >
                     <span className="flex items-center space-x-2">
                       <span>Build Your Bed Customizer</span>
-                      <span className="px-1.5 py-0.5 text-[9px] bg-clay-rose/15 text-clay-rose uppercase">15% Off</span>
+                      <span className="px-1.5 py-0.5 text-[9px] bg-terracotta/10 text-terracotta uppercase">15% Off</span>
                     </span>
                     <ArrowRight className="w-4 h-4 text-oat" />
                   </button>
@@ -362,8 +349,9 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Mobile Footer Info */}
             <div className="pt-6 border-t border-sand-border text-xs text-umber/60 space-y-2">
-              <p>Customer Atelier: care@serein-atelier.com</p>
-              <p>100-Night Sleep Trial · Free Returns</p>
+              <p className="font-medium text-umber">All prices in PKR (Rs.)</p>
+              <p>Complimentary delivery over Rs. 15,000</p>
+              <p>Concierge: care@serein-atelier.com</p>
             </div>
           </div>
         </div>

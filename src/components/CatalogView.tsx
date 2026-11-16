@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Product, BeddingCategory, BeddingMaterial, BedSize, ColorVariant } from '../types';
 import { ProductCard } from './ProductCard';
-import { SlidersHorizontal, X, ChevronDown, Check } from 'lucide-react';
+import { SlidersHorizontal, X } from 'lucide-react';
 
 interface CatalogViewProps {
   products: Product[];
@@ -46,7 +46,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
     { label: 'Oatmeal Natural', hex: '#D8CBB8' },
     { label: 'Chalk White', hex: '#FBF9F5' },
     { label: 'Olive Leaf', hex: '#596451' },
-    { label: 'Terracotta Rose', hex: '#B77F70' },
+    { label: 'Terracotta Rust', hex: '#B74121' },
     { label: 'Dusk Slate', hex: '#71818A' },
     { label: 'Earthy Umber', hex: '#49372F' },
   ];
@@ -88,7 +88,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
     <div className="w-full bg-porcelain min-h-screen pb-20">
       
       {/* Catalog Header Banner */}
-      <div className="border-b border-sand-border bg-chalk py-10 sm:py-14">
+      <div className="border-b border-sand-border bg-chalk py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Breadcrumbs */}
@@ -101,7 +101,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             {selectedCategory !== 'all' && (
               <>
                 <span>/</span>
-                <span className="text-olive-ink font-medium">{selectedCategory}</span>
+                <span className="text-terracotta font-medium">{selectedCategory}</span>
               </>
             )}
           </nav>
@@ -111,7 +111,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           </h1>
 
           <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-2 max-w-xl leading-relaxed">
-            Pure coastal Normandy flax, GOTS organic percale, and cloud cotton gauze. Tailored in Portugal for everyday comfort and lasting tactile beauty.
+            Pure coastal Normandy flax, GOTS organic percale, and cloud cotton gauze. Tailored on heritage looms for everyday comfort and lasting tactile beauty. All prices in PKR (Rs.).
           </p>
 
         </div>
@@ -149,8 +149,8 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               className="bg-chalk border border-sand-border text-xs text-umber py-1.5 px-3 focus:outline-none focus:border-umber cursor-pointer"
             >
               <option value="featured">Featured Atelier Pieces</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
+              <option value="price-low">Price: Low to High (PKR)</option>
+              <option value="price-high">Price: High to Low (PKR)</option>
               <option value="rating">Highest Rated</option>
             </select>
           </div>
@@ -165,7 +165,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             {selectedCategory !== 'all' && (
               <span className="inline-flex items-center space-x-1 px-2.5 py-1 bg-chalk border border-sand-border text-xs text-umber">
                 <span>{selectedCategory}</span>
-                <button onClick={() => setSelectedCategory('all')} className="hover:text-clay-rose">
+                <button onClick={() => setSelectedCategory('all')} className="hover:text-terracotta">
                   <X className="w-3 h-3" />
                 </button>
               </span>
@@ -174,7 +174,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             {selectedMaterial !== 'all' && (
               <span className="inline-flex items-center space-x-1 px-2.5 py-1 bg-chalk border border-sand-border text-xs text-umber">
                 <span>{selectedMaterial}</span>
-                <button onClick={() => setSelectedMaterial('all')} className="hover:text-clay-rose">
+                <button onClick={() => setSelectedMaterial('all')} className="hover:text-terracotta">
                   <X className="w-3 h-3" />
                 </button>
               </span>
@@ -183,7 +183,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             {selectedColor !== 'all' && (
               <span className="inline-flex items-center space-x-1 px-2.5 py-1 bg-chalk border border-sand-border text-xs text-umber">
                 <span>{selectedColor}</span>
-                <button onClick={() => setSelectedColor('all')} className="hover:text-clay-rose">
+                <button onClick={() => setSelectedColor('all')} className="hover:text-terracotta">
                   <X className="w-3 h-3" />
                 </button>
               </span>
@@ -192,7 +192,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             {selectedSize !== 'all' && (
               <span className="inline-flex items-center space-x-1 px-2.5 py-1 bg-chalk border border-sand-border text-xs text-umber">
                 <span>{selectedSize}</span>
-                <button onClick={() => setSelectedSize('all')} className="hover:text-clay-rose">
+                <button onClick={() => setSelectedSize('all')} className="hover:text-terracotta">
                   <X className="w-3 h-3" />
                 </button>
               </span>
@@ -200,7 +200,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
 
             <button
               onClick={clearAllFilters}
-              className="text-xs text-clay-rose underline ml-2 font-sans hover:text-umber"
+              className="text-xs text-terracotta underline ml-2 font-sans hover:text-umber"
             >
               Clear all
             </button>

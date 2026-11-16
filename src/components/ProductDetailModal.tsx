@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Product, BedSize, ColorVariant } from '../types';
-import { X, Star, ShieldCheck, Truck, RotateCcw, Plus, Minus, ChevronDown, Check } from 'lucide-react';
+import { X, Star, ShieldCheck, Plus, Minus, ChevronDown, Check } from 'lucide-react';
+import { formatPKR } from '../utils/format';
 
 interface ProductDetailModalProps {
   product: Product;
@@ -70,7 +71,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <div className="lg:col-span-7 space-y-4">
             
             {/* Main Stage Image */}
-            <div className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-oat/20 border border-sand-border">
+            <div className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-oat-stone/30 border border-sand-border shadow-subtle">
               <img
                 src={displayImages[selectedImageIndex] || displayImages[0]}
                 alt={`${product.name} - ${selectedColor.name}`}
@@ -98,9 +99,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             </div>
 
             {/* Environmental Note */}
-            <div className="p-4 bg-porcelain border border-sand-border text-xs text-soft-graphite/70 font-sans leading-relaxed">
+            <div className="p-4 bg-porcelain border border-sand-border text-xs text-soft-graphite/80 font-sans leading-relaxed">
               <p>
-                <strong>The Natural Linen Note:</strong> Pure French flax possesses organic texture and slight tonal slubs inherent to natural fibers. Colors are derived from low-impact European dyeing processes.
+                <strong>The Natural Linen Note:</strong> Pure French flax possesses organic texture and subtle slubs inherent to genuine natural cellulose fibers. Finished with volcanic pumice stones in Portugal for immediate softness.
               </p>
             </div>
 
@@ -129,15 +130,15 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               <div className="flex items-baseline space-x-3 mt-2">
                 <span className="font-serif text-2xl text-umber font-normal">
-                  ${product.price}
+                  {formatPKR(product.price)}
                 </span>
                 {product.salePrice && (
                   <span className="text-sm font-sans line-through text-umber/40">
-                    ${product.salePrice}
+                    {formatPKR(product.salePrice)}
                   </span>
                 )}
                 <span className="text-xs font-sans text-olive-ink font-medium pl-1">
-                  Complimentary Shipping Over $150
+                  Complimentary Delivery Over Rs. 15,000
                 </span>
               </div>
 
@@ -255,7 +256,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       <span>Added to Your Bag</span>
                     </>
                   ) : (
-                    <span>Add to Bag — ${product.price * quantity}</span>
+                    <span>Add to Bag — {formatPKR(product.price * quantity)}</span>
                   )}
                 </button>
               </div>
@@ -263,8 +264,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Trust Badges */}
               <div className="mt-5 grid grid-cols-2 gap-3 text-[11px] font-sans text-umber/70">
                 <div className="flex items-center space-x-1.5">
-                  <RotateCcw className="w-3.5 h-3.5 text-olive-ink" />
-                  <span>100-Night Sleep Trial</span>
+                  <span className="text-terracotta">✓</span>
+                  <span>100-Night Sleep Guarantee</span>
                 </div>
                 <div className="flex items-center space-x-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-olive-ink" />

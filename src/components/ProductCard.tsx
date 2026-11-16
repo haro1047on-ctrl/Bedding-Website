@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Product, ColorVariant } from '../types';
-import { Star, Eye, Plus } from 'lucide-react';
+import { Star, Eye } from 'lucide-react';
+import { formatPKR } from '../utils/format';
 
 interface ProductCardProps {
   product: Product;
@@ -21,11 +22,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const secondaryImage = product.images[1] || currentImage;
 
   return (
-    <div className="group flex flex-col bg-chalk border border-sand-border transition-all duration-300 hover:border-umber/30 hover:shadow-subtle">
+    <div className="group flex flex-col bg-chalk border border-sand-border transition-all duration-300 hover:border-umber/40 hover:shadow-subtle">
       
       {/* Product Image Stage */}
       <div 
-        className="relative aspect-[4/5] w-full overflow-hidden bg-oat/15 cursor-pointer"
+        className="relative aspect-[4/5] w-full overflow-hidden bg-oat-stone/30 cursor-pointer"
         onClick={() => onSelectProduct(product, selectedColor)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -33,7 +34,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={isHovered ? secondaryImage : currentImage}
           alt={`${product.name} in ${selectedColor.name}`}
-          className="w-full h-full object-cover object-center transition-all duration-500 ease-out"
+          className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
           loading="lazy"
         />
 
@@ -68,7 +69,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Product Details */}
-      <div className="p-4 flex flex-col flex-1 justify-between space-y-3">
+      <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between space-y-3">
         
         <div>
           {/* Material Tag & Rating */}
@@ -98,16 +99,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Pricing & Swatches Row */}
-        <div className="pt-2 border-t border-sand-border/80 flex items-center justify-between">
+        <div className="pt-2.5 border-t border-sand-border/80 flex items-center justify-between">
           
-          {/* Price */}
+          {/* Price in PKR */}
           <div className="flex items-baseline space-x-2">
-            <span className="font-serif text-lg text-umber font-normal">
-              ${product.price}
+            <span className="font-serif text-base sm:text-lg text-umber font-normal">
+              {formatPKR(product.price)}
             </span>
             {product.salePrice && (
               <span className="font-sans text-xs text-umber/40 line-through">
-                ${product.salePrice}
+                {formatPKR(product.salePrice)}
               </span>
             )}
           </div>
