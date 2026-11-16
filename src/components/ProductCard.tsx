@@ -34,7 +34,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={isHovered ? secondaryImage : currentImage}
           alt={`${product.name} in ${selectedColor.name}`}
-          className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
+          className="w-full h-full object-cover object-center transition-all duration-700 ease-out text-transparent"
           loading="lazy"
         />
 

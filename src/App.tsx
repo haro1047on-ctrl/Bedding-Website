@@ -5,8 +5,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CategoryStrip } from './components/CategoryStrip';
 import { AtelierManifesto } from './components/AtelierManifesto';
-import { BestsellersGrid } from './components/BestsellersGrid';
-import { BuildYourBedStudio } from './components/BuildYourBedStudio';
+import { BestsellersRail } from './components/BestsellersRail';
 import { MaterialStory } from './components/MaterialStory';
 import { ShopTheLook } from './components/ShopTheLook';
 import { QualityTrust } from './components/QualityTrust';
@@ -24,7 +23,8 @@ import { CatalogView } from './components/CatalogView';
 
 export function App() {
   // Navigation View State
-  const [activeView, setActiveView] = useState<'home' | 'catalog' | 'build-bed'>('home');
+  const initialView = typeof window !== 'undefined' && window.location.search.includes('view=catalog') ? 'catalog' : 'home';
+  const [activeView, setActiveView] = useState<'home' | 'catalog'>(initialView);
   const [catalogCategory, setCatalogCategory] = useState<BeddingCategory | 'all'>('all');
 
   // Modals & Drawers State
@@ -36,7 +36,7 @@ export function App() {
   const [selectedProductColor, setSelectedProductColor] = useState<ColorVariant | undefined>(undefined);
   const [selectedArticle, setSelectedArticle] = useState<JournalArticle | null>(null);
 
-  // Cart State (Initialized with a default luxury piece to showcase the UI immediately)
+  // Cart State (Initialized with a default luxury piece to showcase UI immediately)
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
       id: 'normandy-linen-duvet-oat-queen',
@@ -50,11 +50,21 @@ export function App() {
   // Toast Notification State
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
+  // Hash deep-link navigation
+  React.useEffect(() => {
+    if (window.location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(window.location.hash);
+        el?.scrollIntoView({ behavior: 'auto' });
+      }, 150);
+    }
+  }, []);
+
   const showToast = (message: string) => {
     setToastMessage(message);
     setTimeout(() => {
       setToastMessage(null);
-    }, 3000);
+    }, 3200);
   };
 
   // Cart operations
@@ -71,33 +81,6 @@ export function App() {
     setCartOpen(true);
   };
 
-  const handleAddBundleToCart = (items: { product: Product; color: ColorVariant; size: BedSize }[]) => {
-    setCartItems(prev => {
-      let updated = [...prev];
-      items.forEach(bundleItem => {
-        const itemKey = `${bundleItem.product.id}-${bundleItem.color.name}-${bundleItem.size}`;
-        const existingIndex = updated.findIndex(i => i.id === itemKey);
-        if (existingIndex > -1) {
-          updated[existingIndex] = {
-            ...updated[existingIndex],
-            quantity: updated[existingIndex].quantity + 1,
-          };
-        } else {
-          updated.push({
-            id: itemKey,
-            product: bundleItem.product,
-            selectedColor: bundleItem.color,
-            selectedSize: bundleItem.size,
-            quantity: 1,
-          });
-        }
-      });
-      return updated;
-    });
-    showToast(`Added complete Atelier Bed Suite (${items.length} items with 15% discount) to your bag.`);
-    setCartOpen(true);
-  };
-
   const handleUpdateQuantity = (id: string, newQty: number) => {
     if (newQty <= 0) {
       handleRemoveItem(id);
@@ -111,7 +94,7 @@ export function App() {
   };
 
   const handleCheckout = () => {
-    alert('Thank you for exploring SEREIN Atelier! Checkout is connected to our sustainable fulfillment center in Guimarães.');
+    alert('Thank you for exploring SEREIN Atelier! All orders are packaged in reusable linen pouches with complimentary express delivery across Pakistan.');
   };
 
   // Navigation handlers
@@ -121,22 +104,22 @@ export function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenBuildBed = () => {
-    if (activeView !== 'home') {
-      setActiveView('home');
-      setTimeout(() => {
-        const el = document.getElementById('build-bed-studio');
-        el?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const el = document.getElementById('build-bed-studio');
-      el?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const handleSelectProduct = (product: Product, initialColor?: ColorVariant) => {
     setSelectedProduct(product);
     setSelectedProductColor(initialColor);
+  };
+
+  const handleScrollToSection = (sectionId: string) => {
+    if (activeView !== 'home') {
+      setActiveView('home');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        el?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else {
+      const el = document.getElementById(sectionId);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -146,25 +129,19 @@ export function App() {
       
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-umber text-porcelain px-5 py-3 shadow-elevated border border-umber-dark/50 text-xs font-sans flex items-center space-x-2 animate-fadeIn">
+        <div className="fixed bottom-6 right-6 z-50 bg-umber text-porcelain px-5 py-3 shadow-elevated border border-umber-dark/50 text-xs font-sans flex items-center space-x-2 animate-fadeIn rounded-sm">
           <span className="w-2 h-2 rounded-full bg-olive-ink"></span>
           <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Main Header */}
+      {/* Main Header (Transparent on Hero, Solid on Scroll) */}
       <Header
         cartCount={totalCartCount}
         onOpenCart={() => setCartOpen(true)}
         onOpenSearch={() => setSearchOpen(true)}
         onSelectCategory={handleSelectCategory}
-        onOpenBuildBed={handleOpenBuildBed}
-        onOpenMaterialGuide={() => {
-          if (activeView !== 'home') setActiveView('home');
-          setTimeout(() => {
-            window.scrollTo({ top: 1800, behavior: 'smooth' });
-          }, 100);
-        }}
+        onOpenMaterialGuide={() => setCareGuideOpen(true)}
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
         onNavigateHome={() => {
           setActiveView('home');
@@ -173,56 +150,57 @@ export function App() {
         activeView={activeView}
       />
 
-      {/* View Router */}
+      {/* Main Content Router */}
       <main className="flex-1">
         {activeView === 'home' ? (
           <>
-            {/* Section 3: Hero */}
+            {/* 1. Hero Campaign Section (Quiet Luxury, 3 slides, directional horizontal slide transitions) */}
             <Hero
               onExploreCollection={() => handleSelectCategory('all')}
-              onOpenBuildBed={handleOpenBuildBed}
+              onOpenMaterialStory={() => handleScrollToSection('material-story-section')}
+              onOpenBedroomLooks={() => handleScrollToSection('bedroom-inspiration-section')}
             />
 
-            {/* Section 4: Shop by Category */}
+            {/* 2. Category Discovery (Asymmetric image-led composition) */}
             <CategoryStrip onSelectCategory={handleSelectCategory} />
 
-            {/* Section 5: Brand Point of View & Atelier Manifesto */}
-            <AtelierManifesto onOpenMaterialGuide={() => setCareGuideOpen(true)} />
+            {/* 3. Brand Story / Atelier Manifesto (Deliberate editorial pause) */}
+            <div id="atelier-manifesto">
+              <AtelierManifesto onOpenMaterialGuide={() => setCareGuideOpen(true)} />
+            </div>
 
-            {/* Section 6 & 7: Bestsellers Collection Grid */}
-            <BestsellersGrid
+            {/* 4. Atelier Bestsellers Single-Row Horizontal Sliding Rail */}
+            <BestsellersRail
               products={PRODUCTS}
               onSelectProduct={handleSelectProduct}
               onQuickView={handleSelectProduct}
               onViewAll={() => handleSelectCategory('all')}
             />
 
-            {/* Section 9: Signature Feature — Build Your Bed Studio */}
-            <BuildYourBedStudio
-              products={PRODUCTS}
-              onAddBundleToCart={handleAddBundleToCart}
-            />
+            {/* 5. Material Story & Fabric Science */}
+            <div id="material-story-section">
+              <MaterialStory onOpenCareGuide={() => setCareGuideOpen(true)} />
+            </div>
 
-            {/* Section 8: Material Story & Tactile Fabric Science */}
-            <MaterialStory onOpenCareGuide={() => setCareGuideOpen(true)} />
-
-            {/* Section 9b: Styling & Bedroom Suites Inspiration */}
+            {/* 6. Bedroom Inspiration Slider (Directional horizontal slide transitions with hotspots) */}
             <ShopTheLook
               products={PRODUCTS}
               onSelectProduct={handleSelectProduct}
               onQuickView={handleSelectProduct}
             />
 
-            {/* Section 10: Quality and Trust */}
+            {/* 7. Quality and Trust Pillars */}
             <QualityTrust />
 
-            {/* Section 11: Customer Reviews */}
+            {/* 8. Verified Customer Reviews */}
             <ReviewsSection />
 
-            {/* Section 12: The Atelier Journal */}
-            <JournalSection onSelectArticle={(article) => setSelectedArticle(article)} />
+            {/* 9. The Atelier Journal */}
+            <div id="atelier-journal">
+              <JournalSection onSelectArticle={(article) => setSelectedArticle(article)} />
+            </div>
 
-            {/* Section 13: Newsletter Invitation */}
+            {/* 10. Newsletter Invitation */}
             <Newsletter />
           </>
         ) : (
@@ -239,16 +217,11 @@ export function App() {
         )}
       </main>
 
-      {/* Section 14: Comprehensive Footer */}
+      {/* Comprehensive Footer */}
       <Footer
         onSelectCategory={handleSelectCategory}
-        onOpenBuildBed={handleOpenBuildBed}
-        onOpenMaterialGuide={() => {
-          if (activeView !== 'home') setActiveView('home');
-          setTimeout(() => {
-            window.scrollTo({ top: 1800, behavior: 'smooth' });
-          }, 100);
-        }}
+        onOpenBuildBed={() => handleSelectCategory('all')}
+        onOpenMaterialGuide={() => setCareGuideOpen(true)}
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
         onOpenCareGuide={() => setCareGuideOpen(true)}
         onNavigateHome={() => {
@@ -257,7 +230,7 @@ export function App() {
         }}
       />
 
-      {/* Product Detail Modal */}
+      {/* Product Detail Modal (with directional gallery slide motion) */}
       {selectedProduct && (
         <ProductDetailModal
           product={selectedProduct}
@@ -281,8 +254,8 @@ export function App() {
         onRemoveItem={handleRemoveItem}
         onCheckout={handleCheckout}
         onExplore={() => {
-          setActiveView('home');
-          window.scrollTo({ top: 700, behavior: 'smooth' });
+          setActiveView('catalog');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
       />
 
@@ -306,7 +279,7 @@ export function App() {
         onClose={() => setCareGuideOpen(false)}
       />
 
-      {/* Journal Article Reading Modal */}
+      {/* Journal Article Modal */}
       <ArticleModal
         article={selectedArticle}
         isOpen={!!selectedArticle}

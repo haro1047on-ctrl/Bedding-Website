@@ -19,7 +19,7 @@ export const AtelierManifesto: React.FC<AtelierManifestoProps> = ({ onOpenMateri
                 <img
                   src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80"
                   alt="Close-up macro of pure flax linen textile weave"
-                  className="w-full h-full object-cover image-reveal"
+                  className="w-full h-full object-cover image-reveal text-transparent"
                   loading="lazy"
                 />
               </div>
@@ -33,7 +33,7 @@ export const AtelierManifesto: React.FC<AtelierManifestoProps> = ({ onOpenMateri
                 <img
                   src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"
                   alt="Bed styled with natural lived-in linen drape in soft morning shadow"
-                  className="w-full h-full object-cover image-reveal"
+                  className="w-full h-full object-cover image-reveal text-transparent"
                   loading="lazy"
                 />
               </div>

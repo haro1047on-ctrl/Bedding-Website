@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Product, BedSize, ColorVariant } from '../types';
-import { X, Star, ShieldCheck, Plus, Minus, ChevronDown, Check } from 'lucide-react';
+import { X, Star, ShieldCheck, Plus, Minus, ChevronDown, Check, ArrowLeft, ArrowRight } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface ProductDetailModalProps {
@@ -25,15 +25,64 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const [selectedColor, setSelectedColor] = useState<ColorVariant>(initialColor || product.colors[0]);
   const [selectedSize, setSelectedSize] = useState<BedSize>(product.sizes[0]);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
+  const [previousImageIndex, setPreviousImageIndex] = useState<number | null>(null);
+  const [direction, setDirection] = useState<'next' | 'prev'>('next');
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
   const [openAccordion, setOpenAccordion] = useState<string>('fabric');
   const [isAddedFeedback, setIsAddedFeedback] = useState<boolean>(false);
+
+  const touchStartXRef = useRef<number | null>(null);
+  const transitionTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Images list: put current color image first if available, followed by product gallery
   const displayImages = [
     selectedColor.image || product.images[0],
     ...product.images.filter(img => img !== selectedColor.image),
   ];
+
+  const changeImage = (targetIndex: number) => {
+    if (isTransitioning || targetIndex === selectedImageIndex) return;
+    if (targetIndex < 0 || targetIndex >= displayImages.length) return;
+
+    const dir = targetIndex > selectedImageIndex ? 'next' : 'prev';
+    setDirection(dir);
+    setPreviousImageIndex(selectedImageIndex);
+    setSelectedImageIndex(targetIndex);
+    setIsTransitioning(true);
+
+    if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+    transitionTimerRef.current = setTimeout(() => {
+      setPreviousImageIndex(null);
+      setIsTransitioning(false);
+    }, 450);
+  };
+
+  const handleNextImage = () => {
+    const nextIdx = (selectedImageIndex + 1) % displayImages.length;
+    changeImage(nextIdx);
+  };
+
+  const handlePrevImage = () => {
+    const prevIdx = (selectedImageIndex - 1 + displayImages.length) % displayImages.length;
+    changeImage(prevIdx);
+  };
+
+  // Touch swipe support for gallery on mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartXRef.current;
+    if (deltaX < -40) {
+      handleNextImage();
+    } else if (deltaX > 40) {
+      handlePrevImage();
+    }
+    touchStartXRef.current = null;
+  };
 
   const handleAddToCart = () => {
     onAddToCart(product, selectedColor, selectedSize, quantity);
@@ -59,7 +108,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         {/* Sticky Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-chalk/90 backdrop-blur-sm border border-sand-border text-umber hover:text-soft-graphite transition-colors"
+          className="absolute top-4 right-4 z-20 p-2 bg-chalk/90 backdrop-blur-sm border border-sand-border text-umber hover:text-soft-graphite transition-colors rounded-sm"
           aria-label="Close product modal"
         >
           <X className="w-5 h-5 stroke-[1.5]" />
@@ -67,18 +116,73 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10">
           
-          {/* Left Column: Photo Gallery (7 cols) */}
+          {/* Left Column: Photo Gallery with Directional Slide Motion (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
             
-            {/* Main Stage Image */}
-            <div className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-oat-stone/30 border border-sand-border shadow-subtle">
-              <img
-                src={displayImages[selectedImageIndex] || displayImages[0]}
-                alt={`${product.name} - ${selectedColor.name}`}
-                className="w-full h-full object-cover transition-all duration-300"
-              />
-              <div className="absolute bottom-3 left-3 bg-chalk/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-sans text-umber border border-sand-border">
-                {product.material} · {selectedColor.name}
+            {/* Main Stage Image with Directional Horizontal Slide */}
+            <div 
+              className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-oat-stone/30 border border-sand-border shadow-subtle select-none"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {displayImages.map((img, idx) => {
+                const isCurrent = idx === selectedImageIndex;
+                const isPrevious = idx === previousImageIndex;
+                if (!isCurrent && !isPrevious) return null;
+
+                return (
+                  <div
+                    key={`${img}-${idx}`}
+                    className={`absolute inset-0 w-full h-full will-change-transform ${
+                      isCurrent ? 'z-10' : 'z-0'
+                    }`}
+                    style={{
+                      transition: isTransitioning
+                        ? 'transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease'
+                        : 'none',
+                      transform: isCurrent
+                        ? 'translateX(0%)'
+                        : isPrevious && direction === 'next'
+                        ? 'translateX(-100%)'
+                        : isPrevious && direction === 'prev'
+                        ? 'translateX(100%)'
+                        : 'translateX(0%)',
+                      opacity: isCurrent ? 1 : 0.85,
+                    }}
+                  >
+                    <img
+                      src={img}
+                      alt={`${product.name} - ${selectedColor.name}`}
+                      className="w-full h-full object-cover text-transparent"
+                    />
+                  </div>
+                );
+              })}
+
+              {/* Prev / Next Gallery Navigation Arrows */}
+              <button
+                type="button"
+                onClick={handlePrevImage}
+                disabled={isTransitioning}
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-chalk/85 backdrop-blur-md border border-sand-border text-umber hover:bg-chalk hover:scale-105 active:scale-95 transition-all flex items-center justify-center shadow-sm"
+                aria-label="Previous product image"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 stroke-[1.5]" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleNextImage}
+                disabled={isTransitioning}
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-chalk/85 backdrop-blur-md border border-sand-border text-umber hover:bg-chalk hover:scale-105 active:scale-95 transition-all flex items-center justify-center shadow-sm"
+                aria-label="Next product image"
+              >
+                <ArrowRight className="w-3.5 h-3.5 stroke-[1.5]" />
+              </button>
+
+              {/* Image Vignette Label */}
+              <div className="absolute bottom-3 left-3 z-20 bg-chalk/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-sans text-umber border border-sand-border">
+                {product.material} · {selectedColor.name} (0{selectedImageIndex + 1}/0{displayImages.length})
               </div>
             </div>
 
@@ -88,10 +192,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <button
                   key={idx}
                   type="button"
-                  onClick={() => setSelectedImageIndex(idx)}
-                  className={`relative w-20 h-20 flex-shrink-0 border overflow-hidden transition-all ${
+                  onClick={() => changeImage(idx)}
+                  className={`relative w-20 h-20 flex-shrink-0 border overflow-hidden transition-all rounded-sm ${
                     selectedImageIndex === idx ? 'border-umber ring-1 ring-umber' : 'border-sand-border opacity-70 hover:opacity-100'
                   }`}
+                  aria-label={`Show image 0${idx + 1}`}
                 >
                   <img src={img} alt="" className="w-full h-full object-cover" />
                 </button>
@@ -123,7 +228,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </div>
               </div>
 
-              {/* Title & Price */}
+              {/* Title & Price (Simple clean sans-serif for prices) */}
               <h2 className="font-serif text-2xl sm:text-3xl text-umber font-normal leading-snug">
                 {product.name}
               </h2>
@@ -199,7 +304,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       key={size}
                       type="button"
                       onClick={() => setSelectedSize(size)}
-                      className={`py-2 text-xs font-sans tracking-wide transition-all ${
+                      className={`py-2 text-xs font-sans tracking-wide transition-all rounded-sm ${
                         selectedSize === size
                           ? 'bg-umber text-porcelain font-medium'
                           : 'bg-porcelain border border-sand-border text-soft-graphite hover:border-umber/40'
@@ -217,7 +322,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Quantity and Add to Cart Row */}
               <div className="mt-6 pt-5 border-t border-sand-border flex items-center space-x-3">
                 {/* Quantity */}
-                <div className="flex items-center border border-sand-border bg-porcelain">
+                <div className="flex items-center border border-sand-border bg-porcelain rounded-sm">
                   <button
                     type="button"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -244,7 +349,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   type="button"
                   onClick={handleAddToCart}
                   disabled={isAddedFeedback}
-                  className={`flex-1 py-3.5 text-xs font-sans uppercase tracking-widest font-semibold transition-all duration-200 flex items-center justify-center space-x-2 ${
+                  className={`flex-1 py-3.5 text-xs font-sans uppercase tracking-widest font-semibold transition-all duration-200 flex items-center justify-center space-x-2 rounded-sm ${
                     isAddedFeedback 
                       ? 'bg-olive-ink text-porcelain' 
                       : 'bg-umber text-porcelain hover:bg-soft-graphite'

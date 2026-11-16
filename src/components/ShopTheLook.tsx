@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { BEDROOM_LOOKS } from '../data/mockData';
 import { Product, ColorVariant } from '../types';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, ArrowLeft, ArrowRight, Eye } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface ShopTheLookProps {
@@ -16,12 +16,63 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
   onQuickView,
 }) => {
   const [selectedLookIndex, setSelectedLookIndex] = useState(0);
+  const [previousLookIndex, setPreviousLookIndex] = useState<number | null>(null);
+  const [direction, setDirection] = useState<'next' | 'prev'>('next');
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeHotspotId, setActiveHotspotId] = useState<string | null>(null);
+
+  const touchStartXRef = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const changeLook = (targetIndex: number) => {
+    if (isTransitioning || targetIndex === selectedLookIndex) return;
+    const dir = targetIndex > selectedLookIndex ? 'next' : 'prev';
+    setDirection(dir);
+    setPreviousLookIndex(selectedLookIndex);
+    setSelectedLookIndex(targetIndex);
+    setIsTransitioning(true);
+    setActiveHotspotId(null);
+
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      setPreviousLookIndex(null);
+      setIsTransitioning(false);
+    }, 600);
+  };
+
+  const handleNextLook = () => {
+    const nextIdx = (selectedLookIndex + 1) % BEDROOM_LOOKS.length;
+    changeLook(nextIdx);
+  };
+
+  const handlePrevLook = () => {
+    const prevIdx = (selectedLookIndex - 1 + BEDROOM_LOOKS.length) % BEDROOM_LOOKS.length;
+    changeLook(prevIdx);
+  };
+
+  // Touch swipe support
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartXRef.current;
+    if (deltaX < -45) {
+      handleNextLook();
+    } else if (deltaX > 45) {
+      handlePrevLook();
+    }
+    touchStartXRef.current = null;
+  };
 
   const currentLook = BEDROOM_LOOKS[selectedLookIndex];
 
   return (
-    <section className="w-full bg-porcelain py-16 sm:py-24 border-b border-sand-border">
+    <section 
+      id="bedroom-inspiration-section"
+      className="w-full bg-porcelain py-16 sm:py-24 border-b border-sand-border overflow-hidden select-none"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -31,93 +82,148 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
               <Sparkles className="w-3.5 h-3.5" />
               <span>Interior Styling Inspiration</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl text-umber font-normal">
-              Shop the Bedroom Suites
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.6rem] text-umber font-normal leading-tight">
+              Curated Bedroom Suites
             </h2>
             <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-1 max-w-lg leading-relaxed">
-              Explore art-directed bedroom palettes. Tap any hotspot pin to discover the coordinated elements that complete the look.
+              Explore art-directed bedroom palettes. Tap any hotspot pin to inspect the coordinated elements that compose the room.
             </p>
           </div>
 
-          {/* Look Switcher Pills */}
-          <div className="mt-4 md:mt-0 flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0">
-            {BEDROOM_LOOKS.map((look, idx) => (
+          {/* Look Switcher Pills & Carousel Controls */}
+          <div className="mt-6 md:mt-0 flex items-center space-x-4">
+            <div className="flex items-center space-x-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
+              {BEDROOM_LOOKS.map((look, idx) => (
+                <button
+                  key={look.id}
+                  type="button"
+                  onClick={() => changeLook(idx)}
+                  className={`px-3 py-1.5 text-xs font-sans whitespace-nowrap transition-all rounded-sm ${
+                    selectedLookIndex === idx
+                      ? 'bg-umber text-porcelain font-medium'
+                      : 'bg-chalk border border-sand-border text-umber/80 hover:bg-oat/30'
+                  }`}
+                >
+                  {look.title}
+                </button>
+              ))}
+            </div>
+
+            {/* Slider Arrows */}
+            <div className="flex items-center space-x-1.5">
               <button
-                key={look.id}
                 type="button"
-                onClick={() => setSelectedLookIndex(idx)}
-                className={`px-3 py-1.5 text-xs font-sans whitespace-nowrap transition-all ${
-                  selectedLookIndex === idx
-                    ? 'bg-umber text-porcelain font-medium'
-                    : 'bg-chalk border border-sand-border text-umber/80 hover:bg-oat/30'
-                }`}
+                onClick={handlePrevLook}
+                disabled={isTransitioning}
+                className="w-9 h-9 flex items-center justify-center border border-sand-border bg-chalk hover:border-umber hover:text-umber text-soft-graphite transition-all rounded-sm shadow-sm"
+                aria-label="Previous bedroom look"
               >
-                {look.title}
+                <ArrowLeft className="w-4 h-4 stroke-[1.5]" />
               </button>
-            ))}
+              <button
+                type="button"
+                onClick={handleNextLook}
+                disabled={isTransitioning}
+                className="w-9 h-9 flex items-center justify-center border border-sand-border bg-chalk hover:border-umber hover:text-umber text-soft-graphite transition-all rounded-sm shadow-sm"
+                aria-label="Next bedroom look"
+              >
+                <ArrowRight className="w-4 h-4 stroke-[1.5]" />
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* 2-Column Look Showcase */}
+        {/* 2-Column Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Main Visual with Interactive Hotspots (7 cols) */}
-          <div className="lg:col-span-7 relative aspect-[4/3] w-full overflow-hidden bg-oat-stone/30 border border-sand-border shadow-elevated">
-            <img
-              src={currentLook.image}
-              alt={currentLook.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+          {/* Main Visual with Directional Slide & Interactive Hotspots (7 cols) */}
+          <div 
+            className="lg:col-span-7 relative aspect-[4/3] w-full overflow-hidden bg-oat-stone/30 border border-sand-border shadow-elevated"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {BEDROOM_LOOKS.map((look, idx) => {
+              const isCurrent = idx === selectedLookIndex;
+              const isPrevious = idx === previousLookIndex;
+              if (!isCurrent && !isPrevious) return null;
 
-            {/* Hotspots */}
-            {currentLook.hotspots.map((hotspot) => {
-              const isHotspotActive = activeHotspotId === hotspot.productId;
               return (
                 <div
-                  key={hotspot.productId}
-                  className="absolute z-20 transform -translate-x-1/2 -translate-y-1/2"
-                  style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
+                  key={look.id}
+                  className={`absolute inset-0 w-full h-full will-change-transform ${
+                    isCurrent ? 'z-10' : 'z-0'
+                  }`}
+                  style={{
+                    transition: isTransitioning
+                      ? 'transform 600ms cubic-bezier(0.22, 1, 0.36, 1), opacity 600ms ease'
+                      : 'none',
+                    transform: isCurrent
+                      ? 'translateX(0%)'
+                      : isPrevious && direction === 'next'
+                      ? 'translateX(-100%)'
+                      : isPrevious && direction === 'prev'
+                      ? 'translateX(100%)'
+                      : 'translateX(0%)',
+                    opacity: isCurrent ? 1 : 0.9,
+                  }}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setActiveHotspotId(isHotspotActive ? null : hotspot.productId)}
-                    className={`relative w-8 h-8 rounded-full flex items-center justify-center transition-transform focus:outline-none ${
-                      isHotspotActive 
-                        ? 'bg-umber text-porcelain scale-110 shadow-lg' 
-                        : 'bg-chalk/90 backdrop-blur-md text-umber shadow-md hover:scale-110'
-                    }`}
-                    aria-label={`Inspect ${hotspot.label}`}
-                  >
-                    <span className="w-2.5 h-2.5 rounded-full bg-terracotta animate-ping absolute opacity-50" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-umber" />
-                  </button>
+                  <img
+                    src={look.image}
+                    alt={look.title}
+                    className="w-full h-full object-cover text-transparent"
+                    loading="lazy"
+                  />
 
-                  {/* Tooltip on active */}
-                  {isHotspotActive && (
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-52 bg-chalk p-3.5 border border-sand-border shadow-elevated z-30 animate-fadeIn">
-                      <p className="font-serif text-sm text-umber font-normal">{hotspot.label}</p>
-                      <p className="text-xs font-semibold text-umber mt-1">{formatPKR(hotspot.price)}</p>
-                      <button
-                        onClick={() => {
-                          const targetProduct = products.find(p => p.id === hotspot.productId);
-                          if (targetProduct) onSelectProduct(targetProduct);
-                        }}
-                        className="mt-2.5 w-full py-1.5 bg-umber text-porcelain text-[10px] uppercase tracking-wider font-sans hover:bg-soft-graphite transition-colors"
+                  {/* Hotspots (visible only on active look) */}
+                  {isCurrent && look.hotspots.map((hotspot) => {
+                    const isHotspotActive = activeHotspotId === hotspot.productId;
+                    return (
+                      <div
+                        key={hotspot.productId}
+                        className="absolute z-20 transform -translate-x-1/2 -translate-y-1/2"
+                        style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
                       >
-                        View Product
-                      </button>
-                    </div>
-                  )}
+                        <button
+                          type="button"
+                          onClick={() => setActiveHotspotId(isHotspotActive ? null : hotspot.productId)}
+                          className={`relative w-8 h-8 rounded-full flex items-center justify-center transition-transform focus:outline-none ${
+                            isHotspotActive 
+                              ? 'bg-umber text-porcelain scale-110 shadow-lg' 
+                              : 'bg-chalk/90 backdrop-blur-md text-umber shadow-md hover:scale-110'
+                          }`}
+                          aria-label={`Inspect ${hotspot.label}`}
+                        >
+                          <span className="w-2.5 h-2.5 rounded-full bg-terracotta animate-ping absolute opacity-50" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-umber" />
+                        </button>
+
+                        {/* Tooltip on active */}
+                        {isHotspotActive && (
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-52 bg-chalk p-3.5 border border-sand-border shadow-elevated z-30 animate-fadeIn">
+                            <p className="font-serif text-sm text-umber font-normal">{hotspot.label}</p>
+                            <p className="text-xs font-semibold text-umber font-sans mt-1">{formatPKR(hotspot.price)}</p>
+                            <button
+                              onClick={() => {
+                                const targetProduct = products.find(p => p.id === hotspot.productId);
+                                if (targetProduct) onSelectProduct(targetProduct);
+                              }}
+                              className="mt-2.5 w-full py-1.5 bg-umber text-porcelain text-[10px] uppercase tracking-wider font-sans hover:bg-soft-graphite transition-colors"
+                            >
+                              View Product
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+
+                  {/* Room Identifier */}
+                  <div className="absolute bottom-4 left-4 bg-chalk/90 backdrop-blur-md px-3.5 py-1.5 border border-sand-border text-xs font-sans text-umber">
+                    {look.roomName}
+                  </div>
                 </div>
               );
             })}
-
-            {/* Room Identifier */}
-            <div className="absolute bottom-4 left-4 bg-chalk/90 backdrop-blur-md px-3.5 py-1.5 border border-sand-border text-xs font-sans text-umber">
-              {currentLook.roomName}
-            </div>
-
           </div>
 
           {/* Coordinated Products Sidebar (5 cols) */}
@@ -141,6 +247,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                     key={idx}
                     className="w-4 h-4 rounded-full border border-sand-border shadow-sm"
                     style={{ backgroundColor: colorHex }}
+                    title={colorHex}
                   />
                 ))}
               </div>
@@ -149,7 +256,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
             {/* Coordinated Item Cards */}
             <div className="space-y-3 pt-2">
               <span className="text-[10px] uppercase tracking-widest text-umber/50 font-sans block">
-                Products in this room:
+                Featured suite components:
               </span>
 
               {currentLook.hotspots.map((hotspot) => {
@@ -161,7 +268,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                   <div
                     key={product.id}
                     onMouseEnter={() => setActiveHotspotId(product.id)}
-                    className={`p-3.5 border transition-all flex items-center justify-between ${
+                    className={`p-3.5 border transition-all flex items-center justify-between rounded-sm ${
                       isItemActive
                         ? 'bg-porcelain border-umber shadow-sm'
                         : 'bg-chalk border-sand-border hover:border-umber/30'
@@ -171,7 +278,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                       <img
                         src={product.images[0]}
                         alt={product.name}
-                        className="w-12 h-12 object-cover border border-sand-border"
+                        className="w-12 h-12 object-cover border border-sand-border rounded-sm"
                       />
                       <div>
                         <h4 
@@ -180,8 +287,11 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                         >
                           {product.name}
                         </h4>
-                        <span className="text-xs font-sans text-soft-graphite/60">
-                          {formatPKR(product.price)} · {product.material}
+                        <span className="text-xs font-sans font-semibold text-umber">
+                          {formatPKR(product.price)}
+                        </span>
+                        <span className="text-xs font-sans text-soft-graphite/60 pl-1.5">
+                          · {product.material}
                         </span>
                       </div>
                     </div>
@@ -190,9 +300,10 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                       <button
                         type="button"
                         onClick={() => onQuickView(product)}
-                        className="px-2.5 py-1 text-[11px] font-sans text-umber hover:text-olive-ink border border-sand-border bg-porcelain"
+                        className="px-2.5 py-1 text-[11px] font-sans text-umber hover:text-olive-ink border border-sand-border bg-porcelain rounded-sm flex items-center space-x-1"
                       >
-                        Quick Add
+                        <Eye className="w-3 h-3" />
+                        <span>Quick View</span>
                       </button>
                     </div>
                   </div>

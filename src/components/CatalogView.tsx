@@ -85,7 +85,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
   };
 
   return (
-    <div className="w-full bg-porcelain min-h-screen pb-20">
+    <div className="w-full bg-porcelain min-h-screen pb-20 pt-24 sm:pt-28">
       
       {/* Catalog Header Banner */}
       <div className="border-b border-sand-border bg-chalk py-10 sm:py-16">
