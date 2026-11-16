@@ -157,7 +157,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                       </div>
 
                       <div className="flex items-center space-x-3">
-                        <span className="font-serif text-sm text-umber font-normal">
+                        <span className="font-sans text-sm font-semibold text-umber">
                           {formatPKR(product.price)}
                         </span>
                         <ArrowRight className="w-4 h-4 text-oat group-hover:text-olive-ink group-hover:translate-x-1 transition-all" />

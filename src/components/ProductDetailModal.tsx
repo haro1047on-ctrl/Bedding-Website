@@ -128,16 +128,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {product.name}
               </h2>
 
-              <div className="flex items-baseline space-x-3 mt-2">
-                <span className="font-serif text-2xl text-umber font-normal">
+              <div className="flex items-baseline space-x-3 mt-2 font-sans">
+                <span className="text-2xl text-umber font-semibold tracking-tight">
                   {formatPKR(product.price)}
                 </span>
                 {product.salePrice && (
-                  <span className="text-sm font-sans line-through text-umber/40">
+                  <span className="text-sm line-through text-umber/40">
                     {formatPKR(product.salePrice)}
                   </span>
                 )}
-                <span className="text-xs font-sans text-olive-ink font-medium pl-1">
+                <span className="text-xs text-olive-ink font-medium pl-1">
                   Complimentary Delivery Over Rs. 15,000
                 </span>
               </div>

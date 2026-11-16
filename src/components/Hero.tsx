@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-xs bg-chalk/95 backdrop-blur-md p-4 border border-sand-border shadow-elevated">
                 <div className="flex items-center justify-between text-xs font-sans mb-1.5">
                   <span className="text-[10px] uppercase tracking-widest text-olive-ink font-medium">Featured Suite</span>
-                  <span className="font-medium text-umber font-serif text-sm">{formatPKR(28500)}</span>
+                  <span className="font-semibold text-umber font-sans text-sm">{formatPKR(28500)}</span>
                 </div>
                 <p className="font-serif text-base text-umber">
                   Normandy Washed Linen Duvet Cover

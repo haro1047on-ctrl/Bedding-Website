@@ -102,12 +102,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="pt-2.5 border-t border-sand-border/80 flex items-center justify-between">
           
           {/* Price in PKR */}
-          <div className="flex items-baseline space-x-2">
-            <span className="font-serif text-base sm:text-lg text-umber font-normal">
+          <div className="flex items-baseline space-x-2 font-sans">
+            <span className="text-sm sm:text-base text-umber font-semibold tracking-tight">
               {formatPKR(product.price)}
             </span>
             {product.salePrice && (
-              <span className="font-sans text-xs text-umber/40 line-through">
+              <span className="text-xs text-umber/40 line-through">
                 {formatPKR(product.salePrice)}
               </span>
             )}

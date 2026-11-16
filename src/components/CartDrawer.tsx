@@ -191,7 +191,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         </button>
                       </div>
 
-                      <span className="font-serif text-base text-umber font-normal">
+                      <span className="font-sans text-sm sm:text-base font-semibold text-umber">
                         {formatPKR(item.product.price * item.quantity)}
                       </span>
                     </div>
@@ -259,7 +259,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
                 <div className="flex justify-between text-sm font-semibold text-umber pt-2.5 border-t border-sand-border">
                   <span>Estimated Total (PKR)</span>
-                  <span className="font-serif text-xl font-normal">
+                  <span className="font-sans text-xl font-semibold text-umber tracking-tight">
                     {formatPKR(finalTotal)}
                   </span>
                 </div>

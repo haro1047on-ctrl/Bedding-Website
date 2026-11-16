@@ -271,7 +271,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     Fitted Base Sheet
                   </h3>
                 </div>
-                <span className="font-serif text-base text-umber">{formatPKR(sheetPrice)}</span>
+                <span className="font-sans text-sm font-semibold text-umber">{formatPKR(sheetPrice)}</span>
               </div>
               <p className="text-xs text-soft-graphite/70 font-sans">
                 170 GSM Normandy linen with 17" deep mattress pocket and 360° continuous elastic.
@@ -310,7 +310,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     Normandy Flax Duvet Cover
                   </h3>
                 </div>
-                <span className="font-serif text-base text-umber">{formatPKR(duvetPrice)}</span>
+                <span className="font-sans text-sm font-semibold text-umber">{formatPKR(duvetPrice)}</span>
               </div>
               <p className="text-xs text-soft-graphite/70 font-sans">
                 Pre-washed stone finish, natural corozo-nut buttons, and internal corner ties.
@@ -349,7 +349,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     French Flax Pillowcase Pair
                   </h3>
                 </div>
-                <span className="font-serif text-base text-umber">{formatPKR(pillowsPrice)}</span>
+                <span className="font-sans text-sm font-semibold text-umber">{formatPKR(pillowsPrice)}</span>
               </div>
               <p className="text-xs text-soft-graphite/70 font-sans">
                 Set of 2 pillowcases with 8" interior envelope closures and tailored French seams.
@@ -399,7 +399,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                     </label>
                   </div>
                 </div>
-                <span className="font-serif text-base text-umber">{formatPKR(throwProduct.price)}</span>
+                <span className="font-sans text-sm font-semibold text-umber">{formatPKR(throwProduct.price)}</span>
               </div>
 
               {includeThrow && (
@@ -452,7 +452,7 @@ export const BuildYourBedStudio: React.FC<BuildYourBedStudioProps> = ({
                   </span>
                 </div>
                 <div className="text-right">
-                  <span className="font-serif text-3xl text-porcelain font-normal">
+                  <span className="font-sans text-2xl sm:text-3xl text-porcelain font-semibold tracking-tight">
                     {formatPKR(finalBundlePrice)}
                   </span>
                 </div>
