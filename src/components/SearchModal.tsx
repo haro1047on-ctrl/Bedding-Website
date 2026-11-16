@@ -31,12 +31,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   }, [onClose]);
 
   const quickSearches = [
-    'Normandy Linen',
-    'Percale Sheets',
-    'Terracotta Rust',
-    'Olive Leaf',
-    '4-Ply Cloud Gauze',
-    'Waffle Throw',
+    'Eve Linen',
+    'Darcy Corduroy',
+    'Jude Organic Cotton',
+    'Frankie Flannelette',
+    'Russet',
+    'Alex Stripe',
   ];
 
   const searchResults = query.trim() === ''

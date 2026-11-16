@@ -5,20 +5,43 @@ export interface ColorVariant {
 }
 
 export type BeddingCategory = 
+  | 'Quilt Covers'
+  | 'Fitted Sheets'
+  | 'Flat Sheets'
+  | 'Pillowcases'
+  | 'Bed Sheets & Sets'
+  | 'Blankets & Bed Covers'
   | 'Duvet Covers'
   | 'Sheets & Sets'
-  | 'Pillowcases'
   | 'Quilts & Comforters'
   | 'Blankets & Throws';
 
 export type BeddingMaterial = 
+  | 'Eve Linen'
+  | 'Eden Cotton'
+  | 'Jude Organic Cotton'
+  | 'Leo Washed Cotton'
+  | 'Darcy Corduroy'
+  | 'Frankie Flannelette'
+  | 'Rory Washed Cotton'
+  | 'Sofia Ruched Cotton'
   | 'French Flax Linen'
   | 'Organic Cotton Percale'
   | 'Cloud Cotton Gauze'
   | 'Sateen Luxe'
   | 'Waffle Wool-Linen';
 
-export type BedSize = 'Twin' | 'Full' | 'Queen' | 'King' | 'Cal King';
+export type BedSize = 
+  | 'Single'
+  | 'Double'
+  | 'Queen'
+  | 'King'
+  | 'Super King'
+  | 'Standard'
+  | 'Twin'
+  | 'Full'
+  | 'Cal King'
+  | string;
 
 export interface Product {
   id: string;
@@ -36,7 +59,7 @@ export interface Product {
   threadCountOrWeight: string;
   includes: string[];
   care: string[];
-  dimensions: Record<BedSize, string>;
+  dimensions: Record<string, string>;
   rating: number;
   reviewsCount: number;
   isNew?: boolean;

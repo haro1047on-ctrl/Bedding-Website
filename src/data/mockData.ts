@@ -2,490 +2,3566 @@ import { Product, BedroomLook, Review, JournalArticle } from '../types';
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'normandy-linen-duvet',
-    name: 'Normandy Washed Linen Duvet Cover',
-    subtitle: '170 GSM pure Normandy flax, pumice-washed for immediate lived-in drape',
-    category: 'Duvet Covers',
-    material: 'French Flax Linen',
-    price: 28500,
-    colors: [
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Earthy Umber', hex: '#49372F', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85' }
+    "id": "corduroy-quilt-cover-russet",
+    "name": "Darcy Corduroy - Russet Quilt Cover",
+    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Darcy Corduroy",
+    "price": 22500,
+    "salePrice": 32500,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+      },
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+      },
+      {
+        "name": "Olive",
+        "hex": "#A39264",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#c87b4b",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+      }
     ],
-    sizes: ['Full', 'Queen', 'King', 'Cal King'],
-    images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'Woven exclusively from certified long-strand French flax grown along the coastal valleys of Normandy. Each cover undergoes a gentle volcanic stone wash in northern Portugal, yielding a soft, relaxed texture that breathes effortlessly in hot climates and insulates through winter nights.',
-    weaveDetails: 'Plain weave, 170 GSM medium-weight linen with interior corner ties and hidden natural corozo-nut button closure.',
-    threadCountOrWeight: '170 GSM French Flax',
-    includes: ['1 Duvet cover with hidden button closure & 4 interior corner ties', 'Matching reusable linen storage pouch'],
-    care: [
-      'Gentle cold or warm machine wash (max 40°C / 104°F)',
-      'Use mild, enzyme-free detergent; avoid fabric softeners',
-      'Line dry in shade or tumble dry on low/delicate',
-      'Embrace the natural casual wrinkles—no ironing needed'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg"
     ],
-    dimensions: {
-      Twin: '68" x 86" (173cm x 218cm)',
-      Full: '86" x 86" (218cm x 218cm)',
-      Queen: '90" x 92" (229cm x 234cm)',
-      King: '106" x 92" (269cm x 234cm)',
-      'Cal King': '104" x 96" (264cm x 244cm)'
+    "description": "Invisible zipper for quick and easy changes. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Corduroy on topside and Eden Cotton on underside.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "Invisible zipper for quick and easy changes",
+      "Arrives prewashed so you can hop straight into bed."
+    ],
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.9,
-    reviewsCount: 142,
-    isBestseller: true,
-    certification: 'OEKO-TEX® Standard 100 & European Flax® Certified'
+    "rating": 4.9,
+    "reviewsCount": 101,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'percale-core-sheet-set',
-    name: 'Crisp Organic Cotton Percale Sheet Set',
-    subtitle: '300-thread count matte finish long-staple cotton for cool sleepers',
-    category: 'Sheets & Sets',
-    material: 'Organic Cotton Percale',
-    price: 21500,
-    colors: [
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1400&q=85' }
+    "id": "corduroy-quilt-cover-hunter-green",
+    "name": "Darcy Corduroy - Hunter Green Quilt Cover",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Darcy Corduroy",
+    "price": 26000,
+    "salePrice": 32500,
+    "colors": [
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+      },
+      {
+        "name": "Olive",
+        "hex": "#A39264",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#c87b4b",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+      }
     ],
-    sizes: ['Twin', 'Full', 'Queen', 'King', 'Cal King'],
-    images: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'The definitive cool, lightweight sheet with the crisp handfeel of high-end boutique hotel linen. Woven in a classic one-over, one-under percale weave using 100% GOTS-certified organic long-staple cotton. Naturally breathable and matte, designed for those who sleep warm.',
-    weaveDetails: 'Traditional 1-over-1 percale weave, 300 single-ply thread count. Deep 17" mattress pocket with continuous 360-degree elastic.',
-    threadCountOrWeight: '300 TC Single-Ply Organic Cotton',
-    includes: [
-      '1 Fitted Sheet (with 17" deep pocket & directional labels)',
-      '1 Flat Sheet with 4" tailored hem',
-      '2 Pillowcases with deep envelope enclosure'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-03.jpg"
     ],
-    care: [
-      'Machine wash cool with similar pale tones',
-      'Tumble dry low and remove promptly while slightly damp for minimal creasing',
-      'Cool iron if desired for that crisp hotel aesthetic'
+    "description": "Invisible zipper for quick and easy changes. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Corduroy on topside and Eden Cotton on underside.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "corduroy, cotton",
+    "includes": [
+      "Invisible zipper for quick and easy changes",
+      "Arrives prewashed so you can hop straight into bed."
     ],
-    dimensions: {
-      Twin: 'Fitted: 39" x 75" x 17" | Flat: 66" x 96"',
-      Full: 'Fitted: 54" x 75" x 17" | Flat: 81" x 96"',
-      Queen: 'Fitted: 60" x 80" x 17" | Flat: 92" x 104"',
-      King: 'Fitted: 76" x 80" x 17" | Flat: 108" x 104"',
-      'Cal King': 'Fitted: 72" x 84" x 17" | Flat: 108" x 108"'
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.8,
-    reviewsCount: 98,
-    isBestseller: true,
-    certification: 'GOTS Certified Organic & Fair Trade Weaving'
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "isBestseller": true,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'cloud-gauze-coverlet',
-    name: '4-Ply Cloud Cotton Gauze Coverlet',
-    subtitle: 'Air-spun four-layer muslin with pillowy loft and relaxed crinkle',
-    category: 'Quilts & Comforters',
-    material: 'Cloud Cotton Gauze',
-    price: 24000,
-    colors: [
-      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' }
+    "id": "corduroy-quilt-cover-olive",
+    "name": "Darcy Corduroy - Olive Solid Quilt Cover",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Darcy Corduroy",
+    "price": 26000,
+    "salePrice": 32500,
+    "colors": [
+      {
+        "name": "Olive",
+        "hex": "#A39264",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+      },
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#c87b4b",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+      }
     ],
-    sizes: ['Full', 'Queen', 'King'],
-    images: [
-      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'Four delicate layers of breathable organic cotton woven together on specialized jacquard looms. Traps soft pockets of air for warmth without weight. Draped at the foot of your bed or pulled up on warm summer evenings as an effortless standalone layer.',
-    weaveDetails: '4-layer woven gauze muslin with bound edges and textured waffle puckering.',
-    threadCountOrWeight: '320 GSM 4-Ply Gauze',
-    includes: ['1 Layered Gauze Bedspread / Coverlet'],
-    care: [
-      'Machine wash cold on gentle cycle',
-      'Tumble dry low to enhance the airy crinkle texture',
-      'Never bleach or dry clean'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-02.jpg"
     ],
-    dimensions: {
-      Twin: '70" x 90" (178cm x 229cm)',
-      Full: '90" x 96" (229cm x 244cm)',
-      Queen: '96" x 98" (244cm x 249cm)',
-      King: '110" x 98" (279cm x 249cm)',
-      'Cal King': '110" x 102" (279cm x 259cm)'
+    "description": "Invisible zipper for quick and easy changes. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Corduroy on topside and Eden Cotton on underside.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "corduroy, cotton",
+    "includes": [
+      "Invisible zipper for quick and easy changes",
+      "Arrives prewashed so you can hop straight into bed."
+    ],
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.9,
-    reviewsCount: 84,
-    isNew: true,
-    certification: 'OEKO-TEX® Made in Green'
+    "rating": 4.9,
+    "reviewsCount": 94,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'normandy-linen-fitted-sheet',
-    name: 'Normandy Flax Linen Fitted Sheet',
-    subtitle: 'Extra-deep 17" pocket with reinforced corners and French seams',
-    category: 'Sheets & Sets',
-    material: 'French Flax Linen',
-    price: 14500,
-    colors: [
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' }
+    "id": "corduroy-quilt-cover-terracotta",
+    "name": "Darcy Corduroy - Terracotta Quilt Cover",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Darcy Corduroy",
+    "price": 17500,
+    "salePrice": 29000,
+    "colors": [
+      {
+        "name": "Terracotta",
+        "hex": "#c87b4b",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+      },
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+      },
+      {
+        "name": "Olive",
+        "hex": "#A39264",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+      }
     ],
-    sizes: ['Twin', 'Full', 'Queen', 'King', 'Cal King'],
-    images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'The foundation of restful sleep. Tailored with generous 17" mattress depth and reinforced elastic around the entire perimeter to stay taut and secure throughout the night without slipping or bunching.',
-    weaveDetails: '170 GSM pure European flax with heavy-duty enclosed 360-degree elastic band.',
-    threadCountOrWeight: '170 GSM pure linen',
-    includes: ['1 Deep-pocket fitted linen sheet with subtle "Top/Bottom" orientation labels'],
-    care: [
-      'Gentle cycle with warm or cold water',
-      'Hang dry or tumble low',
-      'Gets softer and more supple with every single wash'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-03.jpg"
     ],
-    dimensions: {
-      Twin: '39" x 75" x 17"',
-      Full: '54" x 75" x 17"',
-      Queen: '60" x 80" x 17"',
-      King: '76" x 80" x 17"',
-      'Cal King': '72" x 84" x 17"'
+    "description": "Darcy Corduroy crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "corduroy, cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.9,
-    reviewsCount: 110,
-    isBestseller: true,
-    certification: 'European Flax® & Oeko-Tex Standard 100'
+    "rating": 4.9,
+    "reviewsCount": 64,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'heritage-linen-pillowcases',
-    name: 'French Flax Pillowcase Pair',
-    subtitle: 'Set of two with deep inside envelope closures and tailored borders',
-    category: 'Pillowcases',
-    material: 'French Flax Linen',
-    price: 7200,
-    colors: [
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Terracotta Rust', hex: '#B74121', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' }
+    "id": "linen-quilt-cover-cloud",
+    "name": "Eve Linen - Cloud Quilt Cover",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eve Linen",
+    "price": 33000,
+    "salePrice": 41500,
+    "colors": [
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+      },
+      {
+        "name": "Sage",
+        "hex": "#a8b09f",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+      },
+      {
+        "name": "Chocolate",
+        "hex": "#574138",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+      }
     ],
-    sizes: ['Queen', 'King'],
-    images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'Rest your head against natural, hypoallergenic flax fibers that maintain a soothing, temperature-regulated microclimate. Designed with an interior back envelope closure that prevents the pillow insert from ever peeking out.',
-    weaveDetails: 'French seam construction with 8" deep envelope back flap.',
-    threadCountOrWeight: '170 GSM French Flax',
-    includes: ['2 Pillowcases with envelope back closures'],
-    care: ['Machine wash cool, tumble dry low or air dry for lived-in texture'],
-    dimensions: {
-      Twin: 'Standard: 20" x 30" (51cm x 76cm)',
-      Full: 'Standard: 20" x 30" (51cm x 76cm)',
-      Queen: 'Standard: 20" x 30" (51cm x 76cm)',
-      King: 'King: 20" x 38" (51cm x 96cm)',
-      'Cal King': 'King: 20" x 38" (51cm x 96cm)'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.9,
-    reviewsCount: 167,
-    isBestseller: true,
-    certification: 'European Flax® Certified'
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'waffle-wool-linen-throw',
-    name: 'Brushed Waffle Wool-Linen Throw',
-    subtitle: '70% European linen, 30% soft merino wool with fringed eyelash ends',
-    category: 'Blankets & Throws',
-    material: 'Waffle Wool-Linen',
-    price: 18500,
-    colors: [
-      { name: 'Earthy Umber', hex: '#49372F', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' }
+    "id": "linen-quilt-cover-white",
+    "name": "Eve Linen - White Quilt Cover",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eve Linen",
+    "price": 31500,
+    "salePrice": 39500,
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+      },
+      {
+        "name": "Sage",
+        "hex": "#a8b09f",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+      },
+      {
+        "name": "Chocolate",
+        "hex": "#574138",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+      }
     ],
-    sizes: ['Queen', 'King'],
-    images: [
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'An architectural textural layer that balances the cooling structure of heavy flax with the buttery softness of non-mulesed merino wool. Woven on heritage looms in Guimarães, Portugal with delicate eyelash fringe hems.',
-    weaveDetails: 'Deep 3D honeycomb waffle weave with 1.5" raw-feathered eyelash fringe.',
-    threadCountOrWeight: '380 GSM Heavy Texture',
-    includes: ['1 Textured Wool-Linen Bed Blanket / Throw'],
-    care: ['Dry clean or hand wash cold with wool-friendly detergent, dry flat'],
-    dimensions: {
-      Twin: '50" x 70" (127cm x 178cm)',
-      Full: '55" x 75" (140cm x 190cm)',
-      Queen: '55" x 80" (140cm x 203cm)',
-      King: '65" x 90" (165cm x 229cm)',
-      'Cal King': '65" x 95" (165cm x 241cm)'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.8,
-    reviewsCount: 46,
-    isNew: true,
-    certification: 'Responsible Wool Standard (RWS) & Masters of Linen'
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'sateen-luxe-duvet',
-    name: 'Silk-Touch Sateen Duvet Cover',
-    subtitle: '400-thread count lustrous long-staple Egyptian cotton with subtle sheen',
-    category: 'Duvet Covers',
-    material: 'Sateen Luxe',
-    price: 26000,
-    colors: [
-      { name: 'Chalk White', hex: '#FBF9F5', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85' }
+    "id": "linen-quilt-cover-warm-white",
+    "name": "Eve Linen - Warm White Quilt Cover",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eve Linen",
+    "price": 24000,
+    "salePrice": 39500,
+    "colors": [
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+      },
+      {
+        "name": "Sage",
+        "hex": "#a8b09f",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+      },
+      {
+        "name": "Chocolate",
+        "hex": "#574138",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+      }
     ],
-    sizes: ['Full', 'Queen', 'King', 'Cal King'],
-    images: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'For those who prefer a silky glide against their skin. Sateen weaves three threads over and one thread under, exposing more yarn surface to create a luminous, whisper-soft drape that feels like warm silk on cooler evenings.',
-    weaveDetails: '4-over-1 satin weave, 400 single-ply yarn count with internal corner ties.',
-    threadCountOrWeight: '400 TC Egyptian Cotton',
-    includes: ['1 Sateen Duvet Cover with French button placket'],
-    care: ['Gentle warm wash, tumble dry low, gentle steam iron if desired'],
-    dimensions: {
-      Twin: '68" x 86"',
-      Full: '86" x 86"',
-      Queen: '90" x 92"',
-      King: '106" x 92"',
-      'Cal King': '104" x 96"'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.8,
-    reviewsCount: 52,
-    certification: 'OEKO-TEX Standard 100'
+    "rating": 4.9,
+    "reviewsCount": 43,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
-    id: 'box-stitched-chambray-quilt',
-    name: 'Stitch-Quilted Linen Chambray Quilt',
-    subtitle: 'Hand-guided box stitch with 100% recycled cotton fill',
-    category: 'Quilts & Comforters',
-    material: 'French Flax Linen',
-    price: 31500,
-    colors: [
-      { name: 'Dusk Slate', hex: '#71818A', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Oatmeal Natural', hex: '#D8CBB8', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85' },
-      { name: 'Olive Leaf', hex: '#596451', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=85' }
+    "id": "linen-quilt-cover-sage",
+    "name": "Eve Linen - Sage Quilt Cover",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eve Linen",
+    "price": 31500,
+    "salePrice": 39500,
+    "colors": [
+      {
+        "name": "Sage",
+        "hex": "#a8b09f",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+      },
+      {
+        "name": "Chocolate",
+        "hex": "#574138",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+      }
     ],
-    sizes: ['Queen', 'King'],
-    images: [
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1400&q=85'
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
     ],
-    description: 'A substantial, heritage-inspired heirloom quilt. Pure washed linen on both faces encasing a breathable recycled cotton batting. The 4-inch box quilting prevents cold spots while giving the bed a grounded, architectural profile.',
-    weaveDetails: 'Box-stitched linen with 1" self-fabric binding on all four sides.',
-    threadCountOrWeight: '180 GSM Linen with 200 GSM Cotton Batt',
-    includes: ['1 Box-Quilted All-Season Quilt'],
-    care: ['Machine wash cold, tumble dry low or air dry flat in shade'],
-    dimensions: {
-      Twin: '70" x 90"',
-      Full: '90" x 92"',
-      Queen: '96" x 96"',
-      King: '110" x 96"',
-      'Cal King': '110" x 100"'
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
     },
-    rating: 4.9,
-    reviewsCount: 38,
-    isNew: true,
-    certification: 'OEKO-TEX Standard 100 & GRS Recycled Fill'
+    "rating": 4.9,
+    "reviewsCount": 66,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "chambray-linen-quilt-cover-oatmeal",
+    "name": "Eve Linen - Oatmeal Quilt Cover",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eve Linen",
+    "price": 31500,
+    "salePrice": 39500,
+    "colors": [
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+      },
+      {
+        "name": "Sage",
+        "hex": "#a8b09f",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+      },
+      {
+        "name": "Chocolate",
+        "hex": "#574138",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 85,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-quilt-cover-chocolate",
+    "name": "Eve Linen - Chocolate Quilt Cover",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eve Linen",
+    "price": 33000,
+    "salePrice": 41500,
+    "colors": [
+      {
+        "name": "Chocolate",
+        "hex": "#574138",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+      },
+      {
+        "name": "Sage",
+        "hex": "#a8b09f",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 101,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "quilt-cover-alex-stripe",
+    "name": "Eden Cotton - Alex Stripe Quilt Cover",
+    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Eden Cotton",
+    "price": 21500,
+    "salePrice": 27000,
+    "colors": [
+      {
+        "name": "Alex-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-03.jpg"
+    ],
+    "description": "Eden Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-quilt-cover-russet",
+    "name": "Jude Organic Cotton - Russet Quilt Cover",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Jude Organic Cotton",
+    "price": 19500,
+    "salePrice": 28000,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg"
+      },
+      {
+        "name": "Bay-blue",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, jersey",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-quilt-cover-bay-blue",
+    "name": "Jude Organic Cotton - Bay Blue Quilt Cover",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Jude Organic Cotton",
+    "price": 18500,
+    "salePrice": 26000,
+    "colors": [
+      {
+        "name": "Bay-blue",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, organic-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 92,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-quilt-cover-blythe-stripe",
+    "name": "Frankie Flannelette - Blythe Stripe Quilt Cover",
+    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Frankie Flannelette",
+    "price": 10000,
+    "salePrice": 20000,
+    "colors": [
+      {
+        "name": "Blythe-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-03.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "flannelette",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 106,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "ruched-cotton-quilt-cover-white",
+    "name": "Sofia Ruched Cotton - White Quilt Cover",
+    "subtitle": "Sofia Ruched Cotton · cotton, ruched-cotton, washed-cotton · Designed for everyday tactile comfort",
+    "category": "Quilt Covers",
+    "material": "Sofia Ruched Cotton",
+    "price": 23000,
+    "salePrice": 29000,
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-01.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-02.jpg",
+      "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-03.jpg"
+    ],
+    "description": "Sofia Ruched Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, ruched-cotton, washed-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 64,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-fitted-sheet-cloud",
+    "name": "Eve Linen - Cloud Fitted Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Eve Linen",
+    "price": 23000,
+    "salePrice": 29000,
+    "colors": [
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 80,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-fitted-sheet-warm-white",
+    "name": "Eve Linen - Warm White Fitted Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Eve Linen",
+    "price": 15000,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 50,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-fitted-sheet-marshmallow",
+    "name": "Eve Linen - Marshmallow Fitted Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Eve Linen",
+    "price": 17500,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 57,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-fitted-sheet-white",
+    "name": "Eve Linen - White Fitted Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Eve Linen",
+    "price": 20000,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Long Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Long Single": "Standard sizing",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 80,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-fitted-sheet-russet",
+    "name": "Jude Organic Cotton - Russet Fitted Sheet",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Jude Organic Cotton",
+    "price": 10500,
+    "salePrice": 15500,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, jersey",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 85,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-fitted-sheet-white",
+    "name": "Jude Organic Cotton - White Fitted Sheet",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Jude Organic Cotton",
+    "price": 10000,
+    "salePrice": 12500,
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, organic-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "fitted-sheet-alex-stripe",
+    "name": "Eden Cotton - Alex Stripe Fitted Sheet",
+    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Eden Cotton",
+    "price": 11000,
+    "salePrice": 13500,
+    "colors": [
+      {
+        "name": "Alex-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-03.jpg"
+    ],
+    "description": "Eden Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 80,
+    "isBestseller": true,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-fitted-sheet-blythe-stripe",
+    "name": "Frankie Flannelette - Blythe Stripe Fitted Sheet",
+    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "category": "Fitted Sheets",
+    "material": "Frankie Flannelette",
+    "price": 4500,
+    "salePrice": 9000,
+    "colors": [
+      {
+        "name": "Blythe-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-03.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "flannelette",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 48,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-flat-sheet-cloud",
+    "name": "Eve Linen - Cloud Flat Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Eve Linen",
+    "price": 23000,
+    "salePrice": 29000,
+    "colors": [
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 66,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-flat-sheet-warm-white",
+    "name": "Eve Linen - Warm White Flat Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Eve Linen",
+    "price": 15000,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 101,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-flat-sheet-marshmallow",
+    "name": "Eve Linen - Marshmallow Flat Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Eve Linen",
+    "price": 17500,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 43,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-flat-sheet-white",
+    "name": "Eve Linen - White Flat Sheet",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Eve Linen",
+    "price": 20000,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+      },
+      {
+        "name": "Marshmallow",
+        "hex": "#EEE0DC",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 66,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-flat-sheet-russet",
+    "name": "Jude Organic Cotton - Russet Flat Sheet",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Jude Organic Cotton",
+    "price": 10500,
+    "salePrice": 15500,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Double",
+      "Queen",
+      "King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, jersey",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 71,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-flat-sheet-white",
+    "name": "Jude Organic Cotton - White Flat Sheet",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Jude Organic Cotton",
+    "price": 10000,
+    "salePrice": 12500,
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, organic-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 64,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flat-sheet-alex-stripe",
+    "name": "Eden Cotton - Alex Stripe Flat Sheet",
+    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Eden Cotton",
+    "price": 11000,
+    "salePrice": 13500,
+    "colors": [
+      {
+        "name": "Alex-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-03.jpg"
+    ],
+    "description": "Eden Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 66,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-flat-sheet-blythe-stripe",
+    "name": "Frankie Flannelette - Blythe Stripe Flat Sheet",
+    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "category": "Flat Sheets",
+    "material": "Frankie Flannelette",
+    "price": 4500,
+    "salePrice": 9000,
+    "colors": [
+      {
+        "name": "Blythe-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-03.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "flannelette",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "King Single": "Standard sizing",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 99,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "corduroy-pillowcases-russet",
+    "name": "Darcy Corduroy - Russet Pillowcases",
+    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Darcy Corduroy",
+    "price": 7500,
+    "salePrice": 11000,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg"
+      },
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-02.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-03.jpg"
+    ],
+    "description": "Deep pillow flap to keep your pillow tucked in tight, all night long.. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "Deep pillow flap to keep your pillow tucked in tight, all night long.",
+      "Arrives prewashed so you can hop straight into bed."
+    ],
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 101,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "corduroy-european-pillowcase-russet",
+    "name": "Darcy Corduroy - Russet European Pillowcase",
+    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Darcy Corduroy",
+    "price": 7500,
+    "salePrice": 11000,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg"
+      },
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-02.jpg"
+    ],
+    "description": "Deep pillow flap to keep your pillow tucked in tight, all night long.. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "Deep pillow flap to keep your pillow tucked in tight, all night long.",
+      "Arrives prewashed so you can hop straight into bed."
+    ],
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 92,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "corduroy-pillowcases-hunter-green",
+    "name": "Darcy Corduroy - Hunter Green Pillowcases",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Darcy Corduroy",
+    "price": 8500,
+    "salePrice": 11000,
+    "colors": [
+      {
+        "name": "Hunter-green",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg"
+      },
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-02.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-03.jpg"
+    ],
+    "description": "Deep pillow flap to keep your pillow tucked in tight, all night long.. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "corduroy, cotton",
+    "includes": [
+      "Deep pillow flap to keep your pillow tucked in tight, all night long.",
+      "Arrives prewashed so you can hop straight into bed."
+    ],
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-pillowcases-cloud",
+    "name": "Eve Linen - Cloud Pillowcases",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Eve Linen",
+    "price": 11500,
+    "salePrice": 14500,
+    "colors": [
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-02.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-european-pillowcase-cloud",
+    "name": "Eve Linen - Cloud European Pillowcase",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Eve Linen",
+    "price": 8500,
+    "salePrice": 11000,
+    "colors": [
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-02.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 64,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-pillowcases-warm-white",
+    "name": "Eve Linen - Warm White Pillowcases",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Eve Linen",
+    "price": 8500,
+    "salePrice": 14500,
+    "colors": [
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-02.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 43,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "pillowcases-alex-stripe",
+    "name": "Eden Cotton - Alex Stripe Pillowcases",
+    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Eden Cotton",
+    "price": 8500,
+    "salePrice": 11000,
+    "colors": [
+      {
+        "name": "Alex-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-03.jpg"
+    ],
+    "description": "Eden Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "european-pillowcase-alex-stripe",
+    "name": "Eden Cotton - Alex Stripe European Pillowcase",
+    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Eden Cotton",
+    "price": 7000,
+    "salePrice": 9000,
+    "colors": [
+      {
+        "name": "Alex-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-02.jpg"
+    ],
+    "description": "Eden Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 64,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-pillowcases-russet",
+    "name": "Jude Organic Cotton - Russet Pillowcases",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Jude Organic Cotton",
+    "price": 7000,
+    "salePrice": 10000,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-02.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, jersey",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-pillowcases-blythe-stripe",
+    "name": "Frankie Flannelette - Blythe Stripe Pillowcases",
+    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "category": "Pillowcases",
+    "material": "Frankie Flannelette",
+    "price": 2500,
+    "salePrice": 5500,
+    "colors": [
+      {
+        "name": "Blythe-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Standard Size",
+      "King Size"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-02.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "flannelette",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Standard Size": "Standard sizing",
+      "King Size": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 106,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-bedding-cloud",
+    "name": "Eve Linen - Cloud",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Eve Linen",
+    "price": 23000,
+    "salePrice": 29000,
+    "colors": [
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 45,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "linen-bedding-warm-white",
+    "name": "Eve Linen - Warm White",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Eve Linen",
+    "price": 12000,
+    "salePrice": 20000,
+    "colors": [
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 80,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "chambray-linen-bedding-oatmeal",
+    "name": "Eve Linen - Oatmeal",
+    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Eve Linen",
+    "price": 23000,
+    "salePrice": 29000,
+    "colors": [
+      {
+        "name": "Oatmeal",
+        "hex": "#e9dfcf",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#D5D5D8",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg"
+      },
+      {
+        "name": "Warm-white",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-03.jpg"
+    ],
+    "description": "Eve Linen crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "linen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 57,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "corduroy-bedding-russet",
+    "name": "Darcy Corduroy - Russet",
+    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Darcy Corduroy",
+    "price": 32500,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-03.jpg"
+    ],
+    "description": "Invisible zipper for quick and easy changes. Deep pillow flap to keep your pillow tucked in tight, all night long.. Arrives prewashed so you can hop straight into bed..",
+    "weaveDetails": "Thick 100% cotton fabric with plush velvety ribs.. Corduroy on topside and Eden Cotton on underside.. Soft and snuggly like your favourite corduroy pants.. Natural, breathable and hypoallergenic.. OEKO-TEX Certified: no harsh chemicals or dyes.",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "Invisible zipper for quick and easy changes",
+      "Deep pillow flap to keep your pillow tucked in tight, all night long.",
+      "Arrives prewashed so you can hop straight into bed."
+    ],
+    "care": [
+      "Wash Darcy Corduroy with a small amount of detergent, on a cold, gentle setting. Remember to turn it inside out.",
+      "Give a good shake after washing, then dry on the line, in the shade. Avoid direct sunlight.",
+      "Creases aren't common, but if they show, a cool iron should smooth them out.",
+      "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "bed-sheets-alex-stripe",
+    "name": "Eden Cotton - Alex Stripe Bed Sheets",
+    "subtitle": "Eden Cotton · cotton, cotton-sateen · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Eden Cotton",
+    "price": 11000,
+    "salePrice": 13500,
+    "colors": [
+      {
+        "name": "Alex-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-03.jpg"
+    ],
+    "description": "Eden Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, cotton-sateen",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 66,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "washed-cotton-bed-sheets-midnight-rodeo-stripe",
+    "name": "Leo Washed Cotton - Midnight Rodeo Bed Sheets",
+    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Leo Washed Cotton",
+    "price": 10000,
+    "salePrice": 12500,
+    "colors": [
+      {
+        "name": "Midnight-rodeo",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg"
+      },
+      {
+        "name": "Henley-gingham",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-03.jpg"
+    ],
+    "description": "Leo Washed Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, washed-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 104,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "organic-cotton-bed-sheets-russet",
+    "name": "Jude Organic Cotton - Russet Bed Sheets",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Jude Organic Cotton",
+    "price": 10500,
+    "salePrice": 15500,
+    "colors": [
+      {
+        "name": "Russet",
+        "hex": "#7E212A",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-03.jpg"
+    ],
+    "description": "Jude Organic Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, organic-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 71,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "washed-cotton-bedding-henley-gingham",
+    "name": "Leo Washed Cotton - Henley Gingham",
+    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Designed for everyday tactile comfort",
+    "category": "Bed Sheets & Sets",
+    "material": "Leo Washed Cotton",
+    "price": 8500,
+    "salePrice": 11000,
+    "colors": [
+      {
+        "name": "Henley-gingham",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg"
+      },
+      {
+        "name": "Midnight-rodeo",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Default Title"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-02.jpg",
+      "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-03.jpg"
+    ],
+    "description": "Leo Washed Cotton crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, washed-cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Default Title": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 99,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "rory-washed-cotton-blanket-millie",
+    "name": "Rory Washed Cotton - Millie Blanket",
+    "subtitle": "Leo Washed Cotton · washed-cotton · Designed for everyday tactile comfort",
+    "category": "Blankets & Bed Covers",
+    "material": "Leo Washed Cotton",
+    "price": 21500,
+    "salePrice": 27000,
+    "colors": [
+      {
+        "name": "Millie",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg"
+      },
+      {
+        "name": "Mahogany",
+        "hex": "#503130",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-02.jpg"
+    ],
+    "description": "100% natural and renewable.. Quilted for extra warmth.. Subtle square-stitched detail.. Open textured weave for a relaxed look..",
+    "weaveDetails": "100% natural cotton.. Breathable, durable, and super soft.. OEKO-TEX Standard 100 Certified.. Pre-washed and ready to use.",
+    "threadCountOrWeight": "washed-cotton",
+    "includes": [
+      "100% natural and renewable.",
+      "Quilted for extra warmth.",
+      "Subtle square-stitched detail.",
+      "Open textured weave for a relaxed look."
+    ],
+    "care": [
+      "Air regularly to help retain freshness.",
+      "Wash on a gentle, cool setting with similar colours.",
+      "Line dry in the shade only.",
+      "Do not tumble dry or iron.",
+      "Make sure your blanket is dry before folding."
+    ],
+    "dimensions": {
+      "Small": "Standard sizing",
+      "Medium": "Standard sizing",
+      "Large": "Standard sizing",
+      "Extra Large": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "isBestseller": true,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "rory-washed-cotton-bed-cover-millie",
+    "name": "Rory Washed Cotton - Millie Bed Cover",
+    "subtitle": "Leo Washed Cotton · washed-cotton · Designed for everyday tactile comfort",
+    "category": "Blankets & Bed Covers",
+    "material": "Leo Washed Cotton",
+    "price": 21500,
+    "salePrice": 27000,
+    "colors": [
+      {
+        "name": "Millie",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg"
+      },
+      {
+        "name": "Mahogany",
+        "hex": "#503130",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single",
+      "Double",
+      "Queen",
+      "King/Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-02.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-03.jpg"
+    ],
+    "description": "100% natural and renewable.. Quilted for extra warmth.. Subtle square-stitched detail.. Open textured weave for a relaxed look..",
+    "weaveDetails": "100% natural cotton.. Breathable, durable, and super soft.. OEKO-TEX Standard 100 Certified.. Pre-washed and ready to use.",
+    "threadCountOrWeight": "washed-cotton",
+    "includes": [
+      "100% natural and renewable.",
+      "Quilted for extra warmth.",
+      "Subtle square-stitched detail.",
+      "Open textured weave for a relaxed look."
+    ],
+    "care": [
+      "Air regularly to help retain freshness.",
+      "Wash on a gentle, cool setting with similar colours.",
+      "Line dry in the shade only.",
+      "Do not tumble dry or iron.",
+      "Make sure your bed cover is dry before folding."
+    ],
+    "dimensions": {
+      "Single": "140cm x 210cm",
+      "Double": "180cm x 210cm",
+      "Queen": "210cm x 210cm",
+      "King/Super King": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 92,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "rory-washed-cotton-bed-cover-mahogany",
+    "name": "Rory Washed Cotton - Mahogany Bed Cover",
+    "subtitle": "Leo Washed Cotton · washed-cotton · Designed for everyday tactile comfort",
+    "category": "Blankets & Bed Covers",
+    "material": "Leo Washed Cotton",
+    "price": 31500,
+    "salePrice": 45000,
+    "colors": [
+      {
+        "name": "Mahogany",
+        "hex": "#503130",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg"
+      },
+      {
+        "name": "Millie",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg"
+      },
+      {
+        "name": "Millie",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Queen",
+      "King",
+      "Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-02.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-03.jpg"
+    ],
+    "description": "100% natural and renewable.. Softly draped skirt detail.. Open textured weave for a relaxed look..",
+    "weaveDetails": "100% natural cotton.. Breathable, durable, and super soft.. OEKO-TEX Standard 100 Certified.. Pre-washed and ready to use.",
+    "threadCountOrWeight": "washed-cotton",
+    "includes": [
+      "100% natural and renewable.",
+      "Softly draped skirt detail.",
+      "Open textured weave for a relaxed look."
+    ],
+    "care": [
+      "Air regularly to help retain freshness.",
+      "Wash on a gentle, cool setting with similar colours.",
+      "Line dry in the shade only.",
+      "Do not tumble dry or iron.",
+      "Make sure your bed cover is dry before folding."
+    ],
+    "dimensions": {
+      "Queen": "210cm x 210cm",
+      "King": "245cm x 210cm",
+      "Super King": "270cm x 240cm"
+    },
+    "rating": 4.9,
+    "reviewsCount": 106,
+    "isBestseller": false,
+    "isNew": true,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-bed-cover-jimmy-stripe",
+    "name": "Frankie Flannelette - Jimmy Stripe Bed Cover",
+    "subtitle": "Frankie Flannelette · cotton · Designed for everyday tactile comfort",
+    "category": "Blankets & Bed Covers",
+    "material": "Frankie Flannelette",
+    "price": 12500,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Jimmy-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg"
+      },
+      {
+        "name": "Marlo",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Single/King Single",
+      "Double/Queen",
+      "King/Super King"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-03.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Single/King Single": "Standard sizing",
+      "Double/Queen": "Standard sizing",
+      "King/Super King": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 85,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-blanket-jimmy-stripe",
+    "name": "Frankie Flannelette - Jimmy Stripe Blanket",
+    "subtitle": "Frankie Flannelette · cotton, flannelette · Designed for everyday tactile comfort",
+    "category": "Blankets & Bed Covers",
+    "material": "Frankie Flannelette",
+    "price": 12500,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Jimmy-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg"
+      },
+      {
+        "name": "Marlo",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Small",
+      "Medium - Large",
+      "Large - Extra Large"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-02.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-03.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, flannelette",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Small": "Standard sizing",
+      "Medium - Large": "Standard sizing",
+      "Large - Extra Large": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 71,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
+  },
+  {
+    "id": "flannelette-blanket-marlo-print",
+    "name": "Frankie Flannelette - Marlo Blanket",
+    "subtitle": "Frankie Flannelette · cotton, flannelette · Designed for everyday tactile comfort",
+    "category": "Blankets & Bed Covers",
+    "material": "Frankie Flannelette",
+    "price": 12500,
+    "salePrice": 25000,
+    "colors": [
+      {
+        "name": "Marlo",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg"
+      },
+      {
+        "name": "Jimmy-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg"
+      },
+      {
+        "name": "Jimmy-stripe",
+        "hex": "#dbcaac",
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg"
+      }
+    ],
+    "sizes": [
+      "Small",
+      "Medium/Large",
+      "Large/Extra Large"
+    ],
+    "images": [
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-02.jpg",
+      "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-03.jpg"
+    ],
+    "description": "Frankie Flannelette crafted with exceptional texture and drape.",
+    "weaveDetails": "Premium natural weave. Breathable and hypoallergenic. Naturally thermoregulating",
+    "threadCountOrWeight": "cotton, flannelette",
+    "includes": [
+      "100% premium natural fibres",
+      "Pre-washed for instant softness",
+      "OEKO-TEX® Standard 100 certified"
+    ],
+    "care": [
+      "Cold gentle machine wash inside out",
+      "Line dry in shade",
+      "Warm iron if needed"
+    ],
+    "dimensions": {
+      "Small": "Standard sizing",
+      "Medium/Large": "Standard sizing",
+      "Large/Extra Large": "Standard sizing"
+    },
+    "rating": 4.9,
+    "reviewsCount": 64,
+    "isBestseller": false,
+    "isNew": false,
+    "certification": "OEKO-TEX® Standard 100 Certified"
   }
 ];
 
 export const BEDROOM_LOOKS: BedroomLook[] = [
   {
-    id: 'look-morning-terracotta',
-    title: 'The Sunkissed Atelier Look',
-    roomName: 'Suite No. 04 — Mediterranean Arches & Warm Drapes',
-    description: 'An evocative dialogue between washed terracotta linen, chalk white percale underpinnings, and deep umber accents. Styled in an arched sunlit courtyard bedroom.',
-    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1600&q=85',
-    palette: ['#B74121', '#FBF9F5', '#49372F', '#D8CBB8'],
-    hotspots: [
-      { productId: 'normandy-linen-duvet', label: 'Linen Duvet in Terracotta Rust', price: 28500, x: 52, y: 65 },
-      { productId: 'percale-core-sheet-set', label: 'Crisp Percale Sheets in Chalk', price: 21500, x: 38, y: 48 },
-      { productId: 'waffle-wool-linen-throw', label: 'Waffle Throw in Earthy Umber', price: 18500, x: 68, y: 78 }
+    "id": "look-corduroy-terracotta",
+    "title": "The Autumn Atelier Sanctuary",
+    "roomName": "Suite No. 01 — Russet Corduroy & Eve Linen",
+    "description": "Plush ribbed cotton corduroy quilt cover layered with crisp natural flax linen sheets and soft tactile European pillows.",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+    "palette": [
+      "#7E212A",
+      "#D5D5D8",
+      "#415141",
+      "#f2ebdf"
+    ],
+    "hotspots": [
+      {
+        "productId": "corduroy-quilt-cover-russet",
+        "label": "Darcy Corduroy Quilt in Russet",
+        "price": 22500,
+        "x": 48,
+        "y": 62
+      },
+      {
+        "productId": "linen-fitted-sheet-cloud",
+        "label": "Eve Linen Fitted in Cloud",
+        "price": 23000,
+        "x": 35,
+        "y": 55
+      },
+      {
+        "productId": "corduroy-pillowcases-russet",
+        "label": "Darcy Corduroy Pillowcases",
+        "price": 7500,
+        "x": 62,
+        "y": 40
+      }
     ]
   },
   {
-    id: 'look-coastal-slate',
-    title: 'The High-Tide Slate Bedroom',
-    roomName: 'Suite No. 02 — Fog, Cedar & Stone Weaves',
-    description: 'Grounded slate blue paired with pure raw oatmeal flax and natural oak textures. Crisp, quiet, and deeply restorative for deep sleepers.',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=85',
-    palette: ['#71818A', '#D8CBB8', '#FBF9F5', '#596451'],
-    hotspots: [
-      { productId: 'normandy-linen-duvet', label: 'Normandy Duvet in Dusk Slate', price: 28500, x: 50, y: 62 },
-      { productId: 'normandy-linen-fitted-sheet', label: 'Fitted Linen in Oatmeal', price: 14500, x: 34, y: 55 },
-      { productId: 'heritage-linen-pillowcases', label: 'Flax Pillowcases in Olive Leaf', price: 7200, x: 62, y: 42 }
+    "id": "look-linen-cloud",
+    "title": "The Coastal Haven Suite",
+    "roomName": "Suite No. 02 — Cloud French Flax Linen",
+    "description": "Breezy French flax linen in soft ethereal Cloud grey, paired with pure white cotton foundations for cool, restful mornings.",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+    "palette": [
+      "#D5D5D8",
+      "#ffffff",
+      "#a8b09f",
+      "#574138"
+    ],
+    "hotspots": [
+      {
+        "productId": "linen-quilt-cover-cloud",
+        "label": "Eve Linen Quilt in Cloud",
+        "price": 33000,
+        "x": 45,
+        "y": 64
+      },
+      {
+        "productId": "organic-cotton-fitted-sheet-white",
+        "label": "Jude Organic Fitted in White",
+        "price": 10000,
+        "x": 60,
+        "y": 76
+      },
+      {
+        "productId": "linen-pillowcases-cloud",
+        "label": "Eve Linen Pillowcase Pair",
+        "price": 11500,
+        "x": 30,
+        "y": 44
+      }
     ]
   },
   {
-    id: 'look-botanical-olive',
-    title: 'The Forest Sanctuary Retreat',
-    roomName: 'Suite No. 07 — Olive Weaves & Raw Linens',
-    description: 'Deep botanical greens layered with tactile cream gauze and washed linen pillows. A peaceful refuge echoing quiet courtyard gardens.',
-    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1600&q=85',
-    palette: ['#596451', '#FBF9F5', '#D8CBB8', '#49372F'],
-    hotspots: [
-      { productId: 'normandy-linen-duvet', label: 'Linen Duvet in Olive Leaf', price: 28500, x: 45, y: 64 },
-      { productId: 'cloud-gauze-coverlet', label: 'Cloud Gauze in Oatmeal', price: 24000, x: 60, y: 76 },
-      { productId: 'heritage-linen-pillowcases', label: 'Pillowcase Pair in Chalk', price: 7200, x: 30, y: 44 }
+    "id": "look-olive-retreat",
+    "title": "The Forest Olive Sanctuary",
+    "roomName": "Suite No. 03 — Corduroy Olive & Warm White Flax",
+    "description": "Muted olive velvet ribs draped over warm white organic cotton sheets, capturing golden afternoon courtyard light.",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+    "palette": [
+      "#A39264",
+      "#f2ebdf",
+      "#7E212A",
+      "#dbcaac"
+    ],
+    "hotspots": [
+      {
+        "productId": "corduroy-quilt-cover-olive",
+        "label": "Darcy Corduroy Quilt in Olive",
+        "price": 26000,
+        "x": 50,
+        "y": 60
+      },
+      {
+        "productId": "linen-flat-sheet-warm-white",
+        "label": "Eve Linen Flat in Warm White",
+        "price": 15000,
+        "x": 32,
+        "y": 52
+      },
+      {
+        "productId": "corduroy-european-pillowcase-russet",
+        "label": "Corduroy Euro Pillowcase",
+        "price": 7500,
+        "x": 66,
+        "y": 38
+      }
     ]
   }
 ];
 
 export const REVIEWS: Review[] = [
   {
-    id: 'rev-1',
-    author: 'Ayesha Raza',
-    location: 'Lahore, Pakistan',
-    verified: true,
-    rating: 5,
-    title: 'Linen that truly transformed our master bedroom',
-    text: 'I was hesitant to invest in pure imported linen, but after one wash and sleep, the difference is remarkable. It has that substantial, heavy drape yet remains cool during humid nights. The Oatmeal shade has such depth—woven with subtle warm flecks.',
-    productName: 'Normandy Washed Linen Duvet Cover',
-    colorPurchased: 'Oatmeal Natural',
-    date: '2 weeks ago',
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=400&q=80'
+    "id": "rev-1",
+    "author": "Ayesha Raza",
+    "location": "Lahore, Pakistan",
+    "verified": true,
+    "rating": 5,
+    "title": "The Darcy Corduroy has the most incredible tactile weight",
+    "text": "I was looking for bedding that had substance without feeling stifling. The Darcy Corduroy in Russet is utterly gorgeous—velvety ribs on top with smooth breathable cotton underneath. Arrived beautifully packaged in a reusable tote.",
+    "productName": "Darcy Corduroy - Russet Quilt Cover",
+    "colorPurchased": "Russet",
+    "date": "2 weeks ago",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
   },
   {
-    id: 'rev-2',
-    author: 'Zainab Qasim',
-    location: 'Islamabad, Pakistan',
-    verified: true,
-    rating: 5,
-    title: 'Like staying in an understated boutique hotel every single night',
-    text: 'The crispness of the organic percale is extraordinary. If you sleep warm, you will never go back to synthetic blends or limp microfiber. It stays crisp, cool, and structured throughout the night without making loud crinkly noises.',
-    productName: 'Crisp Organic Cotton Percale Sheet Set',
-    colorPurchased: 'Chalk White',
-    date: '1 month ago',
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=400&q=80'
+    "id": "rev-2",
+    "author": "Zainab Qasim",
+    "location": "Islamabad, Pakistan",
+    "verified": true,
+    "rating": 5,
+    "title": "Eve Linen in Cloud is ethereal and wonderfully cool",
+    "text": "Pure French flax linen that arrived already soft and pre-washed. The invisible zipper is a complete game changer—no more awkward button fumbling during laundry days. It stays so pleasantly cool during warm evenings.",
+    "productName": "Eve Linen - Cloud Quilt Cover",
+    "colorPurchased": "Cloud",
+    "date": "1 month ago",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
   },
   {
-    id: 'rev-3',
-    author: 'Hamza Farooq',
-    location: 'Karachi, Pakistan',
-    verified: true,
-    rating: 5,
-    title: 'Terracotta tone is breathtaking in evening lamp light',
-    text: 'The color is subtle and earthy, like Mediterranean terracotta or dried roses. The 4-ply gauze coverlet adds the most wonderful tactile ripple at the end of the bed. Beautiful craftsmanship with very neat seam bindings.',
-    productName: '4-Ply Cloud Cotton Gauze Coverlet',
-    colorPurchased: 'Terracotta Rust',
-    date: '2 months ago',
-    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=400&q=80'
+    "id": "rev-3",
+    "author": "Hamza Farooq",
+    "location": "Karachi, Pakistan",
+    "verified": true,
+    "rating": 5,
+    "title": "The deep wall fitted sheet actually stays firmly on deep mattresses",
+    "text": "Finally a fitted sheet with an authentic 55cm deep elastic wall and wide ribbed elastic that does not pop off the corners in the middle of the night. The Alex Stripe pattern looks like a bespoke interior spread.",
+    "productName": "Eden Cotton - Alex Stripe Fitted Sheet",
+    "colorPurchased": "Alex Stripe",
+    "date": "2 months ago",
+    "image": "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg"
   }
 ];
 
 export const JOURNAL_ARTICLES: JournalArticle[] = [
   {
-    id: 'art-layering-bed',
-    title: 'The Art of Layering: Texture, Tone, and Quiet Balance',
-    slug: 'the-art-of-layering',
-    category: 'Styling Rituals',
-    readTime: '4 min read',
-    date: 'Autumn 2026',
-    excerpt: 'How interior stylists build bedroom depth using three tactile textures instead of busy patterns: combining crisp percale foundations with stonewashed linen and waffle blankets.',
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85',
-    content: [
-      'A truly restful bed should feel like an invitation rather than a museum showcase. When we observe high-end interiors, the secret to effortless beauty is rarely excessive symmetry or decorative pillows—it is tonal layering and authentic textile friction.',
-      'Begin with your base: crisp, breathable percale or stone-washed linen sheets that feel good against bare skin. Next, introduce an envelope of warmth with a washed linen duvet cover, folded back slightly to expose the contrasting sheet beneath.',
-      'Finally, drape a textured throw—such as a 3D waffle weave or wool-linen blend—diagonally or folded across the lower third of the bed. This breaks rigid horizontal lines and creates the sensory feeling of stepping into a quiet sanctuary.'
+    "id": "art-layering-bed",
+    "title": "The Art of Layering: Texture, Tone, and Quiet Balance",
+    "slug": "the-art-of-layering",
+    "category": "Styling Rituals",
+    "readTime": "4 min read",
+    "date": "Autumn 2026",
+    "excerpt": "How interior stylists build bedroom depth using three tactile textures instead of busy patterns: combining crisp percale foundations with stonewashed linen and waffle blankets.",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+    "content": [
+      "A truly restful bed should feel like an invitation rather than a museum showcase. When we observe high-end interiors, the secret to effortless beauty is rarely excessive symmetry or decorative pillows—it is tonal layering and authentic textile friction.",
+      "Begin with your base: crisp, breathable percale or stone-washed linen sheets that feel good against bare skin. Next, introduce an envelope of warmth with a washed linen duvet cover, folded back slightly to expose the contrasting sheet beneath.",
+      "Finally, drape a textured throw—such as a 3D waffle weave or wool-linen blend—diagonally or folded across the lower third of the bed. This breaks rigid horizontal lines and creates the sensory feeling of stepping into a quiet sanctuary."
     ]
   },
   {
-    id: 'art-caring-for-linen',
-    title: 'Caring for Pure French Flax: A Gentle, Lifelong Ritual',
-    slug: 'caring-for-french-flax-linen',
-    category: 'Material Care',
-    readTime: '5 min read',
-    date: 'Summer 2026',
-    excerpt: 'Why linen gets softer with every single wash, the truth about detergents and fabric softeners, and why you should leave your iron in the cupboard.',
-    image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1200&q=85',
-    content: [
-      'Natural flax fibers are hollow and naturally coated in pectin. Over time and with each laundering, this natural pectin softens, allowing the flax cellulose fibers to flex and develop their legendary buttery handfeel.',
-      'The golden rule of linen care is simplicity: use gentle, plant-derived detergents without brightening agents or synthetic enzymes. Crucially, avoid commercial fabric softeners—they leave a synthetic film over the hollow fibers, reducing the flax’s natural breathability.',
-      'Linen loves water and space to tumble. Wash on gentle with ample water, line dry in the shade or tumble dry on low heat until just slightly damp. Shake it out and let it settle on your bed: the organic drape and soft ripples are its signature hallmark.'
+    "id": "art-caring-for-linen",
+    "title": "Caring for Pure French Flax: A Gentle, Lifelong Ritual",
+    "slug": "caring-for-french-flax-linen",
+    "category": "Material Care",
+    "readTime": "5 min read",
+    "date": "Summer 2026",
+    "excerpt": "Why linen gets softer with every single wash, the truth about detergents and fabric softeners, and why you should leave your iron in the cupboard.",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+    "content": [
+      "Natural flax fibers are hollow and naturally coated in pectin. Over time and with each laundering, this natural pectin softens, allowing the flax cellulose fibers to flex and develop their legendary buttery handfeel.",
+      "The golden rule of linen care is simplicity: use gentle, plant-derived detergents without brightening agents or synthetic enzymes. Crucially, avoid commercial fabric softeners—they leave a synthetic film over the hollow fibers, reducing the flax’s natural breathability.",
+      "Linen loves water and space to tumble. Wash on gentle with ample water, line dry in the shade or tumble dry on low heat until just slightly damp. Shake it out and let it settle on your bed: the organic drape and soft ripples are its signature hallmark."
     ]
   },
   {
-    id: 'art-percale-vs-sateen',
-    title: 'Percale vs. Sateen: Which Weave Suits Your Sleep Temp?',
-    slug: 'percale-vs-sateen-weave-guide',
-    category: 'Fabric Science',
-    readTime: '3 min read',
-    date: 'Spring 2026',
-    excerpt: 'Understanding the mechanics of the 1-over-1 percale weave versus the 3-over-1 sateen float, and how each interacts with body temperature regulation.',
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=85',
-    content: [
-      'While thread count is often marketed as the primary metric of cotton quality, the weave structure has ten times more impact on how a sheet feels and regulates heat.',
-      'Percale uses a basket-weave crisscross (one yarn over, one yarn under). This creates microscopic gaps between fibers that allow body heat to disperse continuously—giving it that crisp, cool, matte hotel sheet feel.',
-      'Sateen, in contrast, floats multiple threads across the surface before binding. This produces a silky, radiant surface with minimal friction that traps warm air, making it ideal for chillier seasons or sleepers who love a glossy, draped cocoon.'
+    "id": "art-percale-vs-sateen",
+    "title": "Percale vs. Sateen: Which Weave Suits Your Sleep Temp?",
+    "slug": "percale-vs-sateen-weave-guide",
+    "category": "Fabric Science",
+    "readTime": "3 min read",
+    "date": "Spring 2026",
+    "excerpt": "Understanding the mechanics of the 1-over-1 percale weave versus the 3-over-1 sateen float, and how each interacts with body temperature regulation.",
+    "image": "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg",
+    "content": [
+      "While thread count is often marketed as the primary metric of cotton quality, the weave structure has ten times more impact on how a sheet feels and regulates heat.",
+      "Percale uses a basket-weave crisscross (one yarn over, one yarn under). This creates microscopic gaps between fibers that allow body heat to disperse continuously—giving it that crisp, cool, matte hotel sheet feel.",
+      "Sateen, in contrast, floats multiple threads across the surface before binding. This produces a silky, radiant surface with minimal friction that traps warm air, making it ideal for chillier seasons or sleepers who love a glossy, draped cocoon."
     ]
   }
 ];
 
 export const MATERIAL_SPECS = [
   {
-    id: 'flax-linen',
-    name: 'French Flax Linen',
-    provenance: 'Normandy, France',
-    weight: '170 GSM',
-    weave: 'Plain Weave, Volcanic Stone-washed',
-    feel: 'Supple, textured, lived-in, breathable',
-    tempControl: 'Thermal regulating (cool in summer, insulating in winter)',
-    durability: 'Extreme (gets softer with every wash for decades)',
-    bestFor: 'Those who appreciate tactile texture and year-round breathability',
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=85'
+    "id": "eve-linen",
+    "name": "Eve Linen (100% French Flax)",
+    "provenance": "Normandy Flax, Pre-washed",
+    "weight": "175 GSM Natural Flax",
+    "weave": "Classic Plain Weave, Stone Washed",
+    "feel": "Supple, textured, lived-in, breathable",
+    "tempControl": "Thermal regulating (cool in summer, insulating in winter)",
+    "durability": "Extreme (softens with every wash for decades)",
+    "bestFor": "Those who appreciate tactile texture and year-round breathability",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
   },
   {
-    id: 'cotton-percale',
-    name: 'Organic Cotton Percale',
-    provenance: 'Aegean Basin, GOTS Certified',
-    weight: '130 GSM / 300 Thread Count',
-    weave: '1-Over, 1-Under Classic Crisp Weave',
-    feel: 'Crisp, lightweight, matte, airy',
-    tempControl: 'Ultra-cooling, maximum airflow',
-    durability: 'High (resists pilling and retains crisp structure)',
-    bestFor: 'Hot sleepers and lovers of fresh, crisp luxury hotel sheets',
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=85'
+    "id": "darcy-corduroy",
+    "name": "Darcy Corduroy (Ribbed Cotton)",
+    "provenance": "100% Breathable Cotton",
+    "weight": "Plush Ribbed Velvet Corduroy",
+    "weave": "Ribbed Topside with Smooth Cotton Underside",
+    "feel": "Velvety, substantial, cozy, plush",
+    "tempControl": "Cozy and insulating for cooler evenings",
+    "durability": "Durable ribbed structure with invisible zipper",
+    "bestFor": "Sleepers who love cozy weight and distinctive tactile texture",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
   },
   {
-    id: 'cloud-gauze',
-    name: '4-Ply Cloud Cotton Gauze',
-    provenance: 'Denizli, Turkey',
-    weight: '320 GSM',
-    weave: 'Multi-layer Jacquard Gauze',
-    feel: 'Pillowy, crinkled, cloud-like loft',
-    tempControl: 'Light-to-medium warmth with air pockets',
-    durability: 'Moderate to High (pre-washed for dimensional stability)',
-    bestFor: 'Layering blankets, summer coverlets, cozy lounge moments',
-    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=85'
+    "id": "eden-cotton",
+    "name": "Eden & Jude Organic Cotton",
+    "provenance": "GOTS Certified Organic Long-Staple Cotton",
+    "weight": "400 Thread Count Sateen Weave",
+    "weave": "Ultra-smooth breathable weave",
+    "feel": "Silky soft, smooth glide, crisp finish",
+    "tempControl": "Naturally breathable and hypoallergenic",
+    "durability": "High resistance to pilling with deep elastic construction",
+    "bestFor": "All-season sleepers who want buttery softness next to skin",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-01.jpg"
   },
   {
-    id: 'sateen-luxe',
-    name: 'Heritage Cotton Sateen',
-    provenance: 'Nile River Valley, Egypt',
-    weight: '145 GSM / 400 Thread Count',
-    weave: '4-Over, 1-Under Satin Weave',
-    feel: 'Silky, luminous sheen, butter-smooth glide',
-    tempControl: 'Cozy, insulating warmth',
-    durability: 'High (long-staple fibers prevent fraying)',
-    bestFor: 'Cooler seasons and sleepers who love silk-like drape against the skin',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=85'
+    "id": "frankie-flannelette",
+    "name": "Frankie Flannelette",
+    "provenance": "Double-Brushed Pure Cotton",
+    "weight": "160 GSM Brushed Warmth",
+    "weave": "Double-brushed on both sides",
+    "feel": "Cloud-soft, velvety warm, comforting",
+    "tempControl": "Maximum cozy winter warmth without overheating",
+    "durability": "Anti-pill brushed cotton finish",
+    "bestFor": "Chilly winter nights and lovers of snug, cuddly bedding",
+    "image": "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-01.jpg"
+  }
+];
+
+export const FABRIC_CARE_GUIDES = [
+  {
+    material: 'Eve Linen (French Flax)',
+    temp: 'Cold / Max 40°C',
+    drying: 'Line dry in shade or low tumble dry',
+    ironing: 'Not recommended (celebrate relaxed texture)',
+    tips: 'Softens naturally with every wash; avoid chlorine bleach and fabric softeners.'
+  },
+  {
+    material: 'Darcy Corduroy (Cotton)',
+    temp: 'Cold gentle cycle',
+    drying: 'Line dry inside out in shade',
+    ironing: 'Cool iron on reverse if necessary',
+    tips: 'Turn inside out prior to washing to protect plush velvety ribs.'
+  },
+  {
+    material: 'Eden & Organic Cotton',
+    temp: 'Cold or warm gentle cycle',
+    drying: 'Tumble dry low or line dry',
+    ironing: 'Warm iron while slightly damp for crisp hotel finish',
+    tips: 'Use mild plant-derived detergent to protect organic fibres.'
+  },
+  {
+    material: 'Frankie Flannelette',
+    temp: 'Cold wash gentle',
+    drying: 'Low heat tumble dry to maintain loft',
+    ironing: 'No ironing required',
+    tips: 'Double-brushed cotton requires low friction wash to minimise linting.'
+  }
+];
+
+export const SIZE_GUIDES = [
+  {
+    category: 'Quilt Covers',
+    sizes: [
+      { name: 'Single', dimensions: '140cm x 210cm', fits: 'Single beds and daybeds' },
+      { name: 'Double', dimensions: '180cm x 210cm', fits: 'Standard double mattresses' },
+      { name: 'Queen', dimensions: '210cm x 210cm', fits: 'Queen mattresses' },
+      { name: 'King', dimensions: '245cm x 210cm', fits: 'Standard King mattresses' },
+      { name: 'Super King', dimensions: '270cm x 240cm', fits: 'Grand / Super King mattresses' }
+    ]
+  },
+  {
+    category: 'Fitted Sheets (55cm Deep Wall)',
+    sizes: [
+      { name: 'Single', dimensions: '91cm x 193cm + 55cm', fits: 'Standard Single mattress' },
+      { name: 'Double', dimensions: '137cm x 193cm + 55cm', fits: 'Standard Double mattress' },
+      { name: 'Queen', dimensions: '152cm x 203cm + 55cm', fits: 'Queen mattress with pillow top' },
+      { name: 'King', dimensions: '180cm x 203cm + 55cm', fits: 'King mattress with pillow top' },
+      { name: 'Super King', dimensions: '203cm x 203cm + 55cm', fits: 'Super King mattress' }
+    ]
+  },
+  {
+    category: 'Pillowcases',
+    sizes: [
+      { name: 'Standard Pair', dimensions: '48cm x 73cm (Envelope closure)', fits: 'Standard bedroom pillows' },
+      { name: 'European Pair', dimensions: '65cm x 65cm (Tailored flange)', fits: 'Square decorative European pillows' }
+    ]
   }
 ];

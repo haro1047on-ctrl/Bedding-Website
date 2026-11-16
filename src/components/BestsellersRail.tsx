@@ -25,11 +25,12 @@ export const BestsellersRail: React.FC<BestsellersRailProps> = ({
 
   const filterTabs = [
     { id: 'all', label: 'All Essentials' },
-    { id: 'Duvet Covers', label: 'Duvet Covers' },
-    { id: 'Sheets & Sets', label: 'Bed Sheets' },
+    { id: 'Quilt Covers', label: 'Quilt Covers' },
+    { id: 'Fitted Sheets', label: 'Fitted Sheets' },
+    { id: 'Flat Sheets', label: 'Flat Sheets' },
     { id: 'Pillowcases', label: 'Pillowcases' },
-    { id: 'Quilts & Comforters', label: 'Quilts & Gauze' },
-    { id: 'Blankets & Throws', label: 'Blankets & Throws' },
+    { id: 'Bed Sheets & Sets', label: 'Bed Sheets & Sets' },
+    { id: 'Blankets & Bed Covers', label: 'Blankets & Covers' },
   ];
 
   const filteredProducts = activeTab === 'all'

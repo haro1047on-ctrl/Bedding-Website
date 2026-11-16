@@ -40,11 +40,12 @@ export const Header: React.FC<HeaderProps> = ({
   const isTransparent = activeView === 'home' && !isScrolled;
 
   const categories: { label: BeddingCategory; count: string; desc: string }[] = [
-    { label: 'Duvet Covers', count: '6 Styles', desc: 'Normandy washed linen & organic percale' },
-    { label: 'Sheets & Sets', count: '8 Styles', desc: 'Crisp 300-TC fitted & flat sheet sets' },
-    { label: 'Pillowcases', count: '5 Colors', desc: 'Envelope closure pairs with French seams' },
-    { label: 'Quilts & Comforters', count: '4 Styles', desc: '4-ply cloud gauze & box-quilted cotton' },
-    { label: 'Blankets & Throws', count: '3 Weaves', desc: 'Textured waffle & brushed wool-linen' },
+    { label: 'Quilt Covers', count: '15 Styles', desc: 'Eve Linen, Darcy Corduroy & Jude Organic Cotton' },
+    { label: 'Fitted Sheets', count: '8 Styles', desc: '55cm deep elastic wall in linen & organic cotton' },
+    { label: 'Flat Sheets', count: '8 Styles', desc: 'Generously tailored flat sheets in French flax' },
+    { label: 'Pillowcases', count: '10 Styles', desc: 'Standard & European tailored pairs' },
+    { label: 'Bed Sheets & Sets', count: '8 Styles', desc: 'Complete coordinated bed suites' },
+    { label: 'Blankets & Bed Covers', count: '6 Styles', desc: 'Rory washed cotton & flannelette' },
   ];
 
   const handleScrollToSection = (sectionId: string) => {
@@ -261,15 +262,15 @@ export const Header: React.FC<HeaderProps> = ({
                         Signature Suite
                       </span>
                       <h4 className="font-serif text-lg text-umber mt-1 font-normal">
-                        Normandy French Flax
+                        Darcy Corduroy & Eve Linen
                       </h4>
                       <p className="text-xs text-umber/70 mt-1 leading-relaxed">
-                        Pre-washed with volcanic pumice stones in northern Portugal for immediate lived-in softness.
+                        Pre-washed for instant lived-in softness with invisible zippers and 55cm deep elastic walls.
                       </p>
                     </div>
                     <img
-                      src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=400&q=80"
-                      alt="French Flax Bedding"
+                      src="/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+                      alt="Darcy Corduroy and Eve Linen"
                       className="w-full h-24 object-cover mt-3 border border-sand-border"
                     />
                   </div>

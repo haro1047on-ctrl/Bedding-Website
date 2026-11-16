@@ -27,31 +27,40 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
 
   const categories: (BeddingCategory | 'all')[] = [
     'all',
-    'Duvet Covers',
-    'Sheets & Sets',
+    'Quilt Covers',
+    'Fitted Sheets',
+    'Flat Sheets',
     'Pillowcases',
-    'Quilts & Comforters',
-    'Blankets & Throws',
+    'Bed Sheets & Sets',
+    'Blankets & Bed Covers',
   ];
 
   const materials: BeddingMaterial[] = [
-    'French Flax Linen',
-    'Organic Cotton Percale',
-    'Cloud Cotton Gauze',
-    'Sateen Luxe',
-    'Waffle Wool-Linen',
+    'Eve Linen',
+    'Darcy Corduroy',
+    'Eden Cotton',
+    'Jude Organic Cotton',
+    'Frankie Flannelette',
+    'Leo Washed Cotton',
+    'Sofia Ruched Cotton',
   ];
 
   const colors = [
-    { label: 'Oatmeal Natural', hex: '#D8CBB8' },
-    { label: 'Chalk White', hex: '#FBF9F5' },
-    { label: 'Olive Leaf', hex: '#596451' },
-    { label: 'Terracotta Rust', hex: '#B74121' },
-    { label: 'Dusk Slate', hex: '#71818A' },
-    { label: 'Earthy Umber', hex: '#49372F' },
+    { label: 'White', hex: '#ffffff' },
+    { label: 'Warm White', hex: '#f2ebdf' },
+    { label: 'Cloud', hex: '#D5D5D8' },
+    { label: 'Russet', hex: '#7E212A' },
+    { label: 'Olive', hex: '#A39264' },
+    { label: 'Hunter Green', hex: '#415141' },
+    { label: 'Terracotta', hex: '#c87b4b' },
+    { label: 'Sage', hex: '#a8b09f' },
+    { label: 'Marshmallow', hex: '#EEE0DC' },
+    { label: 'Chocolate', hex: '#574138' },
+    { label: 'Oatmeal', hex: '#e9dfcf' },
+    { label: 'Bay Blue', hex: '#A3BBE0' },
   ];
 
-  const sizes: BedSize[] = ['Twin', 'Full', 'Queen', 'King', 'Cal King'];
+  const sizes: BedSize[] = ['Single', 'Double', 'Queen', 'King', 'Super King', 'Standard'];
 
   // Filter & Sort logic
   const filteredProducts = useMemo(() => {

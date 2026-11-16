@@ -39,9 +39,9 @@ export function App() {
   // Cart State (Initialized with a default luxury piece to showcase UI immediately)
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
-      id: 'normandy-linen-duvet-oat-queen',
+      id: `${PRODUCTS[0].id}-${PRODUCTS[0].colors[0].name}-Queen`,
       product: PRODUCTS[0],
-      selectedColor: PRODUCTS[0].colors[0], // Oatmeal Natural
+      selectedColor: PRODUCTS[0].colors[0],
       selectedSize: 'Queen',
       quantity: 1,
     }
@@ -50,8 +50,20 @@ export function App() {
   // Toast Notification State
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Hash deep-link navigation
+  // Hash deep-link navigation & URL params
   React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const prodId = params.get('product');
+      if (prodId) {
+        const found = PRODUCTS.find(p => p.id === prodId || p.id.includes(prodId));
+        if (found) setSelectedProduct(found);
+      }
+      if (params.get('cart') === 'true') {
+        setCartOpen(true);
+      }
+    }
+
     if (window.location.hash) {
       setTimeout(() => {
         const el = document.querySelector(window.location.hash);
