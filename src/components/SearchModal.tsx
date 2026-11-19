@@ -16,19 +16,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   products,
   onSelectProduct,
 }) => {
-  if (!isOpen) return null;
-
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    inputRef.current?.focus();
+    if (isOpen) {
+      inputRef.current?.focus();
+    }
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
 
   const quickSearches = [
     'Eve Linen',

@@ -22,15 +22,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onCheckout,
   onExplore,
 }) => {
-  if (!isOpen) return null;
-
   const [promoCode, setPromoCode] = useState('');
   const [promoDiscount, setPromoDiscount] = useState(0);
   const [promoApplied, setPromoApplied] = useState(false);
   const [promoError, setPromoError] = useState('');
 
-  // Subtotal calculation
-  const subtotal = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+  if (!isOpen) return null;
+
+  // Subtotal calculation using explicit unitPrice
+  const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
 
   // Free shipping threshold is Rs. 15,000
   const isFreeShipping = subtotal >= FREE_SHIPPING_THRESHOLD_PKR;
@@ -191,9 +191,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         </button>
                       </div>
 
-                      <span className="font-sans text-sm sm:text-base font-semibold text-umber">
-                        {formatPKR(item.product.price * item.quantity)}
-                      </span>
+                      <div className="text-right">
+                        <span className="font-sans text-sm sm:text-base font-semibold text-umber block">
+                          {formatPKR(item.unitPrice * item.quantity)}
+                        </span>
+                        {item.quantity > 1 && (
+                          <span className="text-[10px] text-umber/50 font-sans block">
+                            {formatPKR(item.unitPrice)} each
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

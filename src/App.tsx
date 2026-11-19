@@ -36,16 +36,8 @@ export function App() {
   const [selectedProductColor, setSelectedProductColor] = useState<ColorVariant | undefined>(undefined);
   const [selectedArticle, setSelectedArticle] = useState<JournalArticle | null>(null);
 
-  // Cart State (Initialized with a default luxury piece to showcase UI immediately)
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: `${PRODUCTS[0].id}-${PRODUCTS[0].colors[0].name}-Queen`,
-      product: PRODUCTS[0],
-      selectedColor: PRODUCTS[0].colors[0],
-      selectedSize: 'Queen',
-      quantity: 1,
-    }
-  ]);
+  // Cart State (Initialized empty for a new visitor)
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   // Toast Notification State
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -80,14 +72,33 @@ export function App() {
   };
 
   // Cart operations
-  const handleAddToCart = (product: Product, color: ColorVariant, size: BedSize, quantity: number) => {
+  const handleAddToCart = (
+    product: Product,
+    color: ColorVariant,
+    size: BedSize,
+    quantity: number,
+    unitPrice?: number
+  ) => {
+    const itemUnitPrice = unitPrice !== undefined 
+      ? unitPrice 
+      : ((product.variantPrices && product.variantPrices[size]) ?? product.price);
     const itemKey = `${product.id}-${color.name}-${size}`;
     setCartItems(prev => {
       const existing = prev.find(i => i.id === itemKey);
       if (existing) {
         return prev.map(i => i.id === itemKey ? { ...i, quantity: i.quantity + quantity } : i);
       }
-      return [...prev, { id: itemKey, product, selectedColor: color, selectedSize: size, quantity }];
+      return [
+        ...prev,
+        {
+          id: itemKey,
+          product,
+          selectedColor: color,
+          selectedSize: size,
+          quantity,
+          unitPrice: itemUnitPrice,
+        }
+      ];
     });
     showToast(`Added ${quantity}x ${product.name} (${color.name}, ${size}) to your bag.`);
     setCartOpen(true);

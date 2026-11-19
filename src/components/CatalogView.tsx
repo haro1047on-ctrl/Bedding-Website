@@ -28,6 +28,11 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Synchronize category when parent changes initialCategory while catalogue is mounted
+  useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
+
   // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

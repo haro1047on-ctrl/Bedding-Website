@@ -76,6 +76,7 @@ export interface CartItem {
   selectedColor: ColorVariant;
   selectedSize: BedSize;
   quantity: number;
+  unitPrice: number;
 }
 
 export interface BedroomLook {

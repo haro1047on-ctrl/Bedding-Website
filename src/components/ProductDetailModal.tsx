@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Product, BedSize, ColorVariant } from '../types';
 import { X, Star, ShieldCheck, Plus, Minus, ChevronDown, Check, ArrowLeft, ArrowRight } from 'lucide-react';
 import { formatPKR } from '../utils/format';
@@ -8,7 +8,13 @@ interface ProductDetailModalProps {
   initialColor?: ColorVariant;
   isOpen: boolean;
   onClose: () => void;
-  onAddToCart: (product: Product, color: ColorVariant, size: BedSize, quantity: number) => void;
+  onAddToCart: (
+    product: Product,
+    color: ColorVariant,
+    size: BedSize,
+    quantity: number,
+    unitPrice?: number
+  ) => void;
   onOpenSizeGuide: () => void;
 }
 
@@ -20,10 +26,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onAddToCart,
   onOpenSizeGuide,
 }) => {
-  if (!isOpen) return null;
-
-  const [selectedColor, setSelectedColor] = useState<ColorVariant>(initialColor || product.colors[0]);
-  const [selectedSize, setSelectedSize] = useState<BedSize>(product.sizes[0]);
+  const [selectedColor, setSelectedColor] = useState<ColorVariant>(() => initialColor || product?.colors?.[0] || { name: '', hex: '', image: '' });
+  const [selectedSize, setSelectedSize] = useState<BedSize>(() => product?.sizes?.[0] || 'Queen');
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
   const [previousImageIndex, setPreviousImageIndex] = useState<number | null>(null);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
@@ -34,6 +38,40 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   const touchStartXRef = useRef<number | null>(null);
   const transitionTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const feedbackTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Synchronize and reset modal state when product or initialColor changes
+  useEffect(() => {
+    if (product) {
+      setSelectedColor(initialColor || product.colors[0]);
+      setSelectedSize(product.sizes[0]);
+      setSelectedImageIndex(0);
+      setPreviousImageIndex(null);
+      setDirection('next');
+      setIsTransitioning(false);
+      setQuantity(1);
+      setOpenAccordion('features');
+      setIsAddedFeedback(false);
+    }
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+      transitionTimerRef.current = null;
+    }
+    if (feedbackTimerRef.current) {
+      clearTimeout(feedbackTimerRef.current);
+      feedbackTimerRef.current = null;
+    }
+  }, [product?.id, initialColor?.name]);
+
+  // Clean up pending timers on unmount
+  useEffect(() => {
+    return () => {
+      if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+      if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+    };
+  }, []);
+
+  if (!isOpen || !product) return null;
 
   // Dynamic price calculation based on variant selection
   const currentUnitPrice = (product.variantPrices && product.variantPrices[selectedSize]) || product.price;
@@ -87,14 +125,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   };
 
   const handleAddToCart = () => {
-    // Send the dynamic price reflecting the chosen size
-    const productWithVariantPrice = {
-      ...product,
-      price: currentUnitPrice,
-    };
-    onAddToCart(productWithVariantPrice, selectedColor, selectedSize, quantity);
+    // Preserve base product and pass explicit variant unit price
+    onAddToCart(product, selectedColor, selectedSize, quantity, currentUnitPrice);
     setIsAddedFeedback(true);
-    setTimeout(() => setIsAddedFeedback(false), 2200);
+    if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+    feedbackTimerRef.current = setTimeout(() => setIsAddedFeedback(false), 2200);
   };
 
   const toggleAccordion = (section: string) => {
