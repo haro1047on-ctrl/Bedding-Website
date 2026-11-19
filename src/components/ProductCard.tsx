@@ -45,12 +45,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col space-y-1.5 pointer-events-none">
           {product.isBestseller && (
-            <span className="px-2 py-0.5 text-[9px] uppercase tracking-wider font-sans font-bold bg-black text-white">
+            <span className="px-2 py-0.5 text-[9px] uppercase tracking-wider font-grotesque font-bold bg-black text-white">
               Bestseller
             </span>
           )}
           {product.isNew && (
-            <span className="px-2 py-0.5 text-[9px] uppercase tracking-wider font-sans font-bold bg-[#596451] text-white">
+            <span className="px-2 py-0.5 text-[9px] uppercase tracking-wider font-grotesque font-bold bg-[#596451] text-white">
               New
             </span>
           )}
@@ -63,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             e.stopPropagation();
             onQuickView(product);
           }}
-          className="absolute bottom-3 left-3 right-3 py-2.5 px-3 bg-white/95 backdrop-blur-md text-black hover:bg-black hover:text-white text-xs font-sans uppercase tracking-widest font-semibold transition-all duration-200 border border-black/10 flex items-center justify-center space-x-1.5 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 shadow-sm"
+          className="absolute bottom-3 left-3 right-3 py-2.5 px-3 bg-white/95 backdrop-blur-md text-black hover:bg-black hover:text-white text-xs font-grotesque uppercase tracking-widest font-semibold transition-all duration-200 border border-black/10 flex items-center justify-center space-x-1.5 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 shadow-sm rounded-full"
           aria-label={`Quick view ${product.name}`}
         >
           <Eye className="w-3.5 h-3.5" />
@@ -73,11 +73,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Product Details */}
-      <div className="p-4 flex flex-col flex-1 justify-between space-y-2.5">
+      <div className="p-4 flex flex-col flex-1 justify-between space-y-2.5 font-grotesque">
         
         <div>
           {/* Material Tag & Rating */}
-          <div className="flex items-center justify-between text-[11px] font-sans text-black/60 mb-1">
+          <div className="flex items-center justify-between text-[11px] text-black/60 mb-1">
             <span className="uppercase tracking-wider font-medium text-black/70">
               {product.material}
             </span>
@@ -91,13 +91,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {/* Product Title */}
           <h3 
             onClick={() => onSelectProduct(product, activeColor)}
-            className="font-sans text-sm sm:text-base text-black hover:text-black/70 transition-colors font-semibold cursor-pointer leading-snug line-clamp-1"
+            className="text-sm sm:text-base text-black hover:text-black/70 transition-colors font-semibold cursor-pointer leading-snug line-clamp-1"
           >
             {product.name}
           </h3>
 
           {/* Colorway / Fabric detail */}
-          <p className="text-xs text-black/50 font-sans mt-0.5 line-clamp-1">
+          <p className="text-xs text-black/50 mt-0.5 line-clamp-1">
             {activeColor.name} · {product.threadCountOrWeight}
           </p>
         </div>
@@ -106,7 +106,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="pt-2 border-t border-[#e5e5e5] flex items-center justify-between">
           
           {/* Price in PKR */}
-          <div className="flex items-baseline space-x-2 font-sans">
+          <div className="flex items-baseline space-x-2">
             <span className="text-sm sm:text-base text-black font-bold tracking-tight">
               {hasPriceRange ? `From ${formatPKR(product.minPrice!)}` : formatPKR(product.price)}
             </span>
@@ -138,7 +138,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               );
             })}
             {product.colors.length > 5 && (
-              <span className="text-[10px] text-black/50 font-sans pl-0.5 font-medium">
+              <span className="text-[10px] text-black/50 pl-0.5 font-medium">
                 +{product.colors.length - 5}
               </span>
             )}

@@ -68,9 +68,9 @@ export const Header: React.FC<HeaderProps> = ({
         3.1 Announcement Strip: Sheet Society Exact Ticker Styling (#E6EFB4 / #4B262B)
       */}
       <div 
-        className="w-full py-2 px-3 sm:px-4 text-center transition-colors duration-300 pointer-events-auto bg-[#E6EFB4] text-[#4B262B] border-b border-[#d8e49e] font-sans text-xs font-medium"
+        className="w-full py-2 px-3 sm:px-6 text-center transition-colors duration-300 pointer-events-auto bg-[#E6EFB4] text-[#4B262B] border-b border-[#d8e49e] font-grotesque text-xs font-medium"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-[11px] sm:text-xs">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 flex items-center justify-between text-[11px] sm:text-xs">
           <span className="hidden md:inline font-semibold">
             Sheet Society | Australia
           </span>
@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
             : 'bg-porcelain/95 backdrop-blur-md text-umber border-b border-sand-border shadow-subtle'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-3 sm:pb-3.5">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-3 pb-3 sm:pb-3.5">
           
           {/* Top Row: Mobile Menu | Centered Brand Wordmark | Right Utility Actions */}
           <div className="relative flex items-center justify-between">
@@ -120,7 +120,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Desktop Left Placemark */}
             <div className="hidden lg:flex items-center w-48">
-              <span className={`text-[11px] font-sans tracking-[0.2em] uppercase transition-colors ${
+              <span className={`text-[11px] font-grotesque tracking-[0.2em] uppercase transition-colors ${
                 isTransparent ? 'text-chalk/75' : 'text-umber/60'
               }`}>
                 Est. 2026
@@ -148,7 +148,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={onOpenSearch}
-                className={`p-1.5 transition-colors flex items-center space-x-1.5 text-xs font-sans tracking-wider uppercase font-medium ${
+                className={`p-1.5 transition-colors flex items-center space-x-1.5 text-xs font-grotesque tracking-wider uppercase font-medium ${
                   isTransparent ? 'text-chalk/90 hover:text-white' : 'text-umber/80 hover:text-soft-graphite'
                 }`}
                 aria-label="Search bedding catalogue"
@@ -160,7 +160,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={onOpenCart}
-                className={`relative p-1.5 transition-colors flex items-center space-x-2 text-xs font-sans tracking-wider uppercase font-medium ${
+                className={`relative p-1.5 transition-colors flex items-center space-x-2 text-xs font-grotesque tracking-wider uppercase font-medium ${
                   isTransparent ? 'text-chalk/90 hover:text-white' : 'text-umber/90 hover:text-soft-graphite'
                 }`}
                 aria-label={`Open shopping bag with ${cartCount} items`}
@@ -168,7 +168,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
                 <span className="hidden sm:inline">Bag</span>
                 {cartCount > 0 && (
-                  <span className={`inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[10px] font-sans font-bold ${
+                  <span className={`inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[10px] font-grotesque font-bold ${
                     isTransparent ? 'bg-chalk text-umber shadow-sm' : 'bg-umber text-porcelain'
                   }`}>
                     {cartCount}
@@ -184,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
             Centered main navigation links beneath the wordmark (Bedfolk editorial reference):
             SHOP · STORY · INFO · JOURNAL
           */}
-          <div className="hidden lg:flex items-center justify-center space-x-9 pt-2 text-[11px] font-sans tracking-[0.24em] uppercase font-medium">
+          <div className="hidden lg:flex items-center justify-center space-x-9 pt-2 text-[11px] font-grotesque tracking-[0.24em] uppercase font-medium">
             
             {/* SHOP BEDDING with Mega Menu */}
             <div 

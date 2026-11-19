@@ -28,9 +28,11 @@ export default {
       },
       fontFamily: {
         sans: ['GrotesqueRegular', 'Roboto', 'Arial', 'sans-serif'],
+        grotesque: ['GrotesqueRegular', 'Roboto', 'Arial', 'sans-serif'],
         medium: ['GrotesqueMedium', 'Roboto', 'Arial', 'sans-serif'],
         bold: ['GrotesqueBold', 'Roboto', 'Arial', 'sans-serif'],
         serif: ['AwesomeSerifVAR', 'BradfordLLRegular', 'Georgia', 'serif'],
+        awesome: ['AwesomeSerifVAR', 'BradfordLLRegular', 'Georgia', 'serif'],
         bradford: ['BradfordLLRegular', 'Georgia', 'serif'],
       },
       letterSpacing: {

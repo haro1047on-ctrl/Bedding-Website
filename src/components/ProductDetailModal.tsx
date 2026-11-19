@@ -283,7 +283,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </h2>
 
               <div className="flex items-baseline space-x-3 mt-2.5">
-                <span className="text-2xl text-[#000000] font-semibold tracking-tight font-sans">
+                <span className="text-2xl text-[#000000] font-semibold tracking-tight font-grotesque">
                   {formatPKR(currentUnitPrice)}
                 </span>
                 <span className="text-xs text-[#000000]/60 font-medium">

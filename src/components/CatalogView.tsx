@@ -136,10 +136,10 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
   };
 
   return (
-    <div className="w-full bg-[#fbf9f6] min-h-screen pb-24 pt-24 sm:pt-28 font-grotesque text-[#000000]">
+    <div className="w-full bg-[#fbf9f6] min-h-screen pb-24 pt-28 sm:pt-32 font-grotesque text-[#000000]">
       
       {/* Editorial Title Banner */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-6 pb-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-4 pb-6">
         {/* Breadcrumb */}
         <nav className="flex items-center space-x-2 text-xs font-grotesque text-[#000000]/50 mb-3" aria-label="Breadcrumb">
           <button onClick={onNavigateHome} className="hover:text-[#000000] transition-colors">

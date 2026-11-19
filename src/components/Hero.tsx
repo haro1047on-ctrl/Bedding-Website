@@ -25,7 +25,7 @@ const HERO_SLIDES: SlideData[] = [
     secondaryAction: 'explore-collection',
     image: '/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg',
     alt: 'Sheet Society Darcy Corduroy and Eve Linen bedding styled in natural light',
-    objectPosition: 'center 45%',
+    objectPosition: 'center 36%',
   },
   {
     id: 'slide-02',
@@ -37,7 +37,7 @@ const HERO_SLIDES: SlideData[] = [
     secondaryAction: 'explore-details',
     image: '/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg',
     alt: 'Sheet Society tactile quilt cover and textured pillowcases',
-    objectPosition: 'center 50%',
+    objectPosition: 'center 38%',
   },
   {
     id: 'slide-03',
@@ -49,7 +49,7 @@ const HERO_SLIDES: SlideData[] = [
     secondaryAction: 'view-all',
     image: '/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg',
     alt: 'Sheet Society French flax linen bedding in Warm White and Cloud',
-    objectPosition: 'center 50%',
+    objectPosition: 'center 38%',
   },
 ];
 
@@ -228,16 +228,16 @@ export const Hero: React.FC<HeroProps> = ({
               />
 
               {/* Contrast Overlays for Text Legibility */}
-              <div className="absolute inset-0 bg-black/20 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/45 via-black/15 to-transparent pointer-events-none" />
             </div>
           );
         })}
       </div>
 
       {/* Bottom-Left Campaign Copy & CTAs */}
-      <div className="absolute bottom-20 sm:bottom-24 lg:bottom-20 left-4 sm:left-8 lg:left-[4.8vw] z-30 max-w-[94vw] sm:max-w-xl lg:max-w-2xl pointer-events-auto">
+      <div className="absolute bottom-16 sm:bottom-20 lg:bottom-20 left-4 sm:left-8 lg:left-[4.8vw] right-4 sm:right-auto z-30 max-w-xl lg:max-w-2xl pointer-events-auto">
         <div
           className="transition-all duration-500 ease-out"
           style={{
@@ -248,7 +248,7 @@ export const Hero: React.FC<HeroProps> = ({
           }}
         >
           {/* Eyebrow Line */}
-          <div className="inline-flex items-center space-x-2.5 mb-2.5 sm:mb-3.5">
+          <div className="inline-flex items-center space-x-2.5 mb-2 sm:mb-3.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E6EFB4] flex-shrink-0" />
             <span className="font-grotesque text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/90 font-medium">
               {currentSlide.eyebrow}
@@ -256,7 +256,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Main Campaign Headline in Sheet Society Awesome Serif */}
-          <h1 className="font-awesome text-[2.4rem] sm:text-5xl lg:text-[3.8rem] text-white font-normal leading-[1.06] tracking-tight text-balance mb-5 sm:mb-8 drop-shadow-md">
+          <h1 className="font-awesome text-[1.95rem] sm:text-5xl lg:text-[3.8rem] text-white font-normal leading-[1.08] tracking-tight text-balance mb-4 sm:mb-8 drop-shadow-md">
             {currentSlide.headline}
           </h1>
 
@@ -285,7 +285,7 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Slide Controls & Minimal Progress Indicator */}
-      <div className="absolute bottom-5 sm:bottom-24 lg:bottom-20 left-4 right-4 sm:left-auto sm:right-8 lg:right-[4.8vw] z-30 flex items-center justify-between sm:justify-end sm:space-x-6 text-white pointer-events-auto">
+      <div className="absolute bottom-4 sm:bottom-20 lg:bottom-20 left-4 right-4 sm:left-auto sm:right-8 lg:right-[4.8vw] z-30 flex items-center justify-between sm:justify-end sm:space-x-6 text-white pointer-events-auto">
         
         {/* Slide Counter: 01 / 03 */}
         <div className="font-grotesque text-xs tracking-widest text-white/80 tabular-nums font-medium" aria-live="polite">
