@@ -116,14 +116,14 @@ export const BestsellersRail: React.FC<BestsellersRailProps> = ({
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 pb-6 border-b border-sand-border">
           <div>
-            <span className="text-[11px] uppercase tracking-widest text-olive-ink font-sans font-medium">
-              Curated Selection
+            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold text-umber/50 font-grotesque block mb-1">
+              Most Loved
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.6rem] text-umber font-normal mt-1 leading-tight">
-              Atelier Bestsellers & Essentials
+            <h2 className="font-awesome text-3xl sm:text-4xl lg:text-[2.6rem] text-umber font-normal mt-1 leading-tight">
+              Best Selling Bedding
             </h2>
-            <p className="text-xs sm:text-sm text-soft-graphite/70 font-sans mt-1.5 max-w-lg leading-relaxed">
-              Our most celebrated weaves, selected for tactile softness, all-season breathability, and enduring longevity.
+            <p className="text-xs sm:text-sm text-soft-graphite/70 font-grotesque mt-1.5 max-w-lg leading-relaxed">
+              Our most celebrated fabrics and styles, selected for lived-in comfort, all-season breathability, and enduring longevity.
             </p>
           </div>
 
@@ -138,10 +138,10 @@ export const BestsellersRail: React.FC<BestsellersRailProps> = ({
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-3 py-1.5 text-xs font-sans whitespace-nowrap transition-colors rounded-sm ${
+                    className={`px-3.5 py-1.5 text-xs font-grotesque whitespace-nowrap transition-colors rounded-full ${
                       isActive
-                        ? 'bg-umber text-porcelain font-medium'
-                        : 'text-soft-graphite/70 hover:text-umber hover:bg-oat/30'
+                        ? 'bg-[#000000] text-white font-medium'
+                        : 'text-[#000000]/70 hover:text-[#000000] hover:bg-black/5'
                     }`}
                   >
                     {tab.label}

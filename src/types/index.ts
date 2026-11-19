@@ -51,6 +51,9 @@ export interface Product {
   material: BeddingMaterial;
   price: number;
   salePrice?: number;
+  variantPrices?: Record<string, number>;
+  minPrice?: number;
+  maxPrice?: number;
   colors: ColorVariant[];
   sizes: BedSize[];
   images: string[];

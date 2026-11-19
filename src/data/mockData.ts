@@ -4,11 +4,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-russet",
     "name": "Darcy Corduroy - Russet Quilt Cover",
-    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 22500,
     "salePrice": 32500,
+    "variantPrices": {
+      "Double": 22500,
+      "Queen": 25000,
+      "King": 27500,
+      "Super King": 30000
+    },
+    "minPrice": 22500,
+    "maxPrice": 30000,
     "colors": [
       {
         "name": "Russet",
@@ -69,11 +77,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-hunter-green",
     "name": "Darcy Corduroy - Hunter Green Quilt Cover",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 26000,
     "salePrice": 32500,
+    "variantPrices": {
+      "Double": 26000,
+      "Queen": 29000,
+      "King": 31500,
+      "Super King": 34500
+    },
+    "minPrice": 26000,
+    "maxPrice": 34500,
     "colors": [
       {
         "name": "Hunter-green",
@@ -135,11 +151,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-olive",
     "name": "Darcy Corduroy - Olive Solid Quilt Cover",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 26000,
     "salePrice": 32500,
+    "variantPrices": {
+      "Double": 26000,
+      "Queen": 29000,
+      "King": 31500,
+      "Super King": 34500
+    },
+    "minPrice": 26000,
+    "maxPrice": 34500,
     "colors": [
       {
         "name": "Olive",
@@ -200,11 +224,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-terracotta",
     "name": "Darcy Corduroy - Terracotta Quilt Cover",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 17500,
     "salePrice": 29000,
+    "variantPrices": {
+      "Single": 17500,
+      "Double": 19500,
+      "Queen": 21500,
+      "King": 24000,
+      "Super King": 26000
+    },
+    "minPrice": 17500,
+    "maxPrice": 26000,
     "colors": [
       {
         "name": "Terracotta",
@@ -268,11 +301,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-cloud",
     "name": "Eve Linen - Cloud Quilt Cover",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 33000,
     "salePrice": 41500,
+    "variantPrices": {
+      "Double": 33000,
+      "Queen": 36000,
+      "King": 39000,
+      "Super King": 42000
+    },
+    "minPrice": 33000,
+    "maxPrice": 42000,
     "colors": [
       {
         "name": "Cloud",
@@ -344,11 +385,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-white",
     "name": "Eve Linen - White Quilt Cover",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 31500,
     "salePrice": 39500,
+    "variantPrices": {
+      "Single": 31500,
+      "Double": 33000,
+      "Queen": 36000,
+      "King": 39000,
+      "Super King": 42000
+    },
+    "minPrice": 31500,
+    "maxPrice": 42000,
     "colors": [
       {
         "name": "White",
@@ -422,11 +472,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-warm-white",
     "name": "Eve Linen - Warm White Quilt Cover",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 24000,
     "salePrice": 39500,
+    "variantPrices": {
+      "Single": 24000,
+      "Double": 25000,
+      "Queen": 27000,
+      "King": 29000,
+      "Super King": 31500
+    },
+    "minPrice": 24000,
+    "maxPrice": 31500,
     "colors": [
       {
         "name": "Warm-white",
@@ -500,11 +559,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-sage",
     "name": "Eve Linen - Sage Quilt Cover",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 31500,
     "salePrice": 39500,
+    "variantPrices": {
+      "Single": 31500,
+      "Double": 33000,
+      "Queen": 36000,
+      "King": 39000,
+      "Super King": 42000
+    },
+    "minPrice": 31500,
+    "maxPrice": 42000,
     "colors": [
       {
         "name": "Sage",
@@ -578,11 +646,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "chambray-linen-quilt-cover-oatmeal",
     "name": "Eve Linen - Oatmeal Quilt Cover",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 31500,
     "salePrice": 39500,
+    "variantPrices": {
+      "Single": 31500,
+      "Double": 33000,
+      "Queen": 36000,
+      "King": 39000,
+      "Super King": 42000
+    },
+    "minPrice": 31500,
+    "maxPrice": 42000,
     "colors": [
       {
         "name": "Oatmeal",
@@ -656,11 +733,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-chocolate",
     "name": "Eve Linen - Chocolate Quilt Cover",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 33000,
     "salePrice": 41500,
+    "variantPrices": {
+      "Double": 33000,
+      "Queen": 36000,
+      "King": 39000,
+      "Super King": 42000
+    },
+    "minPrice": 33000,
+    "maxPrice": 42000,
     "colors": [
       {
         "name": "Chocolate",
@@ -732,11 +817,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "quilt-cover-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Quilt Cover",
-    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Eden Cotton",
     "price": 21500,
     "salePrice": 27000,
+    "variantPrices": {
+      "Single": 21500,
+      "Double": 23000,
+      "Queen": 26000,
+      "King": 29000,
+      "Super King": 31500
+    },
+    "minPrice": 21500,
+    "maxPrice": 31500,
     "colors": [
       {
         "name": "Alex-stripe",
@@ -785,11 +879,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-quilt-cover-russet",
     "name": "Jude Organic Cotton - Russet Quilt Cover",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Jude Organic Cotton",
     "price": 19500,
     "salePrice": 28000,
+    "variantPrices": {
+      "Double": 19500,
+      "Queen": 22000,
+      "King": 24500,
+      "Super King": 27000
+    },
+    "minPrice": 19500,
+    "maxPrice": 27000,
     "colors": [
       {
         "name": "Russet",
@@ -841,11 +943,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-quilt-cover-bay-blue",
     "name": "Jude Organic Cotton - Bay Blue Quilt Cover",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Jude Organic Cotton",
     "price": 18500,
     "salePrice": 26000,
+    "variantPrices": {
+      "Single": 18500,
+      "Double": 19500,
+      "Queen": 22000,
+      "King": 24500,
+      "Super King": 27000
+    },
+    "minPrice": 18500,
+    "maxPrice": 27000,
     "colors": [
       {
         "name": "Bay-blue",
@@ -899,11 +1010,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-quilt-cover-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Quilt Cover",
-    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Frankie Flannelette",
     "price": 10000,
     "salePrice": 20000,
+    "variantPrices": {
+      "Single": 10000,
+      "Double": 11000,
+      "Queen": 12500,
+      "King": 14500,
+      "Super King": 16000
+    },
+    "minPrice": 10000,
+    "maxPrice": 16000,
     "colors": [
       {
         "name": "Blythe-stripe",
@@ -952,11 +1072,20 @@ export const PRODUCTS: Product[] = [
   {
     "id": "ruched-cotton-quilt-cover-white",
     "name": "Sofia Ruched Cotton - White Quilt Cover",
-    "subtitle": "Sofia Ruched Cotton · cotton, ruched-cotton, washed-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Sofia Ruched Cotton · cotton, ruched-cotton, washed-cotton · Sheet Society Original",
     "category": "Quilt Covers",
     "material": "Sofia Ruched Cotton",
     "price": 23000,
     "salePrice": 29000,
+    "variantPrices": {
+      "Single": 23000,
+      "Double": 26000,
+      "Queen": 29000,
+      "King": 31500,
+      "Super King": 34500
+    },
+    "minPrice": 23000,
+    "maxPrice": 34500,
     "colors": [
       {
         "name": "White",
@@ -1005,11 +1134,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-cloud",
     "name": "Eve Linen - Cloud Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 23000,
     "salePrice": 29000,
+    "variantPrices": {
+      "Double": 23000,
+      "Queen": 26000,
+      "King": 27500,
+      "Super King": 30000
+    },
+    "minPrice": 23000,
+    "maxPrice": 30000,
     "colors": [
       {
         "name": "Cloud",
@@ -1071,11 +1208,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-warm-white",
     "name": "Eve Linen - Warm White Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 15000,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single": 15000,
+      "King Single": 16000,
+      "Double": 17500,
+      "Queen": 19500,
+      "King": 20500,
+      "Super King": 22500
+    },
+    "minPrice": 15000,
+    "maxPrice": 22500,
     "colors": [
       {
         "name": "Warm-white",
@@ -1141,11 +1288,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-marshmallow",
     "name": "Eve Linen - Marshmallow Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 17500,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single": 17500,
+      "King Single": 19000,
+      "Double": 20000,
+      "Queen": 22500,
+      "King": 24000,
+      "Super King": 26500
+    },
+    "minPrice": 17500,
+    "maxPrice": 26500,
     "colors": [
       {
         "name": "Marshmallow",
@@ -1211,11 +1368,22 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-white",
     "name": "Eve Linen - White Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 20000,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single": 20000,
+      "Long Single": 21500,
+      "King Single": 21500,
+      "Double": 23000,
+      "Queen": 26000,
+      "King": 27500,
+      "Super King": 30000
+    },
+    "minPrice": 20000,
+    "maxPrice": 30000,
     "colors": [
       {
         "name": "White",
@@ -1283,11 +1451,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-fitted-sheet-russet",
     "name": "Jude Organic Cotton - Russet Fitted Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Jude Organic Cotton",
     "price": 10500,
     "salePrice": 15500,
+    "variantPrices": {
+      "Double": 10500,
+      "Queen": 12000,
+      "King": 13000,
+      "Super King": 14500
+    },
+    "minPrice": 10500,
+    "maxPrice": 14500,
     "colors": [
       {
         "name": "Russet",
@@ -1339,11 +1515,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-fitted-sheet-white",
     "name": "Jude Organic Cotton - White Fitted Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Jude Organic Cotton",
     "price": 10000,
     "salePrice": 12500,
+    "variantPrices": {
+      "Single": 10000,
+      "King Single": 11500,
+      "Double": 12000,
+      "Queen": 13500,
+      "King": 15000,
+      "Super King": 16500
+    },
+    "minPrice": 10000,
+    "maxPrice": 16500,
     "colors": [
       {
         "name": "White",
@@ -1399,11 +1585,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "fitted-sheet-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Fitted Sheet",
-    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Eden Cotton",
     "price": 11000,
     "salePrice": 13500,
+    "variantPrices": {
+      "Single": 11000,
+      "King Single": 12000,
+      "Double": 13000,
+      "Queen": 14500,
+      "King": 16000,
+      "Super King": 17500
+    },
+    "minPrice": 11000,
+    "maxPrice": 17500,
     "colors": [
       {
         "name": "Alex-stripe",
@@ -1454,11 +1650,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-fitted-sheet-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Fitted Sheet",
-    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
     "category": "Fitted Sheets",
     "material": "Frankie Flannelette",
     "price": 4500,
     "salePrice": 9000,
+    "variantPrices": {
+      "Single": 4500,
+      "King Single": 5500,
+      "Double": 6000,
+      "Queen": 7000,
+      "King": 7500,
+      "Super King": 8500
+    },
+    "minPrice": 4500,
+    "maxPrice": 8500,
     "colors": [
       {
         "name": "Blythe-stripe",
@@ -1509,11 +1715,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-cloud",
     "name": "Eve Linen - Cloud Flat Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 23000,
     "salePrice": 29000,
+    "variantPrices": {
+      "Double": 23000,
+      "Queen": 26000,
+      "King": 27500,
+      "Super King": 30000
+    },
+    "minPrice": 23000,
+    "maxPrice": 30000,
     "colors": [
       {
         "name": "Cloud",
@@ -1575,11 +1789,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-warm-white",
     "name": "Eve Linen - Warm White Flat Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 15000,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single": 15000,
+      "King Single": 16000,
+      "Double": 17500,
+      "Queen": 19500,
+      "King": 20500,
+      "Super King": 22500
+    },
+    "minPrice": 15000,
+    "maxPrice": 22500,
     "colors": [
       {
         "name": "Warm-white",
@@ -1645,11 +1869,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-marshmallow",
     "name": "Eve Linen - Marshmallow Flat Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 17500,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single": 17500,
+      "King Single": 19000,
+      "Double": 20000,
+      "Queen": 22500,
+      "King": 24000,
+      "Super King": 26500
+    },
+    "minPrice": 17500,
+    "maxPrice": 26500,
     "colors": [
       {
         "name": "Marshmallow",
@@ -1715,11 +1949,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-white",
     "name": "Eve Linen - White Flat Sheet",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 20000,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single": 20000,
+      "King Single": 21500,
+      "Double": 23000,
+      "Queen": 26000,
+      "King": 27500,
+      "Super King": 30000
+    },
+    "minPrice": 20000,
+    "maxPrice": 30000,
     "colors": [
       {
         "name": "White",
@@ -1785,11 +2029,18 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-flat-sheet-russet",
     "name": "Jude Organic Cotton - Russet Flat Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Jude Organic Cotton",
     "price": 10500,
     "salePrice": 15500,
+    "variantPrices": {
+      "Double": 10500,
+      "Queen": 12000,
+      "King": 13000
+    },
+    "minPrice": 10500,
+    "maxPrice": 13000,
     "colors": [
       {
         "name": "Russet",
@@ -1839,11 +2090,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-flat-sheet-white",
     "name": "Jude Organic Cotton - White Flat Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Jude Organic Cotton",
     "price": 10000,
     "salePrice": 12500,
+    "variantPrices": {
+      "Single": 10000,
+      "King Single": 11500,
+      "Double": 12000,
+      "Queen": 13500,
+      "King": 15000,
+      "Super King": 16500
+    },
+    "minPrice": 10000,
+    "maxPrice": 16500,
     "colors": [
       {
         "name": "White",
@@ -1899,11 +2160,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flat-sheet-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Flat Sheet",
-    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Eden Cotton",
     "price": 11000,
     "salePrice": 13500,
+    "variantPrices": {
+      "Single": 11000,
+      "King Single": 12000,
+      "Double": 13000,
+      "Queen": 14500,
+      "King": 16000,
+      "Super King": 17500
+    },
+    "minPrice": 11000,
+    "maxPrice": 17500,
     "colors": [
       {
         "name": "Alex-stripe",
@@ -1954,11 +2225,21 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-flat-sheet-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Flat Sheet",
-    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
     "category": "Flat Sheets",
     "material": "Frankie Flannelette",
     "price": 4500,
     "salePrice": 9000,
+    "variantPrices": {
+      "Single": 4500,
+      "King Single": 5500,
+      "Double": 6000,
+      "Queen": 7000,
+      "King": 7500,
+      "Super King": 8500
+    },
+    "minPrice": 4500,
+    "maxPrice": 8500,
     "colors": [
       {
         "name": "Blythe-stripe",
@@ -2009,11 +2290,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-pillowcases-russet",
     "name": "Darcy Corduroy - Russet Pillowcases",
-    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Darcy Corduroy",
     "price": 7500,
     "salePrice": 11000,
+    "variantPrices": {
+      "Standard Size": 7500,
+      "King Size": 9000
+    },
+    "minPrice": 7500,
+    "maxPrice": 9000,
     "colors": [
       {
         "name": "Russet",
@@ -2061,11 +2348,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-european-pillowcase-russet",
     "name": "Darcy Corduroy - Russet European Pillowcase",
-    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Darcy Corduroy",
     "price": 7500,
     "salePrice": 11000,
+    "variantPrices": {
+      "Default Title": 7500
+    },
+    "minPrice": 7500,
+    "maxPrice": 7500,
     "colors": [
       {
         "name": "Russet",
@@ -2110,11 +2402,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-pillowcases-hunter-green",
     "name": "Darcy Corduroy - Hunter Green Pillowcases",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Darcy Corduroy",
     "price": 8500,
     "salePrice": 11000,
+    "variantPrices": {
+      "Standard Size": 8500,
+      "King Size": 10000
+    },
+    "minPrice": 8500,
+    "maxPrice": 10000,
     "colors": [
       {
         "name": "Hunter-green",
@@ -2167,11 +2465,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-pillowcases-cloud",
     "name": "Eve Linen - Cloud Pillowcases",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Eve Linen",
     "price": 11500,
     "salePrice": 14500,
+    "variantPrices": {
+      "Standard Size": 11500,
+      "King Size": 14500
+    },
+    "minPrice": 11500,
+    "maxPrice": 14500,
     "colors": [
       {
         "name": "Cloud",
@@ -2219,11 +2523,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-european-pillowcase-cloud",
     "name": "Eve Linen - Cloud European Pillowcase",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Eve Linen",
     "price": 8500,
     "salePrice": 11000,
+    "variantPrices": {
+      "Default Title": 8500
+    },
+    "minPrice": 8500,
+    "maxPrice": 8500,
     "colors": [
       {
         "name": "Cloud",
@@ -2268,11 +2577,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-pillowcases-warm-white",
     "name": "Eve Linen - Warm White Pillowcases",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Eve Linen",
     "price": 8500,
     "salePrice": 14500,
+    "variantPrices": {
+      "Standard Size": 8500,
+      "King Size": 11000
+    },
+    "minPrice": 8500,
+    "maxPrice": 11000,
     "colors": [
       {
         "name": "Warm-white",
@@ -2325,11 +2640,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "pillowcases-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Pillowcases",
-    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Eden Cotton",
     "price": 8500,
     "salePrice": 11000,
+    "variantPrices": {
+      "Standard Size": 8500,
+      "King Size": 10000
+    },
+    "minPrice": 8500,
+    "maxPrice": 10000,
     "colors": [
       {
         "name": "Alex-stripe",
@@ -2372,11 +2693,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "european-pillowcase-alex-stripe",
     "name": "Eden Cotton - Alex Stripe European Pillowcase",
-    "subtitle": "Eden Cotton · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Eden Cotton",
     "price": 7000,
     "salePrice": 9000,
+    "variantPrices": {
+      "Default Title": 7000
+    },
+    "minPrice": 7000,
+    "maxPrice": 7000,
     "colors": [
       {
         "name": "Alex-stripe",
@@ -2416,11 +2742,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-pillowcases-russet",
     "name": "Jude Organic Cotton - Russet Pillowcases",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Jude Organic Cotton",
     "price": 7000,
     "salePrice": 10000,
+    "variantPrices": {
+      "Standard Size": 7000,
+      "King Size": 8000
+    },
+    "minPrice": 7000,
+    "maxPrice": 8000,
     "colors": [
       {
         "name": "Russet",
@@ -2463,11 +2795,17 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-pillowcases-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Pillowcases",
-    "subtitle": "Frankie Flannelette · flannelette · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
     "category": "Pillowcases",
     "material": "Frankie Flannelette",
     "price": 2500,
     "salePrice": 5500,
+    "variantPrices": {
+      "Standard Size": 4000,
+      "King Size": 5000
+    },
+    "minPrice": 2500,
+    "maxPrice": 5000,
     "colors": [
       {
         "name": "Blythe-stripe",
@@ -2509,11 +2847,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-bedding-cloud",
     "name": "Eve Linen - Cloud",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Eve Linen",
     "price": 23000,
     "salePrice": 29000,
+    "variantPrices": {
+      "Default Title": 23000
+    },
+    "minPrice": 23000,
+    "maxPrice": 23000,
     "colors": [
       {
         "name": "Cloud",
@@ -2564,11 +2907,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-bedding-warm-white",
     "name": "Eve Linen - Warm White",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Eve Linen",
     "price": 12000,
     "salePrice": 20000,
+    "variantPrices": {
+      "Default Title": 12000
+    },
+    "minPrice": 12000,
+    "maxPrice": 12000,
     "colors": [
       {
         "name": "Warm-white",
@@ -2619,11 +2967,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "chambray-linen-bedding-oatmeal",
     "name": "Eve Linen - Oatmeal",
-    "subtitle": "Eve Linen · linen · Designed for everyday tactile comfort",
+    "subtitle": "Eve Linen · linen · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Eve Linen",
     "price": 23000,
     "salePrice": 29000,
+    "variantPrices": {
+      "Default Title": 23000
+    },
+    "minPrice": 23000,
+    "maxPrice": 23000,
     "colors": [
       {
         "name": "Oatmeal",
@@ -2674,10 +3027,15 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-bedding-russet",
     "name": "Darcy Corduroy - Russet",
-    "subtitle": "Darcy Corduroy · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Darcy Corduroy",
     "price": 32500,
+    "variantPrices": {
+      "Default Title": 32500
+    },
+    "minPrice": 32500,
+    "maxPrice": 32500,
     "colors": [
       {
         "name": "Russet",
@@ -2719,11 +3077,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "bed-sheets-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Bed Sheets",
-    "subtitle": "Eden Cotton · cotton, cotton-sateen · Designed for everyday tactile comfort",
+    "subtitle": "Eden Cotton · cotton, cotton-sateen · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Eden Cotton",
     "price": 11000,
     "salePrice": 13500,
+    "variantPrices": {
+      "Default Title": 11000
+    },
+    "minPrice": 11000,
+    "maxPrice": 11000,
     "colors": [
       {
         "name": "Alex-stripe",
@@ -2764,11 +3127,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "washed-cotton-bed-sheets-midnight-rodeo-stripe",
     "name": "Leo Washed Cotton - Midnight Rodeo Bed Sheets",
-    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Leo Washed Cotton",
     "price": 10000,
     "salePrice": 12500,
+    "variantPrices": {
+      "Default Title": 10000
+    },
+    "minPrice": 10000,
+    "maxPrice": 10000,
     "colors": [
       {
         "name": "Midnight-rodeo",
@@ -2814,11 +3182,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-bed-sheets-russet",
     "name": "Jude Organic Cotton - Russet Bed Sheets",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Jude Organic Cotton",
     "price": 10500,
     "salePrice": 15500,
+    "variantPrices": {
+      "Default Title": 10500
+    },
+    "minPrice": 10500,
+    "maxPrice": 10500,
     "colors": [
       {
         "name": "Russet",
@@ -2859,11 +3232,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "washed-cotton-bedding-henley-gingham",
     "name": "Leo Washed Cotton - Henley Gingham",
-    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Sheet Society Original",
     "category": "Bed Sheets & Sets",
     "material": "Leo Washed Cotton",
     "price": 8500,
     "salePrice": 11000,
+    "variantPrices": {
+      "Default Title": 8500
+    },
+    "minPrice": 8500,
+    "maxPrice": 8500,
     "colors": [
       {
         "name": "Henley-gingham",
@@ -2909,11 +3287,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "rory-washed-cotton-blanket-millie",
     "name": "Rory Washed Cotton - Millie Blanket",
-    "subtitle": "Leo Washed Cotton · washed-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Leo Washed Cotton · washed-cotton · Sheet Society Original",
     "category": "Blankets & Bed Covers",
     "material": "Leo Washed Cotton",
     "price": 21500,
     "salePrice": 27000,
+    "variantPrices": {
+      "Small": 21500,
+      "Medium": 29000,
+      "Large": 36000,
+      "Extra Large": 40500
+    },
+    "minPrice": 21500,
+    "maxPrice": 40500,
     "colors": [
       {
         "name": "Millie",
@@ -2967,11 +3353,19 @@ export const PRODUCTS: Product[] = [
   {
     "id": "rory-washed-cotton-bed-cover-millie",
     "name": "Rory Washed Cotton - Millie Bed Cover",
-    "subtitle": "Leo Washed Cotton · washed-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Leo Washed Cotton · washed-cotton · Sheet Society Original",
     "category": "Blankets & Bed Covers",
     "material": "Leo Washed Cotton",
     "price": 21500,
     "salePrice": 27000,
+    "variantPrices": {
+      "Single": 21500,
+      "Double": 29000,
+      "Queen": 36000,
+      "King/Super King": 40500
+    },
+    "minPrice": 21500,
+    "maxPrice": 40500,
     "colors": [
       {
         "name": "Millie",
@@ -3026,11 +3420,18 @@ export const PRODUCTS: Product[] = [
   {
     "id": "rory-washed-cotton-bed-cover-mahogany",
     "name": "Rory Washed Cotton - Mahogany Bed Cover",
-    "subtitle": "Leo Washed Cotton · washed-cotton · Designed for everyday tactile comfort",
+    "subtitle": "Leo Washed Cotton · washed-cotton · Sheet Society Original",
     "category": "Blankets & Bed Covers",
     "material": "Leo Washed Cotton",
     "price": 31500,
     "salePrice": 45000,
+    "variantPrices": {
+      "Queen": 31500,
+      "King": 35500,
+      "Super King": 39000
+    },
+    "minPrice": 31500,
+    "maxPrice": 39000,
     "colors": [
       {
         "name": "Mahogany",
@@ -3087,11 +3488,18 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-bed-cover-jimmy-stripe",
     "name": "Frankie Flannelette - Jimmy Stripe Bed Cover",
-    "subtitle": "Frankie Flannelette · cotton · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · cotton · Sheet Society Original",
     "category": "Blankets & Bed Covers",
     "material": "Frankie Flannelette",
     "price": 12500,
     "salePrice": 25000,
+    "variantPrices": {
+      "Single/King Single": 12500,
+      "Double/Queen": 16000,
+      "King/Super King": 21500
+    },
+    "minPrice": 12500,
+    "maxPrice": 21500,
     "colors": [
       {
         "name": "Jimmy-stripe",
@@ -3141,11 +3549,18 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-blanket-jimmy-stripe",
     "name": "Frankie Flannelette - Jimmy Stripe Blanket",
-    "subtitle": "Frankie Flannelette · cotton, flannelette · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · cotton, flannelette · Sheet Society Original",
     "category": "Blankets & Bed Covers",
     "material": "Frankie Flannelette",
     "price": 12500,
     "salePrice": 25000,
+    "variantPrices": {
+      "Small": 12500,
+      "Medium - Large": 16000,
+      "Large - Extra Large": 21500
+    },
+    "minPrice": 12500,
+    "maxPrice": 21500,
     "colors": [
       {
         "name": "Jimmy-stripe",
@@ -3195,11 +3610,18 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-blanket-marlo-print",
     "name": "Frankie Flannelette - Marlo Blanket",
-    "subtitle": "Frankie Flannelette · cotton, flannelette · Designed for everyday tactile comfort",
+    "subtitle": "Frankie Flannelette · cotton, flannelette · Sheet Society Original",
     "category": "Blankets & Bed Covers",
     "material": "Frankie Flannelette",
     "price": 12500,
     "salePrice": 25000,
+    "variantPrices": {
+      "Small": 12500,
+      "Medium/Large": 16000,
+      "Large/Extra Large": 21500
+    },
+    "minPrice": 12500,
+    "maxPrice": 21500,
     "colors": [
       {
         "name": "Marlo",

@@ -2,24 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'GrotesqueRegular';
+  src: url('/fonts/basis-grotesque-regular-pro.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrotesqueMedium';
+  src: url('/fonts/basis-grotesque-medium-pro.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrotesqueBold';
+  src: url('/fonts/basis-grotesque-bold-pro.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AwesomeSerifVAR';
+  src: url('/fonts/awesome-serif-var-vf.ttf') format('truetype-variations'),
+       url('/fonts/awesome-serif-var-vf.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BradfordLLRegular';
+  src: url('/fonts/basic-bradfordLL-regular.otf') format('opentype');
+  font-display: swap;
+}
+
 @layer base {
   :root {
-    --color-porcelain: #F4F0E8;
-    --color-chalk: #FBF9F5;
+    --color-porcelain: #fbf9f6;
+    --color-chalk: #ffffff;
     --color-oat: #D8CBB8;
-    --color-umber: #49372F;
+    --color-umber: #000000;
     --color-olive-ink: #596451;
-    --color-terracotta: #B74121;
+    --color-terracotta: #bc3636;
     --color-clay-rose: #B77F70;
     --color-dusk-blue: #71818A;
-    --color-charcoal: #222222;
-    --color-soft-graphite: #282725;
+    --color-charcoal: #000000;
+    --color-soft-graphite: #404040;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #F4F0E8;
-    color: #282725;
+    background-color: #fbf9f6;
+    color: #000000;
+    font-family: 'GrotesqueRegular', Roboto, Arial, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
