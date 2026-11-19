@@ -35,8 +35,8 @@ const HERO_SLIDES: SlideData[] = [
     secondaryCtaText: 'EXPLORE THE DETAILS',
     primaryAction: 'discover-linen',
     secondaryAction: 'explore-details',
-    image: '/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg',
-    alt: 'Sheet Society tactile quilt cover and textured pillowcases',
+    image: '/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg',
+    alt: 'Sheet Society Darcy Corduroy quilt cover in Hunter Green styled in natural light',
     objectPosition: 'center 38%',
   },
   {
@@ -49,7 +49,7 @@ const HERO_SLIDES: SlideData[] = [
     secondaryAction: 'view-all',
     image: '/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg',
     alt: 'Sheet Society French flax linen bedding in Warm White and Cloud',
-    objectPosition: 'center 38%',
+    objectPosition: 'center 40%',
   },
 ];
 
@@ -57,14 +57,30 @@ interface HeroProps {
   onExploreCollection: () => void;
   onOpenMaterialStory?: () => void;
   onOpenBedroomLooks?: () => void;
+  initialSlideIndex?: number;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onExploreCollection,
   onOpenMaterialStory,
   onOpenBedroomLooks,
+  initialSlideIndex = 0,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const getInitialSlide = () => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const slideParam = params.get('slide');
+      if (slideParam !== null) {
+        const parsed = parseInt(slideParam, 10);
+        if (!isNaN(parsed) && parsed >= 0 && parsed < HERO_SLIDES.length) {
+          return parsed;
+        }
+      }
+    }
+    return initialSlideIndex;
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(getInitialSlide);
   const [previousIndex, setPreviousIndex] = useState<number | null>(null);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -73,13 +89,28 @@ export const Hero: React.FC<HeroProps> = ({
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const textTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isMountedRef = useRef(true);
 
-  // Preload images
+  // Preload images and handle unmount timer cleanup
   useEffect(() => {
+    isMountedRef.current = true;
     HERO_SLIDES.forEach(slide => {
       const img = new Image();
       img.src = slide.image;
     });
+
+    return () => {
+      isMountedRef.current = false;
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
+        transitionTimeoutRef.current = null;
+      }
+      if (textTimeoutRef.current) {
+        clearTimeout(textTimeoutRef.current);
+        textTimeoutRef.current = null;
+      }
+    };
   }, []);
 
   const goToSlide = useCallback((targetIndex: number, dir: 'next' | 'prev') => {
@@ -87,6 +118,11 @@ export const Hero: React.FC<HeroProps> = ({
 
     if (transitionTimeoutRef.current) {
       clearTimeout(transitionTimeoutRef.current);
+      transitionTimeoutRef.current = null;
+    }
+    if (textTimeoutRef.current) {
+      clearTimeout(textTimeoutRef.current);
+      textTimeoutRef.current = null;
     }
 
     setDirection(dir);
@@ -95,15 +131,19 @@ export const Hero: React.FC<HeroProps> = ({
     setIsTransitioning(true);
     setTextVisible(false);
 
-    // Stagger text entrance
-    setTimeout(() => {
-      setTextVisible(true);
+    // Stagger text entrance (120ms delay)
+    textTimeoutRef.current = setTimeout(() => {
+      if (isMountedRef.current) {
+        setTextVisible(true);
+      }
     }, 120);
 
     // 800ms transition duration
     transitionTimeoutRef.current = setTimeout(() => {
-      setPreviousIndex(null);
-      setIsTransitioning(false);
+      if (isMountedRef.current) {
+        setPreviousIndex(null);
+        setIsTransitioning(false);
+      }
     }, 800);
   }, [currentIndex, isTransitioning]);
 

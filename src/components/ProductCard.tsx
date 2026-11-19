@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product, ColorVariant } from '../types';
 import { Star, Eye } from 'lucide-react';
 import { formatPKR } from '../utils/format';
@@ -17,6 +17,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const [selectedColor, setSelectedColor] = useState<ColorVariant>(product.colors[0]);
   const [hoverColor, setHoverColor] = useState<ColorVariant | null>(null);
   const [isHovered, setIsHovered] = useState(false);
+
+  // Synchronize selectedColor and clear preview state when product changes
+  useEffect(() => {
+    setSelectedColor(product.colors[0]);
+    setHoverColor(null);
+  }, [product.id]);
 
   // Active color is previewed color on swatch hover, or selected color
   const activeColor = hoverColor || selectedColor;

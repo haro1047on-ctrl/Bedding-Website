@@ -86,7 +86,11 @@ export function App() {
     setCartItems(prev => {
       const existing = prev.find(i => i.id === itemKey);
       if (existing) {
-        return prev.map(i => i.id === itemKey ? { ...i, quantity: i.quantity + quantity } : i);
+        return prev.map(i => i.id === itemKey ? { 
+          ...i, 
+          quantity: i.quantity + quantity,
+          unitPrice: i.unitPrice ?? itemUnitPrice,
+        } : i);
       }
       return [
         ...prev,
