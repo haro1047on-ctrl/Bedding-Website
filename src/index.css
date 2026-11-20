@@ -104,6 +104,20 @@
   }
 }
 
+@keyframes heroProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-hero-progress {
+  transform-origin: left;
+  animation: heroProgress 6000ms linear forwards;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

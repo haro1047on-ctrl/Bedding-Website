@@ -79,15 +79,15 @@ export function App() {
     quantity: number,
     unitPrice?: number
   ) => {
-    const itemUnitPrice = unitPrice !== undefined 
-      ? unitPrice 
+    const itemUnitPrice = unitPrice !== undefined
+      ? unitPrice
       : ((product.variantPrices && product.variantPrices[size]) ?? product.price);
     const itemKey = `${product.id}-${color.name}-${size}`;
     setCartItems(prev => {
       const existing = prev.find(i => i.id === itemKey);
       if (existing) {
-        return prev.map(i => i.id === itemKey ? { 
-          ...i, 
+        return prev.map(i => i.id === itemKey ? {
+          ...i,
           quantity: i.quantity + quantity,
           unitPrice: i.unitPrice ?? itemUnitPrice,
         } : i);
@@ -153,7 +153,7 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-porcelain text-soft-graphite flex flex-col font-sans selection:bg-oat selection:text-umber">
-      
+
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 bg-umber text-porcelain px-5 py-3 shadow-elevated border border-umber-dark/50 text-xs font-sans flex items-center space-x-2 animate-fadeIn rounded-sm">

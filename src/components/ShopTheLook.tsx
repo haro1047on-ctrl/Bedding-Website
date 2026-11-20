@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { BEDROOM_LOOKS } from '../data/mockData';
 import { Product, ColorVariant } from '../types';
-import { Sparkles, ArrowLeft, ArrowRight, Eye } from 'lucide-react';
+import { Sparkles, ArrowLeft, ArrowRight, Eye, X } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface ShopTheLookProps {
@@ -67,6 +67,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
   };
 
   const currentLook = BEDROOM_LOOKS[selectedLookIndex];
+  const activeHotspot = currentLook.hotspots.find(h => h.productId === activeHotspotId);
 
   return (
     <section 
@@ -177,6 +178,11 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                   {/* Hotspots (visible only on active look) */}
                   {isCurrent && look.hotspots.map((hotspot) => {
                     const isHotspotActive = activeHotspotId === hotspot.productId;
+                    // Clamp desktop tooltip positioning
+                    const isRightAligned = hotspot.x > 60;
+                    const isLeftAligned = hotspot.x < 35;
+                    const isTopAligned = hotspot.y > 60;
+
                     return (
                       <div
                         key={hotspot.productId}
@@ -186,28 +192,56 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                         <button
                           type="button"
                           onClick={() => setActiveHotspotId(isHotspotActive ? null : hotspot.productId)}
-                          className={`relative w-8 h-8 rounded-full flex items-center justify-center transition-transform focus:outline-none ${
+                          className={`relative w-8 h-8 rounded-full flex items-center justify-center transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-umber ${
                             isHotspotActive 
                               ? 'bg-umber text-porcelain scale-110 shadow-lg' 
                               : 'bg-chalk/90 backdrop-blur-md text-umber shadow-md hover:scale-110'
                           }`}
+                          aria-expanded={isHotspotActive}
                           aria-label={`Inspect ${hotspot.label}`}
                         >
                           <span className="w-2.5 h-2.5 rounded-full bg-terracotta animate-ping absolute opacity-50" />
                           <span className="w-2.5 h-2.5 rounded-full bg-umber" />
                         </button>
 
-                        {/* Tooltip on active */}
+                        {/* Desktop Tooltip on active (hidden on mobile) */}
                         {isHotspotActive && (
-                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-52 bg-chalk p-3.5 border border-sand-border shadow-elevated z-30 animate-fadeIn">
-                            <p className="font-serif text-sm text-umber font-normal">{hotspot.label}</p>
-                            <p className="text-xs font-semibold text-umber font-sans mt-1">{formatPKR(hotspot.price)}</p>
+                          <div 
+                            className={`hidden sm:block absolute w-56 bg-chalk p-3.5 border border-sand-border shadow-elevated z-30 animate-fadeIn ${
+                              isTopAligned ? 'bottom-full mb-2' : 'top-full mt-2'
+                            } ${
+                              isRightAligned
+                                ? 'right-0'
+                                : isLeftAligned
+                                ? 'left-0'
+                                : 'left-1/2 -translate-x-1/2'
+                            }`}
+                          >
+                            <div className="flex items-start justify-between">
+                              <p className="font-serif text-sm text-umber font-normal break-words leading-snug">
+                                {hotspot.label}
+                              </p>
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setActiveHotspotId(null);
+                                }}
+                                className="text-soft-graphite/50 hover:text-umber ml-1.5 p-0.5"
+                                aria-label="Close hotspot detail"
+                              >
+                                <X className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                            <p className="text-xs font-semibold text-umber font-sans mt-1">
+                              {formatPKR(hotspot.price)}
+                            </p>
                             <button
                               onClick={() => {
                                 const targetProduct = products.find(p => p.id === hotspot.productId);
                                 if (targetProduct) onSelectProduct(targetProduct);
                               }}
-                              className="mt-2.5 w-full py-1.5 bg-umber text-porcelain text-[10px] uppercase tracking-wider font-sans hover:bg-soft-graphite transition-colors"
+                              className="mt-2.5 w-full py-1.5 bg-umber text-porcelain text-[10px] uppercase tracking-wider font-sans hover:bg-soft-graphite transition-colors flex items-center justify-center font-medium"
                             >
                               View Product
                             </button>
@@ -217,10 +251,49 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                     );
                   })}
 
-                  {/* Room Identifier */}
-                  <div className="absolute bottom-4 left-4 bg-chalk/90 backdrop-blur-md px-3.5 py-1.5 border border-sand-border text-xs font-sans text-umber">
-                    {look.roomName}
-                  </div>
+                  {/* Mobile Docked Hotspot Detail Card (Guarantees zero overflow, 100% viewport fit & accessible tap) */}
+                  {isCurrent && activeHotspot && (
+                    <div className="sm:hidden absolute inset-x-3 bottom-3 z-30 bg-chalk/95 backdrop-blur-md p-3.5 border border-sand-border shadow-elevated rounded-sm animate-fadeIn">
+                      <div className="flex items-start justify-between">
+                        <div className="pr-3 flex-1 min-w-0">
+                          <span className="text-[10px] uppercase tracking-wider text-terracotta font-sans font-medium block">
+                            Selected Piece
+                          </span>
+                          <p className="font-serif text-sm text-umber font-normal break-words leading-snug">
+                            {activeHotspot.label}
+                          </p>
+                          <p className="text-xs font-semibold text-umber font-sans mt-0.5">
+                            {formatPKR(activeHotspot.price)}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setActiveHotspotId(null)}
+                          className="p-1 text-soft-graphite/60 hover:text-umber transition-colors"
+                          aria-label="Close hotspot detail"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => {
+                          const targetProduct = products.find(p => p.id === activeHotspot.productId);
+                          if (targetProduct) onSelectProduct(targetProduct);
+                        }}
+                        className="mt-2.5 w-full py-2.5 bg-umber text-porcelain text-xs uppercase tracking-wider font-sans hover:bg-soft-graphite transition-colors rounded-sm flex items-center justify-center font-medium min-h-[44px]"
+                      >
+                        View Product
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Room Identifier (hidden when mobile docked card is open) */}
+                  {(!activeHotspot || !isCurrent) && (
+                    <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-chalk/90 backdrop-blur-md px-3 py-1 sm:px-3.5 sm:py-1.5 border border-sand-border text-[11px] sm:text-xs font-sans text-umber rounded-sm pointer-events-none">
+                      {look.roomName}
+                    </div>
+                  )}
                 </div>
               );
             })}

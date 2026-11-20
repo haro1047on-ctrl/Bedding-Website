@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface SlideData {
   id: string;
@@ -24,7 +24,7 @@ const HERO_SLIDES: SlideData[] = [
     primaryAction: 'shop-bedding',
     secondaryAction: 'explore-collection',
     image: '/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg',
-    alt: 'Sheet Society Darcy Corduroy and Eve Linen bedding styled in natural light',
+    alt: 'MORFE Darcy Corduroy and Eve Linen bedding styled in natural light',
     objectPosition: 'center 36%',
   },
   {
@@ -36,7 +36,7 @@ const HERO_SLIDES: SlideData[] = [
     primaryAction: 'discover-linen',
     secondaryAction: 'explore-details',
     image: '/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg',
-    alt: 'Sheet Society Darcy Corduroy quilt cover in Hunter Green styled in natural light',
+    alt: 'MORFE Darcy Corduroy quilt cover in Hunter Green styled in natural light',
     objectPosition: 'center 38%',
   },
   {
@@ -48,10 +48,12 @@ const HERO_SLIDES: SlideData[] = [
     primaryAction: 'shop-bedroom',
     secondaryAction: 'view-all',
     image: '/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg',
-    alt: 'Sheet Society French flax linen bedding in Warm White and Cloud',
+    alt: 'MORFE French flax linen bedding in Warm White and Cloud',
     objectPosition: 'center 40%',
   },
 ];
+
+const SLIDE_DURATION = 6000;
 
 interface HeroProps {
   onExploreCollection: () => void;
@@ -81,18 +83,32 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   const [currentIndex, setCurrentIndex] = useState(getInitialSlide);
-  const [previousIndex, setPreviousIndex] = useState<number | null>(null);
-  const [direction, setDirection] = useState<'next' | 'prev'>('next');
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [progressKey, setProgressKey] = useState(0);
   const [textVisible, setTextVisible] = useState(true);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  const isPaused = isHovered || isFocused;
 
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
-  const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const textTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isMountedRef = useRef(true);
 
-  // Preload images and handle unmount timer cleanup
+  // Check prefers-reduced-motion media query
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      setPrefersReducedMotion(mediaQuery.matches);
+      const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+      mediaQuery.addEventListener('change', handler);
+      return () => mediaQuery.removeEventListener('change', handler);
+    }
+  }, []);
+
+  // Preload images and manage mount state
   useEffect(() => {
     isMountedRef.current = true;
     HERO_SLIDES.forEach(slide => {
@@ -102,9 +118,9 @@ export const Hero: React.FC<HeroProps> = ({
 
     return () => {
       isMountedRef.current = false;
-      if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current);
-        transitionTimeoutRef.current = null;
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+        autoAdvanceTimerRef.current = null;
       }
       if (textTimeoutRef.current) {
         clearTimeout(textTimeoutRef.current);
@@ -113,49 +129,72 @@ export const Hero: React.FC<HeroProps> = ({
     };
   }, []);
 
-  const goToSlide = useCallback((targetIndex: number, dir: 'next' | 'prev') => {
-    if (isTransitioning || targetIndex === currentIndex) return;
+  const goToSlide = useCallback((targetIndex: number) => {
+    if (targetIndex === currentIndex) return;
 
-    if (transitionTimeoutRef.current) {
-      clearTimeout(transitionTimeoutRef.current);
-      transitionTimeoutRef.current = null;
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = null;
     }
     if (textTimeoutRef.current) {
       clearTimeout(textTimeoutRef.current);
       textTimeoutRef.current = null;
     }
 
-    setDirection(dir);
-    setPreviousIndex(currentIndex);
-    setCurrentIndex(targetIndex);
-    setIsTransitioning(true);
     setTextVisible(false);
+    setCurrentIndex(targetIndex);
+    setProgressKey(k => k + 1);
 
-    // Stagger text entrance (120ms delay)
     textTimeoutRef.current = setTimeout(() => {
       if (isMountedRef.current) {
         setTextVisible(true);
       }
-    }, 120);
-
-    // 800ms transition duration
-    transitionTimeoutRef.current = setTimeout(() => {
-      if (isMountedRef.current) {
-        setPreviousIndex(null);
-        setIsTransitioning(false);
-      }
-    }, 800);
-  }, [currentIndex, isTransitioning]);
+    }, 150);
+  }, [currentIndex]);
 
   const handleNext = useCallback(() => {
     const nextIndex = (currentIndex + 1) % HERO_SLIDES.length;
-    goToSlide(nextIndex, 'next');
+    goToSlide(nextIndex);
   }, [currentIndex, goToSlide]);
 
   const handlePrev = useCallback(() => {
     const prevIndex = (currentIndex - 1 + HERO_SLIDES.length) % HERO_SLIDES.length;
-    goToSlide(prevIndex, 'prev');
+    goToSlide(prevIndex);
   }, [currentIndex, goToSlide]);
+
+  // Automated advancement every 6 seconds when not paused
+  useEffect(() => {
+    if (isPaused) {
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+        autoAdvanceTimerRef.current = null;
+      }
+      return;
+    }
+
+    autoAdvanceTimerRef.current = setTimeout(() => {
+      if (isMountedRef.current) {
+        const nextIndex = (currentIndex + 1) % HERO_SLIDES.length;
+        setCurrentIndex(nextIndex);
+        setProgressKey(k => k + 1);
+        setTextVisible(false);
+
+        if (textTimeoutRef.current) clearTimeout(textTimeoutRef.current);
+        textTimeoutRef.current = setTimeout(() => {
+          if (isMountedRef.current) {
+            setTextVisible(true);
+          }
+        }, 150);
+      }
+    }, SLIDE_DURATION);
+
+    return () => {
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+        autoAdvanceTimerRef.current = null;
+      }
+    };
+  }, [currentIndex, isPaused]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -221,70 +260,55 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section
-      className="relative w-full h-[100svh] min-h-[660px] sm:min-h-[680px] overflow-hidden bg-[#000000] select-none font-grotesque"
+      className="relative w-full h-[100svh] min-h-[640px] sm:min-h-[680px] overflow-hidden bg-[#000000] select-none font-grotesque"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocusCapture={() => setIsFocused(true)}
+      onBlurCapture={() => setIsFocused(false)}
       aria-roledescription="carousel"
-      aria-label="Sheet Society Bedding Campaign Showcase"
+      aria-label="MORFE Bedding Campaign Showcase"
     >
-      {/* Full-bleed Slide Images with Directional Horizontal Transitions */}
+      {/* Smooth Crossfading Slide Images with Subtle Zoom Effect */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {HERO_SLIDES.map((slide, idx) => {
           const isCurrent = idx === currentIndex;
-          const isPrevious = idx === previousIndex;
-
-          if (!isCurrent && !isPrevious) return null;
-
-          const transitionStyle: React.CSSProperties = {
-            transition: isTransitioning
-              ? 'transform 800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms ease'
-              : 'none',
-          };
 
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 w-full h-full will-change-transform ${
-                isCurrent ? 'z-10' : 'z-0'
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out will-change-opacity ${
+                isCurrent ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
-              style={{
-                ...transitionStyle,
-                transform: isCurrent
-                  ? 'translateX(0%)'
-                  : isPrevious && direction === 'next'
-                  ? 'translateX(-100%)'
-                  : isPrevious && direction === 'prev'
-                  ? 'translateX(100%)'
-                  : 'translateX(0%)',
-              }}
               aria-hidden={!isCurrent}
             >
               <img
                 src={slide.image}
                 alt={slide.alt}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover transition-transform duration-[6000ms] ease-out will-change-transform ${
+                  isCurrent && !prefersReducedMotion ? 'scale-105' : 'scale-100'
+                }`}
                 style={{ objectPosition: slide.objectPosition || 'center center' }}
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
 
-              {/* Contrast Overlays for Text Legibility */}
+              {/* Contrast Overlays for Consistent High-Legibility Typography */}
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/45 via-black/15 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none" />
             </div>
           );
         })}
       </div>
 
-      {/* Bottom-Left Campaign Copy & CTAs */}
+      {/* Campaign Copy & CTAs */}
       <div className="absolute bottom-16 sm:bottom-20 lg:bottom-20 left-4 sm:left-8 lg:left-[4.8vw] right-4 sm:right-auto z-30 max-w-xl lg:max-w-2xl pointer-events-auto">
         <div
           className="transition-all duration-500 ease-out"
           style={{
             opacity: textVisible ? 1 : 0,
-            transform: textVisible
-              ? 'translateY(0) translateX(0)'
-              : `translateY(16px) translateX(${direction === 'next' ? '20px' : '-20px'})`,
+            transform: textVisible ? 'translateY(0)' : 'translateY(12px)',
           }}
         >
           {/* Eyebrow Line */}
@@ -295,7 +319,7 @@ export const Hero: React.FC<HeroProps> = ({
             </span>
           </div>
 
-          {/* Main Campaign Headline in Sheet Society Awesome Serif */}
+          {/* Main Campaign Headline in Awesome Serif */}
           <h1 className="font-awesome text-[1.95rem] sm:text-5xl lg:text-[3.8rem] text-white font-normal leading-[1.08] tracking-tight text-balance mb-4 sm:mb-8 drop-shadow-md">
             {currentSlide.headline}
           </h1>
@@ -324,54 +348,38 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       </div>
 
-      {/* Slide Controls & Minimal Progress Indicator */}
-      <div className="absolute bottom-4 sm:bottom-20 lg:bottom-20 left-4 right-4 sm:left-auto sm:right-8 lg:right-[4.8vw] z-30 flex items-center justify-between sm:justify-end sm:space-x-6 text-white pointer-events-auto">
-        
-        {/* Slide Counter: 01 / 03 */}
-        <div className="font-grotesque text-xs tracking-widest text-white/80 tabular-nums font-medium" aria-live="polite">
-          <span>0{currentIndex + 1}</span>
-          <span className="mx-1 text-white/40">/</span>
-          <span className="text-white/50">0{HERO_SLIDES.length}</span>
-        </div>
-
-        {/* Minimal Segmented Progress Bar */}
-        <div className="flex items-center space-x-1.5" aria-hidden="true">
-          {HERO_SLIDES.map((_, idx) => (
+      {/* Progress Indicators (Automated 6-second fill, pause on hover/focus, no slide numbering or arrow buttons) */}
+      <div 
+        className="absolute bottom-5 sm:bottom-20 lg:bottom-20 right-4 sm:right-8 lg:right-[4.8vw] z-30 flex items-center space-x-2 pointer-events-auto"
+        aria-label="Hero slide indicators"
+      >
+        {HERO_SLIDES.map((_, idx) => {
+          const isCurrent = idx === currentIndex;
+          return (
             <button
               key={idx}
               type="button"
-              onClick={() => goToSlide(idx, idx > currentIndex ? 'next' : 'prev')}
-              aria-label={`Go to slide 0${idx + 1}`}
-              className={`h-0.5 transition-all duration-500 rounded-full ${
-                idx === currentIndex ? 'w-8 sm:w-10 bg-white' : 'w-4 sm:w-6 bg-white/30 hover:bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Directional Slide Navigation Arrows */}
-        <div className="flex items-center space-x-1.5">
-          <button
-            type="button"
-            onClick={handlePrev}
-            disabled={isTransitioning}
-            className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/40 hover:border-white hover:bg-white/20 active:scale-95 transition-all rounded-full text-white disabled:opacity-40"
-            aria-label="Previous slide"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.5]" />
-          </button>
-
-          <button
-            type="button"
-            onClick={handleNext}
-            disabled={isTransitioning}
-            className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/40 hover:border-white hover:bg-white/20 active:scale-95 transition-all rounded-full text-white disabled:opacity-40"
-            aria-label="Next slide"
-          >
-            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.5]" />
-          </button>
-        </div>
-
+              onClick={() => goToSlide(idx)}
+              className="group relative h-1 sm:h-1.5 w-10 sm:w-16 rounded-full bg-white/30 overflow-hidden transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              aria-label={`Go to slide ${idx + 1} of ${HERO_SLIDES.length}`}
+              aria-current={isCurrent ? 'true' : undefined}
+            >
+              {isCurrent ? (
+                <span
+                  key={progressKey}
+                  className={`absolute inset-0 w-full bg-white rounded-full ${
+                    !prefersReducedMotion ? 'animate-hero-progress' : ''
+                  }`}
+                  style={{
+                    animationPlayState: isPaused ? 'paused' : 'running',
+                  }}
+                />
+              ) : (
+                <span className="absolute inset-0 bg-transparent group-hover:bg-white/40 rounded-full transition-colors" />
+              )}
+            </button>
+          );
+        })}
       </div>
     </section>
   );

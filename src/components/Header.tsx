@@ -65,21 +65,21 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="fixed top-0 left-0 w-full z-40 transition-all duration-300 pointer-events-none">
       
       {/* 
-        3.1 Announcement Strip: Sheet Society Exact Ticker Styling (#E6EFB4 / #4B262B)
+        3.1 Announcement Strip: MORFE Ticker (#E6EFB4 / #4B262B)
       */}
       <div 
         className="w-full py-2 px-3 sm:px-6 text-center transition-colors duration-300 pointer-events-auto bg-[#E6EFB4] text-[#4B262B] border-b border-[#d8e49e] font-grotesque text-xs font-medium"
       >
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 flex items-center justify-between text-[11px] sm:text-xs">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 flex items-center justify-between text-[10px] sm:text-xs">
           <span className="hidden md:inline font-semibold">
-            Sheet Society | Australia
+            MORFE Studio
           </span>
           <div className="mx-auto flex items-center space-x-2 truncate font-medium">
-            <span>Black Friday is here. Up to 50% off everything.</span>
+            <span className="truncate">Thoughtfully made for everyday comfort</span>
             <span>·</span>
-            <span className="underline cursor-pointer" onClick={() => onSelectCategory('all')}>Shop now</span>
+            <span className="underline cursor-pointer flex-shrink-0" onClick={() => onSelectCategory('all')}>Shop Bedding</span>
             <span className="hidden sm:inline">·</span>
-            <span className="hidden sm:inline">Free shipping & fast dispatch (All orders in PKR)</span>
+            <span className="hidden sm:inline">Complimentary express delivery over Rs. 15,000</span>
           </div>
           <span className="hidden md:inline font-semibold">
             PKR (Rs.)
@@ -104,47 +104,43 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Top Row: Mobile Menu | Centered Brand Wordmark | Right Utility Actions */}
           <div className="relative flex items-center justify-between">
             
-            {/* Mobile Hamburger Button */}
-            <div className="flex items-center lg:hidden">
+            {/* Left: Mobile Hamburger Button & Desktop Placemark */}
+            <div className="flex items-center w-14 lg:w-48">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className={`p-1.5 -ml-1 transition-colors ${
+                className={`p-1.5 -ml-1 transition-colors lg:hidden ${
                   isTransparent ? 'text-chalk hover:text-white' : 'text-umber hover:text-soft-graphite'
                 }`}
                 aria-label="Open navigation menu"
               >
                 <Menu className="w-5 h-5 stroke-[1.5]" />
               </button>
-            </div>
-
-            {/* Desktop Left Placemark */}
-            <div className="hidden lg:flex items-center w-48">
-              <span className={`text-[11px] font-grotesque tracking-[0.2em] uppercase transition-colors ${
+              <span className={`hidden lg:inline text-[11px] font-grotesque tracking-[0.2em] uppercase transition-colors ${
                 isTransparent ? 'text-chalk/75' : 'text-umber/60'
               }`}>
                 Est. 2026
               </span>
             </div>
 
-            {/* Centered Brand Wordmark: Sheet Society Official Vector Logo */}
-            <div className="flex-1 text-center flex justify-center">
+            {/* Centered Brand Wordmark: MORFE */}
+            <div className="flex-1 text-center flex justify-center items-center">
               <button
                 type="button"
                 onClick={onNavigateHome}
                 className="group inline-flex flex-col items-center focus:outline-none py-1"
-                aria-label="Sheet Society Homepage"
+                aria-label="MORFE Homepage"
               >
-                <svg width="110" height="43" viewBox="0 0 110 43" fill="none" xmlns="http://www.w3.org/2000/svg" className={`h-8 sm:h-9 w-auto transition-colors ${
+                <span className={`font-sans font-bold text-lg sm:text-2xl tracking-[0.26em] uppercase transition-colors ${
                   isTransparent ? 'text-chalk drop-shadow-sm group-hover:text-white' : 'text-umber group-hover:text-soft-graphite'
                 }`}>
-                  <path d="M48.533 2.129H60.36v2.557h-9.166v4.413h8.232v2.557h-8.232v4.8h9.166v2.557H48.533V2.129zM63.238 2.129h11.827v2.557H65.9v4.413h8.233v2.557h-8.233v4.8h9.166v2.557H63.238V2.129zM18.084 12.5c.508 2.726 2.224 4.318 4.716 4.318 2.394 0 3.845-1.11 3.87-2.774 0-1.423-1.331-2.291-4.257-2.605-3.894-.41-5.829-2.098-5.829-5.065 0-2.653 2.54-4.583 5.95-4.583a6.443 6.443 0 014.087 1.327 5.93 5.93 0 012.225 3.497l-2.564.99c-.46-2.003-1.91-3.281-3.748-3.281-1.935 0-3.29.868-3.29 2.098 0 1.375 1.017 2.098 3.556 2.364 4.353.458 6.53 2.075 6.53 5.162 0 3.232-2.613 5.427-6.53 5.427-1.911 0-3.531-.531-4.813-1.616-1.282-1.086-2.104-2.533-2.419-4.39l2.516-.869zM31.436 2.129h2.66v6.97h8.779V2.13h2.66v16.884h-2.66v-7.357h-8.78v7.357h-2.66V2.129zM77.537 2.129h14.068v2.557H85.9v14.327h-2.66V4.686h-5.704V2.129zM63.238 23.344h11.827V25.9H65.9v4.413h8.233v2.557h-8.233v4.8h9.166v2.556H63.238V23.344zM4.086 33.718c.507 2.725 2.225 4.317 4.715 4.317 2.394 0 3.846-1.11 3.87-2.774 0-1.423-1.33-2.29-4.257-2.604-3.893-.41-5.828-2.099-5.828-5.066 0-2.652 2.54-4.582 5.95-4.582a6.442 6.442 0 014.087 1.326 5.929 5.929 0 012.225 3.498l-2.564.989c-.46-2.002-1.91-3.28-3.748-3.28-1.935 0-3.29.868-3.29 2.098 0 1.375 1.016 2.098 3.555 2.363 4.354.459 6.53 2.075 6.53 5.162 0 3.232-2.612 5.427-6.53 5.427-1.91 0-3.53-.53-4.812-1.616-1.282-1.085-2.104-2.532-2.419-4.39l2.516-.868zM34.548 31.837c.072 4.848-3.628 8.852-8.586 8.756-5.006.072-8.73-3.883-8.658-8.756-.073-4.896 3.652-8.948 8.658-8.852 4.958-.096 8.658 3.956 8.586 8.852zm-2.66 0c0-3.593-2.492-6.295-5.95-6.295-3.483 0-5.974 2.701-5.974 6.295 0 3.57 2.49 6.199 5.974 6.199 3.458 0 5.95-2.605 5.95-6.199zM56.426 23.347h2.66V40.23h-2.66V23.347zM77.537 23.347h14.068v2.557H85.9V40.23h-2.66V25.904h-5.704v-2.557zM95.998 23.347l4.692 7.549 4.692-7.55h3.047l-6.409 10.251v6.633h-2.66v-6.633l-6.385-10.25h3.023zM45.026 38.159c-3.218 0-5.724-2.224-5.724-6.374 0-3.965 2.322-6.372 5.7-6.372 2.525 0 4.471 1.312 5.1 3.693l2.87-.25c-.788-3.664-3.976-5.874-7.877-5.874-4.942 0-8.573 3.233-8.573 8.803 0 5.548 3.677 8.803 8.596 8.803 4.092 0 7.31-2.361 7.976-6.258l-2.873-.252c-.483 2.636-2.506 4.08-5.195 4.08z" fill="currentColor" />
-                </svg>
+                  MORFE
+                </span>
               </button>
             </div>
 
             {/* Right: Search & Shopping Bag */}
-            <div className="flex items-center justify-end space-x-3 sm:space-x-5 w-auto lg:w-48">
+            <div className="flex items-center justify-end space-x-2 sm:space-x-5 w-14 lg:w-48">
               <button
                 type="button"
                 onClick={onOpenSearch}
@@ -160,7 +156,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={onOpenCart}
-                className={`relative p-1.5 transition-colors flex items-center space-x-2 text-xs font-grotesque tracking-wider uppercase font-medium ${
+                className={`relative p-1.5 transition-colors flex items-center space-x-1.5 text-xs font-grotesque tracking-wider uppercase font-medium ${
                   isTransparent ? 'text-chalk/90 hover:text-white' : 'text-umber/90 hover:text-soft-graphite'
                 }`}
                 aria-label={`Open shopping bag with ${cartCount} items`}
@@ -168,7 +164,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
                 <span className="hidden sm:inline">Bag</span>
                 {cartCount > 0 && (
-                  <span className={`inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[10px] font-grotesque font-bold ${
+                  <span className={`inline-flex items-center justify-center min-w-[16px] h-[16px] sm:min-w-[18px] sm:h-[18px] px-1 text-[9px] sm:text-[10px] font-grotesque font-bold rounded-full ${
                     isTransparent ? 'bg-chalk text-umber shadow-sm' : 'bg-umber text-porcelain'
                   }`}>
                     {cartCount}
@@ -362,8 +358,8 @@ export const Header: React.FC<HeaderProps> = ({
               {/* Header inside drawer */}
               <div className="flex items-center justify-between pb-6 border-b border-sand-border">
                 <div>
-                  <span className="font-bold text-xl tracking-tight text-umber block">SHEET SOCIETY</span>
-                  <p className="text-[10px] tracking-wider uppercase text-umber/60 mt-0.5">Better Bedding</p>
+                  <span className="font-sans font-bold text-xl tracking-[0.22em] text-umber uppercase block">MORFE</span>
+                  <p className="text-[10px] tracking-wider uppercase text-umber/60 mt-0.5">Refined Bedding &amp; Living</p>
                 </div>
                 <button
                   type="button"

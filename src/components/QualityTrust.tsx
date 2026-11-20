@@ -30,7 +30,7 @@ export const QualityTrust: React.FC = () => {
         
         <div className="text-center max-w-xl mx-auto mb-12">
           <span className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#000000]/50 block mb-1">
-            Why Sheet Society
+            Why MORFE
           </span>
           <h3 className="font-awesome text-2xl sm:text-3xl text-[#000000] font-normal">
             There's more to love

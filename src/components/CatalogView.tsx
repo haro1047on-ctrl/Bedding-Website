@@ -171,7 +171,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           </div>
         </div>
 
-        {/* Sheet Society Horizontal Category Pill Strip */}
+        {/* MORFE Horizontal Category Pill Strip */}
         <div className="py-4 flex items-center space-x-2 overflow-x-auto no-scrollbar border-b border-[#e5e5e5]">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.value;
@@ -192,7 +192,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           })}
         </div>
 
-        {/* Sheet Society Horizontal Filter Dropdown Toolbar */}
+        {/* MORFE Horizontal Filter Dropdown Toolbar */}
         <div ref={dropdownRef} className="relative py-4 flex flex-wrap items-center justify-between gap-3 border-b border-[#e5e5e5]">
           
           {/* Desktop Filter Dropdown Buttons */}

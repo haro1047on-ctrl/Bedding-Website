@@ -4,7 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-russet",
     "name": "Darcy Corduroy - Russet Quilt Cover",
-    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 22500,
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-hunter-green",
     "name": "Darcy Corduroy - Hunter Green Quilt Cover",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 26000,
@@ -151,7 +151,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-olive",
     "name": "Darcy Corduroy - Olive Solid Quilt Cover",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 26000,
@@ -224,7 +224,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-quilt-cover-terracotta",
     "name": "Darcy Corduroy - Terracotta Quilt Cover",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Darcy Corduroy",
     "price": 17500,
@@ -301,7 +301,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-cloud",
     "name": "Eve Linen - Cloud Quilt Cover",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 33000,
@@ -385,7 +385,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-white",
     "name": "Eve Linen - White Quilt Cover",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 31500,
@@ -472,7 +472,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-warm-white",
     "name": "Eve Linen - Warm White Quilt Cover",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 24000,
@@ -559,7 +559,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-sage",
     "name": "Eve Linen - Sage Quilt Cover",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 31500,
@@ -646,7 +646,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "chambray-linen-quilt-cover-oatmeal",
     "name": "Eve Linen - Oatmeal Quilt Cover",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 31500,
@@ -733,7 +733,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-quilt-cover-chocolate",
     "name": "Eve Linen - Chocolate Quilt Cover",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eve Linen",
     "price": 33000,
@@ -817,7 +817,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "quilt-cover-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Quilt Cover",
-    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
+    "subtitle": "Eden Cotton · cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Eden Cotton",
     "price": 21500,
@@ -879,7 +879,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-quilt-cover-russet",
     "name": "Jude Organic Cotton - Russet Quilt Cover",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Jude Organic Cotton",
     "price": 19500,
@@ -943,7 +943,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-quilt-cover-bay-blue",
     "name": "Jude Organic Cotton - Bay Blue Quilt Cover",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Jude Organic Cotton",
     "price": 18500,
@@ -1010,7 +1010,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-quilt-cover-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Quilt Cover",
-    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · flannelette · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Frankie Flannelette",
     "price": 10000,
@@ -1072,7 +1072,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "ruched-cotton-quilt-cover-white",
     "name": "Sofia Ruched Cotton - White Quilt Cover",
-    "subtitle": "Sofia Ruched Cotton · cotton, ruched-cotton, washed-cotton · Sheet Society Original",
+    "subtitle": "Sofia Ruched Cotton · cotton, ruched-cotton, washed-cotton · MORFE Collection",
     "category": "Quilt Covers",
     "material": "Sofia Ruched Cotton",
     "price": 23000,
@@ -1134,7 +1134,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-cloud",
     "name": "Eve Linen - Cloud Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 23000,
@@ -1208,7 +1208,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-warm-white",
     "name": "Eve Linen - Warm White Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 15000,
@@ -1288,7 +1288,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-marshmallow",
     "name": "Eve Linen - Marshmallow Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 17500,
@@ -1368,7 +1368,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-fitted-sheet-white",
     "name": "Eve Linen - White Fitted Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Eve Linen",
     "price": 20000,
@@ -1451,7 +1451,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-fitted-sheet-russet",
     "name": "Jude Organic Cotton - Russet Fitted Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Jude Organic Cotton",
     "price": 10500,
@@ -1515,7 +1515,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-fitted-sheet-white",
     "name": "Jude Organic Cotton - White Fitted Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Jude Organic Cotton",
     "price": 10000,
@@ -1585,7 +1585,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "fitted-sheet-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Fitted Sheet",
-    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
+    "subtitle": "Eden Cotton · cotton · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Eden Cotton",
     "price": 11000,
@@ -1650,7 +1650,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-fitted-sheet-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Fitted Sheet",
-    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · flannelette · MORFE Collection",
     "category": "Fitted Sheets",
     "material": "Frankie Flannelette",
     "price": 4500,
@@ -1715,7 +1715,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-cloud",
     "name": "Eve Linen - Cloud Flat Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 23000,
@@ -1789,7 +1789,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-warm-white",
     "name": "Eve Linen - Warm White Flat Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 15000,
@@ -1869,7 +1869,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-marshmallow",
     "name": "Eve Linen - Marshmallow Flat Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 17500,
@@ -1949,7 +1949,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-flat-sheet-white",
     "name": "Eve Linen - White Flat Sheet",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Eve Linen",
     "price": 20000,
@@ -2029,7 +2029,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-flat-sheet-russet",
     "name": "Jude Organic Cotton - Russet Flat Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Jude Organic Cotton",
     "price": 10500,
@@ -2090,7 +2090,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-flat-sheet-white",
     "name": "Jude Organic Cotton - White Flat Sheet",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Jude Organic Cotton",
     "price": 10000,
@@ -2160,7 +2160,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flat-sheet-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Flat Sheet",
-    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
+    "subtitle": "Eden Cotton · cotton · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Eden Cotton",
     "price": 11000,
@@ -2225,7 +2225,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-flat-sheet-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Flat Sheet",
-    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · flannelette · MORFE Collection",
     "category": "Flat Sheets",
     "material": "Frankie Flannelette",
     "price": 4500,
@@ -2290,7 +2290,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-pillowcases-russet",
     "name": "Darcy Corduroy - Russet Pillowcases",
-    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · cotton · MORFE Collection",
     "category": "Pillowcases",
     "material": "Darcy Corduroy",
     "price": 7500,
@@ -2348,7 +2348,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-european-pillowcase-russet",
     "name": "Darcy Corduroy - Russet European Pillowcase",
-    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · cotton · MORFE Collection",
     "category": "Pillowcases",
     "material": "Darcy Corduroy",
     "price": 7500,
@@ -2402,7 +2402,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-pillowcases-hunter-green",
     "name": "Darcy Corduroy - Hunter Green Pillowcases",
-    "subtitle": "Darcy Corduroy · corduroy, cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · corduroy, cotton · MORFE Collection",
     "category": "Pillowcases",
     "material": "Darcy Corduroy",
     "price": 8500,
@@ -2465,7 +2465,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-pillowcases-cloud",
     "name": "Eve Linen - Cloud Pillowcases",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Pillowcases",
     "material": "Eve Linen",
     "price": 11500,
@@ -2523,7 +2523,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-european-pillowcase-cloud",
     "name": "Eve Linen - Cloud European Pillowcase",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Pillowcases",
     "material": "Eve Linen",
     "price": 8500,
@@ -2577,7 +2577,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-pillowcases-warm-white",
     "name": "Eve Linen - Warm White Pillowcases",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Pillowcases",
     "material": "Eve Linen",
     "price": 8500,
@@ -2640,7 +2640,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "pillowcases-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Pillowcases",
-    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
+    "subtitle": "Eden Cotton · cotton · MORFE Collection",
     "category": "Pillowcases",
     "material": "Eden Cotton",
     "price": 8500,
@@ -2693,7 +2693,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "european-pillowcase-alex-stripe",
     "name": "Eden Cotton - Alex Stripe European Pillowcase",
-    "subtitle": "Eden Cotton · cotton · Sheet Society Original",
+    "subtitle": "Eden Cotton · cotton · MORFE Collection",
     "category": "Pillowcases",
     "material": "Eden Cotton",
     "price": 7000,
@@ -2742,7 +2742,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-pillowcases-russet",
     "name": "Jude Organic Cotton - Russet Pillowcases",
-    "subtitle": "Jude Organic Cotton · cotton, jersey · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, jersey · MORFE Collection",
     "category": "Pillowcases",
     "material": "Jude Organic Cotton",
     "price": 7000,
@@ -2795,7 +2795,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-pillowcases-blythe-stripe",
     "name": "Frankie Flannelette - Blythe Stripe Pillowcases",
-    "subtitle": "Frankie Flannelette · flannelette · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · flannelette · MORFE Collection",
     "category": "Pillowcases",
     "material": "Frankie Flannelette",
     "price": 2500,
@@ -2847,7 +2847,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-bedding-cloud",
     "name": "Eve Linen - Cloud",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Eve Linen",
     "price": 23000,
@@ -2907,7 +2907,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "linen-bedding-warm-white",
     "name": "Eve Linen - Warm White",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Eve Linen",
     "price": 12000,
@@ -2967,7 +2967,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "chambray-linen-bedding-oatmeal",
     "name": "Eve Linen - Oatmeal",
-    "subtitle": "Eve Linen · linen · Sheet Society Original",
+    "subtitle": "Eve Linen · linen · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Eve Linen",
     "price": 23000,
@@ -3027,7 +3027,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "corduroy-bedding-russet",
     "name": "Darcy Corduroy - Russet",
-    "subtitle": "Darcy Corduroy · cotton · Sheet Society Original",
+    "subtitle": "Darcy Corduroy · cotton · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Darcy Corduroy",
     "price": 32500,
@@ -3077,7 +3077,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "bed-sheets-alex-stripe",
     "name": "Eden Cotton - Alex Stripe Bed Sheets",
-    "subtitle": "Eden Cotton · cotton, cotton-sateen · Sheet Society Original",
+    "subtitle": "Eden Cotton · cotton, cotton-sateen · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Eden Cotton",
     "price": 11000,
@@ -3127,7 +3127,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "washed-cotton-bed-sheets-midnight-rodeo-stripe",
     "name": "Leo Washed Cotton - Midnight Rodeo Bed Sheets",
-    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Sheet Society Original",
+    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Leo Washed Cotton",
     "price": 10000,
@@ -3182,7 +3182,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "organic-cotton-bed-sheets-russet",
     "name": "Jude Organic Cotton - Russet Bed Sheets",
-    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · Sheet Society Original",
+    "subtitle": "Jude Organic Cotton · cotton, organic-cotton · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Jude Organic Cotton",
     "price": 10500,
@@ -3232,7 +3232,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "washed-cotton-bedding-henley-gingham",
     "name": "Leo Washed Cotton - Henley Gingham",
-    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · Sheet Society Original",
+    "subtitle": "Leo Washed Cotton · cotton, washed-cotton · MORFE Collection",
     "category": "Bed Sheets & Sets",
     "material": "Leo Washed Cotton",
     "price": 8500,
@@ -3287,7 +3287,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "rory-washed-cotton-blanket-millie",
     "name": "Rory Washed Cotton - Millie Blanket",
-    "subtitle": "Leo Washed Cotton · washed-cotton · Sheet Society Original",
+    "subtitle": "Leo Washed Cotton · washed-cotton · MORFE Collection",
     "category": "Blankets & Bed Covers",
     "material": "Leo Washed Cotton",
     "price": 21500,
@@ -3353,7 +3353,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "rory-washed-cotton-bed-cover-millie",
     "name": "Rory Washed Cotton - Millie Bed Cover",
-    "subtitle": "Leo Washed Cotton · washed-cotton · Sheet Society Original",
+    "subtitle": "Leo Washed Cotton · washed-cotton · MORFE Collection",
     "category": "Blankets & Bed Covers",
     "material": "Leo Washed Cotton",
     "price": 21500,
@@ -3420,7 +3420,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "rory-washed-cotton-bed-cover-mahogany",
     "name": "Rory Washed Cotton - Mahogany Bed Cover",
-    "subtitle": "Leo Washed Cotton · washed-cotton · Sheet Society Original",
+    "subtitle": "Leo Washed Cotton · washed-cotton · MORFE Collection",
     "category": "Blankets & Bed Covers",
     "material": "Leo Washed Cotton",
     "price": 31500,
@@ -3488,7 +3488,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-bed-cover-jimmy-stripe",
     "name": "Frankie Flannelette - Jimmy Stripe Bed Cover",
-    "subtitle": "Frankie Flannelette · cotton · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · cotton · MORFE Collection",
     "category": "Blankets & Bed Covers",
     "material": "Frankie Flannelette",
     "price": 12500,
@@ -3549,7 +3549,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-blanket-jimmy-stripe",
     "name": "Frankie Flannelette - Jimmy Stripe Blanket",
-    "subtitle": "Frankie Flannelette · cotton, flannelette · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · cotton, flannelette · MORFE Collection",
     "category": "Blankets & Bed Covers",
     "material": "Frankie Flannelette",
     "price": 12500,
@@ -3610,7 +3610,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "flannelette-blanket-marlo-print",
     "name": "Frankie Flannelette - Marlo Blanket",
-    "subtitle": "Frankie Flannelette · cotton, flannelette · Sheet Society Original",
+    "subtitle": "Frankie Flannelette · cotton, flannelette · MORFE Collection",
     "category": "Blankets & Bed Covers",
     "material": "Frankie Flannelette",
     "price": 12500,

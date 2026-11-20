@@ -245,7 +245,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               ))}
             </div>
 
-            {/* Sheet Society Feature Highlight Box */}
+            {/* MORFE Feature Highlight Box */}
             <div className="p-4 bg-white border border-[#e5e5e5] rounded text-xs text-[#000000]/80 leading-relaxed space-y-1.5">
               <p className="font-semibold text-[#000000]">
                 Why You'll Love It:
