@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Product, ColorVariant } from '../types';
-import { Star, Eye } from 'lucide-react';
+import { Star, Eye, ImageOff } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface ProductCardProps {
@@ -26,8 +26,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   // Active color is previewed color on swatch hover, or selected color
   const activeColor = hoverColor || selectedColor;
-  const currentImage = activeColor.image || product.images[0];
-  const secondaryImage = product.images[1] || currentImage;
+
+  // Strict Colourway Image Resolution: Dedicated gallery first, single image second, missing placeholder third
+  const activeGallery = (activeColor.gallery && Array.isArray(activeColor.gallery) && activeColor.gallery.length > 0)
+    ? activeColor.gallery.filter(img => typeof img === 'string' && img.trim().length > 0)
+    : [];
+  const currentImage = activeGallery[0] || (typeof activeColor.image === 'string' && activeColor.image.trim()) || '';
+  const secondaryImage = activeGallery[1] || currentImage;
 
   const hasPriceRange = product.minPrice && product.maxPrice && product.minPrice !== product.maxPrice;
 
@@ -41,12 +46,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img
-          src={isHovered && !hoverColor ? secondaryImage : currentImage}
-          alt={`${product.name} in ${activeColor.name}`}
-          className="w-full h-full object-cover object-center transition-all duration-500 ease-out text-transparent group-hover:scale-[1.02]"
-          loading="lazy"
-        />
+        {currentImage ? (
+          <img
+            src={isHovered && !hoverColor && secondaryImage ? secondaryImage : currentImage}
+            alt={`${product.name} in ${activeColor.name}`}
+            className="w-full h-full object-cover object-center transition-all duration-500 ease-out text-transparent group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center bg-[#f4f2ec]">
+            <ImageOff className="w-6 h-6 text-black/30 mb-2" />
+            <span className="text-[10px] uppercase tracking-wider font-semibold text-black/50">
+              Photography Unavailable
+            </span>
+            <span className="text-[11px] text-black/70 font-medium mt-0.5">
+              {activeColor.name}
+            </span>
+          </div>
+        )}
 
         {/* Badges */}
         <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex flex-col space-y-1 pointer-events-none z-10">

@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Product, BedSize, ColorVariant } from '../types';
-import { X, Star, ShieldCheck, Plus, Minus, ChevronDown, Check, ArrowLeft, ArrowRight } from 'lucide-react';
+import { X, Star, ShieldCheck, Plus, Minus, ChevronDown, Check, ArrowLeft, ArrowRight, ImageOff } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface ProductDetailModalProps {
@@ -76,21 +76,37 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   // Dynamic price calculation based on variant selection
   const currentUnitPrice = (product.variantPrices && product.variantPrices[selectedSize]) || product.price;
 
-  // Images list: dedicated colorway gallery if available, otherwise current color image followed by product gallery
-  const displayImages = (selectedColor.gallery && selectedColor.gallery.length > 0)
-    ? selectedColor.gallery
-    : [
-        selectedColor.image || product.images[0],
-        ...product.images.filter(img => img !== selectedColor.image),
-      ];
+  // Strict Colourway Image Resolution Rules:
+  // 1. Verified dedicated gallery: If selectedColor.gallery exists, is an array, and has non-empty URLs, use ONLY those images.
+  // 2. Single verified image: If selectedColor.image exists and is a non-empty string, use ONLY that single image.
+  // 3. Missing photography: Return empty array [], triggering the dedicated missing-image placeholder.
+  // PROHIBITED: NEVER fall back to product.images, another colour's hero image, or arbitrary manifest assets.
+  const displayImages = useMemo<string[]>(() => {
+    if (selectedColor?.gallery && Array.isArray(selectedColor.gallery) && selectedColor.gallery.length > 0) {
+      const validGallery = selectedColor.gallery.filter(
+        img => typeof img === 'string' && img.trim().length > 0
+      );
+      if (validGallery.length > 0) return validGallery;
+    }
+    if (selectedColor?.image && typeof selectedColor.image === 'string' && selectedColor.image.trim().length > 0) {
+      return [selectedColor.image.trim()];
+    }
+    return [];
+  }, [selectedColor]);
+
+  // Safe image index bounded strictly by displayImages.length
+  const safeImageIndex = displayImages.length > 0
+    ? Math.min(Math.max(0, selectedImageIndex), displayImages.length - 1)
+    : 0;
 
   const changeImage = (targetIndex: number) => {
-    if (isTransitioning || targetIndex === selectedImageIndex) return;
+    if (displayImages.length <= 1) return;
+    if (isTransitioning || targetIndex === safeImageIndex) return;
     if (targetIndex < 0 || targetIndex >= displayImages.length) return;
 
-    const dir = targetIndex > selectedImageIndex ? 'next' : 'prev';
+    const dir = targetIndex > safeImageIndex ? 'next' : 'prev';
     setDirection(dir);
-    setPreviousImageIndex(selectedImageIndex);
+    setPreviousImageIndex(safeImageIndex);
     setSelectedImageIndex(targetIndex);
     setIsTransitioning(true);
 
@@ -102,21 +118,24 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   };
 
   const handleNextImage = () => {
-    const nextIdx = (selectedImageIndex + 1) % displayImages.length;
+    if (displayImages.length <= 1) return;
+    const nextIdx = (safeImageIndex + 1) % displayImages.length;
     changeImage(nextIdx);
   };
 
   const handlePrevImage = () => {
-    const prevIdx = (selectedImageIndex - 1 + displayImages.length) % displayImages.length;
+    if (displayImages.length <= 1) return;
+    const prevIdx = (safeImageIndex - 1 + displayImages.length) % displayImages.length;
     changeImage(prevIdx);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
+    if (displayImages.length <= 1) return;
     touchStartXRef.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartXRef.current === null) return;
+    if (displayImages.length <= 1 || touchStartXRef.current === null) return;
     const deltaX = e.changedTouches[0].clientX - touchStartXRef.current;
     if (deltaX < -40) {
       handleNextImage();
@@ -124,6 +143,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       handlePrevImage();
     }
     touchStartXRef.current = null;
+  };
+
+  const handleSelectColor = (color: ColorVariant) => {
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+      transitionTimerRef.current = null;
+    }
+    setSelectedColor(color);
+    setSelectedImageIndex(0);
+    setPreviousImageIndex(null);
+    setIsTransitioning(false);
   };
 
   const handleAddToCart = () => {
@@ -163,89 +193,121 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           {/* Left Column: Photo Gallery with Directional Slide Motion (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
             
-            {/* Main Stage Image */}
-            <div 
-              className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-[#e5e5e5]/30 border border-[#e5e5e5] rounded-md select-none"
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            >
-              {displayImages.map((img, idx) => {
-                const isCurrent = idx === selectedImageIndex;
-                const isPrevious = idx === previousImageIndex;
-                if (!isCurrent && !isPrevious) return null;
-
-                return (
-                  <div
-                    key={`${img}-${idx}`}
-                    className={`absolute inset-0 w-full h-full will-change-transform ${
-                      isCurrent ? 'z-10' : 'z-0'
-                    }`}
-                    style={{
-                      transition: isTransitioning
-                        ? 'transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease'
-                        : 'none',
-                      transform: isCurrent
-                        ? 'translateX(0%)'
-                        : isPrevious && direction === 'next'
-                        ? 'translateX(-100%)'
-                        : isPrevious && direction === 'prev'
-                        ? 'translateX(100%)'
-                        : 'translateX(0%)',
-                      opacity: isCurrent ? 1 : 0.85,
-                    }}
-                  >
-                    <img
-                      src={img}
-                      alt={`${product.name} - ${selectedColor.name}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                );
-              })}
-
-              {/* Prev / Next Gallery Navigation Arrows */}
-              <button
-                type="button"
-                onClick={handlePrevImage}
-                disabled={isTransitioning}
-                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md border border-[#e5e5e5] text-[#000000] hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center justify-center shadow-md"
-                aria-label="Previous product image"
+            {/* Main Stage Image / Missing Photography Placeholder */}
+            {displayImages.length === 0 ? (
+              <div 
+                className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-[#f4f2ec] border border-[#e5e5e5] rounded-md flex flex-col items-center justify-center p-6 text-center select-none"
+                role="status"
+                aria-label={`Photography unavailable for ${selectedColor?.name || 'this colourway'}`}
               >
-                <ArrowLeft className="w-4 h-4 stroke-[1.5]" />
-              </button>
+                <div className="w-14 h-14 rounded-full bg-black/5 border border-black/10 flex items-center justify-center text-[#000000]/40 mb-3">
+                  <ImageOff className="w-6 h-6 stroke-[1.5]" />
+                </div>
+                <span className="text-[11px] uppercase tracking-widest font-semibold text-[#000000]/60 mb-1">
+                  Photography Unavailable
+                </span>
+                <h4 className="text-sm font-medium text-[#000000] mb-1.5">
+                  {selectedColor?.name ? `${selectedColor.name} Colourway` : 'Selected Colourway'}
+                </h4>
+                <p className="text-xs text-[#000000]/50 max-w-xs leading-relaxed">
+                  Studio photography is currently in preparation for this shade. Crafted to order in 100% authentic {product.material.toLowerCase()}.
+                </p>
 
-              <button
-                type="button"
-                onClick={handleNextImage}
-                disabled={isTransitioning}
-                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md border border-[#e5e5e5] text-[#000000] hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center justify-center shadow-md"
-                aria-label="Next product image"
-              >
-                <ArrowRight className="w-4 h-4 stroke-[1.5]" />
-              </button>
-
-              {/* Vignette badge */}
-              <div className="absolute bottom-3 left-3 z-20 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-grotesque text-[#000000] border border-[#e5e5e5] rounded">
-                {product.material} · {selectedColor.name} ({selectedImageIndex + 1}/{displayImages.length})
+                {/* Vignette badge for missing photography */}
+                <div className="absolute bottom-3 left-3 z-20 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-grotesque text-[#000000] border border-[#e5e5e5] rounded">
+                  {product.material} · {selectedColor.name} (Photography pending)
+                </div>
               </div>
-            </div>
+            ) : (
+              <div 
+                className="relative aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden bg-[#e5e5e5]/30 border border-[#e5e5e5] rounded-md select-none"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
+                {displayImages.map((img, idx) => {
+                  const isCurrent = idx === safeImageIndex;
+                  const isPrevious = idx === previousImageIndex;
+                  if (!isCurrent && !isPrevious) return null;
 
-            {/* Thumbnail Strip */}
-            <div className="flex space-x-3 overflow-x-auto pb-2">
-              {displayImages.map((img, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => changeImage(idx)}
-                  className={`relative w-20 h-20 flex-shrink-0 border overflow-hidden transition-all rounded ${
-                    selectedImageIndex === idx ? 'border-[#000000] ring-2 ring-[#000000]' : 'border-[#e5e5e5] opacity-75 hover:opacity-100'
-                  }`}
-                  aria-label={`Show image ${idx + 1}`}
-                >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
+                  return (
+                    <div
+                      key={`${img}-${idx}`}
+                      className={`absolute inset-0 w-full h-full will-change-transform ${
+                        isCurrent ? 'z-10' : 'z-0'
+                      }`}
+                      style={{
+                        transition: isTransitioning
+                          ? 'transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease'
+                          : 'none',
+                        transform: isCurrent
+                          ? 'translateX(0%)'
+                          : isPrevious && direction === 'next'
+                          ? 'translateX(-100%)'
+                          : isPrevious && direction === 'prev'
+                          ? 'translateX(100%)'
+                          : 'translateX(0%)',
+                        opacity: isCurrent ? 1 : 0.85,
+                      }}
+                    >
+                      <img
+                        src={img}
+                        alt={`${product.name} - ${selectedColor.name} (View ${idx + 1})`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  );
+                })}
+
+                {/* Prev / Next Gallery Navigation Arrows (Rendered ONLY when multiple images exist) */}
+                {displayImages.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={handlePrevImage}
+                      disabled={isTransitioning}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md border border-[#e5e5e5] text-[#000000] hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center justify-center shadow-md disabled:opacity-50"
+                      aria-label="Previous product image"
+                    >
+                      <ArrowLeft className="w-4 h-4 stroke-[1.5]" />
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={handleNextImage}
+                      disabled={isTransitioning}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md border border-[#e5e5e5] text-[#000000] hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center justify-center shadow-md disabled:opacity-50"
+                      aria-label="Next product image"
+                    >
+                      <ArrowRight className="w-4 h-4 stroke-[1.5]" />
+                    </button>
+                  </>
+                )}
+
+                {/* Vignette badge */}
+                <div className="absolute bottom-3 left-3 z-20 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-grotesque text-[#000000] border border-[#e5e5e5] rounded">
+                  {product.material} · {selectedColor.name} ({safeImageIndex + 1}/{displayImages.length})
+                </div>
+              </div>
+            )}
+
+            {/* Thumbnail Strip (Rendered ONLY when multiple images exist) */}
+            {displayImages.length > 1 && (
+              <div className="flex space-x-3 overflow-x-auto pb-2">
+                {displayImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => changeImage(idx)}
+                    className={`relative w-20 h-20 flex-shrink-0 border overflow-hidden transition-all rounded ${
+                      safeImageIndex === idx ? 'border-[#000000] ring-2 ring-[#000000]' : 'border-[#e5e5e5] opacity-75 hover:opacity-100'
+                    }`}
+                    aria-label={`Show image ${idx + 1}`}
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* MORFE Feature Highlight Box */}
             <div className="p-4 bg-white border border-[#e5e5e5] rounded text-xs text-[#000000]/80 leading-relaxed space-y-1.5">
@@ -311,10 +373,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       <button
                         key={color.name}
                         type="button"
-                        onClick={() => {
-                          setSelectedColor(color);
-                          setSelectedImageIndex(0);
-                        }}
+                        onClick={() => handleSelectColor(color)}
                         className={`group relative p-1 transition-all rounded-full ${
                           isSelected ? 'ring-2 ring-[#000000] ring-offset-2 ring-offset-[#fbf9f6]' : 'hover:scale-105'
                         }`}

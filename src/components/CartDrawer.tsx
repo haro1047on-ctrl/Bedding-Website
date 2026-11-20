@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CartItem } from '../types';
-import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Sparkles, ImageOff } from 'lucide-react';
 import { formatPKR, FREE_SHIPPING_THRESHOLD_PKR } from '../utils/format';
 
 interface CartDrawerProps {
@@ -137,12 +137,21 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             ) : (
               items.map((item) => (
                 <div key={item.id} className="py-4 flex space-x-4">
-                  {/* Thumbnail */}
-                  <img
-                    src={item.selectedColor.image || item.product.images[0]}
-                    alt={item.product.name}
-                    className="w-20 h-24 object-cover bg-oat-stone/30 border border-sand-border flex-shrink-0"
-                  />
+                  {/* Thumbnail (Strict colourway image resolution) */}
+                  {item.selectedColor?.image ? (
+                    <img
+                      src={item.selectedColor.image}
+                      alt={`${item.product.name} in ${item.selectedColor.name}`}
+                      className="w-20 h-24 object-cover bg-oat-stone/30 border border-sand-border flex-shrink-0"
+                    />
+                  ) : (
+                    <div className="w-20 h-24 bg-porcelain border border-sand-border flex-shrink-0 flex flex-col items-center justify-center p-1 text-center">
+                      <ImageOff className="w-4 h-4 text-umber/30 mb-1" />
+                      <span className="text-[9px] text-umber/50 uppercase font-sans">
+                        {item.selectedColor.name}
+                      </span>
+                    </div>
+                  )}
 
                   {/* Item Details */}
                   <div className="flex-1 flex flex-col justify-between">

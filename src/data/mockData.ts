@@ -21,22 +21,40 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg"
+        ]
       },
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-03.jpg"
+        ]
       },
       {
         "name": "Olive",
         "hex": "#A39264",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-02.jpg"
+        ]
       },
       {
         "name": "Terracotta",
         "hex": "#c87b4b",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -94,22 +112,40 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg"
+        ]
       },
       {
         "name": "Olive",
         "hex": "#A39264",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-02.jpg"
+        ]
       },
       {
         "name": "Terracotta",
         "hex": "#c87b4b",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -168,22 +204,40 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Olive",
         "hex": "#A39264",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-02.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg"
+        ]
       },
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-03.jpg"
+        ]
       },
       {
         "name": "Terracotta",
         "hex": "#c87b4b",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -242,22 +296,40 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Terracotta",
         "hex": "#c87b4b",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-terracotta-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg"
+        ]
       },
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-03.jpg"
+        ]
       },
       {
         "name": "Olive",
         "hex": "#A39264",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-olive-02.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -318,32 +390,62 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Sage",
         "hex": "#a8b09f",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+        ]
       },
       {
         "name": "Chocolate",
         "hex": "#574138",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -403,32 +505,62 @@ export const PRODUCTS: Product[] = [
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Sage",
         "hex": "#a8b09f",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+        ]
       },
       {
         "name": "Chocolate",
         "hex": "#574138",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -490,32 +622,62 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+        ]
       },
       {
         "name": "Sage",
         "hex": "#a8b09f",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+        ]
       },
       {
         "name": "Chocolate",
         "hex": "#574138",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -577,32 +739,62 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Sage",
         "hex": "#a8b09f",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+        ]
       },
       {
         "name": "Chocolate",
         "hex": "#574138",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -664,32 +856,62 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Sage",
         "hex": "#a8b09f",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+        ]
       },
       {
         "name": "Chocolate",
         "hex": "#574138",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -750,32 +972,62 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Chocolate",
         "hex": "#574138",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-chocolate-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-cloud-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-white-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Sage",
         "hex": "#a8b09f",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/linen-quilt-cover-sage-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/chambray-linen-quilt-cover-oatmeal-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -835,7 +1087,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Alex-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/quilt-cover-alex-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -896,12 +1153,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-03.jpg"
+        ]
       },
       {
         "name": "Bay-blue",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -961,12 +1228,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Bay-blue",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-bay-blue-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/organic-cotton-quilt-cover-russet-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1028,7 +1305,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Blythe-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/flannelette-quilt-cover-blythe-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1090,7 +1372,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-01.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-02.jpg",
+          "/assets/sheetsociety-catalog/quilt-covers/ruched-cotton-quilt-cover-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1151,22 +1438,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1227,22 +1534,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1307,22 +1634,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1388,22 +1735,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/linen-fitted-sheet-marshmallow-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1468,12 +1835,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1534,12 +1911,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-white-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/organic-cotton-fitted-sheet-russet-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1604,7 +1991,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Alex-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/fitted-sheet-alex-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1669,7 +2061,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Blythe-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/fitted-sheets/flannelette-fitted-sheet-blythe-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1732,22 +2129,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1808,22 +2225,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1888,22 +2325,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -1968,22 +2425,42 @@ export const PRODUCTS: Product[] = [
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Marshmallow",
         "hex": "#EEE0DC",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/linen-flat-sheet-marshmallow-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2045,12 +2522,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-03.jpg"
+        ]
       },
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2109,12 +2596,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "White",
         "hex": "#ffffff",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-white-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/organic-cotton-flat-sheet-russet-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2179,7 +2676,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Alex-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/flat-sheet-alex-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2244,7 +2746,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Blythe-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/flat-sheets/flannelette-flat-sheet-blythe-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2305,12 +2812,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-03.jpg"
+        ]
       },
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2362,12 +2879,21 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-02.jpg"
+        ]
       },
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2417,17 +2943,31 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Hunter-green",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-hunter-green-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-pillowcases-russet-03.jpg"
+        ]
       },
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-02.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2480,12 +3020,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2537,12 +3087,21 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-02.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2592,17 +3151,31 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-pillowcases-cloud-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-02.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2655,7 +3228,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Alex-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/pillowcases-alex-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2707,7 +3285,11 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Alex-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-02.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2757,7 +3339,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-02.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/organic-cotton-pillowcases-russet-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2810,7 +3397,11 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Blythe-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/pillowcases/flannelette-pillowcases-blythe-stripe-02.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2861,17 +3452,32 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2921,17 +3527,32 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-03.jpg"
+        ]
       },
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -2981,17 +3602,32 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Oatmeal",
         "hex": "#e9dfcf",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-03.jpg"
+        ]
       },
       {
         "name": "Cloud",
         "hex": "#D5D5D8",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-03.jpg"
+        ]
       },
       {
         "name": "Warm-white",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3040,7 +3676,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3091,7 +3732,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Alex-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3141,12 +3787,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Midnight-rodeo",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-03.jpg"
+        ]
       },
       {
         "name": "Henley-gingham",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3196,7 +3852,12 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Russet",
         "hex": "#7E212A",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3246,12 +3907,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Henley-gingham",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-03.jpg"
+        ]
       },
       {
         "name": "Midnight-rodeo",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3304,12 +3975,21 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Millie",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-02.jpg"
+        ]
       },
       {
         "name": "Mahogany",
         "hex": "#503130",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3370,12 +4050,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Millie",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-03.jpg"
+        ]
       },
       {
         "name": "Mahogany",
         "hex": "#503130",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3436,17 +4126,31 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Mahogany",
         "hex": "#503130",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-mahogany-03.jpg"
+        ]
       },
       {
         "name": "Millie",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-blanket-millie-02.jpg"
+        ]
       },
       {
         "name": "Millie",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/rory-washed-cotton-bed-cover-millie-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3504,12 +4208,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Jimmy-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-03.jpg"
+        ]
       },
       {
         "name": "Marlo",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3565,12 +4279,22 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Jimmy-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-03.jpg"
+        ]
       },
       {
         "name": "Marlo",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-03.jpg"
+        ]
       }
     ],
     "sizes": [
@@ -3626,17 +4350,32 @@ export const PRODUCTS: Product[] = [
       {
         "name": "Marlo",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-marlo-print-03.jpg"
+        ]
       },
       {
         "name": "Jimmy-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-bed-cover-jimmy-stripe-03.jpg"
+        ]
       },
       {
         "name": "Jimmy-stripe",
         "hex": "#dbcaac",
-        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg"
+        "image": "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg",
+        "gallery": [
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-01.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-02.jpg",
+          "/assets/sheetsociety-catalog/other-bedding/flannelette-blanket-jimmy-stripe-03.jpg"
+        ]
       }
     ],
     "sizes": [

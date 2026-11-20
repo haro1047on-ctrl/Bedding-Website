@@ -137,6 +137,20 @@ products.forEach((p, idx) => {
     errors++;
   }
 
+  // Strict Colourway Gallery Isolation Checks
+  if (Array.isArray(p.colors)) {
+    p.colors.forEach((c) => {
+      if (Array.isArray(c.gallery)) {
+        c.gallery.forEach((gImg, gIdx) => {
+          if (!gImg || typeof gImg !== 'string' || !gImg.trim()) {
+            console.error(`[FAIL] Product ${p.id} color ${c.name} gallery image ${gIdx} is empty`);
+            errors++;
+          }
+        });
+      }
+    });
+  }
+
   // Manifest correspondence
   if (!manifest[p.id]) {
     console.error(`[FAIL] Product ${p.id} not found in imageManifest.json`);
@@ -170,6 +184,31 @@ console.log(`  • Total Products     : ${products.length}`);
 console.log(`  • Total Colorways    : ${totalColorways}`);
 console.log(`  • Total Image Assets : ${totalProductImages}`);
 console.log(`  • Manifest Size      : ${Object.keys(manifest).length} mapped products`);
+
+console.log('\n--- Component Anti-Regression & Fallback Checks ---');
+const modalCode = fs.readFileSync('src/components/ProductDetailModal.tsx', 'utf8');
+if (modalCode.includes('...product.images') || modalCode.includes('product.images[0]')) {
+  console.error('[FAIL] ProductDetailModal.tsx still contains cross-colour fallback to product.images!');
+  errors++;
+} else {
+  console.log('[PASS] ProductDetailModal.tsx strictly isolated: zero fallback to product.images');
+}
+
+const cardCode = fs.readFileSync('src/components/ProductCard.tsx', 'utf8');
+if (cardCode.includes('product.images[1] || currentImage') || cardCode.includes('activeColor.image || product.images[0]')) {
+  console.error('[FAIL] ProductCard.tsx still contains cross-colour fallback to product.images!');
+  errors++;
+} else {
+  console.log('[PASS] ProductCard.tsx strictly isolated: zero fallback to product.images');
+}
+
+const cartCode = fs.readFileSync('src/components/CartDrawer.tsx', 'utf8');
+if (cartCode.includes('item.selectedColor.image || item.product.images[0]')) {
+  console.error('[FAIL] CartDrawer.tsx still contains cross-colour fallback to item.product.images!');
+  errors++;
+} else {
+  console.log('[PASS] CartDrawer.tsx strictly isolated: zero fallback to product.images');
+}
 
 console.log('\n=== Validation Summary ===');
 if (errors === 0) {
