@@ -76,11 +76,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   // Dynamic price calculation based on variant selection
   const currentUnitPrice = (product.variantPrices && product.variantPrices[selectedSize]) || product.price;
 
-  // Images list: current color image first if available, followed by product gallery
-  const displayImages = [
-    selectedColor.image || product.images[0],
-    ...product.images.filter(img => img !== selectedColor.image),
-  ];
+  // Images list: dedicated colorway gallery if available, otherwise current color image followed by product gallery
+  const displayImages = (selectedColor.gallery && selectedColor.gallery.length > 0)
+    ? selectedColor.gallery
+    : [
+        selectedColor.image || product.images[0],
+        ...product.images.filter(img => img !== selectedColor.image),
+      ];
 
   const changeImage = (targetIndex: number) => {
     if (isTransitioning || targetIndex === selectedImageIndex) return;

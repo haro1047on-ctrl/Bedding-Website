@@ -51,7 +51,14 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
     { label: 'Flat Sheets', value: 'Flat Sheets' },
     { label: 'Pillowcases', value: 'Pillowcases' },
     { label: 'Bed Sheets & Sets', value: 'Bed Sheets & Sets' },
+    { label: 'Quilts & Pillows', value: 'Quilts & Pillows' },
+    { label: 'Protectors & Toppers', value: 'Protectors & Toppers' },
     { label: 'Blankets & Bed Covers', value: 'Blankets & Bed Covers' },
+    { label: 'Cushions', value: 'Cushions' },
+    { label: 'Bath & Towels', value: 'Bath & Towels' },
+    { label: 'Sleepwear', value: 'Sleepwear' },
+    { label: 'Wellness', value: 'Wellness' },
+    { label: 'Kids & Baby', value: 'Kids & Baby' },
   ];
 
   const materials: BeddingMaterial[] = [
@@ -130,6 +137,20 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         return 'Complete coordinated bedtime suites comprising fitted sheet, flat sheet, and matching pillowcase sets.';
       case 'Blankets & Bed Covers':
         return 'Lightweight waffle blankets and quilted textured bed covers for year-round warmth and visual depth.';
+      case 'Quilts & Pillows':
+        return 'Naturally breathable, temperature-regulating quilts and pillows filled with Australian wool, plant-based corn fibre, and recycled down.';
+      case 'Protectors & Toppers':
+        return 'Protect and extend your mattress and pillows with quilted cotton, waterproof shields, and thermo-regulating Cool Mode layers.';
+      case 'Cushions':
+        return 'Tactile bouclé, cotton corduroy, and plush velvet accent cushions to elevate and finish your bedroom sanctuary.';
+      case 'Bath & Towels':
+        return '600 GSM combed cotton bath sheets, hand towels, and bath mats with plush absorption and enduring softness.';
+      case 'Sleepwear':
+        return 'Ultra-soft Cloudknit jersey and double-brushed flannelette loungewear tailored for restorative sleep.';
+      case 'Wellness':
+        return 'Magnesium soaks, calming sleep mists, natural wax candles, and mulberry silk pillowcases for intentional bedtime rituals.';
+      case 'Kids & Baby':
+        return 'Cot fitted sheets, bassinet bedding, and organic swaddles crafted for gentle skin and sweet dreams.';
       default:
         return 'Explore our complete range of bed linen, quilt covers, sheets, and pillowcases. Thoughtfully designed in 100% natural fibres with cohesive palettes and lived-in softness.';
     }

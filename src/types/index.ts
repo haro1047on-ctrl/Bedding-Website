@@ -2,6 +2,9 @@ export interface ColorVariant {
   name: string;
   hex: string;
   image: string;
+  gallery?: string[];
+  handle?: string;
+  variantId?: string;
 }
 
 export type BeddingCategory = 
@@ -14,7 +17,15 @@ export type BeddingCategory =
   | 'Duvet Covers'
   | 'Sheets & Sets'
   | 'Quilts & Comforters'
-  | 'Blankets & Throws';
+  | 'Blankets & Throws'
+  | 'Quilts & Pillows'
+  | 'Protectors & Toppers'
+  | 'Cushions'
+  | 'Bath & Towels'
+  | 'Sleepwear'
+  | 'Wellness'
+  | 'Kids & Baby'
+  | 'Bundles';
 
 export type BeddingMaterial = 
   | 'Eve Linen'
@@ -29,18 +40,42 @@ export type BeddingMaterial =
   | 'Organic Cotton Percale'
   | 'Cloud Cotton Gauze'
   | 'Sateen Luxe'
-  | 'Waffle Wool-Linen';
+  | 'Waffle Wool-Linen'
+  | 'Bouclé Cotton'
+  | 'Low Down Recycled'
+  | 'Cloud Corn Plant-Based'
+  | 'Wonder Wool'
+  | 'Tommy 600 GSM Cotton'
+  | 'Cloudknit Jersey'
+  | 'Velvet'
+  | 'Mulberry Silk'
+  | 'Microfibre'
+  | string;
 
 export type BedSize = 
   | 'Single'
+  | 'King Single'
+  | 'Long Single'
   | 'Double'
   | 'Queen'
   | 'King'
   | 'Super King'
   | 'Standard'
+  | 'European'
+  | 'Body'
   | 'Twin'
   | 'Full'
   | 'Cal King'
+  | 'Cot'
+  | 'Bassinet'
+  | 'XS'
+  | 'S'
+  | 'M'
+  | 'L'
+  | 'XL'
+  | '50x50'
+  | '65x40'
+  | 'One Size'
   | string;
 
 export interface Product {
@@ -68,6 +103,12 @@ export interface Product {
   isNew?: boolean;
   isBestseller?: boolean;
   certification?: string;
+  department?: string;
+  subcategory?: string;
+  handle?: string;
+  inStock?: boolean;
+  tags?: string[];
+  colourSiblings?: any[];
 }
 
 export interface CartItem {
