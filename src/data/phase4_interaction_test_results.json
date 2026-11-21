@@ -1,0 +1,366 @@
+[
+  {
+    "testNumber": 1,
+    "name": "Storefront header mounted in DOM",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 2,
+    "name": "Category discovery section mounted in DOM",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 3,
+    "name": "Editorial vignettes section mounted in DOM",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 4,
+    "name": "Brand wordmark \"MORFE\" rendered in header",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 5,
+    "name": "Located \"Bedding\" navigation trigger in desktop nav",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 6,
+    "name": "Hovering \"Bedding\" trigger opened desktop mega-menu panel",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 7,
+    "name": "Pointer transit from trigger into mega-menu panel maintains open state (zero accidental closure)",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 8,
+    "name": "Department 1: \"Quilt Covers (15 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 9,
+    "name": "Department 2: \"Fitted Sheets (8 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 10,
+    "name": "Department 3: \"Flat Sheets (8 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 11,
+    "name": "Department 4: \"Pillowcase Pairs (10 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 12,
+    "name": "Department 5: \"Bed Sheets & Sets (18 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 13,
+    "name": "Department 6: \"Blankets & Bed Covers (19 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 14,
+    "name": "Department 7: \"Cushions (31 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 15,
+    "name": "Department 8: \"Quilts & Pillows (12 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 16,
+    "name": "Department 9: \"Protectors & Toppers (7 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 17,
+    "name": "Department 10: \"Bath & Towels (6 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 18,
+    "name": "Department 11: \"Kids & Baby (16 Styles)\" rendered in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 19,
+    "name": "Signature Weaves column rendered (Eve Linen, Darcy Corduroy, etc.)",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 20,
+    "name": "Curated Editorial Showcase card rendered with local imagery",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 21,
+    "name": "\"View Complete Catalogue\" CTA present in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 22,
+    "name": "Pressing Escape dismissed the mega-menu panel",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 23,
+    "name": "Clicking outside dismissed the mega-menu panel",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 24,
+    "name": "Clicked \"Quilt Covers\" in mega-menu",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 25,
+    "name": "Navigated to CatalogView filtered to \"Quilt Covers\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 26,
+    "name": "Category pill strip rendered 14 category pills",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 27,
+    "name": "Category pill strip includes \"Quilt Covers\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 28,
+    "name": "Category pill strip includes \"Fitted Sheets\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 29,
+    "name": "Category pill strip includes \"Bed Sheets & Sets\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 30,
+    "name": "Category pill strip includes \"Cushions\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 31,
+    "name": "Category pill strip includes \"Kids & Baby\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 32,
+    "name": "\"All Bedding\" pill displays active visual styling",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 33,
+    "name": "Clicked \"Fitted Sheets\" category pill",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 34,
+    "name": "Pill click filtered catalogue to \"Fitted Sheets\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 35,
+    "name": "Vignette 1 renders \"The Texture Edit\" tag",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 36,
+    "name": "Vignette 1 renders serif headline \"The Art of the Unmade Bed\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 37,
+    "name": "Vignette 2 renders \"Three Elements of a Restful Night\"",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 38,
+    "name": "Vignette 2 Card 1: 55cm Deep Fitted Sheet rendered",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 39,
+    "name": "Vignette 2 Card 2: Tailored Quilt Covers rendered",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 40,
+    "name": "Vignette 2 Card 3: Stonewashed Bed Covers rendered",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 41,
+    "name": "Editorial vignettes load 4 verified local image assets",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 42,
+    "name": "Clicked \"Shop Quilt Covers\" CTA in Editorial Vignette",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 43,
+    "name": "Desktop (1280px): zero horizontal overflow (scrollWidth=1274, innerWidth=1280)",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 44,
+    "name": "Tablet (768px): zero horizontal overflow (scrollWidth=762, innerWidth=768)",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 45,
+    "name": "Mobile (375px): zero horizontal overflow (scrollWidth=375, innerWidth=375)",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 46,
+    "name": "Mobile (375px): Clicked hamburger menu button",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 47,
+    "name": "Mobile Drawer: \"Bedding Essentials\" accordion section present",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 48,
+    "name": "Mobile Drawer: \"Layers & Comfort\" accordion section present",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 49,
+    "name": "Mobile Drawer: \"Living & Family\" accordion section present",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 50,
+    "name": "Mobile Drawer: \"Our Story & Manifesto\" link present",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 51,
+    "name": "Mobile Drawer: Zero horizontal overflow inside drawer container",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  },
+  {
+    "testNumber": 52,
+    "name": "Confirmed ZERO React Hooks violations or console errors (logged: none)",
+    "status": "PASS",
+    "expected": "",
+    "actual": ""
+  }
+]

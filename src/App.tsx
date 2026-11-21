@@ -4,6 +4,7 @@ import { Product, BeddingCategory, BedSize, ColorVariant, CartItem, JournalArtic
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CategoryStrip } from './components/CategoryStrip';
+import { EditorialVignettes } from './components/EditorialVignettes';
 import { AtelierManifesto } from './components/AtelierManifesto';
 import { BestsellersRail } from './components/BestsellersRail';
 import { MaterialStory } from './components/MaterialStory';
@@ -172,6 +173,7 @@ export function App() {
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
         onNavigateHome={() => {
           setActiveView('home');
+          setCatalogCategory('all');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         activeView={activeView}
@@ -188,8 +190,11 @@ export function App() {
               onOpenBedroomLooks={() => handleScrollToSection('bedroom-inspiration-section')}
             />
 
-            {/* 2. Category Discovery (Asymmetric image-led composition) */}
-            <CategoryStrip onSelectCategory={handleSelectCategory} />
+            {/* 2. Category Discovery (Horizontal Pill Strip + Asymmetric image-led composition) */}
+            <CategoryStrip 
+              onSelectCategory={handleSelectCategory}
+              activeCategory={catalogCategory}
+            />
 
             {/* 3. Brand Story / Atelier Manifesto (Deliberate editorial pause) */}
             <div id="atelier-manifesto">
@@ -202,6 +207,12 @@ export function App() {
               onSelectProduct={handleSelectProduct}
               onQuickView={handleSelectProduct}
               onViewAll={() => handleSelectCategory('all')}
+            />
+
+            {/* 5. Editorial Homepage Vignettes (The Texture Edit & The Sleep Foundation) */}
+            <EditorialVignettes 
+              onSelectCategory={handleSelectCategory}
+              onOpenMaterialGuide={() => setCareGuideOpen(true)}
             />
 
             {/* 5. Material Story & Fabric Science */}
@@ -253,6 +264,7 @@ export function App() {
         onOpenCareGuide={() => setCareGuideOpen(true)}
         onNavigateHome={() => {
           setActiveView('home');
+          setCatalogCategory('all');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
       />
