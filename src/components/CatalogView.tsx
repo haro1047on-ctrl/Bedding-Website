@@ -7,7 +7,7 @@ interface CatalogViewProps {
   products: Product[];
   initialCategory?: BeddingCategory | 'all';
   onSelectProduct: (product: Product, initialColor?: ColorVariant) => void;
-  onQuickView: (product: Product) => void;
+  onQuickView: (product: Product, initialColor?: ColorVariant) => void;
   onNavigateHome: () => void;
 }
 

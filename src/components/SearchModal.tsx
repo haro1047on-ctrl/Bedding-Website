@@ -137,7 +137,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     <div
                       key={product.id}
                       onClick={() => {
-                        onSelectProduct(product);
+                        onSelectProduct(product, product.colors[0]);
                         onClose();
                       }}
                       className="py-3 flex items-center justify-between cursor-pointer group hover:bg-porcelain/60 px-2 transition-colors"

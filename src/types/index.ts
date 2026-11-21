@@ -109,6 +109,8 @@ export interface Product {
   inStock?: boolean;
   tags?: string[];
   colourSiblings?: any[];
+  unavailableSizes?: BedSize[];
+  colorUnavailableSizes?: Record<string, BedSize[]>;
 }
 
 export interface CartItem {

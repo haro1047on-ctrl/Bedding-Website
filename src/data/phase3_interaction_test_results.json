@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-11-21T06:48:14.195Z",
+  "branch": "feature/phase-3-product-variants-dynamic-pricing",
+  "passedTests": 25,
+  "totalTests": 25,
+  "tests": [
+    {
+      "testNumber": 1,
+      "name": "Storefront hydrated with 167+ products",
+      "status": "PASS",
+      "expected": ">= 167 cards",
+      "actual": "171 cards"
+    },
+    {
+      "testNumber": 2,
+      "name": "Located target product \"Darcy Corduroy - Russet Quilt Cover\" in catalogue",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 3,
+      "name": "Swatched to Olive and clicked Quick View on card",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 4,
+      "name": "Quick View modal retained active colourway \"Olive\" from ProductCard swatch",
+      "status": "PASS",
+      "expected": "Olive",
+      "actual": "Olive"
+    },
+    {
+      "testNumber": 5,
+      "name": "Price header dynamically updated to Super King price (Rs. 30,000)",
+      "status": "PASS",
+      "expected": "Rs. 30,000",
+      "actual": "Rs. 30,000"
+    },
+    {
+      "testNumber": 6,
+      "name": "Add to Bag button dynamically displays updated variant price for Super King",
+      "status": "PASS",
+      "expected": "Add to Bag — Rs. 30,000",
+      "actual": "Add to Bag — Rs. 30,000"
+    },
+    {
+      "testNumber": 7,
+      "name": "Unavailable size \"Double\" is marked disabled={true}",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 8,
+      "name": "Unavailable size \"Double\" chip displays \"Sold Out\" text",
+      "status": "PASS",
+      "expected": "Sold Out in Double chip",
+      "actual": "true"
+    },
+    {
+      "testNumber": 9,
+      "name": "Unavailable size \"King\" is marked disabled={true}",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 10,
+      "name": "Available size \"Queen\" remains fully clickable (disabled=false)",
+      "status": "PASS",
+      "expected": "false",
+      "actual": "false"
+    },
+    {
+      "testNumber": 11,
+      "name": "Attempting to click disabled unavailable size \"Double\" does NOT change selection",
+      "status": "PASS",
+      "expected": "Super King (preserved)",
+      "actual": "Super King"
+    },
+    {
+      "testNumber": 12,
+      "name": "Switched to Russet and successfully selected \"Double\" size",
+      "status": "PASS",
+      "expected": "Russet, Double",
+      "actual": "Russet, Double"
+    },
+    {
+      "testNumber": 13,
+      "name": "Active colourway updated to \"Olive\"",
+      "status": "PASS",
+      "expected": "Olive",
+      "actual": "Olive"
+    },
+    {
+      "testNumber": 14,
+      "name": "Selected size was automatically reset from unavailable \"Double\" to first available size \"Queen\"",
+      "status": "PASS",
+      "expected": "Queen",
+      "actual": "Queen"
+    },
+    {
+      "testNumber": 15,
+      "name": "Notice banner displayed to user explaining size reset",
+      "status": "PASS",
+      "expected": "Double is sold out in Olive. Switched to Queen.",
+      "actual": "\"Double\" is sold out in Olive. Switched to Queen."
+    },
+    {
+      "testNumber": 16,
+      "name": "Selected quantity \"3\" was PRESERVED when switching colourway to Hunter Green",
+      "status": "PASS",
+      "expected": "3",
+      "actual": "3"
+    },
+    {
+      "testNumber": 17,
+      "name": "Add to Bag button reflects dynamic price multiplication (3 x Rs. 25,000 = Rs. 75,000)",
+      "status": "PASS",
+      "expected": "Rs. 75,000",
+      "actual": "Add to Bag — Rs. 75,000"
+    },
+    {
+      "testNumber": 18,
+      "name": "Added second variant (Hunter Green, Super King, Qty 1) to bag",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 19,
+      "name": "CartDrawer contains 2 distinct line items for different size variants of the same product",
+      "status": "PASS",
+      "expected": "2 items",
+      "actual": "2 items"
+    },
+    {
+      "testNumber": 20,
+      "name": "Item 1 reflects Queen size at quantity 3 with Rs. 75,000 subtotal",
+      "status": "PASS",
+      "expected": "Queen, qty 3",
+      "actual": "Hue: Hunter-green · Size: Queen, qty 3"
+    },
+    {
+      "testNumber": 21,
+      "name": "Item 2 reflects Super King size at quantity 1 with Rs. 30,000 subtotal",
+      "status": "PASS",
+      "expected": "Super King, qty 1",
+      "actual": "Hue: Hunter-green · Size: Super King, qty 1"
+    },
+    {
+      "testNumber": 22,
+      "name": "Opened European Pillowcase product modal",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 23,
+      "name": "Confirmed ZERO occurrences of raw \"Default Title\" in European pillowcase modal",
+      "status": "PASS",
+      "expected": "Zero Default Title",
+      "actual": "false"
+    },
+    {
+      "testNumber": 24,
+      "name": "Single-size product renders clean \"European (65x65cm)\" indicator instead of button grid",
+      "status": "PASS",
+      "expected": "European (65x65cm)",
+      "actual": "European (65x65cm)"
+    },
+    {
+      "testNumber": 25,
+      "name": "Confirmed ZERO React Hooks violations, runtime exceptions, or console errors",
+      "status": "PASS",
+      "expected": "0 errors",
+      "actual": "0 errors: "
+    }
+  ]
+}

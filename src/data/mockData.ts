@@ -90,7 +90,16 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 101,
     "isBestseller": true,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Olive": [
+        "Double",
+        "King"
+      ],
+      "Terracotta": [
+        "Single"
+      ]
+    }
   },
   {
     "id": "corduroy-quilt-cover-hunter-green",
@@ -182,7 +191,16 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 78,
     "isBestseller": true,
     "isNew": true,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Olive": [
+        "Double",
+        "King"
+      ],
+      "Terracotta": [
+        "Single"
+      ]
+    }
   },
   {
     "id": "corduroy-quilt-cover-olive",
@@ -273,7 +291,20 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 94,
     "isBestseller": true,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Olive": [
+        "Double",
+        "King"
+      ],
+      "Terracotta": [
+        "Single"
+      ]
+    },
+    "unavailableSizes": [
+      "Double",
+      "King"
+    ]
   },
   {
     "id": "corduroy-quilt-cover-terracotta",
@@ -368,7 +399,19 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 64,
     "isBestseller": true,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Terracotta": [
+        "Single"
+      ],
+      "Olive": [
+        "Double",
+        "King"
+      ]
+    },
+    "unavailableSizes": [
+      "Single"
+    ]
   },
   {
     "id": "linen-quilt-cover-cloud",
@@ -482,7 +525,21 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 73,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ],
+      "Sage": [
+        "Single"
+      ],
+      "Oatmeal": [
+        "Single"
+      ]
+    }
   },
   {
     "id": "linen-quilt-cover-white",
@@ -599,7 +656,21 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 73,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ],
+      "Sage": [
+        "Single"
+      ],
+      "Oatmeal": [
+        "Single"
+      ]
+    }
   },
   {
     "id": "linen-quilt-cover-warm-white",
@@ -716,7 +787,27 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 43,
     "isBestseller": false,
     "isNew": true,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ],
+      "Sage": [
+        "Single"
+      ],
+      "Oatmeal": [
+        "Single"
+      ]
+    },
+    "unavailableSizes": [
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ]
   },
   {
     "id": "linen-quilt-cover-sage",
@@ -833,7 +924,24 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 66,
     "isBestseller": true,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Sage": [
+        "Single"
+      ],
+      "Warm White": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ],
+      "Oatmeal": [
+        "Single"
+      ]
+    },
+    "unavailableSizes": [
+      "Single"
+    ]
   },
   {
     "id": "chambray-linen-quilt-cover-oatmeal",
@@ -950,7 +1058,24 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 85,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Oatmeal": [
+        "Single"
+      ],
+      "Warm White": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ],
+      "Sage": [
+        "Single"
+      ]
+    },
+    "unavailableSizes": [
+      "Single"
+    ]
   },
   {
     "id": "linen-quilt-cover-chocolate",
@@ -1064,7 +1189,21 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 101,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ],
+      "Sage": [
+        "Single"
+      ],
+      "Oatmeal": [
+        "Single"
+      ]
+    }
   },
   {
     "id": "quilt-cover-alex-stripe",
@@ -1282,7 +1421,15 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 92,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Bay Blue": [
+        "Super King"
+      ]
+    },
+    "unavailableSizes": [
+      "Super King"
+    ]
   },
   {
     "id": "flannelette-quilt-cover-blythe-stripe",
@@ -1349,7 +1496,15 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 106,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Blythe Stripe": [
+        "King"
+      ]
+    },
+    "unavailableSizes": [
+      "King"
+    ]
   },
   {
     "id": "ruched-cotton-quilt-cover-white",
@@ -1510,7 +1665,16 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 80,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "King Single",
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ]
+    }
   },
   {
     "id": "linen-fitted-sheet-warm-white",
@@ -1610,7 +1774,23 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 50,
     "isBestseller": false,
     "isNew": true,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "King Single",
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ]
+    },
+    "unavailableSizes": [
+      "King Single",
+      "Double",
+      "Queen",
+      "King",
+      "Super King"
+    ]
   },
   {
     "id": "linen-fitted-sheet-marshmallow",
@@ -1710,7 +1890,16 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 57,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "King Single",
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ]
+    }
   },
   {
     "id": "linen-fitted-sheet-white",
@@ -1813,7 +2002,16 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 80,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "King Single",
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
+      ]
+    }
   },
   {
     "id": "organic-cotton-fitted-sheet-russet",
@@ -2107,7 +2305,19 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 48,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Blythe Stripe": [
+        "Double",
+        "King",
+        "Super King"
+      ]
+    },
+    "unavailableSizes": [
+      "Double",
+      "King",
+      "Super King"
+    ]
   },
   {
     "id": "linen-flat-sheet-cloud",
@@ -2201,7 +2411,17 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 66,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "King",
+        "Super King"
+      ],
+      "Marshmallow": [
+        "King"
+      ]
+    }
   },
   {
     "id": "linen-flat-sheet-warm-white",
@@ -2301,7 +2521,22 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 101,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "King",
+        "Super King"
+      ],
+      "Marshmallow": [
+        "King"
+      ]
+    },
+    "unavailableSizes": [
+      "Double",
+      "King",
+      "Super King"
+    ]
   },
   {
     "id": "linen-flat-sheet-marshmallow",
@@ -2401,7 +2636,20 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 43,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Marshmallow": [
+        "King"
+      ],
+      "Warm White": [
+        "Double",
+        "King",
+        "Super King"
+      ]
+    },
+    "unavailableSizes": [
+      "King"
+    ]
   },
   {
     "id": "linen-flat-sheet-white",
@@ -2501,7 +2749,17 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 66,
     "isBestseller": false,
     "isNew": true,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Double",
+        "King",
+        "Super King"
+      ],
+      "Marshmallow": [
+        "King"
+      ]
+    }
   },
   {
     "id": "organic-cotton-flat-sheet-russet",
@@ -2792,7 +3050,15 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 99,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Blythe Stripe": [
+        "Single"
+      ]
+    },
+    "unavailableSizes": [
+      "Single"
+    ]
   },
   {
     "id": "corduroy-pillowcases-russet",
@@ -2871,7 +3137,7 @@ export const PRODUCTS: Product[] = [
     "price": 7500,
     "salePrice": 11000,
     "variantPrices": {
-      "Default Title": 7500
+      "European (65x65cm)": 7500
     },
     "minPrice": 7500,
     "maxPrice": 7500,
@@ -2897,7 +3163,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "European (65x65cm)"
     ],
     "images": [
       "/assets/sheetsociety-catalog/pillowcases/corduroy-european-pillowcase-russet-01.jpg",
@@ -2917,7 +3183,7 @@ export const PRODUCTS: Product[] = [
       "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "European (65x65cm)": "65cm x 65cm"
     },
     "rating": 4.9,
     "reviewsCount": 92,
@@ -3079,7 +3345,7 @@ export const PRODUCTS: Product[] = [
     "price": 8500,
     "salePrice": 11000,
     "variantPrices": {
-      "Default Title": 8500
+      "European (65x65cm)": 8500
     },
     "minPrice": 8500,
     "maxPrice": 8500,
@@ -3105,7 +3371,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "European (65x65cm)"
     ],
     "images": [
       "/assets/sheetsociety-catalog/pillowcases/linen-european-pillowcase-cloud-01.jpg",
@@ -3125,7 +3391,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "European (65x65cm)": "65cm x 65cm"
     },
     "rating": 4.9,
     "reviewsCount": 64,
@@ -3208,7 +3474,15 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 43,
     "isBestseller": false,
     "isNew": true,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Warm White": [
+        "Standard Size"
+      ]
+    },
+    "unavailableSizes": [
+      "Standard Size"
+    ]
   },
   {
     "id": "pillowcases-alex-stripe",
@@ -3277,7 +3551,7 @@ export const PRODUCTS: Product[] = [
     "price": 7000,
     "salePrice": 9000,
     "variantPrices": {
-      "Default Title": 7000
+      "European (65x65cm)": 7000
     },
     "minPrice": 7000,
     "maxPrice": 7000,
@@ -3293,7 +3567,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "European (65x65cm)"
     ],
     "images": [
       "/assets/sheetsociety-catalog/pillowcases/european-pillowcase-alex-stripe-01.jpg",
@@ -3313,7 +3587,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "European (65x65cm)": "65cm x 65cm"
     },
     "rating": 4.9,
     "reviewsCount": 64,
@@ -3444,7 +3718,7 @@ export const PRODUCTS: Product[] = [
     "price": 23000,
     "salePrice": 29000,
     "variantPrices": {
-      "Default Title": 23000
+      "Standard Set": 23000
     },
     "minPrice": 23000,
     "maxPrice": 23000,
@@ -3481,7 +3755,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-cloud-01.jpg",
@@ -3502,7 +3776,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 45,
@@ -3519,7 +3793,7 @@ export const PRODUCTS: Product[] = [
     "price": 12000,
     "salePrice": 20000,
     "variantPrices": {
-      "Default Title": 12000
+      "Standard Set": 12000
     },
     "minPrice": 12000,
     "maxPrice": 12000,
@@ -3556,7 +3830,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/linen-bedding-warm-white-01.jpg",
@@ -3577,7 +3851,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 80,
@@ -3594,7 +3868,7 @@ export const PRODUCTS: Product[] = [
     "price": 23000,
     "salePrice": 29000,
     "variantPrices": {
-      "Default Title": 23000
+      "Standard Set": 23000
     },
     "minPrice": 23000,
     "maxPrice": 23000,
@@ -3631,7 +3905,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/chambray-linen-bedding-oatmeal-01.jpg",
@@ -3652,7 +3926,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 57,
@@ -3668,7 +3942,7 @@ export const PRODUCTS: Product[] = [
     "material": "Darcy Corduroy",
     "price": 32500,
     "variantPrices": {
-      "Default Title": 32500
+      "Standard Set": 32500
     },
     "minPrice": 32500,
     "maxPrice": 32500,
@@ -3685,7 +3959,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/corduroy-bedding-russet-01.jpg",
@@ -3707,7 +3981,7 @@ export const PRODUCTS: Product[] = [
       "Make sure your sheets are completely dry before folding and storing. Don't store in plastic."
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 73,
@@ -3724,7 +3998,7 @@ export const PRODUCTS: Product[] = [
     "price": 11000,
     "salePrice": 13500,
     "variantPrices": {
-      "Default Title": 11000
+      "Standard Set": 11000
     },
     "minPrice": 11000,
     "maxPrice": 11000,
@@ -3741,7 +4015,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/bed-sheets-alex-stripe-01.jpg",
@@ -3762,7 +4036,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 66,
@@ -3779,7 +4053,7 @@ export const PRODUCTS: Product[] = [
     "price": 10000,
     "salePrice": 12500,
     "variantPrices": {
-      "Default Title": 10000
+      "Standard Set": 10000
     },
     "minPrice": 10000,
     "maxPrice": 10000,
@@ -3806,7 +4080,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bed-sheets-midnight-rodeo-stripe-01.jpg",
@@ -3827,7 +4101,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 104,
@@ -3844,7 +4118,7 @@ export const PRODUCTS: Product[] = [
     "price": 10500,
     "salePrice": 15500,
     "variantPrices": {
-      "Default Title": 10500
+      "Standard Set": 10500
     },
     "minPrice": 10500,
     "maxPrice": 10500,
@@ -3861,7 +4135,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/organic-cotton-bed-sheets-russet-01.jpg",
@@ -3882,7 +4156,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 71,
@@ -3899,7 +4173,7 @@ export const PRODUCTS: Product[] = [
     "price": 8500,
     "salePrice": 11000,
     "variantPrices": {
-      "Default Title": 8500
+      "Standard Set": 8500
     },
     "minPrice": 8500,
     "maxPrice": 8500,
@@ -3926,7 +4200,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sizes": [
-      "Default Title"
+      "Standard Set"
     ],
     "images": [
       "/assets/sheetsociety-catalog/bed-sheets/washed-cotton-bedding-henley-gingham-01.jpg",
@@ -3947,7 +4221,7 @@ export const PRODUCTS: Product[] = [
       "Warm iron if needed"
     ],
     "dimensions": {
-      "Default Title": "Standard sizing"
+      "Standard Set": "Fitted Sheet, Flat Sheet & 2 Pillowcases"
     },
     "rating": 4.9,
     "reviewsCount": 99,
@@ -4258,7 +4532,17 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 85,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Jimmy Stripe": [
+        "Single/King Single",
+        "Double/Queen"
+      ]
+    },
+    "unavailableSizes": [
+      "Single/King Single",
+      "Double/Queen"
+    ]
   },
   {
     "id": "flannelette-blanket-jimmy-stripe",
@@ -4329,7 +4613,17 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 71,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified"
+    "certification": "OEKO-TEX® Standard 100 Certified",
+    "colorUnavailableSizes": {
+      "Jimmy Stripe": [
+        "Small",
+        "Medium - Large"
+      ]
+    },
+    "unavailableSizes": [
+      "Small",
+      "Medium - Large"
+    ]
   },
   {
     "id": "flannelette-blanket-marlo-print",

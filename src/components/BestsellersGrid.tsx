@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 interface BestsellersGridProps {
   products: Product[];
   onSelectProduct: (product: Product, initialColor?: ColorVariant) => void;
-  onQuickView: (product: Product) => void;
+  onQuickView: (product: Product, initialColor?: ColorVariant) => void;
   onViewAll: () => void;
 }
 

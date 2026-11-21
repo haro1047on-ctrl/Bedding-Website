@@ -27,7 +27,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onOpenSizeGuide,
 }) => {
   const [selectedColor, setSelectedColor] = useState<ColorVariant>(() => initialColor || product?.colors?.[0] || { name: '', hex: '', image: '' });
-  const [selectedSize, setSelectedSize] = useState<BedSize>(() => product?.sizes?.[0] || 'Queen');
+  const [selectedSize, setSelectedSize] = useState<BedSize>(() => {
+    if (!product || !product.sizes || product.sizes.length === 0) return 'Queen';
+    const initCol = initialColor || product.colors?.[0];
+    const unavail = (product.colorUnavailableSizes && initCol && product.colorUnavailableSizes[initCol.name])
+      || (initCol && initCol.name === product.colors[0]?.name ? product.unavailableSizes : [])
+      || [];
+    return product.sizes.find(s => !unavail.includes(s)) || product.sizes[0];
+  });
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
   const [previousImageIndex, setPreviousImageIndex] = useState<number | null>(null);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
@@ -35,16 +42,24 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const [quantity, setQuantity] = useState<number>(1);
   const [openAccordion, setOpenAccordion] = useState<string>('features');
   const [isAddedFeedback, setIsAddedFeedback] = useState<boolean>(false);
+  const [sizeNotice, setSizeNotice] = useState<string | null>(null);
 
   const touchStartXRef = useRef<number | null>(null);
   const transitionTimerRef = useRef<NodeJS.Timeout | null>(null);
   const feedbackTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const noticeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Synchronize and reset modal state when product or initialColor changes
   useEffect(() => {
     if (product) {
-      setSelectedColor(initialColor || product.colors[0]);
-      setSelectedSize(product.sizes[0]);
+      const defColor = initialColor || product.colors[0];
+      const unavail = (product.colorUnavailableSizes && defColor && product.colorUnavailableSizes[defColor.name])
+        || (defColor && defColor.name === product.colors[0]?.name ? product.unavailableSizes : [])
+        || [];
+      const validSize = product.sizes.find(s => !unavail.includes(s)) || product.sizes[0];
+
+      setSelectedColor(defColor);
+      setSelectedSize(validSize);
       setSelectedImageIndex(0);
       setPreviousImageIndex(null);
       setDirection('next');
@@ -52,6 +67,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       setQuantity(1);
       setOpenAccordion('features');
       setIsAddedFeedback(false);
+      setSizeNotice(null);
     }
     if (transitionTimerRef.current) {
       clearTimeout(transitionTimerRef.current);
@@ -61,6 +77,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       clearTimeout(feedbackTimerRef.current);
       feedbackTimerRef.current = null;
     }
+    if (noticeTimerRef.current) {
+      clearTimeout(noticeTimerRef.current);
+      noticeTimerRef.current = null;
+    }
   }, [product?.id, initialColor?.name]);
 
   // Clean up pending timers on unmount
@@ -68,6 +88,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     return () => {
       if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
       if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+      if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current);
     };
   }, []);
 
@@ -93,6 +114,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const safeImageIndex = displayImages.length > 0
     ? Math.min(Math.max(0, selectedImageIndex), displayImages.length - 1)
     : 0;
+
+  // Authentic Unavailable Sizes for Active Colourway (Unconditional hook)
+  const currentUnavailableSizes = useMemo<BedSize[]>(() => {
+    if (!product) return [];
+    if (product.colorUnavailableSizes && selectedColor?.name && product.colorUnavailableSizes[selectedColor.name]) {
+      return product.colorUnavailableSizes[selectedColor.name];
+    }
+    if (selectedColor?.name === product.colors?.[0]?.name && product.unavailableSizes) {
+      return product.unavailableSizes;
+    }
+    return [];
+  }, [product, selectedColor?.name]);
+
+  const isSelectedSizeUnavailable = currentUnavailableSizes.includes(selectedSize);
 
   // Early return ONLY after ALL React hooks have executed unconditionally in consistent order
   if (!isOpen || !product) return null;
@@ -155,9 +190,31 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     setSelectedImageIndex(0);
     setPreviousImageIndex(null);
     setIsTransitioning(false);
+
+    // Reconcile size availability for the newly selected colourway
+    const newUnavailable = (product.colorUnavailableSizes && product.colorUnavailableSizes[color.name])
+      || (color.name === product.colors[0]?.name ? product.unavailableSizes : [])
+      || [];
+
+    if (newUnavailable.includes(selectedSize)) {
+      // Find the first available size for this colourway
+      const fallbackSize = product.sizes.find(s => !newUnavailable.includes(s));
+      if (fallbackSize) {
+        setSelectedSize(fallbackSize);
+        setSizeNotice(`"${selectedSize}" is sold out in ${color.name}. Switched to ${fallbackSize}.`);
+      } else {
+        setSizeNotice(`All sizes for ${color.name} are currently sold out.`);
+      }
+      if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current);
+      noticeTimerRef.current = setTimeout(() => setSizeNotice(null), 4500);
+    } else {
+      if (sizeNotice) setSizeNotice(null);
+    }
+    // Quantity is strictly preserved across colourway changes
   };
 
   const handleAddToCart = () => {
+    if (isSelectedSizeUnavailable) return;
     // Preserve base product and pass explicit variant unit price
     onAddToCart(product, selectedColor, selectedSize, quantity, currentUnitPrice);
     setIsAddedFeedback(true);
@@ -401,39 +458,81 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <span className="text-[#000000]/70 uppercase tracking-wider font-semibold">
                     Size: <strong className="text-[#000000]">{selectedSize}</strong>
                   </span>
-                  <button
-                    type="button"
-                    onClick={onOpenSizeGuide}
-                    className="text-[#000000] underline hover:text-[#000000]/70 text-xs"
-                  >
-                    Size Guide
-                  </button>
+                  {product.sizes.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={onOpenSizeGuide}
+                      className="text-[#000000] underline hover:text-[#000000]/70 text-xs"
+                    >
+                      Size Guide
+                    </button>
+                  )}
                 </div>
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                  {product.sizes.map((size) => {
-                    const isSelected = selectedSize === size;
-                    const sizePrice = product.variantPrices ? product.variantPrices[size] : product.price;
-                    return (
-                      <button
-                        key={size}
-                        type="button"
-                        onClick={() => setSelectedSize(size)}
-                        className={`py-2.5 px-2 text-center rounded border text-xs transition-all ${
-                          isSelected
-                            ? 'bg-[#000000] text-white border-[#000000] font-medium shadow-sm'
-                            : 'bg-white border-[#e5e5e5] text-[#000000] hover:border-[#000000]'
-                        }`}
-                      >
-                        <span className="block font-medium">{size}</span>
-                        {sizePrice && (
-                          <span className={`block text-[10px] mt-0.5 ${isSelected ? 'text-white/80' : 'text-[#000000]/50'}`}>
-                            {formatPKR(sizePrice)}
+
+                {/* Cross-Colourway Fallback Notice */}
+                {sizeNotice && (
+                  <div className="mb-3 p-2.5 bg-[#f4f2ec] border border-[#e5e5e5] rounded text-xs text-[#000000]/80 flex items-center space-x-2 animate-fadeIn">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#A39264] flex-shrink-0" />
+                    <span>{sizeNotice}</span>
+                  </div>
+                )}
+
+                {product.sizes.length === 1 ? (
+                  <div className="flex items-center space-x-2 py-1">
+                    <span data-single-size="true" className="px-3.5 py-1.5 bg-[#f4f2ec] border border-[#e5e5e5] rounded text-xs font-medium text-[#000000]">
+                      {product.sizes[0]}
+                    </span>
+                    {product.dimensions[product.sizes[0]] && (
+                      <span className="text-xs text-[#000000]/60">
+                        ({product.dimensions[product.sizes[0]]})
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                    {product.sizes.map((size) => {
+                      const isSelected = selectedSize === size;
+                      const isUnavailable = currentUnavailableSizes.includes(size);
+                      const sizePrice = product.variantPrices ? product.variantPrices[size] : product.price;
+                      return (
+                        <button
+                          key={size}
+                          type="button"
+                          disabled={isUnavailable}
+                          onClick={() => {
+                            if (!isUnavailable) setSelectedSize(size);
+                          }}
+                          data-size={size}
+                          data-available={!isUnavailable}
+                          className={`relative py-2.5 px-2 text-center rounded border text-xs transition-all overflow-hidden ${
+                            isUnavailable
+                              ? 'bg-[#f4f4f4] border-[#e0e0e0] text-[#000000]/30 cursor-not-allowed opacity-50'
+                              : isSelected
+                              ? 'bg-[#000000] text-white border-[#000000] font-medium shadow-sm'
+                              : 'bg-white border-[#e5e5e5] text-[#000000] hover:border-[#000000]'
+                          }`}
+                          aria-label={`${size}${isUnavailable ? ' - Sold out' : ''}`}
+                        >
+                          {isUnavailable && (
+                            <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                              <span className="w-full border-t border-neutral-400 transform -rotate-12" />
+                            </span>
+                          )}
+                          <span className={`block font-medium ${isUnavailable ? 'line-through text-neutral-400' : ''}`}>
+                            {size}
                           </span>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
+                          {sizePrice && (
+                            <span className={`block text-[10px] mt-0.5 ${
+                              isUnavailable ? 'text-neutral-400/70' : isSelected ? 'text-white/80' : 'text-[#000000]/50'
+                            }`}>
+                              {isUnavailable ? 'Sold Out' : formatPKR(sizePrice)}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
                 {product.dimensions[selectedSize] && (
                   <p className="text-[11px] text-[#000000]/50 mt-2">
                     Dimensions: {product.dimensions[selectedSize]}
@@ -470,14 +569,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  disabled={isAddedFeedback}
+                  disabled={isAddedFeedback || isSelectedSizeUnavailable}
                   className={`flex-1 py-3.5 px-4 text-xs font-grotesque uppercase tracking-widest font-semibold transition-all duration-200 flex items-center justify-center space-x-2 rounded-full shadow-sm ${
-                    isAddedFeedback 
+                    isSelectedSizeUnavailable
+                      ? 'bg-neutral-200 text-neutral-500 cursor-not-allowed border border-neutral-300'
+                      : isAddedFeedback 
                       ? 'bg-[#2E5E3A] text-white' 
                       : 'bg-[#000000] text-white hover:bg-[#333333]'
                   }`}
                 >
-                  {isAddedFeedback ? (
+                  {isSelectedSizeUnavailable ? (
+                    <span>{selectedSize} Sold Out in {selectedColor.name}</span>
+                  ) : isAddedFeedback ? (
                     <>
                       <Check className="w-4 h-4" />
                       <span>Added to Bag</span>

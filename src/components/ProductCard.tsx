@@ -6,7 +6,7 @@ import { formatPKR } from '../utils/format';
 interface ProductCardProps {
   product: Product;
   onSelectProduct: (product: Product, initialColor?: ColorVariant) => void;
-  onQuickView: (product: Product) => void;
+  onQuickView: (product: Product, initialColor?: ColorVariant) => void;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -84,7 +84,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           type="button"
           onClick={(e) => {
             e.stopPropagation();
-            onQuickView(product);
+            onQuickView(product, activeColor);
           }}
           className="sm:hidden absolute bottom-2 right-2 p-2 bg-white/95 backdrop-blur-sm text-black hover:bg-black hover:text-white rounded-full shadow-md border border-black/10 active:scale-95 transition-all z-10 flex items-center justify-center"
           aria-label={`Quick view ${product.name}`}
@@ -97,7 +97,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           type="button"
           onClick={(e) => {
             e.stopPropagation();
-            onQuickView(product);
+            onQuickView(product, activeColor);
           }}
           className="hidden sm:flex absolute bottom-3 left-3 right-3 py-2.5 px-3 bg-white/95 backdrop-blur-md text-black hover:bg-black hover:text-white text-xs font-grotesque uppercase tracking-widest font-semibold transition-all duration-200 border border-black/10 items-center justify-center space-x-1.5 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 shadow-sm rounded-full z-10"
           aria-label={`Quick view ${product.name}`}

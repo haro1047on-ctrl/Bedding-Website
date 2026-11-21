@@ -7,7 +7,7 @@ import { formatPKR } from '../utils/format';
 interface ShopTheLookProps {
   products: Product[];
   onSelectProduct: (product: Product, initialColor?: ColorVariant) => void;
-  onQuickView: (product: Product) => void;
+  onQuickView: (product: Product, initialColor?: ColorVariant) => void;
 }
 
 export const ShopTheLook: React.FC<ShopTheLookProps> = ({
@@ -390,7 +390,7 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                     <div className="flex items-center space-x-2">
                       <button
                         type="button"
-                        onClick={() => onQuickView(product)}
+                        onClick={() => onQuickView(product, product.colors[0])}
                         className="px-2.5 py-1 text-[11px] font-sans text-umber hover:text-olive-ink border border-sand-border bg-porcelain rounded-sm flex items-center space-x-1"
                       >
                         <Eye className="w-3 h-3" />
