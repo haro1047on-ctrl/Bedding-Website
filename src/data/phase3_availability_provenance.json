@@ -1,0 +1,503 @@
+{
+  "timestamp": "2026-11-21T06:57:31.367Z",
+  "sourceFile": "src/data/raw_sheetsociety_products.json",
+  "totalUnavailableRecords": 29,
+  "verifiedCount": 29,
+  "unverifiedCount": 0,
+  "mismatchCount": 0,
+  "records": [
+    {
+      "productId": "corduroy-quilt-cover-olive",
+      "productName": "Darcy Corduroy - Olive Solid Quilt Cover",
+      "colourway": "Olive",
+      "unavailableSize": "Double",
+      "sourceProductIdentifier": "gid://shopify/Product/8069372969053",
+      "sourceProductHandle": "corduroy-quilt-cover-olive",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44187803320413",
+      "sourceSku": "I-003529",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44187803320413 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "corduroy-quilt-cover-olive",
+      "productName": "Darcy Corduroy - Olive Solid Quilt Cover",
+      "colourway": "Olive",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/8069372969053",
+      "sourceProductHandle": "corduroy-quilt-cover-olive",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44187803385949",
+      "sourceSku": "I-003531",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44187803385949 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "corduroy-quilt-cover-terracotta",
+      "productName": "Darcy Corduroy - Terracotta Quilt Cover",
+      "colourway": "Terracotta",
+      "unavailableSize": "Single",
+      "sourceProductIdentifier": "gid://shopify/Product/1584715202653",
+      "sourceProductHandle": "corduroy-quilt-cover-terracotta",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/32944241868893",
+      "sourceSku": "FA01-DTE-L",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/32944241868893 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-quilt-cover-warm-white",
+      "productName": "Eve Linen - Warm White Quilt Cover",
+      "colourway": "Warm White",
+      "unavailableSize": "Double",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908228189",
+      "sourceProductHandle": "linen-quilt-cover-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505785409629",
+      "sourceSku": "I-001641",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505785409629 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-quilt-cover-warm-white",
+      "productName": "Eve Linen - Warm White Quilt Cover",
+      "colourway": "Warm White",
+      "unavailableSize": "Queen",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908228189",
+      "sourceProductHandle": "linen-quilt-cover-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505785507933",
+      "sourceSku": "I-001642",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505785507933 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-quilt-cover-warm-white",
+      "productName": "Eve Linen - Warm White Quilt Cover",
+      "colourway": "Warm White",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908228189",
+      "sourceProductHandle": "linen-quilt-cover-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505785606237",
+      "sourceSku": "I-001643",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505785606237 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-quilt-cover-warm-white",
+      "productName": "Eve Linen - Warm White Quilt Cover",
+      "colourway": "Warm White",
+      "unavailableSize": "Super King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908228189",
+      "sourceProductHandle": "linen-quilt-cover-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505785639005",
+      "sourceSku": "I-001644",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505785639005 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-quilt-cover-sage",
+      "productName": "Eve Linen - Sage Quilt Cover",
+      "colourway": "Sage",
+      "unavailableSize": "Single",
+      "sourceProductIdentifier": "gid://shopify/Product/6545697767517",
+      "sourceProductHandle": "linen-quilt-cover-sage",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/39274429415517",
+      "sourceSku": "EV01-SAG-L",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/39274429415517 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "chambray-linen-quilt-cover-oatmeal",
+      "productName": "Eve Linen - Oatmeal Quilt Cover",
+      "colourway": "Oatmeal",
+      "unavailableSize": "Single",
+      "sourceProductIdentifier": "gid://shopify/Product/7108668915805",
+      "sourceProductHandle": "chambray-linen-quilt-cover-oatmeal",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/41457856249949",
+      "sourceSku": "I-000877",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/41457856249949 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "organic-cotton-quilt-cover-bay-blue",
+      "productName": "Jude Organic Cotton - Bay Blue Quilt Cover",
+      "colourway": "Bay Blue",
+      "unavailableSize": "Super King",
+      "sourceProductIdentifier": "gid://shopify/Product/7945439936605",
+      "sourceProductHandle": "organic-cotton-quilt-cover-bay-blue",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/43555959832669",
+      "sourceSku": "I-003060",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/43555959832669 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-quilt-cover-blythe-stripe",
+      "productName": "Frankie Flannelette - Blythe Stripe Quilt Cover",
+      "colourway": "Blythe Stripe",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/8097940963421",
+      "sourceProductHandle": "flannelette-quilt-cover-blythe-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308552548445",
+      "sourceSku": "I-003648",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308552548445 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-fitted-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Fitted Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "King Single",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908293725",
+      "sourceProductHandle": "linen-fitted-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505785966685",
+      "sourceSku": "I-001627",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505785966685 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-fitted-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Fitted Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "Double",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908293725",
+      "sourceProductHandle": "linen-fitted-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505786032221",
+      "sourceSku": "I-001628",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505786032221 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-fitted-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Fitted Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "Queen",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908293725",
+      "sourceProductHandle": "linen-fitted-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505786163293",
+      "sourceSku": "I-001629",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505786163293 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-fitted-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Fitted Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908293725",
+      "sourceProductHandle": "linen-fitted-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505786261597",
+      "sourceSku": "I-001630",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505786261597 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-fitted-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Fitted Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "Super King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908293725",
+      "sourceProductHandle": "linen-fitted-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505786359901",
+      "sourceSku": "I-001631",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505786359901 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-fitted-sheet-blythe-stripe",
+      "productName": "Frankie Flannelette - Blythe Stripe Fitted Sheet",
+      "colourway": "Blythe Stripe",
+      "unavailableSize": "Double",
+      "sourceProductIdentifier": "gid://shopify/Product/8097941028957",
+      "sourceProductHandle": "flannelette-fitted-sheet-blythe-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308552974429",
+      "sourceSku": "I-003635",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308552974429 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-fitted-sheet-blythe-stripe",
+      "productName": "Frankie Flannelette - Blythe Stripe Fitted Sheet",
+      "colourway": "Blythe Stripe",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/8097941028957",
+      "sourceProductHandle": "flannelette-fitted-sheet-blythe-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308553039965",
+      "sourceSku": "I-003637",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308553039965 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-fitted-sheet-blythe-stripe",
+      "productName": "Frankie Flannelette - Blythe Stripe Fitted Sheet",
+      "colourway": "Blythe Stripe",
+      "unavailableSize": "Super King",
+      "sourceProductIdentifier": "gid://shopify/Product/8097941028957",
+      "sourceProductHandle": "flannelette-fitted-sheet-blythe-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308553072733",
+      "sourceSku": "I-003638",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308553072733 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-flat-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Flat Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "Double",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908686941",
+      "sourceProductHandle": "linen-flat-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505787277405",
+      "sourceSku": "I-001636",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505787277405 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-flat-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Flat Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908686941",
+      "sourceProductHandle": "linen-flat-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505787539549",
+      "sourceSku": "I-001638",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505787539549 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-flat-sheet-warm-white",
+      "productName": "Eve Linen - Warm White Flat Sheet",
+      "colourway": "Warm White",
+      "unavailableSize": "Super King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908686941",
+      "sourceProductHandle": "linen-flat-sheet-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505787637853",
+      "sourceSku": "I-001639",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505787637853 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-flat-sheet-marshmallow",
+      "productName": "Eve Linen - Marshmallow Flat Sheet",
+      "colourway": "Marshmallow",
+      "unavailableSize": "King",
+      "sourceProductIdentifier": "gid://shopify/Product/7649908031581",
+      "sourceProductHandle": "linen-flat-sheet-marshmallow",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505784885341",
+      "sourceSku": "I-001614",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505784885341 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-flat-sheet-blythe-stripe",
+      "productName": "Frankie Flannelette - Blythe Stripe Flat Sheet",
+      "colourway": "Blythe Stripe",
+      "unavailableSize": "Single",
+      "sourceProductIdentifier": "gid://shopify/Product/8097940930653",
+      "sourceProductHandle": "flannelette-flat-sheet-blythe-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308552712285",
+      "sourceSku": "I-003639",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308552712285 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "linen-pillowcases-warm-white",
+      "productName": "Eve Linen - Warm White Pillowcases",
+      "colourway": "Warm White",
+      "unavailableSize": "Standard Size",
+      "sourceProductIdentifier": "gid://shopify/Product/7649912979549",
+      "sourceProductHandle": "linen-pillowcases-warm-white",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/42505794846813",
+      "sourceSku": "I-001648",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/42505794846813 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-bed-cover-jimmy-stripe",
+      "productName": "Frankie Flannelette - Jimmy Stripe Bed Cover",
+      "colourway": "Jimmy Stripe",
+      "unavailableSize": "Single/King Single",
+      "sourceProductIdentifier": "gid://shopify/Product/8097933426781",
+      "sourceProductHandle": "flannelette-bed-cover-jimmy-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308515651677",
+      "sourceSku": "K-002062",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308515651677 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-bed-cover-jimmy-stripe",
+      "productName": "Frankie Flannelette - Jimmy Stripe Bed Cover",
+      "colourway": "Jimmy Stripe",
+      "unavailableSize": "Double/Queen",
+      "sourceProductIdentifier": "gid://shopify/Product/8097933426781",
+      "sourceProductHandle": "flannelette-bed-cover-jimmy-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308515684445",
+      "sourceSku": "K-002063",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308515684445 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-blanket-jimmy-stripe",
+      "productName": "Frankie Flannelette - Jimmy Stripe Blanket",
+      "colourway": "Jimmy Stripe",
+      "unavailableSize": "Small",
+      "sourceProductIdentifier": "gid://shopify/Product/8097933361245",
+      "sourceProductHandle": "flannelette-blanket-jimmy-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308515520605",
+      "sourceSku": "I-003654",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308515520605 in raw_sheetsociety_products.json."
+    },
+    {
+      "productId": "flannelette-blanket-jimmy-stripe",
+      "productName": "Frankie Flannelette - Jimmy Stripe Blanket",
+      "colourway": "Jimmy Stripe",
+      "unavailableSize": "Medium - Large",
+      "sourceProductIdentifier": "gid://shopify/Product/8097933361245",
+      "sourceProductHandle": "flannelette-blanket-jimmy-stripe",
+      "sourceVariantIdentifier": "gid://shopify/ProductVariant/44308515553373",
+      "sourceSku": "I-003655",
+      "sourceAvailabilityEvidence": {
+        "rawAvailability": "unavailable",
+        "rawAvailable": null,
+        "rawInventoryQuantity": null
+      },
+      "verificationResult": "VERIFIED",
+      "notes": "Extracted directly from raw Shopify variant record gid://shopify/ProductVariant/44308515553373 in raw_sheetsociety_products.json."
+    }
+  ]
+}

@@ -37,7 +37,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const hasPriceRange = product.minPrice && product.maxPrice && product.minPrice !== product.maxPrice;
 
   return (
-    <div className="group flex flex-col bg-white border border-[#e5e5e5] transition-all duration-300 hover:shadow-md h-full">
+    <div 
+      className="group flex flex-col bg-white border border-[#e5e5e5] transition-all duration-300 hover:shadow-md h-full"
+      onMouseLeave={() => setHoverColor(null)}
+      onPointerLeave={() => setHoverColor(null)}
+      onMouseOut={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+          setHoverColor(null);
+        }
+      }}
+    >
       
       {/* Product Image Stage (4:5 vertical ratio) */}
       <div 
@@ -149,9 +158,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedColor(color);
+                    setHoverColor(null);
                   }}
                   onMouseEnter={() => setHoverColor(color)}
-                  onMouseLeave={() => setHoverColor(null)}
+                  onMouseOver={() => setHoverColor(color)}
+                  onPointerEnter={() => setHoverColor(color)}
                   className={`relative w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full transition-all focus:outline-none border border-black/15 flex-shrink-0 ${
                     isSelected ? 'ring-2 ring-offset-1 ring-black scale-110' : 'hover:scale-110'
                   }`}

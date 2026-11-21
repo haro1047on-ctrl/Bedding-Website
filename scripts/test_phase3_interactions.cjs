@@ -4,14 +4,19 @@
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using Node 24 native WebSocket.
  * Validates real client interactions in the browser DOM:
  *  1. Storefront hydration (167+ cards).
- *  2. ProductCard swatch selection and Quick View colour continuity.
- *  3. Dynamic size selection and dynamic unit price recalculation.
- *  4. Unavailable size rendering, strike-through, disablement, and unclickable protection.
- *  5. Cross-colourway size reconciliation, automatic fallback, and user notice banner.
- *  6. Quantity preservation across colourway changes.
- *  7. Multi-variant cart line-item separation (different sizes/colors of the same product).
- *  8. Single-size product handling (zero "Default Title" leaks).
- *  9. Zero React Hooks errors or browser console exceptions across the full lifecycle.
+ *  2. ProductCard swatch hover preview WITHOUT clicking.
+ *  3. Pointer movement from swatch to Quick View button (zero reversion to default color).
+ *  4. Quick View modal opening with the hovered colourway ('Olive').
+ *  5. Repeating hover & Quick View continuity with another colour ('Hunter-green').
+ *  6. Clicking a swatch to persistently select that colourway even after pointer leaves the card.
+ *  7. Mobile touch swatch selection and mobile floating Quick View tap.
+ *  8. Dynamic size selection and dynamic unit price recalculation.
+ *  9. Unavailable size rendering, strike-through, disablement, and unclickable protection.
+ * 10. Cross-colourway size reconciliation, automatic fallback, and user notice banner.
+ * 11. Quantity preservation across colourway changes.
+ * 12. Multi-variant cart line-item separation (different sizes/colors of the same product).
+ * 13. Single-size product handling (zero "Default Title" leaks).
+ * 14. Zero React Hooks errors or browser console exceptions across the full lifecycle.
  */
 
 const { spawn } = require('child_process');
@@ -200,56 +205,227 @@ async function run() {
       );
 
       // -------------------------------------------------------------
-      // 2. ProductCard Swatch Selection & Quick View Colourway Continuity
+      // 2. ProductCard Swatch Hover, Quick View Continuity & Pointer Navigation
       // -------------------------------------------------------------
-      console.log('\n--- 2. ProductCard Swatch Selection & Quick View Continuity ---');
+      console.log('\n--- 2. ProductCard Swatch Hover & Quick View Continuity ---');
       const targetProduct = PRODUCTS.find(p => p.id === 'corduroy-quilt-cover-russet');
       assert(!!targetProduct, 'Located target product "Darcy Corduroy - Russet Quilt Cover" in catalogue');
 
-      // Click swatch for 'Olive' directly on the ProductCard, wait for React state flush, then click Quick View
-      const quickViewOpenResult = await evaluate(`
+      // 2A: Hover over 'Olive' swatch WITHOUT clicking
+      const hoverOliveResult = await evaluate(`
         (async () => {
           const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
             c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
           );
           if (!card) return { error: 'Card not found' };
 
-          // Find Olive swatch button on card and click it
           const oliveSwatch = card.querySelector('button[title*="Olive"]');
-          if (oliveSwatch) {
-            oliveSwatch.click();
-            await new Promise(r => setTimeout(r, 500));
-          }
+          if (!oliveSwatch) return { error: 'Olive swatch button not found' };
 
-          // Click Quick View button
-          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
-          if (!qvBtn) return { error: 'Quick View button not found' };
-          qvBtn.click();
+          // Dispatch mouseenter on Olive swatch
+          oliveSwatch.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
+          oliveSwatch.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
+          await new Promise(r => setTimeout(r, 200));
 
-          return { success: true, swatchedOlive: !!oliveSwatch };
-        })()
-      `);
+          const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
+          const stageImg = card.querySelector('div[class*="aspect-"] img');
+          const imgSrc = stageImg ? stageImg.src : '';
 
-      assert(quickViewOpenResult && quickViewOpenResult.success, 'Swatched to Olive and clicked Quick View on card');
-      await new Promise(r => setTimeout(r, 1200));
-
-      const modalQVState = await evaluate(`
-        (() => {
-          const modal = document.querySelector('[role="dialog"]');
-          if (!modal) return null;
-          const strongTags = Array.from(modal.querySelectorAll('strong'));
-          const color = strongTags[0]?.textContent?.trim() || '';
-          const size = strongTags[1]?.textContent?.trim() || '';
-          const priceHeader = modal.querySelector('.text-2xl.font-semibold')?.textContent?.trim() || '';
-          return { color, size, priceHeader };
+          return {
+            detailText,
+            imgSrc,
+            isOlive: detailText.toLowerCase().includes('olive')
+          };
         })()
       `);
 
       assert(
-        modalQVState && modalQVState.color.toLowerCase() === 'olive',
-        'Quick View modal retained active colourway "Olive" from ProductCard swatch',
+        hoverOliveResult && hoverOliveResult.isOlive,
+        'Hovering Olive swatch previews "Olive" colourway detail without clicking',
+        'Olive in detail text',
+        hoverOliveResult?.detailText
+      );
+
+      // 2B: Move pointer from Olive swatch to Quick View button
+      const movePointerToQVResult = await evaluate(`
+        (async () => {
+          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
+            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
+          );
+          if (!card) return { error: 'Card not found' };
+
+          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
+          if (!qvBtn) return { error: 'Quick View button not found' };
+
+          // Move pointer to Quick View button (simulates pointer navigation)
+          qvBtn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
+          qvBtn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
+          await new Promise(r => setTimeout(r, 200));
+
+          const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
+          return {
+            detailText,
+            stillOlive: detailText.toLowerCase().includes('olive')
+          };
+        })()
+      `);
+
+      assert(
+        movePointerToQVResult && movePointerToQVResult.stillOlive,
+        'Moving pointer to Quick View button maintains "Olive" preview (does NOT revert to Russet)',
+        'Olive preserved',
+        movePointerToQVResult?.detailText
+      );
+
+      // 2C: Click Quick View button and verify modal opens with Olive selected
+      const openQVOliveResult = await evaluate(`
+        (async () => {
+          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
+            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
+          );
+          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
+          qvBtn.click();
+          await new Promise(r => setTimeout(r, 1200));
+
+          const modal = document.querySelector('[role="dialog"]');
+          if (!modal) return { error: 'Modal not opened' };
+
+          const strongTags = Array.from(modal.querySelectorAll('strong'));
+          const color = strongTags[0]?.textContent?.trim() || '';
+          return { color };
+        })()
+      `);
+
+      assert(
+        openQVOliveResult && openQVOliveResult.color.toLowerCase() === 'olive',
+        'Clicking Quick View opened modal directly with hovered colourway "Olive"',
         'Olive',
-        modalQVState?.color
+        openQVOliveResult?.color
+      );
+
+      // Close modal
+      await evaluate(`
+        (() => {
+          const closeBtn = document.querySelector('button[aria-label="Close product modal"]');
+          if (closeBtn) closeBtn.click();
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 600));
+
+      // 2D: Repeat hover & Quick View continuity with another colour: 'Hunter-green'
+      const repeatWithHunterResult = await evaluate(`
+        (async () => {
+          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
+            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
+          );
+          const hgSwatch = card.querySelector('button[title*="Hunter"]');
+          if (!hgSwatch) return { error: 'Hunter Green swatch not found' };
+
+          // Hover Hunter Green swatch
+          hgSwatch.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
+          hgSwatch.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
+          await new Promise(r => setTimeout(r, 200));
+
+          // Move pointer to Quick View
+          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
+          qvBtn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
+          qvBtn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
+          await new Promise(r => setTimeout(r, 200));
+
+          // Click Quick View
+          qvBtn.click();
+          await new Promise(r => setTimeout(r, 1200));
+
+          const modal = document.querySelector('[role="dialog"]');
+          const strongTags = Array.from(modal.querySelectorAll('strong'));
+          const color = strongTags[0]?.textContent?.trim() || '';
+
+          return { color };
+        })()
+      `);
+
+      assert(
+        repeatWithHunterResult && repeatWithHunterResult.color.toLowerCase().includes('hunter'),
+        'Repeated hover & Quick View test: opened modal directly with "Hunter Green"',
+        'Hunter-green',
+        repeatWithHunterResult?.color
+      );
+
+      // Close modal
+      await evaluate(`
+        (() => {
+          const closeBtn = document.querySelector('button[aria-label="Close product modal"]');
+          if (closeBtn) closeBtn.click();
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 600));
+
+      // 2E: Verify clicking a swatch persistently selects that colour even after pointer leaves card
+      const persistentClickResult = await evaluate(`
+        (async () => {
+          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
+            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
+          );
+          const terracottaSwatch = card.querySelector('button[title*="Terracotta"]');
+          if (!terracottaSwatch) return { error: 'Terracotta swatch not found' };
+
+          // Click Terracotta swatch
+          terracottaSwatch.click();
+          await new Promise(r => setTimeout(r, 200));
+
+          // Dispatch mouseleave off the card
+          card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }));
+          card.dispatchEvent(new MouseEvent('pointerleave', { bubbles: true }));
+          card.dispatchEvent(new MouseEvent('mouseout', { bubbles: true, relatedTarget: document.body }));
+          await new Promise(r => setTimeout(r, 200));
+
+          const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
+          return {
+            detailText,
+            isTerracotta: detailText.toLowerCase().includes('terracotta')
+          };
+        })()
+      `);
+
+      assert(
+        persistentClickResult && persistentClickResult.isTerracotta,
+        'Clicking a swatch persistently selects that colourway after pointer leaves card',
+        'Terracotta',
+        persistentClickResult?.detailText
+      );
+
+      // 2F: Verify mobile touch swatch selection & floating quick view tap
+      const mobileInteractionResult = await evaluate(`
+        (async () => {
+          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
+            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
+          );
+          const oliveSwatch = card.querySelector('button[title*="Olive"]');
+          if (oliveSwatch) {
+            oliveSwatch.click();
+            await new Promise(r => setTimeout(r, 200));
+          }
+
+          // Click mobile quick view button (sm:hidden)
+          const mobileQvBtn = card.querySelector('button[class*="sm:hidden"]');
+          if (mobileQvBtn) {
+            mobileQvBtn.click();
+            await new Promise(r => setTimeout(r, 1200));
+          }
+
+          const modal = document.querySelector('[role="dialog"]');
+          const strongTags = Array.from(modal.querySelectorAll('strong'));
+          const color = strongTags[0]?.textContent?.trim() || '';
+
+          return { color };
+        })()
+      `);
+
+      assert(
+        mobileInteractionResult && mobileInteractionResult.color.toLowerCase() === 'olive',
+        'Mobile touch interaction: mobile Quick View tap opened modal with active colour "Olive"',
+        'Olive',
+        mobileInteractionResult?.color
       );
 
       // -------------------------------------------------------------

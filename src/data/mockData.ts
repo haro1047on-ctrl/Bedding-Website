@@ -527,12 +527,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ],
       "Sage": [
         "Single"
       ],
@@ -658,12 +652,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ],
       "Sage": [
         "Single"
       ],
@@ -789,17 +777,17 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ],
       "Sage": [
         "Single"
       ],
       "Oatmeal": [
         "Single"
+      ],
+      "Warm-white": [
+        "Double",
+        "Queen",
+        "King",
+        "Super King"
       ]
     },
     "unavailableSizes": [
@@ -929,12 +917,6 @@ export const PRODUCTS: Product[] = [
       "Sage": [
         "Single"
       ],
-      "Warm White": [
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ],
       "Oatmeal": [
         "Single"
       ]
@@ -1063,12 +1045,6 @@ export const PRODUCTS: Product[] = [
       "Oatmeal": [
         "Single"
       ],
-      "Warm White": [
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ],
       "Sage": [
         "Single"
       ]
@@ -1191,12 +1167,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ],
       "Sage": [
         "Single"
       ],
@@ -1423,7 +1393,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Bay Blue": [
+      "Bay-blue": [
         "Super King"
       ]
     },
@@ -1498,7 +1468,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Blythe Stripe": [
+      "Blythe-stripe": [
         "King"
       ]
     },
@@ -1665,16 +1635,7 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 80,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified",
-    "colorUnavailableSizes": {
-      "Warm White": [
-        "King Single",
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ]
-    }
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
     "id": "linen-fitted-sheet-warm-white",
@@ -1776,7 +1737,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
+      "Warm-white": [
         "King Single",
         "Double",
         "Queen",
@@ -1890,16 +1851,7 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 57,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified",
-    "colorUnavailableSizes": {
-      "Warm White": [
-        "King Single",
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ]
-    }
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
     "id": "linen-fitted-sheet-white",
@@ -2002,16 +1954,7 @@ export const PRODUCTS: Product[] = [
     "reviewsCount": 80,
     "isBestseller": false,
     "isNew": false,
-    "certification": "OEKO-TEX® Standard 100 Certified",
-    "colorUnavailableSizes": {
-      "Warm White": [
-        "King Single",
-        "Double",
-        "Queen",
-        "King",
-        "Super King"
-      ]
-    }
+    "certification": "OEKO-TEX® Standard 100 Certified"
   },
   {
     "id": "organic-cotton-fitted-sheet-russet",
@@ -2307,7 +2250,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Blythe Stripe": [
+      "Blythe-stripe": [
         "Double",
         "King",
         "Super King"
@@ -2413,11 +2356,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
-        "Double",
-        "King",
-        "Super King"
-      ],
       "Marshmallow": [
         "King"
       ]
@@ -2523,13 +2461,13 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
+      "Marshmallow": [
+        "King"
+      ],
+      "Warm-white": [
         "Double",
         "King",
         "Super King"
-      ],
-      "Marshmallow": [
-        "King"
       ]
     },
     "unavailableSizes": [
@@ -2640,11 +2578,6 @@ export const PRODUCTS: Product[] = [
     "colorUnavailableSizes": {
       "Marshmallow": [
         "King"
-      ],
-      "Warm White": [
-        "Double",
-        "King",
-        "Super King"
       ]
     },
     "unavailableSizes": [
@@ -2751,11 +2684,6 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
-        "Double",
-        "King",
-        "Super King"
-      ],
       "Marshmallow": [
         "King"
       ]
@@ -3052,7 +2980,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Blythe Stripe": [
+      "Blythe-stripe": [
         "Single"
       ]
     },
@@ -3476,7 +3404,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Warm White": [
+      "Warm-white": [
         "Standard Size"
       ]
     },
@@ -4534,7 +4462,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Jimmy Stripe": [
+      "Jimmy-stripe": [
         "Single/King Single",
         "Double/Queen"
       ]
@@ -4615,7 +4543,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "certification": "OEKO-TEX® Standard 100 Certified",
     "colorUnavailableSizes": {
-      "Jimmy Stripe": [
+      "Jimmy-stripe": [
         "Small",
         "Medium - Large"
       ]
