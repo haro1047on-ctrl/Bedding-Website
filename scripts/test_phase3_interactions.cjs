@@ -984,12 +984,23 @@ function cleanup(chromeProc) {
   console.log('========================================================================\n');
 
   // Save machine-readable test results
+  const { execSync } = require('child_process');
+  let currentCommit = 'unknown';
+  let currentBranch = 'unknown';
+  try {
+    currentCommit = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+    currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+  } catch (e) {}
+
   const reportPath = 'src/data/phase3_interaction_test_results.json';
   fs.writeFileSync(reportPath, JSON.stringify({
     timestamp: new Date().toISOString(),
-    branch: 'feature/phase-3-product-variants-dynamic-pricing',
+    branch: currentBranch,
+    commit: currentCommit,
+    testScript: 'scripts/test_phase3_interactions.cjs',
     passedTests,
     totalTests,
+    exitCode: (passedTests === totalTests && totalTests > 0) ? 0 : 1,
     tests: testRecords
   }, null, 2));
 

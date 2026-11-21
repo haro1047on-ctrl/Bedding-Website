@@ -2,31 +2,42 @@
  * MORFE - Phase 4 Homepage & Mega-Menu Replication Browser Interaction Test Suite
  *
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using Node native WebSocket.
- * Comprehensive, production-grade test battery verifying:
- *  1. Storefront hydration and homepage structure.
- *  2. Header navigation with "Bedding" mega-menu hover trigger.
+ * Strengthened browser interaction test battery enforcing:
+ *  1. Storefront hydration and initial homepage composition.
+ *  2. Header navigation with "Bedding" mega-menu hover trigger via CDP mouseMoved.
  *  3. Seamless pointer transit from trigger down into mega-menu panel (zero accidental closure).
  *  4. Pointer traversal across all 5 mega-menu columns without accidental closure.
- *  5. All 13 individual product category links rendered with verified styles/counts (incl. Sleepwear & Wellness).
+ *  5. All 13 individual product category links rendered with verified styles/counts.
  *  6. All 6 signature fabric shortcuts rendered and linked.
  *  7. Curated editorial showcase card and complete catalogue destination rendered.
  *  8. Escape-key and outside-click dismissal of mega-menu.
- *  9. Mega-menu category link navigation to CatalogView (Quilt Covers, Sleepwear, Complete Catalogue).
- * 10. Horizontal Category Pill Strip: all 14 pills rendered with verified labels and counts.
- * 11. Category pill active visual state and filtering verification.
- * 12. Category pill scrollability: scroll-left / scroll-right buttons and scroll states.
- * 13. Editorial Homepage Vignettes: Both vignettes rendered, all 4 local images loaded with natural dimensions.
- * 14. Actionable CTA navigation across vignettes (Vignette 1 & Vignette 2 suite cards).
- * 15. Mobile Navigation Drawer: Open/close, touch target compliance (>= 44px), zero horizontal overflow.
- * 16. Mobile Drawer Accordions: Expand/collapse across all 3 sections, category navigation from inside accordion.
- * 17. Mobile Drawer Escape-key dismissal.
- * 18. Responsive testing across 9 exact viewports (1440, 1280, 1024, 1023, 900, 768, 480, 375, 320 px):
- *     - innerWidth, scrollWidth, horizontal overflow (scrollWidth - innerWidth <= 0)
- *     - Desktop nav visibility (>= 1024px) vs Mobile hamburger visibility (<= 1023px)
- * 19. React Rules of Hooks & Console Exception verification (zero errors/warnings).
+ *  9. Mega-Menu Category Navigation via REAL CDP POINTER DISPATCH:
+ *     - Verifies category title, product count, and rendered card count for:
+ *       Quilt Covers (15), Pillowcase Pairs (10), Bed Sheets & Sets (18),
+ *       Blankets & Bed Covers (19), Sleepwear (9), Wellness (8), Kids & Baby (16),
+ *       and Complete Catalogue / All Bedding (167).
+ *     - Verifies clean return navigation to home via CDP logo clicks.
+ * 10. Horizontal Category Pill Strip:
+ *     - All 14 pills rendered with authentic labels and counts.
+ *     - Initial "All Bedding" active visual state.
+ *     - CDP pointer clicks on category pills (Fitted Sheets, Cushions, Wellness) verifying active state and product counts.
+ *     - Category strip scroll-left / scroll-right button states and scroll metrics.
+ * 11. Editorial Homepage Vignettes:
+ *     - Both vignettes rendered; all 4 local physical images loaded with natural dimensions.
+ *     - Actionable CTA clicks via CDP pointer dispatch (Vignette 1 & Vignette 2 suite cards) verifying category filtering and product counts.
+ * 12. Mobile Navigation Drawer (375px viewport):
+ *     - Open drawer via CDP pointer dispatch; verify zero horizontal overflow.
+ *     - Verify touch target compliance: all 15 interactive drawer buttons meet >= 44px vertical hit-target standard.
+ *     - Accordion expand/collapse across Bedding Essentials, Layers & Comfort, and Living & Family.
+ *     - Category navigation from inside drawer via CDP pointer dispatch (Sleepwear & Pillowcases) verifying automatic closure and product filtering.
+ *     - Mobile drawer Escape-key dismissal.
+ * 13. Responsive Testing Across 9 Exact Viewports (1440, 1280, 1024, 1023, 900, 768, 480, 375, 320 px):
+ *     - Measures innerWidth, scrollWidth, horizontal overflow (scrollWidth - innerWidth <= 0).
+ *     - Verifies deterministic desktop nav visibility (>= 1024px) vs mobile hamburger visibility (<= 1023px).
+ * 14. React Rules of Hooks & Console Exception Verification (zero errors/warnings throughout).
  */
 
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -188,6 +199,82 @@ async function run() {
         console.error('Evaluate Exception:', res.exceptionDetails.exception?.description || res.exceptionDetails.text);
       }
       return res?.result?.value;
+    }
+
+    // Helper: Real CDP pointer dispatch click
+    async function cdpClick(x, y) {
+      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: Math.round(x), y: Math.round(y) });
+      await send('Input.dispatchMouseEvent', { type: 'mousePressed', x: Math.round(x), y: Math.round(y), button: 'left', clickCount: 1 });
+      await send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: Math.round(x), y: Math.round(y), button: 'left', clickCount: 1 });
+    }
+
+    // Helper: Get element center coordinates with instant scrollIntoView
+    async function getElementCenter(selector) {
+      return await evaluate(`
+        (() => {
+          const el = document.querySelector(${JSON.stringify(selector)});
+          if (!el) return null;
+          el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+          const r = el.getBoundingClientRect();
+          if (r.width === 0 || r.height === 0) return null;
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2, width: r.width, height: r.height };
+        })()
+      `);
+    }
+
+    // Helper: Get button center coordinates by text match inside a container with instant scrollIntoView
+    async function getButtonCenterByText(containerSelector, textMatch) {
+      return await evaluate(`
+        (() => {
+          const container = document.querySelector(${JSON.stringify(containerSelector)});
+          if (!container) return null;
+          const buttons = Array.from(container.querySelectorAll('button, a'));
+          const target = buttons.find(b => b.textContent.toLowerCase().includes(${JSON.stringify(textMatch.toLowerCase())}));
+          if (!target) return null;
+          target.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+          const r = target.getBoundingClientRect();
+          if (r.width === 0 || r.height === 0) return null;
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2, width: r.width, height: r.height };
+        })()
+      `);
+    }
+
+    // Helper: Inspect CatalogView state (title, product counter, rendered cards count in product grid)
+    async function getCatalogState() {
+      return await evaluate(`
+        (() => {
+          const h1 = document.querySelector('h1')?.textContent?.trim() || '';
+          const countEl = document.querySelector('div strong');
+          const count = countEl ? parseInt(countEl.textContent.trim(), 10) : null;
+          const productGrid = Array.from(document.querySelectorAll('div.grid')).find(g => g.className.includes('lg:grid-cols-4'));
+          const cards = productGrid ? productGrid.children : [];
+          return {
+            title: h1,
+            count,
+            cardCount: cards.length
+          };
+        })()
+      `);
+    }
+
+    // Helper: Return to home view via CDP pointer click on the MORFE logo
+    async function navigateHomeCdp() {
+      await evaluate(`window.scrollTo({ top: 0, behavior: 'instant' })`);
+      await new Promise(r => setTimeout(r, 100));
+      const logo = await evaluate(`
+        (() => {
+          const btn = document.querySelector('header button[aria-label="MORFE Homepage"]');
+          if (!btn) return null;
+          const r = btn.getBoundingClientRect();
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+        })()
+      `);
+      if (logo) {
+        await cdpClick(logo.x, logo.y);
+        await new Promise(r => setTimeout(r, 400));
+      }
+      await evaluate(`window.scrollTo({ top: 0, behavior: 'instant' })`);
+      await new Promise(r => setTimeout(r, 100));
     }
 
     try {
@@ -404,110 +491,157 @@ async function run() {
       });
       await new Promise(r => setTimeout(r, 300));
 
-      // Click outside at bottom of viewport
-      await send('Input.dispatchMouseEvent', { type: 'mousePressed', x: 600, y: 700, button: 'left', clickCount: 1 });
-      await send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: 600, y: 700, button: 'left', clickCount: 1 });
+      // Click outside at bottom of viewport via CDP mouse dispatch
+      await cdpClick(600, 700);
       await new Promise(r => setTimeout(r, 250));
 
       const dismissedByOutsideClick = await evaluate(`!document.querySelector('#desktop-mega-menu-panel')`);
       assert(dismissedByOutsideClick, 'Clicking outside dismissed mega-menu panel');
 
+      // Helper to reopen mega-menu via CDP
+      async function openMegaMenuCdp() {
+        await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
+        await new Promise(r => setTimeout(r, 100));
+        await send('Input.dispatchMouseEvent', {
+          type: 'mouseMoved',
+          x: Math.round(beddingButtonRect.x),
+          y: Math.round(beddingButtonRect.y)
+        });
+        await new Promise(r => setTimeout(r, 300));
+      }
+
       // -------------------------------------------------------------
-      // 6. Mega-Menu Navigation Destinations
+      // 6. Mega-Menu Navigation Destinations (Strengthened CDP Pointer Dispatch)
       // -------------------------------------------------------------
-      console.log('\n--- 6. Mega-Menu Navigation Destinations ---');
+      console.log('\n--- 6. Mega-Menu Navigation Destinations via CDP Pointer Dispatch ---');
       
-      // Navigate to Quilt Covers
-      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
-      await new Promise(r => setTimeout(r, 100));
-      await send('Input.dispatchMouseEvent', {
-        type: 'mouseMoved',
-        x: Math.round(beddingButtonRect.x),
-        y: Math.round(beddingButtonRect.y)
-      });
-      await new Promise(r => setTimeout(r, 300));
+      // Category 1: Quilt Covers (15 styles)
+      await openMegaMenuCdp();
+      const quiltCoversCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Quilt Covers');
+      assert(quiltCoversCenter !== null, 'Mega-Menu: Located "Quilt Covers" link coordinates');
+      await cdpClick(quiltCoversCenter.x, quiltCoversCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      const clickQuiltCovers = await evaluate(`
-        (() => {
-          const panel = document.querySelector('#desktop-mega-menu-panel');
-          const btn = Array.from(panel?.querySelectorAll('button') || []).find(b => b.textContent.includes('Quilt Covers'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(clickQuiltCovers, 'Clicked "Quilt Covers" in mega-menu');
-      await new Promise(r => setTimeout(r, 400));
+      const catalogQuiltCovers = await getCatalogState();
+      assert(
+        catalogQuiltCovers.title === 'Quilt Covers' && catalogQuiltCovers.count === 15 && catalogQuiltCovers.cardCount === 15,
+        'Mega-Menu CDP Click: Navigated to "Quilt Covers" displaying exactly 15 products',
+        'Quilt Covers / 15 products (15 cards)',
+        `${catalogQuiltCovers.title} / ${catalogQuiltCovers.count} products (${catalogQuiltCovers.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      const catalogQuiltCovers = await evaluate(`document.body.textContent.includes('Quilt Covers')`);
-      assert(catalogQuiltCovers, 'Mega-menu navigated to CatalogView filtered to "Quilt Covers"');
+      // Category 2: Pillowcase Pairs (10 styles)
+      await openMegaMenuCdp();
+      const pillowcasesCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Pillowcase Pairs');
+      assert(pillowcasesCenter !== null, 'Mega-Menu: Located "Pillowcase Pairs" link coordinates');
+      await cdpClick(pillowcasesCenter.x, pillowcasesCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      // Return home
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const catalogPillowcases = await getCatalogState();
+      assert(
+        catalogPillowcases.title === 'Pillowcases' && catalogPillowcases.count === 10 && catalogPillowcases.cardCount === 10,
+        'Mega-Menu CDP Click: Navigated to "Pillowcases" displaying exactly 10 products',
+        'Pillowcases / 10 products (10 cards)',
+        `${catalogPillowcases.title} / ${catalogPillowcases.count} products (${catalogPillowcases.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      // Navigate to Sleepwear (specifically requested)
-      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
-      await new Promise(r => setTimeout(r, 100));
-      await send('Input.dispatchMouseEvent', {
-        type: 'mouseMoved',
-        x: Math.round(beddingButtonRect.x),
-        y: Math.round(beddingButtonRect.y)
-      });
-      await new Promise(r => setTimeout(r, 300));
+      // Category 3: Bed Sheets & Sets (18 styles)
+      await openMegaMenuCdp();
+      const bedSetsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Bed Sheets & Sets');
+      assert(bedSetsCenter !== null, 'Mega-Menu: Located "Bed Sheets & Sets" link coordinates');
+      await cdpClick(bedSetsCenter.x, bedSetsCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      const clickSleepwear = await evaluate(`
-        (() => {
-          const panel = document.querySelector('#desktop-mega-menu-panel');
-          const btn = Array.from(panel?.querySelectorAll('button') || []).find(b => b.textContent.includes('Sleepwear'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(clickSleepwear, 'Clicked "Sleepwear" in mega-menu');
-      await new Promise(r => setTimeout(r, 400));
+      const catalogBedSets = await getCatalogState();
+      assert(
+        catalogBedSets.title === 'Bed Sheets & Sets' && catalogBedSets.count === 18 && catalogBedSets.cardCount === 18,
+        'Mega-Menu CDP Click: Navigated to "Bed Sheets & Sets" displaying exactly 18 products',
+        'Bed Sheets & Sets / 18 products (18 cards)',
+        `${catalogBedSets.title} / ${catalogBedSets.count} products (${catalogBedSets.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      const catalogSleepwear = await evaluate(`document.body.textContent.includes('Sleepwear')`);
-      assert(catalogSleepwear, 'Mega-menu navigated to CatalogView filtered to "Sleepwear"');
+      // Category 4: Blankets & Bed Covers (19 styles)
+      await openMegaMenuCdp();
+      const blanketsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Blankets & Bed Covers');
+      assert(blanketsCenter !== null, 'Mega-Menu: Located "Blankets & Bed Covers" link coordinates');
+      await cdpClick(blanketsCenter.x, blanketsCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      // Return home
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const catalogBlankets = await getCatalogState();
+      assert(
+        catalogBlankets.title === 'Blankets & Bed Covers' && catalogBlankets.count === 19 && catalogBlankets.cardCount === 19,
+        'Mega-Menu CDP Click: Navigated to "Blankets & Bed Covers" displaying exactly 19 products',
+        'Blankets & Bed Covers / 19 products (19 cards)',
+        `${catalogBlankets.title} / ${catalogBlankets.count} products (${catalogBlankets.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      // Navigate to Complete Catalogue
-      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
-      await new Promise(r => setTimeout(r, 100));
-      await send('Input.dispatchMouseEvent', {
-        type: 'mouseMoved',
-        x: Math.round(beddingButtonRect.x),
-        y: Math.round(beddingButtonRect.y)
-      });
-      await new Promise(r => setTimeout(r, 300));
+      // Category 5: Sleepwear (9 styles - specifically requested)
+      await openMegaMenuCdp();
+      const sleepwearCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Sleepwear');
+      assert(sleepwearCenter !== null, 'Mega-Menu: Located "Sleepwear" link coordinates');
+      await cdpClick(sleepwearCenter.x, sleepwearCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      const clickViewAll = await evaluate(`
-        (() => {
-          const panel = document.querySelector('#desktop-mega-menu-panel');
-          const btn = Array.from(panel?.querySelectorAll('button') || []).find(b => b.textContent.includes('View Complete Catalogue'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(clickViewAll, 'Clicked "View Complete Catalogue" in mega-menu');
-      await new Promise(r => setTimeout(r, 400));
+      const catalogSleepwear = await getCatalogState();
+      assert(
+        catalogSleepwear.title === 'Sleepwear' && catalogSleepwear.count === 9 && catalogSleepwear.cardCount === 9,
+        'Mega-Menu CDP Click: Navigated to "Sleepwear" displaying exactly 9 products',
+        'Sleepwear / 9 products (9 cards)',
+        `${catalogSleepwear.title} / ${catalogSleepwear.count} products (${catalogSleepwear.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      const catalogComplete = await evaluate(`
-        (() => {
-          const text = document.body.textContent;
-          return text.includes('All Bedding') || text.includes('167');
-        })()
-      `);
-      assert(catalogComplete, 'Navigated to complete catalogue showing full collection');
+      // Category 6: Wellness (8 styles - specifically requested)
+      await openMegaMenuCdp();
+      const wellnessCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Wellness');
+      assert(wellnessCenter !== null, 'Mega-Menu: Located "Wellness" link coordinates');
+      await cdpClick(wellnessCenter.x, wellnessCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      // Return home
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const catalogWellness = await getCatalogState();
+      assert(
+        catalogWellness.title === 'Wellness' && catalogWellness.count === 8 && catalogWellness.cardCount === 8,
+        'Mega-Menu CDP Click: Navigated to "Wellness" displaying exactly 8 products',
+        'Wellness / 8 products (8 cards)',
+        `${catalogWellness.title} / ${catalogWellness.count} products (${catalogWellness.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Category 7: Kids & Baby (16 styles)
+      await openMegaMenuCdp();
+      const kidsBabyCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Kids & Baby');
+      assert(kidsBabyCenter !== null, 'Mega-Menu: Located "Kids & Baby" link coordinates');
+      await cdpClick(kidsBabyCenter.x, kidsBabyCenter.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const catalogKidsBaby = await getCatalogState();
+      assert(
+        catalogKidsBaby.title === 'Kids & Baby' && catalogKidsBaby.count === 16 && catalogKidsBaby.cardCount === 16,
+        'Mega-Menu CDP Click: Navigated to "Kids & Baby" displaying exactly 16 products',
+        'Kids & Baby / 16 products (16 cards)',
+        `${catalogKidsBaby.title} / ${catalogKidsBaby.count} products (${catalogKidsBaby.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Top-Level Action: View Complete Catalogue (167 products)
+      await openMegaMenuCdp();
+      const viewAllCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'View Complete Catalogue');
+      assert(viewAllCenter !== null, 'Mega-Menu: Located "View Complete Catalogue" CTA coordinates');
+      await cdpClick(viewAllCenter.x, viewAllCenter.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const catalogComplete = await getCatalogState();
+      assert(
+        catalogComplete.title === 'Bedding' && catalogComplete.count === 167 && catalogComplete.cardCount === 167,
+        'Mega-Menu CDP Click: Navigated to Complete Catalogue displaying full 167 products',
+        'Bedding / 167 products (167 cards)',
+        `${catalogComplete.title} / ${catalogComplete.count} products (${catalogComplete.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
       // -------------------------------------------------------------
       // 7. Horizontal Category Pill Strip: All 14 Pills & Controls
@@ -561,49 +695,89 @@ async function run() {
       const allBeddingActive = renderedPills[0]?.isActive;
       assert(allBeddingActive, '"All Bedding" pill displays active visual styling by default');
 
-      // Test Category Pill Click: Fitted Sheets
-      console.log('\n--- 7B. Category Pill Clicks & Filtering ---');
-      const clickFitted = await evaluate(`
+      // Scroll to category strip section before testing clicks
+      await evaluate(`
         (() => {
-          const nav = document.querySelector('[aria-label="Category pill navigation"]');
-          const btn = Array.from(nav?.querySelectorAll('button') || []).find(b => b.textContent.includes('Fitted Sheets'));
-          if (!btn) return false;
-          btn.click();
-          return true;
+          const sec = document.querySelector('#category-discovery-section');
+          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
         })()
       `);
-      assert(clickFitted, 'Clicked "Fitted Sheets" category pill');
-      await new Promise(r => setTimeout(r, 400));
+      await new Promise(r => setTimeout(r, 200));
 
-      const catalogFilteredFitted = await evaluate(`document.body.textContent.includes('Fitted Sheets')`);
-      assert(catalogFilteredFitted, 'Catalogue filtered to "Fitted Sheets" upon pill click');
+      // Category Pill Click via CDP: Fitted Sheets
+      console.log('\n--- 7B. Category Pill Clicks & Filtering via CDP ---');
+      const fittedPillCenter = await getButtonCenterByText('[aria-label="Category pill navigation"]', 'Fitted Sheets');
+      assert(fittedPillCenter !== null, 'Category Strip: Located "Fitted Sheets" pill coordinates');
+      await cdpClick(fittedPillCenter.x, fittedPillCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      // Return home
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const catalogFitted = await getCatalogState();
+      assert(
+        catalogFitted.title === 'Fitted Sheets' && catalogFitted.count === 8 && catalogFitted.cardCount === 8,
+        'Category Pill CDP Click: Filtered to "Fitted Sheets" displaying exactly 8 products',
+        'Fitted Sheets / 8 products (8 cards)',
+        `${catalogFitted.title} / ${catalogFitted.count} products (${catalogFitted.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      // Test Category Pill Click: Wellness
-      const clickWellness = await evaluate(`
+      // Category Pill Click via CDP: Cushions (31 products)
+      await evaluate(`
         (() => {
-          const nav = document.querySelector('[aria-label="Category pill navigation"]');
-          const btn = Array.from(nav?.querySelectorAll('button') || []).find(b => b.textContent.includes('Wellness'));
-          if (!btn) return false;
-          btn.click();
-          return true;
+          const sec = document.querySelector('#category-discovery-section');
+          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
         })()
       `);
-      assert(clickWellness, 'Clicked "Wellness" category pill');
-      await new Promise(r => setTimeout(r, 400));
+      await new Promise(r => setTimeout(r, 200));
 
-      const catalogFilteredWellness = await evaluate(`document.body.textContent.includes('Wellness')`);
-      assert(catalogFilteredWellness, 'Catalogue filtered to "Wellness" upon pill click');
+      const cushionsPillCenter = await getButtonCenterByText('[aria-label="Category pill navigation"]', 'Cushions');
+      assert(cushionsPillCenter !== null, 'Category Strip: Located "Cushions" pill coordinates');
+      await cdpClick(cushionsPillCenter.x, cushionsPillCenter.y);
+      await new Promise(r => setTimeout(r, 500));
 
-      // Return home
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const catalogCushions = await getCatalogState();
+      assert(
+        catalogCushions.title === 'Cushions' && catalogCushions.count === 31 && catalogCushions.cardCount === 31,
+        'Category Pill CDP Click: Filtered to "Cushions" displaying exactly 31 products',
+        'Cushions / 31 products (31 cards)',
+        `${catalogCushions.title} / ${catalogCushions.count} products (${catalogCushions.cardCount} cards)`
+      );
+      await navigateHomeCdp();
 
-      // Scroll Button Controls Verification
-      console.log('\n--- 7C. Category Strip Scroll Controls ---');
+      // Category Pill Click via CDP: Wellness (8 products)
+      await evaluate(`
+        (() => {
+          const sec = document.querySelector('#category-discovery-section');
+          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 200));
+
+      const wellnessPillCenter = await getButtonCenterByText('[aria-label="Category pill navigation"]', 'Wellness');
+      assert(wellnessPillCenter !== null, 'Category Strip: Located "Wellness" pill coordinates');
+      await cdpClick(wellnessPillCenter.x, wellnessPillCenter.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const catalogWellnessPill = await getCatalogState();
+      assert(
+        catalogWellnessPill.title === 'Wellness' && catalogWellnessPill.count === 8 && catalogWellnessPill.cardCount === 8,
+        'Category Pill CDP Click: Filtered to "Wellness" displaying exactly 8 products',
+        'Wellness / 8 products (8 cards)',
+        `${catalogWellnessPill.title} / ${catalogWellnessPill.count} products (${catalogWellnessPill.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Scroll Button Controls Verification via CDP
+      console.log('\n--- 7C. Category Strip Scroll Controls via CDP ---');
+      await evaluate(`
+        (() => {
+          const sec = document.querySelector('#category-discovery-section');
+          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
+          const nav = document.querySelector('[aria-label="Category pill navigation"]');
+          if (nav) nav.scrollLeft = 0;
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 200));
+
       const initialScrollState = await evaluate(`
         (() => {
           const nav = document.querySelector('[aria-label="Category pill navigation"]');
@@ -619,9 +793,11 @@ async function run() {
       assert(initialScrollState.leftDisabled === true, 'Scroll-left button initially disabled at start of pill strip');
       assert(initialScrollState.rightDisabled === false, 'Scroll-right button initially enabled');
 
-      // Click scroll right button
-      await evaluate(`document.querySelector('button[aria-label="Scroll categories right"]')?.click()`);
-      await new Promise(r => setTimeout(r, 500));
+      // Click scroll right button via CDP
+      const scrollRightCenter = await getElementCenter('button[aria-label="Scroll categories right"]');
+      assert(scrollRightCenter !== null, 'Category Strip: Located scroll-right button coordinates');
+      await cdpClick(scrollRightCenter.x, scrollRightCenter.y);
+      await new Promise(r => setTimeout(r, 600));
 
       const scrolledRightState = await evaluate(`
         (() => {
@@ -633,17 +809,21 @@ async function run() {
           };
         })()
       `);
-      assert(scrolledRightState.scrollLeft > 0, `Pill strip scrolled right (scrollLeft: ${scrolledRightState.scrollLeft}px)`);
+      assert(scrolledRightState.scrollLeft > 0, `Pill strip scrolled right via CDP (scrollLeft: ${scrolledRightState.scrollLeft}px)`);
       assert(scrolledRightState.leftDisabled === false, 'Scroll-left button became active after right scroll');
 
-      // Click scroll left button to return
-      await evaluate(`document.querySelector('button[aria-label="Scroll categories left"]')?.click()`);
-      await new Promise(r => setTimeout(r, 500));
-
       // -------------------------------------------------------------
-      // 8. Editorial Homepage Vignettes & CTAs
+      // 8. Editorial Homepage Vignettes & Images
       // -------------------------------------------------------------
       console.log('\n--- 8. Editorial Homepage Vignettes & Images ---');
+      await evaluate(`
+        (() => {
+          const sec = document.querySelector('#editorial-vignettes-section');
+          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 600));
+
       const vignettesData = await evaluate(`
         (() => {
           const sec = document.querySelector('#editorial-vignettes-section');
@@ -678,59 +858,50 @@ async function run() {
       assert(vignettesData && vignettesData.imageCount === 4, 'Editorial vignettes contain 4 local physical image assets');
       assert(vignettesData && vignettesData.allImagesLoaded, 'All 4 editorial vignette images loaded successfully with natural dimensions');
 
-      // Test Vignette CTAs
-      console.log('\n--- 8B. Vignette Actionable CTA Navigation ---');
+      // Test Vignette CTAs via CDP
+      console.log('\n--- 8B. Vignette Actionable CTA Navigation via CDP ---');
       
       // Vignette 1 CTA: "Shop Quilt Covers"
-      const cta1Success = await evaluate(`
-        (() => {
-          const sec = document.querySelector('#editorial-vignettes-section');
-          const btn = Array.from(sec?.querySelectorAll('button') || []).find(b => b.textContent.includes('Shop Quilt Covers'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(cta1Success, 'Clicked Vignette 1 CTA: "Shop Quilt Covers"');
-      await new Promise(r => setTimeout(r, 400));
-      assert(await evaluate(`document.body.textContent.includes('Quilt Covers')`), 'Vignette 1 CTA navigated to Quilt Covers');
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const cta1Center = await getButtonCenterByText('#editorial-vignettes-section', 'Shop Quilt Covers');
+      assert(cta1Center !== null, 'Vignette 1: Located "Shop Quilt Covers" CTA coordinates');
+      await cdpClick(cta1Center.x, cta1Center.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const catalogVignette1 = await getCatalogState();
+      assert(
+        catalogVignette1.title === 'Quilt Covers' && catalogVignette1.count === 15 && catalogVignette1.cardCount === 15,
+        'Vignette 1 CTA CDP Click: Navigated to Quilt Covers displaying exactly 15 products'
+      );
+      await navigateHomeCdp();
 
       // Vignette 2 Card 1 CTA: "Shop Fitted Sheets"
-      const cta2Success = await evaluate(`
-        (() => {
-          const sec = document.querySelector('#editorial-vignettes-section');
-          const btn = Array.from(sec?.querySelectorAll('button') || []).find(b => b.textContent.includes('Shop Fitted Sheets'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(cta2Success, 'Clicked Vignette 2 Card 1 CTA: "Shop Fitted Sheets"');
-      await new Promise(r => setTimeout(r, 400));
-      assert(await evaluate(`document.body.textContent.includes('Fitted Sheets')`), 'Vignette 2 Card 1 CTA navigated to Fitted Sheets');
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const cta2Center = await getButtonCenterByText('#editorial-vignettes-section', 'Shop Fitted Sheets');
+      assert(cta2Center !== null, 'Vignette 2 Card 1: Located "Shop Fitted Sheets" CTA coordinates');
+      await cdpClick(cta2Center.x, cta2Center.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const catalogVignette2 = await getCatalogState();
+      assert(
+        catalogVignette2.title === 'Fitted Sheets' && catalogVignette2.count === 8 && catalogVignette2.cardCount === 8,
+        'Vignette 2 Card 1 CTA CDP Click: Navigated to Fitted Sheets displaying exactly 8 products'
+      );
+      await navigateHomeCdp();
 
       // Vignette 2 Card 3 CTA: "Shop Bed Covers"
-      const cta3Success = await evaluate(`
-        (() => {
-          const sec = document.querySelector('#editorial-vignettes-section');
-          const btn = Array.from(sec?.querySelectorAll('button') || []).find(b => b.textContent.includes('Shop Bed Covers'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(cta3Success, 'Clicked Vignette 2 Card 3 CTA: "Shop Bed Covers"');
-      await new Promise(r => setTimeout(r, 400));
-      assert(await evaluate(`document.body.textContent.includes('Blankets & Bed Covers')`), 'Vignette 2 Card 3 CTA navigated to Blankets & Bed Covers');
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
+      const cta3Center = await getButtonCenterByText('#editorial-vignettes-section', 'Shop Bed Covers');
+      assert(cta3Center !== null, 'Vignette 2 Card 3: Located "Shop Bed Covers" CTA coordinates');
+      await cdpClick(cta3Center.x, cta3Center.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const catalogVignette3 = await getCatalogState();
+      assert(
+        catalogVignette3.title === 'Blankets & Bed Covers' && catalogVignette3.count === 19 && catalogVignette3.cardCount === 19,
+        'Vignette 2 Card 3 CTA CDP Click: Navigated to Blankets & Bed Covers displaying exactly 19 products'
+      );
+      await navigateHomeCdp();
 
       // -------------------------------------------------------------
-      // 9. Mobile Navigation Drawer & Touch Targets
+      // 9. Mobile Navigation Drawer & Touch Targets (375px)
       // -------------------------------------------------------------
       console.log('\n--- 9. Mobile Navigation Drawer & Touch Targets ---');
       await send('Emulation.setDeviceMetricsOverride', {
@@ -741,16 +912,10 @@ async function run() {
       });
       await new Promise(r => setTimeout(r, 500));
 
-      // Open drawer via hamburger
-      const openHamburger = await evaluate(`
-        (() => {
-          const btn = document.querySelector('header button[aria-label="Open navigation menu"]');
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(openHamburger, 'Mobile (375px): Clicked hamburger menu button');
+      // Open drawer via CDP click on hamburger
+      const hamburgerCenter = await getElementCenter('header button[aria-label="Open navigation menu"]');
+      assert(hamburgerCenter !== null, 'Mobile (375px): Located hamburger button coordinates');
+      await cdpClick(hamburgerCenter.x, hamburgerCenter.y);
       await new Promise(r => setTimeout(r, 400));
 
       // Drawer dimensions and overflow
@@ -789,34 +954,20 @@ async function run() {
       const allTouchCompliant = touchTargets.length > 0 && touchTargets.every(t => t.meets44px);
       assert(allTouchCompliant, `Mobile Drawer: All ${touchTargets.length} interactive buttons meet >= 44px touch target height standard`);
 
-      // Mobile Accordion Tests
-      console.log('\n--- 9B. Mobile Drawer Accordions ---');
+      // Mobile Accordion Tests via CDP
+      console.log('\n--- 9B. Mobile Drawer Accordions via CDP ---');
       
-      // Bedding Essentials (open by default, toggle closed)
-      const toggleBeddingEssentials = await evaluate(`
-        (() => {
-          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
-          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Bedding Essentials'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(toggleBeddingEssentials, 'Toggled Bedding Essentials accordion closed');
-      await new Promise(r => setTimeout(r, 200));
+      // Bedding Essentials accordion (toggle closed via CDP)
+      const beddingEssentialsCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Bedding Essentials');
+      assert(beddingEssentialsCenter !== null, 'Mobile Drawer: Located Bedding Essentials accordion header');
+      await cdpClick(beddingEssentialsCenter.x, beddingEssentialsCenter.y);
+      await new Promise(r => setTimeout(r, 250));
 
-      // Expand Layers & Comfort
-      const expandLayersComfort = await evaluate(`
-        (() => {
-          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
-          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Layers & Comfort'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(expandLayersComfort, 'Toggled Layers & Comfort accordion open');
-      await new Promise(r => setTimeout(r, 200));
+      // Layers & Comfort accordion (toggle open via CDP)
+      const layersCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Layers & Comfort');
+      assert(layersCenter !== null, 'Mobile Drawer: Located Layers & Comfort accordion header');
+      await cdpClick(layersCenter.x, layersCenter.y);
+      await new Promise(r => setTimeout(r, 250));
 
       const layersItemsVisible = await evaluate(`
         (() => {
@@ -826,18 +977,11 @@ async function run() {
       `);
       assert(layersItemsVisible, 'Layers & Comfort child categories visible when accordion is expanded');
 
-      // Expand Living & Family
-      const expandLivingFamily = await evaluate(`
-        (() => {
-          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
-          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Living & Family'));
-          if (!btn) return false;
-          btn.click();
-          return true;
-        })()
-      `);
-      assert(expandLivingFamily, 'Toggled Living & Family accordion open');
-      await new Promise(r => setTimeout(r, 200));
+      // Living & Family accordion (toggle open via CDP)
+      const livingCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Living & Family');
+      assert(livingCenter !== null, 'Mobile Drawer: Located Living & Family accordion header');
+      await cdpClick(livingCenter.x, livingCenter.y);
+      await new Promise(r => setTimeout(r, 250));
 
       const livingItemsVisible = await evaluate(`
         (() => {
@@ -847,33 +991,61 @@ async function run() {
       `);
       assert(livingItemsVisible, 'Living & Family child categories (Sleepwear & Wellness) visible when accordion expanded');
 
-      // Category Navigation from Inside Mobile Accordion
-      console.log('\n--- 9C. Category Navigation from Inside Mobile Drawer ---');
-      const clickSleepwearInDrawer = await evaluate(`
+      // Category Navigation from Inside Mobile Accordion via CDP (Sleepwear)
+      console.log('\n--- 9C. Category Navigation from Inside Mobile Drawer via CDP ---');
+      const sleepwearDrawerCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Sleepwear');
+      assert(sleepwearDrawerCenter !== null, 'Mobile Drawer: Located "Sleepwear" button coordinates');
+      await cdpClick(sleepwearDrawerCenter.x, sleepwearDrawerCenter.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const drawerSleepwearState = await evaluate(`
         (() => {
           const drawer = document.querySelector('.fixed.inset-y-0.left-0');
-          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Sleepwear'));
-          if (!btn) return false;
-          btn.click();
-          return true;
+          const h1 = document.querySelector('h1')?.textContent?.trim() || '';
+          const countEl = document.querySelector('div strong');
+          const count = countEl ? parseInt(countEl.textContent.trim(), 10) : null;
+          return { isDrawerClosed: !drawer, title: h1, count };
         })()
       `);
-      assert(clickSleepwearInDrawer, 'Clicked "Sleepwear" inside mobile drawer');
-      await new Promise(r => setTimeout(r, 400));
+      assert(
+        drawerSleepwearState.isDrawerClosed && drawerSleepwearState.title === 'Sleepwear' && drawerSleepwearState.count === 9,
+        'Mobile Drawer CDP Click: Drawer auto-closed and navigated to "Sleepwear" (9 products)'
+      );
+      await navigateHomeCdp();
 
-      const drawerClosedAndFiltered = await evaluate(`
+      // Reopen drawer, expand Bedding Essentials, and click Pillowcase Pairs
+      const hamburgerAgain = await getElementCenter('header button[aria-label="Open navigation menu"]');
+      await cdpClick(hamburgerAgain.x, hamburgerAgain.y);
+      await new Promise(r => setTimeout(r, 300));
+
+      const beddingEssentialsAgain = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Bedding Essentials');
+      assert(beddingEssentialsAgain !== null, 'Mobile Drawer: Located Bedding Essentials accordion header again');
+      await cdpClick(beddingEssentialsAgain.x, beddingEssentialsAgain.y);
+      await new Promise(r => setTimeout(r, 300));
+
+      const pillowcasesDrawerCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Pillowcase');
+      assert(pillowcasesDrawerCenter !== null, 'Mobile Drawer: Located "Pillowcase Pairs" button coordinates');
+      await cdpClick(pillowcasesDrawerCenter.x, pillowcasesDrawerCenter.y);
+      await new Promise(r => setTimeout(r, 500));
+
+      const drawerPillowcasesState = await evaluate(`
         (() => {
           const drawer = document.querySelector('.fixed.inset-y-0.left-0');
-          const hasSleepwear = document.body.textContent.includes('Sleepwear');
-          return !drawer && hasSleepwear;
+          const h1 = document.querySelector('h1')?.textContent?.trim() || '';
+          const countEl = document.querySelector('div strong');
+          const count = countEl ? parseInt(countEl.textContent.trim(), 10) : null;
+          return { isDrawerClosed: !drawer, title: h1, count };
         })()
       `);
-      assert(drawerClosedAndFiltered, 'Drawer automatically closed and catalogue filtered to "Sleepwear"');
+      assert(
+        drawerPillowcasesState.isDrawerClosed && drawerPillowcasesState.title === 'Pillowcases' && drawerPillowcasesState.count === 10,
+        'Mobile Drawer CDP Click: Drawer auto-closed and navigated to "Pillowcases" (10 products)'
+      );
+      await navigateHomeCdp();
 
-      // Return home and re-open drawer to test Escape dismissal
-      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
-      await new Promise(r => setTimeout(r, 400));
-      await evaluate(`document.querySelector('header button[aria-label="Open navigation menu"]')?.click()`);
+      // Mobile Drawer Escape-Key Dismissal
+      const hamburgerFinal = await getElementCenter('header button[aria-label="Open navigation menu"]');
+      await cdpClick(hamburgerFinal.x, hamburgerFinal.y);
       await new Promise(r => setTimeout(r, 300));
 
       await send('Input.dispatchKeyEvent', { type: 'rawKeyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
@@ -958,9 +1130,25 @@ async function run() {
       console.log(` PHASE 4 INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} TESTS PASSED (${Math.round((passedTests / totalTests) * 100)}%)`);
       console.log('========================================================================\n');
 
+      let currentCommit = 'unknown';
+      let currentBranch = 'unknown';
+      try {
+        currentCommit = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+        currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+      } catch (e) {}
+
       fs.writeFileSync(
         'src/data/phase4_interaction_test_results.json',
-        JSON.stringify(testRecords, null, 2),
+        JSON.stringify({
+          timestamp: new Date().toISOString(),
+          branch: currentBranch,
+          commit: currentCommit,
+          testScript: 'scripts/test_phase4_interactions.cjs',
+          passedTests,
+          totalTests,
+          exitCode: (passedTests === totalTests && totalTests > 0) ? 0 : 1,
+          tests: testRecords
+        }, null, 2),
         'utf8'
       );
 

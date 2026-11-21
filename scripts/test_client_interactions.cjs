@@ -661,12 +661,23 @@ function cleanup(chromeProc) {
   console.log('========================================================================\n');
 
   // Save machine-readable test results
+  const { execSync } = require('child_process');
+  let currentCommit = 'unknown';
+  let currentBranch = 'unknown';
+  try {
+    currentCommit = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+    currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+  } catch (e) {}
+
   const interactionReportPath = 'src/data/client_interaction_test_results.json';
   fs.writeFileSync(interactionReportPath, JSON.stringify({
     timestamp: new Date().toISOString(),
-    commit: 'bba374d',
+    branch: currentBranch,
+    commit: currentCommit,
+    testScript: 'scripts/test_client_interactions.cjs',
     passedTests,
     totalTests,
+    exitCode: (passedTests === totalTests && totalTests > 0) ? 0 : 1,
     tests: testRecords
   }, null, 2));
 
