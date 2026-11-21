@@ -158,6 +158,12 @@ async function run() {
     const browserConsoleErrors = [];
     await send('Runtime.enable');
     await send('Page.enable');
+    await send('Emulation.setDeviceMetricsOverride', {
+      width: 1280,
+      height: 900,
+      deviceScaleFactor: 1,
+      mobile: false
+    });
 
     ws.addEventListener('message', (event) => {
       const data = JSON.parse(event.data);
@@ -205,32 +211,88 @@ async function run() {
       );
 
       // -------------------------------------------------------------
-      // 2. ProductCard Swatch Hover, Quick View Continuity & Pointer Navigation
+      // 2. ProductCard Swatch Hover, Quick View Continuity & CDP Pointer Navigation
       // -------------------------------------------------------------
-      console.log('\n--- 2. ProductCard Swatch Hover & Quick View Continuity ---');
+      console.log('\n--- 2. ProductCard Swatch Hover & Quick View Continuity (CDP Pointer Input) ---');
       const targetProduct = PRODUCTS.find(p => p.id === 'corduroy-quilt-cover-russet');
       assert(!!targetProduct, 'Located target product "Darcy Corduroy - Russet Quilt Cover" in catalogue');
 
-      // 2A: Hover over 'Olive' swatch WITHOUT clicking
+      // Helper function for authentic CDP pointer movements
+      async function moveCdpPointer(toX, toY, fromX = null, fromY = null, steps = 8) {
+        if (fromX !== null && fromY !== null) {
+          for (let i = 1; i <= steps; i++) {
+            const x = Math.round(fromX + (toX - fromX) * (i / steps));
+            const y = Math.round(fromY + (toY - fromY) * (i / steps));
+            await send('Input.dispatchMouseEvent', {
+              type: 'mouseMoved',
+              x,
+              y
+            });
+            await new Promise(r => setTimeout(r, 20));
+          }
+        } else {
+          await send('Input.dispatchMouseEvent', {
+            type: 'mouseMoved',
+            x: toX,
+            y: toY
+          });
+        }
+        await new Promise(r => setTimeout(r, 150));
+      }
+
+      // Helper function for authentic CDP pointer clicks
+      async function clickCdpPointer(x, y) {
+        await send('Input.dispatchMouseEvent', {
+          type: 'mousePressed',
+          button: 'left',
+          clickCount: 1,
+          x,
+          y
+        });
+        await new Promise(r => setTimeout(r, 60));
+        await send('Input.dispatchMouseEvent', {
+          type: 'mouseReleased',
+          button: 'left',
+          clickCount: 1,
+          x,
+          y
+        });
+      }
+
+      const cardSelector = `Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover'))`;
+
+      // Scroll target card into view and wait for layout to settle
+      await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          if (card) card.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 400));
+
+      // 2A: Move pointer onto 'Olive' swatch using CDP Input.dispatchMouseEvent (without clicking)
+      const oliveCoords = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          if (!card) return null;
+          const swatch = card.querySelector('button[title*="Olive"]');
+          if (!swatch) return null;
+          const r = swatch.getBoundingClientRect();
+          return { x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2) };
+        })()
+      `);
+      assert(!!oliveCoords, 'Computed viewport coordinates for Olive swatch');
+
+      // Move pointer onto Olive swatch via CDP
+      await moveCdpPointer(oliveCoords.x, oliveCoords.y, oliveCoords.x - 40, oliveCoords.y, 6);
+
       const hoverOliveResult = await evaluate(`
-        (async () => {
-          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
-            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
-          );
+        (() => {
+          const card = ${cardSelector};
           if (!card) return { error: 'Card not found' };
-
-          const oliveSwatch = card.querySelector('button[title*="Olive"]');
-          if (!oliveSwatch) return { error: 'Olive swatch button not found' };
-
-          // Dispatch mouseenter on Olive swatch
-          oliveSwatch.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
-          oliveSwatch.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
-          await new Promise(r => setTimeout(r, 200));
-
           const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
           const stageImg = card.querySelector('div[class*="aspect-"] img');
           const imgSrc = stageImg ? stageImg.src : '';
-
           return {
             detailText,
             imgSrc,
@@ -241,27 +303,31 @@ async function run() {
 
       assert(
         hoverOliveResult && hoverOliveResult.isOlive,
-        'Hovering Olive swatch previews "Olive" colourway detail without clicking',
+        'CDP pointer movement onto Olive swatch previews "Olive" colourway detail without clicking',
         'Olive in detail text',
         hoverOliveResult?.detailText
       );
 
-      // 2B: Move pointer from Olive swatch to Quick View button
+      // 2B: Move pointer from Olive swatch to Quick View button using CDP Input.dispatchMouseEvent
+      const qvCoords = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          if (!card) return null;
+          const qvBtn = card.querySelector('button[aria-label*="Quick view"]:not([class*="sm:hidden"])') || card.querySelector('button[aria-label*="Quick view"]');
+          if (!qvBtn) return null;
+          const r = qvBtn.getBoundingClientRect();
+          return { x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2) };
+        })()
+      `);
+      assert(!!qvCoords, 'Computed viewport coordinates for Quick View button');
+
+      // Move pointer from Olive swatch to Quick View button within card boundary
+      await moveCdpPointer(qvCoords.x, qvCoords.y, oliveCoords.x, oliveCoords.y, 8);
+
       const movePointerToQVResult = await evaluate(`
-        (async () => {
-          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
-            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
-          );
+        (() => {
+          const card = ${cardSelector};
           if (!card) return { error: 'Card not found' };
-
-          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
-          if (!qvBtn) return { error: 'Quick View button not found' };
-
-          // Move pointer to Quick View button (simulates pointer navigation)
-          qvBtn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
-          qvBtn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
-          await new Promise(r => setTimeout(r, 200));
-
           const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
           return {
             detailText,
@@ -272,24 +338,19 @@ async function run() {
 
       assert(
         movePointerToQVResult && movePointerToQVResult.stillOlive,
-        'Moving pointer to Quick View button maintains "Olive" preview (does NOT revert to Russet)',
+        'CDP pointer movement from swatch to Quick View button maintains "Olive" preview (does NOT revert to Russet)',
         'Olive preserved',
         movePointerToQVResult?.detailText
       );
 
-      // 2C: Click Quick View button and verify modal opens with Olive selected
-      const openQVOliveResult = await evaluate(`
-        (async () => {
-          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
-            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
-          );
-          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
-          qvBtn.click();
-          await new Promise(r => setTimeout(r, 1200));
+      // 2C: Click Quick View using actual CDP input and verify modal opens with Olive selected
+      await clickCdpPointer(qvCoords.x, qvCoords.y);
+      await new Promise(r => setTimeout(r, 1200));
 
+      const openQVOliveResult = await evaluate(`
+        (() => {
           const modal = document.querySelector('[role="dialog"]');
           if (!modal) return { error: 'Modal not opened' };
-
           const strongTags = Array.from(modal.querySelectorAll('strong'));
           const color = strongTags[0]?.textContent?.trim() || '';
           return { color };
@@ -298,7 +359,7 @@ async function run() {
 
       assert(
         openQVOliveResult && openQVOliveResult.color.toLowerCase() === 'olive',
-        'Clicking Quick View opened modal directly with hovered colourway "Olive"',
+        'CDP mouse click on Quick View button opened modal directly with hovered colourway "Olive"',
         'Olive',
         openQVOliveResult?.color
       );
@@ -312,41 +373,75 @@ async function run() {
       `);
       await new Promise(r => setTimeout(r, 600));
 
-      // 2D: Repeat hover & Quick View continuity with another colour: 'Hunter-green'
-      const repeatWithHunterResult = await evaluate(`
-        (async () => {
-          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
-            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
-          );
+      // 2D: Repeat CDP pointer movement & Quick View continuity with Hunter Green
+      const hgCoords = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          if (!card) return null;
           const hgSwatch = card.querySelector('button[title*="Hunter"]');
-          if (!hgSwatch) return { error: 'Hunter Green swatch not found' };
+          if (!hgSwatch) return null;
+          const r = hgSwatch.getBoundingClientRect();
+          return { x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2) };
+        })()
+      `);
+      assert(!!hgCoords, 'Computed viewport coordinates for Hunter Green swatch');
 
-          // Hover Hunter Green swatch
-          hgSwatch.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
-          hgSwatch.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
-          await new Promise(r => setTimeout(r, 200));
+      // Move pointer onto Hunter Green swatch via CDP
+      await moveCdpPointer(hgCoords.x, hgCoords.y, qvCoords.x, qvCoords.y, 8);
 
-          // Move pointer to Quick View
-          const qvBtn = card.querySelector('button[aria-label*="Quick view"]');
-          qvBtn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }));
-          qvBtn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true, cancelable: true }));
-          await new Promise(r => setTimeout(r, 200));
+      const hoverHgResult = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
+          return {
+            detailText,
+            isHunter: detailText.toLowerCase().includes('hunter')
+          };
+        })()
+      `);
+      assert(
+        hoverHgResult && hoverHgResult.isHunter,
+        'CDP pointer movement onto Hunter Green swatch previews "Hunter Green" without clicking',
+        'Hunter Green in detail text',
+        hoverHgResult?.detailText
+      );
 
-          // Click Quick View
-          qvBtn.click();
-          await new Promise(r => setTimeout(r, 1200));
+      // Move pointer from Hunter Green swatch to Quick View button via CDP
+      await moveCdpPointer(qvCoords.x, qvCoords.y, hgCoords.x, hgCoords.y, 8);
 
+      const movePointerToQVHgResult = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
+          return {
+            detailText,
+            stillHunter: detailText.toLowerCase().includes('hunter')
+          };
+        })()
+      `);
+      assert(
+        movePointerToQVHgResult && movePointerToQVHgResult.stillHunter,
+        'CDP pointer movement to Quick View button maintains "Hunter Green" preview',
+        'Hunter Green preserved',
+        movePointerToQVHgResult?.detailText
+      );
+
+      // Click Quick View via CDP
+      await clickCdpPointer(qvCoords.x, qvCoords.y);
+      await new Promise(r => setTimeout(r, 1200));
+
+      const repeatWithHunterResult = await evaluate(`
+        (() => {
           const modal = document.querySelector('[role="dialog"]');
           const strongTags = Array.from(modal.querySelectorAll('strong'));
           const color = strongTags[0]?.textContent?.trim() || '';
-
           return { color };
         })()
       `);
 
       assert(
         repeatWithHunterResult && repeatWithHunterResult.color.toLowerCase().includes('hunter'),
-        'Repeated hover & Quick View test: opened modal directly with "Hunter Green"',
+        'Repeated CDP hover & Quick View test: opened modal directly with "Hunter Green"',
         'Hunter-green',
         repeatWithHunterResult?.color
       );
@@ -361,24 +456,30 @@ async function run() {
       await new Promise(r => setTimeout(r, 600));
 
       // 2E: Verify clicking a swatch persistently selects that colour even after pointer leaves card
-      const persistentClickResult = await evaluate(`
-        (async () => {
-          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
-            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
-          );
+      const terraCoords = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
+          if (!card) return null;
           const terracottaSwatch = card.querySelector('button[title*="Terracotta"]');
-          if (!terracottaSwatch) return { error: 'Terracotta swatch not found' };
+          if (!terracottaSwatch) return null;
+          const r = terracottaSwatch.getBoundingClientRect();
+          return { x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2) };
+        })()
+      `);
+      assert(!!terraCoords, 'Computed viewport coordinates for Terracotta swatch');
 
-          // Click Terracotta swatch
-          terracottaSwatch.click();
-          await new Promise(r => setTimeout(r, 200));
+      // Click Terracotta swatch via CDP
+      await moveCdpPointer(terraCoords.x, terraCoords.y);
+      await clickCdpPointer(terraCoords.x, terraCoords.y);
+      await new Promise(r => setTimeout(r, 200));
 
-          // Dispatch mouseleave off the card
-          card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }));
-          card.dispatchEvent(new MouseEvent('pointerleave', { bubbles: true }));
-          card.dispatchEvent(new MouseEvent('mouseout', { bubbles: true, relatedTarget: document.body }));
-          await new Promise(r => setTimeout(r, 200));
+      // Move pointer off card to (0, 0) via CDP
+      await moveCdpPointer(0, 0, terraCoords.x, terraCoords.y, 8);
+      await new Promise(r => setTimeout(r, 200));
 
+      const persistentClickResult = await evaluate(`
+        (() => {
+          const card = ${cardSelector};
           const detailText = Array.from(card.querySelectorAll('p')).find(p => p.textContent && p.textContent.includes('·'))?.textContent?.trim() || '';
           return {
             detailText,
@@ -394,19 +495,17 @@ async function run() {
         persistentClickResult?.detailText
       );
 
-      // 2F: Verify mobile touch swatch selection & floating quick view tap
+      // 2F: Verify mobile touch swatch selection & floating quick view tap (synthetic DOM event simulation)
       const mobileInteractionResult = await evaluate(`
         (async () => {
-          const card = Array.from(document.querySelectorAll('div.group.flex.flex-col')).find(c => 
-            c.querySelector('h3')?.textContent?.includes('Darcy Corduroy - Russet Quilt Cover')
-          );
+          const card = ${cardSelector};
           const oliveSwatch = card.querySelector('button[title*="Olive"]');
           if (oliveSwatch) {
             oliveSwatch.click();
             await new Promise(r => setTimeout(r, 200));
           }
 
-          // Click mobile quick view button (sm:hidden)
+          // Click mobile quick view button (sm:hidden) via synthetic DOM click
           const mobileQvBtn = card.querySelector('button[class*="sm:hidden"]');
           if (mobileQvBtn) {
             mobileQvBtn.click();
@@ -423,7 +522,7 @@ async function run() {
 
       assert(
         mobileInteractionResult && mobileInteractionResult.color.toLowerCase() === 'olive',
-        'Mobile touch interaction: mobile Quick View tap opened modal with active colour "Olive"',
+        'Mobile viewport interaction: DOM synthetic event click on mobile Quick View button opened modal with active colour "Olive" (synthetic DOM event simulation; not physical touch digitizer input)',
         'Olive',
         mobileInteractionResult?.color
       );

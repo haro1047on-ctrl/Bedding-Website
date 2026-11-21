@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-21T07:09:01.958Z",
+  "timestamp": "2026-11-21T07:26:02.937Z",
   "branch": "feature/phase-3-product-variants-dynamic-pricing",
-  "passedTests": 29,
-  "totalTests": 29,
+  "passedTests": 35,
+  "totalTests": 35,
   "tests": [
     {
       "testNumber": 1,
@@ -20,188 +20,230 @@
     },
     {
       "testNumber": 3,
-      "name": "Hovering Olive swatch previews \"Olive\" colourway detail without clicking",
+      "name": "Computed viewport coordinates for Olive swatch",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 4,
+      "name": "CDP pointer movement onto Olive swatch previews \"Olive\" colourway detail without clicking",
       "status": "PASS",
       "expected": "Olive in detail text",
       "actual": "Olive · cotton"
     },
     {
-      "testNumber": 4,
-      "name": "Moving pointer to Quick View button maintains \"Olive\" preview (does NOT revert to Russet)",
+      "testNumber": 5,
+      "name": "Computed viewport coordinates for Quick View button",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 6,
+      "name": "CDP pointer movement from swatch to Quick View button maintains \"Olive\" preview (does NOT revert to Russet)",
       "status": "PASS",
       "expected": "Olive preserved",
       "actual": "Olive · cotton"
     },
     {
-      "testNumber": 5,
-      "name": "Clicking Quick View opened modal directly with hovered colourway \"Olive\"",
+      "testNumber": 7,
+      "name": "CDP mouse click on Quick View button opened modal directly with hovered colourway \"Olive\"",
       "status": "PASS",
       "expected": "Olive",
       "actual": "Olive"
     },
     {
-      "testNumber": 6,
-      "name": "Repeated hover & Quick View test: opened modal directly with \"Hunter Green\"",
+      "testNumber": 8,
+      "name": "Computed viewport coordinates for Hunter Green swatch",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 9,
+      "name": "CDP pointer movement onto Hunter Green swatch previews \"Hunter Green\" without clicking",
+      "status": "PASS",
+      "expected": "Hunter Green in detail text",
+      "actual": "Hunter-green · cotton"
+    },
+    {
+      "testNumber": 10,
+      "name": "CDP pointer movement to Quick View button maintains \"Hunter Green\" preview",
+      "status": "PASS",
+      "expected": "Hunter Green preserved",
+      "actual": "Hunter-green · cotton"
+    },
+    {
+      "testNumber": 11,
+      "name": "Repeated CDP hover & Quick View test: opened modal directly with \"Hunter Green\"",
       "status": "PASS",
       "expected": "Hunter-green",
       "actual": "Hunter-green"
     },
     {
-      "testNumber": 7,
+      "testNumber": 12,
+      "name": "Computed viewport coordinates for Terracotta swatch",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 13,
       "name": "Clicking a swatch persistently selects that colourway after pointer leaves card",
       "status": "PASS",
       "expected": "Terracotta",
       "actual": "Terracotta · cotton"
     },
     {
-      "testNumber": 8,
-      "name": "Mobile touch interaction: mobile Quick View tap opened modal with active colour \"Olive\"",
+      "testNumber": 14,
+      "name": "Mobile viewport interaction: DOM synthetic event click on mobile Quick View button opened modal with active colour \"Olive\" (synthetic DOM event simulation; not physical touch digitizer input)",
       "status": "PASS",
       "expected": "Olive",
       "actual": "Olive"
     },
     {
-      "testNumber": 9,
+      "testNumber": 15,
       "name": "Price header dynamically updated to Super King price (Rs. 30,000)",
       "status": "PASS",
       "expected": "Rs. 30,000",
       "actual": "Rs. 30,000"
     },
     {
-      "testNumber": 10,
+      "testNumber": 16,
       "name": "Add to Bag button dynamically displays updated variant price for Super King",
       "status": "PASS",
       "expected": "Add to Bag — Rs. 30,000",
       "actual": "Add to Bag — Rs. 30,000"
     },
     {
-      "testNumber": 11,
+      "testNumber": 17,
       "name": "Unavailable size \"Double\" is marked disabled={true}",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 12,
+      "testNumber": 18,
       "name": "Unavailable size \"Double\" chip displays \"Sold Out\" text",
       "status": "PASS",
       "expected": "Sold Out in Double chip",
       "actual": "true"
     },
     {
-      "testNumber": 13,
+      "testNumber": 19,
       "name": "Unavailable size \"King\" is marked disabled={true}",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 14,
+      "testNumber": 20,
       "name": "Available size \"Queen\" remains fully clickable (disabled=false)",
       "status": "PASS",
       "expected": "false",
       "actual": "false"
     },
     {
-      "testNumber": 15,
+      "testNumber": 21,
       "name": "Attempting to click disabled unavailable size \"Double\" does NOT change selection",
       "status": "PASS",
       "expected": "Super King (preserved)",
       "actual": "Super King"
     },
     {
-      "testNumber": 16,
+      "testNumber": 22,
       "name": "Switched to Russet and successfully selected \"Double\" size",
       "status": "PASS",
       "expected": "Russet, Double",
       "actual": "Russet, Double"
     },
     {
-      "testNumber": 17,
+      "testNumber": 23,
       "name": "Active colourway updated to \"Olive\"",
       "status": "PASS",
       "expected": "Olive",
       "actual": "Olive"
     },
     {
-      "testNumber": 18,
+      "testNumber": 24,
       "name": "Selected size was automatically reset from unavailable \"Double\" to first available size \"Queen\"",
       "status": "PASS",
       "expected": "Queen",
       "actual": "Queen"
     },
     {
-      "testNumber": 19,
+      "testNumber": 25,
       "name": "Notice banner displayed to user explaining size reset",
       "status": "PASS",
       "expected": "Double is sold out in Olive. Switched to Queen.",
       "actual": "\"Double\" is sold out in Olive. Switched to Queen."
     },
     {
-      "testNumber": 20,
+      "testNumber": 26,
       "name": "Selected quantity \"3\" was PRESERVED when switching colourway to Hunter Green",
       "status": "PASS",
       "expected": "3",
       "actual": "3"
     },
     {
-      "testNumber": 21,
+      "testNumber": 27,
       "name": "Add to Bag button reflects dynamic price multiplication (3 x Rs. 25,000 = Rs. 75,000)",
       "status": "PASS",
       "expected": "Rs. 75,000",
       "actual": "Add to Bag — Rs. 75,000"
     },
     {
-      "testNumber": 22,
+      "testNumber": 28,
       "name": "Added second variant (Hunter Green, Super King, Qty 1) to bag",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 23,
+      "testNumber": 29,
       "name": "CartDrawer contains 2 distinct line items for different size variants of the same product",
       "status": "PASS",
       "expected": "2 items",
       "actual": "2 items"
     },
     {
-      "testNumber": 24,
+      "testNumber": 30,
       "name": "Item 1 reflects Queen size at quantity 3 with Rs. 75,000 subtotal",
       "status": "PASS",
       "expected": "Queen, qty 3",
       "actual": "Hue: Hunter-green · Size: Queen, qty 3"
     },
     {
-      "testNumber": 25,
+      "testNumber": 31,
       "name": "Item 2 reflects Super King size at quantity 1 with Rs. 30,000 subtotal",
       "status": "PASS",
       "expected": "Super King, qty 1",
       "actual": "Hue: Hunter-green · Size: Super King, qty 1"
     },
     {
-      "testNumber": 26,
+      "testNumber": 32,
       "name": "Opened European Pillowcase product modal",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 27,
+      "testNumber": 33,
       "name": "Confirmed ZERO occurrences of raw \"Default Title\" in European pillowcase modal",
       "status": "PASS",
       "expected": "Zero Default Title",
       "actual": "false"
     },
     {
-      "testNumber": 28,
+      "testNumber": 34,
       "name": "Single-size product renders clean \"European (65x65cm)\" indicator instead of button grid",
       "status": "PASS",
       "expected": "European (65x65cm)",
       "actual": "European (65x65cm)"
     },
     {
-      "testNumber": 29,
+      "testNumber": 35,
       "name": "Confirmed ZERO React Hooks violations, runtime exceptions, or console errors",
       "status": "PASS",
       "expected": "0 errors",
