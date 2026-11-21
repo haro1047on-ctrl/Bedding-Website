@@ -71,12 +71,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     };
   }, []);
 
-  if (!isOpen || !product) return null;
-
-  // Dynamic price calculation based on variant selection
-  const currentUnitPrice = (product.variantPrices && product.variantPrices[selectedSize]) || product.price;
-
-  // Strict Colourway Image Resolution Rules:
+  // Strict Colourway Image Resolution Rules (Must execute unconditionally on EVERY render):
   // 1. Verified dedicated gallery: If selectedColor.gallery exists, is an array, and has non-empty URLs, use ONLY those images.
   // 2. Single verified image: If selectedColor.image exists and is a non-empty string, use ONLY that single image.
   // 3. Missing photography: Return empty array [], triggering the dedicated missing-image placeholder.
@@ -92,12 +87,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       return [selectedColor.image.trim()];
     }
     return [];
-  }, [selectedColor]);
+  }, [selectedColor?.gallery, selectedColor?.image]);
 
   // Safe image index bounded strictly by displayImages.length
   const safeImageIndex = displayImages.length > 0
     ? Math.min(Math.max(0, selectedImageIndex), displayImages.length - 1)
     : 0;
+
+  // Early return ONLY after ALL React hooks have executed unconditionally in consistent order
+  if (!isOpen || !product) return null;
+
+  // Dynamic price calculation based on variant selection
+  const currentUnitPrice = (product.variantPrices && product.variantPrices[selectedSize]) || product.price;
 
   const changeImage = (targetIndex: number) => {
     if (displayImages.length <= 1) return;

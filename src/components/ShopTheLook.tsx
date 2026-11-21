@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { BEDROOM_LOOKS } from '../data/mockData';
 import { Product, ColorVariant } from '../types';
-import { Sparkles, ArrowLeft, ArrowRight, Eye, X } from 'lucide-react';
+import { Sparkles, ArrowLeft, ArrowRight, Eye, X, ImageOff } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface ShopTheLookProps {
@@ -348,11 +348,21 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <img
-                        src={product.images[0]}
-                        alt={product.name}
-                        className="w-12 h-12 object-cover border border-sand-border rounded-sm"
-                      />
+                      {(() => {
+                        const primaryColor = product.colors?.[0];
+                        const primaryImg = (primaryColor?.gallery && primaryColor.gallery[0]) || primaryColor?.image || product.images[0];
+                        return primaryImg ? (
+                          <img
+                            src={primaryImg}
+                            alt={product.name}
+                            className="w-12 h-12 object-cover border border-sand-border rounded-sm flex-shrink-0"
+                          />
+                        ) : (
+                          <div className="w-12 h-12 bg-porcelain border border-sand-border rounded-sm flex items-center justify-center flex-shrink-0 text-umber/30">
+                            <ImageOff className="w-4 h-4" />
+                          </div>
+                        );
+                      })()}
                       <div>
                         <h4 
                           onClick={() => onSelectProduct(product)}

@@ -7057,7 +7057,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 72
+    "reviewsCount": 61
   },
   {
     "id": "quilt-medium-weight",
@@ -7207,7 +7207,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 79
+    "reviewsCount": 84
   },
   {
     "id": "pillow-low-soft",
@@ -7338,8 +7338,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 109
+    "rating": 4.9,
+    "reviewsCount": 91
   },
   {
     "id": "pillow-medium-firm",
@@ -7470,8 +7470,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 146
+    "rating": 4.9,
+    "reviewsCount": 101
   },
   {
     "id": "corn-quilt-light-weight",
@@ -7636,8 +7636,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 60
+    "rating": 4.8,
+    "reviewsCount": 45
   },
   {
     "id": "corn-quilt-medium-weight",
@@ -7802,8 +7802,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 47
+    "rating": 5,
+    "reviewsCount": 43
   },
   {
     "id": "corn-pillow-low-soft",
@@ -7911,7 +7911,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 118
+    "reviewsCount": 107
   },
   {
     "id": "corn-pillow-medium-firm",
@@ -8019,7 +8019,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 93
+    "reviewsCount": 68
   },
   {
     "id": "wool-quilt-medium-weight",
@@ -8168,8 +8168,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 127
+    "rating": 5,
+    "reviewsCount": 64
   },
   {
     "id": "wool-quilt-light-weight",
@@ -8319,7 +8319,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 131
+    "reviewsCount": 57
   },
   {
     "id": "wool-cot-quilt",
@@ -8405,8 +8405,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 132
+    "rating": 4.9,
+    "reviewsCount": 57
   },
   {
     "id": "mattress-protector",
@@ -8589,8 +8589,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 51
+    "rating": 4.8,
+    "reviewsCount": 131
   },
   {
     "id": "waterproof-mattress-protector",
@@ -8781,8 +8781,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 44
+    "rating": 4.8,
+    "reviewsCount": 85
   },
   {
     "id": "cool-mode-mattress-protector",
@@ -8933,8 +8933,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 64
+    "rating": 4.7,
+    "reviewsCount": 93
   },
   {
     "id": "pillow-protector",
@@ -9065,8 +9065,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 63
+    "rating": 4.8,
+    "reviewsCount": 140
   },
   {
     "id": "cool-mode-pillow-protector",
@@ -9165,8 +9165,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 56
+    "rating": 4.9,
+    "reviewsCount": 108
   },
   {
     "id": "wool-mattress-topper",
@@ -9382,7 +9382,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 104
+    "reviewsCount": 114
   },
   {
     "id": "feather-european-insert",
@@ -9452,8 +9452,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 142
+    "rating": 4.9,
+    "reviewsCount": 117
   },
   {
     "id": "feather-body-pillow-insert",
@@ -9555,8 +9555,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 124
+    "rating": 4.9,
+    "reviewsCount": 67
   },
   {
     "id": "body-pillow-protector",
@@ -9675,7 +9675,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 122
+    "reviewsCount": 90
   },
   {
     "id": "boucle-cotton-cushion-cover-pampas-stripe",
@@ -9683,8 +9683,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Pampas Stripe Boucle Square Cushion Cover (50x50)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Yellow",
-    "colorGroup": "Yellow",
+    "colorOrPrint": "Pampas Stripe",
+    "colorGroup": "Pampas Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -9714,7 +9714,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pampas Stripe Boucle Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Yellow"
+        "colorOrPrint": "Pampas Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Pampas_Stripe_Detail.jpg?v=1787122029",
@@ -9722,7 +9722,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pampas Stripe Boucle Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Yellow"
+        "colorOrPrint": "Pampas Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/PAMPAS-STRIPE-BOUCLE-CUSHION-STYLED.jpg?v=1787122029",
@@ -9730,7 +9730,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pampas Stripe Boucle Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Yellow"
+        "colorOrPrint": "Pampas Stripe"
       }
     ],
     "options": [
@@ -9744,7 +9744,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Yellow"
+          "Pampas Stripe"
         ]
       }
     ],
@@ -9755,7 +9755,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "50x50",
-        "colorOrPrint": "Yellow",
+        "colorOrPrint": "Pampas Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -9767,15 +9767,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Yellow",
+        "colorOrPrint": "Pampas Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 43
+    "rating": 4.8,
+    "reviewsCount": 64
   },
   {
     "id": "boucle-cotton-cushion-cover-midnight-rodeo-stripe",
@@ -9783,8 +9783,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Midnight Rodeo Boucle Square Cushion Cover (50x50)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Red",
-    "colorGroup": "Red",
+    "colorOrPrint": "Midnight Rodeo Stripe",
+    "colorGroup": "Midnight Rodeo Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -9814,7 +9814,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Midnight Rodeo Boucle Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Midnight Rodeo Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Midnight_Rodeo_Cushion.jpg?v=1783051602",
@@ -9822,7 +9822,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Midnight Rodeo Boucle Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Midnight Rodeo Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Midnight_Rodeo_Cushion_Detail.jpg?v=1783051602",
@@ -9830,7 +9830,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Midnight Rodeo Boucle Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Midnight Rodeo Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Midnight_Rodeo_Cushion_Styled.jpg?v=1783051602",
@@ -9838,7 +9838,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Midnight Rodeo Boucle Square Cushion Cover (50x50) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Midnight Rodeo Stripe"
       }
     ],
     "options": [
@@ -9852,7 +9852,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Red"
+          "Midnight Rodeo Stripe"
         ]
       }
     ],
@@ -9863,7 +9863,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "50x50",
-        "colorOrPrint": "Red",
+        "colorOrPrint": "Midnight Rodeo Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -9875,15 +9875,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Red",
+        "colorOrPrint": "Midnight Rodeo Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 23
+    "rating": 4.9,
+    "reviewsCount": 67
   },
   {
     "id": "boucle-cotton-cushion-cover-chocolate-stripe",
@@ -9891,8 +9891,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Chocolate Stripe Boucle Round Cushion Cover",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Chocolate Stripe",
+    "colorGroup": "Chocolate Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -9922,7 +9922,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Stripe Boucle Round Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_BOUCLE_CHOC_STRIPE_CUSHION_DETAIL.jpg?v=1772159952",
@@ -9930,7 +9930,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Stripe Boucle Round Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_BUNDLE_02_0ce9569a-a863-46ae-a099-6e305aa9464f.jpg?v=1772159952",
@@ -9938,7 +9938,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Stripe Boucle Round Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate Stripe"
       }
     ],
     "options": [
@@ -9952,7 +9952,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Chocolate Stripe"
         ]
       }
     ],
@@ -9963,7 +9963,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Round (40cm)",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "Round (40cm)",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Chocolate Stripe",
         "sourcePrice": 7250,
         "sourceCompareAtPrice": 9063,
         "demoPricePKR": 7250,
@@ -9975,7 +9975,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Chocolate Stripe",
         "sourcePrice": 10750,
         "sourceCompareAtPrice": 9063,
         "demoPricePKR": 10750,
@@ -9983,7 +9983,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 42
+    "reviewsCount": 46
   },
   {
     "id": "boucle-cotton-cushion-cover-olive-stripe",
@@ -9991,8 +9991,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Olive Stripe Boucle Square Cushion Cover (50x50)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Green",
-    "colorGroup": "Green",
+    "colorOrPrint": "Olive Stripe",
+    "colorGroup": "Olive Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10022,7 +10022,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Olive Stripe Boucle Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Olive Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_BOUCLE_OLIVE_STRIPE_CUSHION_DETAIL.jpg?v=1772153178",
@@ -10030,7 +10030,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Olive Stripe Boucle Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Olive Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_BUNDLE_01_5d231870-cdf9-44c8-a2f9-d01f870c5745.jpg?v=1772153177",
@@ -10038,7 +10038,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Olive Stripe Boucle Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Olive Stripe"
       }
     ],
     "options": [
@@ -10052,7 +10052,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Green"
+          "Olive Stripe"
         ]
       }
     ],
@@ -10063,7 +10063,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "50x50",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Olive Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -10075,15 +10075,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Olive Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 65
+    "rating": 4.8,
+    "reviewsCount": 53
   },
   {
     "id": "boucle-cotton-cushion-cover-bay-blue-stripe",
@@ -10091,8 +10091,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Bay Blue Stripe Boucle Round Cushion Cover",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Bay Blue Stripe",
+    "colorGroup": "Bay Blue Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10122,7 +10122,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Bay Blue Stripe Boucle Round Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Bay Blue Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_BAY_BLUE_STRIPE_ROUND_DETAIL.jpg?v=1758608088",
@@ -10130,7 +10130,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Bay Blue Stripe Boucle Round Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Bay Blue Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_03_8a80f60d-186d-4e79-94a6-68819b2b1034.jpg?v=1758608089",
@@ -10138,7 +10138,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Bay Blue Stripe Boucle Round Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Bay Blue Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_03_DETAIL_b97e57ef-664c-4194-a520-6a9fb8f7e7fb.jpg?v=1758608089",
@@ -10146,7 +10146,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Bay Blue Stripe Boucle Round Cushion Cover - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Bay Blue Stripe"
       }
     ],
     "options": [
@@ -10160,7 +10160,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Bay Blue Stripe"
         ]
       }
     ],
@@ -10171,7 +10171,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Round (40cm)",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "Round (40cm)",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Bay Blue Stripe",
         "sourcePrice": 6000,
         "sourceCompareAtPrice": 7500,
         "demoPricePKR": 6000,
@@ -10183,15 +10183,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Bay Blue Stripe",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 7500,
         "demoPricePKR": 9500,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 60
+    "rating": 4.8,
+    "reviewsCount": 54
   },
   {
     "id": "boucle-cotton-cushion-cover-pink-lotus-stripe",
@@ -10199,8 +10199,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Pink Lotus Stripe Boucle Round Cushion Cover",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Pink",
-    "colorGroup": "Pink",
+    "colorOrPrint": "Pink Lotus Stripe",
+    "colorGroup": "Pink Lotus Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10230,7 +10230,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pink Lotus Stripe Boucle Round Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Pink Lotus Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_PINK_LOTUS_STRIPE_ROUND_DETAIL.jpg?v=1758608088",
@@ -10238,7 +10238,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pink Lotus Stripe Boucle Round Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Pink Lotus Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_11283d63-e973-426d-8832-182155c7b45a.jpg?v=1758608088",
@@ -10246,7 +10246,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pink Lotus Stripe Boucle Round Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Pink Lotus Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_DETAIL_02_caaf6439-5faa-4833-9e6b-873cf1652fd4.jpg?v=1758608088",
@@ -10254,7 +10254,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Pink Lotus Stripe Boucle Round Cushion Cover - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Pink Lotus Stripe"
       }
     ],
     "options": [
@@ -10268,7 +10268,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Pink"
+          "Pink Lotus Stripe"
         ]
       }
     ],
@@ -10279,7 +10279,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Round (40cm)",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "Round (40cm)",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Pink Lotus Stripe",
         "sourcePrice": 6000,
         "sourceCompareAtPrice": 7500,
         "demoPricePKR": 6000,
@@ -10291,7 +10291,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Pink Lotus Stripe",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 7500,
         "demoPricePKR": 9500,
@@ -10299,7 +10299,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 42
+    "reviewsCount": 19
   },
   {
     "id": "boucle-cotton-cushion-cover-nutmeg-stripe",
@@ -10307,8 +10307,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Nutmeg Stripe Boucle Lumbar Cushion Cover (65x40)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Nutmeg Stripe",
+    "colorGroup": "Nutmeg Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10338,7 +10338,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Nutmeg Stripe Boucle Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Nutmeg Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_NUTMEG_STRIPE_DETAIL.jpg?v=1758608079",
@@ -10346,7 +10346,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Nutmeg Stripe Boucle Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Nutmeg Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_03_2c5579f7-303d-4e6e-96b7-a37ce984fc33.jpg?v=1758608079",
@@ -10354,7 +10354,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Nutmeg Stripe Boucle Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Nutmeg Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_03_DETAIL_86bd17f4-6a6a-4228-9437-a4609293fbca.jpg?v=1758608079",
@@ -10362,7 +10362,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Nutmeg Stripe Boucle Lumbar Cushion Cover (65x40) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Nutmeg Stripe"
       }
     ],
     "options": [
@@ -10376,7 +10376,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Nutmeg Stripe"
         ]
       }
     ],
@@ -10387,7 +10387,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "65x40",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Nutmeg Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -10399,15 +10399,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Nutmeg Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 35
+    "rating": 4.8,
+    "reviewsCount": 48
   },
   {
     "id": "boucle-cotton-cushion-cover-hunter-green-stripe",
@@ -10415,8 +10415,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Hunter Green Stripe Boucle Lumbar Cushion Cover (65x40)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Green",
-    "colorGroup": "Green",
+    "colorOrPrint": "Hunter Green Stripe",
+    "colorGroup": "Hunter Green Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10446,7 +10446,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Stripe Boucle Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_HUNTER_GREEN_STRIPE_DETAIL.jpg?v=1758608078",
@@ -10454,7 +10454,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Stripe Boucle Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_04_e1f15505-a56b-4dd6-8cd4-bdd08e7d6efe.jpg?v=1758608078",
@@ -10462,7 +10462,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Stripe Boucle Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_04_DETAIL_4479a84a-2f7d-4685-9900-290537a6f456.jpg?v=1758608078",
@@ -10470,7 +10470,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Stripe Boucle Lumbar Cushion Cover (65x40) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green Stripe"
       }
     ],
     "options": [
@@ -10484,7 +10484,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Green"
+          "Hunter Green Stripe"
         ]
       }
     ],
@@ -10495,7 +10495,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "65x40",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Hunter Green Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -10507,15 +10507,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Hunter Green Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 35
+    "rating": 4.8,
+    "reviewsCount": 41
   },
   {
     "id": "boucle-cotton-cushion-cover-terracotta-stripe",
@@ -10523,8 +10523,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Terracotta Stripe Boucle Square Cushion Cover (50x50)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Orange",
-    "colorGroup": "Orange",
+    "colorOrPrint": "Terracotta Stripe",
+    "colorGroup": "Terracotta Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10554,7 +10554,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Terracotta Stripe Boucle Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Orange"
+        "colorOrPrint": "Terracotta Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_TERRACOTTA_STRIPE_DETAIL_01.jpg?v=1758608081",
@@ -10562,7 +10562,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Terracotta Stripe Boucle Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Orange"
+        "colorOrPrint": "Terracotta Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_TERRACOTTA_STRIPE_DETAIL_02.jpg?v=1758608081",
@@ -10570,7 +10570,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Terracotta Stripe Boucle Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Orange"
+        "colorOrPrint": "Terracotta Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_02_ba1b1118-0904-4b24-84a4-34cf56678d62.jpg?v=1758608081",
@@ -10578,7 +10578,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Terracotta Stripe Boucle Square Cushion Cover (50x50) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Orange"
+        "colorOrPrint": "Terracotta Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_02_DETAIL_f485841b-7f8f-48ad-95d7-b2a4f52ce62d.jpg?v=1758608081",
@@ -10586,7 +10586,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Terracotta Stripe Boucle Square Cushion Cover (50x50) - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Orange"
+        "colorOrPrint": "Terracotta Stripe"
       }
     ],
     "options": [
@@ -10600,7 +10600,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Orange"
+          "Terracotta Stripe"
         ]
       }
     ],
@@ -10611,7 +10611,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "50x50",
-        "colorOrPrint": "Orange",
+        "colorOrPrint": "Terracotta Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -10623,7 +10623,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Orange",
+        "colorOrPrint": "Terracotta Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
@@ -10631,7 +10631,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 60
+    "reviewsCount": 40
   },
   {
     "id": "boucle-cotton-cushion-cover-burgundy-stripe",
@@ -10639,8 +10639,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Burgundy Stripe Boucle Square Cushion Cover (50x50)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Purple",
-    "colorGroup": "Purple",
+    "colorOrPrint": "Burgundy Stripe",
+    "colorGroup": "Burgundy Stripe",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -10670,7 +10670,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Stripe Boucle Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_BURGUNDY_STRIPE_DETAIL.jpg?v=1758608077",
@@ -10678,7 +10678,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Stripe Boucle Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_c94d83ab-615f-4116-aff2-ed99d8ea870a.jpg?v=1758608078",
@@ -10686,7 +10686,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Stripe Boucle Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_DETAIL_02_ef4fad33-4b88-4088-83dd-620084b3d02c.jpg?v=1758608078",
@@ -10694,7 +10694,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Stripe Boucle Square Cushion Cover (50x50) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy Stripe"
       }
     ],
     "options": [
@@ -10708,7 +10708,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Purple"
+          "Burgundy Stripe"
         ]
       }
     ],
@@ -10719,7 +10719,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-BOUCLE-COT-1",
         "size": "50x50",
-        "colorOrPrint": "Purple",
+        "colorOrPrint": "Burgundy Stripe",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -10731,7 +10731,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-BOUCLE-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Purple",
+        "colorOrPrint": "Burgundy Stripe",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
@@ -10739,7 +10739,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 30
+    "reviewsCount": 64
   },
   {
     "id": "rib-cushion-cover-plum",
@@ -10830,8 +10830,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 70
+    "rating": 4.9,
+    "reviewsCount": 40
   },
   {
     "id": "rib-cushion-cover-sky",
@@ -10839,8 +10839,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Sky Rib Square Cushion Cover (50x50)",
     "collectionName": "Darcy Corduroy",
     "productType": "Cushions",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Sky",
+    "colorGroup": "Sky",
     "fabric": "Darcy Corduroy",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium darcy corduroy with concealed zipper closures.",
     "features": [
@@ -10870,7 +10870,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Sky Rib Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Sky"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Sky_Detail.jpg?v=1787122026",
@@ -10878,7 +10878,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Sky Rib Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Sky"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Sky_Styled.jpg?v=1787122026",
@@ -10886,7 +10886,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Sky Rib Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Sky"
       }
     ],
     "options": [
@@ -10900,7 +10900,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Sky"
         ]
       }
     ],
@@ -10911,7 +10911,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-RIB-CUSHIO-1",
         "size": "50x50",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Sky",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -10923,15 +10923,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-RIB-CUSHIO-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Sky",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 50
+    "rating": 4.8,
+    "reviewsCount": 65
   },
   {
     "id": "rib-cushion-cover-warm-white",
@@ -10939,8 +10939,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Warm White Rib Lumbar Cushion Cover (65x40)",
     "collectionName": "Darcy Corduroy",
     "productType": "Cushions",
-    "colorOrPrint": "Neutral",
-    "colorGroup": "Neutral",
+    "colorOrPrint": "Warm White",
+    "colorGroup": "Warm White",
     "fabric": "Darcy Corduroy",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium darcy corduroy with concealed zipper closures.",
     "features": [
@@ -10970,7 +10970,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Rib Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_WARM_WHITE_BACK.jpg?v=1758586004",
@@ -10978,7 +10978,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Rib Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_WARM_WHITE_DETAIL.jpg?v=1758586003",
@@ -10986,7 +10986,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Rib Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01.jpg?v=1758586003",
@@ -10994,7 +10994,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Rib Lumbar Cushion Cover (65x40) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_DETAIL_02.jpg?v=1758586004",
@@ -11002,7 +11002,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Rib Lumbar Cushion Cover (65x40) - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       }
     ],
     "options": [
@@ -11016,7 +11016,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Neutral"
+          "Warm White"
         ]
       }
     ],
@@ -11027,7 +11027,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-RIB-CUSHIO-1",
         "size": "65x40",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White",
         "sourcePrice": 7250,
         "sourceCompareAtPrice": 9063,
         "demoPricePKR": 7250,
@@ -11039,7 +11039,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-RIB-CUSHIO-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White",
         "sourcePrice": 10750,
         "sourceCompareAtPrice": 9063,
         "demoPricePKR": 10750,
@@ -11047,7 +11047,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 39
+    "reviewsCount": 42
   },
   {
     "id": "rib-cushion-cover-hunter-green",
@@ -11055,8 +11055,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Hunter Green Rib Square Cushion Cover (50x50)",
     "collectionName": "Darcy Corduroy",
     "productType": "Cushions",
-    "colorOrPrint": "Green",
-    "colorGroup": "Green",
+    "colorOrPrint": "Hunter Green",
+    "colorGroup": "Hunter Green",
     "fabric": "Darcy Corduroy",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium darcy corduroy with concealed zipper closures.",
     "features": [
@@ -11086,7 +11086,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Rib Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_HUNTER_GREEN_BACK.jpg?v=1758586005",
@@ -11094,7 +11094,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Rib Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_HUNTER_GREEN_DETAIL.jpg?v=1758586005",
@@ -11102,7 +11102,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Rib Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_04.jpg?v=1758586005",
@@ -11110,7 +11110,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Rib Square Cushion Cover (50x50) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_04_DETAIL.jpg?v=1758586006",
@@ -11118,7 +11118,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Hunter Green Rib Square Cushion Cover (50x50) - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Hunter Green"
       }
     ],
     "options": [
@@ -11132,7 +11132,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Green"
+          "Hunter Green"
         ]
       }
     ],
@@ -11143,7 +11143,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-RIB-CUSHIO-1",
         "size": "50x50",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Hunter Green",
         "sourcePrice": 6000,
         "sourceCompareAtPrice": 7500,
         "demoPricePKR": 6000,
@@ -11155,15 +11155,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-RIB-CUSHIO-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Hunter Green",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 7500,
         "demoPricePKR": 9500,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 60
+    "rating": 5,
+    "reviewsCount": 54
   },
   {
     "id": "wool-boucle-cushion-cover-natural",
@@ -11171,8 +11171,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Natural Wool Boucle Lumbar Cushion Cover (65x40)",
     "collectionName": "Wonder Wool",
     "productType": "Cushions",
-    "colorOrPrint": "Beige",
-    "colorGroup": "Beige",
+    "colorOrPrint": "Natural",
+    "colorGroup": "Natural",
     "fabric": "Wonder Wool",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium wonder wool with concealed zipper closures.",
     "features": [
@@ -11202,7 +11202,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Natural Wool Boucle Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Beige"
+        "colorOrPrint": "Natural"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/NATURAL_WOOL_CUSHION_BACK.jpg?v=1772405719",
@@ -11210,7 +11210,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Natural Wool Boucle Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Beige"
+        "colorOrPrint": "Natural"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/NATURAL_WOOL_CUSHION_DETAIL.jpg?v=1772405719",
@@ -11218,7 +11218,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Natural Wool Boucle Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Beige"
+        "colorOrPrint": "Natural"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_BUNDLE_01.jpg?v=1772405719",
@@ -11226,7 +11226,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Natural Wool Boucle Lumbar Cushion Cover (65x40) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Beige"
+        "colorOrPrint": "Natural"
       }
     ],
     "options": [
@@ -11240,7 +11240,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Beige"
+          "Natural"
         ]
       }
     ],
@@ -11251,7 +11251,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-WOOL-BOUCL-1",
         "size": "65x40",
-        "colorOrPrint": "Beige",
+        "colorOrPrint": "Natural",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -11263,15 +11263,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-WOOL-BOUCL-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Beige",
+        "colorOrPrint": "Natural",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 48
+    "rating": 4.8,
+    "reviewsCount": 47
   },
   {
     "id": "wool-boucle-cushion-cover-chocolate",
@@ -11279,8 +11279,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Chocolate Wool Boucle Square Cushion Cover (50x50)",
     "collectionName": "Wonder Wool",
     "productType": "Cushions",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Chocolate",
+    "colorGroup": "Chocolate",
     "fabric": "Wonder Wool",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium wonder wool with concealed zipper closures.",
     "features": [
@@ -11310,7 +11310,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Wool Boucle Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CHOCOLATE_WOOL_CUSHION_BACK_V2.jpg?v=1771888511",
@@ -11318,7 +11318,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Wool Boucle Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CHOCOLATE_WOOL_CUSHION_DETAIL.jpg?v=1771888511",
@@ -11326,7 +11326,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Wool Boucle Square Cushion Cover (50x50) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_BUNDLE_02.jpg?v=1771888511",
@@ -11334,7 +11334,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Chocolate Wool Boucle Square Cushion Cover (50x50) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Chocolate"
       }
     ],
     "options": [
@@ -11348,7 +11348,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Chocolate"
         ]
       }
     ],
@@ -11359,7 +11359,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-WOOL-BOUCL-1",
         "size": "50x50",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Chocolate",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -11371,7 +11371,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-WOOL-BOUCL-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Chocolate",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
@@ -11379,7 +11379,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 46
+    "reviewsCount": 21
   },
   {
     "id": "velvet-cushion-cover-darcie-stripe",
@@ -11387,8 +11387,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Darcie Stripe Velvet Bolster Cushion Cover",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Darcie Stripe",
+    "colorGroup": "Darcie Stripe",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -11418,7 +11418,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Darcie Stripe Velvet Bolster Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Darcie Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Darcie-Stripe-Cushion-Detail.jpg?v=1788498219",
@@ -11426,7 +11426,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Darcie Stripe Velvet Bolster Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Darcie Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Darcie-Stripe-Cushion-Styled.jpg?v=1788498219",
@@ -11434,7 +11434,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Darcie Stripe Velvet Bolster Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Darcie Stripe"
       }
     ],
     "options": [
@@ -11448,7 +11448,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Darcie Stripe"
         ]
       }
     ],
@@ -11459,7 +11459,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bolster (20x60cm)",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "Bolster (20x60cm)",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Darcie Stripe",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -11471,7 +11471,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Darcie Stripe",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
@@ -11479,7 +11479,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 39
+    "reviewsCount": 49
   },
   {
     "id": "velvet-cushion-cover-rhodes",
@@ -11487,8 +11487,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Rhodes Velvet Bolster Cushion Cover",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Rhodes",
+    "colorGroup": "Rhodes",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -11518,7 +11518,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Rhodes Velvet Bolster Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Rhodes"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Rhodes_Detail.jpg?v=1787122026",
@@ -11526,7 +11526,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Rhodes Velvet Bolster Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Rhodes"
       }
     ],
     "options": [
@@ -11540,7 +11540,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Rhodes"
         ]
       }
     ],
@@ -11551,7 +11551,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bolster (20x60cm)",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "Bolster (20x60cm)",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Rhodes",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -11563,7 +11563,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Rhodes",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
@@ -11571,7 +11571,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 72
+    "reviewsCount": 41
   },
   {
     "id": "velvet-cushion-cover-diamond-ranch",
@@ -11579,8 +11579,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Diamond Ranch Round Cushion Cover",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Diamond Ranch",
+    "colorGroup": "Diamond Ranch",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -11610,7 +11610,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Diamond Ranch Round Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Diamond Ranch"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Diamond_Ranch_Round_Cushion_Detail.jpg?v=1783664250",
@@ -11618,7 +11618,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Diamond Ranch Round Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Diamond Ranch"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Rory_Washed_Cotton_Mahogany_Bed_Cover_05.jpg?v=1783664249",
@@ -11626,7 +11626,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Diamond Ranch Round Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Diamond Ranch"
       }
     ],
     "options": [
@@ -11640,7 +11640,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Diamond Ranch"
         ]
       }
     ],
@@ -11651,7 +11651,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Round (40cm)",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "Round (40cm)",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Diamond Ranch",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -11663,7 +11663,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Diamond Ranch",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
@@ -11671,7 +11671,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 45
+    "reviewsCount": 43
   },
   {
     "id": "velvet-cushion-cover-lovers-red",
@@ -11679,8 +11679,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Lovers Red Lumbar Cushion Cover (65x40)",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Red",
-    "colorGroup": "Red",
+    "colorOrPrint": "Lovers Red",
+    "colorGroup": "Lovers Red",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -11710,7 +11710,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lovers Red Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Lovers Red"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Rory_Washed_Cotton_Mahogany_Bed_Cover_04_d4996ee6-76b7-4a2c-a53d-df519879d5ec.jpg?v=1783466672",
@@ -11718,7 +11718,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lovers Red Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Lovers Red"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Homebody_Love_Is_Red_Cushion.jpg?v=1783466672",
@@ -11726,7 +11726,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lovers Red Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Lovers Red"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Lovers_Red_Velvet_Cushion_Detail.jpg?v=1783466672",
@@ -11734,7 +11734,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lovers Red Lumbar Cushion Cover (65x40) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Red"
+        "colorOrPrint": "Lovers Red"
       }
     ],
     "options": [
@@ -11748,7 +11748,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Red"
+          "Lovers Red"
         ]
       }
     ],
@@ -11759,7 +11759,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "65x40",
-        "colorOrPrint": "Red",
+        "colorOrPrint": "Lovers Red",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -11771,15 +11771,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Red",
+        "colorOrPrint": "Lovers Red",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 68
+    "rating": 4.8,
+    "reviewsCount": 64
   },
   {
     "id": "velvet-cushion-cover-juni",
@@ -11787,8 +11787,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Juni Velvet Lumbar Cushion Cover (65x40)",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Juni",
+    "colorGroup": "Juni",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -11818,7 +11818,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Juni Velvet Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Juni"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_TEXTURE_JUNI_CUSHION_DETAIL.jpg?v=1772159952",
@@ -11826,7 +11826,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Juni Velvet Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Juni"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_BUNDLE_02_fdc881ec-c904-4efb-bf8e-aafac3cfe595.jpg?v=1772159952",
@@ -11834,7 +11834,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Juni Velvet Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Juni"
       }
     ],
     "options": [
@@ -11848,7 +11848,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Juni"
         ]
       }
     ],
@@ -11859,7 +11859,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "65x40",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Juni",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -11871,7 +11871,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Juni",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
@@ -11879,7 +11879,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 44
+    "reviewsCount": 61
   },
   {
     "id": "velvet-cushion-cover-lui-stripe",
@@ -11887,8 +11887,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Lui Stripe Bolster Cushion Cover",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Lui Stripe",
+    "colorGroup": "Lui Stripe",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -11918,7 +11918,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lui Stripe Bolster Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Lui Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/LIU_STRIPE_BOLSTER_CUSHION_DETAIL.jpg?v=1772152968",
@@ -11926,7 +11926,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lui Stripe Bolster Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Lui Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_BUNDLE_01_c06c6dbf-f667-46fe-8939-8b3410423005.jpg?v=1772152968",
@@ -11934,7 +11934,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Lui Stripe Bolster Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Lui Stripe"
       }
     ],
     "options": [
@@ -11948,7 +11948,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Lui Stripe"
         ]
       }
     ],
@@ -11959,7 +11959,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bolster (20x60cm)",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "Bolster (20x60cm)",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Lui Stripe",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -11971,15 +11971,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Lui Stripe",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 29
+    "rating": 4.9,
+    "reviewsCount": 19
   },
   {
     "id": "velvet-cushion-cover-blair",
@@ -11987,8 +11987,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Blair Velvet Bolster Cushion Cover",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Multi",
-    "colorGroup": "Multi",
+    "colorOrPrint": "Blair",
+    "colorGroup": "Blair",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -12018,7 +12018,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Blair Velvet Bolster Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Multi"
+        "colorOrPrint": "Blair"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/DSCF3203_5.jpg?v=1760913212",
@@ -12026,7 +12026,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Blair Velvet Bolster Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Multi"
+        "colorOrPrint": "Blair"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/DSCF3185_2.jpg?v=1760913212",
@@ -12034,7 +12034,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Blair Velvet Bolster Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Multi"
+        "colorOrPrint": "Blair"
       }
     ],
     "options": [
@@ -12048,7 +12048,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Multi"
+          "Blair"
         ]
       }
     ],
@@ -12059,7 +12059,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bolster (20x60cm)",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "Bolster (20x60cm)",
-        "colorOrPrint": "Multi",
+        "colorOrPrint": "Blair",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -12071,15 +12071,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Multi",
+        "colorOrPrint": "Blair",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 19
+    "rating": 4.8,
+    "reviewsCount": 71
   },
   {
     "id": "velvet-cushion-cover-burgundy",
@@ -12087,8 +12087,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Burgundy Velvet Bolster Cushion Cover",
     "collectionName": "Velvet",
     "productType": "Cushions",
-    "colorOrPrint": "Purple",
-    "colorGroup": "Purple",
+    "colorOrPrint": "Burgundy",
+    "colorGroup": "Burgundy",
     "fabric": "Velvet",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium velvet with concealed zipper closures.",
     "features": [
@@ -12118,7 +12118,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Velvet Bolster Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_VELVET_BURGUNDY_BOLSTER_DETAIL.jpg?v=1758586017",
@@ -12126,7 +12126,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Velvet Bolster Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_a8ab0b7f-f1d2-4ebb-bd4c-b88cfb96de84.jpg?v=1758586017",
@@ -12134,7 +12134,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Velvet Bolster Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_01_DETAIL_02_e0080882-024d-4f3e-b4a8-95572e509e79.jpg?v=1758586016",
@@ -12142,7 +12142,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Burgundy Velvet Bolster Cushion Cover - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Purple"
+        "colorOrPrint": "Burgundy"
       }
     ],
     "options": [
@@ -12156,7 +12156,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Purple"
+          "Burgundy"
         ]
       }
     ],
@@ -12167,7 +12167,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bolster (20x60cm)",
         "sku": "MORFE-VELVET-CUS-1",
         "size": "Bolster (20x60cm)",
-        "colorOrPrint": "Purple",
+        "colorOrPrint": "Burgundy",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -12179,15 +12179,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-VELVET-CUS-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Purple",
+        "colorOrPrint": "Burgundy",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 55
+    "rating": 4.8,
+    "reviewsCount": 39
   },
   {
     "id": "wool-cushion-cover-peaches-gingham",
@@ -12195,8 +12195,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Morgan Wool - Peaches Gingham Lumbar Cushion Cover (65x40)",
     "collectionName": "Wonder Wool",
     "productType": "Cushions",
-    "colorOrPrint": "Pink",
-    "colorGroup": "Pink",
+    "colorOrPrint": "Peaches Gingham",
+    "colorGroup": "Peaches Gingham",
     "fabric": "Wonder Wool",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium wonder wool with concealed zipper closures.",
     "features": [
@@ -12226,7 +12226,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Morgan Wool - Peaches Gingham Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Peaches Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_PEACHES_CUSHION_DETAIL.jpg?v=1774394128",
@@ -12234,7 +12234,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Morgan Wool - Peaches Gingham Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Peaches Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_PEACHES_BLANKET_TEXTURE_b758887c-d6b4-4340-a930-c802018c986a.jpg?v=1774394128",
@@ -12242,7 +12242,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Morgan Wool - Peaches Gingham Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Peaches Gingham"
       }
     ],
     "options": [
@@ -12256,7 +12256,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Pink"
+          "Peaches Gingham"
         ]
       }
     ],
@@ -12267,7 +12267,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-WOOL-CUSHI-1",
         "size": "65x40",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Peaches Gingham",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -12279,15 +12279,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-WOOL-CUSHI-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Peaches Gingham",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 39
+    "rating": 4.8,
+    "reviewsCount": 30
   },
   {
     "id": "wool-cushion-cover-teddy-gingham",
@@ -12295,8 +12295,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Morgan Wool - Teddy Square Cushion Cover (50x50)",
     "collectionName": "Wonder Wool",
     "productType": "Cushions",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Teddy Gingham",
+    "colorGroup": "Teddy Gingham",
     "fabric": "Wonder Wool",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium wonder wool with concealed zipper closures.",
     "features": [
@@ -12326,7 +12326,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Morgan Wool - Teddy Square Cushion Cover (50x50) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Teddy Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_TEDDY_CUSHION_DETAIL_67f03166-4523-4a1c-a26b-3a8b9ef27a32.jpg?v=1774583910",
@@ -12334,7 +12334,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Morgan Wool - Teddy Square Cushion Cover (50x50) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Teddy Gingham"
       }
     ],
     "options": [
@@ -12348,7 +12348,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Teddy Gingham"
         ]
       }
     ],
@@ -12359,7 +12359,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-WOOL-CUSHI-1",
         "size": "50x50",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Teddy Gingham",
         "sourcePrice": 8250,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 8250,
@@ -12371,15 +12371,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-WOOL-CUSHI-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Teddy Gingham",
         "sourcePrice": 11750,
         "sourceCompareAtPrice": 10313,
         "demoPricePKR": 11750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 54
+    "rating": 4.8,
+    "reviewsCount": 37
   },
   {
     "id": "tufted-cotton-cushion-cover-warm-white-checkerboard",
@@ -12387,8 +12387,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Warm White Checkerboard Tufted Lumbar Cushion Cover (65x40)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Neutral",
-    "colorGroup": "Neutral",
+    "colorOrPrint": "Warm White Checkerboard",
+    "colorGroup": "Warm White Checkerboard",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -12418,7 +12418,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Checkerboard Tufted Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White Checkerboard"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_TUFFTED_WARM_WHITE_CHECKER_DETAIL.jpg?v=1758608090",
@@ -12426,7 +12426,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Checkerboard Tufted Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White Checkerboard"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_05_abcf76ea-53d9-458b-972a-cb8603d8bbb7.jpg?v=1758608090",
@@ -12434,7 +12434,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Checkerboard Tufted Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White Checkerboard"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CUSHION_STACK_05_DETAIL_2ffb7d5c-1994-4e21-aaec-3de367be2092.jpg?v=1758608090",
@@ -12442,7 +12442,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Warm White Checkerboard Tufted Lumbar Cushion Cover (65x40) - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White Checkerboard"
       }
     ],
     "options": [
@@ -12456,7 +12456,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Neutral"
+          "Warm White Checkerboard"
         ]
       }
     ],
@@ -12467,7 +12467,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-TUFTED-COT-1",
         "size": "65x40",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White Checkerboard",
         "sourcePrice": 7250,
         "sourceCompareAtPrice": 9063,
         "demoPricePKR": 7250,
@@ -12479,15 +12479,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-TUFTED-COT-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White Checkerboard",
         "sourcePrice": 10750,
         "sourceCompareAtPrice": 9063,
         "demoPricePKR": 10750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 47
+    "rating": 4.8,
+    "reviewsCount": 61
   },
   {
     "id": "cotton-jacquard-cushion-cover-evie-spot",
@@ -12495,8 +12495,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Homebody - Evie Spot Cotton Jacquard Lumbar Cushion Cover (65x40)",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Warm-white",
-    "colorGroup": "Warm-white",
+    "colorOrPrint": "Evie Spot",
+    "colorGroup": "Evie Spot",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -12526,7 +12526,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Evie Spot Cotton Jacquard Lumbar Cushion Cover (65x40) - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Warm-white"
+        "colorOrPrint": "Evie Spot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Evie-Spot-Cushion-Detail_94764592-b86a-4ec4-803d-b9e83e5b109f.jpg?v=1788481072",
@@ -12534,7 +12534,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Evie Spot Cotton Jacquard Lumbar Cushion Cover (65x40) - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Warm-white"
+        "colorOrPrint": "Evie Spot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Evie-Spot-Cushion-Styled_05bd1d04-ba82-4962-9358-b15aaacda7f1.jpg?v=1788481072",
@@ -12542,7 +12542,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Homebody - Evie Spot Cotton Jacquard Lumbar Cushion Cover (65x40) - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Warm-white"
+        "colorOrPrint": "Evie Spot"
       }
     ],
     "options": [
@@ -12556,7 +12556,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Warm-white"
+          "Evie Spot"
         ]
       }
     ],
@@ -12567,7 +12567,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "65x40",
         "sku": "MORFE-COTTON-JAC-1",
         "size": "65x40",
-        "colorOrPrint": "Warm-white",
+        "colorOrPrint": "Evie Spot",
         "sourcePrice": 9500,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 9500,
@@ -12579,7 +12579,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-COTTON-JAC-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Warm-white",
+        "colorOrPrint": "Evie Spot",
         "sourcePrice": 13000,
         "sourceCompareAtPrice": 11875,
         "demoPricePKR": 13000,
@@ -12587,7 +12587,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 60
+    "reviewsCount": 30
   },
   {
     "id": "textured-cotton-cushion-cover-astrid",
@@ -12595,8 +12595,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Charlie Cotton - Astrid Cushion",
     "collectionName": "Bouclé Cotton",
     "productType": "Cushions",
-    "colorOrPrint": "Pink",
-    "colorGroup": "Pink",
+    "colorOrPrint": "Astrid",
+    "colorGroup": "Astrid",
     "fabric": "Bouclé Cotton",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium bouclé cotton with concealed zipper closures.",
     "features": [
@@ -12626,7 +12626,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Charlie Cotton - Astrid Cushion - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Astrid"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Charlie_Cotton_Astrid_Cushion_Styled.jpg?v=1749788574",
@@ -12634,7 +12634,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Charlie Cotton - Astrid Cushion - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Astrid"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Charlie_Cotton_Astrid_Cushion_Detail.jpg?v=1749788574",
@@ -12642,7 +12642,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Charlie Cotton - Astrid Cushion - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Astrid"
       }
     ],
     "options": [
@@ -12656,7 +12656,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Pink"
+          "Astrid"
         ]
       }
     ],
@@ -12667,7 +12667,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-TEXTURED-C-1",
         "size": "50x50",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Astrid",
         "sourcePrice": 6750,
         "sourceCompareAtPrice": 8438,
         "demoPricePKR": 6750,
@@ -12679,15 +12679,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-TEXTURED-C-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Astrid",
         "sourcePrice": 10250,
         "sourceCompareAtPrice": 8438,
         "demoPricePKR": 10250,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 35
+    "rating": 4.9,
+    "reviewsCount": 60
   },
   {
     "id": "linen-cushion-cover-zahra",
@@ -12695,8 +12695,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Eve Linen - Zahra Cushion",
     "collectionName": "Eve Linen",
     "productType": "Cushions",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Zahra",
+    "colorGroup": "Zahra",
     "fabric": "Eve Linen",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium eve linen with concealed zipper closures.",
     "features": [
@@ -12726,7 +12726,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Zahra Cushion - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Zahra"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Eve_Linen_Zahra_Cushion_Styled.jpg?v=1749788566",
@@ -12734,7 +12734,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Zahra Cushion - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Zahra"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Eve_Linen_Zahra_Cushion_Detail.jpg?v=1749788566",
@@ -12742,7 +12742,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Zahra Cushion - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Zahra"
       }
     ],
     "options": [
@@ -12756,7 +12756,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Zahra"
         ]
       }
     ],
@@ -12767,7 +12767,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-LINEN-CUSH-1",
         "size": "50x50",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Zahra",
         "sourcePrice": 6750,
         "sourceCompareAtPrice": 8438,
         "demoPricePKR": 6750,
@@ -12779,15 +12779,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-LINEN-CUSH-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Zahra",
         "sourcePrice": 10250,
         "sourceCompareAtPrice": 8438,
         "demoPricePKR": 10250,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 55
+    "rating": 5,
+    "reviewsCount": 65
   },
   {
     "id": "linen-cushion-cover-bennett-stripe",
@@ -12795,8 +12795,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Eve Linen - Bennett Stripe Cushion Cover",
     "collectionName": "Eve Linen",
     "productType": "Cushions",
-    "colorOrPrint": "Bennett stripe",
-    "colorGroup": "Bennett stripe",
+    "colorOrPrint": "Bennett Stripe",
+    "colorGroup": "Bennett Stripe",
     "fabric": "Eve Linen",
     "description": "Tactile luxury designed to bring visual warmth and sculptural dimension to your bed styling. Crafted from premium eve linen with concealed zipper closures.",
     "features": [
@@ -12826,7 +12826,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Bennett Stripe Cushion Cover - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Bennett stripe"
+        "colorOrPrint": "Bennett Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Bennet_Stripe_Cushion.jpg?v=1741751972",
@@ -12834,7 +12834,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Bennett Stripe Cushion Cover - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Bennett stripe"
+        "colorOrPrint": "Bennett Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Bennett_Stripe_Cushion_Detail.jpg?v=1741751972",
@@ -12842,7 +12842,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Bennett Stripe Cushion Cover - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Bennett stripe"
+        "colorOrPrint": "Bennett Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/EVE_BENNET_CUSHION_STYLED.jpg?v=1722216783",
@@ -12850,7 +12850,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Eve Linen - Bennett Stripe Cushion Cover - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Bennett stripe"
+        "colorOrPrint": "Bennett Stripe"
       }
     ],
     "options": [
@@ -12864,7 +12864,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Bennett stripe"
+          "Bennett Stripe"
         ]
       }
     ],
@@ -12875,7 +12875,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50x50",
         "sku": "MORFE-LINEN-CUSH-1",
         "size": "50x50",
-        "colorOrPrint": "Bennett stripe",
+        "colorOrPrint": "Bennett Stripe",
         "sourcePrice": 6750,
         "sourceCompareAtPrice": 8438,
         "demoPricePKR": 6750,
@@ -12887,15 +12887,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "With Feather Insert",
         "sku": "MORFE-LINEN-CUSH-2",
         "size": "With Feather Insert",
-        "colorOrPrint": "Bennett stripe",
+        "colorOrPrint": "Bennett Stripe",
         "sourcePrice": 10250,
         "sourceCompareAtPrice": 8438,
         "demoPricePKR": 10250,
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 55
+    "rating": 4.9,
+    "reviewsCount": 35
   },
   {
     "id": "washed-cotton-blanket-sage",
@@ -12979,7 +12979,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 41
+    "reviewsCount": 78
   },
   {
     "id": "rory-washed-cotton-blanket-oatmeal-marle",
@@ -13062,8 +13062,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 77
+    "rating": 5,
+    "reviewsCount": 41
   },
   {
     "id": "washed-cotton-blanket-midnight",
@@ -13146,8 +13146,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 49
+    "rating": 4.9,
+    "reviewsCount": 34
   },
   {
     "id": "washed-cotton-blanket-blush",
@@ -13230,8 +13230,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 62
+    "rating": 5,
+    "reviewsCount": 35
   },
   {
     "id": "rory-washed-cotton-blanket-mabel-gingham",
@@ -13315,7 +13315,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 32
+    "reviewsCount": 82
   },
   {
     "id": "rory-washed-cotton-blanket-lola-print",
@@ -13398,8 +13398,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 40
+    "rating": 5,
+    "reviewsCount": 71
   },
   {
     "id": "rory-washed-cotton-blanket-levi-stripe",
@@ -13482,8 +13482,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 83
+    "rating": 4.8,
+    "reviewsCount": 47
   },
   {
     "id": "rory-washed-cotton-blanket-bay-blue",
@@ -13566,8 +13566,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 79
+    "rating": 4.7,
+    "reviewsCount": 83
   },
   {
     "id": "rory-washed-cotton-blanket-valerie-print",
@@ -13651,7 +13651,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.7,
-    "reviewsCount": 32
+    "reviewsCount": 73
   },
   {
     "id": "flannelette-blanket-tilly",
@@ -13734,8 +13734,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 34
+    "rating": 5,
+    "reviewsCount": 35
   },
   {
     "id": "wool-blanket-peaches-gingham",
@@ -13818,8 +13818,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 44
+    "rating": 4.9,
+    "reviewsCount": 29
   },
   {
     "id": "rory-washed-cotton-blanket-harper-polka-dot",
@@ -13902,8 +13902,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 63
+    "rating": 4.8,
+    "reviewsCount": 41
   },
   {
     "id": "wool-blanket-teddy-gingham",
@@ -13986,8 +13986,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.7,
-    "reviewsCount": 49
+    "rating": 5,
+    "reviewsCount": 41
   },
   {
     "id": "cotton-bath-sheet-warm-white",
@@ -13995,8 +13995,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Tommy Cotton - Warm White Bath Sheet",
     "collectionName": "Tommy 600 GSM Cotton",
     "productType": "Bath & Towels",
-    "colorOrPrint": "Neutral",
-    "colorGroup": "Neutral",
+    "colorOrPrint": "Warm White",
+    "colorGroup": "Warm White",
     "fabric": "Tommy 600 GSM Cotton",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest tommy 600 gsm cotton to elevate your daily sanctuary.",
     "features": [
@@ -14026,7 +14026,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Warm_White_Detail_1080x.jpg?v=1787103462",
@@ -14034,7 +14034,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Warm_White_Texture_1080x.jpg?v=1726194205",
@@ -14042,7 +14042,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Mustard_Styled_1080x.jpg?v=1726194463",
@@ -14050,7 +14050,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Warm_White_Styled_1080x.jpg?v=1726194196",
@@ -14058,7 +14058,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Warm_White_Bath_Stack_1080x.jpg?v=1726194208",
@@ -14066,7 +14066,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Set_Warm_White_Styled_1080x.jpg?v=1726194207",
@@ -14074,7 +14074,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Warm White Bath Sheet - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       }
     ],
     "options": [
@@ -14087,7 +14087,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Neutral"
+          "Warm White"
         ]
       }
     ],
@@ -14098,15 +14098,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bath Sheet (90x165cm)",
         "sku": "MORFE-COTTON-BAT-1",
         "size": "Bath Sheet (90x165cm)",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White",
         "sourcePrice": 8750,
         "sourceCompareAtPrice": 10938,
         "demoPricePKR": 8750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 81
+    "rating": 5,
+    "reviewsCount": 95
   },
   {
     "id": "cotton-bath-sheet-jimmy-stripe",
@@ -14114,8 +14114,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Tommy Cotton - Jimmy Stripe Bath Sheet",
     "collectionName": "Tommy 600 GSM Cotton",
     "productType": "Bath & Towels",
-    "colorOrPrint": "Blue",
-    "colorGroup": "Blue",
+    "colorOrPrint": "Jimmy Stripe",
+    "colorGroup": "Jimmy Stripe",
     "fabric": "Tommy 600 GSM Cotton",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest tommy 600 gsm cotton to elevate your daily sanctuary.",
     "features": [
@@ -14145,7 +14145,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Jimmy Stripe Bath Sheet - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Jimmy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_JIMMY_STRIPE_BATH_SHEET_5162d639-64f8-49a3-b966-a654cd4144d4_1080x.jpg?v=1774583802",
@@ -14153,7 +14153,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Jimmy Stripe Bath Sheet - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Jimmy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_JIMMY_STRIPE_LOOP_DETAIL_1080x.jpg?v=1774583802",
@@ -14161,7 +14161,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Jimmy Stripe Bath Sheet - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Jimmy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_JIMMY_STRIPE_BATH_STACK_d12647ad-b66a-429e-b6e6-ce0ce5506032_1080x.jpg?v=1774583801",
@@ -14169,7 +14169,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Jimmy Stripe Bath Sheet - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Jimmy Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_JIMMY_STRIPE_TEXTURE_1080x.jpg?v=1774583802",
@@ -14177,7 +14177,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Jimmy Stripe Bath Sheet - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Blue"
+        "colorOrPrint": "Jimmy Stripe"
       }
     ],
     "options": [
@@ -14190,7 +14190,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Blue"
+          "Jimmy Stripe"
         ]
       }
     ],
@@ -14201,15 +14201,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bath Sheet (90x165cm)",
         "sku": "MORFE-COTTON-BAT-1",
         "size": "Bath Sheet (90x165cm)",
-        "colorOrPrint": "Blue",
+        "colorOrPrint": "Jimmy Stripe",
         "sourcePrice": 7500,
         "sourceCompareAtPrice": 9375,
         "demoPricePKR": 7500,
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 88
+    "rating": 4.9,
+    "reviewsCount": 100
   },
   {
     "id": "cotton-bath-sheet-bambi-stripe",
@@ -14217,8 +14217,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Tommy Cotton - Bambi Stripe Bath Sheet",
     "collectionName": "Tommy 600 GSM Cotton",
     "productType": "Bath & Towels",
-    "colorOrPrint": "Pink",
-    "colorGroup": "Pink",
+    "colorOrPrint": "Bambi Stripe",
+    "colorGroup": "Bambi Stripe",
     "fabric": "Tommy 600 GSM Cotton",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest tommy 600 gsm cotton to elevate your daily sanctuary.",
     "features": [
@@ -14248,7 +14248,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Detail_1080x.jpg?v=1786686827",
@@ -14256,7 +14256,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Stripe_Styled_1080x.jpg?v=1738275277",
@@ -14264,7 +14264,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Stripe_Bath_Sheet_1080x.jpg?v=1738275277",
@@ -14272,7 +14272,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Stripe_Bath_Sheet_2_1080x.jpg?v=1738275277",
@@ -14280,7 +14280,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Stripe_Styled_Set_1080x.jpg?v=1738275276",
@@ -14288,7 +14288,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Stripe_Texture_V2_1080x.jpg?v=1738275277",
@@ -14296,7 +14296,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Stripe_Bath_Set_V2_1080x.jpg?v=1738275276",
@@ -14304,7 +14304,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Bambi Stripe Bath Sheet - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Pink"
+        "colorOrPrint": "Bambi Stripe"
       }
     ],
     "options": [
@@ -14317,7 +14317,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Pink"
+          "Bambi Stripe"
         ]
       }
     ],
@@ -14328,15 +14328,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bath Sheet (90x165cm)",
         "sku": "MORFE-COTTON-BAT-1",
         "size": "Bath Sheet (90x165cm)",
-        "colorOrPrint": "Pink",
+        "colorOrPrint": "Bambi Stripe",
         "sourcePrice": 10000,
         "sourceCompareAtPrice": 12500,
         "demoPricePKR": 10000,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 97
+    "rating": 4.8,
+    "reviewsCount": 71
   },
   {
     "id": "cotton-towels-sage",
@@ -14344,8 +14344,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Tommy Cotton - Sage Towels",
     "collectionName": "Tommy 600 GSM Cotton",
     "productType": "Bath & Towels",
-    "colorOrPrint": "Green",
-    "colorGroup": "Green",
+    "colorOrPrint": "Sage",
+    "colorGroup": "Sage",
     "fabric": "Tommy 600 GSM Cotton",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest tommy 600 gsm cotton to elevate your daily sanctuary.",
     "features": [
@@ -14375,7 +14375,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Sage_Bath_Sheet_1080x.jpg?v=1787103476",
@@ -14383,7 +14383,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Sage_Hand_Towel_1080x.jpg?v=1787103471",
@@ -14391,7 +14391,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Sage_Detail_1080x.jpg?v=1787103471",
@@ -14399,7 +14399,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Hand_Towel_Sage_Styled_1080x.jpg?v=1726193639",
@@ -14407,7 +14407,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Face_Towel_Sage_1080x.jpg?v=1726193628",
@@ -14415,7 +14415,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_SAGE_BATHMAT_1080x.jpg?v=1787103478",
@@ -14423,7 +14423,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Sage_Texture_1080x.jpg?v=1726193640",
@@ -14431,7 +14431,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Set_Sage_1080x.jpg?v=1726193638",
@@ -14439,7 +14439,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 9",
         "role": "gallery",
         "position": 9,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Mat_Sage_Styled_1080x.jpg?v=1726193634",
@@ -14447,7 +14447,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 10",
         "role": "gallery",
         "position": 10,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Sage_Styled_1080x.jpg?v=1726193631",
@@ -14455,7 +14455,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Sage Towels - View 11",
         "role": "gallery",
         "position": 11,
-        "colorOrPrint": "Green"
+        "colorOrPrint": "Sage"
       }
     ],
     "options": [
@@ -14469,7 +14469,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Green"
+          "Sage"
         ]
       }
     ],
@@ -14480,7 +14480,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "4-Piece Set",
         "sku": "MORFE-COTTON-TOW-1",
         "size": "4-Piece Set",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Sage",
         "sourcePrice": 3750,
         "sourceCompareAtPrice": 4688,
         "demoPricePKR": 3750,
@@ -14492,15 +14492,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "6-Piece Luxury Suite",
         "sku": "MORFE-COTTON-TOW-2",
         "size": "6-Piece Luxury Suite",
-        "colorOrPrint": "Green",
+        "colorOrPrint": "Sage",
         "sourcePrice": 9750,
         "sourceCompareAtPrice": 4688,
         "demoPricePKR": 9750,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 60
+    "rating": 4.9,
+    "reviewsCount": 45
   },
   {
     "id": "cotton-bath-mat-charcoal",
@@ -14508,8 +14508,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Tommy Cotton - Charcoal Bath Mat",
     "collectionName": "Tommy 600 GSM Cotton",
     "productType": "Bath & Towels",
-    "colorOrPrint": "Black",
-    "colorGroup": "Black",
+    "colorOrPrint": "Charcoal",
+    "colorGroup": "Charcoal",
     "fabric": "Tommy 600 GSM Cotton",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest tommy 600 gsm cotton to elevate your daily sanctuary.",
     "features": [
@@ -14539,7 +14539,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Charcoal Bath Mat - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Black"
+        "colorOrPrint": "Charcoal"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Charcoal_Texture_1080x.jpg?v=1726191161",
@@ -14547,7 +14547,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Charcoal Bath Mat - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Black"
+        "colorOrPrint": "Charcoal"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Mat_Charcoal_Styled_02_1080x.jpg?v=1726191166",
@@ -14555,7 +14555,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Charcoal Bath Mat - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Black"
+        "colorOrPrint": "Charcoal"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Mat_Charcoal_Styled_1080x.jpg?v=1726191184",
@@ -14563,7 +14563,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Charcoal Bath Mat - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Black"
+        "colorOrPrint": "Charcoal"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Charcoal_Bath_Stack_1080x.jpg?v=1726191212",
@@ -14571,7 +14571,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Charcoal Bath Mat - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Black"
+        "colorOrPrint": "Charcoal"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Set_Charcoal_Styled_1080x.jpg?v=1726191212",
@@ -14579,7 +14579,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Charcoal Bath Mat - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Black"
+        "colorOrPrint": "Charcoal"
       }
     ],
     "options": [
@@ -14592,7 +14592,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Black"
+          "Charcoal"
         ]
       }
     ],
@@ -14603,15 +14603,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Bath Mat (50x80cm)",
         "sku": "MORFE-COTTON-BAT-1",
         "size": "Bath Mat (50x80cm)",
-        "colorOrPrint": "Black",
+        "colorOrPrint": "Charcoal",
         "sourcePrice": 5500,
         "sourceCompareAtPrice": 6875,
         "demoPricePKR": 5500,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 79
+    "rating": 4.9,
+    "reviewsCount": 76
   },
   {
     "id": "cotton-towels-biscuit",
@@ -14619,8 +14619,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Tommy Cotton - Biscuit Towels",
     "collectionName": "Tommy 600 GSM Cotton",
     "productType": "Bath & Towels",
-    "colorOrPrint": "Brown",
-    "colorGroup": "Brown",
+    "colorOrPrint": "Biscuit",
+    "colorGroup": "Biscuit",
     "fabric": "Tommy 600 GSM Cotton",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest tommy 600 gsm cotton to elevate your daily sanctuary.",
     "features": [
@@ -14650,7 +14650,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Biscuit_Bath_Sheet_1080x.jpg?v=1786687247",
@@ -14658,7 +14658,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Biscuit_Detail_1080x.jpg?v=1786687292",
@@ -14666,7 +14666,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Biscuit_Hand_Towel_1080x.jpg?v=1786687246",
@@ -14674,7 +14674,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Hand_Towel_Biscuit_Styled_1080x.jpg?v=1726190067",
@@ -14682,7 +14682,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Face_Towel_Biscuit_1080x.jpg?v=1726122629",
@@ -14690,7 +14690,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_BISCUIT_BATHMAT_1080x.jpg?v=1786687247",
@@ -14698,7 +14698,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Set_Biscuit_Styled_f0edf365-2f6e-460e-92df-83dea7411481_1080x.jpg?v=1726190108",
@@ -14706,7 +14706,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Mat_Biscuit_Texture_0e2dbbbc-cb83-440e-ae20-e677d3d7695d_1080x.jpg?v=1726190058",
@@ -14714,7 +14714,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 9",
         "role": "gallery",
         "position": 9,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bath_Sheet_Biscuit_Styled_1080x.jpg?v=1726122541",
@@ -14722,7 +14722,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Tommy Cotton - Biscuit Towels - View 10",
         "role": "gallery",
         "position": 10,
-        "colorOrPrint": "Brown"
+        "colorOrPrint": "Biscuit"
       }
     ],
     "options": [
@@ -14736,7 +14736,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Brown"
+          "Biscuit"
         ]
       }
     ],
@@ -14747,7 +14747,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "4-Piece Set",
         "sku": "MORFE-COTTON-TOW-1",
         "size": "4-Piece Set",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Biscuit",
         "sourcePrice": 3750,
         "sourceCompareAtPrice": 4688,
         "demoPricePKR": 3750,
@@ -14759,15 +14759,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "6-Piece Luxury Suite",
         "sku": "MORFE-COTTON-TOW-2",
         "size": "6-Piece Luxury Suite",
-        "colorOrPrint": "Brown",
+        "colorOrPrint": "Biscuit",
         "sourcePrice": 9750,
         "sourceCompareAtPrice": 4688,
         "demoPricePKR": 9750,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 56
+    "rating": 5,
+    "reviewsCount": 77
   },
   {
     "id": "cloudknit-jersey-riley-pant-cloud-grey",
@@ -14775,8 +14775,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Cloud Grey - Jersey Riley Pant",
     "collectionName": "Cloudknit Jersey",
     "productType": "Sleepwear",
-    "colorOrPrint": "Cloud-grey",
-    "colorGroup": "Cloud-grey",
+    "colorOrPrint": "Cloud Grey",
+    "colorGroup": "Cloud Grey",
     "fabric": "Cloudknit Jersey",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest cloudknit jersey to elevate your daily sanctuary.",
     "features": [
@@ -14806,7 +14806,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/PDP-IMAGES_STYLING-SUITE_1600x2000px_09_1080x.jpg?v=1771815351",
@@ -14814,7 +14814,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02_JERSEY_CLOUD_RILEY_PANT_1080x.jpg?v=1764816743",
@@ -14822,7 +14822,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/03_JERSEY_CLOUD_RILEY_PANT_1080x.jpg?v=1764816743",
@@ -14830,7 +14830,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04_JERSEY_CLOUD_RILEY_PANT_1080x.jpg?v=1764816743",
@@ -14838,7 +14838,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/UGC_1600x2000px_fe4bb97f-6fc4-4530-8709-f609ab5a81af_1080x.jpg?v=1782958020",
@@ -14846,7 +14846,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/GHOST_JERSEY_CLOUD_RILEY_PANT_1080x.jpg?v=1771815351",
@@ -14854,7 +14854,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Cloud Grey - Jersey Riley Pant - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Cloud-grey"
+        "colorOrPrint": "Cloud Grey"
       }
     ],
     "options": [
@@ -14871,7 +14871,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Cloud-grey"
+          "Cloud Grey"
         ]
       }
     ],
@@ -14882,7 +14882,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-CLOUDKNIT--1",
         "size": "XS",
-        "colorOrPrint": "Cloud-grey",
+        "colorOrPrint": "Cloud Grey",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -14894,7 +14894,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-CLOUDKNIT--2",
         "size": "S",
-        "colorOrPrint": "Cloud-grey",
+        "colorOrPrint": "Cloud Grey",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -14906,7 +14906,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-CLOUDKNIT--3",
         "size": "M",
-        "colorOrPrint": "Cloud-grey",
+        "colorOrPrint": "Cloud Grey",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -14918,7 +14918,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-CLOUDKNIT--4",
         "size": "L",
-        "colorOrPrint": "Cloud-grey",
+        "colorOrPrint": "Cloud Grey",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -14930,7 +14930,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-CLOUDKNIT--5",
         "size": "XL",
-        "colorOrPrint": "Cloud-grey",
+        "colorOrPrint": "Cloud Grey",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -14938,7 +14938,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 98
+    "reviewsCount": 49
   },
   {
     "id": "cloudknit-jersey-riley-pant-burgundy",
@@ -15116,8 +15116,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 63
+    "rating": 4.9,
+    "reviewsCount": 79
   },
   {
     "id": "cloudknit-jersey-riley-pant-camilla-stripe",
@@ -15125,8 +15125,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Camilla Stripe - Jersey Riley Pant",
     "collectionName": "Cloudknit Jersey",
     "productType": "Sleepwear",
-    "colorOrPrint": "Camilla-stripe",
-    "colorGroup": "Camilla-stripe",
+    "colorOrPrint": "Camilla Stripe",
+    "colorGroup": "Camilla Stripe",
     "fabric": "Cloudknit Jersey",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest cloudknit jersey to elevate your daily sanctuary.",
     "features": [
@@ -15156,7 +15156,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
@@ -15164,7 +15164,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
@@ -15172,7 +15172,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/05-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
@@ -15180,7 +15180,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/06-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
@@ -15188,7 +15188,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/07-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
@@ -15196,7 +15196,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/GHOST-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
@@ -15204,7 +15204,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Camilla Stripe - Jersey Riley Pant - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Camilla-stripe"
+        "colorOrPrint": "Camilla Stripe"
       }
     ],
     "options": [
@@ -15221,7 +15221,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Camilla-stripe"
+          "Camilla Stripe"
         ]
       }
     ],
@@ -15232,7 +15232,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-CLOUDKNIT--1",
         "size": "XS",
-        "colorOrPrint": "Camilla-stripe",
+        "colorOrPrint": "Camilla Stripe",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -15244,7 +15244,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-CLOUDKNIT--2",
         "size": "S",
-        "colorOrPrint": "Camilla-stripe",
+        "colorOrPrint": "Camilla Stripe",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -15256,7 +15256,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-CLOUDKNIT--3",
         "size": "M",
-        "colorOrPrint": "Camilla-stripe",
+        "colorOrPrint": "Camilla Stripe",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -15268,7 +15268,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-CLOUDKNIT--4",
         "size": "L",
-        "colorOrPrint": "Camilla-stripe",
+        "colorOrPrint": "Camilla Stripe",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -15280,7 +15280,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-CLOUDKNIT--5",
         "size": "XL",
-        "colorOrPrint": "Camilla-stripe",
+        "colorOrPrint": "Camilla Stripe",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -15288,7 +15288,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 44
+    "reviewsCount": 55
   },
   {
     "id": "cloudknit-jersey-riley-pant-cherry",
@@ -15467,7 +15467,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 97
+    "reviewsCount": 109
   },
   {
     "id": "cloudknit-jersey-riley-mini-short-sundown-stripe",
@@ -15475,8 +15475,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sundown Stripe - Riley Short",
     "collectionName": "Cloudknit Jersey",
     "productType": "Sleepwear",
-    "colorOrPrint": "Sundown-stripe",
-    "colorGroup": "Sundown-stripe",
+    "colorOrPrint": "Sundown Stripe",
+    "colorGroup": "Sundown Stripe",
     "fabric": "Cloudknit Jersey",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest cloudknit jersey to elevate your daily sanctuary.",
     "features": [
@@ -15506,7 +15506,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02_JERSEY_SUNDOWN_RILEY_SHORT_1080x.jpg?v=1764817402",
@@ -15514,7 +15514,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/03_JERSEY_SUNDOWN_RILEY_SHORT_1080x.jpg?v=1764817401",
@@ -15522,7 +15522,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04_JERSEY_SUNDOWN_RILEY_SHORT_1080x.jpg?v=1764817402",
@@ -15530,7 +15530,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/05_JERSEY_SUNDOWN_RILEY_SHORT_1080x.jpg?v=1764817402",
@@ -15538,7 +15538,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/UGC_SundownStripe_1_a3e34c9c-0f33-45a5-b2c0-f55410443a42_1080x.jpg?v=1793324374",
@@ -15546,7 +15546,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/GHOST_JERSEY_SUNDOWN_RILEY_SHORT_1080x.jpg?v=1764817476",
@@ -15554,7 +15554,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sundown Stripe - Riley Short - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Sundown-stripe"
+        "colorOrPrint": "Sundown Stripe"
       }
     ],
     "options": [
@@ -15571,7 +15571,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Sundown-stripe"
+          "Sundown Stripe"
         ]
       }
     ],
@@ -15582,7 +15582,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-CLOUDKNIT--1",
         "size": "XS",
-        "colorOrPrint": "Sundown-stripe",
+        "colorOrPrint": "Sundown Stripe",
         "sourcePrice": 6250,
         "sourceCompareAtPrice": 7813,
         "demoPricePKR": 6250,
@@ -15594,7 +15594,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-CLOUDKNIT--2",
         "size": "S",
-        "colorOrPrint": "Sundown-stripe",
+        "colorOrPrint": "Sundown Stripe",
         "sourcePrice": 6250,
         "sourceCompareAtPrice": 7813,
         "demoPricePKR": 6250,
@@ -15606,7 +15606,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-CLOUDKNIT--3",
         "size": "M",
-        "colorOrPrint": "Sundown-stripe",
+        "colorOrPrint": "Sundown Stripe",
         "sourcePrice": 6250,
         "sourceCompareAtPrice": 7813,
         "demoPricePKR": 6250,
@@ -15618,7 +15618,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-CLOUDKNIT--4",
         "size": "L",
-        "colorOrPrint": "Sundown-stripe",
+        "colorOrPrint": "Sundown Stripe",
         "sourcePrice": 6250,
         "sourceCompareAtPrice": 7813,
         "demoPricePKR": 6250,
@@ -15630,7 +15630,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-CLOUDKNIT--5",
         "size": "XL",
-        "colorOrPrint": "Sundown-stripe",
+        "colorOrPrint": "Sundown Stripe",
         "sourcePrice": 6250,
         "sourceCompareAtPrice": 7813,
         "demoPricePKR": 6250,
@@ -15638,7 +15638,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 81
+    "reviewsCount": 66
   },
   {
     "id": "cloudknit-jersey-riley-mini-short-bella-stripe",
@@ -15646,8 +15646,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Bella Stripe - Jersey Mini Short",
     "collectionName": "Cloudknit Jersey",
     "productType": "Sleepwear",
-    "colorOrPrint": "Bella-stripe",
-    "colorGroup": "Bella-stripe",
+    "colorOrPrint": "Bella Stripe",
+    "colorGroup": "Bella Stripe",
     "fabric": "Cloudknit Jersey",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest cloudknit jersey to elevate your daily sanctuary.",
     "features": [
@@ -15677,7 +15677,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15685,7 +15685,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/03-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15693,7 +15693,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15701,7 +15701,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/05-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15709,7 +15709,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/06-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15717,7 +15717,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/07-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15725,7 +15725,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/08-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15733,7 +15733,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/GHOST-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
@@ -15741,7 +15741,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Bella Stripe - Jersey Mini Short - View 9",
         "role": "gallery",
         "position": 9,
-        "colorOrPrint": "Bella-stripe"
+        "colorOrPrint": "Bella Stripe"
       }
     ],
     "options": [
@@ -15758,7 +15758,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Bella-stripe"
+          "Bella Stripe"
         ]
       }
     ],
@@ -15769,7 +15769,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-CLOUDKNIT--1",
         "size": "XS",
-        "colorOrPrint": "Bella-stripe",
+        "colorOrPrint": "Bella Stripe",
         "sourcePrice": 11250,
         "sourceCompareAtPrice": 14063,
         "demoPricePKR": 11250,
@@ -15781,7 +15781,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-CLOUDKNIT--2",
         "size": "S",
-        "colorOrPrint": "Bella-stripe",
+        "colorOrPrint": "Bella Stripe",
         "sourcePrice": 11250,
         "sourceCompareAtPrice": 14063,
         "demoPricePKR": 11250,
@@ -15793,7 +15793,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-CLOUDKNIT--3",
         "size": "M",
-        "colorOrPrint": "Bella-stripe",
+        "colorOrPrint": "Bella Stripe",
         "sourcePrice": 11250,
         "sourceCompareAtPrice": 14063,
         "demoPricePKR": 11250,
@@ -15805,7 +15805,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-CLOUDKNIT--4",
         "size": "L",
-        "colorOrPrint": "Bella-stripe",
+        "colorOrPrint": "Bella Stripe",
         "sourcePrice": 11250,
         "sourceCompareAtPrice": 14063,
         "demoPricePKR": 11250,
@@ -15817,15 +15817,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-CLOUDKNIT--5",
         "size": "XL",
-        "colorOrPrint": "Bella-stripe",
+        "colorOrPrint": "Bella Stripe",
         "sourcePrice": 11250,
         "sourceCompareAtPrice": 14063,
         "demoPricePKR": 11250,
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 65
+    "rating": 4.9,
+    "reviewsCount": 34
   },
   {
     "id": "soft-woven-cotton-kit-pant-rue-gingham",
@@ -15833,8 +15833,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Rue Gingham - Cotton Kit Pant",
     "collectionName": "Cloudknit Jersey",
     "productType": "Sleepwear",
-    "colorOrPrint": "Rue-gingham",
-    "colorGroup": "Rue-gingham",
+    "colorOrPrint": "Rue Gingham",
+    "colorGroup": "Rue Gingham",
     "fabric": "Cloudknit Jersey",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest cloudknit jersey to elevate your daily sanctuary.",
     "features": [
@@ -15864,7 +15864,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502226",
@@ -15872,7 +15872,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/03_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502225",
@@ -15880,7 +15880,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502225",
@@ -15888,7 +15888,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CAMILLA-TOP_1600x2000px-1_1080x.jpg?v=1779332145",
@@ -15896,7 +15896,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/05_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502226",
@@ -15904,7 +15904,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/06_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502226",
@@ -15912,7 +15912,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/07_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502225",
@@ -15920,7 +15920,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/08_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502225",
@@ -15928,7 +15928,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 9",
         "role": "gallery",
         "position": 9,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Ghost_Cotton_Rue_Kit-Pant_1080x.jpg?v=1772502226",
@@ -15936,7 +15936,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Rue Gingham - Cotton Kit Pant - View 10",
         "role": "gallery",
         "position": 10,
-        "colorOrPrint": "Rue-gingham"
+        "colorOrPrint": "Rue Gingham"
       }
     ],
     "options": [
@@ -15953,7 +15953,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Rue-gingham"
+          "Rue Gingham"
         ]
       }
     ],
@@ -15964,7 +15964,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-SOFT-WOVEN-1",
         "size": "XS",
-        "colorOrPrint": "Rue-gingham",
+        "colorOrPrint": "Rue Gingham",
         "sourcePrice": 17250,
         "sourceCompareAtPrice": 21563,
         "demoPricePKR": 17250,
@@ -15976,7 +15976,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-SOFT-WOVEN-2",
         "size": "S",
-        "colorOrPrint": "Rue-gingham",
+        "colorOrPrint": "Rue Gingham",
         "sourcePrice": 17250,
         "sourceCompareAtPrice": 21563,
         "demoPricePKR": 17250,
@@ -15988,7 +15988,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-SOFT-WOVEN-3",
         "size": "M",
-        "colorOrPrint": "Rue-gingham",
+        "colorOrPrint": "Rue Gingham",
         "sourcePrice": 17250,
         "sourceCompareAtPrice": 21563,
         "demoPricePKR": 17250,
@@ -16000,7 +16000,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-SOFT-WOVEN-4",
         "size": "L",
-        "colorOrPrint": "Rue-gingham",
+        "colorOrPrint": "Rue Gingham",
         "sourcePrice": 17250,
         "sourceCompareAtPrice": 21563,
         "demoPricePKR": 17250,
@@ -16012,15 +16012,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-SOFT-WOVEN-5",
         "size": "XL",
-        "colorOrPrint": "Rue-gingham",
+        "colorOrPrint": "Rue Gingham",
         "sourcePrice": 17250,
         "sourceCompareAtPrice": 21563,
         "demoPricePKR": 17250,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 82
+    "rating": 4.8,
+    "reviewsCount": 52
   },
   {
     "id": "double-brushed-flannelette-lennox-pant-mason-gingham",
@@ -16028,8 +16028,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Mason Gingham - Flannelette Lennox Pant",
     "collectionName": "Frankie Flannelette",
     "productType": "Sleepwear",
-    "colorOrPrint": "Mason-gingham",
-    "colorGroup": "Mason-gingham",
+    "colorOrPrint": "Mason Gingham",
+    "colorGroup": "Mason Gingham",
     "fabric": "Frankie Flannelette",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest frankie flannelette to elevate your daily sanctuary.",
     "features": [
@@ -16059,7 +16059,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02-FLANNELETTE-MASON-LENNOX-PANT_1080x.jpg?v=1773800454",
@@ -16067,7 +16067,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/03-FLANNELETTE-MASON-LENNOX-PANT_2_1080x.jpg?v=1781160743",
@@ -16075,7 +16075,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04-FLANNELETTE-MASON-LENNOX-PANT_800daa36-333b-4ac7-94fa-34d641e50952_1080x.jpg?v=1773800455",
@@ -16083,7 +16083,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/05-FLANNELETTE-MASON-LENNOX-PANT_f8bb986c-5995-4496-9134-e29d79580fe4_1080x.jpg?v=1773800455",
@@ -16091,7 +16091,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/06-FLANNELETTE-MASON-LENNOX-PANT_1080x.jpg?v=1773800454",
@@ -16099,7 +16099,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/07-FLANNELETTE-MASON-LENNOX-PANT_1080x.jpg?v=1773800455",
@@ -16107,7 +16107,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/08-FLANNELETTE-MASON-LENNOX-PANT_587355de-eb32-42f3-9692-9c8caa5f7d28_1080x.jpg?v=1773800455",
@@ -16115,7 +16115,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/GHOST-FLANNELETTE-MASON-LENNOX-PANT_d29729bc-c878-43c6-8dad-7af98380a59e_1080x.jpg?v=1773800455",
@@ -16123,7 +16123,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Mason Gingham - Flannelette Lennox Pant - View 9",
         "role": "gallery",
         "position": 9,
-        "colorOrPrint": "Mason-gingham"
+        "colorOrPrint": "Mason Gingham"
       }
     ],
     "options": [
@@ -16140,7 +16140,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Mason-gingham"
+          "Mason Gingham"
         ]
       }
     ],
@@ -16151,7 +16151,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-DOUBLE-BRU-1",
         "size": "XS",
-        "colorOrPrint": "Mason-gingham",
+        "colorOrPrint": "Mason Gingham",
         "sourcePrice": 8500,
         "sourceCompareAtPrice": 10625,
         "demoPricePKR": 8500,
@@ -16163,7 +16163,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-DOUBLE-BRU-2",
         "size": "S",
-        "colorOrPrint": "Mason-gingham",
+        "colorOrPrint": "Mason Gingham",
         "sourcePrice": 8500,
         "sourceCompareAtPrice": 10625,
         "demoPricePKR": 8500,
@@ -16175,7 +16175,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-DOUBLE-BRU-3",
         "size": "M",
-        "colorOrPrint": "Mason-gingham",
+        "colorOrPrint": "Mason Gingham",
         "sourcePrice": 8500,
         "sourceCompareAtPrice": 10625,
         "demoPricePKR": 8500,
@@ -16187,7 +16187,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-DOUBLE-BRU-4",
         "size": "L",
-        "colorOrPrint": "Mason-gingham",
+        "colorOrPrint": "Mason Gingham",
         "sourcePrice": 8500,
         "sourceCompareAtPrice": 10625,
         "demoPricePKR": 8500,
@@ -16199,15 +16199,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-DOUBLE-BRU-5",
         "size": "XL",
-        "colorOrPrint": "Mason-gingham",
+        "colorOrPrint": "Mason Gingham",
         "sourcePrice": 8500,
         "sourceCompareAtPrice": 10625,
         "demoPricePKR": 8500,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 74
+    "rating": 5,
+    "reviewsCount": 93
   },
   {
     "id": "pointelle-scout-pant-nora-polka-dot",
@@ -16215,8 +16215,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Nora Polka Dot - Pointelle Scout Pant",
     "collectionName": "Cloudknit Jersey",
     "productType": "Sleepwear",
-    "colorOrPrint": "Nora-polka-dot",
-    "colorGroup": "Nora-polka-dot",
+    "colorOrPrint": "Nora Polka Dot",
+    "colorGroup": "Nora Polka Dot",
     "fabric": "Cloudknit Jersey",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest cloudknit jersey to elevate your daily sanctuary.",
     "features": [
@@ -16246,7 +16246,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/UGC_1600x2000px-5_1080x.jpg?v=1782957941",
@@ -16254,7 +16254,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/02-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16262,7 +16262,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/03-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16270,7 +16270,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/04-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16278,7 +16278,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/05-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16286,7 +16286,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/06-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16294,7 +16294,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 7",
         "role": "gallery",
         "position": 7,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/07-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16302,7 +16302,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 8",
         "role": "gallery",
         "position": 8,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/GHOST-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
@@ -16310,7 +16310,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Nora Polka Dot - Pointelle Scout Pant - View 9",
         "role": "gallery",
         "position": 9,
-        "colorOrPrint": "Nora-polka-dot"
+        "colorOrPrint": "Nora Polka Dot"
       }
     ],
     "options": [
@@ -16327,7 +16327,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Nora-polka-dot"
+          "Nora Polka Dot"
         ]
       }
     ],
@@ -16338,7 +16338,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XS",
         "sku": "MORFE-POINTELLE--1",
         "size": "XS",
-        "colorOrPrint": "Nora-polka-dot",
+        "colorOrPrint": "Nora Polka Dot",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -16350,7 +16350,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "S",
         "sku": "MORFE-POINTELLE--2",
         "size": "S",
-        "colorOrPrint": "Nora-polka-dot",
+        "colorOrPrint": "Nora Polka Dot",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -16362,7 +16362,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "M",
         "sku": "MORFE-POINTELLE--3",
         "size": "M",
-        "colorOrPrint": "Nora-polka-dot",
+        "colorOrPrint": "Nora Polka Dot",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -16374,7 +16374,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "L",
         "sku": "MORFE-POINTELLE--4",
         "size": "L",
-        "colorOrPrint": "Nora-polka-dot",
+        "colorOrPrint": "Nora Polka Dot",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -16386,15 +16386,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "XL",
         "sku": "MORFE-POINTELLE--5",
         "size": "XL",
-        "colorOrPrint": "Nora-polka-dot",
+        "colorOrPrint": "Nora Polka Dot",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 59
+    "rating": 4.9,
+    "reviewsCount": 58
   },
   {
     "id": "sleep-well-soothing-bed-spray",
@@ -16402,8 +16402,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sleep Well - Soothing Bed Spray",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Bed spray",
-    "colorGroup": "Bed spray",
+    "colorOrPrint": "Soothing Spray",
+    "colorGroup": "Soothing Spray",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -16433,7 +16433,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Soothing Bed Spray - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Bed spray"
+        "colorOrPrint": "Soothing Spray"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SOOTHING_BED_SPRAY_02_1080x.jpg?v=1769475994",
@@ -16441,7 +16441,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Soothing Bed Spray - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Bed spray"
+        "colorOrPrint": "Soothing Spray"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SOOTHING_BED_SPRAY_03_1080x.jpg?v=1769475994",
@@ -16449,7 +16449,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Soothing Bed Spray - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Bed spray"
+        "colorOrPrint": "Soothing Spray"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SOOTHING_BED_SPRAY_04_1080x.jpg?v=1769475994",
@@ -16457,7 +16457,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Soothing Bed Spray - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Bed spray"
+        "colorOrPrint": "Soothing Spray"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SOOTHING_BED_SPRAY_05_1080x.jpg?v=1769475994",
@@ -16465,7 +16465,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Soothing Bed Spray - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Bed spray"
+        "colorOrPrint": "Soothing Spray"
       }
     ],
     "options": [
@@ -16478,7 +16478,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Bed spray"
+          "Soothing Spray"
         ]
       }
     ],
@@ -16489,7 +16489,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "100ml Mist",
         "sku": "MORFE-SLEEP-WELL-1",
         "size": "100ml Mist",
-        "colorOrPrint": "Bed spray",
+        "colorOrPrint": "Soothing Spray",
         "sourcePrice": 5750,
         "sourceCompareAtPrice": 7188,
         "demoPricePKR": 5750,
@@ -16497,7 +16497,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 72
+    "reviewsCount": 82
   },
   {
     "id": "sleep-well-magnesium-balm-50g",
@@ -16505,8 +16505,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sleep Well - Magnesium Balm",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Balm 50g",
-    "colorGroup": "Balm 50g",
+    "colorOrPrint": "Magnesium Balm",
+    "colorGroup": "Magnesium Balm",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -16536,7 +16536,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Balm - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Balm 50g"
+        "colorOrPrint": "Magnesium Balm"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BALM_02_1080x.jpg?v=1769475994",
@@ -16544,7 +16544,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Balm - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Balm 50g"
+        "colorOrPrint": "Magnesium Balm"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BALM_03_1080x.jpg?v=1769475994",
@@ -16552,7 +16552,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Balm - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Balm 50g"
+        "colorOrPrint": "Magnesium Balm"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BALM_04_1080x.jpg?v=1769475994",
@@ -16560,7 +16560,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Balm - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Balm 50g"
+        "colorOrPrint": "Magnesium Balm"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BALM_05_1080x.jpg?v=1769475994",
@@ -16568,7 +16568,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Balm - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Balm 50g"
+        "colorOrPrint": "Magnesium Balm"
       }
     ],
     "options": [
@@ -16581,7 +16581,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Balm 50g"
+          "Magnesium Balm"
         ]
       }
     ],
@@ -16592,7 +16592,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "50g",
         "sku": "MORFE-SLEEP-WELL-1",
         "size": "50g",
-        "colorOrPrint": "Balm 50g",
+        "colorOrPrint": "Magnesium Balm",
         "sourcePrice": 5000,
         "sourceCompareAtPrice": 6250,
         "demoPricePKR": 5000,
@@ -16600,7 +16600,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.8,
-    "reviewsCount": 48
+    "reviewsCount": 113
   },
   {
     "id": "sleep-well-magnesium-bath-soak",
@@ -16608,8 +16608,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sleep Well - Magnesium Bath Soak",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Bath soak",
-    "colorGroup": "Bath soak",
+    "colorOrPrint": "Bath Soak",
+    "colorGroup": "Bath Soak",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -16639,7 +16639,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Bath Soak - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Bath soak"
+        "colorOrPrint": "Bath Soak"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BATH_SOAK_02_1080x.jpg?v=1769475990",
@@ -16647,7 +16647,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Bath Soak - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Bath soak"
+        "colorOrPrint": "Bath Soak"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BATH_SOAK_03_1080x.jpg?v=1769475990",
@@ -16655,7 +16655,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Bath Soak - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Bath soak"
+        "colorOrPrint": "Bath Soak"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BATH_SOAK_04_1080x.jpg?v=1769475990",
@@ -16663,7 +16663,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Bath Soak - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Bath soak"
+        "colorOrPrint": "Bath Soak"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BATH_SOAK_05_1080x.jpg?v=1769475990",
@@ -16671,7 +16671,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Magnesium Bath Soak - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Bath soak"
+        "colorOrPrint": "Bath Soak"
       }
     ],
     "options": [
@@ -16684,7 +16684,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Bath soak"
+          "Bath Soak"
         ]
       }
     ],
@@ -16695,15 +16695,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "500g Jar",
         "sku": "MORFE-SLEEP-WELL-1",
         "size": "500g Jar",
-        "colorOrPrint": "Bath soak",
+        "colorOrPrint": "Bath Soak",
         "sourcePrice": 5000,
         "sourceCompareAtPrice": 6250,
         "demoPricePKR": 5000,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 42
+    "rating": 4.8,
+    "reviewsCount": 90
   },
   {
     "id": "sleep-well-calming-sleep-wash",
@@ -16711,8 +16711,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sleep Well - Calming Sleep Wash",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Sleep wash",
-    "colorGroup": "Sleep wash",
+    "colorOrPrint": "Sleep Wash",
+    "colorGroup": "Sleep Wash",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -16742,7 +16742,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Calming Sleep Wash - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Sleep wash"
+        "colorOrPrint": "Sleep Wash"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CALMING_SLEEP_WASH_02_1080x.jpg?v=1769475990",
@@ -16750,7 +16750,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Calming Sleep Wash - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Sleep wash"
+        "colorOrPrint": "Sleep Wash"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CALMING_SLEEP_WASH_03_1080x.jpg?v=1769475990",
@@ -16758,7 +16758,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Calming Sleep Wash - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Sleep wash"
+        "colorOrPrint": "Sleep Wash"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CALMING_SLEEP_WASH_04_1080x.jpg?v=1769475990",
@@ -16766,7 +16766,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Calming Sleep Wash - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Sleep wash"
+        "colorOrPrint": "Sleep Wash"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/CALMING_SLEEP_WASH_05_1080x.jpg?v=1769475990",
@@ -16774,7 +16774,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Calming Sleep Wash - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Sleep wash"
+        "colorOrPrint": "Sleep Wash"
       }
     ],
     "options": [
@@ -16787,7 +16787,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Sleep wash"
+          "Sleep Wash"
         ]
       }
     ],
@@ -16798,7 +16798,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "250ml Bottle",
         "sku": "MORFE-SLEEP-WELL-1",
         "size": "250ml Bottle",
-        "colorOrPrint": "Sleep wash",
+        "colorOrPrint": "Sleep Wash",
         "sourcePrice": 5750,
         "sourceCompareAtPrice": 7188,
         "demoPricePKR": 5750,
@@ -16806,7 +16806,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 64
+    "reviewsCount": 77
   },
   {
     "id": "sleep-well-sunrise-candle",
@@ -16814,8 +16814,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sleep Well - Sunrise Candle",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Sunrise candle",
-    "colorGroup": "Sunrise candle",
+    "colorOrPrint": "Sunrise",
+    "colorGroup": "Sunrise",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -16845,7 +16845,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunrise Candle - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Sunrise candle"
+        "colorOrPrint": "Sunrise"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNRISE_CANDLE_02_1080x.jpg?v=1769475990",
@@ -16853,7 +16853,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunrise Candle - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Sunrise candle"
+        "colorOrPrint": "Sunrise"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNRISE_CANDLE_03_1080x.jpg?v=1769475990",
@@ -16861,7 +16861,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunrise Candle - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Sunrise candle"
+        "colorOrPrint": "Sunrise"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNRISE_CANDLE_04_1080x.jpg?v=1769475990",
@@ -16869,7 +16869,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunrise Candle - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Sunrise candle"
+        "colorOrPrint": "Sunrise"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNRISE_CANDLE_05_1080x.jpg?v=1769475990",
@@ -16877,7 +16877,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunrise Candle - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Sunrise candle"
+        "colorOrPrint": "Sunrise"
       }
     ],
     "options": [
@@ -16890,7 +16890,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Sunrise candle"
+          "Sunrise"
         ]
       }
     ],
@@ -16901,15 +16901,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "300g Soy Wax",
         "sku": "MORFE-SLEEP-WELL-1",
         "size": "300g Soy Wax",
-        "colorOrPrint": "Sunrise candle",
+        "colorOrPrint": "Sunrise",
         "sourcePrice": 7500,
         "sourceCompareAtPrice": 9375,
         "demoPricePKR": 7500,
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 57
+    "rating": 5,
+    "reviewsCount": 41
   },
   {
     "id": "sleep-well-sunset-candle",
@@ -16917,8 +16917,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Sleep Well - Sunset Candle",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Sunset candle",
-    "colorGroup": "Sunset candle",
+    "colorOrPrint": "Sunset",
+    "colorGroup": "Sunset",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -16948,7 +16948,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunset Candle - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Sunset candle"
+        "colorOrPrint": "Sunset"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNSET_CANDLE_02_1080x.jpg?v=1769475990",
@@ -16956,7 +16956,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunset Candle - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Sunset candle"
+        "colorOrPrint": "Sunset"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNSET_CANDLE_03_1080x.jpg?v=1769475990",
@@ -16964,7 +16964,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunset Candle - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Sunset candle"
+        "colorOrPrint": "Sunset"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNSET_CANDLE_04_1080x.jpg?v=1769475990",
@@ -16972,7 +16972,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunset Candle - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Sunset candle"
+        "colorOrPrint": "Sunset"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNSET_CANDLE_05_1080x.jpg?v=1769475990",
@@ -16980,7 +16980,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Sleep Well - Sunset Candle - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Sunset candle"
+        "colorOrPrint": "Sunset"
       }
     ],
     "options": [
@@ -16993,7 +16993,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Sunset candle"
+          "Sunset"
         ]
       }
     ],
@@ -17004,7 +17004,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "300g Soy Wax",
         "sku": "MORFE-SLEEP-WELL-1",
         "size": "300g Soy Wax",
-        "colorOrPrint": "Sunset candle",
+        "colorOrPrint": "Sunset",
         "sourcePrice": 7500,
         "sourceCompareAtPrice": 9375,
         "demoPricePKR": 7500,
@@ -17012,7 +17012,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 113
+    "reviewsCount": 52
   },
   {
     "id": "silk-winnie-polka-dot-pillowcases",
@@ -17020,8 +17020,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Fleur Silk - Winnie Polka Dot Pillowcases",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Warm-white",
-    "colorGroup": "Warm-white",
+    "colorOrPrint": "Winnie Polka Dot",
+    "colorGroup": "Winnie Polka Dot",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -17051,7 +17051,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Winnie Polka Dot Pillowcases - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Warm-white"
+        "colorOrPrint": "Winnie Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Winnie-Fleur-Silk-Pillowcase-02_1080x.jpg?v=1788242454",
@@ -17059,7 +17059,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Winnie Polka Dot Pillowcases - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Warm-white"
+        "colorOrPrint": "Winnie Polka Dot"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/Winnie-Fleur-Silk-Texture_1080x.jpg?v=1788242455",
@@ -17067,7 +17067,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Winnie Polka Dot Pillowcases - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Warm-white"
+        "colorOrPrint": "Winnie Polka Dot"
       }
     ],
     "options": [
@@ -17081,7 +17081,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Warm-white"
+          "Winnie Polka Dot"
         ]
       }
     ],
@@ -17092,7 +17092,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Standard (48x73cm)",
         "sku": "MORFE-SILK-WINNI-1",
         "size": "Standard (48x73cm)",
-        "colorOrPrint": "Warm-white",
+        "colorOrPrint": "Winnie Polka Dot",
         "sourcePrice": 15750,
         "sourceCompareAtPrice": 19688,
         "demoPricePKR": 15750,
@@ -17104,15 +17104,15 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "King (50x90cm)",
         "sku": "MORFE-SILK-WINNI-2",
         "size": "King (50x90cm)",
-        "colorOrPrint": "Warm-white",
+        "colorOrPrint": "Winnie Polka Dot",
         "sourcePrice": 18250,
         "sourceCompareAtPrice": 19688,
         "demoPricePKR": 18250,
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 47
+    "rating": 4.8,
+    "reviewsCount": 51
   },
   {
     "id": "silk-pillowcases-warm-white",
@@ -17120,8 +17120,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
     "title": "Fleur Silk - Warm White Pillowcases",
     "collectionName": "Mulberry Silk",
     "productType": "Wellness",
-    "colorOrPrint": "Neutral",
-    "colorGroup": "Neutral",
+    "colorOrPrint": "Warm White",
+    "colorGroup": "Warm White",
     "fabric": "Mulberry Silk",
     "description": "Crafted for restorative evenings and tranquil mornings. Made from the purest mulberry silk to elevate your daily sanctuary.",
     "features": [
@@ -17151,7 +17151,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Warm White Pillowcases - View 1",
         "role": "hero",
         "position": 1,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/FLEUR_SILK_WARM_WHITE_PILLOWCASE_1080x.jpg?v=1758608116",
@@ -17159,7 +17159,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Warm White Pillowcases - View 2",
         "role": "gallery",
         "position": 2,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/FLEUR_SILK_WARM_WHITE_PILLOW_FOLD_1080x.jpg?v=1758608116",
@@ -17167,7 +17167,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Warm White Pillowcases - View 3",
         "role": "gallery",
         "position": 3,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/FLEUR_SILK_WARM_WHITE_PILLOWCASE_DETAIL_1080x.jpg?v=1758608116",
@@ -17175,7 +17175,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Warm White Pillowcases - View 4",
         "role": "gallery",
         "position": 4,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/EDEN_POPPY_STRIPE_STYLED_09_1080x.jpg?v=1758608116",
@@ -17183,7 +17183,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Warm White Pillowcases - View 5",
         "role": "gallery",
         "position": 5,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       },
       {
         "src": "https://cdn.shopify.com/s/files/1/1463/0170/files/FLEUR_SILK_WARM_WHITE_TEXTURE_1080x.jpg?v=1758608116",
@@ -17191,7 +17191,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "alt": "Fleur Silk - Warm White Pillowcases - View 6",
         "role": "gallery",
         "position": 6,
-        "colorOrPrint": "Neutral"
+        "colorOrPrint": "Warm White"
       }
     ],
     "options": [
@@ -17205,7 +17205,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       {
         "name": "Color",
         "values": [
-          "Neutral"
+          "Warm White"
         ]
       }
     ],
@@ -17216,7 +17216,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "Standard (48x73cm)",
         "sku": "MORFE-SILK-PILLO-1",
         "size": "Standard (48x73cm)",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White",
         "sourcePrice": 14500,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 14500,
@@ -17228,7 +17228,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "title": "King (50x90cm)",
         "sku": "MORFE-SILK-PILLO-2",
         "size": "King (50x90cm)",
-        "colorOrPrint": "Neutral",
+        "colorOrPrint": "Warm White",
         "sourcePrice": 17000,
         "sourceCompareAtPrice": 18125,
         "demoPricePKR": 17000,
@@ -17236,7 +17236,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 38
+    "reviewsCount": 47
   },
   {
     "id": "washed-cotton-cot-fitted-sheet-buddy",
@@ -17307,7 +17307,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 35
+    "reviewsCount": 52
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-lala-print",
@@ -17377,8 +17377,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 17
+    "rating": 4.9,
+    "reviewsCount": 49
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-oatmeal-marle",
@@ -17449,7 +17449,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 30
+    "reviewsCount": 33
   },
   {
     "id": "cot-quilt-cover-cosmo-warm-white",
@@ -17520,7 +17520,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 21
+    "reviewsCount": 25
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-henley-gingham",
@@ -17591,7 +17591,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 38
+    "reviewsCount": 29
   },
   {
     "id": "cot-washed-cotton-quilt-cover-oatmeal-marle",
@@ -17662,7 +17662,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 22
+    "reviewsCount": 51
   },
   {
     "id": "washed-cotton-bassinet-fitted-sheet-buddy",
@@ -17732,8 +17732,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 48
+    "rating": 4.9,
+    "reviewsCount": 49
   },
   {
     "id": "bassinet-washed-cotton-fitted-sheet-hattie-polka-dot",
@@ -17804,7 +17804,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 30
+    "reviewsCount": 33
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-cassidy-gingham",
@@ -17875,7 +17875,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 40
+    "reviewsCount": 47
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-weston-stripe",
@@ -17945,8 +17945,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 36
+    "rating": 4.9,
+    "reviewsCount": 20
   },
   {
     "id": "bassinet-washed-cotton-fitted-sheet-lala-print",
@@ -18016,8 +18016,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 52
+    "rating": 5,
+    "reviewsCount": 35
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-hattie-polka-dot",
@@ -18088,7 +18088,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 26
+    "reviewsCount": 47
   },
   {
     "id": "bassinet-washed-cotton-fitted-sheet-cassidy-gingham",
@@ -18159,7 +18159,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 34
+    "reviewsCount": 27
   },
   {
     "id": "cot-washed-cotton-fitted-sheet-midnight-rodeo-stripe",
@@ -18229,8 +18229,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 27
+    "rating": 5,
+    "reviewsCount": 24
   },
   {
     "id": "washed-cotton-cot-quilt-cover-buddy",
@@ -18301,7 +18301,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 5,
-    "reviewsCount": 32
+    "reviewsCount": 51
   },
   {
     "id": "bed-sheets-winnie-polka-dot",
@@ -18460,8 +18460,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 80
+    "rating": 4.9,
+    "reviewsCount": 137
   },
   {
     "id": "bed-sheets-chocolate",
@@ -18620,8 +18620,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 5,
-    "reviewsCount": 140
+    "rating": 4.8,
+    "reviewsCount": 45
   },
   {
     "id": "washed-cotton-bed-sheets-rue",
@@ -18789,7 +18789,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 71
+    "reviewsCount": 47
   },
   {
     "id": "bed-sheets-white",
@@ -18956,8 +18956,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.8,
-    "reviewsCount": 76
+    "rating": 4.9,
+    "reviewsCount": 130
   },
   {
     "id": "striped-bed-sheets-sage",
@@ -19141,7 +19141,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 112
+    "reviewsCount": 74
   },
   {
     "id": "organic-cotton-bed-sheets-bay-blue",
@@ -19309,7 +19309,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 155
+    "reviewsCount": 148
   },
   {
     "id": "bed-sheets-butter",
@@ -19469,7 +19469,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 90
+    "reviewsCount": 110
   },
   {
     "id": "linen-bed-sheets-bailey",
@@ -19629,7 +19629,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 98
+    "reviewsCount": 45
   },
   {
     "id": "organic-cotton-bed-sheets-nutmeg",
@@ -19789,7 +19789,7 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
       }
     ],
     "rating": 4.9,
-    "reviewsCount": 118
+    "reviewsCount": 103
   },
   {
     "id": "bed-sheets-sky",
@@ -19948,8 +19948,8 @@ export const SHEET_SOCIETY_PRODUCTS: CatalogProduct[] = [
         "availability": "available"
       }
     ],
-    "rating": 4.9,
-    "reviewsCount": 137
+    "rating": 5,
+    "reviewsCount": 154
   }
 ];
 

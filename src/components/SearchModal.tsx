@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Product, ColorVariant } from '../types';
-import { Search, X, ArrowRight } from 'lucide-react';
+import { Search, X, ArrowRight, ImageOff } from 'lucide-react';
 import { formatPKR } from '../utils/format';
 
 interface SearchModalProps {
@@ -143,11 +143,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                       className="py-3 flex items-center justify-between cursor-pointer group hover:bg-porcelain/60 px-2 transition-colors"
                     >
                       <div className="flex items-center space-x-3">
-                        <img
-                          src={product.images[0]}
-                          alt={product.name}
-                          className="w-12 h-12 object-cover border border-sand-border flex-shrink-0"
-                        />
+                        {(() => {
+                          const primaryColor = product.colors?.[0];
+                          const primaryImg = (primaryColor?.gallery && primaryColor.gallery[0]) || primaryColor?.image || product.images[0];
+                          return primaryImg ? (
+                            <img
+                              src={primaryImg}
+                              alt={product.name}
+                              className="w-12 h-12 object-cover border border-sand-border flex-shrink-0"
+                            />
+                          ) : (
+                            <div className="w-12 h-12 bg-porcelain border border-sand-border flex items-center justify-center flex-shrink-0 text-umber/30">
+                              <ImageOff className="w-4 h-4" />
+                            </div>
+                          );
+                        })()}
                         <div>
                           <h4 className="font-serif text-base text-umber group-hover:text-olive-ink transition-colors font-normal">
                             {product.name}

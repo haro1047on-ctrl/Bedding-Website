@@ -4474,7 +4474,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 72,
+    "reviewsCount": 61,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -4542,7 +4542,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 4.8,
-    "reviewsCount": 79,
+    "reviewsCount": 84,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -4607,8 +4607,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 109,
+    "rating": 4.9,
+    "reviewsCount": 91,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -4673,8 +4673,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 146,
+    "rating": 4.9,
+    "reviewsCount": 101,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -4745,8 +4745,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 60,
+    "rating": 4.8,
+    "reviewsCount": 45,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -4817,8 +4817,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 47,
+    "rating": 5,
+    "reviewsCount": 43,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -4878,7 +4878,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 4.8,
-    "reviewsCount": 118,
+    "reviewsCount": 107,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -4938,7 +4938,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 5,
-    "reviewsCount": 93,
+    "reviewsCount": 68,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5005,8 +5005,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 127,
+    "rating": 5,
+    "reviewsCount": 64,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -5074,7 +5074,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 4.8,
-    "reviewsCount": 131,
+    "reviewsCount": 57,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -5129,8 +5129,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 132,
+    "rating": 4.9,
+    "reviewsCount": 57,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -5203,8 +5203,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 51,
+    "rating": 4.8,
+    "reviewsCount": 131,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5279,8 +5279,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 44,
+    "rating": 4.8,
+    "reviewsCount": 85,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5345,8 +5345,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 64,
+    "rating": 4.7,
+    "reviewsCount": 93,
     "isNew": true,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5411,8 +5411,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 63,
+    "rating": 4.8,
+    "reviewsCount": 140,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5469,8 +5469,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 56,
+    "rating": 4.9,
+    "reviewsCount": 108,
     "isNew": true,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5552,7 +5552,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 104,
+    "reviewsCount": 114,
     "isNew": false,
     "isBestseller": true,
     "department": "Quilts & Pillows",
@@ -5603,8 +5603,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 142,
+    "rating": 4.9,
+    "reviewsCount": 117,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5663,8 +5663,8 @@ export const PRODUCTS: Product[] = [
       "King": "245cm x 210cm",
       "Standard": "48cm x 73cm"
     },
-    "rating": 5,
-    "reviewsCount": 124,
+    "rating": 4.9,
+    "reviewsCount": 67,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5728,7 +5728,7 @@ export const PRODUCTS: Product[] = [
       "Standard": "48cm x 73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 122,
+    "reviewsCount": 90,
     "isNew": false,
     "isBestseller": false,
     "department": "Quilts & Pillows",
@@ -5750,8 +5750,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Yellow",
-        "hex": "#f1e4b4",
+        "name": "Pampas Stripe",
+        "hex": "#dfd5c6",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Pampas_Stripe.jpg?v=1787122030",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Pampas_Stripe.jpg?v=1787122030",
@@ -5783,8 +5783,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 5,
-    "reviewsCount": 43,
+    "rating": 4.8,
+    "reviewsCount": 64,
     "isNew": true,
     "isBestseller": true,
     "department": "Cushions",
@@ -5806,8 +5806,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Red",
-        "hex": "#9D202F",
+        "name": "Midnight Rodeo Stripe",
+        "hex": "#5f6c88",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Rory_Washed_Cotton_Mahogany_Cushion_02.jpg?v=1783051602",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Rory_Washed_Cotton_Mahogany_Cushion_02.jpg?v=1783051602",
@@ -5841,8 +5841,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 23,
+    "rating": 4.9,
+    "reviewsCount": 67,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -5864,8 +5864,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10750,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Chocolate Stripe",
+        "hex": "#574138",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_BOUCLE_CHOC_STRIPE_CUSHION.jpg?v=1772159952",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_BOUCLE_CHOC_STRIPE_CUSHION.jpg?v=1772159952",
@@ -5898,7 +5898,7 @@ export const PRODUCTS: Product[] = [
       "Round (40cm)": "Round (40cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 42,
+    "reviewsCount": 46,
     "isNew": true,
     "isBestseller": true,
     "department": "Cushions",
@@ -5920,8 +5920,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Green",
-        "hex": "#807b50",
+        "name": "Olive Stripe",
+        "hex": "#A39264",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_BOUCLE_OLIVE_STRIPE_CUSHION.jpg?v=1772153177",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_BOUCLE_OLIVE_STRIPE_CUSHION.jpg?v=1772153177",
@@ -5953,8 +5953,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 65,
+    "rating": 4.8,
+    "reviewsCount": 53,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -5976,7 +5976,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 9500,
     "colors": [
       {
-        "name": "Blue",
+        "name": "Bay Blue Stripe",
         "hex": "#d2e1eb",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_BAY_BLUE_STRIPE_ROUND.jpg?v=1758608088",
         "gallery": [
@@ -6011,8 +6011,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Round (40cm)": "Round (40cm)"
     },
-    "rating": 4.9,
-    "reviewsCount": 60,
+    "rating": 4.8,
+    "reviewsCount": 54,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6034,7 +6034,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 9500,
     "colors": [
       {
-        "name": "Pink",
+        "name": "Pink Lotus Stripe",
         "hex": "#E5C0CF",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_PINK_LOTUS_STRIPE_ROUND.jpg?v=1758608087",
         "gallery": [
@@ -6070,7 +6070,7 @@ export const PRODUCTS: Product[] = [
       "Round (40cm)": "Round (40cm)"
     },
     "rating": 4.8,
-    "reviewsCount": 42,
+    "reviewsCount": 19,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6092,8 +6092,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Nutmeg Stripe",
+        "hex": "#7E5C54",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_NUTMEG_STRIPE.jpg?v=1758608079",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_NUTMEG_STRIPE.jpg?v=1758608079",
@@ -6127,8 +6127,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 35,
+    "rating": 4.8,
+    "reviewsCount": 48,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6150,7 +6150,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Green",
+        "name": "Hunter Green Stripe",
         "hex": "#807b50",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_HUNTER_GREEN_STRIPE.jpg?v=1758608079",
         "gallery": [
@@ -6185,8 +6185,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 35,
+    "rating": 4.8,
+    "reviewsCount": 41,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6208,7 +6208,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Orange",
+        "name": "Terracotta Stripe",
         "hex": "#c87b4b",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_TERRACOTTA_STRIPE.jpg?v=1758608081",
         "gallery": [
@@ -6246,7 +6246,7 @@ export const PRODUCTS: Product[] = [
       "50x50": "50x50 cm"
     },
     "rating": 4.8,
-    "reviewsCount": 60,
+    "reviewsCount": 40,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6268,8 +6268,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Purple",
-        "hex": "#8a4d5c",
+        "name": "Burgundy Stripe",
+        "hex": "#603535",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_BURGUNDY_STRIPE.jpg?v=1758608078",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_BOUCLE_BURGUNDY_STRIPE.jpg?v=1758608078",
@@ -6304,7 +6304,7 @@ export const PRODUCTS: Product[] = [
       "50x50": "50x50 cm"
     },
     "rating": 5,
-    "reviewsCount": 30,
+    "reviewsCount": 64,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6357,8 +6357,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 70,
+    "rating": 4.9,
+    "reviewsCount": 40,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -6380,7 +6380,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Blue",
+        "name": "Sky",
         "hex": "#d2e1eb",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Sky.jpg?v=1787122026",
         "gallery": [
@@ -6413,8 +6413,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 50,
+    "rating": 4.8,
+    "reviewsCount": 65,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -6436,8 +6436,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10750,
     "colors": [
       {
-        "name": "Neutral",
-        "hex": "#dbcaac",
+        "name": "Warm White",
+        "hex": "#f2ebdf",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_WARM_WHITE.jpg?v=1758586003",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_WARM_WHITE.jpg?v=1758586003",
@@ -6474,7 +6474,7 @@ export const PRODUCTS: Product[] = [
       "65x40": "65x40 cm"
     },
     "rating": 4.9,
-    "reviewsCount": 39,
+    "reviewsCount": 42,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -6496,8 +6496,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 9500,
     "colors": [
       {
-        "name": "Green",
-        "hex": "#807b50",
+        "name": "Hunter Green",
+        "hex": "#415141",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_HUNTER_GREEN.jpg?v=1758586005",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_RIBBED_HUNTER_GREEN.jpg?v=1758586005",
@@ -6533,8 +6533,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 60,
+    "rating": 5,
+    "reviewsCount": 54,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -6556,8 +6556,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Beige",
-        "hex": "#d8c5b9",
+        "name": "Natural",
+        "hex": "#CBC1AE",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/NATURAL_WOOL_CUSHION.jpg?v=1772405717",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/NATURAL_WOOL_CUSHION.jpg?v=1772405717",
@@ -6591,8 +6591,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 48,
+    "rating": 4.8,
+    "reviewsCount": 47,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6614,8 +6614,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Chocolate",
+        "hex": "#574138",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/CHOCOLATE_WOOL_CUSHION.jpg?v=1771888511",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/CHOCOLATE_WOOL_CUSHION.jpg?v=1771888511",
@@ -6650,7 +6650,7 @@ export const PRODUCTS: Product[] = [
       "50x50": "50x50 cm"
     },
     "rating": 5,
-    "reviewsCount": 46,
+    "reviewsCount": 21,
     "isNew": true,
     "isBestseller": true,
     "department": "Cushions",
@@ -6672,8 +6672,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Blue",
-        "hex": "#d2e1eb",
+        "name": "Darcie Stripe",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Darcie-Stripe-Cushion.jpg?v=1788498219",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Darcie-Stripe-Cushion.jpg?v=1788498219",
@@ -6706,7 +6706,7 @@ export const PRODUCTS: Product[] = [
       "Bolster (20x60cm)": "Bolster (20x60cm) cm"
     },
     "rating": 4.8,
-    "reviewsCount": 39,
+    "reviewsCount": 49,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6728,8 +6728,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Blue",
-        "hex": "#d2e1eb",
+        "name": "Rhodes",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Rhodes.jpg?v=1787122026",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Cushion_Rhodes.jpg?v=1787122026",
@@ -6760,7 +6760,7 @@ export const PRODUCTS: Product[] = [
       "Bolster (20x60cm)": "Bolster (20x60cm) cm"
     },
     "rating": 4.9,
-    "reviewsCount": 72,
+    "reviewsCount": 41,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6782,8 +6782,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Diamond Ranch",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Diamond_Ranch_Round_Cushion.jpg?v=1783664249",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Diamond_Ranch_Round_Cushion.jpg?v=1783664249",
@@ -6816,7 +6816,7 @@ export const PRODUCTS: Product[] = [
       "Round (40cm)": "Round (40cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 45,
+    "reviewsCount": 43,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6838,7 +6838,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Red",
+        "name": "Lovers Red",
         "hex": "#9D202F",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Rory_Washed_Cotton_Mahogany_Cushion_01.jpg?v=1783466672",
         "gallery": [
@@ -6873,8 +6873,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 68,
+    "rating": 4.8,
+    "reviewsCount": 64,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6896,8 +6896,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Juni",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_TEXTURE_JUNI_CUSHION.jpg?v=1772159952",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/COTTON_TEXTURE_JUNI_CUSHION.jpg?v=1772159952",
@@ -6930,7 +6930,7 @@ export const PRODUCTS: Product[] = [
       "65x40": "65x40 cm"
     },
     "rating": 4.8,
-    "reviewsCount": 44,
+    "reviewsCount": 61,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -6952,8 +6952,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Lui Stripe",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/LIU_STRIPE_BOLSTER_CUSHION.jpg?v=1772152968",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/LIU_STRIPE_BOLSTER_CUSHION.jpg?v=1772152968",
@@ -6985,8 +6985,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bolster (20x60cm)": "Bolster (20x60cm) cm"
     },
-    "rating": 5,
-    "reviewsCount": 29,
+    "rating": 4.9,
+    "reviewsCount": 19,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -7008,8 +7008,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Multi",
-        "hex": "#d4a373",
+        "name": "Blair",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_VELVET_BLAIR_BOLSTER.jpg?v=1758586016",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_VELVET_BLAIR_BOLSTER.jpg?v=1758586016",
@@ -7041,8 +7041,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bolster (20x60cm)": "Bolster (20x60cm) cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 19,
+    "rating": 4.8,
+    "reviewsCount": 71,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -7064,8 +7064,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Purple",
-        "hex": "#8a4d5c",
+        "name": "Burgundy",
+        "hex": "#603535",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_VELVET_BURGUNDY_BOLSTER.jpg?v=1758586017",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_VELVET_BURGUNDY_BOLSTER.jpg?v=1758586017",
@@ -7099,8 +7099,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bolster (20x60cm)": "Bolster (20x60cm) cm"
     },
-    "rating": 5,
-    "reviewsCount": 55,
+    "rating": 4.8,
+    "reviewsCount": 39,
     "isNew": true,
     "isBestseller": false,
     "department": "Cushions",
@@ -7122,8 +7122,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Pink",
-        "hex": "#E5C0CF",
+        "name": "Peaches Gingham",
+        "hex": "#F8BFA8",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_PEACHES_CUSHION.jpg?v=1774394128",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_PEACHES_CUSHION.jpg?v=1774394128",
@@ -7155,8 +7155,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 39,
+    "rating": 4.8,
+    "reviewsCount": 30,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7178,8 +7178,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11750,
     "colors": [
       {
-        "name": "Blue",
-        "hex": "#d2e1eb",
+        "name": "Teddy Gingham",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_TEDDY_CUSHION_242b27a7-7f06-4e85-affc-eefe2f8a6399.jpg?v=1774583910",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/MORGAN_WOOL_TEDDY_CUSHION_242b27a7-7f06-4e85-affc-eefe2f8a6399.jpg?v=1774583910",
@@ -7209,8 +7209,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 54,
+    "rating": 4.8,
+    "reviewsCount": 37,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7232,8 +7232,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10750,
     "colors": [
       {
-        "name": "Neutral",
-        "hex": "#dbcaac",
+        "name": "Warm White Checkerboard",
+        "hex": "#ffffff",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_TUFFTED_WARM_WHITE_CHECKER.jpg?v=1758608090",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/HOMEBODY_TUFFTED_WARM_WHITE_CHECKER.jpg?v=1758608090",
@@ -7267,8 +7267,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "65x40": "65x40 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 47,
+    "rating": 4.8,
+    "reviewsCount": 61,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7290,8 +7290,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 13000,
     "colors": [
       {
-        "name": "Warm-white",
-        "hex": "#ffffff",
+        "name": "Evie Spot",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Evie-Spot-Cushion.jpg?v=1788497613",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Evie-Spot-Cushion.jpg?v=1788497613",
@@ -7324,7 +7324,7 @@ export const PRODUCTS: Product[] = [
       "65x40": "65x40 cm"
     },
     "rating": 4.8,
-    "reviewsCount": 60,
+    "reviewsCount": 30,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7346,8 +7346,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10250,
     "colors": [
       {
-        "name": "Pink",
-        "hex": "#E5C0CF",
+        "name": "Astrid",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Charlie_Cotton_Astrid_Cushion_V1.jpg?v=1749788574",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Charlie_Cotton_Astrid_Cushion_V1.jpg?v=1749788574",
@@ -7379,8 +7379,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 5,
-    "reviewsCount": 35,
+    "rating": 4.9,
+    "reviewsCount": 60,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7402,8 +7402,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10250,
     "colors": [
       {
-        "name": "Blue",
-        "hex": "#d2e1eb",
+        "name": "Zahra",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Eve_Linen_Zahra_Cushion_V1.jpg?v=1749788566",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Eve_Linen_Zahra_Cushion_V1.jpg?v=1749788566",
@@ -7435,8 +7435,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 55,
+    "rating": 5,
+    "reviewsCount": 65,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7458,7 +7458,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10250,
     "colors": [
       {
-        "name": "Bennett stripe",
+        "name": "Bennett Stripe",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Bennett_Stripe_Cushion.jpg?v=1741751972",
         "gallery": [
@@ -7493,8 +7493,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "50x50": "50x50 cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 55,
+    "rating": 4.9,
+    "reviewsCount": 35,
     "isNew": false,
     "isBestseller": false,
     "department": "Cushions",
@@ -7547,7 +7547,7 @@ export const PRODUCTS: Product[] = [
       "Throw": "130cm x 180cm"
     },
     "rating": 5,
-    "reviewsCount": 41,
+    "reviewsCount": 78,
     "isNew": true,
     "isBestseller": false,
     "department": "Blankets",
@@ -7599,8 +7599,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 77,
+    "rating": 5,
+    "reviewsCount": 41,
     "isNew": false,
     "isBestseller": true,
     "department": "Blankets",
@@ -7652,8 +7652,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 5,
-    "reviewsCount": 49,
+    "rating": 4.9,
+    "reviewsCount": 34,
     "isNew": false,
     "isBestseller": true,
     "department": "Blankets",
@@ -7705,8 +7705,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 62,
+    "rating": 5,
+    "reviewsCount": 35,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -7759,7 +7759,7 @@ export const PRODUCTS: Product[] = [
       "Throw": "130cm x 180cm"
     },
     "rating": 4.9,
-    "reviewsCount": 32,
+    "reviewsCount": 82,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -7811,8 +7811,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 40,
+    "rating": 5,
+    "reviewsCount": 71,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -7864,8 +7864,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 83,
+    "rating": 4.8,
+    "reviewsCount": 47,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -7917,8 +7917,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 79,
+    "rating": 4.7,
+    "reviewsCount": 83,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -7971,7 +7971,7 @@ export const PRODUCTS: Product[] = [
       "Throw": "130cm x 180cm"
     },
     "rating": 4.7,
-    "reviewsCount": 32,
+    "reviewsCount": 73,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -8023,8 +8023,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 34,
+    "rating": 5,
+    "reviewsCount": 35,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -8076,8 +8076,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 44,
+    "rating": 4.9,
+    "reviewsCount": 29,
     "isNew": true,
     "isBestseller": false,
     "department": "Blankets",
@@ -8129,8 +8129,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 63,
+    "rating": 4.8,
+    "reviewsCount": 41,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -8182,8 +8182,8 @@ export const PRODUCTS: Product[] = [
       "Bed Blanket": "240cm x 240cm",
       "Throw": "130cm x 180cm"
     },
-    "rating": 4.7,
-    "reviewsCount": 49,
+    "rating": 5,
+    "reviewsCount": 41,
     "isNew": false,
     "isBestseller": false,
     "department": "Blankets",
@@ -8204,8 +8204,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 8750,
     "colors": [
       {
-        "name": "Neutral",
-        "hex": "#dbcaac",
+        "name": "Warm White",
+        "hex": "#f2ebdf",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Warm_White_Bath_Sheet_1080x.jpg?v=1787103471",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Warm_White_Bath_Sheet_1080x.jpg?v=1787103471",
@@ -8244,8 +8244,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bath Sheet (90x165cm)": "Bath Sheet (90x165cm)"
     },
-    "rating": 4.9,
-    "reviewsCount": 81,
+    "rating": 5,
+    "reviewsCount": 95,
     "isNew": false,
     "isBestseller": true,
     "department": "Bath & Towels",
@@ -8266,8 +8266,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 7500,
     "colors": [
       {
-        "name": "Blue",
-        "hex": "#d2e1eb",
+        "name": "Jimmy Stripe",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_JIMMY_STRIPE_BATH_SHEET_BACK_1080x.jpg?v=1774583802",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_JIMMY_STRIPE_BATH_SHEET_BACK_1080x.jpg?v=1774583802",
@@ -8302,8 +8302,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bath Sheet (90x165cm)": "Bath Sheet (90x165cm)"
     },
-    "rating": 4.8,
-    "reviewsCount": 88,
+    "rating": 4.9,
+    "reviewsCount": 100,
     "isNew": false,
     "isBestseller": true,
     "department": "Bath & Towels",
@@ -8324,8 +8324,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 10000,
     "colors": [
       {
-        "name": "Pink",
-        "hex": "#E5C0CF",
+        "name": "Bambi Stripe",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Bath_Sheet_1080x.jpg?v=1786686828",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Bambi_Bath_Sheet_1080x.jpg?v=1786686828",
@@ -8366,8 +8366,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bath Sheet (90x165cm)": "Bath Sheet (90x165cm)"
     },
-    "rating": 4.9,
-    "reviewsCount": 97,
+    "rating": 4.8,
+    "reviewsCount": 71,
     "isNew": false,
     "isBestseller": true,
     "department": "Bath & Towels",
@@ -8389,8 +8389,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 9750,
     "colors": [
       {
-        "name": "Green",
-        "hex": "#807b50",
+        "name": "Sage",
+        "hex": "#a8b09f",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Sage_Bath_Stack_1080x.jpg?v=1726193640",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Sage_Bath_Stack_1080x.jpg?v=1726193640",
@@ -8438,8 +8438,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "4-Piece Set": "4-Piece Set"
     },
-    "rating": 5,
-    "reviewsCount": 60,
+    "rating": 4.9,
+    "reviewsCount": 45,
     "isNew": false,
     "isBestseller": false,
     "department": "Bath & Towels",
@@ -8460,8 +8460,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 5500,
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "Charcoal",
+        "hex": "#6a6a6a",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_CHARCOAL_BATHMAT_1080x.jpg?v=1787103478",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/TOMMY_CHARCOAL_BATHMAT_1080x.jpg?v=1787103478",
@@ -8498,8 +8498,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bath Mat (50x80cm)": "Bath Mat (50x80cm)"
     },
-    "rating": 5,
-    "reviewsCount": 79,
+    "rating": 4.9,
+    "reviewsCount": 76,
     "isNew": false,
     "isBestseller": false,
     "department": "Bath & Towels",
@@ -8521,8 +8521,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 9750,
     "colors": [
       {
-        "name": "Brown",
-        "hex": "#b88d6d",
+        "name": "Biscuit",
+        "hex": "#c99683",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Biscuit_Bath_Stack_232d2d92-7a64-4c45-bcdb-ea4f8f31df44_1080x.jpg?v=1726190100",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Tommy_Biscuit_Bath_Stack_232d2d92-7a64-4c45-bcdb-ea4f8f31df44_1080x.jpg?v=1726190100",
@@ -8568,8 +8568,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "4-Piece Set": "4-Piece Set"
     },
-    "rating": 4.9,
-    "reviewsCount": 56,
+    "rating": 5,
+    "reviewsCount": 77,
     "isNew": false,
     "isBestseller": false,
     "department": "Bath & Towels",
@@ -8594,8 +8594,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 14500,
     "colors": [
       {
-        "name": "Cloud-grey",
-        "hex": "#d2d2d2",
+        "name": "Cloud Grey",
+        "hex": "#c5c7cb",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01_JERSEY_CLOUD_RILEY_PANT_1080x.jpg?v=1764816743",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/01_JERSEY_CLOUD_RILEY_PANT_1080x.jpg?v=1764816743",
@@ -8639,7 +8639,7 @@ export const PRODUCTS: Product[] = [
       "XS": "XS"
     },
     "rating": 4.9,
-    "reviewsCount": 98,
+    "reviewsCount": 49,
     "isNew": true,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -8710,8 +8710,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "XS": "XS"
     },
-    "rating": 4.8,
-    "reviewsCount": 63,
+    "rating": 4.9,
+    "reviewsCount": 79,
     "isNew": true,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -8736,7 +8736,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 14500,
     "colors": [
       {
-        "name": "Camilla-stripe",
+        "name": "Camilla Stripe",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01-JERSEY-CAMILLA-RILEY-PANT_1080x.jpg?v=1773892032",
         "gallery": [
@@ -8781,7 +8781,7 @@ export const PRODUCTS: Product[] = [
       "XS": "XS"
     },
     "rating": 4.9,
-    "reviewsCount": 44,
+    "reviewsCount": 55,
     "isNew": true,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -8853,7 +8853,7 @@ export const PRODUCTS: Product[] = [
       "XS": "XS"
     },
     "rating": 4.9,
-    "reviewsCount": 97,
+    "reviewsCount": 109,
     "isNew": true,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -8878,7 +8878,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 6250,
     "colors": [
       {
-        "name": "Sundown-stripe",
+        "name": "Sundown Stripe",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01_JERSEY_SUNDOWN_RILEY_SHORT_1080x.jpg?v=1764817402",
         "gallery": [
@@ -8923,7 +8923,7 @@ export const PRODUCTS: Product[] = [
       "XS": "XS"
     },
     "rating": 5,
-    "reviewsCount": 81,
+    "reviewsCount": 66,
     "isNew": true,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -8948,7 +8948,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 11250,
     "colors": [
       {
-        "name": "Bella-stripe",
+        "name": "Bella Stripe",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01-JERSEY-BELLA-STRIPE-RYLIE-MINI-SHORT_1080x.jpg?v=1787808547",
         "gallery": [
@@ -8996,8 +8996,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "XS": "XS"
     },
-    "rating": 4.8,
-    "reviewsCount": 65,
+    "rating": 4.9,
+    "reviewsCount": 34,
     "isNew": true,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -9022,7 +9022,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 17250,
     "colors": [
       {
-        "name": "Rue-gingham",
+        "name": "Rue Gingham",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01_COTTON_RUE_KIT-PANT_1080x.jpg?v=1772502226",
         "gallery": [
@@ -9072,8 +9072,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "XS": "XS"
     },
-    "rating": 5,
-    "reviewsCount": 82,
+    "rating": 4.8,
+    "reviewsCount": 52,
     "isNew": false,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -9098,7 +9098,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 8500,
     "colors": [
       {
-        "name": "Mason-gingham",
+        "name": "Mason Gingham",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01-FLANNELETTE-MASON-LENNOX-PANT_4f7daec2-5455-4532-b1b7-9253eaeebc5d_1080x.jpg?v=1773800455",
         "gallery": [
@@ -9146,8 +9146,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "XS": "XS"
     },
-    "rating": 4.9,
-    "reviewsCount": 74,
+    "rating": 5,
+    "reviewsCount": 93,
     "isNew": false,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -9172,7 +9172,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 14500,
     "colors": [
       {
-        "name": "Nora-polka-dot",
+        "name": "Nora Polka Dot",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/01-POINTELLE-NORA-DOT-SCOUT-PANT_1080x.jpg?v=1778037562",
         "gallery": [
@@ -9220,8 +9220,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "XS": "XS"
     },
-    "rating": 4.8,
-    "reviewsCount": 59,
+    "rating": 4.9,
+    "reviewsCount": 58,
     "isNew": false,
     "isBestseller": false,
     "department": "Sleepwear",
@@ -9242,7 +9242,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 5750,
     "colors": [
       {
-        "name": "Bed spray",
+        "name": "Soothing Spray",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/SOOTHING_BED_SPRAY_01_1080x.jpg?v=1769475994",
         "gallery": [
@@ -9279,7 +9279,7 @@ export const PRODUCTS: Product[] = [
       "100ml Mist": "100ml Mist"
     },
     "rating": 4.8,
-    "reviewsCount": 72,
+    "reviewsCount": 82,
     "isNew": true,
     "isBestseller": false,
     "department": "Wellness",
@@ -9300,7 +9300,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 5000,
     "colors": [
       {
-        "name": "Balm 50g",
+        "name": "Magnesium Balm",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BALM_01_1080x.jpg?v=1769475994",
         "gallery": [
@@ -9337,7 +9337,7 @@ export const PRODUCTS: Product[] = [
       "50g": "50g"
     },
     "rating": 4.8,
-    "reviewsCount": 48,
+    "reviewsCount": 113,
     "isNew": false,
     "isBestseller": false,
     "department": "Wellness",
@@ -9358,7 +9358,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 5000,
     "colors": [
       {
-        "name": "Bath soak",
+        "name": "Bath Soak",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/MAGNESIUM_BATH_SOAK_01_1080x.jpg?v=1769475990",
         "gallery": [
@@ -9394,8 +9394,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "500g Jar": "500g Jar"
     },
-    "rating": 4.9,
-    "reviewsCount": 42,
+    "rating": 4.8,
+    "reviewsCount": 90,
     "isNew": false,
     "isBestseller": false,
     "department": "Wellness",
@@ -9416,7 +9416,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 5750,
     "colors": [
       {
-        "name": "Sleep wash",
+        "name": "Sleep Wash",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/CALMING_SLEEP_WASH_01_1080x.jpg?v=1769475990",
         "gallery": [
@@ -9453,7 +9453,7 @@ export const PRODUCTS: Product[] = [
       "250ml Bottle": "250ml Bottle"
     },
     "rating": 4.9,
-    "reviewsCount": 64,
+    "reviewsCount": 77,
     "isNew": false,
     "isBestseller": false,
     "department": "Wellness",
@@ -9474,7 +9474,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 7500,
     "colors": [
       {
-        "name": "Sunrise candle",
+        "name": "Sunrise",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNRISE_CANDLE_01_1080x.jpg?v=1769475990",
         "gallery": [
@@ -9510,8 +9510,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "300g Soy Wax": "300g Soy Wax"
     },
-    "rating": 4.9,
-    "reviewsCount": 57,
+    "rating": 5,
+    "reviewsCount": 41,
     "isNew": false,
     "isBestseller": false,
     "department": "Wellness",
@@ -9532,7 +9532,7 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 7500,
     "colors": [
       {
-        "name": "Sunset candle",
+        "name": "Sunset",
         "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/SUNSET_CANDLE_01_1080x.jpg?v=1769475990",
         "gallery": [
@@ -9569,7 +9569,7 @@ export const PRODUCTS: Product[] = [
       "300g Soy Wax": "300g Soy Wax"
     },
     "rating": 4.9,
-    "reviewsCount": 113,
+    "reviewsCount": 52,
     "isNew": false,
     "isBestseller": false,
     "department": "Wellness",
@@ -9591,8 +9591,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 18250,
     "colors": [
       {
-        "name": "Warm-white",
-        "hex": "#ffffff",
+        "name": "Winnie Polka Dot",
+        "hex": "#dbcaac",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/Fluer_Silk_Winnie_Polkadot_Pillowcase_1080x.jpg?v=1790034242",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/Fluer_Silk_Winnie_Polkadot_Pillowcase_1080x.jpg?v=1790034242",
@@ -9624,8 +9624,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Standard (48x73cm)": "Standard (48x73cm)"
     },
-    "rating": 5,
-    "reviewsCount": 47,
+    "rating": 4.8,
+    "reviewsCount": 51,
     "isNew": false,
     "isBestseller": true,
     "department": "Wellness",
@@ -9647,8 +9647,8 @@ export const PRODUCTS: Product[] = [
     "maxPrice": 17000,
     "colors": [
       {
-        "name": "Neutral",
-        "hex": "#dbcaac",
+        "name": "Warm White",
+        "hex": "#f2ebdf",
         "image": "https://cdn.shopify.com/s/files/1/1463/0170/files/FLEUR_SILK_WARM_WHITE_01_1080x.jpg?v=1758608116",
         "gallery": [
           "https://cdn.shopify.com/s/files/1/1463/0170/files/FLEUR_SILK_WARM_WHITE_01_1080x.jpg?v=1758608116",
@@ -9687,7 +9687,7 @@ export const PRODUCTS: Product[] = [
       "Standard (48x73cm)": "Standard (48x73cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 38,
+    "reviewsCount": 47,
     "isNew": false,
     "isBestseller": true,
     "department": "Wellness",
@@ -9737,7 +9737,7 @@ export const PRODUCTS: Product[] = [
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 35,
+    "reviewsCount": 52,
     "isNew": true,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -9786,8 +9786,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
-    "rating": 5,
-    "reviewsCount": 17,
+    "rating": 4.9,
+    "reviewsCount": 49,
     "isNew": true,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -9837,7 +9837,7 @@ export const PRODUCTS: Product[] = [
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
     "rating": 5,
-    "reviewsCount": 30,
+    "reviewsCount": 33,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -9887,7 +9887,7 @@ export const PRODUCTS: Product[] = [
       "Cot Quilt (100x120cm)": "Cot Quilt (100x120cm)"
     },
     "rating": 5,
-    "reviewsCount": 21,
+    "reviewsCount": 25,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -9937,7 +9937,7 @@ export const PRODUCTS: Product[] = [
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 38,
+    "reviewsCount": 29,
     "isNew": false,
     "isBestseller": true,
     "department": "Kids & Baby",
@@ -9987,7 +9987,7 @@ export const PRODUCTS: Product[] = [
       "Cot Quilt (100x120cm)": "Cot Quilt (100x120cm)"
     },
     "rating": 5,
-    "reviewsCount": 22,
+    "reviewsCount": 51,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10036,8 +10036,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bassinet (40x80cm)": "Bassinet (40x80cm)"
     },
-    "rating": 5,
-    "reviewsCount": 48,
+    "rating": 4.9,
+    "reviewsCount": 49,
     "isNew": true,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10087,7 +10087,7 @@ export const PRODUCTS: Product[] = [
       "Bassinet (40x80cm)": "Bassinet (40x80cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 30,
+    "reviewsCount": 33,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10137,7 +10137,7 @@ export const PRODUCTS: Product[] = [
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 40,
+    "reviewsCount": 47,
     "isNew": false,
     "isBestseller": true,
     "department": "Kids & Baby",
@@ -10186,8 +10186,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
-    "rating": 5,
-    "reviewsCount": 36,
+    "rating": 4.9,
+    "reviewsCount": 20,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10236,8 +10236,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Bassinet (40x80cm)": "Bassinet (40x80cm)"
     },
-    "rating": 4.9,
-    "reviewsCount": 52,
+    "rating": 5,
+    "reviewsCount": 35,
     "isNew": true,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10287,7 +10287,7 @@ export const PRODUCTS: Product[] = [
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
     "rating": 5,
-    "reviewsCount": 26,
+    "reviewsCount": 47,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10337,7 +10337,7 @@ export const PRODUCTS: Product[] = [
       "Bassinet (40x80cm)": "Bassinet (40x80cm)"
     },
     "rating": 4.9,
-    "reviewsCount": 34,
+    "reviewsCount": 27,
     "isNew": false,
     "isBestseller": true,
     "department": "Kids & Baby",
@@ -10386,8 +10386,8 @@ export const PRODUCTS: Product[] = [
     "dimensions": {
       "Cot (77x132cm)": "Cot (77x132cm)"
     },
-    "rating": 4.9,
-    "reviewsCount": 27,
+    "rating": 5,
+    "reviewsCount": 24,
     "isNew": false,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10437,7 +10437,7 @@ export const PRODUCTS: Product[] = [
       "Cot Quilt (100x120cm)": "Cot Quilt (100x120cm)"
     },
     "rating": 5,
-    "reviewsCount": 32,
+    "reviewsCount": 51,
     "isNew": true,
     "isBestseller": false,
     "department": "Kids & Baby",
@@ -10507,8 +10507,8 @@ export const PRODUCTS: Product[] = [
       "Queen": "Fitted: 152x203+55cm | Flat: 245x265cm | Pillowcases: 48x73cm",
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
-    "rating": 5,
-    "reviewsCount": 80,
+    "rating": 4.9,
+    "reviewsCount": 137,
     "isNew": true,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -10578,8 +10578,8 @@ export const PRODUCTS: Product[] = [
       "Queen": "Fitted: 152x203+55cm | Flat: 245x265cm | Pillowcases: 48x73cm",
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
-    "rating": 5,
-    "reviewsCount": 140,
+    "rating": 4.8,
+    "reviewsCount": 45,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -10652,7 +10652,7 @@ export const PRODUCTS: Product[] = [
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 71,
+    "reviewsCount": 47,
     "isNew": true,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -10724,8 +10724,8 @@ export const PRODUCTS: Product[] = [
       "Queen": "Fitted: 152x203+55cm | Flat: 245x265cm | Pillowcases: 48x73cm",
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
-    "rating": 4.8,
-    "reviewsCount": 76,
+    "rating": 4.9,
+    "reviewsCount": 130,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -10802,7 +10802,7 @@ export const PRODUCTS: Product[] = [
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 112,
+    "reviewsCount": 74,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -10875,7 +10875,7 @@ export const PRODUCTS: Product[] = [
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 155,
+    "reviewsCount": 148,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -10946,7 +10946,7 @@ export const PRODUCTS: Product[] = [
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 90,
+    "reviewsCount": 110,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -11017,7 +11017,7 @@ export const PRODUCTS: Product[] = [
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 98,
+    "reviewsCount": 45,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -11088,7 +11088,7 @@ export const PRODUCTS: Product[] = [
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
     "rating": 4.9,
-    "reviewsCount": 118,
+    "reviewsCount": 103,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",
@@ -11158,8 +11158,8 @@ export const PRODUCTS: Product[] = [
       "Queen": "Fitted: 152x203+55cm | Flat: 245x265cm | Pillowcases: 48x73cm",
       "King": "Fitted: 180x203+55cm | Flat: 275x265cm | Pillowcases: 48x73cm"
     },
-    "rating": 4.9,
-    "reviewsCount": 137,
+    "rating": 5,
+    "reviewsCount": 154,
     "isNew": false,
     "isBestseller": true,
     "department": "Bed Sheets & Sets",

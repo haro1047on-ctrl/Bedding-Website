@@ -50,6 +50,49 @@ const fallbackSwatches = {
   'green': '#4d6849',
 };
 
+function extractSpecificColorName(handle, fallbackColor) {
+  let cleaned = handle
+    .replace('boucle-cotton-cushion-cover-', '')
+    .replace('rib-cushion-cover-', '')
+    .replace('wool-boucle-cushion-cover-', '')
+    .replace('velvet-cushion-cover-', '')
+    .replace('wool-cushion-cover-', '')
+    .replace('tufted-cotton-cushion-cover-', '')
+    .replace('cotton-jacquard-cushion-cover-', '')
+    .replace('textured-cotton-cushion-cover-', '')
+    .replace('linen-cushion-cover-', '')
+    .replace('cotton-bath-sheet-', '')
+    .replace('cotton-bath-mat-', '')
+    .replace('cotton-towels-', '')
+    .replace('silk-pillowcases-', '')
+    .replace('silk-winnie-polka-dot-pillowcases', 'winnie-polka-dot')
+    .replace('cloudknit-jersey-riley-pant-', '')
+    .replace('cloudknit-jersey-riley-mini-short-', '')
+    .replace('soft-woven-cotton-kit-pant-', '')
+    .replace('double-brushed-flannelette-lennox-pant-', '')
+    .replace('pointelle-scout-pant-', '')
+    .replace('sleep-well-soothing-bed-spray', 'soothing-spray')
+    .replace('sleep-well-magnesium-balm-50g', 'magnesium-balm')
+    .replace('sleep-well-magnesium-bath-soak', 'bath-soak')
+    .replace('sleep-well-calming-sleep-wash', 'sleep-wash')
+    .replace('sleep-well-sunrise-candle', 'sunrise')
+    .replace('sleep-well-sunset-candle', 'sunset')
+    .replace('washed-cotton-blanket-', '')
+    .replace('rory-washed-cotton-blanket-', '')
+    .replace('flannelette-blanket-', '')
+    .replace('wool-blanket-', '')
+    .replace('bed-sheets-', '')
+    .replace('washed-cotton-bed-sheets-', '')
+    .replace('organic-cotton-bed-sheets-', '')
+    .replace('striped-bed-sheets-', '')
+    .replace('linen-bed-sheets-', '');
+
+  if (cleaned && cleaned !== handle) {
+    return cleaned.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  }
+  return fallbackColor ? fallbackColor.charAt(0).toUpperCase() + fallbackColor.slice(1) : 'Natural';
+}
+
 function resolveHex(name) {
   if (!name) return '#f2ebdf';
   const clean = name.toLowerCase().trim();
@@ -78,13 +121,14 @@ if (!match) {
   process.exit(1);
 }
 const existingProducts = JSON.parse(match[1]);
-console.log('Loaded existing 55 products from mockData.ts');
+console.log('Loaded base 55 products from mockData.ts');
 
-const expandedProducts = [...existingProducts];
+const baseBeddingProducts = existingProducts.slice(0, 55);
+const expandedProducts = [...baseBeddingProducts];
 const imageManifest = {};
 
-// Record existing products into imageManifest
-existingProducts.forEach(p => {
+// Record existing base products into imageManifest
+baseBeddingProducts.forEach(p => {
   imageManifest[p.id] = {
     title: p.name,
     collection: p.material,
@@ -273,9 +317,8 @@ cRawList.forEach(p => {
   const baseAud = p.price?.value || 48;
   const basePkr = toPKR(baseAud, 170, 250);
 
-  const rawColor = p.colour || p.handle.split('-').slice(-2).join(' ');
-  const colorName = rawColor.charAt(0).toUpperCase() + rawColor.slice(1);
-  const colorHex = resolveHex(rawColor);
+  const colorName = extractSpecificColorName(p.handle, p.colour);
+  const colorHex = resolveHex(colorName);
 
   const productObj = {
     id: p.handle,
@@ -498,9 +541,8 @@ bswProducts.forEach(p => {
     }
   }
 
-  const rawColor = p.colour || p.handle.split('-').slice(-2).join(' ');
-  const colorName = rawColor.charAt(0).toUpperCase() + rawColor.slice(1);
-  const colorHex = resolveHex(rawColor);
+  const colorName = extractSpecificColorName(p.handle, p.colour);
+  const colorHex = resolveHex(colorName);
 
   const titleName = p.name || p.handle.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
