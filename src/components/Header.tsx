@@ -208,7 +208,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className={`p-1.5 -ml-1 transition-colors lg:hidden ${
+                className={`min-w-[44px] min-h-[44px] inline-flex items-center justify-center p-1.5 -ml-1 transition-colors lg:hidden ${
                   isTransparent ? 'text-chalk hover:text-white' : 'text-umber hover:text-soft-graphite'
                 }`}
                 aria-label="Open navigation menu"
@@ -618,7 +618,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-umber hover:text-soft-graphite focus:outline-none"
+                  className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center p-2 text-umber hover:text-soft-graphite focus:outline-none"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5 stroke-[1.5]" />
@@ -633,7 +633,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                     onOpenSearch();
                   }}
-                  className="w-full flex items-center justify-between px-3.5 py-2.5 bg-chalk border border-sand-border text-xs text-umber/70"
+                  className="w-full min-h-[44px] flex items-center justify-between px-3.5 py-2.5 bg-chalk border border-sand-border text-xs text-umber/70"
                 >
                   <span>Search linen, duvet covers, sizes...</span>
                   <Search className="w-4 h-4 text-umber/50" />
@@ -647,7 +647,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <button
                   type="button"
                   onClick={() => handleCategoryClick('all')}
-                  className="w-full text-left py-2 font-serif text-lg text-umber hover:text-olive-ink flex items-center justify-between border-b border-sand-border"
+                  className="w-full min-h-[44px] text-left py-2 font-serif text-lg text-umber hover:text-olive-ink flex items-center justify-between border-b border-sand-border"
                 >
                   <span>View All Bedding (167)</span>
                   <ArrowRight className="w-4 h-4 text-olive-ink" />
@@ -658,20 +658,20 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => setMobileSectionOpen(mobileSectionOpen === 'bedding-essentials' ? null : 'bedding-essentials')}
-                    className="w-full flex items-center justify-between py-1 text-xs font-grotesque font-bold uppercase tracking-wider text-umber"
+                    className="w-full min-h-[44px] flex items-center justify-between py-2 text-xs font-grotesque font-bold uppercase tracking-wider text-umber"
                   >
                     <span>Bedding Essentials</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileSectionOpen === 'bedding-essentials' ? 'rotate-180' : ''}`} />
                   </button>
 
                   {mobileSectionOpen === 'bedding-essentials' && (
-                    <div className="mt-2 pl-2 space-y-2.5 pt-1">
+                    <div className="mt-2 pl-2 space-y-1 pt-1">
                       {beddingEssentials.map((item) => (
                         <button
                           key={item.label}
                           type="button"
                           onClick={() => handleCategoryClick(item.category)}
-                          className="w-full text-left text-sm font-sans text-soft-graphite hover:text-olive-ink flex items-center justify-between py-1"
+                          className="w-full min-h-[44px] text-left text-sm font-sans text-soft-graphite hover:text-olive-ink flex items-center justify-between py-2"
                         >
                           <span>{item.label}</span>
                           <span className="text-xs text-umber/40">{item.count}</span>
@@ -686,20 +686,20 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => setMobileSectionOpen(mobileSectionOpen === 'layers-accents' ? null : 'layers-accents')}
-                    className="w-full flex items-center justify-between py-1 text-xs font-grotesque font-bold uppercase tracking-wider text-umber"
+                    className="w-full min-h-[44px] flex items-center justify-between py-2 text-xs font-grotesque font-bold uppercase tracking-wider text-umber"
                   >
                     <span>Layers &amp; Comfort</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileSectionOpen === 'layers-accents' ? 'rotate-180' : ''}`} />
                   </button>
 
                   {mobileSectionOpen === 'layers-accents' && (
-                    <div className="mt-2 pl-2 space-y-2.5 pt-1">
+                    <div className="mt-2 pl-2 space-y-1 pt-1">
                       {layersAndAccents.map((item) => (
                         <button
                           key={item.label}
                           type="button"
                           onClick={() => handleCategoryClick(item.category)}
-                          className="w-full text-left text-sm font-sans text-soft-graphite hover:text-olive-ink flex items-center justify-between py-1"
+                          className="w-full min-h-[44px] text-left text-sm font-sans text-soft-graphite hover:text-olive-ink flex items-center justify-between py-2"
                         >
                           <span>{item.label}</span>
                           <span className="text-xs text-umber/40">{item.count}</span>
@@ -714,20 +714,20 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => setMobileSectionOpen(mobileSectionOpen === 'living-family' ? null : 'living-family')}
-                    className="w-full flex items-center justify-between py-1 text-xs font-grotesque font-bold uppercase tracking-wider text-umber"
+                    className="w-full min-h-[44px] flex items-center justify-between py-2 text-xs font-grotesque font-bold uppercase tracking-wider text-umber"
                   >
                     <span>Living &amp; Family</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileSectionOpen === 'living-family' ? 'rotate-180' : ''}`} />
                   </button>
 
                   {mobileSectionOpen === 'living-family' && (
-                    <div className="mt-2 pl-2 space-y-2.5 pt-1">
+                    <div className="mt-2 pl-2 space-y-1 pt-1">
                       {livingAndFamily.map((item) => (
                         <button
                           key={item.label}
                           type="button"
                           onClick={() => handleCategoryClick(item.category)}
-                          className="w-full text-left text-sm font-sans text-soft-graphite hover:text-olive-ink flex items-center justify-between py-1"
+                          className="w-full min-h-[44px] text-left text-sm font-sans text-soft-graphite hover:text-olive-ink flex items-center justify-between py-2"
                         >
                           <span>{item.label}</span>
                           <span className="text-xs text-umber/40">{item.count}</span>
@@ -738,7 +738,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
 
                 {/* Section 4: The Atelier & Information */}
-                <div className="pt-2 space-y-2 text-sm font-sans">
+                <div className="pt-2 space-y-1 text-sm font-sans">
                   <p className="text-[10px] uppercase tracking-widest text-umber/50 font-semibold mb-2">
                     The Atelier
                   </p>
@@ -746,7 +746,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => handleScrollToSection('atelier-manifesto')}
-                    className="w-full text-left py-1 text-soft-graphite hover:text-olive-ink block"
+                    className="w-full min-h-[44px] flex items-center text-left py-2 text-soft-graphite hover:text-olive-ink"
                   >
                     Our Story &amp; Manifesto
                   </button>
@@ -757,7 +757,7 @@ export const Header: React.FC<HeaderProps> = ({
                       setMobileMenuOpen(false);
                       onOpenMaterialGuide();
                     }}
-                    className="w-full text-left py-1 text-soft-graphite hover:text-olive-ink block"
+                    className="w-full min-h-[44px] flex items-center text-left py-2 text-soft-graphite hover:text-olive-ink"
                   >
                     Fabric Science &amp; Materials
                   </button>
@@ -768,7 +768,7 @@ export const Header: React.FC<HeaderProps> = ({
                       setMobileMenuOpen(false);
                       onOpenSizeGuide();
                     }}
-                    className="w-full text-left py-1 text-soft-graphite hover:text-olive-ink block"
+                    className="w-full min-h-[44px] flex items-center text-left py-2 text-soft-graphite hover:text-olive-ink"
                   >
                     Mattress Sizing Guide
                   </button>
@@ -776,7 +776,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     type="button"
                     onClick={() => handleScrollToSection('atelier-journal')}
-                    className="w-full text-left py-1 text-soft-graphite hover:text-olive-ink block"
+                    className="w-full min-h-[44px] flex items-center text-left py-2 text-soft-graphite hover:text-olive-ink"
                   >
                     The Atelier Journal
                   </button>

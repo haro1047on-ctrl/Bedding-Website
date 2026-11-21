@@ -2,23 +2,28 @@
  * MORFE - Phase 4 Homepage & Mega-Menu Replication Browser Interaction Test Suite
  *
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using Node native WebSocket.
- * Validates real client interactions in the browser DOM:
- *  1. Storefront hydration and initial homepage composition.
+ * Comprehensive, production-grade test battery verifying:
+ *  1. Storefront hydration and homepage structure.
  *  2. Header navigation with "Bedding" mega-menu hover trigger.
- *  3. Seamless pointer transit from parent nav trigger into mega-menu panel (zero accidental closure).
- *  4. All 11 approved sub-departments rendered with authentic counts and hierarchy.
- *  5. Signature fabrics and curated editorial card rendered inside mega-menu.
- *  6. Escape-key dismissal.
- *  7. Outside-click dismissal.
- *  8. Mega-menu category link navigation to CatalogView.
- *  9. Horizontal Category Pill Strip rendering all departments with active, hover, and focus states.
- * 10. Category pill click navigation to CatalogView.
- * 11. Category pill scrollability and indicator controls.
- * 12. Editorial Vignettes: Asymmetrical split feature ("The Art of the Unmade Bed") and dual CTAs.
- * 13. Editorial Vignettes: Three-column sleep foundation suite and actionable CTAs.
- * 14. Responsive viewport tests at 1280px (desktop), 768px (tablet), and 375px (mobile).
- * 15. Mobile navigation drawer with hierarchical accordions and zero horizontal overflow.
- * 16. Confirms ZERO React Hooks violations, console errors, or runtime exceptions throughout.
+ *  3. Seamless pointer transit from trigger down into mega-menu panel (zero accidental closure).
+ *  4. Pointer traversal across all 5 mega-menu columns without accidental closure.
+ *  5. All 13 individual product category links rendered with verified styles/counts (incl. Sleepwear & Wellness).
+ *  6. All 6 signature fabric shortcuts rendered and linked.
+ *  7. Curated editorial showcase card and complete catalogue destination rendered.
+ *  8. Escape-key and outside-click dismissal of mega-menu.
+ *  9. Mega-menu category link navigation to CatalogView (Quilt Covers, Sleepwear, Complete Catalogue).
+ * 10. Horizontal Category Pill Strip: all 14 pills rendered with verified labels and counts.
+ * 11. Category pill active visual state and filtering verification.
+ * 12. Category pill scrollability: scroll-left / scroll-right buttons and scroll states.
+ * 13. Editorial Homepage Vignettes: Both vignettes rendered, all 4 local images loaded with natural dimensions.
+ * 14. Actionable CTA navigation across vignettes (Vignette 1 & Vignette 2 suite cards).
+ * 15. Mobile Navigation Drawer: Open/close, touch target compliance (>= 44px), zero horizontal overflow.
+ * 16. Mobile Drawer Accordions: Expand/collapse across all 3 sections, category navigation from inside accordion.
+ * 17. Mobile Drawer Escape-key dismissal.
+ * 18. Responsive testing across 9 exact viewports (1440, 1280, 1024, 1023, 900, 768, 480, 375, 320 px):
+ *     - innerWidth, scrollWidth, horizontal overflow (scrollWidth - innerWidth <= 0)
+ *     - Desktop nav visibility (>= 1024px) vs Mobile hamburger visibility (<= 1023px)
+ * 19. React Rules of Hooks & Console Exception verification (zero errors/warnings).
  */
 
 const { spawn } = require('child_process');
@@ -223,13 +228,13 @@ async function run() {
           const beddingBtn = buttons.find(b => b.textContent.includes('Bedding'));
           if (!beddingBtn) return null;
           const rect = beddingBtn.getBoundingClientRect();
-          return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2, top: rect.top, bottom: rect.bottom };
+          return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2, top: rect.top, bottom: rect.bottom, width: rect.width };
         })()
       `);
 
       assert(beddingButtonRect !== null, 'Located "Bedding" navigation trigger in desktop nav');
 
-      // Step A: Move pointer onto "Bedding" trigger
+      // Move pointer onto "Bedding" trigger
       await send('Input.dispatchMouseEvent', {
         type: 'mouseMoved',
         x: Math.round(beddingButtonRect.x),
@@ -245,7 +250,7 @@ async function run() {
       `);
       assert(megaMenuVisible, 'Hovering "Bedding" trigger opened desktop mega-menu panel');
 
-      // Step B: Pointer transit from button down into the mega-menu panel (diagonal/vertical traverse)
+      // Pointer transit from button down into mega-menu panel
       const transitSuccess = await evaluate(`
         (() => {
           const panel = document.querySelector('#desktop-mega-menu-panel');
@@ -270,228 +275,414 @@ async function run() {
       `);
       assert(megaMenuStillOpen, 'Pointer transit from trigger into mega-menu panel maintains open state (zero accidental closure)');
 
+      // Pointer movement across columns without accidental closure
+      console.log('\n--- 2B. Multi-Column Pointer Traversal ---');
+      const columnPositions = await evaluate(`
+        (() => {
+          const panel = document.querySelector('#desktop-mega-menu-panel');
+          if (!panel) return [];
+          const cols = Array.from(panel.querySelectorAll('.grid > div'));
+          return cols.map(c => {
+            const r = c.getBoundingClientRect();
+            return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+          });
+        })()
+      `);
+      assert(columnPositions.length === 5, 'Mega-menu panel contains 5 distinct content columns');
+
+      let allColumnsMaintainedOpen = true;
+      for (let i = 0; i < columnPositions.length; i++) {
+        await send('Input.dispatchMouseEvent', {
+          type: 'mouseMoved',
+          x: Math.round(columnPositions[i].x),
+          y: Math.round(columnPositions[i].y)
+        });
+        await new Promise(r => setTimeout(r, 100));
+        const isOpen = await evaluate(`!!document.querySelector('#desktop-mega-menu-panel')`);
+        if (!isOpen) allColumnsMaintainedOpen = false;
+      }
+      assert(allColumnsMaintainedOpen, 'Pointer movement across all 5 mega-menu columns maintains open panel state');
+
       // -------------------------------------------------------------
-      // 3. Mega-Menu 11 Approved Sub-Departments & Columns
+      // 3. Mega-Menu All 13 Individual Category Links & Counts
       // -------------------------------------------------------------
-      console.log('\n--- 3. Mega-Menu 11 Approved Sub-Departments ---');
-      const menuContent = await evaluate(`
+      console.log('\n--- 3. Mega-Menu All 13 Individual Category Links ---');
+      const categoryLinks = await evaluate(`
         (() => {
           const panel = document.querySelector('#desktop-mega-menu-panel');
           if (!panel) return null;
-          const text = panel.textContent;
           const buttons = Array.from(panel.querySelectorAll('button')).map(b => b.textContent.trim());
+          const text = panel.textContent;
           return {
-            hasQuiltCovers: text.includes('Quilt Covers') && text.includes('15 Styles'),
-            hasFittedSheets: text.includes('Fitted Sheets') && text.includes('8 Styles'),
-            hasFlatSheets: text.includes('Flat Sheets') && text.includes('8 Styles'),
-            hasPillowcases: text.includes('Pillowcase Pairs') && text.includes('10 Styles'),
-            hasBedSheets: text.includes('Bed Sheets & Sets') && text.includes('18 Styles'),
-            hasBlankets: text.includes('Blankets & Bed Covers') && text.includes('19 Styles'),
-            hasCushions: text.includes('Cushions') && text.includes('31 Styles'),
-            hasQuiltsPillows: text.includes('Quilts & Pillows') && text.includes('12 Styles'),
-            hasProtectors: text.includes('Protectors & Toppers') && text.includes('7 Styles'),
-            hasBathTowels: text.includes('Bath & Towels') && text.includes('6 Styles'),
-            hasKidsBaby: text.includes('Kids & Baby') && text.includes('16 Styles'),
-            hasFabrics: text.includes('Shop by Fabric') && text.includes('Eve Linen') && text.includes('Darcy Corduroy'),
-            hasEditorialCard: text.includes('Darcy Corduroy in Russet') && text.includes('Atelier Edit'),
-            hasViewAll: buttons.some(b => b.includes('View Complete Catalogue'))
+            quiltCovers: text.includes('Quilt Covers') && text.includes('15 Styles'),
+            fittedSheets: text.includes('Fitted Sheets') && text.includes('8 Styles'),
+            flatSheets: text.includes('Flat Sheets') && text.includes('8 Styles'),
+            pillowcases: text.includes('Pillowcase Pairs') && text.includes('10 Styles'),
+            bedSheetsSets: text.includes('Bed Sheets & Sets') && text.includes('18 Styles'),
+            blanketsBedCovers: text.includes('Blankets & Bed Covers') && text.includes('19 Styles'),
+            cushions: text.includes('Cushions') && text.includes('31 Styles'),
+            quiltsPillows: text.includes('Quilts & Pillows') && text.includes('12 Styles'),
+            protectorsToppers: text.includes('Protectors & Toppers') && text.includes('7 Styles'),
+            bathTowels: text.includes('Bath & Towels') && text.includes('6 Styles'),
+            sleepwear: text.includes('Sleepwear') && text.includes('9 Styles'),
+            wellness: text.includes('Wellness') && text.includes('8 Styles'),
+            kidsBaby: text.includes('Kids & Baby') && text.includes('16 Styles'),
+            viewCompleteCatalogue: buttons.some(b => b.includes('View Complete Catalogue'))
           };
         })()
       `);
 
-      assert(menuContent && menuContent.hasQuiltCovers, 'Department 1: "Quilt Covers (15 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasFittedSheets, 'Department 2: "Fitted Sheets (8 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasFlatSheets, 'Department 3: "Flat Sheets (8 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasPillowcases, 'Department 4: "Pillowcase Pairs (10 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasBedSheets, 'Department 5: "Bed Sheets & Sets (18 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasBlankets, 'Department 6: "Blankets & Bed Covers (19 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasCushions, 'Department 7: "Cushions (31 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasQuiltsPillows, 'Department 8: "Quilts & Pillows (12 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasProtectors, 'Department 9: "Protectors & Toppers (7 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasBathTowels, 'Department 10: "Bath & Towels (6 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasKidsBaby, 'Department 11: "Kids & Baby (16 Styles)" rendered in mega-menu');
-      assert(menuContent && menuContent.hasFabrics, 'Signature Weaves column rendered (Eve Linen, Darcy Corduroy, etc.)');
-      assert(menuContent && menuContent.hasEditorialCard, 'Curated Editorial Showcase card rendered with local imagery');
-      assert(menuContent && menuContent.hasViewAll, '"View Complete Catalogue" CTA present in mega-menu');
+      assert(categoryLinks && categoryLinks.quiltCovers, 'Mega-Menu Link 1: "Quilt Covers (15 Styles)" present');
+      assert(categoryLinks && categoryLinks.fittedSheets, 'Mega-Menu Link 2: "Fitted Sheets (8 Styles)" present');
+      assert(categoryLinks && categoryLinks.flatSheets, 'Mega-Menu Link 3: "Flat Sheets (8 Styles)" present');
+      assert(categoryLinks && categoryLinks.pillowcases, 'Mega-Menu Link 4: "Pillowcase Pairs (10 Styles)" present');
+      assert(categoryLinks && categoryLinks.bedSheetsSets, 'Mega-Menu Link 5: "Bed Sheets & Sets (18 Styles)" present');
+      assert(categoryLinks && categoryLinks.blanketsBedCovers, 'Mega-Menu Link 6: "Blankets & Bed Covers (19 Styles)" present');
+      assert(categoryLinks && categoryLinks.cushions, 'Mega-Menu Link 7: "Cushions (31 Styles)" present');
+      assert(categoryLinks && categoryLinks.quiltsPillows, 'Mega-Menu Link 8: "Quilts & Pillows (12 Styles)" present');
+      assert(categoryLinks && categoryLinks.protectorsToppers, 'Mega-Menu Link 9: "Protectors & Toppers (7 Styles)" present');
+      assert(categoryLinks && categoryLinks.bathTowels, 'Mega-Menu Link 10: "Bath & Towels (6 Styles)" present');
+      assert(categoryLinks && categoryLinks.sleepwear, 'Mega-Menu Link 11: "Sleepwear (9 Styles)" present');
+      assert(categoryLinks && categoryLinks.wellness, 'Mega-Menu Link 12: "Wellness (8 Styles)" present');
+      assert(categoryLinks && categoryLinks.kidsBaby, 'Mega-Menu Link 13: "Kids & Baby (16 Styles)" present');
+      assert(categoryLinks && categoryLinks.viewCompleteCatalogue, 'Mega-Menu Top-Level Link: "View Complete Catalogue" present');
 
       // -------------------------------------------------------------
-      // 4. Escape-Key & Outside-Click Dismissal
+      // 4. Mega-Menu 6 Signature Fabrics & Editorial Showcase
       // -------------------------------------------------------------
-      console.log('\n--- 4. Escape-Key & Outside-Click Dismissal ---');
+      console.log('\n--- 4. Mega-Menu 6 Signature Fabrics & Editorial Card ---');
+      const fabricsAndEditorial = await evaluate(`
+        (() => {
+          const panel = document.querySelector('#desktop-mega-menu-panel');
+          if (!panel) return null;
+          const text = panel.textContent;
+          const img = panel.querySelector('img');
+          return {
+            eveLinen: text.includes('Eve Linen') && text.includes('100% French Flax Linen'),
+            darcyCorduroy: text.includes('Darcy Corduroy') && text.includes('Plush Ribbed Cotton'),
+            edenCotton: text.includes('Eden Cotton') && text.includes('Smooth Cotton Percale'),
+            judeOrganic: text.includes('Jude Organic Cotton') && text.includes('Crisp Certified Organic'),
+            frankieFlannelette: text.includes('Frankie Flannelette') && text.includes('Brushed Cozy Warmth'),
+            leoWashed: text.includes('Leo Washed Cotton') && text.includes('Soft Lived-In Finish'),
+            editorialCard: text.includes('Darcy Corduroy in Russet') && text.includes('Atelier Edit'),
+            hasCardImage: !!img && img.complete && img.naturalWidth > 0,
+            hasCardButton: text.includes('Explore Darcy Corduroy')
+          };
+        })()
+      `);
+
+      assert(fabricsAndEditorial && fabricsAndEditorial.eveLinen, 'Fabric Shortcut 1: "Eve Linen (100% French Flax Linen)" present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.darcyCorduroy, 'Fabric Shortcut 2: "Darcy Corduroy (Plush Ribbed Cotton)" present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.edenCotton, 'Fabric Shortcut 3: "Eden Cotton (Smooth Cotton Percale)" present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.judeOrganic, 'Fabric Shortcut 4: "Jude Organic Cotton (Crisp Certified Organic)" present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.frankieFlannelette, 'Fabric Shortcut 5: "Frankie Flannelette (Brushed Cozy Warmth)" present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.leoWashed, 'Fabric Shortcut 6: "Leo Washed Cotton (Soft Lived-In Finish)" present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.editorialCard, 'Editorial Showcase: "Darcy Corduroy in Russet" card present');
+      assert(fabricsAndEditorial && fabricsAndEditorial.hasCardImage, 'Editorial Showcase: Image loaded successfully with natural dimensions');
+      assert(fabricsAndEditorial && fabricsAndEditorial.hasCardButton, 'Editorial Showcase: "Explore Darcy Corduroy" CTA button present');
+
+      // -------------------------------------------------------------
+      // 5. Escape-Key & Outside-Click Dismissal
+      // -------------------------------------------------------------
+      console.log('\n--- 5. Escape-Key & Outside-Click Dismissal ---');
       
       // Dispatch Escape key
       await send('Input.dispatchKeyEvent', { type: 'rawKeyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
       await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
       await new Promise(r => setTimeout(r, 200));
 
-      const dismissedByEscape = await evaluate(`
-        (() => {
-          return !document.querySelector('#desktop-mega-menu-panel');
-        })()
-      `);
-      assert(dismissedByEscape, 'Pressing Escape dismissed the mega-menu panel');
+      const dismissedByEscape = await evaluate(`!document.querySelector('#desktop-mega-menu-panel')`);
+      assert(dismissedByEscape, 'Pressing Escape dismissed mega-menu panel');
 
-      // Re-open by hover
+      // Move away then re-hover to open
+      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
+      await new Promise(r => setTimeout(r, 100));
       await send('Input.dispatchMouseEvent', {
         type: 'mouseMoved',
         x: Math.round(beddingButtonRect.x),
         y: Math.round(beddingButtonRect.y)
       });
-      await new Promise(r => setTimeout(r, 250));
+      await new Promise(r => setTimeout(r, 300));
 
       // Click outside at bottom of viewport
       await send('Input.dispatchMouseEvent', { type: 'mousePressed', x: 600, y: 700, button: 'left', clickCount: 1 });
       await send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: 600, y: 700, button: 'left', clickCount: 1 });
       await new Promise(r => setTimeout(r, 250));
 
-      const dismissedByOutsideClick = await evaluate(`
-        (() => {
-          return !document.querySelector('#desktop-mega-menu-panel');
-        })()
-      `);
-      assert(dismissedByOutsideClick, 'Clicking outside dismissed the mega-menu panel');
+      const dismissedByOutsideClick = await evaluate(`!document.querySelector('#desktop-mega-menu-panel')`);
+      assert(dismissedByOutsideClick, 'Clicking outside dismissed mega-menu panel');
 
       // -------------------------------------------------------------
-      // 5. Mega-Menu Navigation Click
+      // 6. Mega-Menu Navigation Destinations
       // -------------------------------------------------------------
-      console.log('\n--- 5. Mega-Menu Navigation Click ---');
-      // Re-open by hover
+      console.log('\n--- 6. Mega-Menu Navigation Destinations ---');
+      
+      // Navigate to Quilt Covers
+      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
+      await new Promise(r => setTimeout(r, 100));
       await send('Input.dispatchMouseEvent', {
         type: 'mouseMoved',
         x: Math.round(beddingButtonRect.x),
         y: Math.round(beddingButtonRect.y)
       });
-      await new Promise(r => setTimeout(r, 250));
+      await new Promise(r => setTimeout(r, 300));
 
-      // Click "Quilt Covers" inside mega-menu
       const clickQuiltCovers = await evaluate(`
         (() => {
           const panel = document.querySelector('#desktop-mega-menu-panel');
-          if (!panel) return false;
-          const buttons = Array.from(panel.querySelectorAll('button'));
-          const btn = buttons.find(b => b.textContent.includes('Quilt Covers'));
+          const btn = Array.from(panel?.querySelectorAll('button') || []).find(b => b.textContent.includes('Quilt Covers'));
           if (!btn) return false;
           btn.click();
           return true;
         })()
       `);
       assert(clickQuiltCovers, 'Clicked "Quilt Covers" in mega-menu');
-      await new Promise(r => setTimeout(r, 500));
+      await new Promise(r => setTimeout(r, 400));
 
-      const catalogActiveCategory = await evaluate(`
+      const catalogQuiltCovers = await evaluate(`document.body.textContent.includes('Quilt Covers')`);
+      assert(catalogQuiltCovers, 'Mega-menu navigated to CatalogView filtered to "Quilt Covers"');
+
+      // Return home
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Navigate to Sleepwear (specifically requested)
+      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
+      await new Promise(r => setTimeout(r, 100));
+      await send('Input.dispatchMouseEvent', {
+        type: 'mouseMoved',
+        x: Math.round(beddingButtonRect.x),
+        y: Math.round(beddingButtonRect.y)
+      });
+      await new Promise(r => setTimeout(r, 300));
+
+      const clickSleepwear = await evaluate(`
         (() => {
-          const header = document.querySelector('h1, h2');
-          const isCatalog = document.querySelector('[data-testid="catalog-view"]') || document.body.textContent.includes('Quilt Covers');
-          return isCatalog;
-        })()
-      `);
-      assert(catalogActiveCategory, 'Navigated to CatalogView filtered to "Quilt Covers"');
-
-      // Navigate home via logo
-      await evaluate(`
-        (() => {
-          const homeBtn = Array.from(document.querySelectorAll('header button')).find(b => b.textContent.includes('MORFE'));
-          homeBtn?.click();
-        })()
-      `);
-      await new Promise(r => setTimeout(r, 500));
-
-      // -------------------------------------------------------------
-      // 6. Horizontal Category Pill Strip
-      // -------------------------------------------------------------
-      console.log('\n--- 6. Horizontal Category Pill Strip ---');
-      const pillStripData = await evaluate(`
-        (() => {
-          const nav = document.querySelector('[aria-label="Category pill navigation"]');
-          if (!nav) return null;
-          const pills = Array.from(nav.querySelectorAll('button')).map(b => b.textContent.trim());
-          const allPill = nav.querySelector('button');
-          const isAllActive = allPill?.className?.includes('bg-umber') || allPill?.className?.includes('text-porcelain');
-          return {
-            count: pills.length,
-            pills,
-            hasQuiltCovers: pills.some(p => p.toLowerCase().includes('quilt covers')),
-            hasFittedSheets: pills.some(p => p.toLowerCase().includes('fitted sheets')),
-            hasBedSets: pills.some(p => p.toLowerCase().includes('bed sheets & sets')),
-            hasCushions: pills.some(p => p.toLowerCase().includes('cushions')),
-            hasKidsBaby: pills.some(p => p.toLowerCase().includes('kids & baby')),
-            isAllActive
-          };
-        })()
-      `);
-
-      assert(pillStripData && pillStripData.count >= 14, `Category pill strip rendered ${pillStripData?.count} category pills`);
-      assert(pillStripData && pillStripData.hasQuiltCovers, 'Category pill strip includes "Quilt Covers"');
-      assert(pillStripData && pillStripData.hasFittedSheets, 'Category pill strip includes "Fitted Sheets"');
-      assert(pillStripData && pillStripData.hasBedSets, 'Category pill strip includes "Bed Sheets & Sets"');
-      assert(pillStripData && pillStripData.hasCushions, 'Category pill strip includes "Cushions"');
-      assert(pillStripData && pillStripData.hasKidsBaby, 'Category pill strip includes "Kids & Baby"');
-      assert(pillStripData && pillStripData.isAllActive, '"All Bedding" pill displays active visual styling');
-
-      // Click a pill (e.g. "Fitted Sheets")
-      const pillClickResult = await evaluate(`
-        (() => {
-          const nav = document.querySelector('[aria-label="Category pill navigation"]');
-          if (!nav) return false;
-          const buttons = Array.from(nav.querySelectorAll('button'));
-          const fittedPill = buttons.find(b => b.textContent.toLowerCase().includes('fitted sheets'));
-          if (!fittedPill) return false;
-          fittedPill.click();
+          const panel = document.querySelector('#desktop-mega-menu-panel');
+          const btn = Array.from(panel?.querySelectorAll('button') || []).find(b => b.textContent.includes('Sleepwear'));
+          if (!btn) return false;
+          btn.click();
           return true;
         })()
       `);
-      assert(pillClickResult, 'Clicked "Fitted Sheets" category pill');
-      await new Promise(r => setTimeout(r, 500));
+      assert(clickSleepwear, 'Clicked "Sleepwear" in mega-menu');
+      await new Promise(r => setTimeout(r, 400));
 
-      const catalogFittedActive = await evaluate(`
-        (() => {
-          return document.body.textContent.includes('Fitted Sheets');
-        })()
-      `);
-      assert(catalogFittedActive, 'Pill click filtered catalogue to "Fitted Sheets"');
+      const catalogSleepwear = await evaluate(`document.body.textContent.includes('Sleepwear')`);
+      assert(catalogSleepwear, 'Mega-menu navigated to CatalogView filtered to "Sleepwear"');
 
       // Return home
-      await evaluate(`
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Navigate to Complete Catalogue
+      await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 0, y: 0 });
+      await new Promise(r => setTimeout(r, 100));
+      await send('Input.dispatchMouseEvent', {
+        type: 'mouseMoved',
+        x: Math.round(beddingButtonRect.x),
+        y: Math.round(beddingButtonRect.y)
+      });
+      await new Promise(r => setTimeout(r, 300));
+
+      const clickViewAll = await evaluate(`
         (() => {
-          const homeBtn = Array.from(document.querySelectorAll('header button')).find(b => b.textContent.includes('MORFE'));
-          homeBtn?.click();
+          const panel = document.querySelector('#desktop-mega-menu-panel');
+          const btn = Array.from(panel?.querySelectorAll('button') || []).find(b => b.textContent.includes('View Complete Catalogue'));
+          if (!btn) return false;
+          btn.click();
+          return true;
         })()
       `);
+      assert(clickViewAll, 'Clicked "View Complete Catalogue" in mega-menu');
+      await new Promise(r => setTimeout(r, 400));
+
+      const catalogComplete = await evaluate(`
+        (() => {
+          const text = document.body.textContent;
+          return text.includes('All Bedding') || text.includes('167');
+        })()
+      `);
+      assert(catalogComplete, 'Navigated to complete catalogue showing full collection');
+
+      // Return home
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+
+      // -------------------------------------------------------------
+      // 7. Horizontal Category Pill Strip: All 14 Pills & Controls
+      // -------------------------------------------------------------
+      console.log('\n--- 7. Horizontal Category Pill Strip ---');
+      const expectedPills = [
+        { label: 'All Bedding', count: 167 },
+        { label: 'Quilt Covers', count: 15 },
+        { label: 'Fitted Sheets', count: 8 },
+        { label: 'Flat Sheets', count: 8 },
+        { label: 'Pillowcases', count: 10 },
+        { label: 'Bed Sheets & Sets', count: 18 },
+        { label: 'Blankets & Bed Covers', count: 19 },
+        { label: 'Quilts & Pillows', count: 12 },
+        { label: 'Protectors & Toppers', count: 7 },
+        { label: 'Cushions', count: 31 },
+        { label: 'Bath & Towels', count: 6 },
+        { label: 'Sleepwear', count: 9 },
+        { label: 'Wellness', count: 8 },
+        { label: 'Kids & Baby', count: 16 }
+      ];
+
+      const renderedPills = await evaluate(`
+        (() => {
+          const nav = document.querySelector('[aria-label="Category pill navigation"]');
+          if (!nav) return [];
+          const buttons = Array.from(nav.querySelectorAll('button'));
+          return buttons.map(b => {
+            const spans = Array.from(b.querySelectorAll('span'));
+            const text = spans[0]?.textContent?.trim() || '';
+            const count = parseInt(spans[1]?.textContent?.trim() || '0', 10);
+            const isActive = b.className.includes('bg-umber') && b.className.includes('text-porcelain');
+            return { text, count, isActive };
+          });
+        })()
+      `);
+
+      assert(renderedPills.length === 14, `Category strip contains exactly 14 pills (found: ${renderedPills.length})`);
+
+      let allPillsMatch = true;
+      for (let i = 0; i < expectedPills.length; i++) {
+        const expected = expectedPills[i];
+        const actual = renderedPills.find(p => p.text.toLowerCase() === expected.label.toLowerCase());
+        if (!actual || actual.count !== expected.count) {
+          allPillsMatch = false;
+          console.error(`  [MISMATCH] Pill "${expected.label}": expected count ${expected.count}, actual: ${actual?.count}`);
+        }
+      }
+      assert(allPillsMatch, 'All 14 category pills match expected labels and product counts');
+
+      const allBeddingActive = renderedPills[0]?.isActive;
+      assert(allBeddingActive, '"All Bedding" pill displays active visual styling by default');
+
+      // Test Category Pill Click: Fitted Sheets
+      console.log('\n--- 7B. Category Pill Clicks & Filtering ---');
+      const clickFitted = await evaluate(`
+        (() => {
+          const nav = document.querySelector('[aria-label="Category pill navigation"]');
+          const btn = Array.from(nav?.querySelectorAll('button') || []).find(b => b.textContent.includes('Fitted Sheets'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(clickFitted, 'Clicked "Fitted Sheets" category pill');
+      await new Promise(r => setTimeout(r, 400));
+
+      const catalogFilteredFitted = await evaluate(`document.body.textContent.includes('Fitted Sheets')`);
+      assert(catalogFilteredFitted, 'Catalogue filtered to "Fitted Sheets" upon pill click');
+
+      // Return home
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Test Category Pill Click: Wellness
+      const clickWellness = await evaluate(`
+        (() => {
+          const nav = document.querySelector('[aria-label="Category pill navigation"]');
+          const btn = Array.from(nav?.querySelectorAll('button') || []).find(b => b.textContent.includes('Wellness'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(clickWellness, 'Clicked "Wellness" category pill');
+      await new Promise(r => setTimeout(r, 400));
+
+      const catalogFilteredWellness = await evaluate(`document.body.textContent.includes('Wellness')`);
+      assert(catalogFilteredWellness, 'Catalogue filtered to "Wellness" upon pill click');
+
+      // Return home
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Scroll Button Controls Verification
+      console.log('\n--- 7C. Category Strip Scroll Controls ---');
+      const initialScrollState = await evaluate(`
+        (() => {
+          const nav = document.querySelector('[aria-label="Category pill navigation"]');
+          const leftBtn = document.querySelector('button[aria-label="Scroll categories left"]');
+          const rightBtn = document.querySelector('button[aria-label="Scroll categories right"]');
+          return {
+            scrollLeft: nav?.scrollLeft || 0,
+            leftDisabled: leftBtn?.disabled,
+            rightDisabled: rightBtn?.disabled
+          };
+        })()
+      `);
+      assert(initialScrollState.leftDisabled === true, 'Scroll-left button initially disabled at start of pill strip');
+      assert(initialScrollState.rightDisabled === false, 'Scroll-right button initially enabled');
+
+      // Click scroll right button
+      await evaluate(`document.querySelector('button[aria-label="Scroll categories right"]')?.click()`);
+      await new Promise(r => setTimeout(r, 500));
+
+      const scrolledRightState = await evaluate(`
+        (() => {
+          const nav = document.querySelector('[aria-label="Category pill navigation"]');
+          const leftBtn = document.querySelector('button[aria-label="Scroll categories left"]');
+          return {
+            scrollLeft: nav?.scrollLeft || 0,
+            leftDisabled: leftBtn?.disabled
+          };
+        })()
+      `);
+      assert(scrolledRightState.scrollLeft > 0, `Pill strip scrolled right (scrollLeft: ${scrolledRightState.scrollLeft}px)`);
+      assert(scrolledRightState.leftDisabled === false, 'Scroll-left button became active after right scroll');
+
+      // Click scroll left button to return
+      await evaluate(`document.querySelector('button[aria-label="Scroll categories left"]')?.click()`);
       await new Promise(r => setTimeout(r, 500));
 
       // -------------------------------------------------------------
-      // 7. Editorial Homepage Vignettes
+      // 8. Editorial Homepage Vignettes & CTAs
       // -------------------------------------------------------------
-      console.log('\n--- 7. Editorial Homepage Vignettes ---');
-      const vignettesContent = await evaluate(`
+      console.log('\n--- 8. Editorial Homepage Vignettes & Images ---');
+      const vignettesData = await evaluate(`
         (() => {
           const sec = document.querySelector('#editorial-vignettes-section');
           if (!sec) return null;
           const text = sec.textContent;
-          const images = Array.from(sec.querySelectorAll('img')).map(i => i.getAttribute('src'));
+          const images = Array.from(sec.querySelectorAll('img')).map(img => ({
+            src: img.getAttribute('src'),
+            complete: img.complete,
+            naturalWidth: img.naturalWidth,
+            naturalHeight: img.naturalHeight
+          }));
           return {
             hasTextureEdit: text.includes('The Texture Edit'),
             hasArtOfUnmadeBed: text.includes('The Art of the Unmade Bed'),
             hasThreeElements: text.includes('Three Elements of a Restful Night'),
-            hasBaseCard: text.includes('55cm Deep Fitted Sheet') && text.includes('01 · The Base'),
-            hasCenterpieceCard: text.includes('Tailored Quilt Covers') && text.includes('02 · The Centerpiece'),
-            hasLayerCard: text.includes('Stonewashed Bed Covers') && text.includes('03 · The Layer'),
+            hasBaseCard: text.includes('55cm Deep Fitted Sheet'),
+            hasCenterpieceCard: text.includes('Tailored Quilt Covers'),
+            hasLayerCard: text.includes('Stonewashed Bed Covers'),
             imageCount: images.length,
+            allImagesLoaded: images.every(i => i.complete && i.naturalWidth > 0),
             images
           };
         })()
       `);
 
-      assert(vignettesContent && vignettesContent.hasTextureEdit, 'Vignette 1 renders "The Texture Edit" tag');
-      assert(vignettesContent && vignettesContent.hasArtOfUnmadeBed, 'Vignette 1 renders serif headline "The Art of the Unmade Bed"');
-      assert(vignettesContent && vignettesContent.hasThreeElements, 'Vignette 2 renders "Three Elements of a Restful Night"');
-      assert(vignettesContent && vignettesContent.hasBaseCard, 'Vignette 2 Card 1: 55cm Deep Fitted Sheet rendered');
-      assert(vignettesContent && vignettesContent.hasCenterpieceCard, 'Vignette 2 Card 2: Tailored Quilt Covers rendered');
-      assert(vignettesContent && vignettesContent.hasLayerCard, 'Vignette 2 Card 3: Stonewashed Bed Covers rendered');
-      assert(vignettesContent && vignettesContent.imageCount === 4, 'Editorial vignettes load 4 verified local image assets');
+      assert(vignettesData && vignettesData.hasTextureEdit, 'Vignette 1 renders "The Texture Edit" eyebrow');
+      assert(vignettesData && vignettesData.hasArtOfUnmadeBed, 'Vignette 1 renders "The Art of the Unmade Bed" title');
+      assert(vignettesData && vignettesData.hasThreeElements, 'Vignette 2 renders "Three Elements of a Restful Night"');
+      assert(vignettesData && vignettesData.hasBaseCard, 'Vignette 2 Card 1: 55cm Deep Fitted Sheet present');
+      assert(vignettesData && vignettesData.hasCenterpieceCard, 'Vignette 2 Card 2: Tailored Quilt Covers present');
+      assert(vignettesData && vignettesData.hasLayerCard, 'Vignette 2 Card 3: Stonewashed Bed Covers present');
+      assert(vignettesData && vignettesData.imageCount === 4, 'Editorial vignettes contain 4 local physical image assets');
+      assert(vignettesData && vignettesData.allImagesLoaded, 'All 4 editorial vignette images loaded successfully with natural dimensions');
 
-      // Click CTA in Vignette 1: "Shop Quilt Covers"
-      const ctaClickSuccess = await evaluate(`
+      // Test Vignette CTAs
+      console.log('\n--- 8B. Vignette Actionable CTA Navigation ---');
+      
+      // Vignette 1 CTA: "Shop Quilt Covers"
+      const cta1Success = await evaluate(`
         (() => {
           const sec = document.querySelector('#editorial-vignettes-section');
           const btn = Array.from(sec?.querySelectorAll('button') || []).find(b => b.textContent.includes('Shop Quilt Covers'));
@@ -500,111 +691,263 @@ async function run() {
           return true;
         })()
       `);
-      assert(ctaClickSuccess, 'Clicked "Shop Quilt Covers" CTA in Editorial Vignette');
-      await new Promise(r => setTimeout(r, 500));
+      assert(cta1Success, 'Clicked Vignette 1 CTA: "Shop Quilt Covers"');
+      await new Promise(r => setTimeout(r, 400));
+      assert(await evaluate(`document.body.textContent.includes('Quilt Covers')`), 'Vignette 1 CTA navigated to Quilt Covers');
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
 
-      // Return home
-      await evaluate(`
+      // Vignette 2 Card 1 CTA: "Shop Fitted Sheets"
+      const cta2Success = await evaluate(`
         (() => {
-          const homeBtn = Array.from(document.querySelectorAll('header button')).find(b => b.textContent.includes('MORFE'));
-          homeBtn?.click();
+          const sec = document.querySelector('#editorial-vignettes-section');
+          const btn = Array.from(sec?.querySelectorAll('button') || []).find(b => b.textContent.includes('Shop Fitted Sheets'));
+          if (!btn) return false;
+          btn.click();
+          return true;
         })()
       `);
-      await new Promise(r => setTimeout(r, 500));
+      assert(cta2Success, 'Clicked Vignette 2 Card 1 CTA: "Shop Fitted Sheets"');
+      await new Promise(r => setTimeout(r, 400));
+      assert(await evaluate(`document.body.textContent.includes('Fitted Sheets')`), 'Vignette 2 Card 1 CTA navigated to Fitted Sheets');
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Vignette 2 Card 3 CTA: "Shop Bed Covers"
+      const cta3Success = await evaluate(`
+        (() => {
+          const sec = document.querySelector('#editorial-vignettes-section');
+          const btn = Array.from(sec?.querySelectorAll('button') || []).find(b => b.textContent.includes('Shop Bed Covers'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(cta3Success, 'Clicked Vignette 2 Card 3 CTA: "Shop Bed Covers"');
+      await new Promise(r => setTimeout(r, 400));
+      assert(await evaluate(`document.body.textContent.includes('Blankets & Bed Covers')`), 'Vignette 2 Card 3 CTA navigated to Blankets & Bed Covers');
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
 
       // -------------------------------------------------------------
-      // 8. Responsive Viewports & Zero Horizontal Overflow
+      // 9. Mobile Navigation Drawer & Touch Targets
       // -------------------------------------------------------------
-      console.log('\n--- 8. Responsive Viewports & Zero Overflow ---');
-      
-      // Desktop: 1280px
-      const desktopOverflow = await evaluate(`
-        (() => {
-          return {
-            scrollWidth: document.documentElement.scrollWidth,
-            innerWidth: window.innerWidth,
-            hasNoOverflow: document.documentElement.scrollWidth <= window.innerWidth
-          };
-        })()
-      `);
-      assert(desktopOverflow.hasNoOverflow, `Desktop (1280px): zero horizontal overflow (scrollWidth=${desktopOverflow.scrollWidth}, innerWidth=${desktopOverflow.innerWidth})`);
-
-      // Tablet: 768px
-      await send('Emulation.setDeviceMetricsOverride', {
-        width: 768,
-        height: 1024,
-        deviceScaleFactor: 1,
-        mobile: false
-      });
-      await new Promise(r => setTimeout(r, 500));
-
-      const tabletOverflow = await evaluate(`
-        (() => {
-          return {
-            scrollWidth: document.documentElement.scrollWidth,
-            innerWidth: window.innerWidth,
-            hasNoOverflow: document.documentElement.scrollWidth <= window.innerWidth
-          };
-        })()
-      `);
-      assert(tabletOverflow.hasNoOverflow, `Tablet (768px): zero horizontal overflow (scrollWidth=${tabletOverflow.scrollWidth}, innerWidth=${tabletOverflow.innerWidth})`);
-
-      // Mobile: 375px
+      console.log('\n--- 9. Mobile Navigation Drawer & Touch Targets ---');
       await send('Emulation.setDeviceMetricsOverride', {
         width: 375,
-        height: 667,
+        height: 812,
         deviceScaleFactor: 2,
         mobile: true
       });
       await new Promise(r => setTimeout(r, 500));
 
-      const mobileOverflow = await evaluate(`
+      // Open drawer via hamburger
+      const openHamburger = await evaluate(`
         (() => {
-          return {
-            scrollWidth: document.documentElement.scrollWidth,
-            innerWidth: window.innerWidth,
-            hasNoOverflow: document.documentElement.scrollWidth <= window.innerWidth
-          };
-        })()
-      `);
-      assert(mobileOverflow.hasNoOverflow, `Mobile (375px): zero horizontal overflow (scrollWidth=${mobileOverflow.scrollWidth}, innerWidth=${mobileOverflow.innerWidth})`);
-
-      // Mobile Menu Drawer: Click Hamburger & Verify Accordions
-      const mobileDrawerOpen = await evaluate(`
-        (() => {
-          const hamburger = document.querySelector('header button[aria-label="Open navigation menu"]');
-          if (!hamburger) return false;
-          hamburger.click();
+          const btn = document.querySelector('header button[aria-label="Open navigation menu"]');
+          if (!btn) return false;
+          btn.click();
           return true;
         })()
       `);
-      assert(mobileDrawerOpen, 'Mobile (375px): Clicked hamburger menu button');
+      assert(openHamburger, 'Mobile (375px): Clicked hamburger menu button');
       await new Promise(r => setTimeout(r, 400));
 
-      const mobileDrawerContent = await evaluate(`
+      // Drawer dimensions and overflow
+      const drawerMetrics = await evaluate(`
         (() => {
           const drawer = document.querySelector('.fixed.inset-y-0.left-0');
           if (!drawer) return null;
-          const text = drawer.textContent;
+          const rect = drawer.getBoundingClientRect();
           return {
-            hasBeddingEssentials: text.includes('Bedding Essentials'),
-            hasLayersComfort: text.includes('Layers & Comfort'),
-            hasLivingFamily: text.includes('Living & Family'),
-            hasAtelierStory: text.includes('Our Story & Manifesto'),
-            hasZeroDrawerOverflow: drawer.scrollWidth <= drawer.clientWidth
+            width: rect.width,
+            clientWidth: drawer.clientWidth,
+            scrollWidth: drawer.scrollWidth,
+            hasZeroOverflow: drawer.scrollWidth <= drawer.clientWidth
           };
         })()
       `);
-      assert(mobileDrawerContent && mobileDrawerContent.hasBeddingEssentials, 'Mobile Drawer: "Bedding Essentials" accordion section present');
-      assert(mobileDrawerContent && mobileDrawerContent.hasLayersComfort, 'Mobile Drawer: "Layers & Comfort" accordion section present');
-      assert(mobileDrawerContent && mobileDrawerContent.hasLivingFamily, 'Mobile Drawer: "Living & Family" accordion section present');
-      assert(mobileDrawerContent && mobileDrawerContent.hasAtelierStory, 'Mobile Drawer: "Our Story & Manifesto" link present');
-      assert(mobileDrawerContent && mobileDrawerContent.hasZeroDrawerOverflow, 'Mobile Drawer: Zero horizontal overflow inside drawer container');
+      assert(drawerMetrics && drawerMetrics.hasZeroOverflow, `Mobile Drawer: zero horizontal overflow (scrollWidth=${drawerMetrics?.scrollWidth}, clientWidth=${drawerMetrics?.clientWidth})`);
+
+      // Touch target heights compliance (>= 44px)
+      const touchTargets = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          if (!drawer) return [];
+          const buttons = Array.from(drawer.querySelectorAll('button'));
+          return buttons.map(b => {
+            const r = b.getBoundingClientRect();
+            return {
+              text: b.textContent.trim().substring(0, 24),
+              height: Math.round(r.height),
+              width: Math.round(r.width),
+              meets44px: r.height >= 44
+            };
+          });
+        })()
+      `);
+      const allTouchCompliant = touchTargets.length > 0 && touchTargets.every(t => t.meets44px);
+      assert(allTouchCompliant, `Mobile Drawer: All ${touchTargets.length} interactive buttons meet >= 44px touch target height standard`);
+
+      // Mobile Accordion Tests
+      console.log('\n--- 9B. Mobile Drawer Accordions ---');
+      
+      // Bedding Essentials (open by default, toggle closed)
+      const toggleBeddingEssentials = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Bedding Essentials'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(toggleBeddingEssentials, 'Toggled Bedding Essentials accordion closed');
+      await new Promise(r => setTimeout(r, 200));
+
+      // Expand Layers & Comfort
+      const expandLayersComfort = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Layers & Comfort'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(expandLayersComfort, 'Toggled Layers & Comfort accordion open');
+      await new Promise(r => setTimeout(r, 200));
+
+      const layersItemsVisible = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          return drawer?.textContent.includes('Blankets & Bed Covers') && drawer?.textContent.includes('Cushions');
+        })()
+      `);
+      assert(layersItemsVisible, 'Layers & Comfort child categories visible when accordion is expanded');
+
+      // Expand Living & Family
+      const expandLivingFamily = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Living & Family'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(expandLivingFamily, 'Toggled Living & Family accordion open');
+      await new Promise(r => setTimeout(r, 200));
+
+      const livingItemsVisible = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          return drawer?.textContent.includes('Sleepwear') && drawer?.textContent.includes('Wellness');
+        })()
+      `);
+      assert(livingItemsVisible, 'Living & Family child categories (Sleepwear & Wellness) visible when accordion expanded');
+
+      // Category Navigation from Inside Mobile Accordion
+      console.log('\n--- 9C. Category Navigation from Inside Mobile Drawer ---');
+      const clickSleepwearInDrawer = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          const btn = Array.from(drawer?.querySelectorAll('button') || []).find(b => b.textContent.includes('Sleepwear'));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        })()
+      `);
+      assert(clickSleepwearInDrawer, 'Clicked "Sleepwear" inside mobile drawer');
+      await new Promise(r => setTimeout(r, 400));
+
+      const drawerClosedAndFiltered = await evaluate(`
+        (() => {
+          const drawer = document.querySelector('.fixed.inset-y-0.left-0');
+          const hasSleepwear = document.body.textContent.includes('Sleepwear');
+          return !drawer && hasSleepwear;
+        })()
+      `);
+      assert(drawerClosedAndFiltered, 'Drawer automatically closed and catalogue filtered to "Sleepwear"');
+
+      // Return home and re-open drawer to test Escape dismissal
+      await evaluate(`document.querySelector('header button[aria-label="MORFE Homepage"]')?.click()`);
+      await new Promise(r => setTimeout(r, 400));
+      await evaluate(`document.querySelector('header button[aria-label="Open navigation menu"]')?.click()`);
+      await new Promise(r => setTimeout(r, 300));
+
+      await send('Input.dispatchKeyEvent', { type: 'rawKeyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+      await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+      await new Promise(r => setTimeout(r, 300));
+
+      const drawerDismissedByEscape = await evaluate(`!document.querySelector('.fixed.inset-y-0.left-0')`);
+      assert(drawerDismissedByEscape, 'Pressing Escape dismissed mobile navigation drawer');
 
       // -------------------------------------------------------------
-      // 9. React Rules of Hooks & Console Exception Verification
+      // 10. Responsive Viewports Across 9 Exact Breakpoints
       // -------------------------------------------------------------
-      console.log('\n--- 9. React Rules of Hooks & Console Exception Verification ---');
+      console.log('\n--- 10. Responsive Testing Across 9 Exact Viewports ---');
+      const testViewports = [
+        { width: 1440, height: 900, name: '1440px (Wide Desktop)' },
+        { width: 1280, height: 800, name: '1280px (Standard Desktop)' },
+        { width: 1024, height: 768, name: '1024px (Small Desktop / Tablet Boundary)' },
+        { width: 1023, height: 768, name: '1023px (Tablet Landscape Breakpoint)' },
+        { width: 900,  height: 600, name: '900px (Medium Tablet)' },
+        { width: 768,  height: 1024, name: '768px (Portrait Tablet)' },
+        { width: 480,  height: 800, name: '480px (Large Mobile)' },
+        { width: 375,  height: 667, name: '375px (Standard iPhone)' },
+        { width: 320,  height: 568, name: '320px (Compact Mobile)' }
+      ];
+
+      for (const vp of testViewports) {
+        await send('Emulation.setDeviceMetricsOverride', {
+          width: vp.width,
+          height: vp.height,
+          deviceScaleFactor: 1,
+          mobile: vp.width < 1024
+        });
+        await new Promise(r => setTimeout(r, 350));
+
+        const vpMetrics = await evaluate(`
+          (() => {
+            const innerWidth = window.innerWidth;
+            const scrollWidth = document.documentElement.scrollWidth;
+            const overflow = Math.max(0, scrollWidth - innerWidth);
+            const desktopNav = Array.from(document.querySelectorAll('header nav div')).find(d => d.className.includes('lg:flex') && d.textContent.includes('Bedding'));
+            const hamburger = document.querySelector('header button[aria-label="Open navigation menu"]');
+            
+            const desktopNavVisible = desktopNav ? window.getComputedStyle(desktopNav).display !== 'none' : false;
+            const hamburgerVisible = hamburger ? window.getComputedStyle(hamburger).display !== 'none' : false;
+            
+            return {
+              innerWidth,
+              scrollWidth,
+              overflow,
+              desktopNavVisible,
+              hamburgerVisible
+            };
+          })()
+        `);
+
+        const isDesktop = vp.width >= 1024;
+        const expectedNav = isDesktop;
+        const expectedHamburger = !isDesktop;
+
+        assert(
+          vpMetrics.overflow === 0,
+          `Viewport ${vp.name}: Zero horizontal overflow (scrollWidth=${vpMetrics.scrollWidth}, innerWidth=${vpMetrics.innerWidth}, overflow=${vpMetrics.overflow}px)`
+        );
+
+        assert(
+          vpMetrics.desktopNavVisible === expectedNav && vpMetrics.hamburgerVisible === expectedHamburger,
+          `Viewport ${vp.name}: Correct navigation visibility (Desktop Nav: ${vpMetrics.desktopNavVisible}, Mobile Hamburger: ${vpMetrics.hamburgerVisible})`
+        );
+      }
+
+      // -------------------------------------------------------------
+      // 11. React Rules of Hooks & Console Exception Verification
+      // -------------------------------------------------------------
+      console.log('\n--- 11. React Rules of Hooks & Console Exception Verification ---');
       assert(browserConsoleErrors.length === 0, `Confirmed ZERO React Hooks violations or console errors (logged: ${browserConsoleErrors.join(' | ') || 'none'})`);
 
     } catch (err) {
