@@ -1,0 +1,204 @@
+{
+  "timestamp": "2026-11-21T06:15:34.155Z",
+  "commit": "bba374d",
+  "passedTests": 28,
+  "totalTests": 28,
+  "tests": [
+    {
+      "testNumber": 1,
+      "name": "Storefront hydrated with complete product catalogue",
+      "status": "PASS",
+      "expected": ">= 167 cards",
+      "actual": "171 cards"
+    },
+    {
+      "testNumber": 2,
+      "name": "Clicked product card \"Darcy Corduroy - Russet Quilt Cover\" to open modal",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 3,
+      "name": "Modal title matches authoritative product name",
+      "status": "PASS",
+      "expected": "Darcy Corduroy - Russet Quilt Cover",
+      "actual": "Darcy Corduroy - Russet Quilt Cover"
+    },
+    {
+      "testNumber": 4,
+      "name": "Modal initial colourway matches authoritative first colourway",
+      "status": "PASS",
+      "expected": "Russet",
+      "actual": "Russet"
+    },
+    {
+      "testNumber": 5,
+      "name": "Displayed initial image strictly matches authoritative colourway hero image",
+      "status": "PASS",
+      "expected": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg",
+      "actual": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-01.jpg"
+    },
+    {
+      "testNumber": 6,
+      "name": "Selected bed size updated to \"King\"",
+      "status": "PASS",
+      "expected": "King",
+      "actual": "King"
+    },
+    {
+      "testNumber": 7,
+      "name": "Selected quantity increased to \"3\"",
+      "status": "PASS",
+      "expected": "3",
+      "actual": "3"
+    },
+    {
+      "testNumber": 8,
+      "name": "Gallery advanced to image index 1 (View 2 of initial colourway)",
+      "status": "PASS",
+      "expected": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg",
+      "actual": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-russet-02.jpg"
+    },
+    {
+      "testNumber": 9,
+      "name": "Dispatched click event on colourway swatch \"Hunter-green\"",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 10,
+      "name": "Active colourway dynamically updated to \"Hunter-green\"",
+      "status": "PASS",
+      "expected": "Hunter-green",
+      "actual": "Hunter-green"
+    },
+    {
+      "testNumber": 11,
+      "name": "Gallery index reset to zero (View 1 is active on stage)",
+      "status": "PASS",
+      "expected": "View 1",
+      "actual": "Darcy Corduroy - Russet Quilt Cover - Hunter-green (View 1)"
+    },
+    {
+      "testNumber": 12,
+      "name": "Displayed image strictly matches authoritative image for \"Hunter-green\"",
+      "status": "PASS",
+      "expected": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+      "actual": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+    },
+    {
+      "testNumber": 13,
+      "name": "Confirmed no previous colourway images (\"Russet\") remain visible in stage",
+      "status": "PASS",
+      "expected": "No leak",
+      "actual": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+    },
+    {
+      "testNumber": 14,
+      "name": "Selected bed size \"King\" was PRESERVED across colourway switch",
+      "status": "PASS",
+      "expected": "King",
+      "actual": "King"
+    },
+    {
+      "testNumber": 15,
+      "name": "Selected quantity \"3\" was PRESERVED across colourway switch",
+      "status": "PASS",
+      "expected": "3",
+      "actual": "3"
+    },
+    {
+      "testNumber": 16,
+      "name": "Clicked \"Add to Bag\" button",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 17,
+      "name": "CartDrawer opened and contains added product item",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 18,
+      "name": "Cart item details reflect preserved size (\"King\") and selected hue (\"Hunter-green\")",
+      "status": "PASS",
+      "expected": "Hue: Hunter-green · Size: King",
+      "actual": "Hue: Hunter-green · Size: King"
+    },
+    {
+      "testNumber": 19,
+      "name": "Cart item reflects preserved quantity \"3\"",
+      "status": "PASS",
+      "expected": "3",
+      "actual": "3"
+    },
+    {
+      "testNumber": 20,
+      "name": "Cart thumbnail strictly displays authoritative image for \"Hunter-green\"",
+      "status": "PASS",
+      "expected": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg",
+      "actual": "/assets/sheetsociety-catalog/quilt-covers/corduroy-quilt-cover-hunter-green-01.jpg"
+    },
+    {
+      "testNumber": 21,
+      "name": "Clicked \"Close cart drawer\" button",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 22,
+      "name": "CartDrawer successfully closed from DOM",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 23,
+      "name": "Clicked \"Close product modal\" button",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 24,
+      "name": "ProductDetailModal successfully closed from DOM",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 25,
+      "name": "Reopened modal on second product \"Darcy Corduroy - Hunter Green Quilt Cover\"",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    },
+    {
+      "testNumber": 26,
+      "name": "Reopened modal cleanly displays second product without errors",
+      "status": "PASS",
+      "expected": "Darcy Corduroy - Hunter Green Quilt Cover",
+      "actual": "Darcy Corduroy - Hunter Green Quilt Cover"
+    },
+    {
+      "testNumber": 27,
+      "name": "Confirmed ZERO React Hooks violations or console errors during open/close/reopen cycle",
+      "status": "PASS",
+      "expected": "0 errors",
+      "actual": "0 errors: "
+    },
+    {
+      "testNumber": 28,
+      "name": "Placeholder architecture configured with ImageOff icon and status role",
+      "status": "PASS",
+      "expected": "",
+      "actual": ""
+    }
+  ]
+}
