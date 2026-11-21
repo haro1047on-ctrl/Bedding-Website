@@ -348,9 +348,14 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                     }`}
                   >
                     <div className="flex items-center space-x-3">
+                      {/* Strict 3-Tier Colourway Image Resolution (Priority 1: Gallery, Priority 2: Single Image, Priority 3: Placeholder. Zero product.images fallback) */}
                       {(() => {
                         const primaryColor = product.colors?.[0];
-                        const primaryImg = (primaryColor?.gallery && primaryColor.gallery[0]) || primaryColor?.image || product.images[0];
+                        const primaryGallery = (primaryColor?.gallery && Array.isArray(primaryColor.gallery) && primaryColor.gallery.length > 0)
+                          ? primaryColor.gallery.filter(img => typeof img === 'string' && img.trim().length > 0)
+                          : [];
+                        const primaryImg = primaryGallery[0] || (typeof primaryColor?.image === 'string' && primaryColor.image.trim()) || '';
+
                         return primaryImg ? (
                           <img
                             src={primaryImg}
@@ -358,8 +363,11 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
                             className="w-12 h-12 object-cover border border-sand-border rounded-sm flex-shrink-0"
                           />
                         ) : (
-                          <div className="w-12 h-12 bg-porcelain border border-sand-border rounded-sm flex items-center justify-center flex-shrink-0 text-umber/30">
-                            <ImageOff className="w-4 h-4" />
+                          <div className="w-12 h-12 bg-porcelain border border-sand-border rounded-sm flex flex-col items-center justify-center flex-shrink-0 text-umber/40 p-0.5 text-center">
+                            <ImageOff className="w-3.5 h-3.5 mb-0.5" />
+                            <span className="text-[7px] uppercase tracking-wider font-sans line-clamp-1">
+                              {primaryColor?.name || 'Unavailable'}
+                            </span>
                           </div>
                         );
                       })()}

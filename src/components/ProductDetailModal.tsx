@@ -178,7 +178,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       />
 
       {/* Modal Dialog Content */}
-      <div className="relative w-full max-w-5xl bg-[#fbf9f6] border border-[#e5e5e5] shadow-2xl my-auto z-10 max-h-[92vh] overflow-y-auto rounded-lg">
+      <div 
+        role="dialog"
+        aria-modal="true"
+        aria-label={product.name}
+        className="relative w-full max-w-5xl bg-[#fbf9f6] border border-[#e5e5e5] shadow-2xl my-auto z-10 max-h-[92vh] overflow-y-auto rounded-lg"
+      >
         
         {/* Sticky Close Button */}
         <button
@@ -442,7 +447,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <div className="flex items-center border border-[#e5e5e5] bg-white rounded-full">
                   <button
                     type="button"
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
                     className="p-2.5 text-[#000000] hover:text-[#000000]/60"
                     aria-label="Decrease quantity"
                   >
@@ -453,7 +458,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   </span>
                   <button
                     type="button"
-                    onClick={() => setQuantity(quantity + 1)}
+                    onClick={() => setQuantity(prev => prev + 1)}
                     className="p-2.5 text-[#000000] hover:text-[#000000]/60"
                     aria-label="Increase quantity"
                   >

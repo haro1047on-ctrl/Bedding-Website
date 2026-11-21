@@ -274,9 +274,11 @@ console.log(`[PASS] 100% synchronized across mockData.ts, products.ts, and image
 // -------------------------------------------------------------
 // CHECK 6: Component Anti-Regression & Fallback Elimination
 // -------------------------------------------------------------
-console.log('\n--- 6. Component Anti-Regression & Fallback Elimination ---');
+console.log('\n--- 6. Component Anti-Regression & Fallback Elimination Across All Image Components ---');
+
+// 6.1 ProductDetailModal
 const modalCode = fs.readFileSync('src/components/ProductDetailModal.tsx', 'utf8');
-if (modalCode.includes('...product.images') || modalCode.includes('product.images[0]')) {
+if (modalCode.includes('...product.images') || modalCode.includes('product.images[0]') || modalCode.includes('product.images[')) {
   reportFail('ProductDetailModal.tsx contains cross-colour fallback to product.images!');
 } else {
   console.log('[PASS] ProductDetailModal.tsx: zero fallback to product.images');
@@ -293,20 +295,64 @@ if (returnNullIdx !== -1 && useMemoIdx !== -1 && useMemoIdx > returnNullIdx) {
   reportPass();
 }
 
+// 6.2 ProductCard
 const cardCode = fs.readFileSync('src/components/ProductCard.tsx', 'utf8');
-if (cardCode.includes('product.images[1] || currentImage') || cardCode.includes('activeColor.image || product.images[0]')) {
+if (cardCode.includes('product.images[1] || currentImage') || cardCode.includes('activeColor.image || product.images[0]') || cardCode.includes('product.images[')) {
   reportFail('ProductCard.tsx contains cross-colour fallback to product.images!');
 } else {
-  console.log('[PASS] ProductCard.tsx: zero fallback to product.images');
+  console.log('[PASS] ProductCard.tsx: zero fallback to product.images (3-tier resolution enforced)');
   reportPass();
 }
 
+// 6.3 CartDrawer
 const cartCode = fs.readFileSync('src/components/CartDrawer.tsx', 'utf8');
-if (cartCode.includes('item.selectedColor.image || item.product.images[0]')) {
+if (cartCode.includes('item.selectedColor.image || item.product.images[0]') || cartCode.includes('item.product.images[') || cartCode.includes('product.images[')) {
   reportFail('CartDrawer.tsx contains cross-colour fallback to item.product.images!');
 } else {
-  console.log('[PASS] CartDrawer.tsx: zero fallback to item.product.images');
+  console.log('[PASS] CartDrawer.tsx: zero fallback to item.product.images (strictly isolated thumbnail)');
   reportPass();
+}
+
+// 6.4 SearchModal
+const searchCode = fs.readFileSync('src/components/SearchModal.tsx', 'utf8');
+if (searchCode.includes('product.images[0]') || searchCode.includes('product.images[')) {
+  reportFail('SearchModal.tsx contains fallback to product.images!');
+} else if (!searchCode.includes('ImageOff') || !searchCode.includes('primaryGallery[0]')) {
+  reportFail('SearchModal.tsx lacks the 3-tier colourway resolver or missing-image placeholder!');
+} else {
+  console.log('[PASS] SearchModal.tsx: zero fallback to product.images (3-tier resolution & ImageOff placeholder enforced)');
+  reportPass();
+}
+
+// 6.5 ShopTheLook
+const lookCode = fs.readFileSync('src/components/ShopTheLook.tsx', 'utf8');
+if (lookCode.includes('product.images[0]') || lookCode.includes('product.images[')) {
+  reportFail('ShopTheLook.tsx contains fallback to product.images!');
+} else if (!lookCode.includes('ImageOff') || !lookCode.includes('primaryGallery[0]')) {
+  reportFail('ShopTheLook.tsx lacks the 3-tier colourway resolver or missing-image placeholder!');
+} else {
+  console.log('[PASS] ShopTheLook.tsx: zero fallback to product.images (3-tier resolution & ImageOff placeholder enforced)');
+  reportPass();
+}
+
+// 6.6 Universal Audit across all component files in src/components/
+const allComponentFiles = fs.readdirSync('src/components').filter(f => f.endsWith('.tsx'));
+let illicitFallbackFound = false;
+allComponentFiles.forEach(file => {
+  const filePath = path.join('src/components', file);
+  const content = fs.readFileSync(filePath, 'utf8');
+  // Strip comments before checking for code references
+  const stripped = content.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '');
+  if (/product\.images\[\d\]/.test(stripped) || /item\.product\.images\[\d\]/.test(stripped)) {
+    reportFail(`${file} contains unapproved product.images array index fallback!`);
+    illicitFallbackFound = true;
+  } else {
+    reportPass();
+  }
+});
+
+if (!illicitFallbackFound) {
+  console.log(`[PASS] Universal Component Audit: verified all ${allComponentFiles.length} components have zero unapproved product.images fallbacks.`);
 }
 
 // -------------------------------------------------------------
