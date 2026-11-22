@@ -163,3 +163,19 @@ export interface JournalArticle {
   image: string;
   content: string[];
 }
+
+export interface FilterState {
+  categories: BeddingCategory[];
+  colors: string[];
+  materials: BeddingMaterial[];
+  sizes: BedSize[];
+  sortBy: 'featured' | 'price-low' | 'price-high' | 'rating';
+}
+
+export interface FacetCounts {
+  categories: Record<string, number>;
+  colors: Record<string, number>;
+  materials: Record<string, number>;
+  sizes: Record<string, number>;
+}
+

@@ -22,11 +22,32 @@ import { FabricCareModal } from './components/FabricCareModal';
 import { ArticleModal } from './components/ArticleModal';
 import { CatalogView } from './components/CatalogView';
 
+const isCatalogSearch = () => {
+  if (typeof window === 'undefined') return false;
+  const p = new URLSearchParams(window.location.search);
+  return (
+    p.get('view') === 'catalog' ||
+    p.has('category') ||
+    p.has('color') ||
+    p.has('colour') ||
+    p.has('fabric') ||
+    p.has('material') ||
+    p.has('size') ||
+    p.has('sort')
+  );
+};
+
+const getInitialCategory = (): BeddingCategory | 'all' => {
+  if (typeof window === 'undefined') return 'all';
+  const p = new URLSearchParams(window.location.search);
+  const cat = p.get('category');
+  return cat ? (cat as BeddingCategory) : 'all';
+};
+
 export function App() {
   // Navigation View State
-  const initialView = typeof window !== 'undefined' && window.location.search.includes('view=catalog') ? 'catalog' : 'home';
-  const [activeView, setActiveView] = useState<'home' | 'catalog'>(initialView);
-  const [catalogCategory, setCatalogCategory] = useState<BeddingCategory | 'all'>('all');
+  const [activeView, setActiveView] = useState<'home' | 'catalog'>(() => isCatalogSearch() ? 'catalog' : 'home');
+  const [catalogCategory, setCatalogCategory] = useState<BeddingCategory | 'all'>(getInitialCategory);
 
   // Modals & Drawers State
   const [cartOpen, setCartOpen] = useState(false);
@@ -63,6 +84,27 @@ export function App() {
         el?.scrollIntoView({ behavior: 'auto' });
       }, 150);
     }
+  }, []);
+
+  // Listen for browser Back/Forward (popstate) between Home and Catalog
+  React.useEffect(() => {
+    const handlePopState = () => {
+      if (typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search);
+        const isCatalog =
+          params.get('view') === 'catalog' ||
+          params.has('category') ||
+          params.has('color') ||
+          params.has('colour') ||
+          params.has('fabric') ||
+          params.has('material') ||
+          params.has('size') ||
+          params.has('sort');
+        setActiveView(isCatalog ? 'catalog' : 'home');
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   const showToast = (message: string) => {
@@ -126,9 +168,44 @@ export function App() {
   };
 
   // Navigation handlers
+  const handleNavigateHome = () => {
+    setActiveView('home');
+    setCatalogCategory('all');
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      params.delete('view');
+      params.delete('category');
+      params.delete('color');
+      params.delete('fabric');
+      params.delete('material');
+      params.delete('size');
+      params.delete('sort');
+      const remaining = params.toString();
+      const newUrl = window.location.pathname + (remaining ? `?${remaining}` : '') + window.location.hash;
+      window.history.pushState(null, '', newUrl);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleSelectCategory = (category: BeddingCategory | 'all') => {
     setCatalogCategory(category);
     setActiveView('catalog');
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      params.set('view', 'catalog');
+      params.delete('color');
+      params.delete('fabric');
+      params.delete('material');
+      params.delete('size');
+      params.delete('sort');
+      if (category !== 'all') {
+        params.set('category', category);
+      } else {
+        params.delete('category');
+      }
+      const newUrl = window.location.pathname + '?' + params.toString() + window.location.hash;
+      window.history.pushState(null, '', newUrl);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -171,11 +248,7 @@ export function App() {
         onSelectCategory={handleSelectCategory}
         onOpenMaterialGuide={() => setCareGuideOpen(true)}
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
-        onNavigateHome={() => {
-          setActiveView('home');
-          setCatalogCategory('all');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigateHome={handleNavigateHome}
         activeView={activeView}
       />
 
@@ -247,10 +320,7 @@ export function App() {
             initialCategory={catalogCategory}
             onSelectProduct={handleSelectProduct}
             onQuickView={handleSelectProduct}
-            onNavigateHome={() => {
-              setActiveView('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onNavigateHome={handleNavigateHome}
           />
         )}
       </main>
@@ -262,11 +332,7 @@ export function App() {
         onOpenMaterialGuide={() => setCareGuideOpen(true)}
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
         onOpenCareGuide={() => setCareGuideOpen(true)}
-        onNavigateHome={() => {
-          setActiveView('home');
-          setCatalogCategory('all');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigateHome={handleNavigateHome}
       />
 
       {/* Product Detail Modal (with directional gallery slide motion) */}

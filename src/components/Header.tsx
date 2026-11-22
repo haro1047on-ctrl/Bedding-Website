@@ -226,6 +226,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="flex-1 text-center flex justify-center items-center">
               <button
                 type="button"
+                data-testid="header-logo-button"
                 onClick={onNavigateHome}
                 className="group inline-flex flex-col items-center focus:outline-none py-1 focus-visible:ring-1 focus-visible:ring-umber"
                 aria-label="MORFE Homepage"

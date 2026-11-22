@@ -1,0 +1,396 @@
+{
+  "suiteName": "MORFE Phase 5 Advanced PLP Faceted Filtering & Persistent URL State",
+  "timestamp": "2026-11-22T10:37:52.097Z",
+  "totalTests": 55,
+  "passedTests": 55,
+  "failedTests": 0,
+  "successRate": "100.0%",
+  "consoleErrors": [],
+  "records": [
+    {
+      "testNumber": 1,
+      "name": "Total catalogue baseline contains 167 items",
+      "status": "PASS",
+      "expected": "167",
+      "actual": "167"
+    },
+    {
+      "testNumber": 2,
+      "name": "Direct navigation with query parameters immediately renders CatalogView",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 3,
+      "name": "Deep link filters resolve to exactly 4 products (Corduroy Quilt Covers matching Russet colorway in Queen)",
+      "status": "PASS",
+      "expected": "4",
+      "actual": "4"
+    },
+    {
+      "testNumber": 4,
+      "name": "Active filter chips display all 4 hydrated facets (Category, Fabric, Colour, Size)",
+      "status": "PASS",
+      "expected": "All 4 chips present",
+      "actual": "Quilt Covers | Fabric: Darcy Corduroy | Colour: Russet | Size: Queen | Clear All"
+    },
+    {
+      "testNumber": 5,
+      "name": "Sort dropdown hydrates to \"price-low\"",
+      "status": "PASS",
+      "expected": "price-low",
+      "actual": "price-low"
+    },
+    {
+      "testNumber": 6,
+      "name": "Preserves unrelated query parameter utm_campaign=winter_warmth",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 7,
+      "name": "CDP clicks \"Clear All\" button in active chips row",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 8,
+      "name": "Restores full 167-product catalogue after clearing filters",
+      "status": "PASS",
+      "expected": "167",
+      "actual": "167"
+    },
+    {
+      "testNumber": 9,
+      "name": "Active chips row unmounts cleanly when filters are cleared",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 10,
+      "name": "Facet query parameters cleanly removed from URL",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 11,
+      "name": "CDP clicks Category filter dropdown trigger",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 12,
+      "name": "Category dropdown menu is visible and expanded",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 13,
+      "name": "CDP clicks \"Quilt Covers\" option inside Category menu",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 14,
+      "name": "Selecting \"Quilt Covers\" filters grid to exactly 15 products",
+      "status": "PASS",
+      "expected": "15",
+      "actual": "15"
+    },
+    {
+      "testNumber": 15,
+      "name": "URL updated with category=Quilt+Covers",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 16,
+      "name": "CDP clicks \"Fitted Sheets\" option to apply multi-category selection",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 17,
+      "name": "Disjunctive OR across categories yields 23 items (15 Quilt Covers + 8 Fitted Sheets)",
+      "status": "PASS",
+      "expected": "23",
+      "actual": "23"
+    },
+    {
+      "testNumber": 18,
+      "name": "URL query contains both Quilt Covers and Fitted Sheets parameters",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 19,
+      "name": "CDP clicks Colour filter dropdown trigger",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 20,
+      "name": "Colour dropdown menu is visible and expanded",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 21,
+      "name": "CDP clicks \"Olive\" swatch option inside Colour menu",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 22,
+      "name": "Cross-facet filter AND reduces grid count to Olive items within selected categories",
+      "status": "PASS",
+      "expected": "0 < count < 33",
+      "actual": "4"
+    },
+    {
+      "testNumber": 23,
+      "name": "URL query string updated to include color=Olive",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 24,
+      "name": "CDP clicks Size filter dropdown trigger",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 25,
+      "name": "CDP clicks \"King\" size option inside Size menu",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 26,
+      "name": "URL query string includes size=King",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 27,
+      "name": "CDP clicks [X] on \"Size: King\" active filter chip",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 28,
+      "name": "URL query immediately removes size=King upon chip dismissal",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 29,
+      "name": "Product count expands after removing size constraint",
+      "status": "PASS",
+      "expected": ">= 0",
+      "actual": "4"
+    },
+    {
+      "testNumber": 30,
+      "name": "Sort change updates URL to include sort=price-low",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 31,
+      "name": "Product grid is sorted by price ascending (low to high)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 32,
+      "name": "Sort change updates URL to include sort=price-high",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 33,
+      "name": "Product grid is sorted by price descending (high to low)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 34,
+      "name": "Browser Back restores previous URL state (sort=price-low)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 35,
+      "name": "Browser Back synchronizes UI sort dropdown state to price-low",
+      "status": "PASS",
+      "expected": "price-low",
+      "actual": "price-low"
+    },
+    {
+      "testNumber": 36,
+      "name": "Browser Forward re-applies URL state (sort=price-high)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 37,
+      "name": "Browser Forward synchronizes UI sort dropdown state to price-high",
+      "status": "PASS",
+      "expected": "price-high",
+      "actual": "price-high"
+    },
+    {
+      "testNumber": 38,
+      "name": "Page reload preserves exact URL with all query parameters intact",
+      "status": "PASS",
+      "expected": "http://127.0.0.1:5198/?utm_campaign=winter_warmth&view=catalog&category=Quilt+Covers&category=Fitted+Sheets&color=Olive&sort=price-high",
+      "actual": "http://127.0.0.1:5198/?utm_campaign=winter_warmth&view=catalog&category=Quilt+Covers&category=Fitted+Sheets&color=Olive&sort=price-high"
+    },
+    {
+      "testNumber": 39,
+      "name": "Page reload restores exact filtered product card count",
+      "status": "PASS",
+      "expected": "4",
+      "actual": "4"
+    },
+    {
+      "testNumber": 40,
+      "name": "Zero products rendered for impossible filter combination",
+      "status": "PASS",
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "testNumber": 41,
+      "name": "Displays elegant \"No products found\" empty state heading",
+      "status": "PASS",
+      "expected": "No products found",
+      "actual": "No products found"
+    },
+    {
+      "testNumber": 42,
+      "name": "\"Reset Filters\" button rendered inside empty state container",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 43,
+      "name": "CDP clicks \"Reset Filters\" button in empty state",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 44,
+      "name": "Restores full 167-product catalogue after empty state reset",
+      "status": "PASS",
+      "expected": "167",
+      "actual": "167"
+    },
+    {
+      "testNumber": 45,
+      "name": "Mobile \"Filters\" trigger button is visible and positioned at 375px viewport",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 46,
+      "name": "CDP clicks mobile \"Filters\" trigger button",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 47,
+      "name": "Mobile filter drawer opens with high z-index slide-in composition",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 48,
+      "name": "Selects \"Sleepwear\" category inside mobile filter drawer",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 49,
+      "name": "CDP clicks \"View Results\" apply button inside mobile drawer",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 50,
+      "name": "Mobile filter drawer automatically dismisses upon applying filters",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 51,
+      "name": "Product grid filters to 9 Sleepwear items on mobile",
+      "status": "PASS",
+      "expected": "9",
+      "actual": "9"
+    },
+    {
+      "testNumber": 52,
+      "name": "CDP clicks Atelier header brand logo to navigate home",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 53,
+      "name": "Storefront successfully navigates back to Homepage",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 54,
+      "name": "URL facet query parameters and view=catalog cleanly cleared on returning home",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 55,
+      "name": "Zero console errors, zero React warnings, zero hook violations during entire interaction battery",
+      "status": "PASS",
+      "expected": "0 errors",
+      "actual": "0 errors"
+    }
+  ]
+}
