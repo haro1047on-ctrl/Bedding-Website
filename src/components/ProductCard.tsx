@@ -38,6 +38,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div 
+      data-testid="product-card"
       className="group flex flex-col bg-white border border-[#e5e5e5] transition-all duration-300 hover:shadow-md h-full"
       onMouseLeave={() => setHoverColor(null)}
       onPointerLeave={() => setHoverColor(null)}

@@ -385,11 +385,15 @@ export function parseUrlFilters(search: string): FilterState {
     const norm = normalizeText(raw);
     if (!norm || seenColorNorms.has(norm)) continue;
 
-    // Match against AVAILABLE_COLORS for canonical casing
+    // Match against AVAILABLE_COLORS for canonical casing; ignore invalid or unrecognized colours
     const match = AVAILABLE_COLORS.find(c => normalizeText(c.label) === norm);
-    const canonicalName = match ? match.label : raw.trim();
-    seenColorNorms.add(norm);
-    validColors.push(canonicalName);
+    if (match) {
+      seenColorNorms.add(norm);
+      seenColorNorms.add(normalizeText(match.label));
+      if (!validColors.includes(match.label)) {
+        validColors.push(match.label);
+      }
+    }
   }
 
   // 4. Sizes
@@ -427,7 +431,14 @@ export function serializeUrlFilters(
   filters: FilterState,
   existingSearch = ''
 ): string {
-  const cleanSearch = existingSearch.startsWith('?') ? existingSearch.slice(1) : existingSearch;
+  let hash = '';
+  const hashIdx = existingSearch.indexOf('#');
+  let cleanSearch = existingSearch;
+  if (hashIdx !== -1) {
+    hash = cleanSearch.slice(hashIdx);
+    cleanSearch = cleanSearch.slice(0, hashIdx);
+  }
+  cleanSearch = cleanSearch.startsWith('?') ? cleanSearch.slice(1) : cleanSearch;
   const params = new URLSearchParams(cleanSearch);
 
   // Remove both aliases for each facet group to ensure clean rebuilding
@@ -473,5 +484,5 @@ export function serializeUrlFilters(
   }
 
   const result = params.toString();
-  return result ? `?${result}` : '';
+  return (result ? `?${result}` : '') + hash;
 }

@@ -1,4 +1,4 @@
-# MORFE — Phase 5 & 5.1 Implementation Report
+# MORFE — Phase 5, 5.1 & 5.2 Implementation Report
 ## Advanced Product Listing Page (PLP) Faceted Filtering & Persistent URL State
 
 **Project:** MORFE — The Quiet Atelier  
@@ -11,7 +11,7 @@
 
 ## 1. Executive Summary
 
-Phase 5 and Phase 5.1 introduce a production-grade **Advanced Faceted Filtering System** and **Persistent URL Query Parameter Engine** to the MORFE bedding e-commerce storefront Product Listing Page (PLP).
+Phase 5, 5.1, and 5.2 establish a production-grade **Advanced Faceted Filtering System** and **Persistent URL Query Parameter & Hash Engine** for the MORFE bedding e-commerce storefront Product Listing Page (PLP).
 
 Guided by the visual restraint and quiet luxury aesthetic of the reference site (*Sheet Society*), this implementation enables multi-dimensional discovery across MORFE's 167-product catalogue while strictly preserving all previous baselines:
 - **Phase 2 Baseline:** Strict 3-tier colourway image isolation, zero fallback leakage, thumbnail cart fidelity.
@@ -19,13 +19,13 @@ Guided by the visual restraint and quiet luxury aesthetic of the reference site 
 - **Phase 4 Baseline:** 5-column mega-menu navigation, 14-category horizontal pill strip, editorial vignettes, and responsive drawer hierarchy.
 
 ### Key Milestones Achieved
-1. **Multi-Facet Combinatorial Logic:** Implemented disjunctive multi-selection (OR within the same facet group, AND across distinct facet groups) across Category, Fabric/Material, Colour, and Bed Size.
-2. **Robust URL Parameter Aliases:** Supports both `color` and `colour`, both `fabric` and `material`, repeated parameters (`?color=Russet&color=Olive`), and comma-separated lists (`?color=Russet,Olive`).
-3. **Rigorous Text Normalization:** `normalizeText()` systematically handles hyphens, underscores, multiple consecutive internal spaces, leading/trailing whitespace, and casing (`Warm-white` → `warm white`, `Warm__White` → `warm white`, `  Warm   White  ` → `warm white`).
-4. **Disjunctive Dynamic Facet Counts:** Option counters reflect potential results dynamically. Counts for options within the same facet group reflect unconstrained alternative choices, while options across other facet groups strictly reflect active filters.
-5. **Variant-Specific Size Availability Integration:** Size filtering accounts for variant-level stock rules (evaluating both `product.unavailableSizes` and `product.colorUnavailableSizes` for selected colourways).
-6. **Persistent Bi-directional URL Query State:** Full deep-linking and state hydration via URL parameters, full browser Back/Forward (`popstate`) support, page refresh persistence, and strict preservation of non-facet query parameters (such as `utm_campaign`, `utm_source`, `ref`, `cart`, `product`) and URL hash.
-7. **Interactive UI Surfaces:**
+1. **Direct Production-Function Architecture:** Test suites directly import and execute the actual production functions from `src/utils/filterUtils.ts` without duplicate implementations.
+2. **Strict Invalid Colour Parsing & Canonicalization:** `parseUrlFilters()` only accepts colours matching known entries in `AVAILABLE_COLORS` (case-insensitive, normalized via `normalizeText()`). Invalid/unknown colour parameters (e.g. `UnknownColour123`) are safely ignored, while valid colours (e.g. `color=WARM-WHITE` or `colour=olive`) resolve to their canonical labels (`Warm White`, `Olive`).
+3. **Multi-Facet Combinatorial Logic:** Disjunctive multi-selection (OR within the same facet group, AND across distinct facet groups) across Category, Fabric/Material, Colour, and Bed Size.
+4. **Independent Disjunctive Facet Counting Truth:** `computeFacetCounts()` derives dynamic option counts independently per facet group without cross-facet distortion, validated against an independent reference calculation across 10 deterministic scenarios.
+5. **Real Application URL Update Flow & Hash Preservation:** The application URL engine strictly preserves `#details` (and any URL hash) across all filter additions, modifications, removals, clears, deep links, and browser history transitions. Unrelated parameters (`utm_campaign`, `utm_source`, `ref`, `cart`, `product`) are strictly preserved.
+6. **Variant-Specific Size Availability Integration:** Size filtering rigorously accounts for variant-level stock rules (evaluating both `product.unavailableSizes` and `product.colorUnavailableSizes` for selected colourways, applying the multi-colour OR availability rule).
+7. **Interactive UI Surfaces Verified via CDP Pointer Dispatch:**
    - Desktop horizontal filter toolbar with dropdown menus, checkbox indicators, and colour swatches.
    - Interactive Active Filter Chips bar with individual `[X]` dismissal and "Clear All" batch reset.
    - Elegant Empty State container ("No products found") with a high-contrast "Reset Filters" recovery action.
@@ -55,7 +55,30 @@ Eliminates format mismatches across product records:
 - `  Warm   White  ` → `warm white`
 - `__HUNTER---green__` → `hunter green`
 
-#### B. Variant-Specific Size Availability
+#### B. Strict Colour Parsing & Invalid Value Rejection
+```typescript
+  // 3. Colours (accepts 'color' and 'colour')
+  const rawColors = getValues('color', 'colour');
+  const validColors: string[] = [];
+  const seenColorNorms = new Set<string>();
+
+  for (const raw of rawColors) {
+    const norm = normalizeText(raw);
+    if (!norm || seenColorNorms.has(norm)) continue;
+
+    // Match against AVAILABLE_COLORS for canonical casing; ignore invalid or unrecognized colours
+    const match = AVAILABLE_COLORS.find(c => normalizeText(c.label) === norm);
+    if (match) {
+      seenColorNorms.add(norm);
+      seenColorNorms.add(normalizeText(match.label));
+      if (!validColors.includes(match.label)) {
+        validColors.push(match.label);
+      }
+    }
+  }
+```
+
+#### C. Variant-Specific Size Availability
 ```typescript
 export function isSizeAvailable(
   product: Product,
@@ -120,7 +143,7 @@ export function isSizeAvailable(
 }
 ```
 
-#### C. Disjunctive Facet Counting Algorithm
+#### D. Disjunctive Facet Counting Algorithm
 Unlike standard conjunctive faceting which collapses counts to zero as filters are added, disjunctive faceting calculates option counts for facet group $F$ by applying active filters from all facet groups **except** $F$:
 - When calculating Category counts: filters for Fabric, Colour, and Size are applied; Category filter is omitted.
 - When calculating Fabric counts: filters for Category, Colour, and Size are applied; Fabric filter is omitted.
@@ -131,7 +154,7 @@ This allows customers to explore alternative options within a facet without havi
 
 ---
 
-### 2.2 URL Query Parameter & Alias Engine
+### 2.2 URL Query Parameter & Hash Engine
 
 The URL engine adheres to standard RESTful and e-commerce query conventions while supporting natural user and marketing variations:
 
@@ -144,13 +167,15 @@ The URL engine adheres to standard RESTful and e-commerce query conventions whil
 | **Sorting** | `sort` | `sort` | `?sort=price-low` (omitted when `'featured'`) |
 | **Routing** | `view` | `view` | `?view=catalog` |
 
-#### Canonical Serialization Format
+#### Canonical Serialization & Hash Preservation Format
 When updating or clearing filters:
-1. Both aliases are deleted from the query parameters:
+1. URL hash is extracted if present in existing search or path:
+   `const hashIdx = existingSearch.indexOf('#');`
+2. Both aliases are deleted from the query parameters:
    - `params.delete('color')` and `params.delete('colour')`
    - `params.delete('fabric')` and `params.delete('material')`
-2. Canonical aliases (`category`, `fabric`, `color`, `size`, `sort`) are serialized.
-3. Unrelated query parameters (`utm_campaign`, `utm_source`, `ref`, `cart`, `product`, etc.) and the URL hash (e.g. `#details`) are strictly preserved.
+3. Canonical aliases (`category`, `fabric`, `color`, `size`, `sort`) are serialized.
+4. Unrelated query parameters (`utm_campaign`, `utm_source`, `ref`, `cart`, `product`, etc.) and the URL hash (e.g. `#details`) are strictly appended and preserved.
 
 ---
 
@@ -158,14 +183,14 @@ When updating or clearing filters:
 
 ```
 src/
-├── App.tsx                     # URL deep-linking router, popstate handler, view switching
+├── App.tsx                     # URL deep-linking router, popstate handler, view switching, hash preservation
 ├── types/
 │   └── index.ts                # FilterState, FacetCounts type definitions
 ├── utils/
 │   └── filterUtils.ts          # Normalization, pure filtering, disjunctive counting, URL serialization/parsing
 └── components/
-    ├── CatalogView.tsx         # Complete PLP: desktop toolbar, chips row, 4-col grid, drawer, empty state
-    ├── ProductCard.tsx         # 3-tier image resolution, swatch hover continuity
+    ├── CatalogView.tsx         # Complete PLP: desktop toolbar, chips row, 4-col grid, drawer, empty state, pushState sort
+    ├── ProductCard.tsx         # 3-tier image resolution, swatch hover continuity, product-card testid
     ├── Header.tsx              # Mega-menu, category selection, brand wordmark navigation
     └── CategoryStrip.tsx       # Horizontal category discovery pills
 ```
@@ -197,7 +222,7 @@ export interface FacetCounts {
 
 ## 4. Verification Deliverables
 
-- **Unit Test Battery:** `scripts/test_filter_utils_unit.cjs` (30/30 passed, 100%)
-- **CDP Browser Interaction Test Battery:** `scripts/test_phase5_filters.cjs` (64/64 passed, 100%)
+- **Production Unit Test Battery:** `scripts/test_filter_utils_unit.cjs` (55/55 passed, 100%)
+- **Automated CDP Browser Interaction Test Battery:** `scripts/test_phase5_filters.cjs` (66/66 passed, 100%)
 - **Machine-Readable Results Artifact:** `src/data/phase5_filter_test_results.json`
 - **Formal Verification Report:** `PHASE_5_FINAL_VERIFICATION_REPORT.md`

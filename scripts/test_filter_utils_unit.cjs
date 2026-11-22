@@ -1,375 +1,369 @@
 /**
- * MORFE - Phase 5.1 Filter Utilities Unit Test Battery
- * Pure algorithmic verification of normalization, URL serialization/parsing,
- * variant-specific availability, and disjunctive facet calculations.
+ * MORFE - Phase 5.2 Filter Utilities & Logic Production Unit Test Battery
+ *
+ * Directly compiles and executes the actual exported production functions from:
+ *   src/utils/filterUtils.ts
+ *
+ * Validates:
+ *   1. normalizeText (edge cases: hyphens, underscores, multiple spaces, casing, symbols)
+ *   2. parseUrlFilters (color/colour and fabric/material aliases, comma lists, repeated params,
+ *      deduplication, rejection of unknown/invalid colours, default fallbacks)
+ *   3. serializeUrlFilters (alias cleanup, canonical serialization, preservation of unrelated params and #hash)
+ *   4. isSizeAvailable (variant availability, colorUnavailableSizes, multi-colour OR rule, unselected colour handling)
+ *   5. productMatchesFilters (pure combinatorial filtering, OR within facet, AND across facets)
+ *   6. computeFacetCounts (disjunctive faceting independently verified against a reference calculation across 10 scenarios)
  */
 
-const fs = require('fs');
 const path = require('path');
+const esbuild = require('esbuild');
 
-// Extract PRODUCTS from mockData.ts
-const mockDataContent = fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'mockData.ts'), 'utf-8');
-const startIdx = mockDataContent.indexOf('export const PRODUCTS: Product[] = [') + 'export const PRODUCTS: Product[] = '.length;
-const endIdx = mockDataContent.indexOf('];\n\nexport const BEDROOM_LOOKS');
-const jsonStr = mockDataContent.substring(startIdx, endIdx + 1);
-const PRODUCTS = JSON.parse(jsonStr);
-
-// Normalization function (matching src/utils/filterUtils.ts)
-function normalizeText(s) {
-  return (s || '')
-    .toLowerCase()
-    .replace(/[-_]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+// ---------------------------------------------------------------------------
+// 1. Direct Production Function Loader (No Duplicated Implementation)
+// ---------------------------------------------------------------------------
+function loadProductionModule(relPath) {
+  const filePath = path.join(__dirname, '..', relPath);
+  const result = esbuild.buildSync({
+    entryPoints: [filePath],
+    write: false,
+    format: 'cjs',
+    target: 'node18',
+  });
+  const mod = { exports: {} };
+  const fn = new Function('module', 'exports', 'require', '__dirname', '__filename', result.outputFiles[0].text);
+  fn(mod, mod.exports, require, path.dirname(filePath), path.basename(filePath));
+  return mod.exports;
 }
 
-const AVAILABLE_CATEGORIES = [
-  { label: 'Quilt Covers', value: 'Quilt Covers' },
-  { label: 'Fitted Sheets', value: 'Fitted Sheets' },
-  { label: 'Flat Sheets', value: 'Flat Sheets' },
-  { label: 'Pillowcases', value: 'Pillowcases' },
-  { label: 'Bed Sheets & Sets', value: 'Bed Sheets & Sets' },
-  { label: 'Blankets & Bed Covers', value: 'Blankets & Bed Covers' },
-  { label: 'Quilts & Pillows', value: 'Quilts & Pillows' },
-  { label: 'Protectors & Toppers', value: 'Protectors & Toppers' },
-  { label: 'Cushions', value: 'Cushions' },
-  { label: 'Bath & Towels', value: 'Bath & Towels' },
-  { label: 'Sleepwear', value: 'Sleepwear' },
-  { label: 'Wellness', value: 'Wellness' },
-  { label: 'Kids & Baby', value: 'Kids & Baby' },
-];
+const filterUtils = loadProductionModule('src/utils/filterUtils.ts');
+const mockData = loadProductionModule('src/data/mockData.ts');
 
-const AVAILABLE_MATERIALS = [
-  { label: 'Eve Linen', value: 'Eve Linen' },
-  { label: 'Darcy Corduroy', value: 'Darcy Corduroy' },
-  { label: 'Eden Cotton', value: 'Eden Cotton' },
-  { label: 'Jude Organic Cotton', value: 'Jude Organic Cotton' },
-  { label: 'Frankie Flannelette', value: 'Frankie Flannelette' },
-  { label: 'Leo Washed Cotton', value: 'Leo Washed Cotton' },
-  { label: 'Sofia Ruched Cotton', value: 'Sofia Ruched Cotton' },
-  { label: 'Low Down Recycled', value: 'Low Down Recycled' },
-  { label: 'Cloud Corn Plant-Based', value: 'Cloud Corn Plant-Based' },
-  { label: 'Wonder Wool', value: 'Wonder Wool' },
-  { label: 'Bouclé Cotton', value: 'Bouclé Cotton' },
-  { label: 'Velvet', value: 'Velvet' },
-  { label: 'Rory Washed Cotton', value: 'Rory Washed Cotton' },
-  { label: 'Tommy 600 GSM Cotton', value: 'Tommy 600 GSM Cotton' },
-  { label: 'Cloudknit Jersey', value: 'Cloudknit Jersey' },
-  { label: 'Mulberry Silk', value: 'Mulberry Silk' },
-  { label: 'Microfibre', value: 'Microfibre' },
-];
+const {
+  normalizeText,
+  isSizeAvailable,
+  productMatchesFilters,
+  computeFacetCounts,
+  parseUrlFilters,
+  serializeUrlFilters,
+  AVAILABLE_CATEGORIES,
+  AVAILABLE_MATERIALS,
+  AVAILABLE_COLORS,
+  AVAILABLE_SIZES,
+  DEFAULT_FILTER_STATE,
+} = filterUtils;
 
-const AVAILABLE_COLORS = [
-  { label: 'Cloud', hex: '#D5D5D8' },
-  { label: 'Warm White', hex: '#f2ebdf' },
-  { label: 'White', hex: '#ffffff' },
-  { label: 'Russet', hex: '#7E212A' },
-  { label: 'Olive', hex: '#A39264' },
-  { label: 'Hunter Green', hex: '#415141' },
-  { label: 'Terracotta', hex: '#c87b4b' },
-  { label: 'Sage', hex: '#a8b09f' },
-  { label: 'Marshmallow', hex: '#EEE0DC' },
-  { label: 'Chocolate', hex: '#574138' },
-  { label: 'Oatmeal', hex: '#e9dfcf' },
-  { label: 'Bay Blue', hex: '#A3BBE0' },
-  { label: 'Burgundy', hex: '#5B1D27' },
-  { label: 'Natural White', hex: '#FBF9F5' },
-  { label: 'Crisp White', hex: '#FFFFFF' },
-];
+const PRODUCTS = mockData.PRODUCTS;
 
-const AVAILABLE_SIZES = [
-  { label: 'Single', value: 'Single' },
-  { label: 'King Single', value: 'King Single' },
-  { label: 'Double', value: 'Double' },
-  { label: 'Queen', value: 'Queen' },
-  { label: 'King', value: 'King' },
-  { label: 'Super King', value: 'Super King' },
-  { label: 'Standard', value: 'Standard' },
-  { label: 'European', value: 'European' },
-  { label: 'Cot', value: 'Cot' },
-];
+let totalUnitTests = 0;
+let passedUnitTests = 0;
 
-function isSizeAvailable(product, size, selectedColors) {
-  const normSize = normalizeText(size);
-  const hasSize = product.sizes.some(s => {
-    const ns = normalizeText(s);
-    return ns === normSize || ns.startsWith(normSize);
-  });
-  if (!hasSize) return false;
-
-  if (product.unavailableSizes && product.unavailableSizes.some(s => {
-    const ns = normalizeText(s);
-    return ns === normSize || ns.startsWith(normSize);
-  })) {
-    return false;
-  }
-
-  if (selectedColors && selectedColors.length > 0) {
-    const matchingColors = product.colors.filter(c => 
-      selectedColors.some(sc => {
-        const nsc = normalizeText(sc);
-        const nc = normalizeText(c.name);
-        return nc === nsc || nc.includes(nsc) || nsc.includes(nc);
-      })
-    );
-
-    if (matchingColors.length === 0) return false;
-
-    return matchingColors.some(c => {
-      const unavail = product.colorUnavailableSizes && product.colorUnavailableSizes[c.name];
-      if (!unavail) return true;
-      return !unavail.some(s => {
-        const ns = normalizeText(s);
-        return ns === normSize || ns.startsWith(normSize);
-      });
-    });
-  }
-
-  if (product.colorUnavailableSizes && Object.keys(product.colorUnavailableSizes).length > 0) {
-    return product.colors.some(c => {
-      const unavail = product.colorUnavailableSizes && product.colorUnavailableSizes[c.name];
-      if (!unavail) return true;
-      return !unavail.some(s => {
-        const ns = normalizeText(s);
-        return ns === normSize || ns.startsWith(normSize);
-      });
-    });
-  }
-
-  return true;
-}
-
-function parseUrlFilters(search) {
-  const DEFAULT = { categories: [], colors: [], materials: [], sizes: [], sortBy: 'featured' };
-  if (!search) return DEFAULT;
-
-  const cleanSearch = search.startsWith('?') ? search.slice(1) : search;
-  const params = new URLSearchParams(cleanSearch);
-
-  const getValues = (...keys) => {
-    const rawValues = [];
-    keys.forEach(k => {
-      params.getAll(k).forEach(val => {
-        val.split(',').forEach(part => {
-          const trimmed = part.trim();
-          if (trimmed) rawValues.push(trimmed);
-        });
-      });
-    });
-    return rawValues;
-  };
-
-  const dedupeAndMatch = (rawList, validOptions) => {
-    const matched = [];
-    const seenNorms = new Set();
-    for (const raw of rawList) {
-      const normRaw = normalizeText(raw);
-      if (!normRaw || normRaw === 'all' || seenNorms.has(normRaw)) continue;
-      const found = validOptions.find(opt => 
-        normalizeText(opt.value) === normRaw || normalizeText(opt.label) === normRaw
-      );
-      if (found) {
-        seenNorms.add(normRaw);
-        seenNorms.add(normalizeText(found.value));
-        if (!matched.includes(found.value)) {
-          matched.push(found.value);
-        }
-      }
-    }
-    return matched;
-  };
-
-  const categories = dedupeAndMatch(getValues('category'), AVAILABLE_CATEGORIES);
-  const materials = dedupeAndMatch(getValues('fabric', 'material'), AVAILABLE_MATERIALS);
-
-  const rawColors = getValues('color', 'colour');
-  const colors = [];
-  const seenColorNorms = new Set();
-  for (const raw of rawColors) {
-    const norm = normalizeText(raw);
-    if (!norm || seenColorNorms.has(norm)) continue;
-    const match = AVAILABLE_COLORS.find(c => normalizeText(c.label) === norm);
-    const canonicalName = match ? match.label : raw.trim();
-    seenColorNorms.add(norm);
-    colors.push(canonicalName);
-  }
-
-  const sizes = dedupeAndMatch(getValues('size'), AVAILABLE_SIZES);
-
-  const sortParam = params.get('sort');
-  const validSorts = ['featured', 'price-low', 'price-high', 'rating'];
-  const sortBy = (sortParam && validSorts.includes(sortParam)) ? sortParam : 'featured';
-
-  return { categories, colors, materials, sizes, sortBy };
-}
-
-function serializeUrlFilters(filters, existingSearch = '') {
-  const cleanSearch = existingSearch.startsWith('?') ? existingSearch.slice(1) : existingSearch;
-  const params = new URLSearchParams(cleanSearch);
-
-  params.delete('category');
-  params.delete('color');
-  params.delete('colour');
-  params.delete('fabric');
-  params.delete('material');
-  params.delete('size');
-  params.delete('sort');
-
-  filters.categories.forEach(cat => {
-    if (cat && cat !== 'all') params.append('category', cat);
-  });
-  filters.colors.forEach(col => {
-    if (col) params.append('color', col);
-  });
-  filters.materials.forEach(mat => {
-    if (mat) params.append('fabric', mat);
-  });
-  filters.sizes.forEach(sz => {
-    if (sz) params.append('size', sz);
-  });
-  if (filters.sortBy && filters.sortBy !== 'featured') {
-    params.set('sort', filters.sortBy);
-  }
-  const hasActiveFacets = filters.categories.length + filters.colors.length + filters.materials.length + filters.sizes.length > 0 || (filters.sortBy && filters.sortBy !== 'featured');
-  if (hasActiveFacets && !params.has('view')) {
-    params.set('view', 'catalog');
-  }
-  const result = params.toString();
-  return result ? `?${result}` : '';
-}
-
-function productMatchesFilters(product, filters) {
-  if (filters.categories && filters.categories.length > 0) {
-    const catMatch = filters.categories.some(cat => 
-      cat === 'all' || normalizeText(cat) === normalizeText(product.category)
-    );
-    if (!catMatch) return false;
-  }
-  if (filters.materials && filters.materials.length > 0) {
-    const matMatch = filters.materials.some(mat =>
-      normalizeText(mat) === normalizeText(product.material)
-    );
-    if (!matMatch) return false;
-  }
-  if (filters.colors && filters.colors.length > 0) {
-    const colorMatch = filters.colors.some(fc => {
-      const nfc = normalizeText(fc);
-      return product.colors.some(c => {
-        const nc = normalizeText(c.name);
-        return nc === nfc || nc.includes(nfc) || nfc.includes(nc);
-      });
-    });
-    if (!colorMatch) return false;
-  }
-  if (filters.sizes && filters.sizes.length > 0) {
-    const sizeMatch = filters.sizes.some(sz => 
-      isSizeAvailable(product, sz, filters.colors)
-    );
-    if (!sizeMatch) return false;
-  }
-  return true;
-}
-
-let unitPassed = 0;
-let unitTotal = 0;
-
-function assertUnit(cond, desc, exp = '', act = '') {
-  unitTotal++;
-  if (cond) {
-    unitPassed++;
-    console.log(`  [PASS] Unit ${unitTotal.toString().padStart(2, '0')}: ${desc}`);
+function assertUnit(condition, testName, expected = '', actual = '') {
+  totalUnitTests++;
+  if (condition) {
+    console.log(`  [PASS] Unit ${totalUnitTests.toString().padStart(2, '0')}: ${testName}`);
+    passedUnitTests++;
   } else {
-    console.error(`  [FAIL] Unit ${unitTotal.toString().padStart(2, '0')}: ${desc}`);
-    if (exp || act) console.error(`         Expected: ${exp} | Actual: ${act}`);
+    console.error(`  [FAIL] Unit ${totalUnitTests.toString().padStart(2, '0')}: ${testName}`);
+    if (expected || actual) {
+      console.error(`         Expected: ${expected}`);
+      console.error(`         Actual:   ${actual}`);
+    }
     process.exitCode = 1;
   }
 }
 
 console.log('========================================================================');
-console.log(' MORFE PHASE 5.1 FILTER UTILITIES & LOGIC UNIT TEST SUITE');
+console.log(' MORFE PHASE 5.2 PRODUCTION FILTER UTILITIES UNIT TEST BATTERY');
 console.log('========================================================================\n');
 
-// 1. Text Normalization
+// =========================================================================
+// SECTION 1: normalizeText Edge Cases
+// =========================================================================
+console.log('--- SECTION 1: normalizeText Production Function Edge Cases ---');
+
 assertUnit(normalizeText('Warm-white') === 'warm white', 'normalizeText handles hyphens (Warm-white -> warm white)');
 assertUnit(normalizeText('Warm__White') === 'warm white', 'normalizeText handles multiple underscores (Warm__White -> warm white)');
 assertUnit(normalizeText('  Warm   White  ') === 'warm white', 'normalizeText collapses multiple internal spaces and trims');
-assertUnit(normalizeText('_hunter-Green__') === 'hunter green', 'normalizeText handles mixed underscores and hyphens');
+assertUnit(normalizeText('__HUNTER---green__') === 'hunter green', 'normalizeText handles mixed underscores and hyphens');
+assertUnit(normalizeText('') === '' && normalizeText(null) === '', 'normalizeText handles empty or null gracefully');
 
-// 2. URL Parsing & Aliases
-const parsedAliases = parseUrlFilters('?colour=Olive&material=Darcy%20Corduroy&color=Russet&fabric=Eve%20Linen&size=Queen&sort=price-high');
-assertUnit(parsedAliases.colors.includes('Olive') && parsedAliases.colors.includes('Russet'), 'parseUrlFilters accepts both "color" and "colour" aliases');
-assertUnit(parsedAliases.materials.includes('Darcy Corduroy') && parsedAliases.materials.includes('Eve Linen'), 'parseUrlFilters accepts both "fabric" and "material" aliases');
-assertUnit(parsedAliases.sizes.includes('Queen'), 'parseUrlFilters parses size facet');
-assertUnit(parsedAliases.sortBy === 'price-high', 'parseUrlFilters parses sort facet');
+// =========================================================================
+// SECTION 2: parseUrlFilters Production Function & Invalid Colour Rejection
+// =========================================================================
+console.log('\n--- SECTION 2: parseUrlFilters Production Function & Invalid Colour Parsing ---');
 
-// 3. Deduplication
-const dedupedUrl = parseUrlFilters('?color=Olive&colour=Olive&colour=olive&fabric=Darcy%20Corduroy&material=darcy-corduroy');
-assertUnit(dedupedUrl.colors.length === 1 && dedupedUrl.colors[0] === 'Olive', 'parseUrlFilters deduplicates identical values across color and colour aliases');
-assertUnit(dedupedUrl.materials.length === 1 && dedupedUrl.materials[0] === 'Darcy Corduroy', 'parseUrlFilters deduplicates across fabric and material aliases with hyphens');
+const resOliveColor = parseUrlFilters('?color=Olive');
+assertUnit(resOliveColor.colors.length === 1 && resOliveColor.colors[0] === 'Olive', 'Accepts color=Olive -> canonical Olive');
 
-// 4. Invalid Value Safety
-const invalidSafe = parseUrlFilters('?category=FakeCategoryXYZ&fabric=InvalidFabric123&sort=unknown_sort');
-assertUnit(invalidSafe.categories.length === 0, 'parseUrlFilters ignores unknown categories');
-assertUnit(invalidSafe.materials.length === 0, 'parseUrlFilters ignores unknown fabrics');
-assertUnit(invalidSafe.sortBy === 'featured', 'parseUrlFilters falls back to featured sort on invalid input');
+const resOliveColour = parseUrlFilters('?colour=olive');
+assertUnit(resOliveColour.colors.length === 1 && resOliveColour.colors[0] === 'Olive', 'Accepts colour=olive -> canonical Olive');
 
-// 5. URL Serialization & Alias Deletion
-const serialized = serializeUrlFilters({
-  categories: ['Quilt Covers'],
+const resWarmWhite = parseUrlFilters('?color=WARM-WHITE');
+assertUnit(resWarmWhite.colors.length === 1 && resWarmWhite.colors[0] === 'Warm White', 'Accepts color=WARM-WHITE -> canonical Warm White');
+
+const resUnknownColor = parseUrlFilters('?color=UnknownColour123');
+assertUnit(resUnknownColor.colors.length === 0, 'Ignores color=UnknownColour123 (invalid colours safely rejected)');
+
+const resDedupeColor = parseUrlFilters('?color=Olive&colour=olive');
+assertUnit(resDedupeColor.colors.length === 1 && resDedupeColor.colors[0] === 'Olive', 'Deduplicates color=Olive&colour=olive -> single Olive');
+
+const resCommaUnknown = parseUrlFilters('?color=Olive,UnknownColour123');
+assertUnit(resCommaUnknown.colors.length === 1 && resCommaUnknown.colors[0] === 'Olive', 'Comma-separated color=Olive,UnknownColour123 -> only canonical Olive');
+
+const resFabric = parseUrlFilters('?fabric=Darcy%20Corduroy');
+assertUnit(resFabric.materials.length === 1 && resFabric.materials[0] === 'Darcy Corduroy', 'Accepts fabric=Darcy Corduroy');
+
+const resMaterial = parseUrlFilters('?material=darcy-corduroy');
+assertUnit(resMaterial.materials.length === 1 && resMaterial.materials[0] === 'Darcy Corduroy', 'Accepts material alias with hyphen -> canonical Darcy Corduroy');
+
+const resDedupeMaterial = parseUrlFilters('?fabric=Darcy%20Corduroy&material=darcy-corduroy');
+assertUnit(resDedupeMaterial.materials.length === 1, 'Deduplicates identical selections across fabric and material aliases');
+
+const resInvalidMaterial = parseUrlFilters('?fabric=FictionalFabric999');
+assertUnit(resInvalidMaterial.materials.length === 0, 'Ignores unknown fabrics safely');
+
+const resCategory = parseUrlFilters('?category=Quilt%20Covers');
+assertUnit(resCategory.categories.length === 1 && resCategory.categories[0] === 'Quilt Covers', 'Accepts category=Quilt Covers');
+
+const resInvalidCategory = parseUrlFilters('?category=NonExistentCategory');
+assertUnit(resInvalidCategory.categories.length === 0, 'Ignores unknown categories safely');
+
+const resSize = parseUrlFilters('?size=Queen');
+assertUnit(resSize.sizes.length === 1 && resSize.sizes[0] === 'Queen', 'Accepts size=Queen');
+
+const resInvalidSize = parseUrlFilters('?size=SuperMegaGigantic');
+assertUnit(resInvalidSize.sizes.length === 0, 'Ignores unknown sizes safely');
+
+const resSortPriceLow = parseUrlFilters('?sort=price-low');
+assertUnit(resSortPriceLow.sortBy === 'price-low', 'Parses valid sort=price-low');
+
+const resSortInvalid = parseUrlFilters('?sort=arbitrary-nonsense');
+assertUnit(resSortInvalid.sortBy === 'featured', 'Falls back to default "featured" on invalid sort');
+
+const resEmpty = parseUrlFilters('');
+assertUnit(resEmpty.categories.length === 0 && resEmpty.colors.length === 0 && resEmpty.sortBy === 'featured', 'Returns default filter state on empty string');
+
+// =========================================================================
+// SECTION 3: serializeUrlFilters Production Function & Hash Preservation
+// =========================================================================
+console.log('\n--- SECTION 3: serializeUrlFilters Production Function & Hash Preservation ---');
+
+const serializedAliased = serializeUrlFilters({
+  ...DEFAULT_FILTER_STATE,
   colors: ['Olive'],
   materials: ['Darcy Corduroy'],
-  sizes: ['King'],
-  sortBy: 'price-low'
-}, '?color=OldColor&colour=OldColour&fabric=OldFabric&material=OldMaterial&utm_campaign=winter_sale&ref=affiliate#review-section');
+}, '?colour=olive&material=darcy-corduroy&utm_campaign=winter_sale&ref=affiliate#details');
 
-assertUnit(!serialized.includes('colour='), 'serializeUrlFilters completely deletes "colour" alias');
-assertUnit(!serialized.includes('material='), 'serializeUrlFilters completely deletes "material" alias');
-assertUnit(serialized.includes('color=Olive'), 'serializeUrlFilters outputs canonical "color" parameter');
-assertUnit(serialized.includes('fabric=Darcy+Corduroy') || serialized.includes('fabric=Darcy%20Corduroy'), 'serializeUrlFilters outputs canonical "fabric" parameter');
-assertUnit(serialized.includes('utm_campaign=winter_sale'), 'serializeUrlFilters strictly preserves unrelated utm_campaign parameter');
-assertUnit(serialized.includes('ref=affiliate'), 'serializeUrlFilters strictly preserves unrelated ref parameter');
+assertUnit(!serializedAliased.includes('colour='), 'serializeUrlFilters completely deletes "colour" alias');
+assertUnit(!serializedAliased.includes('material='), 'serializeUrlFilters completely deletes "material" alias');
+assertUnit(serializedAliased.includes('color=Olive'), 'serializeUrlFilters outputs canonical "color" parameter');
+assertUnit(serializedAliased.includes('fabric=Darcy+Corduroy') || serializedAliased.includes('fabric=Darcy%20Corduroy'), 'serializeUrlFilters outputs canonical "fabric" parameter');
+assertUnit(serializedAliased.includes('utm_campaign=winter_sale'), 'serializeUrlFilters strictly preserves unrelated utm_campaign parameter');
+assertUnit(serializedAliased.includes('ref=affiliate'), 'serializeUrlFilters strictly preserves unrelated ref parameter');
+assertUnit(serializedAliased.endsWith('#details'), 'serializeUrlFilters strictly preserves URL hash (#details)');
 
-// 6. Variant-Specific Size Availability
-const corduroyRusset = PRODUCTS.find(p => p.id === 'corduroy-quilt-cover-russet');
-assertUnit(corduroyRusset !== undefined, 'Target product corduroy-quilt-cover-russet exists in catalogue');
+const serializedCleared = serializeUrlFilters({
+  ...DEFAULT_FILTER_STATE,
+}, '?view=catalog&category=Quilt%20Covers&color=Olive&fabric=Darcy%20Corduroy&utm_campaign=winter_sale#details');
 
-// Olive Double is in colorUnavailableSizes -> false
-assertUnit(isSizeAvailable(corduroyRusset, 'Double', ['Olive']) === false, 'isSizeAvailable: Olive Double is unavailable on corduroy quilt cover');
-// Olive King is in colorUnavailableSizes -> false
-assertUnit(isSizeAvailable(corduroyRusset, 'King', ['Olive']) === false, 'isSizeAvailable: Olive King is unavailable on corduroy quilt cover');
-// Olive Queen is NOT in colorUnavailableSizes -> true
-assertUnit(isSizeAvailable(corduroyRusset, 'Queen', ['Olive']) === true, 'isSizeAvailable: Olive Queen is available on corduroy quilt cover');
-// Russet Double is available -> true
-assertUnit(isSizeAvailable(corduroyRusset, 'Double', ['Russet']) === true, 'isSizeAvailable: Russet Double is available on corduroy quilt cover');
-// Multiple colours selection: Russet + Olive -> Double is available because Russet has it
-assertUnit(isSizeAvailable(corduroyRusset, 'Double', ['Olive', 'Russet']) === true, 'isSizeAvailable OR rule: Double available when both Olive and Russet are selected');
-// Product without matching color -> false
-assertUnit(isSizeAvailable(corduroyRusset, 'Queen', ['NonExistentColor']) === false, 'isSizeAvailable returns false when product has none of the selected colors');
+assertUnit(!serializedCleared.includes('category='), 'Clearing filters removes category parameter');
+assertUnit(!serializedCleared.includes('color='), 'Clearing filters removes color parameter');
+assertUnit(!serializedCleared.includes('fabric='), 'Clearing filters removes fabric parameter');
+assertUnit(serializedCleared.includes('utm_campaign=winter_sale'), 'Clearing filters preserves unrelated parameters');
+assertUnit(serializedCleared.endsWith('#details'), 'Clearing filters preserves URL hash (#details)');
 
-// 7. Multi-Facet Combinatorial Filtering
-const matchedQC = PRODUCTS.filter(p => productMatchesFilters(p, { categories: ['Quilt Covers'] }));
-assertUnit(matchedQC.length === 15, 'Category filter: Quilt Covers matches exactly 15 products');
+// =========================================================================
+// SECTION 4: isSizeAvailable Production Function with Inventory Provenance
+// =========================================================================
+console.log('\n--- SECTION 4: isSizeAvailable Production Function with Inventory Provenance ---');
 
-const matchedQC_FS = PRODUCTS.filter(p => productMatchesFilters(p, { categories: ['Quilt Covers', 'Fitted Sheets'] }));
-assertUnit(matchedQC_FS.length === 23, 'Category OR multi-filter: Quilt Covers (15) OR Fitted Sheets (8) yields 23 products');
+const corduroyQuiltCover = PRODUCTS.find(p => p.id === 'corduroy-quilt-cover-russet');
+assertUnit(!!corduroyQuiltCover, 'Target product corduroy-quilt-cover-russet exists in authentic catalogue');
 
-const matchedCorduroy = PRODUCTS.filter(p => productMatchesFilters(p, { categories: ['Quilt Covers'], materials: ['Darcy Corduroy'] }));
-assertUnit(matchedCorduroy.length === 4, 'Cross-facet AND: Quilt Covers AND Darcy Corduroy yields 4 products');
+assertUnit(isSizeAvailable(corduroyQuiltCover, 'Double', ['Olive']) === false, 'isSizeAvailable: Olive in Double is unavailable on corduroy quilt cover');
+assertUnit(isSizeAvailable(corduroyQuiltCover, 'King', ['Olive']) === false, 'isSizeAvailable: Olive in King is unavailable on corduroy quilt cover');
+assertUnit(isSizeAvailable(corduroyQuiltCover, 'Queen', ['Olive']) === true, 'isSizeAvailable: Olive in Queen is available on corduroy quilt cover');
+assertUnit(isSizeAvailable(corduroyQuiltCover, 'Double', ['Russet']) === true, 'isSizeAvailable: Russet in Double is available on corduroy quilt cover');
+assertUnit(isSizeAvailable(corduroyQuiltCover, 'Double', ['Olive', 'Russet']) === true, 'isSizeAvailable OR rule: Double available when both Olive and Russet are selected');
+assertUnit(isSizeAvailable(corduroyQuiltCover, 'Queen', ['NonExistentColor']) === false, 'isSizeAvailable returns false when product has none of the selected colors');
 
-const matchedCorduroyRussetQueen = PRODUCTS.filter(p => productMatchesFilters(p, {
+// =========================================================================
+// SECTION 5: productMatchesFilters Production Function
+// =========================================================================
+console.log('\n--- SECTION 5: productMatchesFilters Combinatorial Logic ---');
+
+const quiltCoversMatches = PRODUCTS.filter(p => productMatchesFilters(p, {
+  ...DEFAULT_FILTER_STATE,
+  categories: ['Quilt Covers'],
+}));
+assertUnit(quiltCoversMatches.length === 15, 'Category filter: Quilt Covers matches exactly 15 products', 15, quiltCoversMatches.length);
+
+const disjunctiveCategoryMatches = PRODUCTS.filter(p => productMatchesFilters(p, {
+  ...DEFAULT_FILTER_STATE,
+  categories: ['Quilt Covers', 'Fitted Sheets'],
+}));
+assertUnit(disjunctiveCategoryMatches.length === 23, 'Category OR multi-filter: Quilt Covers (15) OR Fitted Sheets (8) yields 23 products', 23, disjunctiveCategoryMatches.length);
+
+const crossFacetMatches = PRODUCTS.filter(p => productMatchesFilters(p, {
+  ...DEFAULT_FILTER_STATE,
+  categories: ['Quilt Covers'],
+  materials: ['Darcy Corduroy'],
+}));
+assertUnit(crossFacetMatches.length === 4, 'Cross-facet AND: Quilt Covers AND Darcy Corduroy yields exactly 4 products', 4, crossFacetMatches.length);
+
+const fourFacetMatches = PRODUCTS.filter(p => productMatchesFilters(p, {
+  ...DEFAULT_FILTER_STATE,
   categories: ['Quilt Covers'],
   materials: ['Darcy Corduroy'],
   colors: ['Russet'],
-  sizes: ['Queen']
+  sizes: ['Queen'],
 }));
-assertUnit(matchedCorduroyRussetQueen.length === 4, '4-facet AND: Quilt Covers AND Darcy Corduroy AND Russet AND Queen yields 4 products');
+assertUnit(fourFacetMatches.length === 4, '4-facet AND: Quilt Covers AND Darcy Corduroy AND Russet AND Queen yields exactly 4 products', 4, fourFacetMatches.length);
 
-console.log(`\n========================================================================`);
-console.log(` UNIT TEST SUMMARY: ${unitPassed}/${unitTotal} PASSED`);
-console.log(`========================================================================\n`);
+// =========================================================================
+// SECTION 6: Independent Disjunctive Facet Count Validation (10 Scenarios)
+// =========================================================================
+console.log('\n--- SECTION 6: Independent Disjunctive Facet Count Validation (computeFacetCounts) ---');
 
-if (unitPassed === unitTotal) {
-  process.exit(0);
-} else {
+// Straightforward independent reference predicates over catalogue data
+function refMatchesCat(p, cats) {
+  if (!cats || cats.length === 0) return true;
+  return cats.some(c => c === 'all' || c.toLowerCase().trim() === p.category.toLowerCase().trim());
+}
+
+function refMatchesMat(p, mats) {
+  if (!mats || mats.length === 0) return true;
+  return mats.some(m => m.toLowerCase().trim() === p.material.toLowerCase().trim());
+}
+
+function refMatchesCol(p, cols) {
+  if (!cols || cols.length === 0) return true;
+  return cols.some(sc => {
+    const nsc = sc.toLowerCase().replace(/[-_]+/g, ' ').trim();
+    return p.colors.some(c => {
+      const nc = c.name.toLowerCase().replace(/[-_]+/g, ' ').trim();
+      return nc === nsc || nc.includes(nsc) || nsc.includes(nc);
+    });
+  });
+}
+
+function refHasSize(p, sz, selectedColors) {
+  const normSize = sz.toLowerCase().replace(/[-_]+/g, ' ').trim();
+  const hasBase = p.sizes.some(s => {
+    const ns = s.toLowerCase().replace(/[-_]+/g, ' ').trim();
+    return ns === normSize || ns.startsWith(normSize);
+  });
+  if (!hasBase) return false;
+  if (p.unavailableSizes && p.unavailableSizes.some(s => {
+    const ns = s.toLowerCase().replace(/[-_]+/g, ' ').trim();
+    return ns === normSize || ns.startsWith(normSize);
+  })) return false;
+
+  if (selectedColors && selectedColors.length > 0) {
+    const matching = p.colors.filter(c => selectedColors.some(sc => {
+      const nsc = sc.toLowerCase().replace(/[-_]+/g, ' ').trim();
+      const nc = c.name.toLowerCase().replace(/[-_]+/g, ' ').trim();
+      return nc === nsc || nc.includes(nsc) || nsc.includes(nc);
+    }));
+    if (matching.length === 0) return false;
+    return matching.some(c => {
+      const unavail = p.colorUnavailableSizes && p.colorUnavailableSizes[c.name];
+      if (!unavail) return true;
+      return !unavail.some(s => {
+        const ns = s.toLowerCase().replace(/[-_]+/g, ' ').trim();
+        return ns === normSize || ns.startsWith(normSize);
+      });
+    });
+  }
+
+  if (p.colorUnavailableSizes && Object.keys(p.colorUnavailableSizes).length > 0) {
+    return p.colors.some(c => {
+      const unavail = p.colorUnavailableSizes && p.colorUnavailableSizes[c.name];
+      if (!unavail) return true;
+      return !unavail.some(s => {
+        const ns = s.toLowerCase().replace(/[-_]+/g, ' ').trim();
+        return ns === normSize || ns.startsWith(normSize);
+      });
+    });
+  }
+  return true;
+}
+
+function refMatchesSz(p, sizes, selectedColors) {
+  if (!sizes || sizes.length === 0) return true;
+  return sizes.some(sz => refHasSize(p, sz, selectedColors));
+}
+
+function computeIndependentReferenceCounts(allProducts, f) {
+  // A. Category counts (exclude category filter)
+  const catBase = allProducts.filter(p => refMatchesMat(p, f.materials) && refMatchesCol(p, f.colors) && refMatchesSz(p, f.sizes, f.colors));
+  const categories = {};
+  AVAILABLE_CATEGORIES.forEach(c => categories[c.value] = catBase.filter(p => refMatchesCat(p, [c.value])).length);
+
+  // B. Material counts (exclude material filter)
+  const matBase = allProducts.filter(p => refMatchesCat(p, f.categories) && refMatchesCol(p, f.colors) && refMatchesSz(p, f.sizes, f.colors));
+  const materials = {};
+  AVAILABLE_MATERIALS.forEach(m => materials[m.value] = matBase.filter(p => refMatchesMat(p, [m.value])).length);
+
+  // C. Colour counts (exclude colour filter)
+  const colBase = allProducts.filter(p => refMatchesCat(p, f.categories) && refMatchesMat(p, f.materials) && refMatchesSz(p, f.sizes, []));
+  const colors = {};
+  AVAILABLE_COLORS.forEach(c => colors[c.label] = colBase.filter(p => refMatchesCol(p, [c.label])).length);
+
+  // D. Size counts (exclude size filter)
+  const sizeBase = allProducts.filter(p => refMatchesCat(p, f.categories) && refMatchesMat(p, f.materials) && refMatchesCol(p, f.colors));
+  const sizes = {};
+  AVAILABLE_SIZES.forEach(s => sizes[s.value] = sizeBase.filter(p => refHasSize(p, s.value, f.colors)).length);
+
+  return { categories, materials, colors, sizes };
+}
+
+function verifyCountsMatch(scenarioName, filters) {
+  const prod = computeFacetCounts(PRODUCTS, filters);
+  const ref = computeIndependentReferenceCounts(PRODUCTS, filters);
+  let match = true;
+  let mismatchDetail = '';
+
+  for (const group of ['categories', 'materials', 'colors', 'sizes']) {
+    for (const key of Object.keys(ref[group])) {
+      if (prod[group][key] !== ref[group][key]) {
+        match = false;
+        mismatchDetail = `${group}.${key}: prod=${prod[group][key]} vs ref=${ref[group][key]}`;
+        break;
+      }
+    }
+    if (!match) break;
+  }
+  assertUnit(match, `Scenario ${scenarioName}: all disjunctive facet counts match independent reference calculation`, 'all match', match ? 'all match' : mismatchDetail);
+}
+
+// 10 Mandatory Validation Scenarios
+verifyCountsMatch('1 (No filters)', { ...DEFAULT_FILTER_STATE });
+verifyCountsMatch('2 (One Category: Quilt Covers)', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers'] });
+verifyCountsMatch('3 (One Material: Darcy Corduroy)', { ...DEFAULT_FILTER_STATE, materials: ['Darcy Corduroy'] });
+verifyCountsMatch('4 (One Colour: Olive)', { ...DEFAULT_FILTER_STATE, colors: ['Olive'] });
+verifyCountsMatch('5 (One Size: Queen)', { ...DEFAULT_FILTER_STATE, sizes: ['Queen'] });
+verifyCountsMatch('6 (Multiple in same facet: Quilt Covers OR Fitted Sheets)', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers', 'Fitted Sheets'] });
+verifyCountsMatch('7 (Multiple active facet groups: Quilt Covers AND Olive)', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers'], colors: ['Olive'] });
+verifyCountsMatch('8 (4-facet combination: Quilt Covers + Darcy Corduroy + Olive + Queen)', {
+  ...DEFAULT_FILTER_STATE,
+  categories: ['Quilt Covers'],
+  materials: ['Darcy Corduroy'],
+  colors: ['Olive'],
+  sizes: ['Queen'],
+});
+verifyCountsMatch('9 (Removing active filter: remove Queen size from 4-facet)', {
+  ...DEFAULT_FILTER_STATE,
+  categories: ['Quilt Covers'],
+  materials: ['Darcy Corduroy'],
+  colors: ['Olive'],
+  sizes: [],
+});
+verifyCountsMatch('10 (Clearing all filters)', { ...DEFAULT_FILTER_STATE });
+
+console.log('\n========================================================================');
+console.log(` PRODUCTION UNIT TEST SUMMARY: ${passedUnitTests}/${totalUnitTests} PASSED`);
+console.log('========================================================================\n');
+
+if (passedUnitTests !== totalUnitTests) {
   process.exit(1);
 }

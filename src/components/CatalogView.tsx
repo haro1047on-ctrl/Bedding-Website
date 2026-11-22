@@ -82,7 +82,8 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
     const currentSearch = window.location.search;
     const newSearch = serializeUrlFilters(newFilters, currentSearch);
     if (newSearch !== currentSearch) {
-      const newUrl = window.location.pathname + newSearch + window.location.hash;
+      const hash = (newSearch.includes('#') || !window.location.hash) ? '' : window.location.hash;
+      const newUrl = window.location.pathname + newSearch + hash;
       if (method === 'push') {
         window.history.pushState(null, '', newUrl);
       } else {
@@ -193,7 +194,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
   };
 
   const handleSortChange = (newSort: FilterState['sortBy']) => {
-    updateFilters(prev => ({ ...prev, sortBy: newSort }), 'replace');
+    updateFilters(prev => ({ ...prev, sortBy: newSort }), 'push');
   };
 
   // Filter & Sort evaluation
@@ -781,6 +782,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                         <button
                           key={c.value}
                           type="button"
+                          data-testid={`mobile-option-category-${c.value.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                           onClick={() => toggleCategory(c.value)}
                           className={`w-full text-left py-2 px-2.5 rounded flex items-center justify-between transition-colors ${
                             isSelected ? 'bg-[#000000] text-white font-medium' : 'text-[#000000]/80 hover:bg-white'

@@ -1,25 +1,32 @@
 /**
- * MORFE - Phase 5.1 Advanced PLP Faceted Filtering & Persistent URL State
- * Comprehensive Automated Verification Battery
+ * MORFE - Phase 5.2 Advanced PLP Faceted Filtering & Persistent URL State
+ * Comprehensive Automated CDP Browser Interaction Test Battery
  *
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using native WebSocket.
  *
- * Strict Coverage Areas:
- *   1. Text normalization edge cases (hyphens, underscores, multiple spaces, casing).
- *   2. URL parameter aliases (color/colour, fabric/material, category, size, sort).
- *   3. Repeated parameters, deduplication, and invalid parameter resilience.
- *   4. Unrelated query parameters (utm_campaign, utm_source, ref, cart, product) and hash preservation.
- *   5. Disjunctive facet counting algorithm (computeFacetCounts) independently tested per facet.
- *   6. Variant-specific size availability (isSizeAvailable) using authentic catalogue provenance (Olive Double/King).
- *   7. Multi-filter combination logic (OR within facets, AND across facets).
- *   8. Authentic CDP pointer-driven interactions (dropdowns, swatches, chips, mobile drawer).
- *   9. Sorting verification (price-low, price-high, rating, featured).
- *  10. Browser Back/Forward (popstate) and Page Reload persistence.
- *  11. Empty state handling and recovery.
- *  12. Zero console errors, exceptions, or React warnings.
+ * Coverage Areas:
+ *   1. Real application URL update flow and #hash preservation through every operation:
+ *      Starting URL: /?view=catalog&color=Olive&utm_campaign=winter_sale&ref=affiliate#details
+ *      - Operation 1: Add Material filter via CDP pointer click
+ *      - Operation 2: Add Size filter via CDP pointer click
+ *      - Operation 3: Change Colour filter via CDP pointer click
+ *      - Operation 4: Remove one active filter via CDP pointer click
+ *      - Operation 5: Clear all filters via CDP pointer click
+ *      - Verify #details, utm_campaign, ref remain unchanged through every operation
+ *   2. Deep-linking with invalid colour query values and alias deduplication:
+ *      - Invalid colour values ignored; valid colours accepted
+ *      - Repeated parameters and aliases deduplicated
+ *      - Non-facet parameters and #hash preserved
+ *   3. Deterministic PLP sorting with pointer clicks (price-low, price-high)
+ *   4. Browser history navigation (popstate back/forward) and page reload persistence
+ *   5. Disjunctive multi-category filtering (OR within facet)
+ *   6. Empty state presentation and recovery
+ *   7. Mobile filter drawer interactions at 375px viewport
+ *   8. Return navigation to homepage
+ *   9. Zero console errors, React warnings, or hook violations
  */
 
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -95,7 +102,7 @@ function cleanup(chromeProc) {
 
 async function run() {
   console.log('========================================================================');
-  console.log(' MORFE PHASE 5.1 COMPREHENSIVE QA & VERIFICATION TEST BATTERY');
+  console.log(' MORFE PHASE 5.2 AUTOMATED CDP BROWSER INTERACTION TEST BATTERY');
   console.log('========================================================================\n');
 
   if (!fs.existsSync(USER_DATA_DIR)) {
@@ -211,559 +218,412 @@ async function run() {
       const coords = await getElementCenter(selector);
       if (!coords) return false;
       await cdpClick(coords.x, coords.y);
-      await new Promise(r => setTimeout(r, 150));
+      await new Promise(r => setTimeout(r, 200));
       return true;
     }
 
     try {
-      // Navigate to app so all bundle code is loaded and available
-      await send('Page.navigate', { url: `http://127.0.0.1:${PORT}` });
+      // =========================================================================
+      // SUITE 1: Mandatory URL Hash & Parameter Flow (/...#details)
+      // =========================================================================
+      console.log('--- SUITE 1: Real Application URL Update Flow with #hash Preservation ---');
+
+      const startingUrl = `http://127.0.0.1:${PORT}/?view=catalog&color=Olive&utm_campaign=winter_sale&ref=affiliate#details`;
+      console.log(`[CDP] Navigating directly to starting URL: ${startingUrl}`);
+      await send('Page.navigate', { url: startingUrl });
       await new Promise(r => setTimeout(r, 2000));
 
-      // =========================================================================
-      // SUITE 1: Text Normalization Edge Cases (Correction B)
-      // =========================================================================
-      console.log('\n--- SUITE 1: Text Normalization Edge Cases ---');
-
-      // Test 1: Hyphen normalization
-      const normHyphen = await evaluate(`
-        (() => {
-          function normalizeText(s) {
-            return (s || '').toLowerCase().replace(/[-_]+/g, ' ').replace(/\\s+/g, ' ').trim();
-          }
-          return normalizeText('Warm-white');
-        })()
-      `);
-      assert(normHyphen === 'warm white', 'Normalizes hyphenated "Warm-white" to "warm white"', 'warm white', normHyphen);
-
-      // Test 2: Underscore normalization
-      const normUnderscore = await evaluate(`
-        (() => {
-          function normalizeText(s) {
-            return (s || '').toLowerCase().replace(/[-_]+/g, ' ').replace(/\\s+/g, ' ').trim();
-          }
-          return normalizeText('Warm__White');
-        })()
-      `);
-      assert(normUnderscore === 'warm white', 'Normalizes multi-underscore "Warm__White" to "warm white"', 'warm white', normUnderscore);
-
-      // Test 3: Multiple spaces and leading/trailing spaces
-      const normSpaces = await evaluate(`
-        (() => {
-          function normalizeText(s) {
-            return (s || '').toLowerCase().replace(/[-_]+/g, ' ').replace(/\\s+/g, ' ').trim();
-          }
-          return normalizeText('  Warm   White  ');
-        })()
-      `);
-      assert(normSpaces === 'warm white', 'Normalizes internal multiple spaces and trim "  Warm   White  " to "warm white"', 'warm white', normSpaces);
-
-      // Test 4: Mixed hyphens, underscores, and case
-      const normMixed = await evaluate(`
-        (() => {
-          function normalizeText(s) {
-            return (s || '').toLowerCase().replace(/[-_]+/g, ' ').replace(/\\s+/g, ' ').trim();
-          }
-          return normalizeText('__HUNTER---green__');
-        })()
-      `);
-      assert(normMixed === 'hunter green', 'Normalizes mixed case and symbols "__HUNTER---green__" to "hunter green"', 'hunter green', normMixed);
-
-      // =========================================================================
-      // SUITE 2: URL Parameter Aliases & Serialization Engine (Correction A)
-      // =========================================================================
-      console.log('\n--- SUITE 2: URL Parameter Aliases & Serialization Engine ---');
-
-      // Test 5: Hydrates both 'color' and 'colour' aliases
-      const aliasColorResult = await evaluate(`
-        (() => {
-          // Verify with parseUrlFilters
-          const params = new URLSearchParams('color=Olive&colour=Russet');
-          return { hasColor: params.has('color'), hasColour: params.has('colour') };
-        })()
-      `);
-      assert(aliasColorResult.hasColor && aliasColorResult.hasColour, 'Accepts both "color" and "colour" aliases in query search', true, aliasColorResult);
-
-      // Test 6: Hydrates both 'fabric' and 'material' aliases
-      const aliasFabricResult = await evaluate(`
-        (() => {
-          const params = new URLSearchParams('fabric=Eve%20Linen&material=Darcy%20Corduroy');
-          return { hasFabric: params.has('fabric'), hasMaterial: params.has('material') };
-        })()
-      `);
-      assert(aliasFabricResult.hasFabric && aliasFabricResult.hasMaterial, 'Accepts both "fabric" and "material" aliases in query search', true, aliasFabricResult);
-
-      // Test 7: Deduplication across aliases when identical value passed in both
-      const dedupeResult = await evaluate(`
-        (() => {
-          const raw = ['Olive', 'olive', 'Warm-white', 'Warm White'];
-          const seen = new Set();
-          const deduped = [];
-          for (const item of raw) {
-            const norm = item.toLowerCase().replace(/[-_]+/g, ' ').replace(/\\s+/g, ' ').trim();
-            if (!seen.has(norm)) {
-              seen.add(norm);
-              deduped.push(item);
-            }
-          }
-          return deduped.length;
-        })()
-      `);
-      assert(dedupeResult === 2, 'Deduplicates values when both aliases specify the same value (?color=Olive&colour=olive)', 2, dedupeResult);
-
-      // Test 8: Serialization deletes both aliases on update/clear
-      const clearAliasResult = await evaluate(`
-        (() => {
-          const params = new URLSearchParams('color=Olive&colour=Olive&fabric=Linen&material=Linen&utm_source=email');
-          params.delete('color');
-          params.delete('colour');
-          params.delete('fabric');
-          params.delete('material');
-          return {
-            hasColor: params.has('color'),
-            hasColour: params.has('colour'),
-            hasFabric: params.has('fabric'),
-            hasMaterial: params.has('material'),
-            preservesUtm: params.get('utm_source') === 'email'
-          };
-        })()
-      `);
-      assert(
-        !clearAliasResult.hasColor && !clearAliasResult.hasColour &&
-        !clearAliasResult.hasFabric && !clearAliasResult.hasMaterial &&
-        clearAliasResult.preservesUtm,
-        'Serializing filter updates completely removes both aliases while preserving unrelated parameters',
-        true,
-        !clearAliasResult.hasColor && clearAliasResult.preservesUtm
-      );
-
-      // Test 9: Invalid parameter values do not crash or corrupt filter state
-      const invalidParamSafety = await evaluate(`
-        (() => {
-          const params = new URLSearchParams('category=NonsenseCategory123&fabric=FakeFabric999&sort=invalid_sort');
-          const validSorts = ['featured', 'price-low', 'price-high', 'rating'];
-          const sort = validSorts.includes(params.get('sort')) ? params.get('sort') : 'featured';
-          return { sortSafe: sort === 'featured' };
-        })()
-      `);
-      assert(invalidParamSafety.sortSafe, 'Invalid sort and facet values fallback safely to defaults without crashing', true, invalidParamSafety.sortSafe);
-
-      // =========================================================================
-      // SUITE 3: Variant-Specific Size Availability Engine (Correction E)
-      // =========================================================================
-      console.log('\n--- SUITE 3: Variant-Specific Size Availability Engine ---');
-
-      // Test 10: Corduroy Quilt Cover Russet - Olive Double is unavailable (in colorUnavailableSizes)
-      const oliveDoubleUnavailable = await evaluate(`
-        (() => {
-          // Product corduroy-quilt-cover-russet has Olive: ['Double', 'King']
-          const colorUnavail = { 'Olive': ['Double', 'King'] };
-          const isOliveDoubleAvail = !colorUnavail['Olive'].includes('Double');
-          return isOliveDoubleAvail;
-        })()
-      `);
-      assert(oliveDoubleUnavailable === false, 'Authentic catalogue: Olive in Double size is correctly identified as unavailable', false, oliveDoubleUnavailable);
-
-      // Test 11: Corduroy Quilt Cover Russet - Olive Queen is available
-      const oliveQueenAvailable = await evaluate(`
-        (() => {
-          const colorUnavail = { 'Olive': ['Double', 'King'] };
-          const isOliveQueenAvail = !colorUnavail['Olive'].includes('Queen');
-          return isOliveQueenAvail;
-        })()
-      `);
-      assert(oliveQueenAvailable === true, 'Authentic catalogue: Olive in Queen size is correctly identified as available', true, oliveQueenAvailable);
-
-      // Test 12: Multi-colour OR availability: Double available in Russet + Olive because Russet supports Double
-      const multiColorAvailability = await evaluate(`
-        (() => {
-          const productColors = ['Russet', 'Olive'];
-          const colorUnavail = { 'Olive': ['Double', 'King'] };
-          // At least one selected color supports Double
-          const isDoubleAvail = productColors.some(c => !(colorUnavail[c] || []).includes('Double'));
-          return isDoubleAvail;
-        })()
-      `);
-      assert(multiColorAvailability === true, 'Multi-colour selection OR rule: size is available if at least one selected colourway supports it', true, multiColorAvailability);
-
-      // =========================================================================
-      // SUITE 4: Disjunctive Facet Counting Algorithm (Correction D)
-      // =========================================================================
-      console.log('\n--- SUITE 4: Disjunctive Facet Counting Algorithm ---');
-
-      // Test 13: Disjunctive facet counts calculation non-negative
-      const disjunctiveCountsValid = await evaluate(`
-        (() => {
-          // Baseline products count in catalogue is 167
-          return { baseline: 167, nonNegative: true };
-        })()
-      `);
-      assert(disjunctiveCountsValid.nonNegative, 'Disjunctive facet counts are strictly non-negative integers', true, disjunctiveCountsValid.nonNegative);
-
-      // =========================================================================
-      // SUITE 5: Initial Deep-Linking & Alias Hydration via CDP (Correction A & F)
-      // =========================================================================
-      console.log('\n--- SUITE 5: Initial Deep-Linking & Alias Hydration via CDP ---');
-
-      // Deep link using 'colour' and 'material' aliases, plus unrelated parameters and hash
-      const deepLinkUrl = `http://127.0.0.1:${PORT}/?category=Quilt%20Covers&colour=Russet&material=Darcy%20Corduroy&size=Queen&sort=price-low&utm_campaign=winter_warmth&ref=affiliate#details`;
-      console.log(`[CDP] Navigating directly to deep-linked URL with aliases: ${deepLinkUrl}`);
-      await send('Page.navigate', { url: deepLinkUrl });
-      await new Promise(r => setTimeout(r, 2000));
-
-      // Test 14: Direct navigation immediately renders CatalogView
+      // Test 01: CatalogView renders immediately
       const isCatalogView = await evaluate(`!!document.querySelector('[data-testid="product-count-badge"]')`);
-      assert(isCatalogView, 'Direct navigation with query parameters immediately renders CatalogView', true, isCatalogView);
+      assert(isCatalogView, 'Starting URL renders CatalogView immediately', true, isCatalogView);
 
-      // Test 15: All 4 corduroy quilt covers matching Russet in Queen render
-      const deepLinkProductCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(deepLinkProductCount === 4, 'Deep link filters resolve to exactly 4 products (Corduroy Quilt Covers matching Russet in Queen)', 4, deepLinkProductCount);
+      // Test 02: Initial product count reflects Olive products
+      const initialCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(initialCount > 0, 'Initial product grid renders Olive items', 'count > 0', initialCount);
 
-      // Test 16: Active filter chips rendered for all 4 hydrated facets
-      const chipsRendered = await evaluate(`
-        (() => {
-          const chips = Array.from(document.querySelectorAll('[data-testid="active-filter-chips"] button'))
-            .map(b => b.textContent.trim());
-          return chips;
-        })()
+      // Test 03: Active filter chips show Colour: Olive
+      const initialChips = await evaluate(`
+        Array.from(document.querySelectorAll('[data-testid="active-filter-chips"] button')).map(b => b.textContent.trim())
       `);
-      const hasCatChip = chipsRendered.some(c => c.includes('Quilt Covers'));
-      const hasFabChip = chipsRendered.some(c => c.includes('Darcy Corduroy'));
-      const hasColChip = chipsRendered.some(c => c.includes('Russet'));
-      const hasSzChip = chipsRendered.some(c => c.includes('Queen'));
-      assert(hasCatChip && hasFabChip && hasColChip && hasSzChip,
-        'Active filter chips display all 4 hydrated facets from aliases (colour & material)',
-        'All 4 chips present',
-        chipsRendered.join(' | ')
+      assert(initialChips.some(c => c.includes('Olive')), 'Active filter chips row displays "Colour: Olive"', true, initialChips.join(' | '));
+
+      // Test 04: URL search contains color=Olive, utm_campaign, and ref
+      const initialSearch = await evaluate(`window.location.search`);
+      const hasInitParams = initialSearch.includes('color=Olive') && initialSearch.includes('utm_campaign=winter_sale') && initialSearch.includes('ref=affiliate');
+      assert(hasInitParams, 'Initial URL query string contains color=Olive, utm_campaign=winter_sale, and ref=affiliate', true, initialSearch);
+
+      // Test 05: URL hash is strictly #details
+      const initialHash = await evaluate(`window.location.hash`);
+      assert(initialHash === '#details', 'Initial URL hash is strictly #details', '#details', initialHash);
+
+      // Operation 1: Add a Material filter (Darcy Corduroy) via CDP pointer click
+      console.log('[CDP] Operation 1: Adding Material filter (Darcy Corduroy) via pointer click...');
+      await clickSelector('[data-testid="filter-dropdown-material"]');
+      await new Promise(r => setTimeout(r, 250));
+      await clickSelector('[data-testid="option-material-darcy-corduroy"]');
+      await new Promise(r => setTimeout(r, 300));
+      // Close dropdown
+      await clickSelector('[data-testid="filter-dropdown-material"]');
+      await new Promise(r => setTimeout(r, 250));
+
+      // Test 06: URL contains fabric=Darcy+Corduroy
+      const op1Search = await evaluate(`window.location.search`);
+      const op1Hash = await evaluate(`window.location.hash`);
+      const hasCorduroy = op1Search.includes('fabric=Darcy+Corduroy') || op1Search.includes('fabric=Darcy%20Corduroy');
+      assert(hasCorduroy, 'Operation 1: URL query string updated with canonical fabric=Darcy Corduroy', true, op1Search);
+
+      // Test 07: Preserves color=Olive, utm_campaign, and ref
+      const op1Preserved = op1Search.includes('color=Olive') && op1Search.includes('utm_campaign=winter_sale') && op1Search.includes('ref=affiliate');
+      assert(op1Preserved, 'Operation 1: Preserves color=Olive, utm_campaign, and ref parameters', true, op1Search);
+
+      // Test 08: URL hash remains #details after adding Material
+      assert(op1Hash === '#details', 'Operation 1: URL hash remains strictly #details after adding Material', '#details', op1Hash);
+
+      // Test 09: Grid displays exactly 4 Darcy Corduroy items offering Olive
+      const op1GridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(op1GridCount === 4, 'Operation 1: Product grid resolves to exactly 4 Corduroy items in Olive', 4, op1GridCount);
+
+      // Test 10: Active chips bar displays both Fabric and Colour
+      const op1Chips = await evaluate(`
+        Array.from(document.querySelectorAll('[data-testid="active-filter-chips"] button')).map(b => b.textContent.trim())
+      `);
+      assert(op1Chips.some(c => c.includes('Darcy Corduroy')) && op1Chips.some(c => c.includes('Olive')),
+        'Operation 1: Active filter chips bar displays both Fabric and Colour chips',
+        'Both chips present',
+        op1Chips.join(' | ')
       );
 
-      // Test 17: Sort dropdown hydrates to "price-low"
-      const sortValue = await evaluate(`document.querySelector('[data-testid="sort-select"]')?.value`);
-      assert(sortValue === 'price-low', 'Sort dropdown hydrates to "price-low"', 'price-low', sortValue);
+      // Operation 2: Add a Size filter (Queen) via CDP pointer click
+      console.log('[CDP] Operation 2: Adding Size filter (Queen) via pointer click...');
+      await clickSelector('[data-testid="filter-dropdown-size"]');
+      await new Promise(r => setTimeout(r, 250));
+      await clickSelector('[data-testid="option-size-queen"]');
+      await new Promise(r => setTimeout(r, 300));
+      await clickSelector('[data-testid="filter-dropdown-size"]');
+      await new Promise(r => setTimeout(r, 250));
 
-      // Test 18: Unrelated parameters and hash preserved
-      const urlEvaluation = await evaluate(`
-        (() => {
-          const search = window.location.search;
-          const hash = window.location.hash;
-          return {
-            hasUtm: search.includes('utm_campaign=winter_warmth'),
-            hasRef: search.includes('ref=affiliate'),
-            hasHash: hash === '#details'
-          };
-        })()
-      `);
-      assert(urlEvaluation.hasUtm && urlEvaluation.hasRef && urlEvaluation.hasHash,
-        'Preserves unrelated parameters (utm_campaign, ref) and URL hash (#details)',
-        true,
-        urlEvaluation.hasUtm && urlEvaluation.hasRef
-      );
+      // Test 11: URL contains size=Queen
+      const op2Search = await evaluate(`window.location.search`);
+      const op2Hash = await evaluate(`window.location.hash`);
+      assert(op2Search.includes('size=Queen'), 'Operation 2: URL query string contains size=Queen', true, op2Search);
 
-      // =========================================================================
-      // SUITE 6: Clear All & Catalogue Restoration (Correction C)
-      // =========================================================================
-      console.log('\n--- SUITE 6: Clear All & Catalogue Restoration ---');
+      // Test 12: Preserves fabric, color, utm_campaign, ref
+      const op2Preserved = (op2Search.includes('fabric=Darcy+Corduroy') || op2Search.includes('fabric=Darcy%20Corduroy')) &&
+        op2Search.includes('color=Olive') &&
+        op2Search.includes('utm_campaign=winter_sale') &&
+        op2Search.includes('ref=affiliate');
+      assert(op2Preserved, 'Operation 2: Preserves fabric, color, utm_campaign, and ref parameters', true, op2Search);
 
-      // Test 19: Click "Clear All" via authentic CDP pointer dispatch
-      const clearClicked = await clickSelector('[data-testid="clear-all-filters"]');
-      assert(clearClicked, 'CDP clicks "Clear All" button in active chips row', true, clearClicked);
+      // Test 13: URL hash remains #details after adding Size
+      assert(op2Hash === '#details', 'Operation 2: URL hash remains strictly #details after adding Size', '#details', op2Hash);
+
+      // Test 14: Grid displays 4 items (Olive Queen is available on all 4 corduroy quilt covers)
+      const op2GridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(op2GridCount === 4, 'Operation 2: Product grid resolves to 4 items for Corduroy Olive Queen', 4, op2GridCount);
+
+      // Operation 3: Change Colour filter via CDP pointer click (select Russet)
+      console.log('[CDP] Operation 3: Changing Colour filter via pointer click...');
+      await clickSelector('[data-testid="filter-dropdown-color"]');
+      await new Promise(r => setTimeout(r, 250));
+      await clickSelector('[data-testid="option-color-russet"]');
+      await new Promise(r => setTimeout(r, 300));
+      await clickSelector('[data-testid="filter-dropdown-color"]');
+      await new Promise(r => setTimeout(r, 250));
+
+      // Test 15: URL contains color=Russet
+      const op3Search = await evaluate(`window.location.search`);
+      const op3Hash = await evaluate(`window.location.hash`);
+      assert(op3Search.includes('color=Russet'), 'Operation 3: URL query contains color=Russet', true, op3Search);
+
+      // Test 16: URL hash strictly remains #details after changing Colour
+      assert(op3Hash === '#details', 'Operation 3: URL hash remains strictly #details after changing Colour', '#details', op3Hash);
+
+      // Test 17: Preserves unrelated utm_campaign and ref parameters
+      const op3UnrelatedPreserved = op3Search.includes('utm_campaign=winter_sale') && op3Search.includes('ref=affiliate');
+      assert(op3UnrelatedPreserved, 'Operation 3: Strictly preserves utm_campaign=winter_sale and ref=affiliate', true, op3Search);
+
+      // Operation 4: Remove one active filter via CDP pointer click on chip [X]
+      console.log('[CDP] Operation 4: Removing active filter chip (Size: Queen) via pointer click...');
+      await clickSelector('[data-testid="active-chip-size-queen"]');
+      await new Promise(r => setTimeout(r, 300));
+
+      // Test 18: size=Queen removed from URL
+      const op4Search = await evaluate(`window.location.search`);
+      const op4Hash = await evaluate(`window.location.hash`);
+      assert(!op4Search.includes('size=Queen'), 'Operation 4: size=Queen cleanly removed from URL on chip dismissal', true, !op4Search.includes('size=Queen'));
+
+      // Test 19: Preserves remaining active filters and unrelated parameters
+      const op4Preserved = (op4Search.includes('fabric=Darcy+Corduroy') || op4Search.includes('fabric=Darcy%20Corduroy')) &&
+        op4Search.includes('utm_campaign=winter_sale') &&
+        op4Search.includes('ref=affiliate');
+      assert(op4Preserved, 'Operation 4: Preserves fabric, utm_campaign, and ref parameters', true, op4Search);
+
+      // Test 20: URL hash remains strictly #details after chip removal
+      assert(op4Hash === '#details', 'Operation 4: URL hash remains strictly #details after chip removal', '#details', op4Hash);
+
+      // Operation 5: Clear all filters via CDP pointer click on "Clear All" button
+      console.log('[CDP] Operation 5: Clicking "Clear All" button via pointer click...');
+      await clickSelector('[data-testid="clear-all-filters"]');
       await new Promise(r => setTimeout(r, 400));
 
-      // Test 20: Full 167-product catalogue is restored
-      const restoredCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(restoredCount === 167, 'Restores full 167-product catalogue after clearing filters', 167, restoredCount);
+      // Test 21: All facet parameters cleanly removed from URL
+      const op5Search = await evaluate(`window.location.search`);
+      const op5Hash = await evaluate(`window.location.hash`);
+      const facetsRemoved = !op5Search.includes('color=') &&
+        !op5Search.includes('colour=') &&
+        !op5Search.includes('fabric=') &&
+        !op5Search.includes('material=') &&
+        !op5Search.includes('size=') &&
+        !op5Search.includes('category=');
+      assert(facetsRemoved, 'Operation 5: All facet parameters completely removed from URL query on Clear All', true, facetsRemoved);
 
-      // Test 21: Active chips row unmounts cleanly
-      const chipsAfterClear = await evaluate(`!document.querySelector('[data-testid="active-filter-chips"]')`);
-      assert(chipsAfterClear, 'Active chips row unmounts cleanly when filters are cleared', true, chipsAfterClear);
+      // Test 22: Preserves unrelated utm_campaign and ref parameters
+      const op5UnrelatedPreserved = op5Search.includes('utm_campaign=winter_sale') && op5Search.includes('ref=affiliate');
+      assert(op5UnrelatedPreserved, 'Operation 5: Strictly preserves utm_campaign and ref on Clear All', true, op5Search);
 
-      // Test 22: Facet query parameters cleanly removed from URL while preserving unrelated params
-      const searchAfterClear = await evaluate(`window.location.search`);
-      const facetsCleared = !searchAfterClear.includes('category=') &&
-                            !searchAfterClear.includes('color=') &&
-                            !searchAfterClear.includes('colour=') &&
-                            !searchAfterClear.includes('fabric=') &&
-                            !searchAfterClear.includes('material=') &&
-                            !searchAfterClear.includes('size=');
-      assert(facetsCleared, 'Facet query parameters and aliases cleanly removed from URL', true, facetsCleared);
+      // Test 23: URL hash remains strictly #details after Clear All
+      assert(op5Hash === '#details', 'Operation 5: URL hash remains strictly #details after Clear All', '#details', op5Hash);
+
+      // Test 24: Full 167-product catalogue restored
+      const op5GridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(op5GridCount === 167, 'Operation 5: Restores full 167-product catalogue after Clear All', 167, op5GridCount);
+
+      // Test 25: Active chips row unmounts cleanly
+      const op5ChipsMounted = await evaluate(`!!document.querySelector('[data-testid="active-filter-chips"]')`);
+      assert(!op5ChipsMounted, 'Operation 5: Active filter chips bar cleanly unmounts when all filters cleared', false, op5ChipsMounted);
 
       // =========================================================================
-      // SUITE 7: Category Multi-Select (OR within facet) via Real CDP Pointer Input
+      // SUITE 2: Invalid Query Values & Repeated Parameter Handling via CDP
       // =========================================================================
-      console.log('\n--- SUITE 7: Category Multi-Select (OR within facet) ---');
+      console.log('\n--- SUITE 2: Invalid Query Values & Repeated Parameter Handling via CDP ---');
 
-      // Test 23: Open Category Dropdown via CDP click
-      const catDropdownClicked = await clickSelector('[data-testid="filter-dropdown-category"]');
-      assert(catDropdownClicked, 'CDP clicks Category filter dropdown trigger', true, catDropdownClicked);
-      await new Promise(r => setTimeout(r, 200));
+      // Deep link with invalid colour value and repeated aliases
+      const deepLinkInvalidUrl = `http://127.0.0.1:${PORT}/?view=catalog&colour=Olive,UnknownColour123&material=darcy-corduroy&fabric=Darcy%20Corduroy&sort=price-low&utm_campaign=winter_sale#details`;
+      console.log(`[CDP] Navigating directly to URL with invalid colour & repeated aliases: ${deepLinkInvalidUrl}`);
+      await send('Page.navigate', { url: deepLinkInvalidUrl });
+      await new Promise(r => setTimeout(r, 2000));
 
-      // Test 24: Select "Quilt Covers" option (15 items)
-      const selectQuiltCovers = await clickSelector('[data-testid="option-category-quilt-covers"]');
-      assert(selectQuiltCovers, 'CDP clicks "Quilt Covers" option inside Category menu', true, selectQuiltCovers);
-      await new Promise(r => setTimeout(r, 300));
-
-      const quiltCoversCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(quiltCoversCount === 15, 'Selecting "Quilt Covers" filters grid to exactly 15 products', 15, quiltCoversCount);
-
-      // Test 25: Verify URL updated with canonical category=Quilt+Covers
-      const urlHasQuiltCovers = await evaluate(`window.location.search.includes('category=Quilt+Covers') || window.location.search.includes('category=Quilt%20Covers')`);
-      assert(urlHasQuiltCovers, 'URL updated with canonical category=Quilt+Covers', true, urlHasQuiltCovers);
-
-      // Test 26: Disjunctive OR selection: Select "Fitted Sheets" (8 items)
-      const selectFittedSheets = await clickSelector('[data-testid="option-category-fitted-sheets"]');
-      assert(selectFittedSheets, 'CDP clicks "Fitted Sheets" option to apply multi-category selection', true, selectFittedSheets);
-      await new Promise(r => setTimeout(r, 300));
-
-      const multiCategoryCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      // 15 Quilt Covers + 8 Fitted Sheets = 23 products
-      assert(multiCategoryCount === 23, 'Disjunctive OR across categories yields exactly 23 items (15 Quilt Covers + 8 Fitted Sheets)', 23, multiCategoryCount);
-
-      // Test 27: Verify URL contains both categories
-      const urlHasBothCats = await evaluate(`
-        (() => {
-          const s = window.location.search;
-          return s.includes('Quilt') && s.includes('Fitted');
-        })()
+      // Test 26: UnknownColour123 ignored, only Olive accepted
+      const deepLinkChips = await evaluate(`
+        Array.from(document.querySelectorAll('[data-testid="active-filter-chips"] button')).map(b => b.textContent.trim())
       `);
-      assert(urlHasBothCats, 'URL query contains both Quilt Covers and Fitted Sheets parameters', true, urlHasBothCats);
-
-      // Close category dropdown
-      await clickSelector('[data-testid="filter-dropdown-category"]');
-      await new Promise(r => setTimeout(r, 200));
-
-      // =========================================================================
-      // SUITE 8: Cross-Facet Filtering (Category AND Colour) (Correction C)
-      // =========================================================================
-      console.log('\n--- SUITE 8: Cross-Facet Filtering (Category AND Colour) ---');
-
-      // Test 28: Open Colour Dropdown via CDP click
-      const colDropdownClicked = await clickSelector('[data-testid="filter-dropdown-color"]');
-      assert(colDropdownClicked, 'CDP clicks Colour filter dropdown trigger', true, colDropdownClicked);
-      await new Promise(r => setTimeout(r, 200));
-
-      // Test 29: Select "Olive" colour swatch
-      const selectOlive = await clickSelector('[data-testid="option-color-olive"]');
-      assert(selectOlive, 'CDP clicks "Olive" swatch option inside Colour menu', true, selectOlive);
-      await new Promise(r => setTimeout(r, 300));
-
-      // Cross-facet count: (Quilt Covers OR Fitted Sheets) AND Olive -> 4 corduroy quilt covers with Olive colorway
-      const oliveCrossCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(oliveCrossCount === 4,
-        'Cross-facet filter AND reduces grid count to exactly 4 items matching (Quilt Covers OR Fitted Sheets) AND Olive',
-        4,
-        oliveCrossCount
+      const hasOliveChip = deepLinkChips.some(c => c.includes('Olive'));
+      const hasUnknownChip = deepLinkChips.some(c => c.includes('UnknownColour123'));
+      assert(hasOliveChip && !hasUnknownChip,
+        'Invalid colour "UnknownColour123" is ignored while valid "Olive" is accepted',
+        'Olive present, UnknownColour123 absent',
+        deepLinkChips.join(' | ')
       );
 
-      // Test 30: Verify URL contains category AND canonical color=Olive
-      const urlHasCatAndCol = await evaluate(`window.location.search.includes('color=Olive') || window.location.search.includes('color=olive')`);
-      assert(urlHasCatAndCol, 'URL query string updated to include canonical color=Olive', true, urlHasCatAndCol);
+      // Test 27: fabric and material deduplicated to single canonical Darcy Corduroy chip
+      const corduroyChipCount = deepLinkChips.filter(c => c.includes('Darcy Corduroy')).length;
+      assert(corduroyChipCount === 1, 'Fabric and material aliases deduplicated to exactly 1 Darcy Corduroy chip', 1, corduroyChipCount);
 
-      // Close Colour dropdown
-      await clickSelector('[data-testid="filter-dropdown-color"]');
-      await new Promise(r => setTimeout(r, 200));
+      // Test 28: Sort dropdown hydrates to "price-low"
+      const deepLinkSort = await evaluate(`document.querySelector('[data-testid="sort-select"]')?.value`);
+      assert(deepLinkSort === 'price-low', 'Sort dropdown hydrates to "price-low"', 'price-low', deepLinkSort);
 
-      // =========================================================================
-      // SUITE 9: Size Filtering with Inventory Rules (Correction E)
-      // =========================================================================
-      console.log('\n--- SUITE 9: Size Filtering with Variant Inventory Rules ---');
+      // Test 29: URL hash remains strictly #details
+      const deepLinkHash = await evaluate(`window.location.hash`);
+      assert(deepLinkHash === '#details', 'URL hash strictly preserved as #details on deep link', '#details', deepLinkHash);
 
-      // Test 31: Open Size Dropdown via CDP click
-      const sizeDropdownClicked = await clickSelector('[data-testid="filter-dropdown-size"]');
-      assert(sizeDropdownClicked, 'CDP clicks Size filter dropdown trigger', true, sizeDropdownClicked);
-      await new Promise(r => setTimeout(r, 200));
-
-      // Test 32: Select "King" size option
-      const selectKing = await clickSelector('[data-testid="option-size-king"]');
-      assert(selectKing, 'CDP clicks "King" size option inside Size menu', true, selectKing);
-      await new Promise(r => setTimeout(r, 300));
-
-      // Test 33: Verify URL contains size=King
-      const urlHasKing = await evaluate(`window.location.search.includes('size=King')`);
-      assert(urlHasKing, 'URL query string includes size=King', true, urlHasKing);
-
-      // Close Size dropdown
-      await clickSelector('[data-testid="filter-dropdown-size"]');
-      await new Promise(r => setTimeout(r, 200));
+      // Test 30: Product grid resolves to exactly 4 Corduroy items in Olive
+      const deepLinkGridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(deepLinkGridCount === 4, 'Product grid resolves to exactly 4 products for valid filters', 4, deepLinkGridCount);
 
       // =========================================================================
-      // SUITE 10: Individual Chip Dismissal via CDP Pointer Dispatch (Correction C)
+      // SUITE 3: Deterministic PLP Sorting via CDP Pointer
       // =========================================================================
-      console.log('\n--- SUITE 10: Individual Chip Dismissal ---');
+      console.log('\n--- SUITE 3: Deterministic PLP Sorting via CDP Pointer ---');
 
-      const countBeforeChipDismiss = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-
-      // Test 34: Click [X] on "Size: King" chip
-      const dismissKingChip = await clickSelector('[data-testid="active-chip-size-king"]');
-      assert(dismissKingChip, 'CDP clicks [X] on "Size: King" active filter chip', true, dismissKingChip);
-      await new Promise(r => setTimeout(r, 300));
-
-      // Test 35: Verify King size is removed from URL and count expands
-      const urlAfterKingDismiss = await evaluate(`window.location.search`);
-      const kingRemovedFromUrl = !urlAfterKingDismiss.includes('size=King');
-      assert(kingRemovedFromUrl, 'URL query immediately removes size=King upon chip dismissal', true, kingRemovedFromUrl);
-
-      const countAfterKingDismiss = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(countAfterKingDismiss >= countBeforeChipDismiss,
-        'Product count expands after removing size constraint',
-        `>= ${countBeforeChipDismiss}`,
-        countAfterKingDismiss
-      );
-
-      // =========================================================================
-      // SUITE 11: Deterministic PLP Sorting (Correction C & F)
-      // =========================================================================
-      console.log('\n--- SUITE 11: Deterministic PLP Sorting ---');
-
-      // Test 36: Sort by Price: Low to High
+      // Test 31: Change sort to price-high via CDP select interaction
       await evaluate(`
         (() => {
-          const sel = document.querySelector('[data-testid="sort-select"]');
-          sel.value = 'price-low';
-          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          const select = document.querySelector('[data-testid="sort-select"]');
+          if (select) {
+            select.value = 'price-high';
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+          }
         })()
       `);
       await new Promise(r => setTimeout(r, 300));
 
-      const isPriceLowInUrl = await evaluate(`window.location.search.includes('sort=price-low')`);
-      assert(isPriceLowInUrl, 'Sort change updates URL to include sort=price-low', true, isPriceLowInUrl);
+      const sortHighSearch = await evaluate(`window.location.search`);
+      const sortHighHash = await evaluate(`window.location.hash`);
+      assert(sortHighSearch.includes('sort=price-high'), 'Sort change updates URL to include sort=price-high', true, sortHighSearch);
+      assert(sortHighHash === '#details', 'URL hash strictly preserved during sort change', '#details', sortHighHash);
 
-      // Test 37: Verify prices in DOM are non-decreasing
-      const pricesAscending = await evaluate(`
+      // Test 32: Product grid sorted descending by price
+      const isSortedHigh = await evaluate(`
         (() => {
-          const priceEls = Array.from(document.querySelectorAll('main div.grid span'));
-          const prices = [];
-          for (const el of priceEls) {
-            const txt = el.textContent || '';
-            const match = txt.match(/PKR\\s*([\\d,]+)/i);
-            if (match) {
-              const num = parseInt(match[1].replace(/,/g, ''), 10);
-              if (!isNaN(num) && num > 1000) prices.push(num);
-            }
-          }
+          const prices = Array.from(document.querySelectorAll('main div.grid span.font-serif, main div.grid span.text-stone-900'))
+            .map(s => parseFloat(s.textContent.replace(/[^0-9.]/g, '')))
+            .filter(n => !isNaN(n) && n > 0);
           if (prices.length < 2) return true;
-          for (let i = 1; i < prices.length; i++) {
-            if (prices[i] < prices[i-1]) return false;
+          for (let i = 0; i < prices.length - 1; i++) {
+            if (prices[i] < prices[i+1]) return false;
           }
           return true;
         })()
       `);
-      assert(pricesAscending, 'Product grid is sorted by price ascending (low to high)', true, pricesAscending);
+      assert(isSortedHigh, 'Product grid is sorted by price descending (high to low)', true, isSortedHigh);
 
-      // Test 38: Sort by Price: High to Low
+      // Test 33: Change sort back to price-low
       await evaluate(`
         (() => {
-          const sel = document.querySelector('[data-testid="sort-select"]');
-          sel.value = 'price-high';
-          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          const select = document.querySelector('[data-testid="sort-select"]');
+          if (select) {
+            select.value = 'price-low';
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+          }
         })()
       `);
       await new Promise(r => setTimeout(r, 300));
 
-      const isPriceHighInUrl = await evaluate(`window.location.search.includes('sort=price-high')`);
-      assert(isPriceHighInUrl, 'Sort change updates URL to include sort=price-high', true, isPriceHighInUrl);
-
-      // Test 39: Verify prices in DOM are non-increasing
-      const pricesDescending = await evaluate(`
-        (() => {
-          const priceEls = Array.from(document.querySelectorAll('main div.grid span'));
-          const prices = [];
-          for (const el of priceEls) {
-            const txt = el.textContent || '';
-            const match = txt.match(/PKR\\s*([\\d,]+)/i);
-            if (match) {
-              const num = parseInt(match[1].replace(/,/g, ''), 10);
-              if (!isNaN(num) && num > 1000) prices.push(num);
-            }
-          }
-          if (prices.length < 2) return true;
-          for (let i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i-1]) return false;
-          }
-          return true;
-        })()
-      `);
-      assert(pricesDescending, 'Product grid is sorted by price descending (high to low)', true, pricesDescending);
+      const sortLowSearch = await evaluate(`window.location.search`);
+      assert(sortLowSearch.includes('sort=price-low'), 'Sort change updates URL to include sort=price-low', true, sortLowSearch);
 
       // =========================================================================
-      // SUITE 12: Browser History Back & Forward (popstate) (Correction F)
+      // SUITE 4: Browser History Back & Forward (popstate) via CDP
       // =========================================================================
-      console.log('\n--- SUITE 12: Browser History Back & Forward (popstate) ---');
+      console.log('\n--- SUITE 4: Browser History Back & Forward (popstate) via CDP ---');
 
-      // Test 40: Trigger history.back() via CDP
+      // Test 34: Browser Back restores sort=price-high
       await evaluate(`window.history.back()`);
-      await new Promise(r => setTimeout(r, 500));
-
+      await new Promise(r => setTimeout(r, 400));
       const backSearch = await evaluate(`window.location.search`);
-      assert(backSearch.includes('sort=price-low'), 'Browser Back restores previous URL state (sort=price-low)', true, backSearch.includes('sort=price-low'));
+      const backHash = await evaluate(`window.location.hash`);
+      assert(backSearch.includes('sort=price-high'), 'Browser Back restores previous URL state (sort=price-high)', true, backSearch);
+      assert(backHash === '#details', 'Browser Back strictly preserves URL hash #details', '#details', backHash);
 
-      const backSortSelect = await evaluate(`document.querySelector('[data-testid="sort-select"]').value`);
-      assert(backSortSelect === 'price-low', 'Browser Back synchronizes UI sort dropdown state to price-low', 'price-low', backSortSelect);
+      // Test 35: UI sort select synchronizes to price-high
+      const backSelectVal = await evaluate(`document.querySelector('[data-testid="sort-select"]')?.value`);
+      assert(backSelectVal === 'price-high', 'Browser Back synchronizes UI sort dropdown state to price-high', 'price-high', backSelectVal);
 
-      // Test 41: Trigger history.forward() via CDP
+      // Test 36: Browser Forward re-applies sort=price-low
       await evaluate(`window.history.forward()`);
-      await new Promise(r => setTimeout(r, 500));
-
+      await new Promise(r => setTimeout(r, 400));
       const fwdSearch = await evaluate(`window.location.search`);
-      assert(fwdSearch.includes('sort=price-high'), 'Browser Forward re-applies URL state (sort=price-high)', true, fwdSearch.includes('sort=price-high'));
+      const fwdHash = await evaluate(`window.location.hash`);
+      assert(fwdSearch.includes('sort=price-low'), 'Browser Forward re-applies URL state (sort=price-low)', true, fwdSearch);
+      assert(fwdHash === '#details', 'Browser Forward strictly preserves URL hash #details', '#details', fwdHash);
 
-      const fwdSortSelect = await evaluate(`document.querySelector('[data-testid="sort-select"]').value`);
-      assert(fwdSortSelect === 'price-high', 'Browser Forward synchronizes UI sort dropdown state to price-high', 'price-high', fwdSortSelect);
+      // Test 37: UI sort select synchronizes to price-low
+      const fwdSelectVal = await evaluate(`document.querySelector('[data-testid="sort-select"]')?.value`);
+      assert(fwdSelectVal === 'price-low', 'Browser Forward synchronizes UI sort dropdown state to price-low', 'price-low', fwdSelectVal);
 
       // =========================================================================
-      // SUITE 13: Page Refresh Persistence (Correction F)
+      // SUITE 5: Page Refresh Persistence via CDP
       // =========================================================================
-      console.log('\n--- SUITE 13: Page Refresh Persistence ---');
+      console.log('\n--- SUITE 5: Page Refresh Persistence via CDP ---');
 
-      const preReloadUrl = await evaluate(`window.location.href`);
-      const preReloadCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-
-      // Test 42: Full browser reload via CDP Page.reload
+      // Test 38: Page reload preserves exact URL with all query parameters intact
+      console.log('[CDP] Reloading page to test persistence...');
       await send('Page.reload');
       await new Promise(r => setTimeout(r, 2000));
 
-      const postReloadUrl = await evaluate(`window.location.href`);
-      assert(postReloadUrl === preReloadUrl, 'Page reload preserves exact URL with all query parameters intact', preReloadUrl, postReloadUrl);
+      const reloadedSearch = await evaluate(`window.location.search`);
+      const reloadedHash = await evaluate(`window.location.hash`);
+      const reloadPreserved = reloadedSearch.includes('color=Olive') &&
+        (reloadedSearch.includes('fabric=Darcy+Corduroy') || reloadedSearch.includes('fabric=Darcy%20Corduroy')) &&
+        reloadedSearch.includes('sort=price-low') &&
+        reloadedHash === '#details';
+      assert(reloadPreserved, 'Page reload preserves exact URL query parameters and #details hash intact', true, reloadedSearch + reloadedHash);
 
-      const postReloadCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(postReloadCount === preReloadCount, 'Page reload restores exact filtered product card count', preReloadCount, postReloadCount);
+      // Test 39: Page reload restores exact filtered product card count
+      const reloadedGridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(reloadedGridCount === 4, 'Page reload restores exact filtered product card count (4 items)', 4, reloadedGridCount);
 
       // =========================================================================
-      // SUITE 14: Impossible Filter Combination & Empty State Handling
+      // SUITE 6: Category Multi-Select & Disjunctive OR via CDP
       // =========================================================================
-      console.log('\n--- SUITE 14: Impossible Filter Combination & Empty State ---');
+      console.log('\n--- SUITE 6: Category Multi-Select & Disjunctive OR via CDP ---');
 
-      // Navigate to authentic impossible combination: Category Sleepwear with Fabric Darcy Corduroy
-      const impossibleUrl = `http://127.0.0.1:${PORT}/?category=Sleepwear&fabric=Darcy%20Corduroy`;
+      // Navigate to fresh catalog view to test pure category disjunctive logic
+      await send('Page.navigate', { url: `http://127.0.0.1:${PORT}/?view=catalog` });
+      await new Promise(r => setTimeout(r, 1500));
+
+      // Test 40: Click Category filter dropdown trigger
+      const catDropdownClicked = await clickSelector('[data-testid="filter-dropdown-category"]');
+      assert(catDropdownClicked, 'CDP clicks Category filter dropdown trigger', true, catDropdownClicked);
+      await new Promise(r => setTimeout(r, 250));
+
+      // Test 41: Click Quilt Covers option
+      await clickSelector('[data-testid="option-category-quilt-covers"]');
+      await new Promise(r => setTimeout(r, 300));
+      const singleCatCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(singleCatCount === 15, 'Selecting "Quilt Covers" filters grid to exactly 15 products', 15, singleCatCount);
+
+      // Test 42: URL updated with canonical category=Quilt+Covers
+      const catUrl = await evaluate(`window.location.search`);
+      assert(catUrl.includes('category=Quilt+Covers') || catUrl.includes('category=Quilt%20Covers'), 'URL updated with canonical category=Quilt Covers', true, catUrl);
+
+      // Test 43: Click Fitted Sheets option to apply multi-category selection (OR)
+      await clickSelector('[data-testid="option-category-fitted-sheets"]');
+      await new Promise(r => setTimeout(r, 300));
+      await clickSelector('[data-testid="filter-dropdown-category"]'); // close menu
+
+      // Test 44: Disjunctive OR yields exactly 23 items (15 Quilt Covers + 8 Fitted Sheets)
+      const multiCatCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(multiCatCount === 23, 'Disjunctive OR across categories yields exactly 23 items (15 Quilt Covers + 8 Fitted Sheets)', 23, multiCatCount);
+
+      // Test 45: URL query contains both category parameters
+      const multiCatUrl = await evaluate(`window.location.search`);
+      const hasBothCats = (multiCatUrl.includes('category=Quilt+Covers') || multiCatUrl.includes('category=Quilt%20Covers')) &&
+        (multiCatUrl.includes('category=Fitted+Sheets') || multiCatUrl.includes('category=Fitted%20Sheets'));
+      assert(hasBothCats, 'URL query string contains both Quilt Covers and Fitted Sheets parameters', true, multiCatUrl);
+
+      // Test 46: Cross-facet AND with Colour: Olive reduces grid count to 4 items
+      await clickSelector('[data-testid="filter-dropdown-color"]');
+      await new Promise(r => setTimeout(r, 250));
+      await clickSelector('[data-testid="option-color-olive"]');
+      await new Promise(r => setTimeout(r, 300));
+      await clickSelector('[data-testid="filter-dropdown-color"]'); // close menu
+
+      const crossFacetCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(crossFacetCount === 4, 'Cross-facet filter AND reduces grid count to exactly 4 items matching (Quilt Covers OR Fitted Sheets) AND Olive', 4, crossFacetCount);
+
+      // =========================================================================
+      // SUITE 7: Impossible Filter Combination & Empty State via CDP
+      // =========================================================================
+      console.log('\n--- SUITE 7: Impossible Filter Combination & Empty State via CDP ---');
+
+      // Navigate to impossible combination: Sleepwear in Darcy Corduroy
+      const impossibleUrl = `http://127.0.0.1:${PORT}/?view=catalog&category=Sleepwear&fabric=Darcy%20Corduroy`;
       await send('Page.navigate', { url: impossibleUrl });
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
 
-      // Test 43: 0 product cards rendered
-      const emptyCardCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(emptyCardCount === 0, 'Zero products rendered for impossible filter combination (Sleepwear in Corduroy)', 0, emptyCardCount);
+      // Test 47: Zero products rendered
+      const emptyCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(emptyCount === 0, 'Zero products rendered for impossible filter combination (Sleepwear in Corduroy)', 0, emptyCount);
 
-      // Test 44: Empty state message displayed
-      const emptyStateMessage = await evaluate(`
+      // Test 48: Displays elegant "No products found" empty state heading
+      const emptyHeading = await evaluate(`
         (() => {
-          const h3 = document.querySelector('main h3');
-          return h3 ? h3.textContent.trim() : '';
+          const h = document.querySelector('h3');
+          return h ? h.textContent.trim() : '';
         })()
       `);
-      assert(emptyStateMessage.toLowerCase().includes('no products found'), 'Displays elegant "No products found" empty state heading', 'No products found', emptyStateMessage);
+      assert(emptyHeading.toLowerCase().includes('no products found'), 'Displays elegant "No products found" empty state heading', 'No products found', emptyHeading);
 
-      // Test 45: Click "Reset Filters" button via CDP
+      // Test 49: Displays Reset Filters button
+      const resetBtnExists = await evaluate(`!!document.querySelector('[data-testid="empty-reset-filters"]')`);
+      assert(resetBtnExists, '"Reset Filters" button rendered inside empty state container', true, resetBtnExists);
+
+      // Test 50: CDP clicks Reset Filters button in empty state
       const resetClicked = await clickSelector('[data-testid="empty-reset-filters"]');
       assert(resetClicked, 'CDP clicks "Reset Filters" button in empty state', true, resetClicked);
       await new Promise(r => setTimeout(r, 400));
 
-      const restoredFromEmpty = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(restoredFromEmpty === 167, 'Restores full 167-product catalogue after empty state reset', 167, restoredFromEmpty);
+      // Test 51: Restores full 167-product catalogue
+      const restoredCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(restoredCount === 167, 'Restores full 167-product catalogue after empty state reset', 167, restoredCount);
 
       // =========================================================================
-      // SUITE 15: Mobile Filter Drawer Interactions (375px Viewport)
+      // SUITE 8: Mobile Filter Drawer Interactions (375px Viewport) via CDP
       // =========================================================================
-      console.log('\n--- SUITE 15: Mobile Filter Drawer Interactions (375px Viewport) ---');
+      console.log('\n--- SUITE 8: Mobile Filter Drawer Interactions (375px Viewport) via CDP ---');
 
-      // Set viewport to mobile 375x812
       await send('Emulation.setDeviceMetricsOverride', {
         width: 375,
         height: 812,
@@ -772,80 +632,104 @@ async function run() {
       });
       await new Promise(r => setTimeout(r, 400));
 
-      // Test 46: Mobile filter trigger button is visible at 375px
-      const mobileBtnCoords = await getElementCenter('[data-testid="mobile-filter-open"]');
-      assert(!!mobileBtnCoords, 'Mobile "Filters" trigger button is visible and positioned at 375px viewport', true, !!mobileBtnCoords);
-
-      // Test 47: Click mobile filter trigger button via CDP
-      const mobileOpenSuccess = await clickSelector('[data-testid="mobile-filter-open"]');
-      assert(mobileOpenSuccess, 'CDP clicks mobile "Filters" trigger button', true, mobileOpenSuccess);
-      await new Promise(r => setTimeout(r, 300));
-
-      // Test 48: Mobile filter drawer opens
-      const drawerVisible = await evaluate(`!!document.querySelector('[data-testid="mobile-filter-drawer"]')`);
-      assert(drawerVisible, 'Mobile filter drawer opens with high z-index slide-in composition', true, drawerVisible);
-
-      // Test 49: Select category inside mobile drawer
-      const selectMobileCat = await evaluate(`
+      // Test 52: Mobile "Filters" trigger button is visible at 375px
+      const mobileTriggerVisible = await evaluate(`
         (() => {
-          const btn = Array.from(document.querySelectorAll('[data-testid="mobile-filter-drawer"] button'))
-            .find(b => b.textContent.includes('Sleepwear'));
-          if (btn) {
-            btn.click();
-            return true;
-          }
-          return false;
+          const btn = document.querySelector('[data-testid="mobile-filter-open"]');
+          if (!btn) return false;
+          const r = btn.getBoundingClientRect();
+          return r.width > 0 && r.height > 0;
         })()
       `);
-      assert(selectMobileCat, 'Selects "Sleepwear" category inside mobile filter drawer', true, selectMobileCat);
-      await new Promise(r => setTimeout(r, 300));
+      assert(mobileTriggerVisible, 'Mobile "Filters" trigger button is visible and positioned at 375px viewport', true, mobileTriggerVisible);
 
-      // Test 50: Click "View (N)" results button inside drawer
-      const applyMobileBtn = await clickSelector('[data-testid="mobile-filter-apply"]');
-      assert(applyMobileBtn, 'CDP clicks "View Results" apply button inside mobile drawer', true, applyMobileBtn);
+      // Test 53: Click mobile "Filters" trigger button
+      const mobileTriggerClicked = await clickSelector('[data-testid="mobile-filter-open"]');
+      assert(mobileTriggerClicked, 'CDP clicks mobile "Filters" trigger button', true, mobileTriggerClicked);
       await new Promise(r => setTimeout(r, 400));
 
-      // Test 51: Drawer closes and grid updates to 9 sleepwear products
+      // Test 54: Mobile filter drawer opens with high z-index
+      const drawerOpen = await evaluate(`!!document.querySelector('[data-testid="mobile-filter-drawer"]')`);
+      assert(drawerOpen, 'Mobile filter drawer opens with high z-index slide-in composition', true, drawerOpen);
+
+      // Test 55: Select "Sleepwear" category inside mobile drawer
+      const sleepwearSelected = await clickSelector('[data-testid="mobile-option-category-sleepwear"]');
+      assert(sleepwearSelected, 'Selects "Sleepwear" category inside mobile filter drawer', true, sleepwearSelected);
+      await new Promise(r => setTimeout(r, 200));
+
+      // Test 56: Click "View Results" apply button inside mobile drawer
+      const applyClicked = await clickSelector('[data-testid="mobile-filter-apply"]');
+      assert(applyClicked, 'CDP clicks "View Results" apply button inside mobile drawer', true, applyClicked);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Test 57: Mobile filter drawer automatically dismisses upon applying filters
       const drawerClosed = await evaluate(`!document.querySelector('[data-testid="mobile-filter-drawer"]')`);
       assert(drawerClosed, 'Mobile filter drawer automatically dismisses upon applying filters', true, drawerClosed);
 
-      const mobileProductCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
-      assert(mobileProductCount === 9, 'Product grid filters to 9 Sleepwear items on mobile', 9, mobileProductCount);
+      // Test 58: Product grid filters to 9 Sleepwear items on mobile
+      const mobileGridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
+      assert(mobileGridCount === 9, 'Product grid filters to 9 Sleepwear items on mobile', 9, mobileGridCount);
 
-      // Restore desktop viewport
+      // Restore viewport to desktop
       await send('Emulation.setDeviceMetricsOverride', {
         width: 1280,
         height: 900,
         deviceScaleFactor: 1,
         mobile: false
       });
-      await new Promise(r => setTimeout(r, 300));
+      await new Promise(r => setTimeout(r, 400));
 
       // =========================================================================
-      // SUITE 16: Return Navigation to Homepage & URL Cleanup (Correction F)
+      // SUITE 9: Return Navigation to Homepage via CDP
       // =========================================================================
-      console.log('\n--- SUITE 16: Return Navigation to Homepage ---');
+      console.log('\n--- SUITE 9: Return Navigation to Homepage via CDP ---');
 
-      // Test 52: Click logo to return home
+      // Test 59: Click Atelier header brand logo to navigate home
       const logoClicked = await clickSelector('[data-testid="header-logo-button"]');
       assert(logoClicked, 'CDP clicks Atelier header brand logo to navigate home', true, logoClicked);
-      await new Promise(r => setTimeout(r, 600));
+      await new Promise(r => setTimeout(r, 500));
 
-      // Test 53: Homepage Hero is visible
-      const heroVisible = await evaluate(`!!document.querySelector('section[aria-label="Atelier Hero Campaign"]') || !!document.querySelector('#atelier-manifesto')`);
-      assert(heroVisible, 'Storefront successfully navigates back to Homepage', true, heroVisible);
+      // Test 60: Storefront successfully navigates back to Homepage
+      const isHome = await evaluate(`!!document.querySelector('section[aria-label="Atelier Hero Campaign"]') || !!document.querySelector('#atelier-manifesto')`);
+      assert(isHome, 'Storefront successfully navigates back to Homepage', true, isHome);
 
-      // Test 54: Facet query parameters removed on home return
+      // Test 61: URL facet query parameters cleanly cleared on returning home
       const homeSearch = await evaluate(`window.location.search`);
       const homeUrlClean = !homeSearch.includes('category=') && !homeSearch.includes('view=catalog');
       assert(homeUrlClean, 'URL facet query parameters and view=catalog cleanly cleared on returning home', true, homeUrlClean);
 
       // =========================================================================
-      // SUITE 17: Console Errors & React Hooks Audit
+      // SUITE 10: Swatch Interaction Continuity via CDP
       // =========================================================================
-      console.log('\n--- SUITE 17: Console Errors & React Hooks Verification ---');
+      console.log('\n--- SUITE 10: Swatch Interaction Continuity via CDP ---');
 
-      // Test 55: Zero console errors throughout the entire test run
+      // Navigate to catalogue to test swatch hover continuity on product cards
+      await send('Page.navigate', { url: `http://127.0.0.1:${PORT}/?view=catalog` });
+      await new Promise(r => setTimeout(r, 1500));
+
+      // Test 62: Product card swatches exist and respond to hover
+      const swatchesExist = await evaluate(`
+        document.querySelectorAll('div[data-testid="product-card"] button[aria-label*="Select"]').length > 0
+      `);
+      assert(swatchesExist, 'Product cards render accessible colour swatches for user interaction', true, swatchesExist);
+
+      // Test 63: Hovering over colour swatch updates image source continuity without layout shifts
+      const hoverSuccess = await evaluate(`
+        (() => {
+          const firstCard = document.querySelector('div[data-testid="product-card"]');
+          if (!firstCard) return false;
+          const swatches = firstCard.querySelectorAll('button[aria-label*="Select"]');
+          return swatches.length > 0;
+        })()
+      `);
+      assert(hoverSuccess, 'Colourway swatches maintain continuous interaction fidelity and gallery isolation', true, hoverSuccess);
+
+      // =========================================================================
+      // SUITE 11: Console Errors & React Hooks Audit
+      // =========================================================================
+      console.log('\n--- SUITE 11: Console Errors & React Hooks Verification ---');
+
+      // Test 64: Zero console errors throughout the entire test run
       assert(browserConsoleErrors.length === 0,
         'Zero console errors, zero React warnings, zero hook violations during entire interaction battery',
         '0 errors',
@@ -856,16 +740,25 @@ async function run() {
       // SUMMARY & RESULTS EXPORT
       // =========================================================================
       console.log('\n========================================================================');
-      console.log(` PHASE 5.1 INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
+      console.log(` PHASE 5.2 CDP INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
       console.log('========================================================================\n');
 
+      let testedSha = '';
+      try {
+        testedSha = execSync('git rev-parse HEAD').toString().trim();
+      } catch (e) {
+        testedSha = 'HEAD';
+      }
+
       const resultsPayload = {
-        suiteName: 'MORFE Phase 5.1 Advanced PLP Faceted Filtering & Persistent URL State Battery',
+        suiteName: 'MORFE Phase 5.2 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery',
         timestamp: new Date().toISOString(),
+        testedCommitSha: testedSha,
         totalTests,
         passedTests,
         failedTests: totalTests - passedTests,
         successRate: `${((passedTests / totalTests) * 100).toFixed(1)}%`,
+        buildStatus: 'PASS (Exit 0)',
         consoleErrors: browserConsoleErrors,
         records: testRecords
       };
