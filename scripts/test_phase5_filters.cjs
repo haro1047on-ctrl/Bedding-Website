@@ -1,5 +1,5 @@
 /**
- * MORFE - Phase 5.2 Advanced PLP Faceted Filtering & Persistent URL State
+ * MORFE - Phase 5.3 Advanced PLP Faceted Filtering & Persistent URL State
  * Comprehensive Automated CDP Browser Interaction Test Battery
  *
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using native WebSocket.
@@ -102,7 +102,7 @@ function cleanup(chromeProc) {
 
 async function run() {
   console.log('========================================================================');
-  console.log(' MORFE PHASE 5.2 AUTOMATED CDP BROWSER INTERACTION TEST BATTERY');
+  console.log(' MORFE PHASE 5.3 AUTOMATED CDP BROWSER INTERACTION TEST BATTERY');
   console.log('========================================================================\n');
 
   if (!fs.existsSync(USER_DATA_DIR)) {
@@ -740,7 +740,7 @@ async function run() {
       // SUMMARY & RESULTS EXPORT
       // =========================================================================
       console.log('\n========================================================================');
-      console.log(` PHASE 5.2 CDP INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
+      console.log(` PHASE 5.3 CDP INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
       console.log('========================================================================\n');
 
       let testedSha = '';
@@ -751,7 +751,7 @@ async function run() {
       }
 
       const resultsPayload = {
-        suiteName: 'MORFE Phase 5.2 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery',
+        suiteName: 'MORFE Phase 5.3 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery',
         timestamp: new Date().toISOString(),
         testedCommitSha: testedSha,
         totalTests,

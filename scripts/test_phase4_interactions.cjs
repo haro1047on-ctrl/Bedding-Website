@@ -884,6 +884,14 @@ async function run() {
       // 8. Editorial Homepage Vignettes & Images
       // -------------------------------------------------------------
       console.log('\n--- 8. Editorial Homepage Vignettes & Images ---');
+      await evaluate(`
+        (() => {
+          const sec = document.querySelector('#editorial-vignettes-section');
+          if (sec) sec.scrollIntoView({ behavior: 'instant', block: 'start' });
+        })()
+      `);
+      await new Promise(r => setTimeout(r, 800));
+
       const vignettesData = await evaluate(`
         (() => {
           const sec = document.querySelector('#editorial-vignettes-section');

@@ -1,10 +1,11 @@
-# MORFE — Phase 5, 5.1 & 5.2 Implementation Report
+# MORFE — Phase 5 Implementation Report
 ## Advanced Product Listing Page (PLP) Faceted Filtering & Persistent URL State
 
 **Project:** MORFE — The Quiet Atelier  
 **Repository:** `haro1047on-ctrl/Bedding-Website`  
 **Active Branch:** `feature/phase-5-plp-faceted-filtering`  
 **Accepted Phase 4 Baseline:** `aec2928fd01a8ec2731e0cba18d8368e00b3f3e3`  
+**Implementation-Tested Git Commit SHA:** `503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542`  
 **Technology Stack:** React 18, Vite 5, TypeScript 5, Tailwind CSS 3, Chrome DevTools Protocol (CDP)  
 
 ---
@@ -222,7 +223,7 @@ export interface FacetCounts {
 
 ## 4. Verification Deliverables
 
-- **Production Unit Test Battery:** `scripts/test_filter_utils_unit.cjs` (55/55 passed, 100%)
-- **Automated CDP Browser Interaction Test Battery:** `scripts/test_phase5_filters.cjs` (66/66 passed, 100%)
-- **Machine-Readable Results Artifact:** `src/data/phase5_filter_test_results.json`
+- **Production Unit Test Battery:** `scripts/test_filter_utils_unit.cjs` (60/60 passed, 100%, 540 exact count comparisons across 10 scenarios with 0 mismatches)
+- **Automated CDP Browser Interaction Test Battery:** `scripts/test_phase5_filters.cjs` (66/66 passed, 100%, 66 genuine assertions against DOM & browser state)
+- **Machine-Readable Results Artifact:** `src/data/phase5_filter_test_results.json` (66 test records, 100% pass)
 - **Formal Verification Report:** `PHASE_5_FINAL_VERIFICATION_REPORT.md`

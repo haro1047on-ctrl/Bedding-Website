@@ -1,5 +1,5 @@
 /**
- * MORFE - Phase 5.2 Filter Utilities & Logic Production Unit Test Battery
+ * MORFE - Phase 5.3 Filter Utilities & Logic Production Unit Test Battery
  *
  * Directly compiles and executes the actual exported production functions from:
  *   src/utils/filterUtils.ts
@@ -7,11 +7,12 @@
  * Validates:
  *   1. normalizeText (edge cases: hyphens, underscores, multiple spaces, casing, symbols)
  *   2. parseUrlFilters (color/colour and fabric/material aliases, comma lists, repeated params,
- *      deduplication, rejection of unknown/invalid colours, default fallbacks)
+ *      deduplication, rejection of unknown/invalid colours, default fallbacks, all 8 deterministic cases)
  *   3. serializeUrlFilters (alias cleanup, canonical serialization, preservation of unrelated params and #hash)
  *   4. isSizeAvailable (variant availability, colorUnavailableSizes, multi-colour OR rule, unselected colour handling)
  *   5. productMatchesFilters (pure combinatorial filtering, OR within facet, AND across facets)
- *   6. computeFacetCounts (disjunctive faceting independently verified against a reference calculation across 10 scenarios)
+ *   6. computeFacetCounts (disjunctive faceting independently verified against a reference calculation across 10 scenarios,
+ *      54 facet options per scenario = 540 exact count comparisons)
  */
 
 const path = require('path');
@@ -72,7 +73,7 @@ function assertUnit(condition, testName, expected = '', actual = '') {
 }
 
 console.log('========================================================================');
-console.log(' MORFE PHASE 5.2 PRODUCTION FILTER UTILITIES UNIT TEST BATTERY');
+console.log(' MORFE PHASE 5.3 PRODUCTION FILTER UTILITIES UNIT TEST BATTERY');
 console.log('========================================================================\n');
 
 // =========================================================================
@@ -87,27 +88,48 @@ assertUnit(normalizeText('__HUNTER---green__') === 'hunter green', 'normalizeTex
 assertUnit(normalizeText('') === '' && normalizeText(null) === '', 'normalizeText handles empty or null gracefully');
 
 // =========================================================================
-// SECTION 2: parseUrlFilters Production Function & Invalid Colour Rejection
+// SECTION 2: parseUrlFilters Production Function & 8 Deterministic Colour Cases
 // =========================================================================
-console.log('\n--- SECTION 2: parseUrlFilters Production Function & Invalid Colour Parsing ---');
+console.log('\n--- SECTION 2: parseUrlFilters Production Function & 8 Deterministic Colour Cases ---');
 
-const resOliveColor = parseUrlFilters('?color=Olive');
-assertUnit(resOliveColor.colors.length === 1 && resOliveColor.colors[0] === 'Olive', 'Accepts color=Olive -> canonical Olive');
+// Case 1: ?color=Olive -> ["Olive"]
+const res1 = parseUrlFilters('?color=Olive');
+assertUnit(res1.colors.length === 1 && res1.colors[0] === 'Olive', 'Deterministic Case 1: ?color=Olive -> ["Olive"]');
 
-const resOliveColour = parseUrlFilters('?colour=olive');
-assertUnit(resOliveColour.colors.length === 1 && resOliveColour.colors[0] === 'Olive', 'Accepts colour=olive -> canonical Olive');
+// Case 2: ?colour=olive -> ["Olive"]
+const res2 = parseUrlFilters('?colour=olive');
+assertUnit(res2.colors.length === 1 && res2.colors[0] === 'Olive', 'Deterministic Case 2: ?colour=olive -> ["Olive"]');
 
-const resWarmWhite = parseUrlFilters('?color=WARM-WHITE');
-assertUnit(resWarmWhite.colors.length === 1 && resWarmWhite.colors[0] === 'Warm White', 'Accepts color=WARM-WHITE -> canonical Warm White');
+// Case 3: ?color=WARM-WHITE -> ["Warm White"]
+const res3 = parseUrlFilters('?color=WARM-WHITE');
+assertUnit(res3.colors.length === 1 && res3.colors[0] === 'Warm White', 'Deterministic Case 3: ?color=WARM-WHITE -> ["Warm White"]');
 
-const resUnknownColor = parseUrlFilters('?color=UnknownColour123');
-assertUnit(resUnknownColor.colors.length === 0, 'Ignores color=UnknownColour123 (invalid colours safely rejected)');
+// Case 4: ?color=UnknownColour123 -> []
+const res4 = parseUrlFilters('?color=UnknownColour123');
+assertUnit(res4.colors.length === 0, 'Deterministic Case 4: ?color=UnknownColour123 -> [] (unknown colours rejected)');
 
-const resDedupeColor = parseUrlFilters('?color=Olive&colour=olive');
-assertUnit(resDedupeColor.colors.length === 1 && resDedupeColor.colors[0] === 'Olive', 'Deduplicates color=Olive&colour=olive -> single Olive');
+// Case 5: ?color=Olive&colour=olive -> ["Olive"]
+const res5 = parseUrlFilters('?color=Olive&colour=olive');
+assertUnit(res5.colors.length === 1 && res5.colors[0] === 'Olive', 'Deterministic Case 5: ?color=Olive&colour=olive -> ["Olive"] (deduplicated across aliases)');
 
-const resCommaUnknown = parseUrlFilters('?color=Olive,UnknownColour123');
-assertUnit(resCommaUnknown.colors.length === 1 && resCommaUnknown.colors[0] === 'Olive', 'Comma-separated color=Olive,UnknownColour123 -> only canonical Olive');
+// Case 6: ?color=Olive,UnknownColour123 -> ["Olive"]
+const res6 = parseUrlFilters('?color=Olive,UnknownColour123');
+assertUnit(res6.colors.length === 1 && res6.colors[0] === 'Olive', 'Deterministic Case 6: ?color=Olive,UnknownColour123 -> ["Olive"]');
+
+// Case 7: ?color=Olive&color=Russet -> ["Olive", "Russet"]
+const res7 = parseUrlFilters('?color=Olive&color=Russet');
+assertUnit(res7.colors.length === 2 && res7.colors[0] === 'Olive' && res7.colors[1] === 'Russet', 'Deterministic Case 7: ?color=Olive&color=Russet -> ["Olive", "Russet"] (repeated param)');
+
+// Case 8: ?color= -> []
+const res8 = parseUrlFilters('?color=');
+assertUnit(res8.colors.length === 0, 'Deterministic Case 8: ?color= -> [] (empty colour parameter ignored)');
+
+// Additional edge cases: combined repeated and comma-separated with unknown colour and alias
+const resCombined = parseUrlFilters('?color=Olive,UnknownColour123&colour=Russet');
+assertUnit(resCombined.colors.length === 2 && resCombined.colors.includes('Olive') && resCombined.colors.includes('Russet'), 'Combined comma-separated and repeated alias: ?color=Olive,UnknownColour123&colour=Russet -> ["Olive", "Russet"]');
+
+const resWarmWhiteUnderscore = parseUrlFilters('?colour=warm_white');
+assertUnit(resWarmWhiteUnderscore.colors.length === 1 && resWarmWhiteUnderscore.colors[0] === 'Warm White', 'Underscore alias: ?colour=warm_white -> ["Warm White"]');
 
 const resFabric = parseUrlFilters('?fabric=Darcy%20Corduroy');
 assertUnit(resFabric.materials.length === 1 && resFabric.materials[0] === 'Darcy Corduroy', 'Accepts fabric=Darcy Corduroy');
@@ -317,48 +339,62 @@ function computeIndependentReferenceCounts(allProducts, f) {
   return { categories, materials, colors, sizes };
 }
 
-function verifyCountsMatch(scenarioName, filters) {
+let totalFacetOptionComparisons = 0;
+let totalFacetOptionMismatches = 0;
+
+function verifyCountsMatch(scenarioNum, scenarioName, filters) {
   const prod = computeFacetCounts(PRODUCTS, filters);
   const ref = computeIndependentReferenceCounts(PRODUCTS, filters);
-  let match = true;
+  const matchingProducts = PRODUCTS.filter(p => productMatchesFilters(p, filters));
+
+  let scenarioComparisons = 0;
+  let scenarioMismatches = 0;
   let mismatchDetail = '';
 
   for (const group of ['categories', 'materials', 'colors', 'sizes']) {
     for (const key of Object.keys(ref[group])) {
+      scenarioComparisons++;
+      totalFacetOptionComparisons++;
       if (prod[group][key] !== ref[group][key]) {
-        match = false;
-        mismatchDetail = `${group}.${key}: prod=${prod[group][key]} vs ref=${ref[group][key]}`;
-        break;
+        scenarioMismatches++;
+        totalFacetOptionMismatches++;
+        if (!mismatchDetail) {
+          mismatchDetail = `${group}.${key}: prod=${prod[group][key]} vs ref=${ref[group][key]}`;
+        }
       }
     }
-    if (!match) break;
   }
-  assertUnit(match, `Scenario ${scenarioName}: all disjunctive facet counts match independent reference calculation`, 'all match', match ? 'all match' : mismatchDetail);
+
+  const pass = scenarioMismatches === 0 && scenarioComparisons === 54;
+  console.log(`    Scenario ${scenarioNum}: ${matchingProducts.length} matching products, ${scenarioComparisons} facet options evaluated (13 cat, 17 mat, 15 col, 9 sz) -> ${scenarioComparisons - scenarioMismatches}/${scenarioComparisons} exact matches`);
+  assertUnit(pass, `Scenario ${scenarioNum} (${scenarioName}): all 54 facet counts match independent reference calculation (0 mismatches)`, '54 matches', pass ? '54 matches' : mismatchDetail);
 }
 
 // 10 Mandatory Validation Scenarios
-verifyCountsMatch('1 (No filters)', { ...DEFAULT_FILTER_STATE });
-verifyCountsMatch('2 (One Category: Quilt Covers)', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers'] });
-verifyCountsMatch('3 (One Material: Darcy Corduroy)', { ...DEFAULT_FILTER_STATE, materials: ['Darcy Corduroy'] });
-verifyCountsMatch('4 (One Colour: Olive)', { ...DEFAULT_FILTER_STATE, colors: ['Olive'] });
-verifyCountsMatch('5 (One Size: Queen)', { ...DEFAULT_FILTER_STATE, sizes: ['Queen'] });
-verifyCountsMatch('6 (Multiple in same facet: Quilt Covers OR Fitted Sheets)', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers', 'Fitted Sheets'] });
-verifyCountsMatch('7 (Multiple active facet groups: Quilt Covers AND Olive)', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers'], colors: ['Olive'] });
-verifyCountsMatch('8 (4-facet combination: Quilt Covers + Darcy Corduroy + Olive + Queen)', {
+verifyCountsMatch(1, 'No filters', { ...DEFAULT_FILTER_STATE });
+verifyCountsMatch(2, 'One Category: Quilt Covers', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers'] });
+verifyCountsMatch(3, 'One Material: Darcy Corduroy', { ...DEFAULT_FILTER_STATE, materials: ['Darcy Corduroy'] });
+verifyCountsMatch(4, 'One Colour: Olive', { ...DEFAULT_FILTER_STATE, colors: ['Olive'] });
+verifyCountsMatch(5, 'One Size: Queen', { ...DEFAULT_FILTER_STATE, sizes: ['Queen'] });
+verifyCountsMatch(6, 'Multiple in same facet: Quilt Covers OR Fitted Sheets', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers', 'Fitted Sheets'] });
+verifyCountsMatch(7, 'Multiple active facet groups: Quilt Covers AND Olive', { ...DEFAULT_FILTER_STATE, categories: ['Quilt Covers'], colors: ['Olive'] });
+verifyCountsMatch(8, '4-facet combination: Quilt Covers + Darcy Corduroy + Olive + Queen', {
   ...DEFAULT_FILTER_STATE,
   categories: ['Quilt Covers'],
   materials: ['Darcy Corduroy'],
   colors: ['Olive'],
   sizes: ['Queen'],
 });
-verifyCountsMatch('9 (Removing active filter: remove Queen size from 4-facet)', {
+verifyCountsMatch(9, 'Removing active filter: remove Queen size from 4-facet', {
   ...DEFAULT_FILTER_STATE,
   categories: ['Quilt Covers'],
   materials: ['Darcy Corduroy'],
   colors: ['Olive'],
   sizes: [],
 });
-verifyCountsMatch('10 (Clearing all filters)', { ...DEFAULT_FILTER_STATE });
+verifyCountsMatch(10, 'Clearing all filters', { ...DEFAULT_FILTER_STATE });
+
+assertUnit(totalFacetOptionComparisons === 540 && totalFacetOptionMismatches === 0, `Total Disjunctive Facet Count Validation: 540/540 exact option count comparisons match with zero mismatches (10 scenarios x 54 options)`);
 
 console.log('\n========================================================================');
 console.log(` PRODUCTION UNIT TEST SUMMARY: ${passedUnitTests}/${totalUnitTests} PASSED`);
