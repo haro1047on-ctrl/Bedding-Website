@@ -208,13 +208,13 @@ async function run() {
       await send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: Math.round(x), y: Math.round(y), button: 'left', clickCount: 1 });
     }
 
-    // Helper: Get element center coordinates with instant scrollIntoView
+    // Helper: Get element center coordinates
     async function getElementCenter(selector) {
       return await evaluate(`
         (() => {
           const el = document.querySelector(${JSON.stringify(selector)});
           if (!el) return null;
-          el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+          el.scrollIntoView({ behavior: 'instant', block: 'center', inline: 'center' });
           const r = el.getBoundingClientRect();
           if (r.width === 0 || r.height === 0) return null;
           return { x: r.x + r.width / 2, y: r.y + r.height / 2, width: r.width, height: r.height };
@@ -222,7 +222,7 @@ async function run() {
       `);
     }
 
-    // Helper: Get button center coordinates by text match inside a container with instant scrollIntoView
+    // Helper: Get button center coordinates by text match inside a container
     async function getButtonCenterByText(containerSelector, textMatch) {
       return await evaluate(`
         (() => {
@@ -231,7 +231,7 @@ async function run() {
           const buttons = Array.from(container.querySelectorAll('button, a'));
           const target = buttons.find(b => b.textContent.toLowerCase().includes(${JSON.stringify(textMatch.toLowerCase())}));
           if (!target) return null;
-          target.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+          target.scrollIntoView({ behavior: 'instant', block: 'center', inline: 'center' });
           const r = target.getBoundingClientRect();
           if (r.width === 0 || r.height === 0) return null;
           return { x: r.x + r.width / 2, y: r.y + r.height / 2, width: r.width, height: r.height };
@@ -239,15 +239,15 @@ async function run() {
       `);
     }
 
-    // Helper: Inspect CatalogView state (title, product counter, rendered cards count in product grid)
+    // Helper: Inspect CatalogView state (title, product counter, rendered cards count)
     async function getCatalogState() {
       return await evaluate(`
         (() => {
           const h1 = document.querySelector('h1')?.textContent?.trim() || '';
           const countEl = document.querySelector('div strong');
           const count = countEl ? parseInt(countEl.textContent.trim(), 10) : null;
-          const productGrid = Array.from(document.querySelectorAll('div.grid')).find(g => g.className.includes('lg:grid-cols-4'));
-          const cards = productGrid ? productGrid.children : [];
+          const grid = Array.from(document.querySelectorAll('div.grid')).find(g => g.className.includes('lg:grid-cols-4'));
+          const cards = grid ? grid.children : document.querySelectorAll('.grid > div');
           return {
             title: h1,
             count,
@@ -259,22 +259,11 @@ async function run() {
 
     // Helper: Return to home view via CDP pointer click on the MORFE logo
     async function navigateHomeCdp() {
-      await evaluate(`window.scrollTo({ top: 0, behavior: 'instant' })`);
-      await new Promise(r => setTimeout(r, 100));
-      const logo = await evaluate(`
-        (() => {
-          const btn = document.querySelector('header button[aria-label="MORFE Homepage"]');
-          if (!btn) return null;
-          const r = btn.getBoundingClientRect();
-          return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
-        })()
-      `);
+      const logo = await getElementCenter('header button[aria-label="MORFE Homepage"]');
       if (logo) {
         await cdpClick(logo.x, logo.y);
         await new Promise(r => setTimeout(r, 400));
       }
-      await evaluate(`window.scrollTo({ top: 0, behavior: 'instant' })`);
-      await new Promise(r => setTimeout(r, 100));
     }
 
     try {
@@ -308,7 +297,7 @@ async function run() {
       // 2. Desktop Mega-Menu Hover & Pointer Transit
       // -------------------------------------------------------------
       console.log('\n--- 2. Desktop Mega-Menu Hover & Pointer Transit ---');
-      
+
       const beddingButtonRect = await evaluate(`
         (() => {
           const buttons = Array.from(document.querySelectorAll('header nav button'));
@@ -472,7 +461,7 @@ async function run() {
       // 5. Escape-Key & Outside-Click Dismissal
       // -------------------------------------------------------------
       console.log('\n--- 5. Escape-Key & Outside-Click Dismissal ---');
-      
+
       // Dispatch Escape key
       await send('Input.dispatchKeyEvent', { type: 'rawKeyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
       await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
@@ -514,7 +503,7 @@ async function run() {
       // 6. Mega-Menu Navigation Destinations (Strengthened CDP Pointer Dispatch)
       // -------------------------------------------------------------
       console.log('\n--- 6. Mega-Menu Navigation Destinations via CDP Pointer Dispatch ---');
-      
+
       // Category 1: Quilt Covers (15 styles)
       await openMegaMenuCdp();
       const quiltCoversCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Quilt Covers');
@@ -526,7 +515,7 @@ async function run() {
       assert(
         catalogQuiltCovers.title === 'Quilt Covers' && catalogQuiltCovers.count === 15 && catalogQuiltCovers.cardCount === 15,
         'Mega-Menu CDP Click: Navigated to "Quilt Covers" displaying exactly 15 products',
-        'Quilt Covers / 15 products (15 cards)',
+        'Quilt Covers / 15 products',
         `${catalogQuiltCovers.title} / ${catalogQuiltCovers.count} products (${catalogQuiltCovers.cardCount} cards)`
       );
       await navigateHomeCdp();
@@ -542,8 +531,8 @@ async function run() {
       assert(
         catalogPillowcases.title === 'Pillowcases' && catalogPillowcases.count === 10 && catalogPillowcases.cardCount === 10,
         'Mega-Menu CDP Click: Navigated to "Pillowcases" displaying exactly 10 products',
-        'Pillowcases / 10 products (10 cards)',
-        `${catalogPillowcases.title} / ${catalogPillowcases.count} products (${catalogPillowcases.cardCount} cards)`
+        'Pillowcases / 10 products',
+        `${catalogPillowcases.title} / ${catalogPillowcases.count} products`
       );
       await navigateHomeCdp();
 
@@ -558,8 +547,8 @@ async function run() {
       assert(
         catalogBedSets.title === 'Bed Sheets & Sets' && catalogBedSets.count === 18 && catalogBedSets.cardCount === 18,
         'Mega-Menu CDP Click: Navigated to "Bed Sheets & Sets" displaying exactly 18 products',
-        'Bed Sheets & Sets / 18 products (18 cards)',
-        `${catalogBedSets.title} / ${catalogBedSets.count} products (${catalogBedSets.cardCount} cards)`
+        'Bed Sheets & Sets / 18 products',
+        `${catalogBedSets.title} / ${catalogBedSets.count} products`
       );
       await navigateHomeCdp();
 
@@ -574,8 +563,8 @@ async function run() {
       assert(
         catalogBlankets.title === 'Blankets & Bed Covers' && catalogBlankets.count === 19 && catalogBlankets.cardCount === 19,
         'Mega-Menu CDP Click: Navigated to "Blankets & Bed Covers" displaying exactly 19 products',
-        'Blankets & Bed Covers / 19 products (19 cards)',
-        `${catalogBlankets.title} / ${catalogBlankets.count} products (${catalogBlankets.cardCount} cards)`
+        'Blankets & Bed Covers / 19 products',
+        `${catalogBlankets.title} / ${catalogBlankets.count} products`
       );
       await navigateHomeCdp();
 
@@ -590,8 +579,8 @@ async function run() {
       assert(
         catalogSleepwear.title === 'Sleepwear' && catalogSleepwear.count === 9 && catalogSleepwear.cardCount === 9,
         'Mega-Menu CDP Click: Navigated to "Sleepwear" displaying exactly 9 products',
-        'Sleepwear / 9 products (9 cards)',
-        `${catalogSleepwear.title} / ${catalogSleepwear.count} products (${catalogSleepwear.cardCount} cards)`
+        'Sleepwear / 9 products',
+        `${catalogSleepwear.title} / ${catalogSleepwear.count} products`
       );
       await navigateHomeCdp();
 
@@ -606,8 +595,8 @@ async function run() {
       assert(
         catalogWellness.title === 'Wellness' && catalogWellness.count === 8 && catalogWellness.cardCount === 8,
         'Mega-Menu CDP Click: Navigated to "Wellness" displaying exactly 8 products',
-        'Wellness / 8 products (8 cards)',
-        `${catalogWellness.title} / ${catalogWellness.count} products (${catalogWellness.cardCount} cards)`
+        'Wellness / 8 products',
+        `${catalogWellness.title} / ${catalogWellness.count} products`
       );
       await navigateHomeCdp();
 
@@ -622,8 +611,8 @@ async function run() {
       assert(
         catalogKidsBaby.title === 'Kids & Baby' && catalogKidsBaby.count === 16 && catalogKidsBaby.cardCount === 16,
         'Mega-Menu CDP Click: Navigated to "Kids & Baby" displaying exactly 16 products',
-        'Kids & Baby / 16 products (16 cards)',
-        `${catalogKidsBaby.title} / ${catalogKidsBaby.count} products (${catalogKidsBaby.cardCount} cards)`
+        'Kids & Baby / 16 products',
+        `${catalogKidsBaby.title} / ${catalogKidsBaby.count} products`
       );
       await navigateHomeCdp();
 
@@ -638,8 +627,122 @@ async function run() {
       assert(
         catalogComplete.title === 'Bedding' && catalogComplete.count === 167 && catalogComplete.cardCount === 167,
         'Mega-Menu CDP Click: Navigated to Complete Catalogue displaying full 167 products',
-        'Bedding / 167 products (167 cards)',
-        `${catalogComplete.title} / ${catalogComplete.count} products (${catalogComplete.cardCount} cards)`
+        'Bedding / 167 products',
+        `${catalogComplete.title} / ${catalogComplete.count} products`
+      );
+      await navigateHomeCdp();
+
+      // Category 8: Fitted Sheets (8 styles)
+      await openMegaMenuCdp();
+      const fittedSheetsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Fitted Sheets');
+      if (fittedSheetsCenter) {
+        await cdpClick(fittedSheetsCenter.x, fittedSheetsCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
+      const catalogFittedSheets = await getCatalogState();
+      assert(
+        fittedSheetsCenter !== null &&
+        catalogFittedSheets.title === 'Fitted Sheets' &&
+        catalogFittedSheets.count === 8 &&
+        catalogFittedSheets.cardCount === 8,
+        'Mega-Menu CDP Click: Navigated to "Fitted Sheets" displaying exactly 8 products',
+        'Fitted Sheets / 8 products (8 cards)',
+        `${catalogFittedSheets.title} / ${catalogFittedSheets.count} products (${catalogFittedSheets.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Category 9: Flat Sheets (8 styles)
+      await openMegaMenuCdp();
+      const flatSheetsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Flat Sheets');
+      if (flatSheetsCenter) {
+        await cdpClick(flatSheetsCenter.x, flatSheetsCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
+      const catalogFlatSheets = await getCatalogState();
+      assert(
+        flatSheetsCenter !== null &&
+        catalogFlatSheets.title === 'Flat Sheets' &&
+        catalogFlatSheets.count === 8 &&
+        catalogFlatSheets.cardCount === 8,
+        'Mega-Menu CDP Click: Navigated to "Flat Sheets" displaying exactly 8 products',
+        'Flat Sheets / 8 products (8 cards)',
+        `${catalogFlatSheets.title} / ${catalogFlatSheets.count} products (${catalogFlatSheets.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Category 10: Cushions (31 styles)
+      await openMegaMenuCdp();
+      const cushionsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Cushions');
+      if (cushionsCenter) {
+        await cdpClick(cushionsCenter.x, cushionsCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
+      const catalogCushionsNav = await getCatalogState();
+      assert(
+        cushionsCenter !== null &&
+        catalogCushionsNav.title === 'Cushions' &&
+        catalogCushionsNav.count === 31 &&
+        catalogCushionsNav.cardCount === 31,
+        'Mega-Menu CDP Click: Navigated to "Cushions" displaying exactly 31 products',
+        'Cushions / 31 products (31 cards)',
+        `${catalogCushionsNav.title} / ${catalogCushionsNav.count} products (${catalogCushionsNav.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Category 11: Quilts & Pillows (12 styles)
+      await openMegaMenuCdp();
+      const quiltsPillowsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Quilts & Pillows');
+      if (quiltsPillowsCenter) {
+        await cdpClick(quiltsPillowsCenter.x, quiltsPillowsCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
+      const catalogQuiltsPillows = await getCatalogState();
+      assert(
+        quiltsPillowsCenter !== null &&
+        catalogQuiltsPillows.title === 'Quilts & Pillows' &&
+        catalogQuiltsPillows.count === 12 &&
+        catalogQuiltsPillows.cardCount === 12,
+        'Mega-Menu CDP Click: Navigated to "Quilts & Pillows" displaying exactly 12 products',
+        'Quilts & Pillows / 12 products (12 cards)',
+        `${catalogQuiltsPillows.title} / ${catalogQuiltsPillows.count} products (${catalogQuiltsPillows.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Category 12: Protectors & Toppers (7 styles)
+      await openMegaMenuCdp();
+      const protectorsToppersCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Protectors & Toppers');
+      if (protectorsToppersCenter) {
+        await cdpClick(protectorsToppersCenter.x, protectorsToppersCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
+      const catalogProtectorsToppers = await getCatalogState();
+      assert(
+        protectorsToppersCenter !== null &&
+        catalogProtectorsToppers.title === 'Protectors & Toppers' &&
+        catalogProtectorsToppers.count === 7 &&
+        catalogProtectorsToppers.cardCount === 7,
+        'Mega-Menu CDP Click: Navigated to "Protectors & Toppers" displaying exactly 7 products',
+        'Protectors & Toppers / 7 products (7 cards)',
+        `${catalogProtectorsToppers.title} / ${catalogProtectorsToppers.count} products (${catalogProtectorsToppers.cardCount} cards)`
+      );
+      await navigateHomeCdp();
+
+      // Category 13: Bath & Towels (6 styles)
+      await openMegaMenuCdp();
+      const bathTowelsCenter = await getButtonCenterByText('#desktop-mega-menu-panel', 'Bath & Towels');
+      if (bathTowelsCenter) {
+        await cdpClick(bathTowelsCenter.x, bathTowelsCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
+      const catalogBathTowels = await getCatalogState();
+      assert(
+        bathTowelsCenter !== null &&
+        catalogBathTowels.title === 'Bath & Towels' &&
+        catalogBathTowels.count === 6 &&
+        catalogBathTowels.cardCount === 6,
+        'Mega-Menu CDP Click: Navigated to "Bath & Towels" displaying exactly 6 products',
+        'Bath & Towels / 6 products (6 cards)',
+        `${catalogBathTowels.title} / ${catalogBathTowels.count} products (${catalogBathTowels.cardCount} cards)`
       );
       await navigateHomeCdp();
 
@@ -695,15 +798,6 @@ async function run() {
       const allBeddingActive = renderedPills[0]?.isActive;
       assert(allBeddingActive, '"All Bedding" pill displays active visual styling by default');
 
-      // Scroll to category strip section before testing clicks
-      await evaluate(`
-        (() => {
-          const sec = document.querySelector('#category-discovery-section');
-          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
-        })()
-      `);
-      await new Promise(r => setTimeout(r, 200));
-
       // Category Pill Click via CDP: Fitted Sheets
       console.log('\n--- 7B. Category Pill Clicks & Filtering via CDP ---');
       const fittedPillCenter = await getButtonCenterByText('[aria-label="Category pill navigation"]', 'Fitted Sheets');
@@ -715,20 +809,12 @@ async function run() {
       assert(
         catalogFitted.title === 'Fitted Sheets' && catalogFitted.count === 8 && catalogFitted.cardCount === 8,
         'Category Pill CDP Click: Filtered to "Fitted Sheets" displaying exactly 8 products',
-        'Fitted Sheets / 8 products (8 cards)',
-        `${catalogFitted.title} / ${catalogFitted.count} products (${catalogFitted.cardCount} cards)`
+        'Fitted Sheets / 8 products',
+        `${catalogFitted.title} / ${catalogFitted.count} products`
       );
       await navigateHomeCdp();
 
       // Category Pill Click via CDP: Cushions (31 products)
-      await evaluate(`
-        (() => {
-          const sec = document.querySelector('#category-discovery-section');
-          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
-        })()
-      `);
-      await new Promise(r => setTimeout(r, 200));
-
       const cushionsPillCenter = await getButtonCenterByText('[aria-label="Category pill navigation"]', 'Cushions');
       assert(cushionsPillCenter !== null, 'Category Strip: Located "Cushions" pill coordinates');
       await cdpClick(cushionsPillCenter.x, cushionsPillCenter.y);
@@ -738,20 +824,12 @@ async function run() {
       assert(
         catalogCushions.title === 'Cushions' && catalogCushions.count === 31 && catalogCushions.cardCount === 31,
         'Category Pill CDP Click: Filtered to "Cushions" displaying exactly 31 products',
-        'Cushions / 31 products (31 cards)',
-        `${catalogCushions.title} / ${catalogCushions.count} products (${catalogCushions.cardCount} cards)`
+        'Cushions / 31 products',
+        `${catalogCushions.title} / ${catalogCushions.count} products`
       );
       await navigateHomeCdp();
 
       // Category Pill Click via CDP: Wellness (8 products)
-      await evaluate(`
-        (() => {
-          const sec = document.querySelector('#category-discovery-section');
-          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
-        })()
-      `);
-      await new Promise(r => setTimeout(r, 200));
-
       const wellnessPillCenter = await getButtonCenterByText('[aria-label="Category pill navigation"]', 'Wellness');
       assert(wellnessPillCenter !== null, 'Category Strip: Located "Wellness" pill coordinates');
       await cdpClick(wellnessPillCenter.x, wellnessPillCenter.y);
@@ -761,23 +839,13 @@ async function run() {
       assert(
         catalogWellnessPill.title === 'Wellness' && catalogWellnessPill.count === 8 && catalogWellnessPill.cardCount === 8,
         'Category Pill CDP Click: Filtered to "Wellness" displaying exactly 8 products',
-        'Wellness / 8 products (8 cards)',
-        `${catalogWellnessPill.title} / ${catalogWellnessPill.count} products (${catalogWellnessPill.cardCount} cards)`
+        'Wellness / 8 products',
+        `${catalogWellnessPill.title} / ${catalogWellnessPill.count} products`
       );
       await navigateHomeCdp();
 
       // Scroll Button Controls Verification via CDP
       console.log('\n--- 7C. Category Strip Scroll Controls via CDP ---');
-      await evaluate(`
-        (() => {
-          const sec = document.querySelector('#category-discovery-section');
-          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
-          const nav = document.querySelector('[aria-label="Category pill navigation"]');
-          if (nav) nav.scrollLeft = 0;
-        })()
-      `);
-      await new Promise(r => setTimeout(r, 200));
-
       const initialScrollState = await evaluate(`
         (() => {
           const nav = document.querySelector('[aria-label="Category pill navigation"]');
@@ -816,14 +884,6 @@ async function run() {
       // 8. Editorial Homepage Vignettes & Images
       // -------------------------------------------------------------
       console.log('\n--- 8. Editorial Homepage Vignettes & Images ---');
-      await evaluate(`
-        (() => {
-          const sec = document.querySelector('#editorial-vignettes-section');
-          if (sec) sec.scrollIntoView({ block: 'start', behavior: 'instant' });
-        })()
-      `);
-      await new Promise(r => setTimeout(r, 600));
-
       const vignettesData = await evaluate(`
         (() => {
           const sec = document.querySelector('#editorial-vignettes-section');
@@ -860,7 +920,7 @@ async function run() {
 
       // Test Vignette CTAs via CDP
       console.log('\n--- 8B. Vignette Actionable CTA Navigation via CDP ---');
-      
+
       // Vignette 1 CTA: "Shop Quilt Covers"
       const cta1Center = await getButtonCenterByText('#editorial-vignettes-section', 'Shop Quilt Covers');
       assert(cta1Center !== null, 'Vignette 1: Located "Shop Quilt Covers" CTA coordinates');
@@ -956,7 +1016,7 @@ async function run() {
 
       // Mobile Accordion Tests via CDP
       console.log('\n--- 9B. Mobile Drawer Accordions via CDP ---');
-      
+
       // Bedding Essentials accordion (toggle closed via CDP)
       const beddingEssentialsCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Bedding Essentials');
       assert(beddingEssentialsCenter !== null, 'Mobile Drawer: Located Bedding Essentials accordion header');
@@ -1013,20 +1073,27 @@ async function run() {
       );
       await navigateHomeCdp();
 
-      // Reopen drawer, expand Bedding Essentials, and click Pillowcase Pairs
+      // Category Navigation from Inside Mobile Accordion via CDP (Pillowcases)
       const hamburgerAgain = await getElementCenter('header button[aria-label="Open navigation menu"]');
-      await cdpClick(hamburgerAgain.x, hamburgerAgain.y);
-      await new Promise(r => setTimeout(r, 300));
+      if (hamburgerAgain) {
+        await cdpClick(hamburgerAgain.x, hamburgerAgain.y);
+        await new Promise(r => setTimeout(r, 300));
+      }
 
+      // Expand Bedding Essentials
       const beddingEssentialsAgain = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Bedding Essentials');
       assert(beddingEssentialsAgain !== null, 'Mobile Drawer: Located Bedding Essentials accordion header again');
-      await cdpClick(beddingEssentialsAgain.x, beddingEssentialsAgain.y);
-      await new Promise(r => setTimeout(r, 300));
+      if (beddingEssentialsAgain) {
+        await cdpClick(beddingEssentialsAgain.x, beddingEssentialsAgain.y);
+        await new Promise(r => setTimeout(r, 250));
+      }
 
       const pillowcasesDrawerCenter = await getButtonCenterByText('.fixed.inset-y-0.left-0', 'Pillowcase');
       assert(pillowcasesDrawerCenter !== null, 'Mobile Drawer: Located "Pillowcase Pairs" button coordinates');
-      await cdpClick(pillowcasesDrawerCenter.x, pillowcasesDrawerCenter.y);
-      await new Promise(r => setTimeout(r, 500));
+      if (pillowcasesDrawerCenter) {
+        await cdpClick(pillowcasesDrawerCenter.x, pillowcasesDrawerCenter.y);
+        await new Promise(r => setTimeout(r, 500));
+      }
 
       const drawerPillowcasesState = await evaluate(`
         (() => {
@@ -1064,11 +1131,11 @@ async function run() {
         { width: 1280, height: 800, name: '1280px (Standard Desktop)' },
         { width: 1024, height: 768, name: '1024px (Small Desktop / Tablet Boundary)' },
         { width: 1023, height: 768, name: '1023px (Tablet Landscape Breakpoint)' },
-        { width: 900,  height: 600, name: '900px (Medium Tablet)' },
-        { width: 768,  height: 1024, name: '768px (Portrait Tablet)' },
-        { width: 480,  height: 800, name: '480px (Large Mobile)' },
-        { width: 375,  height: 667, name: '375px (Standard iPhone)' },
-        { width: 320,  height: 568, name: '320px (Compact Mobile)' }
+        { width: 900, height: 600, name: '900px (Medium Tablet)' },
+        { width: 768, height: 1024, name: '768px (Portrait Tablet)' },
+        { width: 480, height: 800, name: '480px (Large Mobile)' },
+        { width: 375, height: 667, name: '375px (Standard iPhone)' },
+        { width: 320, height: 568, name: '320px (Compact Mobile)' }
       ];
 
       for (const vp of testViewports) {
@@ -1135,7 +1202,9 @@ async function run() {
       try {
         currentCommit = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
         currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
-      } catch (e) {}
+      } catch (e) { }
+
+      const finalExitCode = (process.exitCode || (passedTests === totalTests && totalTests > 0 ? 0 : 1));
 
       fs.writeFileSync(
         'src/data/phase4_interaction_test_results.json',
@@ -1146,7 +1215,8 @@ async function run() {
           testScript: 'scripts/test_phase4_interactions.cjs',
           passedTests,
           totalTests,
-          exitCode: (passedTests === totalTests && totalTests > 0) ? 0 : 1,
+          failedTests: totalTests - passedTests,
+          exitCode: finalExitCode,
           tests: testRecords
         }, null, 2),
         'utf8'
@@ -1154,7 +1224,7 @@ async function run() {
 
       cleanup(chromeProc);
       server.close();
-      process.exit(process.exitCode || 0);
+      process.exit(finalExitCode);
     }
   });
 }
@@ -1162,10 +1232,10 @@ async function run() {
 function cleanup(proc) {
   try {
     proc.kill();
-  } catch (e) {}
+  } catch (e) { }
   try {
     fs.rmSync(USER_DATA_DIR, { recursive: true, force: true });
-  } catch (e) {}
+  } catch (e) { }
 }
 
 run();

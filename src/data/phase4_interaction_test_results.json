@@ -1,10 +1,11 @@
 {
-  "timestamp": "2026-11-21T23:19:58.259Z",
+  "timestamp": "2026-11-21T23:59:18.437Z",
   "branch": "feature/phase-4-homepage-mega-menu",
-  "commit": "5bfce0ac85f701524fe85d4e08d3efe1643d19c7",
+  "commit": "ac7a346527cd02a2383d6c5c251dbc933054a975",
   "testScript": "scripts/test_phase4_interactions.cjs",
-  "passedTests": 111,
-  "totalTests": 111,
+  "passedTests": 117,
+  "totalTests": 117,
+  "failedTests": 0,
   "exitCode": 0,
   "tests": [
     {
@@ -256,7 +257,7 @@
       "testNumber": 36,
       "name": "Mega-Menu CDP Click: Navigated to \"Quilt Covers\" displaying exactly 15 products",
       "status": "PASS",
-      "expected": "Quilt Covers / 15 products (15 cards)",
+      "expected": "Quilt Covers / 15 products",
       "actual": "Quilt Covers / 15 products (15 cards)"
     },
     {
@@ -270,8 +271,8 @@
       "testNumber": 38,
       "name": "Mega-Menu CDP Click: Navigated to \"Pillowcases\" displaying exactly 10 products",
       "status": "PASS",
-      "expected": "Pillowcases / 10 products (10 cards)",
-      "actual": "Pillowcases / 10 products (10 cards)"
+      "expected": "Pillowcases / 10 products",
+      "actual": "Pillowcases / 10 products"
     },
     {
       "testNumber": 39,
@@ -284,8 +285,8 @@
       "testNumber": 40,
       "name": "Mega-Menu CDP Click: Navigated to \"Bed Sheets & Sets\" displaying exactly 18 products",
       "status": "PASS",
-      "expected": "Bed Sheets & Sets / 18 products (18 cards)",
-      "actual": "Bed Sheets & Sets / 18 products (18 cards)"
+      "expected": "Bed Sheets & Sets / 18 products",
+      "actual": "Bed Sheets & Sets / 18 products"
     },
     {
       "testNumber": 41,
@@ -298,8 +299,8 @@
       "testNumber": 42,
       "name": "Mega-Menu CDP Click: Navigated to \"Blankets & Bed Covers\" displaying exactly 19 products",
       "status": "PASS",
-      "expected": "Blankets & Bed Covers / 19 products (19 cards)",
-      "actual": "Blankets & Bed Covers / 19 products (19 cards)"
+      "expected": "Blankets & Bed Covers / 19 products",
+      "actual": "Blankets & Bed Covers / 19 products"
     },
     {
       "testNumber": 43,
@@ -312,8 +313,8 @@
       "testNumber": 44,
       "name": "Mega-Menu CDP Click: Navigated to \"Sleepwear\" displaying exactly 9 products",
       "status": "PASS",
-      "expected": "Sleepwear / 9 products (9 cards)",
-      "actual": "Sleepwear / 9 products (9 cards)"
+      "expected": "Sleepwear / 9 products",
+      "actual": "Sleepwear / 9 products"
     },
     {
       "testNumber": 45,
@@ -326,8 +327,8 @@
       "testNumber": 46,
       "name": "Mega-Menu CDP Click: Navigated to \"Wellness\" displaying exactly 8 products",
       "status": "PASS",
-      "expected": "Wellness / 8 products (8 cards)",
-      "actual": "Wellness / 8 products (8 cards)"
+      "expected": "Wellness / 8 products",
+      "actual": "Wellness / 8 products"
     },
     {
       "testNumber": 47,
@@ -340,8 +341,8 @@
       "testNumber": 48,
       "name": "Mega-Menu CDP Click: Navigated to \"Kids & Baby\" displaying exactly 16 products",
       "status": "PASS",
-      "expected": "Kids & Baby / 16 products (16 cards)",
-      "actual": "Kids & Baby / 16 products (16 cards)"
+      "expected": "Kids & Baby / 16 products",
+      "actual": "Kids & Baby / 16 products"
     },
     {
       "testNumber": 49,
@@ -354,431 +355,473 @@
       "testNumber": 50,
       "name": "Mega-Menu CDP Click: Navigated to Complete Catalogue displaying full 167 products",
       "status": "PASS",
-      "expected": "Bedding / 167 products (167 cards)",
-      "actual": "Bedding / 167 products (167 cards)"
+      "expected": "Bedding / 167 products",
+      "actual": "Bedding / 167 products"
     },
     {
       "testNumber": 51,
+      "name": "Mega-Menu CDP Click: Navigated to \"Fitted Sheets\" displaying exactly 8 products",
+      "status": "PASS",
+      "expected": "Fitted Sheets / 8 products (8 cards)",
+      "actual": "Fitted Sheets / 8 products (8 cards)"
+    },
+    {
+      "testNumber": 52,
+      "name": "Mega-Menu CDP Click: Navigated to \"Flat Sheets\" displaying exactly 8 products",
+      "status": "PASS",
+      "expected": "Flat Sheets / 8 products (8 cards)",
+      "actual": "Flat Sheets / 8 products (8 cards)"
+    },
+    {
+      "testNumber": 53,
+      "name": "Mega-Menu CDP Click: Navigated to \"Cushions\" displaying exactly 31 products",
+      "status": "PASS",
+      "expected": "Cushions / 31 products (31 cards)",
+      "actual": "Cushions / 31 products (31 cards)"
+    },
+    {
+      "testNumber": 54,
+      "name": "Mega-Menu CDP Click: Navigated to \"Quilts & Pillows\" displaying exactly 12 products",
+      "status": "PASS",
+      "expected": "Quilts & Pillows / 12 products (12 cards)",
+      "actual": "Quilts & Pillows / 12 products (12 cards)"
+    },
+    {
+      "testNumber": 55,
+      "name": "Mega-Menu CDP Click: Navigated to \"Protectors & Toppers\" displaying exactly 7 products",
+      "status": "PASS",
+      "expected": "Protectors & Toppers / 7 products (7 cards)",
+      "actual": "Protectors & Toppers / 7 products (7 cards)"
+    },
+    {
+      "testNumber": 56,
+      "name": "Mega-Menu CDP Click: Navigated to \"Bath & Towels\" displaying exactly 6 products",
+      "status": "PASS",
+      "expected": "Bath & Towels / 6 products (6 cards)",
+      "actual": "Bath & Towels / 6 products (6 cards)"
+    },
+    {
+      "testNumber": 57,
       "name": "Category strip contains exactly 14 pills (found: 14)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 52,
+      "testNumber": 58,
       "name": "All 14 category pills match expected labels and product counts",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 53,
+      "testNumber": 59,
       "name": "\"All Bedding\" pill displays active visual styling by default",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 54,
+      "testNumber": 60,
       "name": "Category Strip: Located \"Fitted Sheets\" pill coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 55,
+      "testNumber": 61,
       "name": "Category Pill CDP Click: Filtered to \"Fitted Sheets\" displaying exactly 8 products",
       "status": "PASS",
-      "expected": "Fitted Sheets / 8 products (8 cards)",
-      "actual": "Fitted Sheets / 8 products (8 cards)"
+      "expected": "Fitted Sheets / 8 products",
+      "actual": "Fitted Sheets / 8 products"
     },
     {
-      "testNumber": 56,
+      "testNumber": 62,
       "name": "Category Strip: Located \"Cushions\" pill coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 57,
+      "testNumber": 63,
       "name": "Category Pill CDP Click: Filtered to \"Cushions\" displaying exactly 31 products",
       "status": "PASS",
-      "expected": "Cushions / 31 products (31 cards)",
-      "actual": "Cushions / 31 products (31 cards)"
+      "expected": "Cushions / 31 products",
+      "actual": "Cushions / 31 products"
     },
     {
-      "testNumber": 58,
+      "testNumber": 64,
       "name": "Category Strip: Located \"Wellness\" pill coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 59,
+      "testNumber": 65,
       "name": "Category Pill CDP Click: Filtered to \"Wellness\" displaying exactly 8 products",
       "status": "PASS",
-      "expected": "Wellness / 8 products (8 cards)",
-      "actual": "Wellness / 8 products (8 cards)"
+      "expected": "Wellness / 8 products",
+      "actual": "Wellness / 8 products"
     },
     {
-      "testNumber": 60,
+      "testNumber": 66,
       "name": "Scroll-left button initially disabled at start of pill strip",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 61,
+      "testNumber": 67,
       "name": "Scroll-right button initially enabled",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 62,
+      "testNumber": 68,
       "name": "Category Strip: Located scroll-right button coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 63,
+      "testNumber": 69,
       "name": "Pill strip scrolled right via CDP (scrollLeft: 280px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 64,
+      "testNumber": 70,
       "name": "Scroll-left button became active after right scroll",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 65,
+      "testNumber": 71,
       "name": "Vignette 1 renders \"The Texture Edit\" eyebrow",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 66,
+      "testNumber": 72,
       "name": "Vignette 1 renders \"The Art of the Unmade Bed\" title",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 67,
+      "testNumber": 73,
       "name": "Vignette 2 renders \"Three Elements of a Restful Night\"",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 68,
+      "testNumber": 74,
       "name": "Vignette 2 Card 1: 55cm Deep Fitted Sheet present",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 69,
+      "testNumber": 75,
       "name": "Vignette 2 Card 2: Tailored Quilt Covers present",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 70,
+      "testNumber": 76,
       "name": "Vignette 2 Card 3: Stonewashed Bed Covers present",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 71,
+      "testNumber": 77,
       "name": "Editorial vignettes contain 4 local physical image assets",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 72,
+      "testNumber": 78,
       "name": "All 4 editorial vignette images loaded successfully with natural dimensions",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 73,
+      "testNumber": 79,
       "name": "Vignette 1: Located \"Shop Quilt Covers\" CTA coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 74,
+      "testNumber": 80,
       "name": "Vignette 1 CTA CDP Click: Navigated to Quilt Covers displaying exactly 15 products",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 75,
+      "testNumber": 81,
       "name": "Vignette 2 Card 1: Located \"Shop Fitted Sheets\" CTA coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 76,
+      "testNumber": 82,
       "name": "Vignette 2 Card 1 CTA CDP Click: Navigated to Fitted Sheets displaying exactly 8 products",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 77,
+      "testNumber": 83,
       "name": "Vignette 2 Card 3: Located \"Shop Bed Covers\" CTA coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 78,
+      "testNumber": 84,
       "name": "Vignette 2 Card 3 CTA CDP Click: Navigated to Blankets & Bed Covers displaying exactly 19 products",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 79,
+      "testNumber": 85,
       "name": "Mobile (375px): Located hamburger button coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 80,
+      "testNumber": 86,
       "name": "Mobile Drawer: zero horizontal overflow (scrollWidth=369, clientWidth=369)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 81,
+      "testNumber": 87,
       "name": "Mobile Drawer: All 15 interactive buttons meet >= 44px touch target height standard",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 82,
+      "testNumber": 88,
       "name": "Mobile Drawer: Located Bedding Essentials accordion header",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 83,
+      "testNumber": 89,
       "name": "Mobile Drawer: Located Layers & Comfort accordion header",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 84,
+      "testNumber": 90,
       "name": "Layers & Comfort child categories visible when accordion is expanded",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 85,
+      "testNumber": 91,
       "name": "Mobile Drawer: Located Living & Family accordion header",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 86,
+      "testNumber": 92,
       "name": "Living & Family child categories (Sleepwear & Wellness) visible when accordion expanded",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 87,
+      "testNumber": 93,
       "name": "Mobile Drawer: Located \"Sleepwear\" button coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 88,
+      "testNumber": 94,
       "name": "Mobile Drawer CDP Click: Drawer auto-closed and navigated to \"Sleepwear\" (9 products)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 89,
+      "testNumber": 95,
       "name": "Mobile Drawer: Located Bedding Essentials accordion header again",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 90,
+      "testNumber": 96,
       "name": "Mobile Drawer: Located \"Pillowcase Pairs\" button coordinates",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 91,
+      "testNumber": 97,
       "name": "Mobile Drawer CDP Click: Drawer auto-closed and navigated to \"Pillowcases\" (10 products)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 92,
+      "testNumber": 98,
       "name": "Pressing Escape dismissed mobile navigation drawer",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 93,
+      "testNumber": 99,
       "name": "Viewport 1440px (Wide Desktop): Zero horizontal overflow (scrollWidth=1434, innerWidth=1440, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 94,
+      "testNumber": 100,
       "name": "Viewport 1440px (Wide Desktop): Correct navigation visibility (Desktop Nav: true, Mobile Hamburger: false)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 95,
+      "testNumber": 101,
       "name": "Viewport 1280px (Standard Desktop): Zero horizontal overflow (scrollWidth=1274, innerWidth=1280, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 96,
+      "testNumber": 102,
       "name": "Viewport 1280px (Standard Desktop): Correct navigation visibility (Desktop Nav: true, Mobile Hamburger: false)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 97,
+      "testNumber": 103,
       "name": "Viewport 1024px (Small Desktop / Tablet Boundary): Zero horizontal overflow (scrollWidth=1018, innerWidth=1024, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 98,
+      "testNumber": 104,
       "name": "Viewport 1024px (Small Desktop / Tablet Boundary): Correct navigation visibility (Desktop Nav: true, Mobile Hamburger: false)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 99,
+      "testNumber": 105,
       "name": "Viewport 1023px (Tablet Landscape Breakpoint): Zero horizontal overflow (scrollWidth=1023, innerWidth=1023, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 100,
+      "testNumber": 106,
       "name": "Viewport 1023px (Tablet Landscape Breakpoint): Correct navigation visibility (Desktop Nav: false, Mobile Hamburger: true)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 101,
+      "testNumber": 107,
       "name": "Viewport 900px (Medium Tablet): Zero horizontal overflow (scrollWidth=900, innerWidth=900, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 102,
+      "testNumber": 108,
       "name": "Viewport 900px (Medium Tablet): Correct navigation visibility (Desktop Nav: false, Mobile Hamburger: true)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 103,
+      "testNumber": 109,
       "name": "Viewport 768px (Portrait Tablet): Zero horizontal overflow (scrollWidth=768, innerWidth=768, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 104,
+      "testNumber": 110,
       "name": "Viewport 768px (Portrait Tablet): Correct navigation visibility (Desktop Nav: false, Mobile Hamburger: true)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 105,
+      "testNumber": 111,
       "name": "Viewport 480px (Large Mobile): Zero horizontal overflow (scrollWidth=480, innerWidth=480, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 106,
+      "testNumber": 112,
       "name": "Viewport 480px (Large Mobile): Correct navigation visibility (Desktop Nav: false, Mobile Hamburger: true)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 107,
+      "testNumber": 113,
       "name": "Viewport 375px (Standard iPhone): Zero horizontal overflow (scrollWidth=375, innerWidth=375, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 108,
+      "testNumber": 114,
       "name": "Viewport 375px (Standard iPhone): Correct navigation visibility (Desktop Nav: false, Mobile Hamburger: true)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 109,
+      "testNumber": 115,
       "name": "Viewport 320px (Compact Mobile): Zero horizontal overflow (scrollWidth=320, innerWidth=320, overflow=0px)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 110,
+      "testNumber": 116,
       "name": "Viewport 320px (Compact Mobile): Correct navigation visibility (Desktop Nav: false, Mobile Hamburger: true)",
       "status": "PASS",
       "expected": "",
       "actual": ""
     },
     {
-      "testNumber": 111,
+      "testNumber": 117,
       "name": "Confirmed ZERO React Hooks violations or console errors (logged: none)",
       "status": "PASS",
       "expected": "",
