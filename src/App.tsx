@@ -176,6 +176,7 @@ export function App() {
       params.delete('view');
       params.delete('category');
       params.delete('color');
+      params.delete('colour');
       params.delete('fabric');
       params.delete('material');
       params.delete('size');
@@ -194,6 +195,7 @@ export function App() {
       const params = new URLSearchParams(window.location.search);
       params.set('view', 'catalog');
       params.delete('color');
+      params.delete('colour');
       params.delete('fabric');
       params.delete('material');
       params.delete('size');

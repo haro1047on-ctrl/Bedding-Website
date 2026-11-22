@@ -80,16 +80,28 @@ export const AVAILABLE_SIZES: { label: string; value: BedSize }[] = [
 ];
 
 /**
- * Normalizes text for case-, hyphen-, and space-insensitive matching.
+ * Normalizes text for case-, hyphen-, underscore-, and whitespace-insensitive matching.
+ * Collapses multiple underscores, hyphens, and whitespace into single spaces.
  */
 export function normalizeText(s: string): string {
-  return (s || '').toLowerCase().replace(/[-_]/g, ' ').trim();
+  return (s || '')
+    .toLowerCase()
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /**
  * Checks whether a product has a given size, and whether that size is available.
  * If selectedColors are provided, size availability is checked specifically against
  * the matching selected colourway(s).
+ *
+ * Rules:
+ *  - General unavailable sizes (product.unavailableSizes) are excluded.
+ *  - Colour-specific unavailable sizes (product.colorUnavailableSizes) are excluded.
+ *  - When multiple colours are selected: a size is available if at least one selected colour supports that size.
+ *  - If the product does not offer any of the selected colours, it is excluded (returns false).
+ *  - Products without colour-specific restrictions behave according to general availability.
  */
 export function isSizeAvailable(
   product: Product,
@@ -121,16 +133,20 @@ export function isSizeAvailable(
       })
     );
 
-    if (matchingColors.length > 0) {
-      return matchingColors.some(c => {
-        const unavail = product.colorUnavailableSizes && product.colorUnavailableSizes[c.name];
-        if (!unavail) return true;
-        return !unavail.some(s => {
-          const ns = normalizeText(s);
-          return ns === normSize || ns.startsWith(normSize);
-        });
-      });
+    // If the product does not offer any of the selected colours, size is not available
+    if (matchingColors.length === 0) {
+      return false;
     }
+
+    // A size is available if at least one matching colourway supports that size
+    return matchingColors.some(c => {
+      const unavail = product.colorUnavailableSizes && product.colorUnavailableSizes[c.name];
+      if (!unavail) return true;
+      return !unavail.some(s => {
+        const ns = normalizeText(s);
+        return ns === normSize || ns.startsWith(normSize);
+      });
+    });
   }
 
   // When no specific colours are selected, check if at least one colourway has the size available
@@ -290,61 +306,134 @@ export function getActiveFilterCount(filters: FilterState): number {
 }
 
 /**
- * Parses URL search string into a validated FilterState object.
- * Supports repeated parameters (?color=Russet&color=Olive) and comma-separated lists.
+ * Parses URL search string into a validated, canonical FilterState object.
+ *
+ * Supported Aliases:
+ *  - Category: 'category'
+ *  - Fabric: 'fabric', 'material'
+ *  - Colour: 'color', 'colour'
+ *  - Size: 'size'
+ *  - Sorting: 'sort'
+ *
+ * Requirements handled:
+ *  - Supports repeated parameters (?color=Russet&color=Olive, ?fabric=Eve%20Linen&material=Darcy%20Corduroy).
+ *  - Supports comma-separated lists (?color=Russet,Olive).
+ *  - Deduplicates items when both aliases contain the same selection (?color=Olive&colour=Olive).
+ *  - Normalizes values consistently to match canonical catalogue options.
+ *  - Gracefully ignores invalid or unrecognized filter values to avoid crashing or corrupted state.
  */
 export function parseUrlFilters(search: string): FilterState {
   if (!search) return { ...DEFAULT_FILTER_STATE };
 
-  const params = new URLSearchParams(search);
+  const cleanSearch = search.startsWith('?') ? search.slice(1) : search;
+  const params = new URLSearchParams(cleanSearch);
 
-  // Helper for reading repeated or comma-split parameters
-  const getValues = (key: string): string[] => {
-    const raw = params.getAll(key);
-    const result: string[] = [];
-    raw.forEach(v => {
-      v.split(',').forEach(part => {
-        const trimmed = part.trim();
-        if (trimmed && !result.includes(trimmed)) {
-          result.push(trimmed);
-        }
+  // Helper for reading repeated or comma-split parameters across multiple alias keys
+  const getValues = (...keys: string[]): string[] => {
+    const rawValues: string[] = [];
+    keys.forEach(k => {
+      params.getAll(k).forEach(val => {
+        val.split(',').forEach(part => {
+          const trimmed = part.trim();
+          if (trimmed) rawValues.push(trimmed);
+        });
       });
     });
-    return result;
+    return rawValues;
   };
 
-  const rawCategories = getValues('category').filter(c => c.toLowerCase() !== 'all');
-  const rawColors = getValues('color');
-  const rawFabrics = getValues('fabric').concat(getValues('material'));
-  const rawSizes = getValues('size');
-  const sortParam = params.get('sort');
+  // Generic deduplication and canonical matching against known option definitions
+  const dedupeAndMatch = <T extends string>(
+    rawList: string[],
+    validOptions: { label: string; value: T }[]
+  ): T[] => {
+    const matched: T[] = [];
+    const seenNorms = new Set<string>();
 
+    for (const raw of rawList) {
+      const normRaw = normalizeText(raw);
+      if (!normRaw || normRaw === 'all' || seenNorms.has(normRaw)) continue;
+
+      const found = validOptions.find(opt => 
+        normalizeText(opt.value) === normRaw || normalizeText(opt.label) === normRaw
+      );
+      if (found) {
+        seenNorms.add(normRaw);
+        seenNorms.add(normalizeText(found.value));
+        if (!matched.includes(found.value)) {
+          matched.push(found.value);
+        }
+      }
+    }
+    return matched;
+  };
+
+  // 1. Categories
+  const rawCategories = getValues('category');
+  const validCategories = dedupeAndMatch(rawCategories, AVAILABLE_CATEGORIES);
+
+  // 2. Fabrics / Materials (accepts 'fabric' and 'material')
+  const rawFabrics = getValues('fabric', 'material');
+  const validMaterials = dedupeAndMatch(rawFabrics, AVAILABLE_MATERIALS);
+
+  // 3. Colours (accepts 'color' and 'colour')
+  const rawColors = getValues('color', 'colour');
+  const validColors: string[] = [];
+  const seenColorNorms = new Set<string>();
+
+  for (const raw of rawColors) {
+    const norm = normalizeText(raw);
+    if (!norm || seenColorNorms.has(norm)) continue;
+
+    // Match against AVAILABLE_COLORS for canonical casing
+    const match = AVAILABLE_COLORS.find(c => normalizeText(c.label) === norm);
+    const canonicalName = match ? match.label : raw.trim();
+    seenColorNorms.add(norm);
+    validColors.push(canonicalName);
+  }
+
+  // 4. Sizes
+  const rawSizes = getValues('size');
+  const validSizes = dedupeAndMatch(rawSizes, AVAILABLE_SIZES);
+
+  // 5. Sort
+  const sortParam = params.get('sort');
   const validSorts: FilterState['sortBy'][] = ['featured', 'price-low', 'price-high', 'rating'];
   const sortBy = (sortParam && validSorts.includes(sortParam as any))
     ? (sortParam as FilterState['sortBy'])
     : 'featured';
 
   return {
-    categories: rawCategories as BeddingCategory[],
-    colors: rawColors,
-    materials: rawFabrics as BeddingMaterial[],
-    sizes: rawSizes as BedSize[],
+    categories: validCategories,
+    colors: validColors,
+    materials: validMaterials,
+    sizes: validSizes,
     sortBy,
   };
 }
 
 /**
  * Serializes FilterState into a URL query parameter string, preserving unrelated params.
+ *
+ * Canonical serialization format:
+ *  - Category: 'category' (repeated)
+ *  - Fabric: 'fabric' (canonical; 'material' deleted)
+ *  - Colour: 'color' (canonical; 'colour' deleted)
+ *  - Size: 'size' (repeated)
+ *  - Sort: 'sort' (omitted when 'featured')
+ *  - View: 'view=catalog' (set when any filter is active)
  */
 export function serializeUrlFilters(
   filters: FilterState,
   existingSearch = ''
 ): string {
-  const params = new URLSearchParams(existingSearch);
+  const cleanSearch = existingSearch.startsWith('?') ? existingSearch.slice(1) : existingSearch;
+  const params = new URLSearchParams(cleanSearch);
 
-  // Remove facet-specific params to be rebuilt cleanly
+  // Remove both aliases for each facet group to ensure clean rebuilding
   params.delete('category');
   params.delete('color');
+  params.delete('colour');
   params.delete('fabric');
   params.delete('material');
   params.delete('size');
@@ -357,12 +446,12 @@ export function serializeUrlFilters(
     }
   });
 
-  // Colors
+  // Colours (canonical alias: 'color')
   filters.colors.forEach(col => {
     if (col) params.append('color', col);
   });
 
-  // Materials / Fabrics
+  // Fabrics / Materials (canonical alias: 'fabric')
   filters.materials.forEach(mat => {
     if (mat) params.append('fabric', mat);
   });

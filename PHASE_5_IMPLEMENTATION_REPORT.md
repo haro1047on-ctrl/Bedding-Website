@@ -1,4 +1,4 @@
-# MORFE — Phase 5 Implementation Report
+# MORFE — Phase 5 & 5.1 Implementation Report
 ## Advanced Product Listing Page (PLP) Faceted Filtering & Persistent URL State
 
 **Project:** MORFE — The Quiet Atelier  
@@ -11,7 +11,7 @@
 
 ## 1. Executive Summary
 
-Phase 5 introduces a full-scale, production-grade **Advanced Faceted Filtering System** and **Persistent URL Query Parameter Engine** to the MORFE bedding e-commerce storefront Product Listing Page (PLP).
+Phase 5 and Phase 5.1 introduce a production-grade **Advanced Faceted Filtering System** and **Persistent URL Query Parameter Engine** to the MORFE bedding e-commerce storefront Product Listing Page (PLP).
 
 Guided by the visual restraint and quiet luxury aesthetic of the reference site (*Sheet Society*), this implementation enables multi-dimensional discovery across MORFE's 167-product catalogue while strictly preserving all previous baselines:
 - **Phase 2 Baseline:** Strict 3-tier colourway image isolation, zero fallback leakage, thumbnail cart fidelity.
@@ -20,10 +20,12 @@ Guided by the visual restraint and quiet luxury aesthetic of the reference site 
 
 ### Key Milestones Achieved
 1. **Multi-Facet Combinatorial Logic:** Implemented disjunctive multi-selection (OR within the same facet group, AND across distinct facet groups) across Category, Fabric/Material, Colour, and Bed Size.
-2. **Disjunctive Dynamic Facet Counts:** Option counters reflect potential results dynamically. Counts for options within the same facet group reflect unconstrained alternative choices, while options across other facet groups strictly reflect active filters.
-3. **Variant-Specific Size Availability Integration:** Size filtering accounts for variant-level stock rules (evaluating both `product.unavailableSizes` and `product.colorUnavailableSizes` for selected colourways).
-4. **Persistent Bi-directional URL Query State:** Full deep-linking and state hydration via URL parameters (e.g. `?category=Quilt%20Covers&color=Russet&fabric=Darcy%20Corduroy&size=Queen&sort=price-low`), full browser Back/Forward (`popstate`) support, page refresh persistence, and strict preservation of non-facet query parameters (such as `utm_campaign` or `ref`).
-5. **Interactive UI Surfaces:**
+2. **Robust URL Parameter Aliases:** Supports both `color` and `colour`, both `fabric` and `material`, repeated parameters (`?color=Russet&color=Olive`), and comma-separated lists (`?color=Russet,Olive`).
+3. **Rigorous Text Normalization:** `normalizeText()` systematically handles hyphens, underscores, multiple consecutive internal spaces, leading/trailing whitespace, and casing (`Warm-white` → `warm white`, `Warm__White` → `warm white`, `  Warm   White  ` → `warm white`).
+4. **Disjunctive Dynamic Facet Counts:** Option counters reflect potential results dynamically. Counts for options within the same facet group reflect unconstrained alternative choices, while options across other facet groups strictly reflect active filters.
+5. **Variant-Specific Size Availability Integration:** Size filtering accounts for variant-level stock rules (evaluating both `product.unavailableSizes` and `product.colorUnavailableSizes` for selected colourways).
+6. **Persistent Bi-directional URL Query State:** Full deep-linking and state hydration via URL parameters, full browser Back/Forward (`popstate`) support, page refresh persistence, and strict preservation of non-facet query parameters (such as `utm_campaign`, `utm_source`, `ref`, `cart`, `product`) and URL hash.
+7. **Interactive UI Surfaces:**
    - Desktop horizontal filter toolbar with dropdown menus, checkbox indicators, and colour swatches.
    - Interactive Active Filter Chips bar with individual `[X]` dismissal and "Clear All" batch reset.
    - Elegant Empty State container ("No products found") with a high-contrast "Reset Filters" recovery action.
@@ -39,11 +41,19 @@ The filtering engine is decoupled into pure, deterministic utility functions:
 
 #### A. Text Normalization
 ```typescript
-export function normalizeText(str: string): string {
-  return str.toLowerCase().replace(/[-_]/g, ' ').replace(/\s+/g, ' ').trim();
+export function normalizeText(s: string): string {
+  return (s || '')
+    .toLowerCase()
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 ```
-Eliminates format mismatches across product records (e.g., `'Warm-white'` vs `'Warm White'`, `'Hunter-green'` vs `'Hunter Green'`).
+Eliminates format mismatches across product records:
+- `Warm-white` → `warm white`
+- `Warm__White` → `warm white`
+- `  Warm   White  ` → `warm white`
+- `__HUNTER---green__` → `hunter green`
 
 #### B. Variant-Specific Size Availability
 ```typescript
@@ -52,21 +62,63 @@ export function isSizeAvailable(
   size: BedSize,
   selectedColors?: string[]
 ): boolean {
-  if (!product.sizes || !product.sizes.includes(size)) return false;
-  if (product.unavailableSizes && product.unavailableSizes.includes(size)) return false;
-  if (!selectedColors || selectedColors.length === 0) return true;
-
-  return selectedColors.some(colName => {
-    const norm = normalizeText(colName);
-    const key = Object.keys(product.colorUnavailableSizes || {}).find(
-      k => normalizeText(k) === norm
-    );
-    if (!key || !product.colorUnavailableSizes) return true;
-    return !product.colorUnavailableSizes[key].includes(size);
+  const normSize = normalizeText(size);
+  const hasSize = product.sizes.some(s => {
+    const ns = normalizeText(s);
+    return ns === normSize || ns.startsWith(normSize);
   });
+  if (!hasSize) return false;
+
+  // Product-level unavailable sizes check
+  if (product.unavailableSizes && product.unavailableSizes.some(s => {
+    const ns = normalizeText(s);
+    return ns === normSize || ns.startsWith(normSize);
+  })) {
+    return false;
+  }
+
+  // Variant/colourway-specific availability check
+  if (selectedColors && selectedColors.length > 0) {
+    const matchingColors = product.colors.filter(c => 
+      selectedColors.some(sc => {
+        const nsc = normalizeText(sc);
+        const nc = normalizeText(c.name);
+        return nc === nsc || nc.includes(nsc) || nsc.includes(nc);
+      })
+    );
+
+    // If the product does not offer any of the selected colours, size is not available
+    if (matchingColors.length === 0) {
+      return false;
+    }
+
+    // A size is available if at least one matching colourway supports that size (OR logic)
+    return matchingColors.some(c => {
+      const unavail = product.colorUnavailableSizes && product.colorUnavailableSizes[c.name];
+      if (!unavail) return true;
+      return !unavail.some(s => {
+        const ns = normalizeText(s);
+        return ns === normSize || ns.startsWith(normSize);
+      });
+    });
+  }
+
+  // When no specific colours are selected, check if at least one colourway has the size available
+  if (product.colorUnavailableSizes && Object.keys(product.colorUnavailableSizes).length > 0) {
+    const someColorAvailable = product.colors.some(c => {
+      const unavail = product.colorUnavailableSizes && product.colorUnavailableSizes[c.name];
+      if (!unavail) return true;
+      return !unavail.some(s => {
+        const ns = normalizeText(s);
+        return ns === normSize || ns.startsWith(normSize);
+      });
+    });
+    return someColorAvailable;
+  }
+
+  return true;
 }
 ```
-Ensures that if a customer filters by "Double" and selects "Olive", products where Double is out of stock specifically in Olive (such as `corduroy-quilt-cover-russet`) are accurately identified.
 
 #### C. Disjunctive Facet Counting Algorithm
 Unlike standard conjunctive faceting which collapses counts to zero as filters are added, disjunctive faceting calculates option counts for facet group $F$ by applying active filters from all facet groups **except** $F$:
@@ -79,25 +131,26 @@ This allows customers to explore alternative options within a facet without havi
 
 ---
 
-### 2.2 URL Query Parameter Engine
+### 2.2 URL Query Parameter & Alias Engine
 
-The URL engine adheres to standard RESTful and e-commerce query conventions:
+The URL engine adheres to standard RESTful and e-commerce query conventions while supporting natural user and marketing variations:
 
-| Query Parameter | Example Value | Description |
-|:---|:---|:---|
-| `category` | `Quilt Covers`, `Fitted Sheets` | Multi-valued parameter for categories (`?category=Quilt%20Covers&category=Fitted%20Sheets`) |
-| `fabric` / `material` | `Darcy Corduroy`, `Eve Linen` | Multi-valued parameter for fabrics/materials |
-| `color` / `colour` | `Russet`, `Olive` | Multi-valued parameter for colourways |
-| `size` | `Queen`, `King` | Multi-valued parameter for bed sizes |
-| `sort` | `price-low`, `price-high`, `rating` | Single-valued sort descriptor (omitted when `'featured'`) |
-| `view` | `catalog` | View router parameter ensuring direct URL deep-links render the PLP |
+| Facet Group | Supported Aliases | Canonical Output | Example Query String |
+|:---|:---|:---|:---|
+| **Category** | `category` | `category` | `?category=Quilt%20Covers&category=Fitted%20Sheets` |
+| **Fabric** | `fabric`, `material` | `fabric` | `?fabric=Darcy%20Corduroy` |
+| **Colour** | `color`, `colour` | `color` | `?color=Olive&color=Russet` |
+| **Size** | `size` | `size` | `?size=Queen&size=King` |
+| **Sorting** | `sort` | `sort` | `?sort=price-low` (omitted when `'featured'`) |
+| **Routing** | `view` | `view` | `?view=catalog` |
 
-#### Unrelated Parameter Preservation
-When serializing filter changes, existing search parameters are parsed via `URLSearchParams(existingSearch)`. Non-filter query parameters (e.g., `utm_source`, `utm_campaign`, `ref`, `cart`, `product`) are strictly preserved in the resulting query string.
-
-#### History API & Popstate Integration
-- State updates dispatch `window.history.pushState` or `window.history.replaceState` without triggering full page reloads.
-- The storefront listens for `window.addEventListener('popstate', ...)` at both the application router level (`App.tsx`) and catalog component level (`CatalogView.tsx`), ensuring browser Back and Forward gestures smoothly toggle between filter states and between the homepage and catalog.
+#### Canonical Serialization Format
+When updating or clearing filters:
+1. Both aliases are deleted from the query parameters:
+   - `params.delete('color')` and `params.delete('colour')`
+   - `params.delete('fabric')` and `params.delete('material')`
+2. Canonical aliases (`category`, `fabric`, `color`, `size`, `sort`) are serialized.
+3. Unrelated query parameters (`utm_campaign`, `utm_source`, `ref`, `cart`, `product`, etc.) and the URL hash (e.g. `#details`) are strictly preserved.
 
 ---
 
@@ -109,31 +162,13 @@ src/
 ├── types/
 │   └── index.ts                # FilterState, FacetCounts type definitions
 ├── utils/
-│   └── filterUtils.ts          # Pure filtering, disjunctive counting, URL serialization/parsing
+│   └── filterUtils.ts          # Normalization, pure filtering, disjunctive counting, URL serialization/parsing
 └── components/
     ├── CatalogView.tsx         # Complete PLP: desktop toolbar, chips row, 4-col grid, drawer, empty state
     ├── ProductCard.tsx         # 3-tier image resolution, swatch hover continuity
     ├── Header.tsx              # Mega-menu, category selection, brand wordmark navigation
     └── CategoryStrip.tsx       # Horizontal category discovery pills
 ```
-
-#### A. Active Filter Chips (`[data-testid="active-filter-chips"]`)
-Rendered immediately below the filter dropdown toolbar when any filter is active. Each chip features:
-- Clear facet type prefix (e.g. `Fabric: Darcy Corduroy`, `Colour: Russet`, `Size: Queen`).
-- Individual dismiss `[X]` button that removes only that specific value from the filter state.
-- Accompanying "Clear All" action that wipes all active facets in a single click.
-
-#### B. Responsive Mobile Filter Drawer (`[data-testid="mobile-filter-drawer"]`)
-- Activated via the mobile `Filters` trigger button below 1024px.
-- Features high z-index overlay (`z-50`), blurred backdrop, and sliding drawer animation.
-- Includes full scrollable selection panels for Category, Fabric, Colour Palette (with real CSS hex swatches), and Size.
-- Sticky action footer with "Reset" and "View (N) Results" buttons.
-
-#### C. Graceful Empty State
-When conflicting or impossible filters are applied (e.g., Silk Accessories + Darcy Corduroy), the PLP displays:
-- An editorial headline: *"No products found"*.
-- Explanatory copy: *"We couldn't find any bedding items matching your current filters. Try removing some filters or resetting to view all products."*
-- A prominent high-contrast CTA button: *"Reset Filters"* that restores all 167 catalogue products.
 
 ---
 
@@ -144,29 +179,25 @@ When conflicting or impossible filters are applied (e.g., Silk Accessories + Dar
 
 export interface FilterState {
   categories: BeddingCategory[];
-  materials: BeddingMaterial[];
   colors: string[];
+  materials: BeddingMaterial[];
   sizes: BedSize[];
   sortBy: 'featured' | 'price-low' | 'price-high' | 'rating';
 }
 
 export interface FacetCounts {
   categories: Record<string, number>;
-  materials: Record<string, number>;
   colors: Record<string, number>;
+  materials: Record<string, number>;
   sizes: Record<string, number>;
-  totalMatching: number;
 }
 ```
 
 ---
 
-## 4. Verification & Testing Deliverables
+## 4. Verification Deliverables
 
-The implementation is verified by an automated browser interaction test suite executed via Chrome DevTools Protocol (CDP) on headless Google Chrome:
-- **Test Harness Script:** `scripts/test_phase5_filters.cjs`
+- **Unit Test Battery:** `scripts/test_filter_utils_unit.cjs` (30/30 passed, 100%)
+- **CDP Browser Interaction Test Battery:** `scripts/test_phase5_filters.cjs` (64/64 passed, 100%)
 - **Machine-Readable Results Artifact:** `src/data/phase5_filter_test_results.json`
-- **Coverage:** 55 assertions across 14 dedicated testing suites.
-- **Pass Rate:** **100% (55/55 passed)**, 0 failures, 0 runtime exceptions, 0 React warnings.
-
-For detailed test execution results and regression battery records, refer to `PHASE_5_FINAL_VERIFICATION_REPORT.md`.
+- **Formal Verification Report:** `PHASE_5_FINAL_VERIFICATION_REPORT.md`
