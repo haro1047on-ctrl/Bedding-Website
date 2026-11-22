@@ -1,5 +1,5 @@
 /**
- * MORFE - Phase 5.3 Advanced PLP Faceted Filtering & Persistent URL State
+ * MORFE - Phase 5.4 Advanced PLP Faceted Filtering & Persistent URL State
  * Comprehensive Automated CDP Browser Interaction Test Battery
  *
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using native WebSocket.
@@ -9,7 +9,7 @@
  *      Starting URL: /?view=catalog&color=Olive&utm_campaign=winter_sale&ref=affiliate#details
  *      - Operation 1: Add Material filter via CDP pointer click
  *      - Operation 2: Add Size filter via CDP pointer click
- *      - Operation 3: Change Colour filter via CDP pointer click
+ *      - Operation 3: Add second Colour filter (Russet) via CDP pointer click (multi-selection alongside Olive)
  *      - Operation 4: Remove one active filter via CDP pointer click
  *      - Operation 5: Clear all filters via CDP pointer click
  *      - Verify #details, utm_campaign, ref remain unchanged through every operation
@@ -102,7 +102,7 @@ function cleanup(chromeProc) {
 
 async function run() {
   console.log('========================================================================');
-  console.log(' MORFE PHASE 5.3 AUTOMATED CDP BROWSER INTERACTION TEST BATTERY');
+  console.log(' MORFE PHASE 5.4 AUTOMATED CDP BROWSER INTERACTION TEST BATTERY');
   console.log('========================================================================\n');
 
   if (!fs.existsSync(USER_DATA_DIR)) {
@@ -321,8 +321,8 @@ async function run() {
       const op2GridCount = await evaluate(`document.querySelectorAll('main div.grid > div').length`);
       assert(op2GridCount === 4, 'Operation 2: Product grid resolves to 4 items for Corduroy Olive Queen', 4, op2GridCount);
 
-      // Operation 3: Change Colour filter via CDP pointer click (select Russet)
-      console.log('[CDP] Operation 3: Changing Colour filter via pointer click...');
+      // Operation 3: Add second Colour filter via CDP pointer click (select Russet alongside Olive)
+      console.log('[CDP] Operation 3: Adding second Colour filter (Russet) via pointer click (multi-selection)...');
       await clickSelector('[data-testid="filter-dropdown-color"]');
       await new Promise(r => setTimeout(r, 250));
       await clickSelector('[data-testid="option-color-russet"]');
@@ -330,13 +330,14 @@ async function run() {
       await clickSelector('[data-testid="filter-dropdown-color"]');
       await new Promise(r => setTimeout(r, 250));
 
-      // Test 15: URL contains color=Russet
+      // Test 15: URL contains both color=Olive and color=Russet (multi-colour selection)
       const op3Search = await evaluate(`window.location.search`);
       const op3Hash = await evaluate(`window.location.hash`);
-      assert(op3Search.includes('color=Russet'), 'Operation 3: URL query contains color=Russet', true, op3Search);
+      const op3HasBothColors = op3Search.includes('color=Russet') && op3Search.includes('color=Olive');
+      assert(op3HasBothColors, 'Operation 3: Multi-colour selection retains color=Olive and adds color=Russet', true, op3Search);
 
-      // Test 16: URL hash strictly remains #details after changing Colour
-      assert(op3Hash === '#details', 'Operation 3: URL hash remains strictly #details after changing Colour', '#details', op3Hash);
+      // Test 16: URL hash strictly remains #details after adding second Colour
+      assert(op3Hash === '#details', 'Operation 3: URL hash remains strictly #details after adding second Colour', '#details', op3Hash);
 
       // Test 17: Preserves unrelated utm_campaign and ref parameters
       const op3UnrelatedPreserved = op3Search.includes('utm_campaign=winter_sale') && op3Search.includes('ref=affiliate');
@@ -740,7 +741,7 @@ async function run() {
       // SUMMARY & RESULTS EXPORT
       // =========================================================================
       console.log('\n========================================================================');
-      console.log(` PHASE 5.3 CDP INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
+      console.log(` PHASE 5.4 CDP INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
       console.log('========================================================================\n');
 
       let testedSha = '';
@@ -751,9 +752,10 @@ async function run() {
       }
 
       const resultsPayload = {
-        suiteName: 'MORFE Phase 5.3 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery',
+        suiteName: 'MORFE Phase 5.4 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery',
         timestamp: new Date().toISOString(),
         testedCommitSha: testedSha,
+        productionImplementationSha: '503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542',
         totalTests,
         passedTests,
         failedTests: totalTests - passedTests,

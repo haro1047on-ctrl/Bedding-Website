@@ -1,7 +1,8 @@
 {
-  "suiteName": "MORFE Phase 5.3 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery",
-  "timestamp": "2026-11-22T15:45:22.623Z",
-  "testedCommitSha": "503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542",
+  "suiteName": "MORFE Phase 5.4 Advanced PLP Faceted Filtering & Persistent URL State CDP Battery",
+  "timestamp": "2026-11-22T17:33:33.231Z",
+  "testedCommitSha": "b4fbfd7e4bd78f974e1b3ee1720eefb74558ade5",
+  "productionImplementationSha": "503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542",
   "totalTests": 66,
   "passedTests": 66,
   "failedTests": 0,
@@ -109,14 +110,14 @@
     },
     {
       "testNumber": 15,
-      "name": "Operation 3: URL query contains color=Russet",
+      "name": "Operation 3: Multi-colour selection retains color=Olive and adds color=Russet",
       "status": "PASS",
       "expected": "true",
       "actual": "?view=catalog&utm_campaign=winter_sale&ref=affiliate&color=Olive&color=Russet&fabric=Darcy+Corduroy&size=Queen"
     },
     {
       "testNumber": 16,
-      "name": "Operation 3: URL hash remains strictly #details after changing Colour",
+      "name": "Operation 3: URL hash remains strictly #details after adding second Colour",
       "status": "PASS",
       "expected": "#details",
       "actual": "#details"

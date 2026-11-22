@@ -1,5 +1,5 @@
 /**
- * MORFE - Phase 5.3 Filter Utilities & Logic Production Unit Test Battery
+ * MORFE - Phase 5.4 Filter Utilities & Logic Production Unit Test Battery
  *
  * Directly compiles and executes the actual exported production functions from:
  *   src/utils/filterUtils.ts
@@ -73,7 +73,7 @@ function assertUnit(condition, testName, expected = '', actual = '') {
 }
 
 console.log('========================================================================');
-console.log(' MORFE PHASE 5.3 PRODUCTION FILTER UTILITIES UNIT TEST BATTERY');
+console.log(' MORFE PHASE 5.4 PRODUCTION FILTER UTILITIES UNIT TEST BATTERY');
 console.log('========================================================================\n');
 
 // =========================================================================

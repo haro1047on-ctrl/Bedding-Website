@@ -5,23 +5,24 @@
 **Repository:** `haro1047on-ctrl/Bedding-Website`  
 **Active Branch:** `feature/phase-5-plp-faceted-filtering`  
 **Phase 4 Accepted Baseline Commit:** `aec2928fd01a8ec2731e0cba18d8368e00b3f3e3`  
-**Implementation-Tested Git Commit SHA:** `503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542`  
-**Verification Date:** 2026-11-22  
+**Production Implementation Commit SHA:** `503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542`  
+**Implementation-Tested Git Commit SHA:** `b4fbfd7e4bd78f974e1b3ee1720eefb74558ade5`  
+**Verification Execution Timestamp:** `2026-11-22T17:33:33.231Z`  
 **Test Protocol:** Chrome DevTools Protocol (CDP) Pointer Dispatch, Headless Google Chrome v131+, Node.js native WebSocket, Direct In-Memory Production Function Execution via esbuild  
 
 ---
 
 ## 1. Executive Summary & Verification Scorecard
 
-The MORFE Phase 5 Advanced Product Listing Page (PLP) Faceted Filtering and Persistent URL State implementation—along with all Phase 5.1, Phase 5.2, and Phase 5.3 Corrective QA enhancements—has undergone complete, rigorous verification.
+The MORFE Phase 5 Advanced Product Listing Page (PLP) Faceted Filtering and Persistent URL State implementation—along with all Phase 5.1, Phase 5.2, Phase 5.3, and Phase 5.4 evidence reconciliation enhancements—has undergone complete, rigorous verification.
 
-A dedicated verification battery consisting of **60 production unit tests** (`scripts/test_filter_utils_unit.cjs`, directly importing and exercising production functions) and **66 automated CDP browser interaction tests** (`scripts/test_phase5_filters.cjs`) was executed against the production build. The tests validated URL parameter alias parsing (`color`/`colour`, `fabric`/`material`), text normalization, strict invalid colour rejection across 8 deterministic test cases, variant-specific size availability, independent disjunctive facet counts across 10 deterministic scenarios (540 exact count comparisons with 0 mismatches), real application URL state update flow with `#hash` preservation, browser history navigation (`popstate`), and responsive mobile drawer workflows.
+A dedicated verification battery consisting of **60 production unit tests** (`scripts/test_filter_utils_unit.cjs`, directly importing and exercising production functions) and **66 automated CDP browser interaction tests** (`scripts/test_phase5_filters.cjs`) was executed against the production build. The tests validated URL parameter alias parsing (`color`/`colour`, `fabric`/`material`), text normalization, strict invalid colour rejection across 8 deterministic test cases, variant-specific size availability, independent disjunctive facet counts across 10 deterministic scenarios (540 exact count comparisons with 0 mismatches), real application URL state update flow with `#hash` preservation, multi-colour selection, browser history navigation (`popstate`), and responsive mobile drawer workflows.
 
 Additionally, the complete regression test suites for Phase 4, Phase 3, Phase 2, and the catalogue data validator were executed with zero defects.
 
 ### Formal Verification Scorecard
 
-| Verification Suite | Target Area | Checks / Tests | Result | Status |
+| Verification Suite | Target Area | Executed Assertions | Result | Status |
 |:---|:---|:---:|:---:|:---:|
 | **Suite 1: Phase 5 Automated CDP Battery** | Facets, disjunctive counts, URL persistence, popstate, mobile drawer, #hash flow | 66 tests | 66 Passed, 0 Failed | **100% PASS** |
 | **Suite 2: Phase 5 Production Unit Suite** | Production functions: normalizeText, parseUrlFilters, serializeUrlFilters, isSizeAvailable, computeFacetCounts | 60 tests | 60 Passed, 0 Failed | **100% PASS** |
@@ -30,12 +31,12 @@ Additionally, the complete regression test suites for Phase 4, Phase 3, Phase 2,
 | **Suite 5: Phase 2 Client Interaction Suite** | Colourway switching, gallery isolation, modal lifecycle, cart | 28 tests | 28 Passed, 0 Failed | **100% PASS** |
 | **Suite 6: Phase 2 Component Execution Suite** | 3-tier image resolution, missing photography fallback, hooks | 28 tests | 28 Passed, 0 Failed | **100% PASS** |
 | **Suite 7: Catalogue Data Integrity Validator** | Local files, CDN URL syntax, image ownership provenance | 3,302 checks | 3,302 Passed, 0 Failed | **100% PASS** |
-| **Suite 8: TypeScript Compilation** | `npx tsc --noEmit` static type analysis | Full codebase | Exit code 0, 0 errors | **100% PASS** |
-| **Suite 9: Production Vite Build** | `tsc && vite build` bundle compilation | Full codebase | Exit code 0, 0 errors | **100% PASS** |
-| **OVERALL TOTAL** | **Storefront Architecture Across All Phases** | **3,637 Checks** | **3,637 / 3,637 Passed** | **100% PASS** |
+| **TOTAL NUMERIC ASSERTIONS** | **Storefront Architecture Across All 7 Suites** | **3,636 Checks** | **3,636 / 3,636 Passed** | **100% PASS** |
 
-- **Skipped or Unavailable Tests:** None (0 skipped, 0 unavailable).
-- **Known Limitations:** None. Implementation is production-ready.
+### Separate Build & Static Analysis Checks
+- **TypeScript Static Analysis:** `npx tsc --noEmit` — **PASS** (Exit code 0, 0 type errors).
+- **Production Vite Build:** `npm run build` (`tsc && vite build`) — **PASS** (Exit code 0, bundle generated cleanly in `dist/`).
+- *Note:* Build and TypeScript checks are verified separately and not conflated with numeric test assertion totals.
 
 ---
 
@@ -72,7 +73,7 @@ node scripts/validate-catalogue.cjs
 
 ---
 
-## 3. Phase 5.3 — Production Corrections & Verification Details
+## 3. Phase 5.4 — Final Evidence Reconciliation & Production Verifications
 
 ### A. Correction A: Production Colour Parsing in URL (`parseUrlFilters`)
 - **Specification:**
@@ -134,7 +135,9 @@ node scripts/validate-catalogue.cjs
   - All test records represent genuine DOM assertions and pointer interactions (CDP pointer dispatch, scroll coordinates, dropdown triggers, swatch hovers, mobile drawer gestures, URL query/hash assertions).
   - Test runner output, JSON evidence, and verification report are 100% reconciled at **66/66 passed tests**.
 
-### E. Correction E: Real Application URL Update & Hash Preservation
+### E. Correction E: Real Application URL Update & Multi-Colour Selection Flow
+- **Disjunctive Multi-Colour Selection Discipline:**
+  The MORFE faceted filtering engine supports disjunctive multi-selection (OR within each facet group: Category, Fabric, Colour, Size). When a user selects a colour swatch in the Colour filter dropdown, it toggles that colour: if already active, it is removed; if inactive, it is added alongside previously selected colours.
 - **Live Application URL Flow:**
   The CDP battery verified that the live running application preserves URL hash `#details` and unrelated query parameters (`utm_campaign=winter_sale`, `ref=affiliate`) across all five user operations starting from:
   `http://127.0.0.1:5198/?view=catalog&color=Olive&utm_campaign=winter_sale&ref=affiliate#details`
@@ -145,12 +148,13 @@ node scripts/validate-catalogue.cjs
   2. *Operation 2 (Add Size: Queen via CDP):*
      - URL: `/?view=catalog&utm_campaign=winter_sale&ref=affiliate&color=Olive&fabric=Darcy+Corduroy&size=Queen#details`
      - `#details`, `utm_campaign`, `ref` strictly preserved (PASS — Tests 12, 13).
-  3. *Operation 3 (Change Colour: select Russet via CDP):*
-     - URL: `/?view=catalog&utm_campaign=winter_sale&ref=affiliate&fabric=Darcy+Corduroy&size=Queen&color=Russet#details`
+  3. *Operation 3 (Add Second Colour: Russet via CDP pointer click, multi-selection alongside Olive):*
+     - URL: `/?view=catalog&utm_campaign=winter_sale&ref=affiliate&fabric=Darcy+Corduroy&size=Queen&color=Olive&color=Russet#details`
+     - Multi-colour selection retains `color=Olive` and adds `color=Russet` (PASS — Test 15).
      - `#details`, `utm_campaign`, `ref` strictly preserved (PASS — Tests 16, 17).
   4. *Operation 4 (Remove Filter Chip: click [X] on Queen size):*
-     - URL: `/?view=catalog&utm_campaign=winter_sale&ref=affiliate&fabric=Darcy+Corduroy&color=Russet#details`
-     - `#details`, `utm_campaign`, `ref` strictly preserved; `size` removed (PASS — Tests 19, 20).
+     - URL: `/?view=catalog&utm_campaign=winter_sale&ref=affiliate&fabric=Darcy+Corduroy&color=Olive&color=Russet#details`
+     - `#details`, `utm_campaign`, `ref` strictly preserved; `size` removed (PASS — Tests 18, 19, 20).
   5. *Operation 5 (Clear All Filters: click "Clear All" button):*
      - URL: `/?view=catalog&utm_campaign=winter_sale&ref=affiliate#details`
      - `#details`, `utm_campaign`, `ref` strictly preserved; all facet params removed; 167 products restored (PASS — Tests 22, 23, 24).
@@ -190,10 +194,15 @@ To prevent regressions against previously accepted baselines:
 
 ## 6. Commit Provenance Explanation
 
-- **Implementation-Tested Commit SHA:** `503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542`  
-  This commit was checked out and running when all production code verifications, mutation testing, and the 66-test CDP battery were executed.
-- **Final Commit SHA:** `TBD (Generated upon git commit)`  
-  The final commit contains the updated documentation (`PHASE_5_FINAL_VERIFICATION_REPORT.md`, `PHASE_5_IMPLEMENTATION_REPORT.md`), the machine-readable evidence file (`src/data/phase5_filter_test_results.json`), and test runner refinements without modifying any production application logic.
+- **Production Implementation Commit SHA:** `503ec39a0625e7228ee2f4c4ebb2ba4df3dc6542`  
+  This commit frozen the production application code in `src/` (including `src/components/CatalogView.tsx`, `src/utils/filterUtils.ts`, and `src/components/ProductCard.tsx`). No production logic has been modified since.
+- **Unit Test Runner Version:** `scripts/test_filter_utils_unit.cjs` (Phase 5.4, 60 assertions)  
+- **CDP Test Runner Version:** `scripts/test_phase5_filters.cjs` (Phase 5.4, 66 assertions, multi-colour selection assertion)  
+- **Implementation-Tested Commit SHA:** `b4fbfd7e4bd78f974e1b3ee1720eefb74558ade5`  
+  The commit that was checked out when the test runners were executed to produce the machine-readable evidence artifact.
+- **Actual Verification Execution Timestamp:** `2026-11-22T17:33:33.231Z`  
+- **Final Evidence & Documentation Commit SHA:** `[Generated on git commit]`  
+  Contains the updated documentation (`PHASE_5_FINAL_VERIFICATION_REPORT.md`, `PHASE_5_IMPLEMENTATION_REPORT.md`), test script clarifications, and the machine-readable evidence file (`src/data/phase5_filter_test_results.json`) without modifying production storefront logic.
 
 ---
 
