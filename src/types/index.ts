@@ -179,3 +179,40 @@ export interface FacetCounts {
   sizes: Record<string, number>;
 }
 
+// Bed Studio (Phase 6) Type Definitions
+export type BedStudioLayerKey = 
+  | 'fittedSheet' 
+  | 'flatSheet' 
+  | 'quiltCover' 
+  | 'pillowcases' 
+  | 'blanket';
+
+export interface BedLayerSelection {
+  layerKey: BedStudioLayerKey;
+  layerLabel: string;
+  category: BeddingCategory;
+  isRequired: boolean;
+  enabled: boolean;
+  product: Product;
+  color: ColorVariant;
+  size: BedSize;
+  quantity: number;
+}
+
+export interface BedStudioPreset {
+  id: string;
+  name: string;
+  tagline: string;
+  fittedSheetColor: string;
+  flatSheetColor: string;
+  quiltCoverColor: string;
+  pillowcasesColor: string;
+  blanketColor: string;
+}
+
+export interface BedStudioState {
+  masterSize: BedSize;
+  layers: Record<BedStudioLayerKey, BedLayerSelection>;
+  activePresetId?: string;
+}
+

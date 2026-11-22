@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ShoppingBag, Search, Menu, X, ArrowRight, ChevronDown, ChevronRight } from 'lucide-react';
+import { ShoppingBag, Search, Menu, X, ArrowRight, ChevronDown, ChevronRight, Sparkles } from 'lucide-react';
 import { BeddingCategory } from '../types';
 
 interface HeaderProps {
@@ -27,6 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenCart,
   onOpenSearch,
   onSelectCategory,
+  onOpenBuildBed,
   onOpenMaterialGuide,
   onOpenSizeGuide,
   onNavigateHome,
@@ -306,6 +307,29 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="absolute top-full left-0 w-full h-3 pointer-events-auto" />
             </div>
 
+            {/* BED STUDIO */}
+            <button
+              type="button"
+              data-testid="header-bed-studio-link"
+              onClick={() => {
+                setShopMenuOpen(false);
+                setInfoMenuOpen(false);
+                onOpenBuildBed?.();
+              }}
+              className={`py-1 inline-flex items-center space-x-1 transition-colors focus-visible:ring-1 focus-visible:ring-umber ${
+                activeView === 'builder'
+                  ? 'text-olive-ink font-semibold'
+                  : isTransparent
+                  ? 'text-chalk/90 hover:text-white'
+                  : 'text-umber/90 hover:text-olive-ink'
+              }`}
+            >
+              <span>Bed Studio</span>
+              <span className="text-[9px] uppercase tracking-wider font-bold text-terracotta bg-terracotta/10 px-1 py-0.2 rounded-xs">
+                New
+              </span>
+            </button>
+
             {/* FABRICS */}
             <button
               type="button"
@@ -574,7 +598,7 @@ export const Header: React.FC<HeaderProps> = ({
                     />
                   </div>
 
-                  <div className="mt-3 pt-3 border-t border-sand-border">
+                  <div className="mt-3 pt-3 border-t border-sand-border space-y-2">
                     <button
                       type="button"
                       onClick={() => handleCategoryClick('Quilt Covers')}
@@ -582,6 +606,18 @@ export const Header: React.FC<HeaderProps> = ({
                     >
                       <span>Explore Darcy Corduroy</span>
                       <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      type="button"
+                      data-testid="megamenu-bed-studio-link"
+                      onClick={() => {
+                        setShopMenuOpen(false);
+                        onOpenBuildBed?.();
+                      }}
+                      className="w-full py-1.5 bg-porcelain text-umber border border-sand-border text-[11px] font-grotesque uppercase tracking-wider font-medium hover:border-umber/50 transition-colors flex items-center justify-center space-x-1.5"
+                    >
+                      <Sparkles className="w-3 h-3 text-terracotta" />
+                      <span>Custom Bed Studio</span>
                     </button>
                   </div>
                 </div>
@@ -651,6 +687,25 @@ export const Header: React.FC<HeaderProps> = ({
                   className="w-full min-h-[44px] text-left py-2 font-serif text-lg text-umber hover:text-olive-ink flex items-center justify-between border-b border-sand-border"
                 >
                   <span>View All Bedding (167)</span>
+                  <ArrowRight className="w-4 h-4 text-olive-ink" />
+                </button>
+
+                {/* Bed Studio Interactive Builder */}
+                <button
+                  type="button"
+                  data-testid="mobile-bed-studio-link"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenBuildBed?.();
+                  }}
+                  className="w-full min-h-[44px] text-left py-2.5 font-serif text-lg text-umber hover:text-olive-ink flex items-center justify-between border-b border-sand-border bg-oat/20 px-2 rounded-xs"
+                >
+                  <div className="flex items-center space-x-2">
+                    <span className="font-medium">Bed Studio</span>
+                    <span className="text-[9px] uppercase tracking-wider font-bold text-terracotta bg-terracotta/15 px-1.5 py-0.5 rounded-full">
+                      New
+                    </span>
+                  </div>
                   <ArrowRight className="w-4 h-4 text-olive-ink" />
                 </button>
 

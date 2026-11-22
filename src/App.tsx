@@ -21,6 +21,13 @@ import { SizeGuideModal } from './components/SizeGuideModal';
 import { FabricCareModal } from './components/FabricCareModal';
 import { ArticleModal } from './components/ArticleModal';
 import { CatalogView } from './components/CatalogView';
+import { BedStudioView } from './components/BedStudio/BedStudioView';
+
+const isBuilderView = () => {
+  if (typeof window === 'undefined') return false;
+  const p = new URLSearchParams(window.location.search);
+  return p.get('view') === 'builder';
+};
 
 const isCatalogSearch = () => {
   if (typeof window === 'undefined') return false;
@@ -46,7 +53,11 @@ const getInitialCategory = (): BeddingCategory | 'all' => {
 
 export function App() {
   // Navigation View State
-  const [activeView, setActiveView] = useState<'home' | 'catalog'>(() => isCatalogSearch() ? 'catalog' : 'home');
+  const [activeView, setActiveView] = useState<'home' | 'catalog' | 'builder'>(() => {
+    if (isBuilderView()) return 'builder';
+    if (isCatalogSearch()) return 'catalog';
+    return 'home';
+  });
   const [catalogCategory, setCatalogCategory] = useState<BeddingCategory | 'all'>(getInitialCategory);
 
   // Modals & Drawers State
@@ -86,11 +97,15 @@ export function App() {
     }
   }, []);
 
-  // Listen for browser Back/Forward (popstate) between Home and Catalog
+  // Listen for browser Back/Forward (popstate) between Home, Catalog, and Bed Studio
   React.useEffect(() => {
     const handlePopState = () => {
       if (typeof window !== 'undefined') {
         const params = new URLSearchParams(window.location.search);
+        if (params.get('view') === 'builder') {
+          setActiveView('builder');
+          return;
+        }
         const isCatalog =
           params.get('view') === 'catalog' ||
           params.has('category') ||
@@ -188,6 +203,24 @@ export function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleOpenBuildBed = () => {
+    setActiveView('builder');
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      params.set('view', 'builder');
+      params.delete('category');
+      params.delete('color');
+      params.delete('colour');
+      params.delete('fabric');
+      params.delete('material');
+      params.delete('size');
+      params.delete('sort');
+      const newUrl = window.location.pathname + '?' + params.toString() + window.location.hash;
+      window.history.pushState(null, '', newUrl);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleSelectCategory = (category: BeddingCategory | 'all') => {
     setCatalogCategory(category);
     setActiveView('catalog');
@@ -248,6 +281,7 @@ export function App() {
         onOpenCart={() => setCartOpen(true)}
         onOpenSearch={() => setSearchOpen(true)}
         onSelectCategory={handleSelectCategory}
+        onOpenBuildBed={handleOpenBuildBed}
         onOpenMaterialGuide={() => setCareGuideOpen(true)}
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
         onNavigateHome={handleNavigateHome}
@@ -256,7 +290,13 @@ export function App() {
 
       {/* Main Content Router */}
       <main className="flex-1">
-        {activeView === 'home' ? (
+        {activeView === 'builder' ? (
+          <BedStudioView
+            products={PRODUCTS}
+            onNavigateHome={handleNavigateHome}
+            onNavigateCatalog={() => handleSelectCategory('all')}
+          />
+        ) : activeView === 'home' ? (
           <>
             {/* 1. Hero Campaign Section (Quiet Luxury, 3 slides, directional horizontal slide transitions) */}
             <Hero
@@ -330,7 +370,7 @@ export function App() {
       {/* Comprehensive Footer */}
       <Footer
         onSelectCategory={handleSelectCategory}
-        onOpenBuildBed={() => handleSelectCategory('all')}
+        onOpenBuildBed={handleOpenBuildBed}
         onOpenMaterialGuide={() => setCareGuideOpen(true)}
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
         onOpenCareGuide={() => setCareGuideOpen(true)}
