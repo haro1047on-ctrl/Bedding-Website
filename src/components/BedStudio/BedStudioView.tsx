@@ -108,7 +108,7 @@ export const BedStudioView: React.FC<BedStudioViewProps> = ({
           layerLabel: 'Flat Sheet',
           category: 'Flat Sheets',
           isRequired: false,
-          enabled: true,
+          enabled: false,
           product: flatProd,
           color: flatCol,
           size: 'Queen',
@@ -141,7 +141,7 @@ export const BedStudioView: React.FC<BedStudioViewProps> = ({
           layerLabel: 'Blanket / Bed Cover',
           category: 'Blankets & Bed Covers',
           isRequired: false,
-          enabled: true,
+          enabled: false,
           product: blanketProd,
           color: blanketCol,
           size: 'Queen',
@@ -240,7 +240,7 @@ export const BedStudioView: React.FC<BedStudioViewProps> = ({
       const flatSize = flat.product.sizes.includes(prev.masterSize) && isSizeAvailable(flat.product, prev.masterSize, [flat.color.name])
         ? prev.masterSize
         : (flat.product.sizes.find(s => isSizeAvailable(flat.product, s, [flat.color.name])) || flat.product.sizes[0]);
-      updatedLayers.flatSheet = { ...updatedLayers.flatSheet, product: flat.product, color: flat.color, size: flatSize, enabled: true };
+      updatedLayers.flatSheet = { ...updatedLayers.flatSheet, product: flat.product, color: flat.color, size: flatSize, enabled: updatedLayers.flatSheet.enabled };
 
       // 3. Quilt Cover
       const quilt = findMatchingProductAndColor(quiltCoverProducts, preset.quiltCoverColor, updatedLayers.quiltCover);
@@ -262,7 +262,7 @@ export const BedStudioView: React.FC<BedStudioViewProps> = ({
       const blkSize = blk.product.sizes.includes(prev.masterSize) && isSizeAvailable(blk.product, prev.masterSize, [blk.color.name])
         ? prev.masterSize
         : (blk.product.sizes.find(s => isSizeAvailable(blk.product, s, [blk.color.name])) || blk.product.sizes[0]);
-      updatedLayers.blanket = { ...updatedLayers.blanket, product: blk.product, color: blk.color, size: blkSize, enabled: true };
+      updatedLayers.blanket = { ...updatedLayers.blanket, product: blk.product, color: blk.color, size: blkSize, enabled: updatedLayers.blanket.enabled };
 
       return {
         ...prev,

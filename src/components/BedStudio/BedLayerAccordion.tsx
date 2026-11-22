@@ -2,7 +2,7 @@ import React from 'react';
 import { BedLayerSelection, Product, ColorVariant, BedSize } from '../../types';
 import { isSizeAvailable } from '../../utils/filterUtils';
 import { formatPKR } from '../../utils/format';
-import { ChevronDown, Check, AlertCircle } from 'lucide-react';
+import { ChevronDown, Check, AlertCircle, Info } from 'lucide-react';
 
 interface BedLayerAccordionProps {
   layerIndex: number;
@@ -303,6 +303,16 @@ export const BedLayerAccordion: React.FC<BedLayerAccordionProps> = ({
                 <AlertCircle className="w-4 h-4 text-terracotta flex-shrink-0" />
                 <span>
                   The <strong>{size}</strong> size is currently sold out in <strong>{color.name}</strong>. Please select an available size above.
+                </span>
+              </div>
+            )}
+
+            {/* Incompatible master size notice if applicable */}
+            {enabled && !product.sizes.includes(masterSize) && (
+              <div data-testid="incompatible-size-notice" className="mt-2 p-2 bg-sand-subtle/60 border border-sand-border rounded-xs flex items-center space-x-2 text-[11px] font-sans text-soft-graphite">
+                <Info className="w-3.5 h-3.5 text-umber/50 flex-shrink-0" />
+                <span>
+                  Master foundation is <strong>{masterSize}</strong>. This {layerLabel.toLowerCase()} is tailored in <strong>{size}</strong>.
                 </span>
               </div>
             )}

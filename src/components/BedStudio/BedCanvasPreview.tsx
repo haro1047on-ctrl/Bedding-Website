@@ -436,7 +436,7 @@ export const BedCanvasPreview: React.FC<BedCanvasPreviewProps> = ({
                           onError={() => handleImageError(errorKey)}
                         />
                       ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center p-2 text-center bg-sand-subtle/40">
+                        <div data-testid="photography-placeholder" className="w-full h-full flex flex-col items-center justify-center p-2 text-center bg-sand-subtle/40">
                           <ImageOff className="w-5 h-5 text-umber/40 mb-1" />
                           <span className="text-[9px] font-grotesque uppercase tracking-wider text-umber/70 font-medium">
                             Photography

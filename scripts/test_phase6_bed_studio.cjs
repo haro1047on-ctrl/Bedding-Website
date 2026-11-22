@@ -1,21 +1,22 @@
 /**
- * MORFE - Phase 6.1 Interactive Bed Studio Foundation & Configuration
+ * MORFE - Phase 6.1.1 Interactive Bed Studio Compliance & Verification Battery
  * Comprehensive Automated CDP Browser Interaction Test Battery
  *
  * Runs on Headless Google Chrome via Chrome DevTools Protocol (CDP) using native WebSocket.
  *
  * Coverage Areas:
  *   1. Direct Deep-Linking & Initial View Routing (?view=builder#studio)
- *   2. Master Foundation & Bed Studio Initialization (5 layers, defaults)
+ *   2. Master Foundation & Bed Studio Initialization (5 layers, sensible defaults, 3 active / 2 optional)
  *   3. Architectural Vector Bed Canvas (SVG elements, hex fill matching, disclosure notice)
- *   4. Verified Photography Deck (3-tier resolution, zero product.images fallback)
- *   5. Optional Layer Toggle Interactions (Flat sheet & Blanket enable/disable)
- *   6. Independent Sizing Model & Stock Availability (Master vs Layer, Sold Out badges)
- *   7. Harmonic Colour Presets (Application of curated palettes)
- *   8. Live Summary Bar & Phase 6.1 Cart Boundary (Dynamic total, disabled button)
+ *   4. Verified Photography Deck (3-tier resolution, zero product.images fallback, isolated card placeholders)
+ *   5. Optional Layer Toggle Interactions (Flat sheet & Blanket enable/disable lifecycle & state preservation)
+ *   6. Independent Sizing Model & Stock Availability (Master vs Layer, Sold Out badges, Incompatible size notice)
+ *   7. Harmonic Colour Presets (Application of curated palettes, preserving enabled layers)
+ *   8. Summary Bar & Scope Boundary (Configuration status, NO suite-total, NO delivery promises, disabled CTA)
  *   9. Storefront Navigation & Browser History (Popstate back/forward, hash preservation)
- *  10. Responsive Viewport Fidelity (Desktop 1280px & Mobile 375px)
- *  11. Console Errors & React Hooks Audit (Zero console errors, zero warnings)
+ *  10. Responsive Viewport Fidelity across 7 viewports (1440px, 1280px, 1024px, 768px, 390px, 375px, 320px)
+ *  11. Keyboard Navigation & Accessibility (Focus visibility, interactive element focus)
+ *  12. Console Errors & React Hooks Audit (Zero console errors, zero warnings, zero hook violations)
  */
 
 const { spawn, execSync } = require('child_process');
@@ -94,7 +95,7 @@ function cleanup(chromeProc) {
 
 async function run() {
   console.log('========================================================================');
-  console.log(' MORFE PHASE 6.1 BED STUDIO AUTOMATED CDP BROWSER TEST BATTERY');
+  console.log(' MORFE PHASE 6.1.1 BED STUDIO COMPLIANCE & VERIFICATION BATTERY');
   console.log('========================================================================\n');
 
   if (!fs.existsSync(USER_DATA_DIR)) {
@@ -287,17 +288,44 @@ async function run() {
         layerAccordionsCount
       );
 
-      // Test 06: Active layers count initializes to 5 of 5
+      // Test 06: Active layers count initializes to 3 of 5 (optional layers disabled by default)
       const activeCountText = await evaluate(`
         (() => {
           const el = document.querySelector('div[data-testid="active-layers-count"]');
           return el ? el.textContent.trim() : '';
         })()
       `);
-      assert(activeCountText.includes('5 of 5'),
-        'Summary bar confirms initial state has "5 of 5 layers configured"',
-        '5 of 5',
+      assert(activeCountText.includes('3 of 5'),
+        'Summary bar confirms initial state has "3 of 5 layers configured" (optional layers disabled)',
+        '3 of 5',
         activeCountText
+      );
+
+      // Test 07: Required vs Optional default layer states verified
+      const layerInitialStates = await evaluate(`
+        (() => {
+          const accordions = Array.from(document.querySelectorAll('div[data-layer-accordion]'));
+          return accordions.map(acc => {
+            const key = acc.getAttribute('data-layer-accordion');
+            const checkbox = acc.querySelector('input[type="checkbox"]');
+            return {
+              key,
+              hasToggle: !!checkbox,
+              isChecked: checkbox ? checkbox.checked : null
+            };
+          });
+        })()
+      `);
+      const statesCompliant = layerInitialStates.length === 5 &&
+        layerInitialStates.find(l => l.key === 'fittedSheet').hasToggle === false &&
+        layerInitialStates.find(l => l.key === 'quiltCover').hasToggle === false &&
+        layerInitialStates.find(l => l.key === 'pillowcases').hasToggle === false &&
+        layerInitialStates.find(l => l.key === 'flatSheet').isChecked === false &&
+        layerInitialStates.find(l => l.key === 'blanket').isChecked === false;
+      assert(statesCompliant,
+        'Required layers have no disable toggle; Flat Sheet and Blanket are toggled off by default',
+        true,
+        statesCompliant
       );
 
       // =========================================================================
@@ -305,7 +333,7 @@ async function run() {
       // =========================================================================
       console.log('\n--- SUITE 3: Architectural Vector Bed Canvas Preview ---');
 
-      // Test 07: SVG canvas element exists with accessibility label
+      // Test 08: SVG canvas element exists with accessibility label
       const svgExists = await evaluate(`
         (() => {
           const svg = document.querySelector('svg[aria-label*="Bed preview"]');
@@ -318,7 +346,7 @@ async function run() {
         svgExists
       );
 
-      // Test 08: SVG elements have 300ms transition style
+      // Test 09: SVG elements have 300ms transition style
       const hasTransitions = await evaluate(`
         (() => {
           const paths = Array.from(document.querySelectorAll('svg path, svg rect'));
@@ -331,7 +359,7 @@ async function run() {
         hasTransitions
       );
 
-      // Test 09: Quilt Cover SVG path fill matches authentic hex code (#7E212A for Russet)
+      // Test 10: Quilt Cover SVG path fill matches authentic hex code (#7E212A for Russet)
       const quiltFillHex = await evaluate(`
         (() => {
           const quiltGroup = document.querySelector('g#canvas-quilt-cover');
@@ -345,7 +373,7 @@ async function run() {
         quiltFillHex.toLowerCase()
       );
 
-      // Test 10: Accuracy disclosure notice is prominently displayed below canvas
+      // Test 11: Accuracy disclosure notice is prominently displayed below canvas
       const disclosureText = await evaluate(`
         (() => {
           const el = document.querySelector('div[data-testid="accuracy-disclosure"]');
@@ -358,83 +386,161 @@ async function run() {
         disclosureText.length > 0
       );
 
+      // Test 12: Disabled optional layers are not rendered on the initial SVG canvas
+      const optionalCanvasElements = await evaluate(`
+        (() => {
+          const flat = document.querySelector('g#canvas-flat-sheet');
+          const blanket = document.querySelector('g#canvas-blanket');
+          return { flatPresent: !!flat, blanketPresent: !!blanket };
+        })()
+      `);
+      assert(!optionalCanvasElements.flatPresent && !optionalCanvasElements.blanketPresent,
+        'Disabled Flat Sheet cuff and Blanket runner are unmounted from initial SVG vector canvas',
+        'flatPresent: false, blanketPresent: false',
+        JSON.stringify(optionalCanvasElements)
+      );
+
       // =========================================================================
       // SUITE 4: Verified Photography Deck (Strict Phase 2 Resolution)
       // =========================================================================
       console.log('\n--- SUITE 4: Verified Photography Deck & Gallery Isolation ---');
 
-      // Test 11: Photography deck renders 5 active cards
+      // Test 13: Photography deck renders exactly 3 active cards initially (matching enabled layers)
       const photoCardsCount = await evaluate(`
         (() => {
           const grid = document.querySelector('div[data-testid="photo-deck-grid"]');
           return grid ? grid.querySelectorAll('button[data-testid="photo-deck-card"]').length : 0;
         })()
       `);
-      assert(photoCardsCount === 5,
-        'Photography deck renders verified cards for all 5 active bedding layers',
-        5,
+      assert(photoCardsCount === 3,
+        'Photography deck initially renders exactly 3 cards for the 3 active layers',
+        3,
         photoCardsCount
       );
 
-      // Test 12: Zero product.images fallback violation (strictly colorway isolated)
-      const cardsHaveImagesOrFallbacks = await evaluate(`
+      // Test 14: Zero product.images fallback violation (strictly colorway isolated or verified placeholder)
+      const cardsCompliant = await evaluate(`
         (() => {
           const buttons = Array.from(document.querySelectorAll('button[data-testid="photo-deck-card"]'));
-          return buttons.length === 5 && buttons.every(b => {
+          return buttons.length === 3 && buttons.every(b => {
             const img = b.querySelector('img');
-            const fallback = b.querySelector('svg');
-            return img !== null || fallback !== null;
+            const placeholder = b.querySelector('div[data-testid="photography-placeholder"]');
+            return img !== null || placeholder !== null;
           });
         })()
       `);
-      assert(cardsHaveImagesOrFallbacks,
+      assert(cardsCompliant,
         'Each deck card strictly resolves isolated colourway photography or verified placeholder',
         true,
-        cardsHaveImagesOrFallbacks
+        cardsCompliant
       );
 
       // =========================================================================
-      // SUITE 5: Optional Layer Toggle Interactions
+      // SUITE 5: Optional Layer Toggle Interactions & State Preservation
       // =========================================================================
-      console.log('\n--- SUITE 5: Optional Layer Toggle Interactions (Flat Sheet & Blanket) ---');
+      console.log('\n--- SUITE 5: Optional Layer Toggle Interactions & State Preservation ---');
 
-      // Test 13: Toggle Flat Sheet off (skip layer)
-      const toggleFlatSheetSuccess = await clickSelector('input[aria-label="Include Flat Sheet in bedding suite"]');
+      // Test 15: Toggle Flat Sheet ON
+      const toggleFlatOnSuccess = await clickSelector('input[aria-label="Include Flat Sheet in bedding suite"]');
       await new Promise(r => setTimeout(r, 300));
-      assert(toggleFlatSheetSuccess,
+      assert(toggleFlatOnSuccess,
         'Optional Flat Sheet toggle clicked via CDP pointer',
         true,
-        toggleFlatSheetSuccess
+        toggleFlatOnSuccess
       );
 
-      // Test 14: Active layers count updates to 4 of 5
+      // Test 16: Active layers count updates to 4 of 5
+      const activeCountAfterFlatOn = await evaluate(`
+        (() => {
+          const el = document.querySelector('div[data-testid="active-layers-count"]');
+          return el ? el.textContent.trim() : '';
+        })()
+      `);
+      assert(activeCountAfterFlatOn.includes('4 of 5'),
+        'Enabling Flat Sheet updates summary count to "4 of 5 layers configured"',
+        '4 of 5',
+        activeCountAfterFlatOn
+      );
+
+      // Test 17: Flat Sheet cuff fold mounts onto SVG canvas
+      const flatCuffOnCanvas = await evaluate(`
+        (() => {
+          const cuff = document.querySelector('g#canvas-flat-sheet');
+          return !!cuff;
+        })()
+      `);
+      assert(flatCuffOnCanvas,
+        'Enabled flat sheet cuff cleanly mounts onto architectural vector canvas',
+        true,
+        flatCuffOnCanvas
+      );
+
+      // Test 18: Toggle Blanket ON
+      const toggleBlanketOnSuccess = await clickSelector('input[aria-label="Include Blanket / Bed Cover in bedding suite"]');
+      await new Promise(r => setTimeout(r, 300));
+      assert(toggleBlanketOnSuccess,
+        'Optional Blanket toggle clicked via CDP pointer',
+        true,
+        toggleBlanketOnSuccess
+      );
+
+      // Test 19: Active layers count updates to 5 of 5
+      const activeCountAllOn = await evaluate(`
+        (() => {
+          const el = document.querySelector('div[data-testid="active-layers-count"]');
+          return el ? el.textContent.trim() : '';
+        })()
+      `);
+      assert(activeCountAllOn.includes('5 of 5'),
+        'Enabling Blanket updates summary count to "5 of 5 layers configured"',
+        '5 of 5',
+        activeCountAllOn
+      );
+
+      // Test 20: Blanket runner mounts onto SVG canvas
+      const blanketOnCanvas = await evaluate(`
+        (() => {
+          const blk = document.querySelector('g#canvas-blanket');
+          return !!blk;
+        })()
+      `);
+      assert(blanketOnCanvas,
+        'Enabled blanket runner cleanly mounts onto architectural vector canvas',
+        true,
+        blanketOnCanvas
+      );
+
+      // Test 21: Photography deck renders all 5 cards
+      const photoDeckCountAllOn = await evaluate(`
+        (() => {
+          const grid = document.querySelector('div[data-testid="photo-deck-grid"]');
+          return grid ? grid.querySelectorAll('button[data-testid="photo-deck-card"]').length : 0;
+        })()
+      `);
+      assert(photoDeckCountAllOn === 5,
+        'Photography deck updates to display 5 cards when all layers are enabled',
+        5,
+        photoDeckCountAllOn
+      );
+
+      // Test 22: Toggle Flat Sheet OFF (skip layer)
+      await clickSelector('input[aria-label="Include Flat Sheet in bedding suite"]');
+      await new Promise(r => setTimeout(r, 300));
       const activeCountAfterSkip = await evaluate(`
         (() => {
           const el = document.querySelector('div[data-testid="active-layers-count"]');
           return el ? el.textContent.trim() : '';
         })()
       `);
-      assert(activeCountAfterSkip.includes('4 of 5'),
-        'Disabling optional layer updates summary count to "4 of 5 layers configured"',
-        '4 of 5',
-        activeCountAfterSkip
-      );
-
-      // Test 15: Flat Sheet cuff fold vanishes from SVG canvas
-      const cuffVisibleAfterSkip = await evaluate(`
-        (() => {
-          const cuff = document.querySelector('g#canvas-flat-sheet');
-          return !cuff;
-        })()
-      `);
-      assert(cuffVisibleAfterSkip,
-        'Disabled flat sheet cuff cleanly unmounts from architectural vector canvas',
+      const cuffUnmounted = await evaluate(`!document.querySelector('g#canvas-flat-sheet')`);
+      assert(activeCountAfterSkip.includes('4 of 5') && cuffUnmounted,
+        'Disabling Flat Sheet drops count to "4 of 5" and unmounts cuff from vector canvas',
         true,
-        cuffVisibleAfterSkip
+        activeCountAfterSkip.includes('4 of 5') && cuffUnmounted
       );
 
-      // Test 16: Re-enabling Flat Sheet restores selection without data loss
-      const reEnableFlatSheet = await clickSelector('input[aria-label="Include Flat Sheet in bedding suite"]');
+      // Test 23: Re-enabling Flat Sheet restores configuration without data loss
+      await clickSelector('input[aria-label="Include Flat Sheet in bedding suite"]');
       await new Promise(r => setTimeout(r, 300));
       const activeCountRestored = await evaluate(`
         (() => {
@@ -453,7 +559,7 @@ async function run() {
       // =========================================================================
       console.log('\n--- SUITE 6: Independent Sizing Model & Availability Rules ---');
 
-      // Test 17: Update Master Bed Size to King
+      // Test 24: Update Master Bed Size to King
       await evaluate(`
         (() => {
           const select = document.querySelector('select[aria-label="Select Master Bed Size foundation"]');
@@ -477,7 +583,7 @@ async function run() {
         newMasterSize
       );
 
-      // Test 18: Quilt Cover size automatically matched to King
+      // Test 25: Quilt Cover size automatically matched to King
       const quiltCoverSizeAfterMaster = await evaluate(`
         (() => {
           const accordion = document.querySelector('div[data-layer-accordion="quiltCover"]');
@@ -491,7 +597,7 @@ async function run() {
         quiltCoverSizeAfterMaster
       );
 
-      // Test 19: Pillowcase size sensibly defaults to King Size for King bed
+      // Test 26: Pillowcase size sensibly defaults to King Size for King bed
       const pillowcaseSizeAfterMaster = await evaluate(`
         (() => {
           const accordion = document.querySelector('div[data-layer-accordion="pillowcases"]');
@@ -505,11 +611,23 @@ async function run() {
         pillowcaseSizeAfterMaster
       );
 
-      // Test 20: Expand Quilt Cover accordion to inspect size options
-      await clickSelector('button[aria-label="Toggle Quilt Cover configuration panel"]');
+      // Test 27: Expand Pillowcase Pair accordion to verify incompatible master size notice
+      await clickSelector('div[data-layer-accordion="pillowcases"] button[aria-label*="Toggle Pillowcase"]');
       await new Promise(r => setTimeout(r, 300));
 
-      // Test 21: Availability checking disables out-of-stock sizes with Sold Out badge
+      const incompatibleNoticeText = await evaluate(`
+        (() => {
+          const notice = document.querySelector('div[data-layer-accordion="pillowcases"] [data-testid="incompatible-size-notice"]');
+          return notice ? notice.textContent.trim() : '';
+        })()
+      `);
+      assert(incompatibleNoticeText.includes('Master foundation is King') && incompatibleNoticeText.includes('tailored in King Size'),
+        'Incompatible master size notice renders for layers with specialized sizing (Pillowcase Pair tailored in King Size for King foundation)',
+        'Master foundation is King... tailored in King Size',
+        incompatibleNoticeText
+      );
+
+      // Test 28: Stock availability checking evaluates isSizeAvailable
       const outOfStockBadgesCount = await evaluate(`
         (() => {
           const soldOutBadges = Array.from(document.querySelectorAll('span')).filter(s => s.textContent.trim() === 'Sold Out');
@@ -522,12 +640,16 @@ async function run() {
         true
       );
 
+      // Close Pillowcase accordion
+      await clickSelector('div[data-layer-accordion="pillowcases"] button[aria-label*="Toggle Pillowcase"]');
+      await new Promise(r => setTimeout(r, 200));
+
       // =========================================================================
       // SUITE 7: Harmonic Colour Presets
       // =========================================================================
       console.log('\n--- SUITE 7: Curated Harmonic Colour Presets ---');
 
-      // Test 22: Presets strip renders 3 editorial presets
+      // Test 29: Presets strip renders 3 editorial presets
       const presetButtonsCount = await evaluate(`
         (() => {
           const strip = document.querySelector('div[data-testid="preset-strip-grid"]');
@@ -540,7 +662,7 @@ async function run() {
         presetButtonsCount
       );
 
-      // Test 23: Apply Preset 2 ("Botanical Olive & Cloud Linen")
+      // Test 30: Apply Preset 2 ("Botanical Olive & Cloud Linen")
       const applyPreset2Success = await clickSelector('button[data-testid="preset-card-botanical-olive-cloud"]');
       await new Promise(r => setTimeout(r, 400));
       assert(applyPreset2Success,
@@ -549,7 +671,7 @@ async function run() {
         applyPreset2Success
       );
 
-      // Test 24: Preset 2 is marked as Active
+      // Test 31: Preset 2 is marked as Active
       const preset2IsActive = await evaluate(`
         (() => {
           const btn = document.querySelector('button[data-testid="preset-card-botanical-olive-cloud"]');
@@ -562,7 +684,7 @@ async function run() {
         preset2IsActive
       );
 
-      // Test 25: Architectural canvas updates quilt cover to Olive (#A39264)
+      // Test 32: Architectural canvas updates quilt cover to Olive (#A39264)
       const quiltFillAfterPreset = await evaluate(`
         (() => {
           const quiltGroup = document.querySelector('g#canvas-quilt-cover');
@@ -576,28 +698,66 @@ async function run() {
         quiltFillAfterPreset.toLowerCase()
       );
 
-      // =========================================================================
-      // SUITE 8: Live Summary Bar & Phase 6.1 Cart Boundary
-      // =========================================================================
-      console.log('\n--- SUITE 8: Live Suite Total & Phase 6.1 Scope Boundary ---');
-
-      // Test 26: Suite total is computed and non-zero
-      const suiteTotalText = await evaluate(`
+      // Test 33: Preset preserves customer layer activation state (5 of 5 remain active)
+      const activeCountAfterPreset = await evaluate(`
         (() => {
-          const el = document.querySelector('div[data-testid="suite-total-price"]');
+          const el = document.querySelector('div[data-testid="active-layers-count"]');
           return el ? el.textContent.trim() : '';
         })()
       `);
-      assert(suiteTotalText.includes('Rs.') && !suiteTotalText.includes('Rs. 0'),
-        'Suite Total reflects live calculated dynamic variant sum in PKR',
-        'Rs. > 0',
-        suiteTotalText
+      assert(activeCountAfterPreset.includes('5 of 5'),
+        'Applying preset preserves customer layer enablement configuration ("5 of 5")',
+        '5 of 5',
+        activeCountAfterPreset
       );
 
-      // Test 27: Add Suite to Bag button is STRICTLY disabled in Phase 6.1
+      // =========================================================================
+      // SUITE 8: Live Summary Bar & Phase 6.1 Scope Boundary
+      // =========================================================================
+      console.log('\n--- SUITE 8: Configuration Status & Scope Boundary Verification ---');
+
+      // Test 34: Suite total price element is strictly NOT present (Phase 6.1 boundary)
+      const suiteTotalElementPresent = await evaluate(`
+        (() => {
+          return !!document.querySelector('div[data-testid="suite-total-price"]');
+        })()
+      `);
+      assert(!suiteTotalElementPresent,
+        'Suite total price element is strictly absent in Phase 6.1 boundary compliance',
+        false,
+        suiteTotalElementPresent
+      );
+
+      // Test 35: Unapproved delivery claim is NOT present
+      const deliveryClaimPresent = await evaluate(`
+        (() => {
+          const bodyText = document.body.innerText;
+          return bodyText.includes('Complimentary express delivery included');
+        })()
+      `);
+      assert(!deliveryClaimPresent,
+        'Unapproved delivery promise "Complimentary express delivery included" is strictly absent',
+        false,
+        deliveryClaimPresent
+      );
+
+      // Test 36: Configuration status element is present and reports completion state
+      const configStatusText = await evaluate(`
+        (() => {
+          const el = document.querySelector('div[data-testid="suite-configuration-status"]');
+          return el ? el.textContent.trim() : '';
+        })()
+      `);
+      assert(configStatusText.includes('Complete Suite') || configStatusText.includes('Layers Selected'),
+        'Configuration status displays active suite completion summary',
+        'Complete Suite or Layers Selected',
+        configStatusText
+      );
+
+      // Test 37: Add Suite to Bag button is STRICTLY disabled in Phase 6.1
       const isCartButtonDisabled = await evaluate(`
         (() => {
-          const btn = document.querySelector('button[aria-label="Add Suite to Bag (Coming in Phase 6.2)"]');
+          const btn = document.querySelector('button[data-testid="add-suite-to-bag-button"]');
           return btn ? btn.disabled : false;
         })()
       `);
@@ -612,7 +772,7 @@ async function run() {
       // =========================================================================
       console.log('\n--- SUITE 9: Storefront Navigation & History Integration ---');
 
-      // Test 28: Click Logo to return to homepage
+      // Test 38: Click Logo to return to homepage
       const logoClickSuccess = await clickSelector('button[data-testid="header-logo-button"]');
       await new Promise(r => setTimeout(r, 400));
       assert(logoClickSuccess,
@@ -621,7 +781,7 @@ async function run() {
         logoClickSuccess
       );
 
-      // Test 29: Homepage view is restored and URL view param is cleared
+      // Test 39: Homepage view is restored and URL view param is cleared
       const urlAfterHome = await evaluate('window.location.search');
       assert(!urlAfterHome.includes('view=builder'),
         'Returning home clears view=builder query parameter',
@@ -629,7 +789,7 @@ async function run() {
         urlAfterHome
       );
 
-      // Test 30: Browser popstate back returns to Bed Studio
+      // Test 40: Browser popstate back returns to Bed Studio
       await evaluate('window.history.back()');
       await new Promise(r => setTimeout(r, 400));
       const urlAfterBack = await evaluate('window.location.search');
@@ -640,29 +800,48 @@ async function run() {
       );
 
       // =========================================================================
-      // SUITE 10: Responsive Viewports (Mobile 375px)
+      // SUITE 10: Responsive Viewports (7 distinct viewports audit)
       // =========================================================================
-      console.log('\n--- SUITE 10: Responsive Viewports (Mobile 375px) ---');
+      console.log('\n--- SUITE 10: Responsive Viewports (7 Viewports Audit) ---');
 
+      const viewports = [
+        { width: 1440, height: 900, name: '1440px (Desktop Wide)' },
+        { width: 1280, height: 800, name: '1280px (Desktop Standard)' },
+        { width: 1024, height: 768, name: '1024px (Tablet Landscape)' },
+        { width: 768, height: 1024, name: '768px (Tablet Portrait)' },
+        { width: 390, height: 844, name: '390px (Mobile Standard iPhone 14)' },
+        { width: 375, height: 667, name: '375px (Mobile Compact iPhone SE)' },
+        { width: 320, height: 568, name: '320px (Mobile Ultra-Compact)' }
+      ];
+
+      for (const vp of viewports) {
+        await send('Emulation.setDeviceMetricsOverride', {
+          width: vp.width,
+          height: vp.height,
+          deviceScaleFactor: vp.width <= 768 ? 2 : 1,
+          mobile: vp.width <= 768
+        });
+        await new Promise(r => setTimeout(r, 200));
+
+        const hasNoOverflow = await evaluate(`
+          document.documentElement.scrollWidth <= window.innerWidth
+        `);
+        assert(hasNoOverflow,
+          `Zero horizontal overflow at ${vp.name} (scrollWidth <= innerWidth)`,
+          true,
+          hasNoOverflow
+        );
+      }
+
+      // Test 48: Mobile Drawer navigation test at 375px
       await send('Emulation.setDeviceMetricsOverride', {
         width: 375,
         height: 667,
         deviceScaleFactor: 2,
         mobile: true
       });
-      await new Promise(r => setTimeout(r, 400));
+      await new Promise(r => setTimeout(r, 200));
 
-      // Test 31: Zero horizontal viewport overflow at 375px
-      const mobileOverflow = await evaluate(`
-        document.documentElement.scrollWidth <= window.innerWidth
-      `);
-      assert(mobileOverflow,
-        'Zero horizontal overflow on mobile 375px viewport (scrollWidth <= innerWidth)',
-        true,
-        mobileOverflow
-      );
-
-      // Test 32: Mobile Hamburger opens drawer with Bed Studio link
       await clickSelector('button[aria-label="Open navigation menu"]');
       await new Promise(r => setTimeout(r, 400));
 
@@ -673,7 +852,7 @@ async function run() {
         })()
       `);
       assert(mobileDrawerHasStudio,
-        'Mobile navigation drawer includes dedicated "Bed Studio" entry',
+        'Mobile navigation drawer includes dedicated "Bed Studio" link at 375px',
         true,
         mobileDrawerHasStudio
       );
@@ -691,11 +870,46 @@ async function run() {
       });
 
       // =========================================================================
-      // SUITE 11: Console Errors & React Hooks Audit
+      // SUITE 11: Keyboard Navigation & Focus Accessibility
       // =========================================================================
-      console.log('\n--- SUITE 11: Console Errors & React Hooks Verification ---');
+      console.log('\n--- SUITE 11: Keyboard Navigation & Focus Accessibility ---');
 
-      // Test 33: Zero console errors throughout the entire test run
+      // Test 49: Focus Master Size select via keyboard focus simulation
+      const masterSelectCanFocus = await evaluate(`
+        (() => {
+          const select = document.querySelector('select[aria-label="Select Master Bed Size foundation"]');
+          if (!select) return false;
+          select.focus();
+          return document.activeElement === select;
+        })()
+      `);
+      assert(masterSelectCanFocus,
+        'Master Bed Size selector can receive keyboard focus with proper active state',
+        true,
+        masterSelectCanFocus
+      );
+
+      // Test 50: Interactive layer toggle buttons receive focus
+      const accordionCanFocus = await evaluate(`
+        (() => {
+          const btn = document.querySelector('button[aria-label*="Toggle Fitted Sheet"]');
+          if (!btn) return false;
+          btn.focus();
+          return document.activeElement === btn;
+        })()
+      `);
+      assert(accordionCanFocus,
+        'Layer accordion toggle button correctly receives focus via keyboard navigation',
+        true,
+        accordionCanFocus
+      );
+
+      // =========================================================================
+      // SUITE 12: Console Errors & React Hooks Audit
+      // =========================================================================
+      console.log('\n--- SUITE 12: Console Errors & React Hooks Verification ---');
+
+      // Test 51: Zero console errors throughout the entire test run
       assert(browserConsoleErrors.length === 0,
         'Zero console errors, zero React warnings, zero hook violations during entire interaction battery',
         '0 errors',
@@ -706,7 +920,7 @@ async function run() {
       // SUMMARY & RESULTS EXPORT
       // =========================================================================
       console.log('\n========================================================================');
-      console.log(` PHASE 6.1 CDP INTERACTION TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
+      console.log(` PHASE 6.1.1 COMPLIANCE TEST SUMMARY: ${passedTests}/${totalTests} PASSED`);
       console.log('========================================================================\n');
 
       let testedSha = '';
@@ -717,7 +931,7 @@ async function run() {
       }
 
       const resultsPayload = {
-        suiteName: 'MORFE Phase 6.1 Bed Studio Foundation & Interactive Configuration CDP Battery',
+        suiteName: 'MORFE Phase 6.1.1 Bed Studio Compliance & Verification Battery',
         timestamp: new Date().toISOString(),
         testedCommitSha: testedSha,
         totalTests,

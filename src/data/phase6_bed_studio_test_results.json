@@ -1,9 +1,9 @@
 {
-  "suiteName": "MORFE Phase 6.1 Bed Studio Foundation & Interactive Configuration CDP Battery",
-  "timestamp": "2026-11-22T20:25:01.496Z",
-  "testedCommitSha": "4d6144e061195051d2e6592491bc2320a03d7a61",
-  "totalTests": 32,
-  "passedTests": 32,
+  "suiteName": "MORFE Phase 6.1.1 Bed Studio Compliance & Verification Battery",
+  "timestamp": "2026-11-22T21:29:29.107Z",
+  "testedCommitSha": "ad591fce4bc2878d33ae651e69de1398b349f2b2",
+  "totalTests": 51,
+  "passedTests": 51,
   "failedTests": 0,
   "successRate": "100.0%",
   "buildStatus": "PASS (Exit 0)",
@@ -46,188 +46,321 @@
     },
     {
       "testNumber": 6,
-      "name": "Summary bar confirms initial state has \"5 of 5 layers configured\"",
+      "name": "Summary bar confirms initial state has \"3 of 5 layers configured\" (optional layers disabled)",
       "status": "PASS",
-      "expected": "5 of 5",
-      "actual": "5 of 5layers configured"
+      "expected": "3 of 5",
+      "actual": "3 of 5layers configured"
     },
     {
       "testNumber": 7,
-      "name": "Architectural SVG vector canvas element is rendered with accessible description",
+      "name": "Required layers have no disable toggle; Flat Sheet and Blanket are toggled off by default",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
       "testNumber": 8,
-      "name": "Architectural vector elements define smooth 300ms colorway fill transitions",
+      "name": "Architectural SVG vector canvas element is rendered with accessible description",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
       "testNumber": 9,
+      "name": "Architectural vector elements define smooth 300ms colorway fill transitions",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 10,
       "name": "Quilt Cover vector drape fill matches authentic Russet hex code (#7E212A)",
       "status": "PASS",
       "expected": "#7e212a",
       "actual": "#7e212a"
     },
     {
-      "testNumber": 10,
+      "testNumber": 11,
       "name": "Mandatory accuracy disclosure note is displayed beneath vector illustration",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 11,
-      "name": "Photography deck renders verified cards for all 5 active bedding layers",
+      "testNumber": 12,
+      "name": "Disabled Flat Sheet cuff and Blanket runner are unmounted from initial SVG vector canvas",
       "status": "PASS",
-      "expected": "5",
-      "actual": "5"
+      "expected": "flatPresent: false, blanketPresent: false",
+      "actual": "{\"flatPresent\":false,\"blanketPresent\":false}"
     },
     {
-      "testNumber": 12,
+      "testNumber": 13,
+      "name": "Photography deck initially renders exactly 3 cards for the 3 active layers",
+      "status": "PASS",
+      "expected": "3",
+      "actual": "3"
+    },
+    {
+      "testNumber": 14,
       "name": "Each deck card strictly resolves isolated colourway photography or verified placeholder",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 13,
+      "testNumber": 15,
       "name": "Optional Flat Sheet toggle clicked via CDP pointer",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 14,
-      "name": "Disabling optional layer updates summary count to \"4 of 5 layers configured\"",
+      "testNumber": 16,
+      "name": "Enabling Flat Sheet updates summary count to \"4 of 5 layers configured\"",
       "status": "PASS",
       "expected": "4 of 5",
       "actual": "4 of 5layers configured"
     },
     {
-      "testNumber": 15,
-      "name": "Disabled flat sheet cuff cleanly unmounts from architectural vector canvas",
+      "testNumber": 17,
+      "name": "Enabled flat sheet cuff cleanly mounts onto architectural vector canvas",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 16,
-      "name": "Re-enabling flat sheet restores active count to \"5 of 5 layers configured\" with preserved choices",
+      "testNumber": 18,
+      "name": "Optional Blanket toggle clicked via CDP pointer",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 19,
+      "name": "Enabling Blanket updates summary count to \"5 of 5 layers configured\"",
       "status": "PASS",
       "expected": "5 of 5",
       "actual": "5 of 5layers configured"
     },
     {
-      "testNumber": 17,
-      "name": "Master Bed Size successfully updated to King",
-      "status": "PASS",
-      "expected": "King",
-      "actual": "King"
-    },
-    {
-      "testNumber": 18,
-      "name": "Quilt Cover size cascaded to King to match Master Bed foundation",
-      "status": "PASS",
-      "expected": "King",
-      "actual": "King"
-    },
-    {
-      "testNumber": 19,
-      "name": "Pillowcase layer intelligently mapped to King Size for Master King foundation",
-      "status": "PASS",
-      "expected": "King Size",
-      "actual": "King Size"
-    },
-    {
       "testNumber": 20,
-      "name": "Stock availability verification evaluates isSizeAvailable for all size buttons",
+      "name": "Enabled blanket runner cleanly mounts onto architectural vector canvas",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
       "testNumber": 21,
-      "name": "Presets strip presents 3 curated editorial harmonies",
+      "name": "Photography deck updates to display 5 cards when all layers are enabled",
       "status": "PASS",
-      "expected": "3",
-      "actual": "3"
+      "expected": "5",
+      "actual": "5"
     },
     {
       "testNumber": 22,
-      "name": "Clicked Preset 2 (\"Botanical Olive & Cloud Linen\") via CDP pointer",
+      "name": "Disabling Flat Sheet drops count to \"4 of 5\" and unmounts cuff from vector canvas",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
       "testNumber": 23,
-      "name": "Preset 2 is marked as active with confirmed checkmark badge",
+      "name": "Re-enabling flat sheet restores active count to \"5 of 5 layers configured\" with preserved choices",
       "status": "PASS",
-      "expected": "true",
-      "actual": "true"
+      "expected": "5 of 5",
+      "actual": "5 of 5layers configured"
     },
     {
       "testNumber": 24,
-      "name": "Vector canvas quilt cover drape updated to Olive (#A39264)",
+      "name": "Master Bed Size successfully updated to King",
       "status": "PASS",
-      "expected": "#a39264",
-      "actual": "#a39264"
+      "expected": "King",
+      "actual": "King"
     },
     {
       "testNumber": 25,
-      "name": "Suite Total reflects live calculated dynamic variant sum in PKR",
+      "name": "Quilt Cover size cascaded to King to match Master Bed foundation",
       "status": "PASS",
-      "expected": "Rs. > 0",
-      "actual": "Suite Total:Rs. 87,500"
+      "expected": "King",
+      "actual": "King"
     },
     {
       "testNumber": 26,
-      "name": "Cart addition button is disabled with explicit \"Coming in Phase 6.2\" disclosure",
+      "name": "Pillowcase layer intelligently mapped to King Size for Master King foundation",
       "status": "PASS",
-      "expected": "true",
-      "actual": "true"
+      "expected": "King Size",
+      "actual": "King Size"
     },
     {
       "testNumber": 27,
-      "name": "Clicked MORFE header logo button to return to homepage",
+      "name": "Incompatible master size notice renders for layers with specialized sizing (Pillowcase Pair tailored in King Size for King foundation)",
+      "status": "PASS",
+      "expected": "Master foundation is King... tailored in King Size",
+      "actual": "Master foundation is King. This pillowcase pair is tailored in King Size."
+    },
+    {
+      "testNumber": 28,
+      "name": "Stock availability verification evaluates isSizeAvailable for all size buttons",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
-      "testNumber": 28,
-      "name": "Returning home clears view=builder query parameter",
-      "status": "PASS",
-      "expected": "empty or no view=builder",
-      "actual": ""
-    },
-    {
       "testNumber": 29,
-      "name": "Browser Back navigation (popstate) accurately restores Bed Studio view",
+      "name": "Presets strip presents 3 curated editorial harmonies",
       "status": "PASS",
-      "expected": "view=builder",
-      "actual": "?view=builder"
+      "expected": "3",
+      "actual": "3"
     },
     {
       "testNumber": 30,
-      "name": "Zero horizontal overflow on mobile 375px viewport (scrollWidth <= innerWidth)",
+      "name": "Clicked Preset 2 (\"Botanical Olive & Cloud Linen\") via CDP pointer",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
       "testNumber": 31,
-      "name": "Mobile navigation drawer includes dedicated \"Bed Studio\" entry",
+      "name": "Preset 2 is marked as active with confirmed checkmark badge",
       "status": "PASS",
       "expected": "true",
       "actual": "true"
     },
     {
       "testNumber": 32,
+      "name": "Vector canvas quilt cover drape updated to Olive (#A39264)",
+      "status": "PASS",
+      "expected": "#a39264",
+      "actual": "#a39264"
+    },
+    {
+      "testNumber": 33,
+      "name": "Applying preset preserves customer layer enablement configuration (\"5 of 5\")",
+      "status": "PASS",
+      "expected": "5 of 5",
+      "actual": "5 of 5layers configured"
+    },
+    {
+      "testNumber": 34,
+      "name": "Suite total price element is strictly absent in Phase 6.1 boundary compliance",
+      "status": "PASS",
+      "expected": "false",
+      "actual": "false"
+    },
+    {
+      "testNumber": 35,
+      "name": "Unapproved delivery promise \"Complimentary express delivery included\" is strictly absent",
+      "status": "PASS",
+      "expected": "false",
+      "actual": "false"
+    },
+    {
+      "testNumber": 36,
+      "name": "Configuration status displays active suite completion summary",
+      "status": "PASS",
+      "expected": "Complete Suite or Layers Selected",
+      "actual": "Configuration:Complete Suite"
+    },
+    {
+      "testNumber": 37,
+      "name": "Cart addition button is disabled with explicit \"Coming in Phase 6.2\" disclosure",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 38,
+      "name": "Clicked MORFE header logo button to return to homepage",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 39,
+      "name": "Returning home clears view=builder query parameter",
+      "status": "PASS",
+      "expected": "empty or no view=builder",
+      "actual": ""
+    },
+    {
+      "testNumber": 40,
+      "name": "Browser Back navigation (popstate) accurately restores Bed Studio view",
+      "status": "PASS",
+      "expected": "view=builder",
+      "actual": "?view=builder"
+    },
+    {
+      "testNumber": 41,
+      "name": "Zero horizontal overflow at 1440px (Desktop Wide) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 42,
+      "name": "Zero horizontal overflow at 1280px (Desktop Standard) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 43,
+      "name": "Zero horizontal overflow at 1024px (Tablet Landscape) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 44,
+      "name": "Zero horizontal overflow at 768px (Tablet Portrait) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 45,
+      "name": "Zero horizontal overflow at 390px (Mobile Standard iPhone 14) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 46,
+      "name": "Zero horizontal overflow at 375px (Mobile Compact iPhone SE) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 47,
+      "name": "Zero horizontal overflow at 320px (Mobile Ultra-Compact) (scrollWidth <= innerWidth)",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 48,
+      "name": "Mobile navigation drawer includes dedicated \"Bed Studio\" link at 375px",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 49,
+      "name": "Master Bed Size selector can receive keyboard focus with proper active state",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 50,
+      "name": "Layer accordion toggle button correctly receives focus via keyboard navigation",
+      "status": "PASS",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "testNumber": 51,
       "name": "Zero console errors, zero React warnings, zero hook violations during entire interaction battery",
       "status": "PASS",
       "expected": "0 errors",

@@ -1,6 +1,5 @@
 import React from 'react';
 import { BedStudioState, BedSize, BedStudioLayerKey } from '../../types';
-import { formatPKR } from '../../utils/format';
 import { ShoppingBag, ChevronDown, Sparkles } from 'lucide-react';
 
 interface BedStudioSummaryBarProps {
@@ -19,12 +18,6 @@ export const BedStudioSummaryBar: React.FC<BedStudioSummaryBarProps> = ({
   const layerKeys: BedStudioLayerKey[] = ['fittedSheet', 'flatSheet', 'quiltCover', 'pillowcases', 'blanket'];
   const activeLayers = layerKeys.map(k => layers[k]).filter(l => l.enabled);
   const totalLayersCount = layerKeys.length;
-
-  // Calculate suite total
-  const suiteTotal = activeLayers.reduce((sum, layer) => {
-    const price = (layer.product.variantPrices && layer.product.variantPrices[layer.size]) ?? layer.product.price;
-    return sum + price;
-  }, 0);
 
   return (
     <div className="sticky bottom-0 left-0 w-full z-30 bg-porcelain/98 backdrop-blur-md border-t border-sand-border shadow-elevated py-3.5 px-4 sm:px-8">
@@ -77,20 +70,20 @@ export const BedStudioSummaryBar: React.FC<BedStudioSummaryBarProps> = ({
 
         </div>
 
-        {/* Right: Suite Total Price & Disabled Phase 6.1 Cart Button */}
+        {/* Right: Configuration State Summary & Disabled Phase 6.1 Action */}
         <div className="flex items-center justify-between md:justify-end space-x-4 sm:space-x-6">
           
           <div className="text-left md:text-right">
-            <div data-testid="suite-total-price" className="flex items-baseline space-x-1.5 md:justify-end">
+            <div data-testid="suite-configuration-status" className="flex items-baseline space-x-1.5 md:justify-end">
               <span className="text-[10px] font-grotesque uppercase tracking-wider text-soft-graphite/70">
-                Suite Total:
+                Configuration:
               </span>
-              <span className="font-serif text-lg sm:text-xl font-medium text-umber leading-none">
-                {formatPKR(suiteTotal)}
+              <span className="font-serif text-base sm:text-lg font-medium text-umber leading-none">
+                {activeLayers.length === totalLayersCount ? 'Complete Suite' : `${activeLayers.length} Layers Selected`}
               </span>
             </div>
-            <p className="text-[10px] font-sans text-olive-ink font-medium mt-0.5">
-              Complimentary express delivery included
+            <p className="text-[10px] font-sans text-soft-graphite/70 mt-0.5">
+              Interactive styling active · Suite bundle pricing available in Phase 6.2
             </p>
           </div>
 
@@ -98,6 +91,7 @@ export const BedStudioSummaryBar: React.FC<BedStudioSummaryBarProps> = ({
           <div className="relative group">
             <button
               type="button"
+              data-testid="add-suite-to-bag-button"
               disabled={true}
               className="py-2.5 px-4 sm:px-6 bg-sand-subtle/80 text-umber/50 border border-sand-border rounded-sm text-xs font-grotesque uppercase tracking-wider font-semibold cursor-not-allowed flex items-center space-x-2"
               aria-disabled="true"
